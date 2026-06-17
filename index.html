@@ -8,25 +8,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .lang-switcher {
-      display: flex; align-items: center; gap: 4px;
-      background: #f7f8fc; border: 1.5px solid var(--border);
-      border-radius: 20px; padding: 3px; margin-right: 16px;
-    }
-    .lang-btn {
-      background: none; border: none; cursor: pointer;
-      font-size: 13px; font-weight: 600; padding: 5px 12px;
-      border-radius: 16px; color: var(--steel);
-      font-family: 'Inter', sans-serif; transition: all 0.2s;
-    }
-    .lang-btn.active { background: var(--red); color: #fff; }
-    .lang-btn:hover:not(.active) { color: var(--red); }
-  </style>
 </head>
 <body>
 
-<!-- NAVIGATION -->
+<!-- ===== NAVIGATION ===== -->
 <nav>
   <a href="#" class="nav-logo">
     <img src="logo.png" alt="SUJO Engineering Consulting" />
@@ -56,7 +41,7 @@
   <a href="#contact" onclick="toggleMenu()" data-fr="Demander un devis" data-en="Get a Quote">Demander un devis</a>
 </div>
 
-<!-- HERO -->
+<!-- ===== HERO ===== -->
 <section class="hero">
   <div class="hero-content">
     <div class="hero-badge" data-fr="Kinshasa, République Démocratique du Congo" data-en="Kinshasa, Democratic Republic of Congo">Kinshasa, République Démocratique du Congo</div>
@@ -90,7 +75,7 @@
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- ===== SERVICES ===== -->
 <section id="services" class="services-bg">
   <div class="section-label" data-fr="Ce que nous faisons" data-en="What we do">Ce que nous faisons</div>
   <div class="section-title" data-fr="Nos Services" data-en="Our Services">Nos Services</div>
@@ -130,7 +115,7 @@
   </div>
 </section>
 
-<!-- SECTORS -->
+<!-- ===== SECTORS ===== -->
 <section id="secteurs">
   <div class="section-label" data-fr="Domaines d'expertise" data-en="Areas of expertise">Domaines d'expertise</div>
   <div class="section-title" data-fr="Secteurs d'Intervention" data-en="Sectors We Serve">Secteurs d'Intervention</div>
@@ -146,7 +131,7 @@
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ===== ABOUT ===== -->
 <section id="apropos" class="services-bg">
   <div class="section-label" data-fr="Qui sommes-nous" data-en="Who we are">Qui sommes-nous</div>
   <div class="section-title" data-fr="À Propos de SUJO" data-en="About SUJO">À Propos de SUJO</div>
@@ -185,7 +170,7 @@
   </div>
 </section>
 
-<!-- PROCESS -->
+<!-- ===== PROCESS ===== -->
 <section id="processus" class="process-bg">
   <div class="section-label" data-fr="Comment ça marche" data-en="How it works">Comment ça marche</div>
   <div class="section-title" data-fr="Notre Approche" data-en="Our Approach">Notre Approche</div>
@@ -218,7 +203,7 @@
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- ===== CONTACT ===== -->
 <section id="contact" class="contact-bg">
   <div class="contact-grid">
     <div>
@@ -244,24 +229,24 @@
       </div>
     </div>
     <div class="form-card">
-      <form id="contactForm" onsubmit="handleSubmit(event)">
+      <form action="https://formspree.io/f/xdavjraa" method="POST">
         <div class="form-row2">
           <div class="form-group">
             <label data-fr="Nom complet" data-en="Full name">Nom complet</label>
-            <input type="text" id="f-name" placeholder="Votre nom" required />
+            <input type="text" name="name" id="f-name" placeholder="Votre nom" required />
           </div>
           <div class="form-group">
             <label data-fr="Société" data-en="Company">Société</label>
-            <input type="text" id="f-company" placeholder="Nom de votre société" />
+            <input type="text" name="company" id="f-company" placeholder="Nom de votre société" />
           </div>
         </div>
         <div class="form-group">
           <label data-fr="Email ou WhatsApp" data-en="Email or WhatsApp">Email ou WhatsApp</label>
-          <input type="text" id="f-email" placeholder="email@exemple.com ou +243..." required />
+          <input type="text" name="email" id="f-email" placeholder="email@exemple.com ou +243..." required />
         </div>
         <div class="form-group">
           <label data-fr="Type de projet" data-en="Project type">Type de projet</label>
-          <select id="f-type">
+          <select name="project_type" id="f-type">
             <option value="" data-fr="Sélectionner..." data-en="Select...">Sélectionner...</option>
             <option data-fr="Construction / Génie Civil" data-en="Construction / Civil Engineering">Construction / Génie Civil</option>
             <option data-fr="Industrie Minière" data-en="Mining Industry">Industrie Minière</option>
@@ -274,7 +259,7 @@
         </div>
         <div class="form-group">
           <label data-fr="Description du projet" data-en="Project description">Description du projet</label>
-          <textarea id="f-desc" placeholder="Décrivez brièvement votre projet..."></textarea>
+          <textarea name="message" id="f-desc" placeholder="Décrivez brièvement votre projet..."></textarea>
         </div>
         <button type="submit" class="submit-btn" data-fr="Envoyer la demande ✓" data-en="Send Request ✓">Envoyer la demande ✓</button>
         <div class="success-msg" id="successMsg" data-fr="✅ Merci ! Votre demande a été envoyée. Nous vous répondrons dans les 24 heures." data-en="✅ Thank you! Your request has been sent. We will respond within 24 hours.">
@@ -285,7 +270,7 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ===== FOOTER ===== -->
 <footer>
   <img src="logo.png" alt="SUJO Logo" class="footer-logo" />
   <p>© 2024 <strong>SUJO Engineering Consulting SARL</strong> — Kinshasa, RDC</p>
@@ -305,7 +290,6 @@
     document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
 
-    // Update all elements with data-fr / data-en
     document.querySelectorAll('[data-fr][data-en]').forEach(el => {
       const text = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
       if (el.tagName === 'H1' || el.innerHTML.includes('<span>')) {
@@ -317,7 +301,6 @@
       }
     });
 
-    // Update form placeholders
     const placeholders = {
       fr: { name: 'Votre nom', company: 'Nom de votre société', email: 'email@exemple.com ou +243...', desc: 'Décrivez brièvement votre projet...' },
       en: { name: 'Your name', company: 'Your company name', email: 'email@example.com or +1...', desc: 'Briefly describe your project...' }
@@ -333,15 +316,6 @@
   // ── MOBILE MENU ──
   function toggleMenu() {
     document.getElementById('mobileMenu').classList.toggle('open');
-  }
-
-  // ── FORM ──
-  function handleSubmit(e) {
-    e.preventDefault();
-    const msg = document.getElementById('successMsg');
-    msg.style.display = 'block';
-    e.target.reset();
-    setTimeout(() => { msg.style.display = 'none'; }, 5000);
   }
 
   // ── ACTIVE NAV ──
