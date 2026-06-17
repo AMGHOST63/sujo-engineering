@@ -7,151 +7,15 @@
   <meta name="description" content="SUJO Engineering Consulting est spécialisée dans le chiffrage, l'estimation des coûts et la préparation des offres pour les projets d'ingénierie en RDC." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; color: #1a1a1a; background: #fff; line-height: 1.7; }
-
-    /* NAV */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 14px 5%; background: #fff;
-      border-bottom: 1px solid #eee;
-    }
-    .logo { display: flex; flex-direction: column; }
-    .logo-main { font-size: 22px; font-weight: 600; color: #1A3C6E; letter-spacing: 3px; }
-    .logo-sub { font-size: 11px; color: #C9A84C; letter-spacing: 1.5px; text-transform: uppercase; }
-    .nav-links { display: flex; gap: 28px; list-style: none; }
-    .nav-links a { text-decoration: none; font-size: 14px; color: #555; transition: color 0.2s; }
-    .nav-links a:hover { color: #1A3C6E; }
-    .nav-cta { background: #1A3C6E; color: #fff !important; padding: 8px 20px; border-radius: 6px; font-size: 14px; }
-    .nav-cta:hover { background: #152e55; color: #fff !important; }
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
-    .hamburger span { display: block; width: 24px; height: 2px; background: #1A3C6E; border-radius: 2px; transition: all 0.3s; }
-    .mobile-menu { display: none; flex-direction: column; gap: 0; background: #fff; border-bottom: 1px solid #eee; }
-    .mobile-menu a { padding: 14px 5%; font-size: 15px; color: #333; text-decoration: none; border-bottom: 1px solid #f0f0f0; }
-    .mobile-menu.open { display: flex; }
-
-    /* HERO */
-    .hero {
-      background: linear-gradient(135deg, #1A3C6E 0%, #0D2140 100%);
-      color: #fff; padding: 80px 5% 72px; text-align: center;
-    }
-    .hero-badge {
-      display: inline-block; background: rgba(201,168,76,0.2);
-      border: 1px solid #C9A84C; color: #C9A84C;
-      font-size: 12px; padding: 5px 16px; border-radius: 20px;
-      margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase;
-    }
-    .hero h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 600; margin-bottom: 16px; line-height: 1.3; }
-    .hero h1 span { color: #C9A84C; }
-    .hero p { font-size: 16px; color: #a8c4e0; max-width: 560px; margin: 0 auto 36px; }
-    .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .btn-gold { background: #C9A84C; color: #fff; padding: 13px 30px; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s; }
-    .btn-gold:hover { background: #b5943e; }
-    .btn-ghost { background: transparent; color: #fff; padding: 12px 30px; border-radius: 8px; font-size: 15px; border: 1.5px solid rgba(255,255,255,0.35); text-decoration: none; transition: border-color 0.2s; }
-    .btn-ghost:hover { border-color: rgba(255,255,255,0.7); }
-    .hero-stats { display: flex; justify-content: center; gap: 40px; margin-top: 56px; flex-wrap: wrap; }
-    .hero-stat { text-align: center; }
-    .hero-stat-num { font-size: 28px; font-weight: 600; color: #C9A84C; }
-    .hero-stat-label { font-size: 12px; color: #7a9fc0; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
-
-    /* SECTIONS */
-    section { padding: 72px 5%; }
-    .section-label { font-size: 12px; color: #C9A84C; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
-    .section-title { font-size: clamp(22px, 3vw, 30px); font-weight: 600; color: #1A3C6E; margin-bottom: 12px; }
-    .section-sub { font-size: 15px; color: #666; max-width: 540px; margin-bottom: 40px; }
-    .gold-line { width: 40px; height: 3px; background: #C9A84C; border-radius: 2px; margin: 10px 0 24px; }
-
-    /* SERVICES */
-    .services-bg { background: #f8f9fc; }
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-    .svc-card { background: #fff; border: 1px solid #e8ecf4; border-radius: 12px; padding: 24px 20px; transition: box-shadow 0.2s, transform 0.2s; }
-    .svc-card:hover { box-shadow: 0 8px 24px rgba(26,60,110,0.1); transform: translateY(-3px); }
-    .svc-icon { width: 48px; height: 48px; border-radius: 12px; background: #E6F1FB; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 22px; }
-    .svc-card h3 { font-size: 15px; font-weight: 600; color: #1A3C6E; margin-bottom: 8px; }
-    .svc-card p { font-size: 13px; color: #666; line-height: 1.6; }
-
-    /* SECTORS */
-    .pills { display: flex; flex-wrap: wrap; gap: 12px; }
-    .pill { background: #E6F1FB; color: #1A3C6E; font-size: 14px; padding: 9px 18px; border-radius: 24px; font-weight: 500; }
-
-    /* ABOUT */
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
-    .about-text p { font-size: 15px; color: #444; margin-bottom: 16px; }
-    .about-text ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .about-text ul li { font-size: 14px; color: #333; display: flex; align-items: center; gap: 10px; }
-    .about-text ul li::before { content: "✓"; color: #C9A84C; font-weight: 700; }
-    .team-card { background: #fff; border: 1px solid #e8ecf4; border-radius: 14px; padding: 28px 24px; margin-top: 24px; display: flex; align-items: center; gap: 18px; }
-    .avatar { width: 60px; height: 60px; border-radius: 50%; background: #1A3C6E; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 600; flex-shrink: 0; }
-    .team-name { font-weight: 600; font-size: 16px; color: #1A3C6E; }
-    .team-role { font-size: 13px; color: #888; margin-top: 2px; }
-    .team-tag { font-size: 12px; color: #C9A84C; margin-top: 4px; }
-    .legal-box { background: #f8f9fc; border: 1px solid #e8ecf4; border-radius: 12px; padding: 24px; }
-    .legal-row { display: flex; gap: 12px; margin-bottom: 12px; font-size: 13px; }
-    .legal-label { color: #1A3C6E; font-weight: 600; min-width: 120px; }
-    .legal-val { color: #444; }
-
-    /* PROCESS */
-    .process-bg { background: #f8f9fc; }
-    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0; position: relative; }
-    .step { text-align: center; padding: 24px 16px; position: relative; }
-    .step-num { width: 44px; height: 44px; border-radius: 50%; background: #1A3C6E; color: #fff; font-size: 18px; font-weight: 600; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; }
-    .step h4 { font-size: 14px; font-weight: 600; color: #1A3C6E; margin-bottom: 6px; }
-    .step p { font-size: 12px; color: #666; }
-    .step-arrow { position: absolute; right: -10px; top: 30px; font-size: 20px; color: #C9A84C; z-index: 1; }
-
-    /* CONTACT */
-    .contact-bg { background: #1A3C6E; color: #fff; }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: start; }
-    .contact-title { font-size: 28px; font-weight: 600; margin-bottom: 10px; }
-    .contact-sub { color: #a8c4e0; font-size: 15px; margin-bottom: 28px; }
-    .contact-item { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; font-size: 14px; color: #a8c4e0; }
-    .contact-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
-    .form-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; padding: 28px; }
-    .form-group { margin-bottom: 16px; }
-    .form-group label { display: block; font-size: 12px; color: #a8c4e0; margin-bottom: 6px; letter-spacing: 0.5px; text-transform: uppercase; }
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      width: 100%; background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15); border-radius: 8px;
-      padding: 11px 14px; color: #fff; font-size: 14px;
-      font-family: 'Inter', sans-serif; outline: none; transition: border-color 0.2s;
-    }
-    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: #C9A84C; }
-    .form-group select option { background: #1A3C6E; color: #fff; }
-    .form-group textarea { height: 90px; resize: none; }
-    .form-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .submit-btn { width: 100%; background: #C9A84C; color: #fff; border: none; padding: 13px; border-radius: 8px; font-size: 15px; font-weight: 500; cursor: pointer; margin-top: 4px; transition: background 0.2s; font-family: 'Inter', sans-serif; }
-    .submit-btn:hover { background: #b5943e; }
-    .success-msg { display: none; background: rgba(201,168,76,0.15); border: 1px solid #C9A84C; border-radius: 8px; padding: 14px; color: #C9A84C; font-size: 14px; text-align: center; margin-top: 12px; }
-
-    /* FOOTER */
-    footer { background: #0D2140; color: #7a9fc0; text-align: center; padding: 24px 5%; font-size: 13px; }
-    footer strong { color: #C9A84C; }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .about-grid, .contact-grid { grid-template-columns: 1fr; }
-      .form-row2 { grid-template-columns: 1fr; }
-      .hero-stats { gap: 24px; }
-      .step-arrow { display: none; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <!-- NAVIGATION -->
 <nav>
-  <div class="logo">
-    <span class="logo-main">SUJO</span>
-    <span class="logo-sub">Engineering Consulting</span>
-  </div>
+  <a href="#" class="nav-logo">
+    <img src="logo.png" alt="SUJO Engineering Consulting Logo" />
+  </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#secteurs">Secteurs</a></li>
@@ -177,7 +41,7 @@
   <h1>Experts en <span>Chiffrage</span> &<br>Estimation de Projets d'Ingénierie</h1>
   <p>SUJO vous accompagne dans l'estimation des coûts, la préparation des BoQ et la soumission d'offres compétitives pour vos projets en RDC.</p>
   <div class="hero-btns">
-    <a href="#contact" class="btn-gold">Demander un devis gratuit</a>
+    <a href="#contact" class="btn-red">Demander un devis gratuit</a>
     <a href="#services" class="btn-ghost">Nos services</a>
   </div>
   <div class="hero-stats">
@@ -204,7 +68,7 @@
 <section id="services" class="services-bg">
   <div class="section-label">Ce que nous faisons</div>
   <div class="section-title">Nos Services</div>
-  <div class="gold-line"></div>
+  <div class="red-line"></div>
   <div class="section-sub">Solutions complètes de chiffrage et d'estimation pour tous vos projets d'ingénierie.</div>
   <div class="services-grid">
     <div class="svc-card">
@@ -244,7 +108,7 @@
 <section id="secteurs">
   <div class="section-label">Domaines d'expertise</div>
   <div class="section-title">Secteurs d'Intervention</div>
-  <div class="gold-line"></div>
+  <div class="red-line"></div>
   <div class="section-sub">Nous intervenons dans les secteurs clés de l'économie congolaise.</div>
   <div class="pills">
     <span class="pill">🏗️ Construction & Génie Civil</span>
@@ -260,7 +124,7 @@
 <section id="apropos" class="services-bg">
   <div class="section-label">Qui sommes-nous</div>
   <div class="section-title">À Propos de SUJO</div>
-  <div class="gold-line"></div>
+  <div class="red-line"></div>
   <div class="about-grid">
     <div class="about-text">
       <p>SUJO Engineering Consulting est une société spécialisée dans le chiffrage, l'estimation des coûts et la préparation des offres pour les projets d'ingénierie en République Démocratique du Congo.</p>
@@ -299,7 +163,7 @@
 <section id="processus" class="process-bg">
   <div class="section-label">Comment ça marche</div>
   <div class="section-title">Notre Approche</div>
-  <div class="gold-line"></div>
+  <div class="red-line"></div>
   <div class="section-sub">Un processus simple et transparent du premier contact à la livraison.</div>
   <div class="steps">
     <div class="step">
@@ -333,7 +197,7 @@
   <div class="contact-grid">
     <div>
       <div class="contact-title">Contactez-Nous</div>
-      <div class="gold-line"></div>
+      <div class="red-line"></div>
       <div class="contact-sub">Envoyez-nous votre demande de devis ou vos plans de projet. Notre équipe vous répondra dans les 24 heures.</div>
       <div class="contact-item">
         <div class="contact-icon">📍</div>
@@ -341,15 +205,19 @@
       </div>
       <div class="contact-item">
         <div class="contact-icon">✉️</div>
-        <span>contact@sujo-engineering.com</span>
+        <a href="mailto:contact@sujo-engineering.com">contact@sujo-engineering.com</a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">👤</div>
+        <a href="mailto:sumailij@sujo-engineering.com">sumailij@sujo-engineering.com</a>
       </div>
       <div class="contact-item">
         <div class="contact-icon">📱</div>
-        <span>+243 [votre numéro]</span>
+        <a href="tel:+14123453307">+1 412 345 3307</a>
       </div>
       <div class="contact-item">
         <div class="contact-icon">💬</div>
-        <span>WhatsApp disponible</span>
+        <a href="https://wa.me/14123453307" target="_blank">WhatsApp: +1 412 345 3307</a>
       </div>
     </div>
     <div class="form-card">
@@ -396,8 +264,9 @@
 
 <!-- FOOTER -->
 <footer>
+  <img src="logo.png" alt="SUJO Logo" class="footer-logo" />
   <p>© 2024 <strong>SUJO Engineering Consulting SARL</strong> — Kinshasa, RDC — Tous droits réservés</p>
-  <p style="margin-top:6px;">Fondé par <strong>Jonathan Sumaili</strong> — CEO & Fondateur</p>
+  <p style="margin-top:6px;">Fondé par <strong>Jonathan Sumaili</strong> — CEO & Fondateur &nbsp;|&nbsp; <a href="mailto:contact@sujo-engineering.com" style="color:#6666aa; text-decoration:none;">contact@sujo-engineering.com</a> &nbsp;|&nbsp; +1 412 345 3307</p>
 </footer>
 
 <script>
@@ -414,7 +283,7 @@
     }, 5000);
   }
 
-  // Smooth active nav link highlight
+  // Active nav highlight on scroll
   const sections = document.querySelectorAll('section[id]');
   window.addEventListener('scroll', () => {
     let current = '';
@@ -422,7 +291,7 @@
       if (window.scrollY >= s.offsetTop - 80) current = s.id;
     });
     document.querySelectorAll('.nav-links a').forEach(a => {
-      a.style.color = a.getAttribute('href') === '#' + current ? '#1A3C6E' : '';
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--red)' : '';
       a.style.fontWeight = a.getAttribute('href') === '#' + current ? '600' : '';
     });
   });
