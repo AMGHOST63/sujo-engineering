@@ -1,235 +1,334 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SUJO Engineering Consulting</title>
-
-<style>
-
-/* GLOBAL COLORS */
-:root {
-  --primary-red: #c40000;
-  --dark-gray: #2b2b2b;
-  --light-gray: #f2f2f2;
-  --white: #ffffff;
-}
-
-/* RESET */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: var(--white);
-  color: var(--dark-gray);
-}
-
-/* HEADER */
-header {
-  background: var(--white);
-  padding: 20px 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 3px solid var(--primary-red);
-}
-
-header img.logo {
-  height: 90px; /* BIGGER LOGO */
-}
-
-nav a {
-  margin-left: 25px;
-  text-decoration: none;
-  color: var(--dark-gray);
-  font-weight: bold;
-  font-size: 16px;
-}
-
-nav a:hover {
-  color: var(--primary-red);
-}
-
-/* HERO SECTION */
-.hero {
-  padding: 80px 40px;
-  background: var(--light-gray);
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 42px;
-  color: var(--primary-red);
-}
-
-.hero p {
-  font-size: 18px;
-  max-width: 700px;
-  margin: auto;
-}
-
-/* SERVICES */
-.services {
-  padding: 60px 40px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-
-.service-card {
-  background: var(--white);
-  border: 2px solid var(--light-gray);
-  padding: 25px;
-  border-radius: 8px;
-  transition: 0.3s;
-}
-
-.service-card:hover {
-  border-color: var(--primary-red);
-}
-
-.service-card h3 {
-  color: var(--primary-red);
-}
-
-/* CONTACT SECTION */
-.contact {
-  padding: 60px 40px;
-  background: var(--light-gray);
-}
-
-.contact h2 {
-  color: var(--primary-red);
-}
-
-/* FOOTER */
-footer {
-  background: var(--white);
-  color: var(--dark-gray);
-  padding: 40px;
-  border-top: 3px solid var(--primary-red);
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-}
-
-footer h4 {
-  color: var(--primary-red);
-}
-
-footer a {
-  color: var(--dark-gray);
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: var(--primary-red);
-}
-
-.social-icons img {
-  width: 28px;
-  margin-right: 10px;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 14px;
-  color: #555;
-}
-
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SUJO Engineering Consulting — Kinshasa, RDC</title>
+  <meta name="description" content="SUJO Engineering Consulting est spécialisée dans le chiffrage, l'estimation des coûts et la préparation des offres pour les projets d'ingénierie en RDC." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-<!-- HEADER -->
-<header>
-  <img src="logo.png" alt="SUJO Logo" class="logo">
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Services</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-  </nav>
-</header>
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <a href="#" class="nav-logo">
+    <img src="logo.png" alt="SUJO Engineering Consulting" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services" data-fr="Services" data-en="Services">Services</a></li>
+    <li><a href="#secteurs" data-fr="Secteurs" data-en="Sectors">Secteurs</a></li>
+    <li><a href="#apropos" data-fr="À Propos" data-en="About">À Propos</a></li>
+    <li><a href="#processus" data-fr="Notre Approche" data-en="Our Approach">Notre Approche</a></li>
+    <li><a href="#contact" class="nav-cta" data-fr="Demander un devis" data-en="Get a Quote">Demander un devis</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;">
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('fr')" id="btn-fr">FR</button>
+      <button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button>
+    </div>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="toggleMenu()" data-fr="Services" data-en="Services">Services</a>
+  <a href="#secteurs" onclick="toggleMenu()" data-fr="Secteurs" data-en="Sectors">Secteurs</a>
+  <a href="#apropos" onclick="toggleMenu()" data-fr="À Propos" data-en="About">À Propos</a>
+  <a href="#processus" onclick="toggleMenu()" data-fr="Notre Approche" data-en="Our Approach">Notre Approche</a>
+  <a href="#contact" onclick="toggleMenu()" data-fr="Demander un devis" data-en="Get a Quote">Demander un devis</a>
+</div>
 
-<!-- HERO -->
+<!-- ===== HERO ===== -->
 <section class="hero">
-  <h1>SUJO Engineering Consulting</h1>
-  <p>Technical Precision • Cost Accuracy • Reliable Sourcing</p>
+  <div class="hero-content">
+    <div class="hero-badge" data-fr="Kinshasa, République Démocratique du Congo" data-en="Kinshasa, Democratic Republic of Congo">Kinshasa, République Démocratique du Congo</div>
+    <!-- UPDATED FRENCH HEADLINE -->
+    <h1 data-fr="Expert en <span>Consultation</span> en Ingénierie" data-en="Expert in <span>Engineering</span> Consulting">Expert en <span>Consultation</span> en Ingénierie</h1>
+    <p data-fr="SUJO vous accompagne dans l'estimation des coûts, la préparation des BoQ et la soumission d'offres compétitives pour vos projets en RDC." data-en="SUJO supports you in cost estimation, BoQ preparation, and competitive bid submission for your projects in the DRC.">SUJO vous accompagne dans l'estimation des coûts, la préparation des BoQ et la soumission d'offres compétitives pour vos projets en RDC.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-red" data-fr="Demander un devis gratuit" data-en="Request a Free Quote">Demander un devis gratuit</a>
+      <a href="#services" class="btn-outline" data-fr="Nos services" data-en="Our Services">Nos services</a>
+    </div>
+  </div>
+  <div class="hero-logo-block">
+    <img src="logo.png" alt="SUJO Engineering Consulting Logo" />
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num">BoQ</div>
+      <div class="hero-stat-label" data-fr="Bordereaux de quantités" data-en="Bills of Quantities">Bordereaux de quantités</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">6+</div>
+      <div class="hero-stat-label" data-fr="Secteurs couverts" data-en="Sectors covered">Secteurs couverts</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">USD</div>
+      <div class="hero-stat-label" data-fr="Tarification en dollars" data-en="Pricing in dollars">Tarification en dollars</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">24h</div>
+      <div class="hero-stat-label" data-fr="Délai de réponse" data-en="Response time">Délai de réponse</div>
+    </div>
+  </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services">
-
-  <div class="service-card">
-    <h3>Engineering Analysis</h3>
-    <p>Technical assessments, specification review, and equipment verification.</p>
+<!-- ===== SERVICES ===== -->
+<section id="services" class="services-bg">
+  <div class="section-label" data-fr="Ce que nous faisons" data-en="What we do">Ce que nous faisons</div>
+  <div class="section-title" data-fr="Nos Services" data-en="Our Services">Nos Services</div>
+  <div class="red-line"></div>
+  <div class="section-sub" data-fr="Solutions complètes de chiffrage et d'estimation pour tous vos projets d'ingénierie." data-en="Complete cost estimating and quoting solutions for all your engineering projects.">Solutions complètes de chiffrage et d'estimation pour tous vos projets d'ingénierie.</div>
+  <div class="services-grid">
+    <div class="svc-card">
+      <div class="svc-icon">📋</div>
+      <h3 data-fr="Bordereau de Quantités (BoQ)" data-en="Bill of Quantities (BoQ)">Bordereau de Quantités (BoQ)</h3>
+      <p data-fr="Métrés détaillés et quantitatifs pour appels d'offres. Chaque ouvrage décrit avec unités et quantités précises." data-en="Detailed quantity take-offs for tenders. Every item described with precise units and quantities.">Métrés détaillés et quantitatifs pour appels d'offres. Chaque ouvrage décrit avec unités et quantités précises.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">🧮</div>
+      <h3 data-fr="Estimation des Coûts" data-en="Cost Estimation">Estimation des Coûts</h3>
+      <p data-fr="Évaluation budgétaire complète basée sur les prix unitaires en vigueur à Kinshasa et en RDC." data-en="Comprehensive budget evaluation based on current unit rates in Kinshasa and the DRC.">Évaluation budgétaire complète basée sur les prix unitaires en vigueur à Kinshasa et en RDC.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">📁</div>
+      <h3 data-fr="Préparation des Offres" data-en="Bid Preparation">Préparation des Offres</h3>
+      <p data-fr="Constitution de dossiers de soumission complets et conformes aux exigences des marchés publics et privés." data-en="Complete tender submission packages compliant with public and private procurement requirements.">Constitution de dossiers de soumission complets et conformes aux exigences des marchés publics et privés.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">📊</div>
+      <h3 data-fr="Contrôle Budgétaire" data-en="Budget Control">Contrôle Budgétaire</h3>
+      <p data-fr="Suivi et analyse des coûts en cours d'exécution pour éviter les dépassements de budget." data-en="Cost monitoring and analysis during project execution to prevent budget overruns.">Suivi et analyse des coûts en cours d'exécution pour éviter les dépassements de budget.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">📈</div>
+      <h3 data-fr="Études de Faisabilité" data-en="Feasibility Studies">Études de Faisabilité</h3>
+      <p data-fr="Analyse financière préliminaire de vos projets d'investissement pour une prise de décision éclairée." data-en="Preliminary financial analysis of your investment projects for informed decision-making.">Analyse financière préliminaire de vos projets d'investissement pour une prise de décision éclairée.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">🏆</div>
+      <h3 data-fr="Conseil Appels d'Offres" data-en="Tender Advisory">Conseil Appels d'Offres</h3>
+      <p data-fr="Stratégie et accompagnement pour les marchés publics et privés — maximisez vos chances de remporter les contrats." data-en="Strategy and support for public and private tenders — maximize your chances of winning contracts.">Stratégie et accompagnement pour les marchés publics et privés — maximisez vos chances de remporter les contrats.</p>
+    </div>
   </div>
-
-  <div class="service-card">
-    <h3>BOQ & Cost Estimation</h3>
-    <p>Accurate Bill of Quantities and cost modeling for engineering projects.</p>
-  </div>
-
-  <div class="service-card">
-    <h3>Equipment Sourcing</h3>
-    <p>Industrial and mining equipment sourcing with verified suppliers.</p>
-  </div>
-
 </section>
 
-<!-- CONTACT -->
-<section class="contact">
-  <h2>Contact Us</h2>
-  <p><strong>Phone DRC:</strong> +243 974 570</p>
-  <p><strong>Phone US:</strong> +1 412 345 3307</p>
-  <p><strong>Email:</strong> contact@sujo-engineering.com</p>
+<!-- ===== SECTORS ===== -->
+<section id="secteurs">
+  <div class="section-label" data-fr="Domaines d'expertise" data-en="Areas of expertise">Domaines d'expertise</div>
+  <div class="section-title" data-fr="Secteurs d'Intervention" data-en="Sectors We Serve">Secteurs d'Intervention</div>
+  <div class="red-line"></div>
+  <div class="section-sub" data-fr="Nous intervenons dans les secteurs clés de l'économie congolaise." data-en="We operate in the key sectors of the Congolese economy.">Nous intervenons dans les secteurs clés de l'économie congolaise.</div>
+  <div class="pills">
+    <span class="pill" data-fr="🏗️ Construction & Génie Civil" data-en="🏗️ Construction & Civil Engineering">🏗️ Construction & Génie Civil</span>
+    <span class="pill" data-fr="⛏️ Industrie Minière" data-en="⛏️ Mining Industry">⛏️ Industrie Minière</span>
+    <span class="pill" data-fr="⚡ Énergie & Hydroélectricité" data-en="⚡ Energy & Hydropower">⚡ Énergie & Hydroélectricité</span>
+    <span class="pill" data-fr="🏢 Immobilier" data-en="🏢 Real Estate">🏢 Immobilier</span>
+    <span class="pill" data-fr="🛣️ Infrastructure Routière & Ponts" data-en="🛣️ Road Infrastructure & Bridges">🛣️ Infrastructure Routière & Ponts</span>
+    <span class="pill" data-fr="📡 Télécommunications" data-en="📡 Telecommunications">📡 Télécommunications</span>
+  </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-
-    <div>
-      <h4>SUJO Engineering Consulting</h4>
-      <p>Kinshasa • Pittsburgh</p>
-    </div>
-
-    <div>
-      <h4>Services</h4>
-      <a href="#">Engineering Analysis</a><br>
-      <a href="#">BOQ & Costing</a><br>
-      <a href="#">Equipment Sourcing</a><br>
-      <a href="#">Project Documentation</a>
-    </div>
-
-    <div>
-      <h4>Contact</h4>
-      <p>DRC: +243 974 570</p>
-      <p>US: +1 412 345 3307</p>
-      <p>Email: contact@sujo-engineering.com</p>
-    </div>
-
-    <div>
-      <h4>Follow Us</h4>
-      <div class="social-icons">
-        <a href="#"><img src="icons/linkedin.svg"></a>
-        <a href="#"><img src="icons/facebook.svg"></a>
-        <a href="#"><img src="icons/tiktok.svg"></a>
-        <a href="#"><img src="icons/instagram.svg"></a>
+<!-- ===== ABOUT ===== -->
+<section id="apropos" class="services-bg">
+  <div class="section-label" data-fr="Qui sommes-nous" data-en="Who we are">Qui sommes-nous</div>
+  <div class="section-title" data-fr="À Propos de SUJO" data-en="About SUJO">À Propos de SUJO</div>
+  <div class="red-line"></div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p data-fr="SUJO Engineering Consulting est une société spécialisée dans le chiffrage, l'estimation des coûts et la préparation des offres pour les projets d'ingénierie en République Démocratique du Congo." data-en="SUJO Engineering Consulting is a firm specializing in cost estimating, quantity surveying, and bid preparation for engineering projects in the Democratic Republic of Congo.">SUJO Engineering Consulting est une société spécialisée dans le chiffrage, l'estimation des coûts et la préparation des offres pour les projets d'ingénierie en République Démocratique du Congo.</p>
+      <p data-fr="Fondée par Jonathan Sumaili, SUJO accompagne les entreprises de construction, sociétés minières, promoteurs immobiliers et organismes gouvernementaux dans la préparation de leurs soumissions techniques et financières." data-en="Founded by Jonathan Sumaili, SUJO supports construction companies, mining firms, real estate developers, and government agencies in preparing their technical and financial submissions.">Fondée par Jonathan Sumaili, SUJO accompagne les entreprises de construction, sociétés minières, promoteurs immobiliers et organismes gouvernementaux dans la préparation de leurs soumissions techniques et financières.</p>
+      <ul>
+        <li data-fr="Expertise locale du marché congolais" data-en="Local expertise in the Congolese market">Expertise locale du marché congolais</li>
+        <li data-fr="Connaissance des prix unitaires à Kinshasa" data-en="Knowledge of current unit rates in Kinshasa">Connaissance des prix unitaires à Kinshasa</li>
+        <li data-fr="Documents livrés en français (Word, Excel, PDF)" data-en="Documents delivered in French & English (Word, Excel, PDF)">Documents livrés en français (Word, Excel, PDF)</li>
+        <li data-fr="Confidentialité garantie de vos données" data-en="Full confidentiality of your data guaranteed">Confidentialité garantie de vos données</li>
+        <li data-fr="Réponse sous 24 heures" data-en="Response within 24 hours">Réponse sous 24 heures</li>
+      </ul>
+      <div class="team-card">
+        <div class="avatar">JS</div>
+        <div>
+          <div class="team-name">Jonathan Sumaili</div>
+          <div class="team-role" data-fr="CEO & Fondateur" data-en="CEO & Founder">CEO & Fondateur</div>
+          <div class="team-tag">SUJO Engineering Consulting</div>
+        </div>
       </div>
     </div>
-
+    <div>
+      <div class="legal-box">
+        <div class="section-label" style="margin-bottom:16px;" data-fr="Informations Légales" data-en="Legal Information">Informations Légales</div>
+        <div class="legal-row"><span class="legal-label" data-fr="Raison Sociale" data-en="Company Name">Raison Sociale</span><span class="legal-val">SUJO Engineering Consulting SARL</span></div>
+        <div class="legal-row"><span class="legal-label" data-fr="Forme Juridique" data-en="Legal Form">Forme Juridique</span><span class="legal-val" data-fr="SARL — Cadre OHADA" data-en="LLC — OHADA Framework">SARL — Cadre OHADA</span></div>
+        <div class="legal-row"><span class="legal-label" data-fr="Siège Social" data-en="Headquarters">Siège Social</span><span class="legal-val">Kinshasa, RDC</span></div>
+        <div class="legal-row"><span class="legal-label" data-fr="CEO & Fondateur" data-en="CEO & Founder">CEO & Fondateur</span><span class="legal-val">Jonathan Sumaili</span></div>
+        <div class="legal-row"><span class="legal-label" data-fr="Langue" data-en="Language">Langue</span><span class="legal-val" data-fr="Français" data-en="French / English">Français</span></div>
+        <div class="legal-row"><span class="legal-label" data-fr="Devise" data-en="Currency">Devise</span><span class="legal-val">USD</span></div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <div class="footer-bottom">
-    © 2026 SUJO Engineering Consulting. All Rights Reserved.
+<!-- ===== PROCESS ===== -->
+<section id="processus" class="process-bg">
+  <div class="section-label" data-fr="Comment ça marche" data-en="How it works">Comment ça marche</div>
+  <div class="section-title" data-fr="Notre Approche" data-en="Our Approach">Notre Approche</div>
+  <div class="red-line"></div>
+  <div class="section-sub" data-fr="Un processus simple et transparent du premier contact à la livraison." data-en="A simple and transparent process from first contact to final delivery.">Un processus simple et transparent du premier contact à la livraison.</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h4 data-fr="Prise de Contact" data-en="Initial Contact">Prise de Contact</h4>
+      <p data-fr="Envoyez-nous votre projet via le formulaire ou WhatsApp" data-en="Send us your project via the form or WhatsApp">Envoyez-nous votre projet via le formulaire ou WhatsApp</p>
+      <div class="step-arrow">→</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h4 data-fr="Réception des Plans" data-en="Receive Drawings">Réception des Plans</h4>
+      <p data-fr="Transmettez vos plans et documents techniques" data-en="Share your drawings and technical documents">Transmettez vos plans et documents techniques</p>
+      <div class="step-arrow">→</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h4 data-fr="Chiffrage & Métrés" data-en="Estimating & Take-off">Chiffrage & Métrés</h4>
+      <p data-fr="Nous préparons votre BoQ et estimation détaillée" data-en="We prepare your BoQ and detailed cost estimate">Nous préparons votre BoQ et estimation détaillée</p>
+      <div class="step-arrow">→</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h4 data-fr="Livraison" data-en="Delivery">Livraison</h4>
+      <p data-fr="Vous recevez vos documents en Word, Excel et PDF" data-en="You receive your documents in Word, Excel and PDF">Vous recevez vos documents en Word, Excel et PDF</p>
+    </div>
   </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="contact-bg">
+  <div class="contact-grid">
+    <div>
+      <div class="section-label" data-fr="Parlons de votre projet" data-en="Let's talk about your project">Parlons de votre projet</div>
+      <div class="contact-title" data-fr="Contactez-Nous" data-en="Contact Us">Contactez-Nous</div>
+      <div class="red-line"></div>
+      <div class="contact-sub" data-fr="Envoyez-nous votre demande de devis ou vos plans de projet. Notre équipe vous répondra dans les 24 heures." data-en="Send us your quote request or project drawings. Our team will respond within 24 hours.">Envoyez-nous votre demande de devis ou vos plans de projet. Notre équipe vous répondra dans les 24 heures.</div>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <span data-fr="Kinshasa, République Démocratique du Congo" data-en="Kinshasa, Democratic Republic of Congo">Kinshasa, République Démocratique du Congo</span>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <a href="mailto:contact@sujo-engineering.com">contact@sujo-engineering.com</a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📱</div>
+        <a href="tel:+14123453307">+1 412 345 3307</a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">💬</div>
+        <a href="https://wa.me/14123453307" target="_blank" data-fr="WhatsApp: +1 412 345 3307" data-en="WhatsApp: +1 412 345 3307">WhatsApp: +1 412 345 3307</a>
+      </div>
+    </div>
+    <div class="form-card">
+      <form action="https://formspree.io/f/xdavjraa" method="POST">
+        <div class="form-row2">
+          <div class="form-group">
+            <label data-fr="Nom complet" data-en="Full name">Nom complet</label>
+            <input type="text" name="name" id="f-name" placeholder="Votre nom" required />
+          </div>
+          <div class="form-group">
+            <label data-fr="Société" data-en="Company">Société</label>
+            <input type="text" name="company" id="f-company" placeholder="Nom de votre société" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label data-fr="Email ou WhatsApp" data-en="Email or WhatsApp">Email ou WhatsApp</label>
+          <input type="text" name="email" id="f-email" placeholder="email@exemple.com ou +243..." required />
+        </div>
+        <div class="form-group">
+          <label data-fr="Type de projet" data-en="Project type">Type de projet</label>
+          <select name="project_type" id="f-type">
+            <option value="" data-fr="Sélectionner..." data-en="Select...">Sélectionner...</option>
+            <option data-fr="Construction / Génie Civil" data-en="Construction / Civil Engineering">Construction / Génie Civil</option>
+            <option data-fr="Industrie Minière" data-en="Mining Industry">Industrie Minière</option>
+            <option data-fr="Énergie & Hydroélectricité" data-en="Energy & Hydropower">Énergie & Hydroélectricité</option>
+            <option data-fr="Immobilier" data-en="Real Estate">Immobilier</option>
+            <option data-fr="Infrastructure Routière" data-en="Road Infrastructure">Infrastructure Routière</option>
+            <option data-fr="Télécommunications" data-en="Telecommunications">Télécommunications</option>
+            <option data-fr="Autre" data-en="Other">Autre</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-fr="Description du projet" data-en="Project description">Description du projet</label>
+          <textarea name="message" id="f-desc" placeholder="Décrivez brièvement votre projet..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn" data-fr="Envoyer la demande ✓" data-en="Send Request ✓">Envoyer la demande ✓</button>
+        <div class="success-msg" id="successMsg" data-fr="✅ Merci ! Votre demande a été envoyée. Nous vous répondrons dans les 24 heures." data-en="✅ Thank you! Your request has been sent. We will respond within 24 hours.">
+          ✅ Merci ! Votre demande a été envoyée. Nous vous répondrons dans les 24 heures.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <img src="logo.png" alt="SUJO Logo" class="footer-logo" />
+  <p>© 2024 <strong>SUJO Engineering Consulting SARL</strong> — Kinshasa, RDC</p>
+  <p style="margin-top:8px;">
+    <span data-fr="Fondé par" data-en="Founded by">Fondé par</span> <strong>Jonathan Sumaili</strong>, CEO &amp; <span data-fr="Fondateur" data-en="Founder">Fondateur</span> &nbsp;|&nbsp;
+    <a href="mailto:contact@sujo-engineering.com">contact@sujo-engineering.com</a> &nbsp;|&nbsp;
+    <a href="tel:+14123453307">+1 412 345 3307</a>
+  </p>
 </footer>
 
+<script>
+  // ── LANGUAGE SWITCHER ──
+  let currentLang = 'fr';
+
+  function setLang(lang) {
+    currentLang = lang;
+    document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+    document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+      const text = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+      if (el.tagName === 'H1' || el.innerHTML.includes('<span>')) {
+        el.innerHTML = text;
+      } else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+        el.placeholder = text;
+      } else {
+        el.textContent = text;
+      }
+    });
+
+    const placeholders = {
+      fr: { name: 'Votre nom', company: 'Nom de votre société', email: 'email@exemple.com ou +243...', desc: 'Décrivez brièvement votre projet...' },
+      en: { name: 'Your name', company: 'Your company name', email: 'email@example.com or +1...', desc: 'Briefly describe your project...' }
+    };
+    document.getElementById('f-name').placeholder = placeholders[lang].name;
+    document.getElementById('f-company').placeholder = placeholders[lang].company;
+    document.getElementById('f-email').placeholder = placeholders[lang].email;
+    document.getElementById('f-desc').placeholder = placeholders[lang].desc;
+
+    document.documentElement.lang = lang;
+  }
+
+  // ── MOBILE MENU ──
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  // ── ACTIVE NAV ──
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.id; });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--red)' : '';
+      a.style.fontWeight = a.getAttribute('href') === '#' + current ? '700' : '';
+    });
+  });
+</script>
 </body>
 </html>
