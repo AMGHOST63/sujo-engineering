@@ -115,22 +115,38 @@
         
         /* HERO */
         .hero {
-            padding: 120px 40px 80px;
-            background: linear-gradient(rgba(255,255,255,0.55), rgba(255,255,255,0.55)), url('hero-bg.png') center/cover no-repeat;
+            padding: 0;
+            background: var(--white);
             color: var(--dark-gray);
             text-align: center;
             position: relative;
         }
         
+        .hero-photo {
+            width: 100%;
+            line-height: 0;
+        }
+        
+        .hero-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+        
+        .hero-content {
+            padding: 50px 40px 70px;
+        }
+        
         .hero-badge {
             display: inline-block;
-            background: rgba(255,255,255,0.9);
+            background: var(--light-gray);
             color: var(--dark-gray);
             padding: 8px 20px;
             border-radius: 30px;
             font-size: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
         }
         
         .hero h1 {
@@ -499,6 +515,9 @@
 
     <!-- HERO -->
     <section class="hero">
+        <div class="hero-photo">
+            <img src="hero-bg.png" alt="SUJO Engineering Consulting" />
+        </div>
         <div class="hero-content">
             <div class="hero-badge" data-fr="Kinshasa, République Démocratique du Congo" data-en="Kinshasa, Democratic Republic of Congo">
                 Kinshasa, République Démocratique du Congo
