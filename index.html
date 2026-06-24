@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUJO Engineering Consulting — Kinshasa, RDC</title>
+    <meta name="description" content="SUJO Engineering Consulting — Sourcing de pièces industrielles, conseil en ingénierie et développement de projets en RDC." />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <a href="#" class="nav-logo">
+            <img src="logo.png" alt="SUJO Engineering Consulting" class="logo">
+        </a>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#services" data-fr="Services" data-en="Services">Services</a></li>
+                <li><a href="#secteurs" data-fr="Secteurs" data-en="Sectors">Secteurs</a></li>
+                <li><a href="#apropos" data-fr="À Propos" data-en="About">À Propos</a></li>
+                <li><a href="#equipe" data-fr="Équipe" data-en="Team">Équipe</a></li>
+                <li><a href="#processus" data-fr="Notre Approche" data-en="Our Approach">Notre Approche</a></li>
+                <li><a href="#contact" class="nav-cta" data-fr="Demander un devis" data-en="Get a Quote">Demander un devis</a></li>
+            </ul>
+            
+            <div style="display:flex; align-items:center; gap:15px;">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="setLang('fr')" id="btn-fr">FR</button>
+                    <button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button>
+                </div>
+                
+                <!-- My Account Button - Now links to internal system -->
+                <a href="http://129.213.160.94/" target="_blank" class="account-btn" data-fr="Mon Compte" data-en="My Account">
+                    👤 Mon Compte
+                </a>
+                
+                <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#services" onclick="toggleMenu()" data-fr="Services" data-en="Services">Services</a>
+        <a href="#secteurs" onclick="toggleMenu()" data-fr="Secteurs" data-en="Sectors">Secteurs</a>
+        <a href="#apropos" onclick="toggleMenu()" data-fr="À Propos" data-en="About">À Propos</a>
+        <a href="#equipe" onclick="toggleMenu()" data-fr="Équipe" data-en="Team">Équipe</a>
+        <a href="#processus" onclick="toggleMenu()" data-fr="Notre Approche" data-en="Our Approach">Notre Approche</a>
+        <a href="#contact" onclick="toggleMenu()" data-fr="Demander un devis" data-en="Get a Quote">Demander un devis</a>
+        <a href="http://129.213.160.94/" onclick="toggleMenu()" target="_blank" data-fr="Mon Compte" data-en="My Account">👤 Mon Compte</a>
+    </div>
+
+    <!-- REST OF YOUR WEBSITE (Hero, Services, etc.) -->
+    <!-- [Your existing sections remain unchanged] -->
+
+    <script>
+        let currentLang = 'fr';
+        
+        function setLang(lang) {
+            currentLang = lang;
+            document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            
+            document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+                const text = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+                if (el.tagName === 'H1' || el.tagName === 'H3' || el.tagName === 'H4' || el.classList.contains('section-title')) {
+                    el.innerHTML = text;
+                } else {
+                    el.textContent = text;
+                }
+            });
+            document.documentElement.lang = lang;
+        }
+
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+        }
+
+        // Close mobile menu when clicking links
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.remove('open');
+            });
+        });
+
+        // Scroll active nav
+        window.addEventListener('scroll', () => {
+            let current = '';
+            document.querySelectorAll('section[id]').forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 150) current = section.getAttribute('id');
+            });
+            
+            document.querySelectorAll('.nav-links a').forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
