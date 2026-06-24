@@ -272,9 +272,12 @@ nav {
 /* SECTORS */
 .pills {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;      /* forces everything on one line */
     gap: 15px;
-    justify-content: center;
+    justify-content: flex-start;
+    overflow-x: auto;       /* allows scrolling if too long */
+    padding-bottom: 10px;   /* avoids scroll bar touching pills */
+    white-space: nowrap;
 }
 
 .pill {
@@ -283,7 +286,9 @@ nav {
     border-radius: 50px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     font-weight: 500;
+    white-space: nowrap;    /* prevents emoji/text from breaking */
 }
+
 
 /* ABOUT */
 .about-grid {
