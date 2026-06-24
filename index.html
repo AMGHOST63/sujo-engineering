@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUJO Engineering Consulting — Kinshasa, RDC</title>
+    <meta name="description" content="SUJO Engineering Consulting est spécialisée dans le sourcing de pièces, le conseil en ingénierie et le développement de projets industriels en RDC." />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-red: #c40000;
+            --dark-gray: #2b2b2b;
+            --light-gray: #f2f2f2;
+            --white: #ffffff;
+            --red: #c40000;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: var(--white);
+            color: var(--dark-gray);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        /* HEADER */
+        header {
+            background: var(--white);
+            padding: 15px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 3px solid var(--primary-red);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            height: 80px;
+        }
+        
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-red);
+        }
+        
+        .nav-cta {
+            background: var(--primary-red);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 6px;
+        }
+        
+        .nav-internal {
+            border: 1.5px solid #ccc;
+            color: var(--dark-gray) !important;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            opacity: 0.75;
+            transition: 0.3s;
+        }
+        
+        .nav-internal:hover {
+            opacity: 1;
+            border-color: var(--dark-gray);
+            background: var(--light-gray);
+        }
+        
+        .lang-switcher {
+            display: flex;
+            border: 2px solid var(--primary-red);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        
+        .lang-btn {
+            padding: 6px 14px;
+            background: none;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .lang-btn.active {
+            background: var(--primary-red);
+            color: white;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            margin-left: 10px;
+        }
+        
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background: var(--dark-gray);
+            transition: all 0.3s;
+        }
+        
+        /* HERO */
+        .hero {
+            padding: 0;
+            background: var(--white);
+            color: var(--dark-gray);
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-photo {
+            width: 100%;
+            line-height: 0;
+        }
+        
+        .hero-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+        
+        .hero-content {
+            padding: 50px 40px 70px;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: var(--light-gray);
+            color: var(--dark-gray);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        }
+        
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            color: var(--dark-gray);
+        }
+        
+        .hero h1 span {
+            color: var(--primary-red);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--dark-gray);
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-red {
+            background: var(--primary-red);
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        
+        .btn-red:hover {
+            background: #a00000;
+            transform: translateY(-3px);
+        }
+        
+        .btn-outline {
+            border: 2px solid var(--dark-gray);
+            color: var(--dark-gray);
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        
+        .btn-outline:hover {
+            background: var(--dark-gray);
+            color: white;
+        }
+        
+        /* SERVICES */
+        .services-bg {
+            padding: 100px 40px;
+            background: var(--light-gray);
+        }
+        
+        .section-label {
+            color: var(--primary-red);
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            color: var(--dark-gray);
+        }
+        
+        .red-line {
+            width: 80px;
+            height: 4px;
+            background: var(--primary-red);
+            margin-bottom: 25px;
+        }
+        
+        .section-sub {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin-bottom: 60px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        
+        .svc-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+        
+        .svc-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(196, 0, 0, 0.15);
+        }
+        
+        .svc-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        /* SECTORS */
+        .pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .pill {
+            background: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            font-weight: 500;
+        }
+        
+        /* ABOUT */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        
+        .team-card {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+        }
+        
+        .avatar {
+            width: 70px;
+            height: 70px;
+            background: var(--primary-red);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        /* MEET OUR TEAM */
+        .team-bg {
+            padding: 100px 40px;
+            background: white;
+        }
+
+        .team-profile {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 50px;
+            align-items: start;
+            background: var(--light-gray);
+            border-radius: 16px;
+            padding: 45px;
+        }
+
+        .team-photo-wrap {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .team-photo {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .team-bio-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-gray);
+        }
+
+        .team-bio-role {
+            font-size: 1.05rem;
+            color: var(--primary-red);
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .team-bio p {
+            margin-bottom: 16px;
+            font-size: 1rem;
+            color: #444;
+        }
+
+        .team-creds {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 2px solid #e2e2e2;
+        }
+
+        .cred-item {
+            background: white;
+            border-radius: 8px;
+            padding: 14px 16px;
+            border-left: 3px solid var(--primary-red);
+        }
+
+        .cred-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--primary-red);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .cred-val {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .team-profile {
+                grid-template-columns: 1fr;
+                padding: 25px;
+            }
+            .team-photo {
+                height: 300px;
+            }
+            .team-creds {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* PROCESS */
+        .process-bg {
+            padding: 100px 40px;
+            background: white;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+        }
+        
+        .step {
+            position: relative;
+        }
+        
+        .step-num {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-red);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        /* CONTACT */
+        .contact-bg {
+            padding: 100px 40px;
+            background: var(--light-gray);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+        
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+        
+        .form-card {
+            background: white;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .form-row2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+        
+        .submit-btn {
+            background: var(--primary-red);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        /* FOOTER */
+        footer {
+            background: var(--dark-gray);
+            color: white;
+            padding: 80px 40px 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+        }
+        
+        footer h4 {
+            color: var(--primary-red);
+            margin-bottom: 20px;
+        }
+        
+        .footer-bottom {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #555;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+        
+        .social-icons a {
+            margin-right: 15px;
+        }
+        
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 992px) {
+            header {
+                padding: 15px 20px;
+            }
+            
+            .nav-links {
+                gap: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 12px 20px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+            
+            .hero-content {
+                padding: 40px 20px 60px;
+            }
+            
+            .services-bg,
+            .team-bg,
+            .process-bg,
+            .contact-bg {
+                padding: 70px 20px;
+            }
+            
+            .about-grid,
+            .contact-grid,
+            .team-profile {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pills {
+                justify-content: center;
+            }
+            
+            .pill {
+                padding: 10px 18px;
+                font-size: 0.95rem;
+            }
+            
+            .form-card {
+                padding: 35px 25px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .mobile-menu {
+                padding: 80px 25px;
+            }
+            
+            .mobile-menu a {
+                font-size: 1.3rem;
+            }
+        }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0,0,0,0.98);
+            z-index: 2000;
+            padding: 90px 30px 40px;
+            color: white;
+            overflow-y: auto;
+        }
+        
+        .mobile-menu.open {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .mobile-menu a {
+            display: block;
+            padding: 18px 0;
+            font-size: 1.35rem;
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <a href="#" class="nav-logo">
+            <img src="logo.png" alt="SUJO Engineering Consulting" class="logo">
+        </a>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#services" data-fr="Services" data-en="Services">Services</a></li>
+                <li><a href="#secteurs" data-fr="Secteurs" data-en="Sectors">Secteurs</a></li>
+                <li><a href="#apropos" data-fr="À Propos" data-en="About">À Propos</a></li>
+                <li><a href="#equipe" data-fr="Équipe" data-en="Team">Équipe</a></li>
+                <li><a href="#processus" data-fr="Notre Approche" data-en="Our Approach">Notre Approche</a></li>
+                <li><a href="#contact" class="nav-cta" data-fr="Demander un devis" data-en="Get a Quote">Demander un devis</a></li>
+                <li><a href="http://129.213.160.94/" target="_blank" rel="noopener" class="nav-internal" data-fr="Mon Compte" data-en="My Account" title="Internal use only">My Account</a></li>
+            </ul>
+            
+            <div style="display:flex; align-items:center; gap:20px;">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="setLang('fr')" id="btn-fr">FR</button>
+                    <button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button>
+                </div>
+                <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#services" onclick="toggleMenu()" data-fr="Services" data-en="Services">Services</a>
+        <a href="#secteurs" onclick="toggleMenu()" data-fr="Secteurs" data-en="Sectors">Secteurs</a>
+        <a href="#apropos" onclick="toggleMenu()" data-fr="À Propos" data-en="About">À Propos</a>
+        <a href="#equipe" onclick="toggleMenu()" data-fr="Équipe" data-en="Team">Équipe</a>
+        <a href="#processus" onclick="toggleMenu()" data-fr="Notre Approche" data-en="Our Approach">Notre Approche</a>
+        <a href="#contact" onclick="toggleMenu()" data-fr="Demander un devis" data-en="Get a Quote">Demander un devis</a>
+        <a href="http://129.213.160.94/" target="_blank" rel="noopener" style="opacity:0.7; font-size:1.1rem;" data-fr="Mon Compte" data-en="My Account">My Account</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-photo">
+            <img src="hero-bg.png" alt="SUJO Engineering Consulting" />
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge" data-fr="Kinshasa, République Démocratique du Congo" data-en="Kinshasa, Democratic Republic of Congo">
+                Kinshasa, République Démocratique du Congo
+            </div>
+            <div class="hero-btns">
+                <a href="#contact" class="btn-red" data-fr="Demander un devis gratuit" data-en="Request a Free Quote">
+                    Demander un devis gratuit
+                </a>
+                <a href="#services" class="btn-outline" data-fr="Nos services" data-en="Our Services">
+                    Nos services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="services-bg">
+        <div class="section-label" data-fr="Ce que nous faisons" data-en="What we do">Ce que nous faisons</div>
+        <div class="section-title" data-fr="Nos Services" data-en="Our Services">Nos Services</div>
+        <div class="red-line"></div>
+        <div class="section-sub" data-fr="Renforcer les secteurs industriels clés de la RDC grâce à des capacités d'ingénierie et d'approvisionnement de classe mondiale — du sourcing de pièces jusqu'à l'accompagnement complet de vos projets." 
+             data-en="Empowering the DRC's leading industries with world-class engineering and procurement capability — from sourcing a single part to supporting your project end to end.">
+            Renforcer les secteurs industriels clés de la RDC grâce à des capacités d'ingénierie et d'approvisionnement de classe mondiale — du sourcing de pièces jusqu'à l'accompagnement complet de vos projets.
+        <div class="services-grid">
+            <div class="svc-card">
+                <div class="svc-icon">🔧</div>
+                <h3 data-fr="Sourcing de Pièces" data-en="Parts Sourcing">Sourcing de Pièces</h3>
+                <p data-fr="Identification, qualification et approvisionnement de pièces et équipements industriels, au meilleur rapport qualité-prix." 
+                   data-en="Identifying, qualifying, and procuring industrial parts and equipment, at the best value for your project.">
+                    Identification, qualification et approvisionnement de pièces et équipements industriels, au meilleur rapport qualité-prix.
+                </p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">🛠️</div>
+                <h3 data-fr="Conseil en Ingénierie" data-en="Engineering Consulting">Conseil en Ingénierie</h3>
+                <p data-fr="Accompagnement technique sur vos choix d'équipements, de fournisseurs et de solutions d'ingénierie." 
+                   data-en="Technical guidance on equipment, suppliers, and engineering solutions for your project.">
+                    Accompagnement technique sur vos choix d'équipements, de fournisseurs et de solutions d'ingénierie.
+                </p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">📐</div>
+                <h3 data-fr="Développement de Projet" data-en="Project Development">Développement de Projet</h3>
+                <p data-fr="Appui de bout en bout dans la structuration de vos projets : cadrage technique, coordination et suivi." 
+                   data-en="End-to-end support structuring your projects: technical scoping, coordination, and follow-through.">
+                    Appui de bout en bout dans la structuration de vos projets : cadrage technique, coordination et suivi.
+                </p>
+            </div>
+            <div class="svc-card">
+                <div class="svc-icon">🧮</div>
+                <h3 data-fr="Estimation des Coûts" data-en="Cost Estimation">Estimation des Coûts</h3>
+                <p data-fr="Évaluation budgétaire complète basée sur les prix unitaires en vigueur à Kinshasa et en RDC." 
+                   data-en="Comprehensive budget evaluation based on current unit rates in Kinshasa and the DRC.">
+                    Évaluation budgétaire complète basée sur les prix unitaires en vigueur à Kinshasa et en RDC.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTORS -->
+    <section id="secteurs" class="services-bg">
+        <div class="section-label" data-fr="Domaines d'expertise" data-en="Areas of expertise">Domaines d'expertise</div>
+        <div class="section-title" data-fr="Secteurs d'Intervention" data-en="Sectors We Serve">Secteurs d'Intervention</div>
+        <div class="red-line"></div>
+        <div class="section-sub" data-fr="Nous intervenons dans les secteurs clés de l'économie congolaise." 
+             data-en="We operate in the key sectors of the Congolese economy.">
+            Nous intervenons dans les secteurs clés de l'économie congolaise.
+        </div>
+        <div class="pills">
+            <span class="pill" data-fr="🏗️ Construction &amp; Génie Civil" data-en="🏗️ Construction &amp; Civil Engineering">🏗️ Construction &amp; Génie Civil</span>
+            <span class="pill" data-fr="⛏️ Industrie Minière" data-en="⛏️ Mining Industry">⛏️ Industrie Minière</span>
+            <span class="pill" data-fr="⚡ Énergie &amp; Hydroélectricité" data-en="⚡ Energy &amp; Hydropower">⚡ Énergie &amp; Hydroélectricité</span>
+            <span class="pill" data-fr="🏢 Immobilier" data-en="🏢 Real Estate">🏢 Immobilier</span>
+            <span class="pill" data-fr="🛣️ Infrastructure Routière &amp; Ponts" data-en="🛣️ Road Infrastructure &amp; Bridges">🛣️ Infrastructure Routière &amp; Ponts</span>
+            <span class="pill" data-fr="📡 Télécommunications" data-en="📡 Telecommunications">📡 Télécommunications</span>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="apropos" class="services-bg">
+        <div class="section-label" data-fr="Qui sommes-nous" data-en="Who we are">Qui sommes-nous</div>
+        <div class="section-title" data-fr="À Propos de SUJO" data-en="About SUJO">À Propos de SUJO</div>
+        <div class="red-line"></div>
+        
+        <div class="about-grid">
+            <div class="about-text">
+                <p data-fr="SUJO Engineering Consulting est une société spécialisée dans le sourcing de pièces, le conseil en ingénierie et le développement de projets industriels en République Démocratique du Congo." 
+                   data-en="SUJO Engineering Consulting is a firm specializing in parts sourcing, engineering consulting, and project development for industrial projects in the Democratic Republic of Congo.">
+                    SUJO Engineering Consulting est une société spécialisée dans le sourcing de pièces, le conseil en ingénierie et le développement de projets industriels en République Démocratique du Congo.
+                </p>
+                <p data-fr="Fondée par Jonathan Sumaili, SUJO accompagne les entreprises de construction, sociétés minières, promoteurs immobiliers et organismes gouvernementaux dans le sourcing, le chiffrage et le développement de leurs projets d'ingénierie." 
+                   data-en="Founded by Jonathan Sumaili, SUJO supports construction companies, mining firms, real estate developers, and government agencies with sourcing, cost estimation, and engineering project development.">
+                    Fondée par Jonathan Sumaili, SUJO accompagne les entreprises de construction, sociétés minières, promoteurs immobiliers et organismes gouvernementaux dans le sourcing, le chiffrage et le développement de leurs projets d'ingénierie.
+                </p>
+                
+                <ul style="margin: 25px 0; padding-left: 20px;">
+                    <li data-fr="Expertise locale du marché congolais" data-en="Local expertise in the Congolese market">Expertise locale du marché congolais</li>
+                    <li data-fr="Connaissance des prix unitaires à Kinshasa" data-en="Knowledge of current unit rates in Kinshasa">Connaissance des prix unitaires à Kinshasa</li>
+                    <li data-fr="Réseau de fournisseurs qualifiés" data-en="A network of qualified suppliers">Réseau de fournisseurs qualifiés</li>
+                    <li data-fr="Documents livrés en français (Word, Excel, PDF)" data-en="Documents delivered in French &amp; English (Word, Excel, PDF)">Documents livrés en français (Word, Excel, PDF)</li>
+                    <li data-fr="Confidentialité garantie de vos données" data-en="Full confidentiality of your data guaranteed">Confidentialité garantie de vos données</li>
+                    <li data-fr="Réponse sous 24 heures" data-en="Response within 24 hours">Réponse sous 24 heures</li>
+                </ul>
+            </div>
+            
+            <div>
+                <img src="logo.png" alt="SUJO Logo" style="width:100%; max-width:380px; border-radius:12px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- MEET OUR TEAM -->
+    <section id="equipe" class="team-bg">
+        <div class="section-label" data-fr="Notre équipe" data-en="Our team">Notre équipe</div>
+        <div class="section-title" data-fr="Rencontrez Notre Équipe" data-en="Meet Our Team">Rencontrez Notre Équipe</div>
+        <div class="red-line"></div>
+        <div class="section-sub" data-fr="L'expertise technique et l'engagement derrière chaque projet SUJO." data-en="The technical expertise and commitment behind every SUJO project.">
+            L'expertise technique et l'engagement derrière chaque projet SUJO.
+        </div>
+
+        <div class="team-profile">
+            <div class="team-photo-wrap">
+                <img src="jonathan.png" alt="Jonathan Sumaili" class="team-photo">
+            </div>
+            <div class="team-bio">
+                <div class="team-bio-name">Jonathan Sumaili</div>
+                <div class="team-bio-role" data-fr="CEO &amp; Fondateur" data-en="CEO &amp; Founder">CEO &amp; Fondateur</div>
+
+                <p data-fr="Jonathan Sumaili est actuellement ingénieur commercial technique (Technical Sales Engineer) chez SMS group USA, à Pittsburgh, en Pennsylvanie, où il travaille avec des équipements industriels et des solutions techniques pour le secteur de la métallurgie." 
+                   data-en="Jonathan Sumaili currently works as a Technical Sales Engineer at SMS group USA in Pittsburgh, Pennsylvania, supporting industrial equipment and technical solutions for the metals industry.">
+                    Jonathan Sumaili est actuellement ingénieur commercial technique (Technical Sales Engineer) chez SMS group USA, à Pittsburgh, en Pennsylvanie, où il travaille avec des équipements industriels et des solutions techniques pour le secteur de la métallurgie.
+                </p>
+
+                <p data-fr="Il a débuté sa carrière chez Benshaw en tant que technicien électromécanique, acquérant une solide expérience pratique en systèmes électriques et mécaniques industriels." 
+                   data-en="He began his career at Benshaw as an Electro-Mechanical Technician, gaining hands-on experience with industrial electrical and mechanical systems.">
+                    Il a débuté sa carrière chez Benshaw en tant que technicien électromécanique, acquérant une solide expérience pratique en systèmes électriques et mécaniques industriels.
+                </p>
+
+                <p data-fr="Jonathan a étudié le génie informatique (Computer Engineering) à Penn West University et détient également un diplôme en génie électronique du Westmoreland County Community College." 
+                   data-en="Jonathan studied Computer Engineering at Penn West University and also holds a degree in Electronics Engineering from Westmoreland County Community College.">
+                    Jonathan a étudié le génie informatique (Computer Engineering) à Penn West University et détient également un diplôme en génie électronique du Westmoreland County Community College.
+                </p>
+
+                <p data-fr="C'est cette combinaison d'expertise technique en ingénierie et d'expérience commerciale qui l'a poussé à fonder SUJO Engineering Consulting — pour offrir aux entreprises et institutions de la RDC un sourcing et un accompagnement de projet rigoureux et fiables." 
+                   data-en="It is this combination of technical engineering expertise and sales experience that led him to found SUJO Engineering Consulting — bringing rigorous, reliable sourcing and project support to companies and institutions across the DRC.">
+                    C'est cette combinaison d'expertise technique en ingénierie et d'expérience commerciale qui l'a poussé à fonder SUJO Engineering Consulting — pour offrir aux entreprises et institutions de la RDC un sourcing et un accompagnement de projet rigoureux et fiables.
+                </p>
+
+                <div style="margin-top: 30px; padding: 20px; background: white; border-radius: 8px; border-left: 4px solid var(--primary-red);">
+            
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="processus" class="process-bg">
+        <div class="section-label" data-fr="Comment ça marche" data-en="How it works">Comment ça marche</div>
+        <div class="section-title" data-fr="Notre Approche" data-en="Our Approach">Notre Approche</div>
+        <div class="red-line"></div>
+        <div class="section-sub" data-fr="Un processus simple et transparent du premier contact à la livraison." 
+             data-en="A simple and transparent process from first contact to final delivery.">
+            Un processus simple et transparent du premier contact à la livraison.
+        </div>
+        
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <h4 data-fr="Prise de Contact" data-en="Initial Contact">Prise de Contact</h4>
+                <p data-fr="Envoyez-nous votre projet via le formulaire ou WhatsApp" 
+                   data-en="Send us your project via the form or WhatsApp">
+                    Envoyez-nous votre projet via le formulaire ou WhatsApp
+                </p>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <h4 data-fr="Cadrage du Besoin" data-en="Scoping Your Needs">Cadrage du Besoin</h4>
+                <p data-fr="Transmettez vos plans, spécifications ou listes de pièces" 
+                   data-en="Share your drawings, specifications, or parts lists">
+                    Transmettez vos plans, spécifications ou listes de pièces
+                </p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <h4 data-fr="Sourcing &amp; Chiffrage" data-en="Sourcing &amp; Estimating">Sourcing &amp; Chiffrage</h4>
+                <p data-fr="Nous identifions les fournisseurs et préparons l'estimation détaillée" 
+                   data-en="We identify suppliers and prepare a detailed cost estimate">
+                    Nous identifions les fournisseurs et préparons l'estimation détaillée
+                </p>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <h4 data-fr="Livraison" data-en="Delivery">Livraison</h4>
+                <p data-fr="Vous recevez vos documents en Word, Excel et PDF" 
+                   data-en="You receive your documents in Word, Excel and PDF">
+                    Vous recevez vos documents en Word, Excel et PDF
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-bg">
+        <div class="contact-grid">
+            <div>
+                <div class="section-label" data-fr="Parlons de votre projet" data-en="Let's talk about your project">Parlons de votre projet</div>
+                <div class="section-title" data-fr="Contactez-Nous" data-en="Contact Us">Contactez-Nous</div>
+                <div class="red-line"></div>
+                <div class="section-sub" data-fr="Envoyez-nous votre demande de sourcing, vos plans de projet ou vos questions techniques. Notre équipe vous répondra dans les 24 heures." 
+                     data-en="Send us your sourcing request, project drawings, or technical questions. Our team will respond within 24 hours.">
+                    Envoyez-nous votre demande de sourcing, vos plans de projet ou vos questions techniques. Notre équipe vous répondra dans les 24 heures.
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <span data-fr="Kinshasa, République Démocratique du Congo" data-en="Kinshasa, Democratic Republic of Congo">
+                        Kinshasa, République Démocratique du Congo
+                    </span>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <a href="mailto:contact@sujo-engineering.com">contact@sujo-engineering.com</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <a href="tel:+14123453307">+1 412 345 3307</a>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">💬</div>
+                    <a href="https://wa.me/14123453307" target="_blank">WhatsApp: +1 412 345 3307</a>
+                </div>
+            </div>
+            
+            <div class="form-card">
+                <form action="https://formspree.io/f/xdavjraa" method="POST">
+                    <div class="form-row2">
+                        <div class="form-group">
+                            <label data-fr="Nom complet" data-en="Full name">Nom complet</label>
+                            <input type="text" name="name" id="f-name" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-fr="Société" data-en="Company">Société</label>
+                            <input type="text" name="company" id="f-company" placeholder="Nom de votre société">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-fr="Email ou WhatsApp" data-en="Email or WhatsApp">Email ou WhatsApp</label>
+                        <input type="text" name="email" id="f-email" placeholder="email@exemple.com ou +243..." required>
+                    </div>
+                    <div class="form-group">
+                        <label data-fr="Type de projet" data-en="Project type">Type de projet</label>
+                        <select name="project_type" id="f-type">
+                            <option value="">Sélectionner...</option>
+                            <option>Construction / Génie Civil</option>
+                            <option>Industrie Minière</option>
+                            <option>Énergie &amp; Hydroélectricité</option>
+                            <option>Immobilier</option>
+                            <option>Infrastructure Routière</option>
+                            <option>Télécommunications</option>
+                            <option>Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label data-fr="Description du projet" data-en="Project description">Description du projet</label>
+                        <textarea name="message" id="f-desc" rows="5" placeholder="Décrivez brièvement votre projet..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn" data-fr="Envoyer la demande ✓" data-en="Send Request ✓">
+                        Envoyer la demande ✓
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <img src="logo.png" alt="SUJO Logo" style="height:90px; margin-bottom:20px;">
+                <p>SUJO Engineering Consulting SARL</p>
+                <p>Kinshasa, RDC </p>
+            </div>
+            <div>
+                <h4 data-fr="Services" data-en="Services">Services</h4>
+                <p>Sourcing de Pièces</p>
+                <p>Conseil en Ingénierie</p>
+                <p>Développement de Projet</p>
+                <p>Estimation des Coûts</p>
+            </div>
+            <div>
+                <h4 data-fr="Contact" data-en="Contact">Contact</h4>
+                <p>DRC: +243 974 570 630</p>
+                <p>US: +1 412 345 3307</p>
+                <p><a href="mailto:contact@sujo-engineering.com" style="color:white;">contact@sujo-engineering.com</a></p>
+            </div>
+            <div>
+                <h4 data-fr="Suivez-nous" data-en="Follow Us">Suivez-nous</h4>
+                <div class="social-icons">
+                    <a href="#" style="color:white;">LinkedIn</a><br>
+                    <a href="#" style="color:white;">Facebook</a><br>
+                    <a href="#" style="color:white;">Instagram</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            © 2026 SUJO Engineering Consulting SARL. Tous droits réservés.
+        </div>
+    </footer>
+
+    <script>
+        let currentLang = 'fr';
+        
+        function setLang(lang) {
+            currentLang = lang;
+            
+            // Toggle active buttons
+            document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            
+            // Update all translatable elements
+            document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+                const text = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+                
+                if (el.tagName === 'H1' || el.tagName === 'H3' || el.tagName === 'H4' || el.classList.contains('section-title')) {
+                    el.innerHTML = text;
+                } else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                    if (el.placeholder) el.placeholder = text;
+                } else {
+                    el.textContent = text;
+                }
+            });
+            
+            // Update document language
+            document.documentElement.lang = lang;
+        }
+        
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('open');
+        }
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.remove('open');
+            });
+        });
+        
+        // Form success simulation (Formspree handles real submission)
+        const form = document.querySelector('form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                // Formspree will handle redirect/success
+            });
+        }
+        
+        // Scroll active nav
+        window.addEventListener('scroll', () => {
+            let current = '';
+            document.querySelectorAll('section[id]').forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            document.querySelectorAll('.nav-links a').forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href') === '#' + current) {
+                    a.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
