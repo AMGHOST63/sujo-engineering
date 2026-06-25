@@ -113,18 +113,17 @@ section { padding: 72px 5%; }
 .red-line { width: 44px; height: 4px; background: var(--red); border-radius: 2px; margin: 10px 0 24px; }
 
 /* ── SERVICES ── */
-.services-bg { background: var(--bg-light); }
-.service-card {
-    display: inline-block;
-    vertical-align: top;
-    width: 300px; /* adjust as needed */
-    margin-right: 20px;
-    white-space: normal;
+.services-grid {
+    display: flex;
+    flex-wrap: nowrap;      /* keep everything on one line */
+    gap: 30px;              /* spacing between cards */
+    overflow-x: auto;       /* allow horizontal scroll on small screens */
+    padding-bottom: 10px;
 }
 
-.services-wrapper {
-    white-space: nowrap;
-    overflow-x: auto;
+.svc-card {
+    flex: 0 0 auto;         /* prevent shrinking */
+    min-width: 300px;       /* ensures readable width */
 }
 
 
