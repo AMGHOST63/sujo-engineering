@@ -114,14 +114,19 @@ section { padding: 72px 5%; }
 
 /* ── SERVICES ── */
 .services-bg { background: var(--bg-light); }
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.services-grid {
+    display: flex;
+    flex-wrap: nowrap;      /* prevents wrapping */
+    gap: 30px;
+    overflow-x: auto;       /* allows horizontal scroll if needed */
+    padding-bottom: 10px;   /* spacing for scroll bar */
+}
 
 .svc-card {
-  background: var(--white); border: 1px solid var(--border);
-  border-radius: 14px; padding: 28px 22px;
-  transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
-  border-top: 3px solid transparent;
+    min-width: 340px;       /* keeps each card readable */
+    flex-shrink: 0;         /* prevents cards from shrinking */
 }
+
 .svc-card:hover { box-shadow: 0 10px 32px rgba(139,26,26,0.1); transform: translateY(-4px); border-top-color: var(--red); }
 
 .svc-icon { width: 50px; height: 50px; border-radius: 12px; background: var(--red-light); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 24px; }
