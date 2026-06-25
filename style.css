@@ -114,18 +114,19 @@ section { padding: 72px 5%; }
 
 /* ── SERVICES ── */
 .services-bg { background: var(--bg-light); }
-.services-grid {
-    display: flex;
-    flex-wrap: nowrap;      /* prevents wrapping */
-    gap: 30px;
-    overflow-x: auto;       /* allows horizontal scroll if needed */
-    padding-bottom: 10px;   /* spacing for scroll bar */
+.service-card {
+    display: inline-block;
+    vertical-align: top;
+    width: 300px; /* adjust as needed */
+    margin-right: 20px;
+    white-space: normal;
 }
 
-.svc-card {
-    min-width: 340px;       /* keeps each card readable */
-    flex-shrink: 0;         /* prevents cards from shrinking */
+.services-wrapper {
+    white-space: nowrap;
+    overflow-x: auto;
 }
+
 
 .svc-card:hover { box-shadow: 0 10px 32px rgba(139,26,26,0.1); transform: translateY(-4px); border-top-color: var(--red); }
 
