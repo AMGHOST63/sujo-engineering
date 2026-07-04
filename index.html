@@ -13,71 +13,89 @@
 
     <!-- NAV BAR -->
     <header>
-        <a href="index.html" class="nav-logo">
-            <img src="logo.png" alt="SUJO" style="height: 50px;">
-        </a>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Accueil</a></li>
-                <li><a href="about.html">À Propos</a></li>
-                <li class="dropdown">
-                    <a href="products.html">Produits ▾</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="product-mechanical.html">Composants Mécaniques</a></li>
-                        <li><a href="product-automation.html">Automatisation &amp; Mouvement</a></li>
-                        <li><a href="product-hydraulics.html">Hydraulique &amp; Pneumatique</a></li>
-                        <li><a href="product-safety.html">Sécurité Industrielle</a></li>
-                        <li><a href="product-transmission.html">Transmission de Puissance</a></li>
-                        <li><a href="product-lubrication.html">Lubrification Industrielle</a></li>
-                    </ul>
-                </li>
-                <li><a href="brands.html">Marques</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="quote.html" class="btn btn-primary" style="padding: 8px 16px;">Demander un devis</a></li>
-            </ul>
+  <!-- HEADER SECTION -->
+<header class="main-header">
+    <div class="header-container">
+        <div class="logo">IndustrialStore</div>
+        
+        <nav class="nav-menu">
+            <a href="#hero">Home</a>
+            <a href="#categories">Products</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact us</a>
         </nav>
-    </header>
 
-    <!-- 1. COMPONENT: HERO SECTION -->
-    <section class="hero-viewport" style="background-image: url('hero-industrial-bg.jpg');">
-        <div class="hero-overlay"></div>
-        <div class="hero-container">
-            <h1 class="hero-title">Engineering Solutions Trusted by Construction, Mining, and Infrastructure Companies</h1>
-            <div class="hero-actions">
-                <a href="quote.html" class="btn btn-primary">Request Quote</a>
-                <a href="#services" class="btn btn-outline">Explore Services</a>
+        <div class="header-actions">
+            <!-- Language Switcher Button -->
+            <button id="lang-switch" class="btn-lang" onclick="toggleLanguage()">FR</button>
+            <!-- Dolibarr Account Button -->
+            <a href="https://your-dolibarr-server.com" target="_blank" class="btn-account">
+                👤 My Account
+            </a>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-nav-toggle" aria-label="Toggle navigation">☰</button>
+        </div>
+    </div>
+</header>
+
+<!-- HERO SECTION -->
+<section id="hero" class="hero-section">
+    <div class="hero-content">
+        <h1 data-en="Industrial Equipment & Components" data-fr="Équipements & Composants Industriels">Industrial Equipment & Components</h1>
+        <p data-en="Your premium partner for mechanical, hydraulic, and electronic engineering supply." data-fr="Votre partenaire de choix pour l'approvisionnement en ingénierie mécanique, hydraulique et électronique.">Your premium partner for mechanical, hydraulic, and electronic engineering supply.</p>
+        <a href="#contact" class="btn-primary" data-en="Contact us" data-fr="Contactez-nous">Contact us</a>
+    </div>
+</section>
+
+<!-- CATEGORIES SECTION -->
+<section id="categories" class="container">
+    <div class="section-header">
+        <h2 data-en="Our Product Categories" data-fr="Nos Catégories de Produits">Our Product Categories</h2>
+    </div>
+    <div class="grid-3">
+        <div class="cat-card cat-mechanical">
+            <div class="card-overlay">
+                <h3 data-en="Mechanical & Linear Motion" data-fr="Mécanique & Guidage Linéaire">Mechanical & Linear Motion</h3>
             </div>
         </div>
-    </section>
+        <div class="cat-card cat-hydraulics">
+            <div class="card-overlay">
+                <h3 data-en="Hydraulics & Pneumatics" data-fr="Hydraulique & Pneumatique">Hydraulics & Pneumatics</h3>
+            </div>
+        </div>
+        <div class="cat-card cat-electronics">
+            <div class="card-overlay">
+                <h3 data-en="Electronics & Automation" data-fr="Électronique & Automatisme">Electronics & Automation</h3>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- 2. COMPONENT: SERVICES SECTION (4 CARDS INTERFACE) -->
- <!-- 2. COMPONENT: SERVICES SECTION (UPDATED) -->
+<!-- SERVICES SECTION -->
 <section id="services" class="container">
     <div class="section-header">
-        <div class="section-label">Expertise Technique</div>
-        <h2 class="section-title">Nos Services d'Ingénierie</h2>
+        <h2 data-en="Our Engineering Services" data-fr="Nos Services d'Ingénierie">Our Engineering Services</h2>
     </div>
     <div class="grid-4">
-        <!-- Add the corresponding class to each card -->
-        <div class="card-system svc-card svc-consulting">
-            <div class="card-icon">📐</div>
-            <h3>Conseil en Ingénierie</h3>
-            <!-- ... rest of content -->
+        <div class="svc-card svc-consulting">
+            <div class="svc-overlay">
+                <h3 data-en="Engineering Consultation" data-fr="Conseil en Ingénierie">Engineering Consultation</h3>
+            </div>
         </div>
-        <div class="card-system svc-card svc-cost">
-            <div class="card-icon">🧮</div>
-            <h3>Estimation des Coûts</h3>
-            <!-- ... rest of content -->
+        <div class="svc-card svc-cost">
+            <div class="svc-overlay">
+                <h3 data-en="Cost Estimation" data-fr="Estimation des Coûts">Cost Estimation</h3>
+            </div>
         </div>
-        <div class="card-system svc-card svc-project">
-            <div class="card-icon">🛠️</div>
-            <h3>Développement de Projet</h3>
-            <!-- ... rest of content -->
+        <div class="svc-card svc-project">
+            <div class="svc-overlay">
+                <h3 data-en="Project Development" data-fr="Développement de Projet">Project Development</h3>
+            </div>
         </div>
-        <div class="card-system svc-card svc-sourcing">
-            <div class="card-icon">🔬</div>
-            <h3>Études Techniques</h3>
-            <!-- ... rest of content -->
+        <div class="svc-card svc-sourcing">
+            <div class="svc-overlay">
+                <h3 data-en="Part Sourcing" data-fr="Études & Sourcing">Part Sourcing</h3>
+            </div>
         </div>
     </div>
 </section>
@@ -240,6 +258,41 @@
             &copy; 2026 SUJO Engineering Consulting SARL. All rights reserved.
         </div>
     </footer>
+<script>
+    // --- 1. Mobile Menu Drawer Toggle ---
+    const navToggle = document.querySelector('.mobile-nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if(navToggle) {
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+        });
+    }
+
+    // --- 2. English / French Switch Engine ---
+    let currentLang = 'EN';
+
+    function toggleLanguage() {
+        currentLang = currentLang === 'EN' ? 'FR' : 'EN';
+        document.getElementById('lang-switch').textContent = currentLang === 'EN' ? 'FR' : 'EN';
+        
+        // Translate Header Navigation Links
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        const translations = {
+            EN: ['Home', 'Products', 'Services', 'Contact us'],
+            FR: ['Accueil', 'Produits', 'Services', 'Contactez-nous']
+        };
+        navLinks.forEach((link, idx) => {
+            if(translations[currentLang][idx]) link.textContent = translations[currentLang][idx];
+        });
+
+        // Translate Text Blocks holding data-en & data-fr tags
+        document.querySelectorAll('[data-en]').forEach(el => {
+            el.textContent = currentLang === 'EN' ? el.getAttribute('data-en') : el.getAttribute('data-fr');
+        });
+    }
+</script>
 
 </body>
 </html>
