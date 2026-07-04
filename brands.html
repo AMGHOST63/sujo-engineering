@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Constructeurs Intégrés — SUJO</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="nav-logo"><img src="logo.png" alt="SUJO" style="height: 50px;"></a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À Propos</a></li>
+                <li><a href="products.html">Produits</a></li>
+                <li><a href="brands.html" class="active">Marques</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="section-header" style="text-align: left;">
+            <div class="section-label">Enterprise Matrix</div>
+            <h1 class="section-title">Écosystème de Marques Prises en Charge</h1>
+            <div class="filter-wrapper" style="margin-top: 24px;">
+                <input type="text" id="brandSearch" class="form-control" placeholder="Rechercher un constructeur ou type de produit... / Search brand matrix..." onkeyup="filterBrands()" style="max-width: 450px;">
+            </div>
+        </div>
+
+        <div class="grid-3" id="brandMatrix" style="margin-top: 40px;">
+            <!-- BRAND CARD: SKF -->
+            <div class="brand-enterprise-card" data-search="skf bearings mechanical">
+                <div class="brand-hero-logo"><img src="skf-logo.png" alt="SKF Logo"></div>
+                <div class="brand-body">
+                    <div class="brand-meta-label">Mechanical / Bearings</div>
+                    <h3>SKF Group</h3>
+                    <p>Intégration complète des roulements haute vélocité, paliers auto-aligneurs et outils d'analyse vibratoire.</p>
+                    <div class="pills-container">
+                        <span class="pill-node">Paliers</span><span class="pill-node">Rotations</span>
+                    </div>
+                    <a href="brand-skf.html" class="btn-text" style="margin-top: 24px;">Learn More →</a>
+                </div>
+            </div>
+
+            <!-- BRAND CARD: BOSCH -->
+            <div class="brand-enterprise-card" data-search="bosch rexroth hydraulics fluid">
+                <div class="brand-hero-logo"><img src="bosch-logo.png" alt="Bosch Rexroth Logo"></div>
+                <div class="brand-body">
+                    <div class="brand-meta-label">Fluid Power / Control</div>
+                    <h3>Bosch Rexroth</h3>
+                    <p>Déploiement de blocs de distribution proportionnels, pompes à pistons axiaux et systèmes de commande linéaires.</p>
+                    <div class="pills-container">
+                        <span class="pill-node">Hydraulique</span><span class="pill-node">Vannes</span>
+                    </div>
+                    <a href="brand-bosch.html" class="btn-text" style="margin-top: 24px;">Learn More →</a>
+                </div>
+            </div>
+
+            <!-- BRAND CARD: SIEMENS -->
+            <div class="brand-enterprise-card" data-search="siemens automation plc electricity">
+                <div class="brand-hero-logo"><img src="siemens-logo.png" alt="Siemens Logo"></div>
+                <div class="brand-body">
+                    <div class="brand-meta-label">Industrial Automation</div>
+                    <h3>Siemens AG</h3>
+                    <p>Conception d'architectures d'automates programmables S7-1200/1500, pupitres IHM et réseaux de terrain Profinet.</p>
+                    <div class="pills-container">
+                        <span class="pill-node">PLC</span><span class="pill-node">IHM Simatic</span>
+                    </div>
+                    <a href="brand-siemens.html" class="btn-text" style="margin-top: 24px;">Learn More →</a>
+                </div>
+            </div>
+
+            <!-- BRAND CARD: ABB -->
+            <div class="brand-enterprise-card" data-search="abb electrical drive power">
+                <div class="brand-hero-logo"><img src="abb-logo.png" alt="ABB Logo"></div>
+                <div class="brand-body">
+                    <div class="brand-meta-label">Electrical Systems</div>
+                    <h3>ABB Industrial</h3>
+                    <p>Spécification de variateurs de fréquence forte puissance, disjoncteurs moteurs de tête et contacteurs réseaux.</p>
+                    <div class="pills-container">
+                        <span class="pill-node">Drives</span><span class="pill-node">Distribution</span>
+                    </div>
+                    <a href="brand-abb.html" class="btn-text" style="margin-top: 24px;">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
