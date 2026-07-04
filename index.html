@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUJO Engineering Consulting — Kinshasa, RDC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <!-- NAV BAR -->
+    <header>
+        <a href="index.html" class="nav-logo">
+            <img src="logo.png" alt="SUJO" style="height: 50px;">
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="about.html">À Propos</a></li>
+                <li class="dropdown">
+                    <a href="products.html">Produits ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="product-mechanical.html">Composants Mécaniques</a></li>
+                        <li><a href="product-automation.html">Automatisation &amp; Mouvement</a></li>
+                        <li><a href="product-hydraulics.html">Hydraulique &amp; Pneumatique</a></li>
+                        <li><a href="product-safety.html">Sécurité Industrielle</a></li>
+                        <li><a href="product-transmission.html">Transmission de Puissance</a></li>
+                        <li><a href="product-lubrication.html">Lubrification Industrielle</a></li>
+                    </ul>
+                </li>
+                <li><a href="brands.html">Marques</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="quote.html" class="btn btn-primary" style="padding: 8px 16px;">Demander un devis</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 1. COMPONENT: HERO SECTION -->
+    <section class="hero-viewport" style="background-image: url('hero-industrial-bg.jpg');">
+        <div class="hero-overlay"></div>
+        <div class="hero-container">
+            <h1 class="hero-title">Engineering Solutions Trusted by Construction, Mining, and Infrastructure Companies</h1>
+            <div class="hero-actions">
+                <a href="quote.html" class="btn btn-primary">Request Quote</a>
+                <a href="#services" class="btn btn-outline">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. COMPONENT: SERVICES SECTION (4 CARDS INTERFACE) -->
+    <section id="services" class="container">
+        <div class="section-header">
+            <div class="section-label">Expertise Technique</div>
+            <h2 class="section-title">Nos Services d'Ingénierie</h2>
+        </div>
+        <div class="grid-4">
+            <div class="card-system">
+                <div class="card-icon">📐</div>
+                <h3>Conseil en Ingénierie</h3>
+                <p>Validation de spécifications, choix techniques d'équipements complexes et optimisation opérationnelle.</p>
+                <a href="engineering.html" class="btn-text">Learn More →</a>
+            </div>
+            <div class="card-system">
+                <div class="card-icon">🧮</div>
+                <h3>Estimation des Coûts</h3>
+                <p>Analyse budgétaire rigoureuse des projets de génie civil et d'équipements basée sur le marché local.</p>
+                <a href="cost-estimation.html" class="btn-text">Learn More →</a>
+            </div>
+            <div class="card-system">
+                <div class="card-icon">🛠️</div>
+                <h3>Développement de Projet</h3>
+                <p>Coordination technique de bout en bout et suivi rigoureux de déploiement d'infrastructure industrielle.</p>
+                <a href="project-development.html" class="btn-text">Learn More →</a>
+            </div>
+            <div class="card-system">
+                <div class="card-icon">🔬</div>
+                <h3>Études Techniques</h3>
+                <p>Modélisation structurelle, calculs de charges complexes et audits de conformité aux normes internationales.</p>
+                <a href="technical-studies.html" class="btn-text">Learn More →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. COMPONENT: INDUSTRIES SECTION -->
+    <section id="industries" style="background: rgba(255,255,255,0.01); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Secteurs Clés</div>
+                <h2 class="section-title">Secteurs d'Intervention</h2>
+            </div>
+            <div class="grid-3">
+                <div class="card-system">
+                    <div class="card-icon">🏗️</div>
+                    <h3>Construction &amp; Génie Civil</h3>
+                    <p>Calculs structurels et supervision d'infrastructures de grande envergure.</p>
+                </div>
+                <div class="card-system">
+                    <div class="card-icon">⛏️</div>
+                    <h3>Industrie Minière</h3>
+                    <p>Optimisation de process d'extraction complexes et gestion des fluides industriels.</p>
+                </div>
+                <div class="card-system">
+                    <div class="card-icon">⚡</div>
+                    <h3>Énergie &amp; Hydroélectricité</h3>
+                    <p>Développement de réseaux de distribution et infrastructures de production d'énergie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. COMPONENT: FEATURED BRANDS COMPONENT -->
+    <section class="container">
+        <div class="section-header">
+            <div class="section-label">Partenaires Technologiques</div>
+            <h2 class="section-title">Marques Représentées</h2>
+        </div>
+        <div class="grid-4">
+            <div class="brand-enterprise-card">
+                <div class="brand-hero-logo"><img src="skf-logo.png" alt="SKF"></div>
+                <div class="brand-body">
+                    <div class="brand-meta-label">Roulements &amp; Unités</div>
+                    <h3>SKF Group</h3>
+                    <p>Leader mondial des solutions de roulements intégrés et d'équipements de rotation.</p>
+                    <a href="brands.html#skf" class="btn-text">Learn More →</a>
+                </div>
+            </div>
+            <div class="brand-enterprise-card">
+                <div class="brand-hero-logo"><img src="bosch-logo.png" alt="Bosch Rexroth"></div>
+                <div class="brand-body">
+                    <div class="brand-meta-label">Hydraulique &amp; Commande</div>
+                    <h3>Bosch Rexroth</h3>
+                    <p>Systèmes d'entraînement industriels et architectures de contrôle des fluides complexes.</p>
+                    <a href="brands.html#bosch" class="btn-text">Learn More →</a>
+                </div>
+            </div>
+            <div class="brand-enterprise-card">
+                <div class="brand-hero-logo"><img src="siemens-logo.png" alt="Siemens"></div>
+                <div class="brand-body">
+                    <div class="brand-meta-label">Automation &amp; PLC</div>
+                    <h3>Siemens AG</h3>
+                    <p>Systèmes d'automatisation d'usine programmables et technologies de contrôle numérique.</p>
+                    <a href="brands.html#siemens" class="btn-text">Learn More →</a>
+                </div>
+            </div>
+            <div class="brand-enterprise-card">
+                <div class="brand-hero-logo"><img src="abb-logo.png" alt="ABB"></div>
+                <div class="brand-body">
+                    <div class="brand-meta-label">Robotique &amp; Énergie</div>
+                    <h3>ABB Industrial</h3>
+                    <p>Solutions d'électrification lourde, variateurs de vitesse et architectures de puissance.</p>
+                    <a href="brands.html#abb" class="btn-text">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. COMPONENT: WHY SUJO SECTION -->
+    <section style="background: rgba(255,255,255,0.01); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div class="container grid-2">
+            <div>
+                <div class="section-label">Avantage Structurel</div>
+                <h2 class="section-title" style="margin-bottom: 24px;">Pourquoi Choisir SUJO</h2>
+                <p style="color: var(--text-muted); margin-bottom: 32px;">Nous apportons une rigueur de conception informatique et électronique aux défis physiques de l'infrastructure industrielle en RDC.</p>
+                <div class="split-list">
+                    <div class="split-item">
+                        <div class="split-icon">🛡️</div>
+                        <div>
+                            <h4>Intégrité des Données</h4>
+                            <p style="font-size:0.9rem; color:var(--text-muted)">Modélisation transparente sans surcoûts cachés.</p>
+                        </div>
+                    </div>
+                    <div class="split-item">
+                        <div class="split-icon">📊</div>
+                        <div>
+                            <h4>Précision Analytique</h4>
+                            <p style="font-size:0.9rem; color:var(--text-muted)">Estimations fiables des coûts basées sur les réalités de Kinshasa.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img src="engineering-matrix.jpg" alt="SUJO System Modeling" class="split-graphic">
+        </div>
+    </section>
+
+    <!-- 6. COMPONENT: LEADERSHIP COMPONENT -->
+    <section class="container">
+        <div class="section-header">
+            <div class="section-label">Direction</div>
+            <h2 class="section-title">Direction Technique</h2>
+        </div>
+        <div class="grid-2">
+            <div class="card-system" style="flex-direction: row; gap: 24px; align-items: center;">
+                <img src="jonathan.png" alt="Jonathan Sumaili" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-red);">
+                <div>
+                    <h3 style="margin-bottom:4px;">Jonathan Sumaili</h3>
+                    <div style="color:var(--primary-red); font-size:0.85rem; font-weight:700; text-transform:uppercase; margin-bottom:12px;">CEO &amp; Fondateur</div>
+                    <p style="margin-bottom:0; font-size:0.9rem;">Spécialiste en ingénierie informatique et architectures de systèmes électroniques industriels (Penn West University).</p>
+                </div>
+            </div>
+            <div class="card-system" style="flex-direction: row; gap: 24px; align-items: center;">
+                <img src="rahzy.png" alt="Rahzy Jordan" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border-color);">
+                <div>
+                    <h3 style="margin-bottom:4px;">Rahzy Jordan</h3>
+                    <div style="color:var(--primary-red); font-size:0.85rem; font-weight:700; text-transform:uppercase; margin-bottom:12px;">CFO &amp; Stratégie</div>
+                    <p style="margin-bottom:0; font-size:0.9rem;">Gouvernance de l'architecture financière et analyse de rentabilité d'infrastructure complexes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. COMPONENT: CALL TO ACTION SECTION -->
+    <section style="background: linear-gradient(180deg, var(--dark-bg) 0%, rgba(214,0,0,0.1) 100%); border-top: 1px solid var(--border-color);">
+        <div class="container" style="text-align: center; padding: 100px 24px;">
+            <h2 class="hero-title" style="font-size: 2.75rem; margin-bottom: 16px;">Prêt à Spécifier Votre Prochain Projet ?</h2>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 32px auto;">Bénéficiez d'analyses techniques approfondies menées par nos ingénieurs conseil.</p>
+            <a href="quote.html" class="btn btn-primary">Lancer Une Demande d'Étude</a>
+        </div>
+    </section>
+
+    <!-- 8. COMPONENT: FOOTER SECTION -->
+    <footer style="background: #0a0c0f; border-top: 1px solid var(--border-color); padding: 60px 0 30px 0;">
+        <div class="container grid-3" style="padding: 0 24px 40px 24px;">
+            <div>
+                <img src="logo.png" alt="SUJO" style="height: 40px; margin-bottom: 16px;">
+                <p style="color: var(--text-muted); font-size: 0.9rem;">SUJO Engineering Consulting SARL<br>Kinshasa, République Démocratique du Congo</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 16px; font-size: 0.95rem;">Matrices Technologiques</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 8px;"><a href="products.html" style="color: var(--text-muted); text-decoration: none;">Index Global des Produits</a></p>
+                <p style="font-size: 0.9rem; margin-bottom: 8px;"><a href="brands.html" style="color: var(--text-muted); text-decoration: none;">Marques Validées</a></p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 16px; font-size: 0.95rem;">Canaux Directs</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;">DRC: +243 974 570 630</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Email: contact@sujo-engineering.com</p>
+            </div>
+        </div>
+        <div style="text-align: center; border-top: 1px solid var(--border-color); padding-top: 30px; font-size: 0.8rem; color: var(--text-muted);">
+            &copy; 2026 SUJO Engineering Consulting SARL. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
