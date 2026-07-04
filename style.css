@@ -51,6 +51,11 @@ body {
     font-weight: 700;
     letter-spacing: -0.5px;
 }
+.header-logo {
+    height: 80px;   /* Clean corporate size */
+    width: auto;    /* Keeps perfect proportions */
+}
+
 
 /* HIGH-END NAVIGATION */
 header {
