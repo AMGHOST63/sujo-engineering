@@ -1,0 +1,144 @@
+/* MOBILE RESPONSIVE */
+@media (max-width: 992px) {
+    header {
+        padding: 15px 20px;
+    }
+    
+    .nav-links {
+        gap: 20px;
+    }
+    
+    .hero h1 {
+        font-size: 2.6rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 12px 20px;
+    }
+
+    .logo {
+        height: 55px;
+    }
+
+    .logo-text {
+        font-size: 1.25rem;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .hero h1 {
+        font-size: 2.1rem;
+    }
+    
+    .hero-content {
+        padding: 40px 20px 60px;
+    }
+    
+    .services-bg,
+    .team-bg,
+    .process-bg,
+    .contact-bg {
+        padding: 70px 20px;
+    }
+    
+    .about-grid,
+    .contact-grid,
+    .team-profile {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .services-grid,
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-bg {
+        padding: 70px 20px;
+    }
+    
+    .pills {
+        justify-content: center;
+    }
+    
+    .pill {
+        padding: 10px 18px;
+        font-size: 0.95rem;
+    }
+    
+    .form-card {
+        padding: 35px 25px;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .team-profile {
+        grid-template-columns: 1fr;
+        padding: 25px;
+    }
+    .team-photo {
+        height: 300px;
+    }
+    .team-creds {
+        grid-template-columns: 1fr;
+    }
+    .team-arrow-left {
+        left: 5px;
+    }
+    .team-arrow-right {
+        right: 5px;
+    }
+    .team-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 0.95rem;
+    }
+    /* Catalog Responsive Layout */
+    .catalog-container {
+        padding: 20px;
+    }
+    .catalog-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .catalog-services-box {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.9rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .mobile-menu {
+        padding: 80px 25px;
+    }
+    
+    .mobile-menu a {
+        font-size: 1.3rem;
+    }
+}
