@@ -198,19 +198,102 @@ header {
     box-shadow: 0 12px 32px var(--accent-glow);
 }
 
-.card-image {
-    width: calc(100% + 64px);
-    margin: -32px -32px 20px -32px;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 12px 12px 0 0;
-    display: block;
-}
-
 .card-icon {
     font-size: 2rem;
     margin-bottom: 20px;
     color: var(--primary-red);
+}
+
+/* FULL-BLEED PHOTO CARDS (Services & Industries) */
+.card-photo {
+    position: relative;
+    min-height: 340px;
+    background-size: cover;
+    background-position: center;
+    justify-content: flex-end;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.card-photo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15,17,21,0.05) 0%, rgba(10,12,16,0.65) 55%, rgba(10,12,16,0.97) 100%);
+    z-index: 0;
+}
+
+.card-photo:hover::before {
+    background: linear-gradient(180deg, rgba(15,17,21,0.1) 0%, rgba(10,12,16,0.55) 55%, rgba(10,12,16,0.95) 100%);
+}
+
+.card-photo > * {
+    position: relative;
+    z-index: 1;
+}
+
+.card-photo .card-icon {
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
+}
+
+.card-photo h3 {
+    color: #fff;
+}
+
+.card-photo p {
+    color: rgba(240, 242, 245, 0.85);
+}
+
+/* WHY SUJO FULL BACKGROUND SECTION */
+.why-sujo-bg {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.why-sujo-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(15,17,21,0.97) 40%, rgba(15,17,21,0.55) 75%, rgba(15,17,21,0.25) 100%);
+    z-index: 0;
+}
+
+.why-sujo-bg .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* HEADER: ACCOUNT BUTTON & LANGUAGE SWITCH */
+.lang-switch {
+    display: flex;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-left: 8px;
+}
+
+.lang-switch button {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    padding: 7px 14px;
+    font-weight: 700;
+    font-size: 0.82rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: var(--font-sans);
+}
+
+.lang-switch button.active {
+    background: var(--primary-red);
+    color: #fff;
+}
+
+.lang-switch button:not(.active):hover {
+    background: var(--surface-card);
+    color: var(--text-main);
 }
 
 .card-system h3 {
