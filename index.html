@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUJO Engineering Consulting — Kinshasa, RDC</title>
+    <meta name="description" content="SUJO Engineering Consulting est spécialisée dans le conseil en ingénierie et le développement de projets industriels en RDC." />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <a href="index.html" class="nav-logo">
+            <img src="logo.png" alt="SUJO Engineering Consulting" class="logo">
+        </a>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html#services" data-fr="Services" data-en="Services">Services</a></li>
+                <!-- DROPDOWN FOR PRODUCTS -->
+                <li class="dropdown">
+                    <a href="products.html" class="dropdown-toggle" data-fr="Produits ▾" data-en="Products ▾">Produits ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="products.html#mechanical" data-fr="Composants Mécaniques" data-en="Mechanical Components">Composants Mécaniques</a></li>
+                        <li><a href="products.html#automation" data-fr="Automatisation & Mouvement" data-en="Automation & Motion">Automatisation & Mouvement</a></li>
+                        <li><a href="products.html#hydraulics" data-fr="Hydraulique & Pneumatique" data-en="Hydraulics & Pneumatics">Hydraulique & Pneumatique</a></li>
+                    </ul>
+                </li>
+                <li><a href="brands.html" data-fr="Marques" data-en="Brands">Marques</a></li>
+                <li><a href="index.html#secteurs" data-fr="Secteurs" data-en="Sectors">Secteurs</a></li>
+                <li><a href="index.html#apropos" data-fr="À Propos" data-en="About">À Propos</a></li>
+                <li><a href="index.html#equipe" data-fr="Équipe" data-en="Team">Équipe</a></li>
+                <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
+                <li><a href="quote.html" class="nav-cta" data-fr="Demander un devis" data-en="Get a Quote">Demander un devis</a></li>
+                <li><a href="https://portal.sujo-engineering.com/" target="_blank" rel="noopener" class="nav-internal" data-fr="Mon Compte" data-en="My Account" title="Internal use only">My Account</a></li>
+            </ul>
+            
+            <div style="display:flex; align-items:center; gap:20px;">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="setLang('fr')" id="btn-fr">FR</button>
+                    <button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button>
+                </div>
+                <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#services" data-fr="Services" data-en="Services">Services</a>
+        <a href="products.html" data-fr="Produits" data-en="Products">Produits</a>
+        <a href="brands.html" data-fr="Marques" data-en="Brands">Marques</a>
+        <a href="index.html#secteurs" data-fr="Secteurs" data-en="Sectors">Secteurs</a>
+        <a href="index.html#apropos" data-fr="À Propos" data-en="About">À Propos</a>
+        <a href="index.html#equipe" data-fr="Équipe" data-en="Team">Équipe</a>
+        <a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a>
+        <a href="quote.html" data-fr="Demander un devis" data-en="Get a Quote">Demander un devis</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-photo">
+            <img src="hero-bg.png" alt="SUJO Engineering Consulting" />
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge" data-fr="Kinshasa, République Démocratique du Congo" data-en="Kinshasa, Democratic Republic of Congo">
+                Kinshasa, République Démocratique du Congo
+            </div>
+            <div class="hero-btns">
+                <a href="quote.html" class="btn-red" data-fr="Demander un devis gratuit" data-en="Request a Free Quote">
+                    Demander un devis gratuit
+                </a>
+                <a href="#services" class="btn-outline" data-fr="Nos services" data-en="Our Services">
+                    Nos services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="services-bg">
+        <div class="section-label" data-fr="Ce que nous faisons" data-en="What we do">Ce que nous faisons</div>
+        <div class="section-title" data-fr="Nos Services d'Ingénierie" data-en="Our Engineering Services">Nos Services d'Ingénierie</div>
+        <div class="red-line"></div>
+        <div class="section-sub"
+             data-fr="Renforcer les secteurs industriels clés de la RDC grâce à des capacités d'ingénierie de classe mondiale et un accompagnement complet de vos projets techniques."
+             data-en="Empowering the DRC's leading industries with world-class engineering capabilities and end-to-end technical project support.">
+            Renforcer les secteurs industriels clés de la RDC grâce à des capacités d'ingénierie de classe mondiale et un accompagnement complet de vos projets techniques.
+        </div>
+
+        <div class="services-grid">
+            <div class="svc-card svc-consulting">
+                <div class="svc-icon">🛠️</div>
+                <h3 data-fr="Conseil en Ingénierie" data-en="Engineering Consulting">Conseil en Ingénierie</h3>
+                <p data-fr="Accompagnement technique sur la sélection d'équipements, la validation de spécifications et l'optimisation des systèmes industriels."
+                   data-en="Technical guidance on equipment selection, specification validation, and industrial system optimization.">
+                    Accompagnement technique sur la sélection d'équipements, la validation de spécifications et l'optimisation des systèmes industriels.
+                </p>
+                <button class="svc-more-btn" onclick="toggleService(this)">
+                    <span data-fr="Comment SUJO vous aide" data-en="How SUJO helps">Comment SUJO vous aide</span>
+                    <span class="svc-arrow">▾</span>
+                </button>
+                <div class="svc-details">
+                    <p data-fr="Nous vous aidons à choisir les bonnes configurations techniques avant d'engager vos budgets : comparatifs de performance, évaluation de viabilité technique et recommandations adaptées aux réalités industrielles de la RDC."
+                       data-en="We help you select the right technical configurations before budgets are committed: performance comparisons, technical viability evaluations, and recommendations tailored to the industrial realities of the DRC.">
+                        Nous vous aidons à choisir les bonnes configurations techniques avant d'engager vos budgets : comparatifs de performance, évaluation de viabilité technique et recommandations adaptées aux réalités industrielles de la RDC.
+                    </p>
+                </div>
+            </div>
+
+            <div class="svc-card svc-project">
+                <div class="svc-icon">📐</div>
+                <h3 data-fr="Développement de Projet" data-en="Project Development">Développement de Projet</h3>
+                <p data-fr="Appui de bout en bout dans la structuration de vos projets : coordination technique, planification et suivi de déploiement."
+                   data-en="End-to-end support structuring your projects: technical coordination, scheduling, and deployment tracking.">
+                    Appui de bout en bout dans la structuration de vos projets : coordination technique, planification et suivi de déploiement.
+                </p>
+                <button class="svc-more-btn" onclick="toggleService(this)">
+                    <span data-fr="Comment SUJO vous aide" data-en="How SUJO helps">Comment SUJO vous aide</span>
+                    <span class="svc-arrow">▾</span>
+                </button>
+                <div class="svc-details">
+                    <p data-fr="De la définition de l'architecture technique jusqu'à la mise en service, nous gérons la complexité technique en coordonnant les équipes et prestataires afin de garantir le respect des normes d'ingénierie internationale."
+                       data-en="From technical architecture definition to commissioning, we manage technical complexity by coordinating teams and vendors to guarantee compliance with international engineering standards.">
+                        De la définition de l'architecture technique jusqu'à la mise en service, nous gérons la complexité technique en coordonnant les équipes et prestataires afin de garantir le respect des normes d'ingénierie internationale.
+                    </p>
+                </div>
+            </div>
+
+            <div class="svc-card svc-cost">
+                <div class="svc-icon">🧮</div>
+                <h3 data-fr="Estimation des Coûts & Chiffrage" data-en="Cost Estimation & Analytics">Estimation des Coûts & Chiffrage</h3>
+                <p data-fr="Évaluation budgétaire rigoureuse des projets de génie civil et d'équipements mécaniques basée sur le marché de Kinshasa."
+                   data-en="Rigorous budget evaluation of civil engineering projects and mechanical setups based on the Kinshasa market.">
+                    Évaluation budgétaire rigoureuse des projets de génie civil et d'équipements mécaniques basée sur le marché de Kinshasa.
+                </p>
+                <button class="svc-more-btn" onclick="toggleService(this)">
+                    <span data-fr="Comment SUJO vous aide" data-en="How SUJO helps">Comment SUJO vous aide</span>
+                    <span class="svc-arrow">▾</span>
+                </button>
+                <div class="svc-details">
+                    <p data-fr="Nous structurons des estimations de coûts fiables et précises à l'aide de bases de données de prix réels locaux, permettant aux investisseurs et directions de projets de minimiser les risques financiers de dépassement."
+                       data-en="We design precise cost assessments using real local pricing datasets, enabling investors and project managers to minimize financial risks and budget overruns.">
+                        Nous structurons des estimations de coûts fiables et précises à l'aide de bases de données de prix réels locaux, permettant aux investisseurs et directions de projets de minimiser les risques financiers de dépassement.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTORS -->
+    <section id="secteurs" class="services-bg" style="border-top: 1px solid #e2e2e2;">
+        <div class="section-label" data-fr="Domaines d'expertise" data-en="Areas of expertise">Domaines d'expertise</div>
+        <div class="section-title" data-fr="Secteurs d'Intervention" data-en="Sectors We Serve">Secteurs d'Intervention</div>
+        <div class="red-line"></div>
+        <div class="pills">
+            <span class="pill" data-fr="🏗️ Construction & Génie Civil" data-en="🏗️ Construction & Civil Engineering">🏗️ Construction & Génie Civil</span>
+            <span class="pill" data-fr="⛏️ Industrie Minière" data-en="⛏️ Mining Industry">⛏️ Industrie Minière</span>
+            <span class="pill" data-fr="⚡ Énergie & Hydroélectricité" data-en="⚡ Energy & Hydropower">⚡ Énergie & Hydropower</span>
+            <span class="pill" data-fr="🏢 Immobilier" data-en="🏢 Real Estate">🏢 Immobilier</span>
+            <span class="pill" data-fr="🛣️ Infrastructure Routière & Ponts" data-en="🛣️ Infrastructure & Bridges">🛣️ Infrastructure Routière & Ponts</span>
+            <span class="pill" data-fr="📡 Télécommunications" data-en="📡 Telecommunications">📡 Télécommunications</span>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="apropos" class="about-bg">
+        <div class="section-label" data-fr="Qui sommes-nous" data-en="Who we are">Qui sommes-nous</div>
+        <div class="section-title" data-fr="À Propos de SUJO" data-en="About SUJO">À Propos de SUJO</div>
+        <div class="red-line"></div>
+        
+        <div class="about-grid">
+            <div class="about-text">
+                <p data-fr="SUJO Engineering Consulting accompagne les entreprises de construction, sociétés minières, promoteurs immobiliers et organismes gouvernementaux dans le conseil technique, le chiffrage et le développement de projets d'ingénierie complexe à travers la RDC." 
+                   data-en="SUJO Engineering Consulting supports construction companies, mining groups, real estate developers, and government agencies with technical design consulting, cost evaluation, and engineering operations management across the DRC.">
+                    SUJO Engineering Consulting accompagne les entreprises de construction, sociétés minières, promoteurs immobiliers et organismes gouvernementaux dans le conseil technique, le chiffrage et le développement de projets d'ingénierie complexe à travers la RDC.
+                </p>
+                <p data-fr="Fondée par Jonathan Sumaili, SUJO apporte une rigueur méthodologique issue des meilleures pratiques industrielles globales pour répondre efficacement aux défis d'infrastructure locaux." 
+                   data-en="Founded by Jonathan Sumaili, SUJO injects absolute systematic rigor built on global industrial standards to directly address complex regional infrastructure bottlenecks.">
+                    Fondée par Jonathan Sumaili, SUJO apporte une rigueur méthodologique issue des meilleures pratiques industrielles globales pour répondre efficacement aux défis d'infrastructure locaux.
+                </p>
+                
+                <ul class="features-list">
+                    <li data-fr="Expertise et ingénierie ancrées sur le marché congolais" data-en="Deep technical engineering specialization optimized for the Congolese environment">Expertise et ingénierie ancrées sur le marché congolais</li>
+                    <li data-fr="Analyses prédictives de coûts unitaires fiables" data-en="Data-driven unit price modeling and cost control">Analyses prédictives de coûts unitaires fiables</li>
+                    <li data-fr="Livrables clairs et structurés (Word, Excel, PDF)" data-en="Compliant data formats for documentation (Word, Excel, PDF)">Livrables clairs et structurés (Word, Excel, PDF)</li>
+                    <li data-fr="Confidentialité et intégrité totale des données industrielles" data-en="Total compliance with enterprise data security and confidentiality standards">Confidentialité et intégrité totale des données industrielles</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEET OUR TEAM -->
+    <section id="equipe" class="team-bg">
+        <div class="section-label" data-fr="Notre équipe" data-en="Our team">Notre équipe</div>
+        <div class="section-title" data-fr="Direction Technique" data-en="Engineering Leadership">Direction Technique</div>
+        <div class="red-line"></div>
+
+        <div class="team-carousel">
+            <div class="team-track" id="teamTrack">
+                <!-- MEMBER 1: JONATHAN -->
+                <div class="team-profile">
+                    <div class="team-photo-wrap">
+                        <img src="jonathan.png" alt="Jonathan Sumaili" class="team-photo">
+                    </div>
+                    <div class="team-bio">
+                        <div class="team-bio-name">Jonathan Sumaili</div>
+                        <div class="team-bio-role" data-fr="CEO & Fondateur" data-en="CEO & Founder">CEO & Fondateur</div>
+                        <p data-fr="Jonathan Sumaili est ingénieur commercial technique (Technical Sales Engineer) spécialisé dans les systèmes électromécaniques lourds et les configurations industrielles complexes." data-en="Jonathan Sumaili serves as a Technical Sales Engineer with deep expertise in heavy electro-mechanical systems and industrial automation frameworks.">Jonathan Sumaili est ingénieur commercial technique...</p>
+                        <p data-fr="Il possède un bagage d'études étendu en Computer Engineering et Electronics Engineering issu de Penn West University, lui permettant d'aborder les défis d'ingénierie via une approche hautement systémique." data-en="His academic depth in Computer Engineering and Electronic Systems from Penn West University shapes SUJO's data-driven, clean architectural approach to engineering challenges.">Il possède un bagage d'études étendu en Computer Engineering...</p>
+                    </div>
+                </div>
+
+                <!-- MEMBER 2: RAHZY -->
+                <div class="team-profile">
+                    <div class="team-photo-wrap">
+                        <img src="rahzy.png" alt="Rahzy Jordan" class="team-photo">
+                    </div>
+                    <div class="team-bio">
+                        <div class="team-bio-name">Rahzy Jordan</div>
+                        <div class="team-bio-role" data-fr="CFO & Stratégie" data-en="CFO & Operations Strategy">CFO & Stratégie</div>
+                        <p data-fr="Rahzy Jordan pilote l'architecture financière et l'analyse de rentabilité des investissements pour nos projets d'infrastructure." data-en="Rahzy Jordan governs financial architecture and investment scalability profiles for all major infrastructure consulting pipelines.">Rahzy Jordan pilote l'architecture financière...</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="team-arrow team-arrow-left" onclick="teamSlide(-1)">&#10094;</button>
+            <button class="team-arrow team-arrow-right" onclick="teamSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <img src="logo.png" alt="SUJO Logo" style="height:70px; margin-bottom:20px;">
+                <p>SUJO Engineering Consulting SARL</p>
+                <p>Kinshasa, RDC</p>
+            </div>
+            <div>
+                <h4 data-fr="Ingénierie" data-en="Engineering">Ingénierie</h4>
+                <p><a href="products.html">Composants Industriels</a></p>
+                <p><a href="brands.html">Marques Partenaires</a></p>
+                <p><a href="index.html#services">Conseil Technique</a></p>
+            </div>
+            <div>
+                <h4 data-fr="Contact" data-en="Contact">Contact</h4>
+                <p>DRC: +243 974 570 630</p>
+                <p>US: +1 412 345 3307</p>
+                <p><a href="mailto:contact@sujo-engineering.com" style="color:white;">contact@sujo-engineering.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 SUJO Engineering Consulting SARL. Tous droits réservés.
+        </div>
+    </footer>
+</body>
+</html>
