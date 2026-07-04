@@ -172,3 +172,41 @@ Your website includes the following sections:
 *Jonathan Sumaili, CEO & Fondateur*
 
 Consulting Company
+
+# SUJO Engineering Consulting Website Architecture
+
+This repository contains the refactored, modular frontend codebase for the SUJO Engineering Consulting platform. The codebase has been optimized from a single, high-density scrolling layout into a high-performance, multi-page architectural framework tailored for enterprise engineering clients.
+
+## 🛠️ Key Architectural Updates
+
+1. **Product Categorization**
+   * Extracted bulk individual listings into a high-level catalog index.
+   * Structured dedicated card hubs for core categories: Mechanical, Automation, Hydraulics, Safety, Power Transmission, and Lubrication.
+2. **Streamlined Homepage Pipeline**
+   * Shrunk the homepage footprint to focus exclusively on engagement funneling.
+   * **Sequence:** Hero ➔ Services ➔ Industries ➔ Featured Brands ➔ Why SUJO ➔ Leadership ➔ CTA ➔ Footer.
+3. **Refactored About Layout**
+   * Transformed text-heavy sections into a modern split layout (Left Image / Right Text content columns).
+   * Integrated dedicated layout vectors with icons for **Mission**, **Vision**, and **Why Choose SUJO**.
+4. **Upgraded Hero Component**
+   * Replaced basic static imagery with a dark high-contrast industrial background paired with a smooth linear gradient overlay.
+   * Optimized conversion nodes: `Request Quote` and `Explore Services`.
+5. **Dynamic Services Matrix**
+   * Replaced slow-loading accordion menus with a high-density, 4-column card container linking directly to isolated project scope pages.
+6. **Enterprise Brand UX**
+   * Upgraded manufacturer lists into clean, isolated brand panels built with distinct image anchors and clear metadata tags.
+7. **Trustworthy Contact Grid**
+   * Replaced basic intake fields with a balanced 2-column layout mapping critical corporate details alongside an interactive web form.
+
+---
+
+## 📂 Codebase Structure & File Manifest
+
+```text
+├── index.html               # Streamlined core conversion platform
+├── about.html               # Split-column corporate identity & values overview
+├── products.html            # Gateway index for hardware category cards
+├── brands.html              # High-density partner matrix with dynamic JavaScript lookups
+├── contact.html             # High-trust split contact interface with form & map embed
+├── style.css                # Global engineering CSS blueprint
+└── app.js                   # Lightweight UI engine for search filtering and dropdown navigation
