@@ -140,12 +140,13 @@ header {
 }
 
 .hero-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 24px;
-    letter-spacing: -0.5px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: -0.3px;
 }
+
 
 .hero-actions {
     display: flex;
