@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Automation Products — SUJO</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<script defer src="app.js"></script>
+</head>
+<body>
+<!-- NAV BAR -->
+<header>
+<a class="nav-logo" href="https://sujo-engineering.com/index.html">
+<img alt="SUJO" src="logo.png" style="height: 50px;"/>
+</a>
+<nav>
+<ul class="nav-links" id="mobileMenu">
+<li><a data-en="Home" data-fr="Accueil" href="https://sujo-engineering.com/index.html">Accueil</a></li>
+<li><a data-en="About" data-fr="À Propos" href="https://sujo-engineering.com/about.html">À Propos</a></li>
+<li class="dropdown">
+<a class="active" data-en="Products ▾" data-fr="Produits ▾" href="https://sujo-engineering.com/products.html">Produits ▾</a>
+<ul class="dropdown-menu">
+<li><a data-en="Mechanical Components" data-fr="Composants Mécaniques" href="product-mechanical.html">Composants Mécaniques</a></li>
+<li><a class="active" data-en="Automation &amp; Motion" data-fr="Automatisation &amp; Mouvement" href="product-automation.html">Automatisation &amp; Mouvement</a></li>
+<li><a data-en="Hydraulics &amp; Pneumatics" data-fr="Hydraulique &amp; Pneumatique" href="product-hydraulics.html">Hydraulique &amp; Pneumatique</a></li>
+<li><a data-en="Industrial Safety" data-fr="Sécurité Industrielle" href="product-safety.html">Sécurité Industrielle</a></li>
+<li><a data-en="Power Transmission" data-fr="Transmission de Puissance" href="product-transmission.html">Transmission de Puissance</a></li>
+<li><a data-en="Industrial Lubrication" data-fr="Lubrification Industrielle" href="product-lubrication.html">Lubrification Industrielle</a></li>
+</ul>
+</li>
+<li><a data-en="Brands" data-fr="Marques" href="https://sujo-engineering.com/brands.html">Marques</a></li>
+<li><a data-en="Contact" data-fr="Contact" href="https://sujo-engineering.com/contact.html">Contact</a></li>
+<li><a class="btn btn-outline" data-en="My Account" data-fr="Mon Compte" href="http://129.213.160.94/" style="padding: 8px 16px;" target="_blank">Mon Compte</a></li>
+<li><a class="btn btn-primary" data-en="Request Quote" data-fr="Demander un devis" href="https://sujo-engineering.com/quote.html" style="padding: 8px 16px;">Demander un devis</a></li>
+</ul>
+</nav>
+<div aria-label="Menu" class="hamburger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</header>
+
+<main class="container">
+<div class="section-header" style="text-align: left;">
+<div class="section-label" data-en="Automation &amp; Motion" data-fr="Automatisation &amp; Mouvement">Automatisation &amp; Mouvement</div>
+<h1 class="section-title" data-en="Automation Products" data-fr="Produits d'Automatisation" style="font-size: 2.75rem;">Produits d'Automatisation</h1>
+<p data-en="Explore PLCs, HMIs, drives, sensors, relays, safety devices, pneumatic automation, motion control, robotics, industrial networking, and software tools for automated systems." data-fr="Explorez les PLC, HMI, variateurs, capteurs, relais, dispositifs de sécurité, automatisation pneumatique, contrôle de mouvement, robotique, réseaux industriels et logiciels pour systèmes automatisés." style="color: var(--text-muted); margin-top: 12px; max-width: 780px;">Explorez les PLC, HMI, variateurs, capteurs, relais, dispositifs de sécurité, automatisation pneumatique, contrôle de mouvement, robotique, réseaux industriels et logiciels pour systèmes automatisés.</p>
+</div>
+
+<div style="margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center;">
+<a class="btn btn-outline" data-en="← Back to Products" data-fr="← Retour aux produits" href="products.html">← Retour aux produits</a>
+<a class="btn btn-primary" data-en="Request Engineering Quote" data-fr="Demander un devis technique" href="quote.html">Demander un devis technique</a>
+</div>
+
+<div class="grid-3" style="margin-top: 48px;">
+
+<a class="card-system" href="quote.html?product=PLC%20%28Programmable%20Logic%20Controller%29">
+<h3 data-en="PLC (Programmable Logic Controller)" data-fr="PLC (Programmable Logic Controller)">PLC (Programmable Logic Controller)</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=PLC%20Expansion%20Module">
+<h3 data-en="PLC Expansion Module" data-fr="PLC Expansion Module">PLC Expansion Module</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=I/O%20Module%20%28Digital%2C%20Analog%29">
+<h3 data-en="I/O Module (Digital, Analog)" data-fr="I/O Module (Digital, Analog)">I/O Module (Digital, Analog)</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=HMI%20Touch%20Panel">
+<h3 data-en="HMI Touch Panel" data-fr="HMI Touch Panel">HMI Touch Panel</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Industrial%20PC">
+<h3 data-en="Industrial PC" data-fr="Industrial PC">Industrial PC</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=SCADA%20System">
+<h3 data-en="SCADA System" data-fr="SCADA System">SCADA System</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Servo%20Motor">
+<h3 data-en="Servo Motor" data-fr="Servo Motor">Servo Motor</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Servo%20Drive">
+<h3 data-en="Servo Drive" data-fr="Servo Drive">Servo Drive</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Stepper%20Motor">
+<h3 data-en="Stepper Motor" data-fr="Stepper Motor">Stepper Motor</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Stepper%20Driver">
+<h3 data-en="Stepper Driver" data-fr="Stepper Driver">Stepper Driver</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Brushless%20DC%20Motor">
+<h3 data-en="Brushless DC Motor" data-fr="Brushless DC Motor">Brushless DC Motor</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=AC%20Motor%20Controller">
+<h3 data-en="AC Motor Controller" data-fr="AC Motor Controller">AC Motor Controller</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Variable%20Frequency%20Drive%20%28VFD%29">
+<h3 data-en="Variable Frequency Drive (VFD)" data-fr="Variable Frequency Drive (VFD)">Variable Frequency Drive (VFD)</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Soft%20Starter">
+<h3 data-en="Soft Starter" data-fr="Soft Starter">Soft Starter</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Motor%20Protection%20Relay">
+<h3 data-en="Motor Protection Relay" data-fr="Motor Protection Relay">Motor Protection Relay</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Proximity%20Sensor%20%28Inductive%2C%20Capacitive%29">
+<h3 data-en="Proximity Sensor (Inductive, Capacitive)" data-fr="Proximity Sensor (Inductive, Capacitive)">Proximity Sensor (Inductive, Capacitive)</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Photoelectric%20Sensor">
+<h3 data-en="Photoelectric Sensor" data-fr="Photoelectric Sensor">Photoelectric Sensor</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Laser%20Sensor">
+<h3 data-en="Laser Sensor" data-fr="Laser Sensor">Laser Sensor</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Ultrasonic%20Sensor">
+<h3 data-en="Ultrasonic Sensor" data-fr="Ultrasonic Sensor">Ultrasonic Sensor</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Magnetic%20Sensor">
+<h3 data-en="Magnetic Sensor" data-fr="Magnetic Sensor">Magnetic Sensor</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Limit%20Switch">
+<h3 data-en="Limit Switch" data-fr="Limit Switch">Limit Switch</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Micro%20Switch">
+<h3 data-en="Micro Switch" data-fr="Micro Switch">Micro Switch</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Encoder%20%28Incremental%2C%20Absolute%29">
+<h3 data-en="Encoder (Incremental, Absolute)" data-fr="Encoder (Incremental, Absolute)">Encoder (Incremental, Absolute)</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Resolver">
+<h3 data-en="Resolver" data-fr="Resolver">Resolver</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Relay">
+<h3 data-en="Relay" data-fr="Relay">Relay</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Solid%20State%20Relay">
+<h3 data-en="Solid State Relay" data-fr="Solid State Relay">Solid State Relay</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Contactor">
+<h3 data-en="Contactor" data-fr="Contactor">Contactor</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Circuit%20Breaker">
+<h3 data-en="Circuit Breaker" data-fr="Circuit Breaker">Circuit Breaker</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Power%20Supply%20%28SMPS%29">
+<h3 data-en="Power Supply (SMPS)" data-fr="Power Supply (SMPS)">Power Supply (SMPS)</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Industrial%20Transformer">
+<h3 data-en="Industrial Transformer" data-fr="Industrial Transformer">Industrial Transformer</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Control%20Cabinet">
+<h3 data-en="Control Cabinet" data-fr="Control Cabinet">Control Cabinet</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Control%20Panel%20Components">
+<h3 data-en="Control Panel Components" data-fr="Control Panel Components">Control Panel Components</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Terminal%20Block">
+<h3 data-en="Terminal Block" data-fr="Terminal Block">Terminal Block</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Industrial%20Connector">
+<h3 data-en="Industrial Connector" data-fr="Industrial Connector">Industrial Connector</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Cable%20Chain%20/%20Drag%20Chain">
+<h3 data-en="Cable Chain / Drag Chain" data-fr="Cable Chain / Drag Chain">Cable Chain / Drag Chain</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Industrial%20Ethernet%20Switch">
+<h3 data-en="Industrial Ethernet Switch" data-fr="Industrial Ethernet Switch">Industrial Ethernet Switch</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Communication%20Module%20%28Modbus%2C%20Profibus%2C%20CAN%2C%20EtherCAT%29">
+<h3 data-en="Communication Module (Modbus, Profibus, CAN, EtherCAT)" data-fr="Communication Module (Modbus, Profibus, CAN, EtherCAT)">Communication Module (Modbus, Profibus, CAN, EtherCAT)</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Industrial%20Router">
+<h3 data-en="Industrial Router" data-fr="Industrial Router">Industrial Router</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Industrial%20Gateway">
+<h3 data-en="Industrial Gateway" data-fr="Industrial Gateway">Industrial Gateway</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Safety%20Light%20Curtain">
+<h3 data-en="Safety Light Curtain" data-fr="Safety Light Curtain">Safety Light Curtain</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Safety%20Relay">
+<h3 data-en="Safety Relay" data-fr="Safety Relay">Safety Relay</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Emergency%20Stop%20Button">
+<h3 data-en="Emergency Stop Button" data-fr="Emergency Stop Button">Emergency Stop Button</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Safety%20Interlock%20Switch">
+<h3 data-en="Safety Interlock Switch" data-fr="Safety Interlock Switch">Safety Interlock Switch</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Pneumatic%20Valve">
+<h3 data-en="Pneumatic Valve" data-fr="Pneumatic Valve">Pneumatic Valve</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Solenoid%20Valve">
+<h3 data-en="Solenoid Valve" data-fr="Solenoid Valve">Solenoid Valve</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Pneumatic%20Cylinder">
+<h3 data-en="Pneumatic Cylinder" data-fr="Pneumatic Cylinder">Pneumatic Cylinder</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Air%20Preparation%20Unit%20%28FRL%29">
+<h3 data-en="Air Preparation Unit (FRL)" data-fr="Air Preparation Unit (FRL)">Air Preparation Unit (FRL)</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Vacuum%20Pump">
+<h3 data-en="Vacuum Pump" data-fr="Vacuum Pump">Vacuum Pump</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Vacuum%20Generator">
+<h3 data-en="Vacuum Generator" data-fr="Vacuum Generator">Vacuum Generator</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Vacuum%20Cup">
+<h3 data-en="Vacuum Cup" data-fr="Vacuum Cup">Vacuum Cup</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Actuator%20%28Electric%2C%20Pneumatic%29">
+<h3 data-en="Actuator (Electric, Pneumatic)" data-fr="Actuator (Electric, Pneumatic)">Actuator (Electric, Pneumatic)</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Linear%20Actuator">
+<h3 data-en="Linear Actuator" data-fr="Linear Actuator">Linear Actuator</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Rotary%20Actuator">
+<h3 data-en="Rotary Actuator" data-fr="Rotary Actuator">Rotary Actuator</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Motion%20Controller">
+<h3 data-en="Motion Controller" data-fr="Motion Controller">Motion Controller</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Positioning%20Controller">
+<h3 data-en="Positioning Controller" data-fr="Positioning Controller">Positioning Controller</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Robot%20Arm">
+<h3 data-en="Robot Arm" data-fr="Robot Arm">Robot Arm</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Collaborative%20Robot%20%28Cobot%29">
+<h3 data-en="Collaborative Robot (Cobot)" data-fr="Collaborative Robot (Cobot)">Collaborative Robot (Cobot)</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Servo%20Gearbox">
+<h3 data-en="Servo Gearbox" data-fr="Servo Gearbox">Servo Gearbox</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Planetary%20Gearbox">
+<h3 data-en="Planetary Gearbox" data-fr="Planetary Gearbox">Planetary Gearbox</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Timing%20Belt%20Drive">
+<h3 data-en="Timing Belt Drive" data-fr="Timing Belt Drive">Timing Belt Drive</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Synchronous%20Pulley">
+<h3 data-en="Synchronous Pulley" data-fr="Synchronous Pulley">Synchronous Pulley</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Industrial%20Sensor%20Cable">
+<h3 data-en="Industrial Sensor Cable" data-fr="Industrial Sensor Cable">Industrial Sensor Cable</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Encoder%20Cable">
+<h3 data-en="Encoder Cable" data-fr="Encoder Cable">Encoder Cable</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Control%20Cable">
+<h3 data-en="Control Cable" data-fr="Control Cable">Control Cable</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Industrial%20IoT%20Sensor">
+<h3 data-en="Industrial IoT Sensor" data-fr="Industrial IoT Sensor">Industrial IoT Sensor</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Data%20Logger">
+<h3 data-en="Data Logger" data-fr="Data Logger">Data Logger</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+
+<a class="card-system" href="quote.html?product=Automation%20Software%20License">
+<h3 data-en="Automation Software License" data-fr="Automation Software License">Automation Software License</h3>
+<p data-en="Automation and control product available for technical review, system integration support, and sourcing coordination." data-fr="Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.">Produit d'automatisation et de contrôle disponible pour revue technique, support d'intégration système et coordination d'approvisionnement.</p>
+<div class="btn-text" data-en="Request Quote →" data-fr="Demander un devis →">Demander un devis →</div>
+</a>
+</div>
+</main>
+
+<!-- FOOTER SECTION -->
+<footer style="background: #0a0c0f; border-top: 1px solid var(--border-color); padding: 60px 0 30px 0; margin-top: 80px;">
+<div class="container grid-3" style="padding: 0 24px 40px 24px;">
+<div>
+<img alt="SUJO" src="logo.png" style="height: 40px; margin-bottom: 16px;"/>
+<p data-en="SUJO Engineering Consulting SARL<br>Kinshasa, Democratic Republic of Congo" data-fr="SUJO Engineering Consulting SARL<br>Kinshasa, République Démocratique du Congo" style="color: var(--text-muted); font-size: 0.9rem;">SUJO Engineering Consulting SARL<br>Kinshasa, République Démocratique du Congo</p>
+</div>
+<div>
+<h4 data-en="Technology Index" data-fr="Matrices Technologiques" style="margin-bottom: 16px; font-size: 0.95rem;">Matrices Technologiques</h4>
+<p style="font-size: 0.9rem; margin-bottom: 8px;">Index Global des Produits</p>
+<p style="font-size: 0.9rem; margin-bottom: 8px;">Marques Validées</p>
+</div>
+<div>
+<h4 data-en="Direct Channels" data-fr="Canaux Directs" style="margin-bottom: 16px; font-size: 0.95rem;">Canaux Directs</h4>
+<p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;">DRC: +243 974 570 630</p>
+<p data-en="Email: contact@sujo-engineering.com" data-fr="Email: contact@sujo-engineering.com" style="color: var(--text-muted); font-size: 0.9rem;">Email: contact@sujo-engineering.com</p>
+</div>
+</div>
+<div data-en="© 2026 SUJO Engineering Consulting SARL. All rights reserved." data-fr="© 2026 SUJO Engineering Consulting SARL. Tous droits réservés." style="text-align: center; border-top: 1px solid var(--border-color); padding-top: 30px; font-size: 0.8rem; color: var(--text-muted);">
+© 2026 SUJO Engineering Consulting SARL. All rights reserved.
+</div>
+</footer>
+
+<script>
+function applyLang(lang) {
+    document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+        el.innerHTML = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+    });
+    document.documentElement.lang = lang;
+}
+
+function setLang(lang) {
+    localStorage.setItem('sujoLang', lang);
+    const btnFr = document.getElementById('btn-fr');
+    const btnEn = document.getElementById('btn-en');
+    if (btnFr && btnEn) {
+        btnFr.classList.toggle('active', lang === 'fr');
+        btnEn.classList.toggle('active', lang === 'en');
+    }
+    applyLang(lang);
+}
+
+(function () {
+    const saved = localStorage.getItem('sujoLang') || 'fr';
+    applyLang(saved);
+    const btnFr = document.getElementById('btn-fr');
+    const btnEn = document.getElementById('btn-en');
+    if (btnFr && btnEn) {
+        btnFr.classList.toggle('active', saved === 'fr');
+        btnEn.classList.toggle('active', saved === 'en');
+    }
+})();
+
+function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+    document.querySelector('.hamburger').classList.toggle('open');
+}
+
+document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        if (window.innerWidth <= 900) {
+            e.preventDefault();
+            link.parentElement.classList.toggle('open');
+        }
+    });
+});
+
+document.querySelectorAll('#mobileMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (link.parentElement.classList.contains('dropdown')) return;
+        document.getElementById('mobileMenu').classList.remove('open');
+        document.querySelector('.hamburger').classList.remove('open');
+    });
+});
+</script>
+</body>
+</html>
