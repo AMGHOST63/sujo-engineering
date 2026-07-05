@@ -55,7 +55,7 @@
             <div class="info-sidebar">
                 <div class="info-block">
                     <h4 data-fr="Siège Social" data-en="Head Office">Siège Social</h4>
-                    <p data-fr="Avenue Colonel Mondjiba, Kinshasa, RDC" data-en="Avenue Colonel Mondjiba, Kinshasa, DRC">Avenue Colonel Mondjiba, Kinshasa, RDC</p>
+                    <p data-fr="Kinshasa, République Démocratique du Congo" data-en="Kinshasa, Democratic Republic of Congo">Kinshasa, République Démocratique du Congo</p>
                 </div>
 
                 <div class="info-block">
@@ -70,27 +70,27 @@
 
                 <div class="info-block">
                     <h4 data-fr="Heures d'Ouverture" data-en="Business Hours">Heures d'Ouverture</h4>
-                    <p data-fr="Lundi — Vendredi: 08:00 – 17:00 (GMT+1)<br>Samedi: Sur rendez-vous / Études d'urgence" data-en="Monday — Friday: 08:00 – 17:00 (GMT+1)<br>Saturday: By appointment / Emergency studies">Lundi — Vendredi: 08:00 – 17:00 (GMT+1)<br>Samedi: Sur rendez-Moins / Études d'urgence</p>
+                    <p data-fr="Lundi — Vendredi: 08:00 – 17:00 (GMT+1)<br>Samedi: Sur rendez-vous / Études d'urgence" data-en="Monday — Friday: 08:00 – 17:00 (GMT+1)<br>Saturday: By appointment / Emergency studies">Lundi — Vendredi: 08:00 – 17:00 (GMT+1)<br>Samedi: Sur rendez-vous / Études d'urgence</p>
                 </div>
-
-                <!-- DYNAMIC MAP ELEMENT -->
-                <iframe class="map-embed" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.8134700018544!2d15.2638843!3d-4.3312984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a6a313fd561bf7b%3A0x6ec0c5d63f03b54d!2sKinshasa%2C%20Democratic%20Republic%20of%20the%20Congo!5e0!3m2!1sen!2sus!4v1700000000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1" allowfullscreen="" loading="lazy"></iframe>
-            </div>
+</div>
 
             <!-- RIGHT COLUMN: INTERACTIVE FORM CONTAINER -->
             <div class="form-surface">
-                <form action="#" method="POST">
+                <form action="https://formsubmit.co/contact@sujo-engineering.com" method="POST" id="contactForm">
+                    <input type="hidden" name="_subject" value="New contact request from SUJO website">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
                     <div class="form-group">
                         <label for="comp_name" data-fr="Nom de l'Entreprise" data-en="Company Name">Nom de l'Entreprise</label>
-                        <input type="text" id="comp_name" class="form-control" required>
+                        <input type="text" id="comp_name" name="company_name" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="contact_email" data-fr="Adresse Email Professionnelle" data-en="Professional Email Address">Adresse Email Professionnelle</label>
-                        <input type="email" id="contact_email" class="form-control" required>
+                        <input type="email" id="contact_email" name="email" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="project_scope" data-fr="Nature du Projet d'Ingénierie" data-en="Nature of the Engineering Project">Nature du Projet d'Ingénierie</label>
-                        <select id="project_scope" class="form-control">
+                        <select id="project_scope" name="project_scope" class="form-control">
                             <option data-fr="Conseil technique &amp; Dimensionnement" data-en="Technical Consulting &amp; Sizing">Conseil technique &amp; Dimensionnement</option>
                             <option data-fr="Analyse de Coûts &amp; Chiffrage Métrique" data-en="Cost Analysis &amp; Metric Costing">Analyse de Coûts &amp; Chiffrage Métrique</option>
                             <option data-fr="Développement de Projet d'Infrastructure" data-en="Infrastructure Project Development">Développement de Projet d'Infrastructure</option>
@@ -99,7 +99,7 @@
                     </div>
                     <div class="form-group">
                         <label for="message" data-fr="Spécifications Techniques / Message" data-en="Technical Specifications / Message">Spécifications Techniques / Message</label>
-                        <textarea id="message" class="form-control" rows="6" data-fr-placeholder="Décrivez les contraintes techniques de votre projet..." data-en-placeholder="Describe the technical constraints of your project..." placeholder="Décrivez les contraintes techniques de votre projet..." required></textarea>
+                        <textarea id="message" name="message" class="form-control" rows="6" data-fr-placeholder="Décrivez les contraintes techniques de votre projet..." data-en-placeholder="Describe the technical constraints of your project..." placeholder="Décrivez les contraintes techniques de votre projet..." required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary" style="width: 100%;" data-fr="Transmettre le Dossier" data-en="Submit Request">Transmettre le Dossier</button>
                 </form>
