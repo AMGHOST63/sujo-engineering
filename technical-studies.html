@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Études Techniques — SUJO Engineering Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <!-- NAV BAR -->
+    <header>
+        <a href="https://sujo-engineering.com/index.html" class="nav-logo">
+            <img src="logo.png" alt="SUJO" style="height: 50px;">
+        </a>
+        <nav>
+            <ul class="nav-links" id="mobileMenu">
+                <li><a href="https://sujo-engineering.com/index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
+                <li><a href="https://sujo-engineering.com/about.html" data-fr="À Propos" data-en="About">À Propos</a></li>
+                <li class="dropdown">
+                    <a href="https://sujo-engineering.com/products.html" data-fr="Produits ▾" data-en="Products ▾">Produits ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="product-mechanical.html" data-fr="Composants Mécaniques" data-en="Mechanical Components">Composants Mécaniques</a></li>
+                        <li><a href="product-automation.html" data-fr="Automatisation &amp; Mouvement" data-en="Automation &amp; Motion">Automatisation &amp; Mouvement</a></li>
+                        <li><a href="product-hydraulics.html" data-fr="Hydraulique &amp; Pneumatique" data-en="Hydraulics &amp; Pneumatics">Hydraulique &amp; Pneumatique</a></li>
+                        <li><a href="product-safety.html" data-fr="Sécurité Industrielle" data-en="Industrial Safety">Sécurité Industrielle</a></li>
+                        <li><a href="product-transmission.html" data-fr="Transmission de Puissance" data-en="Power Transmission">Transmission de Puissance</a></li>
+                        <li><a href="product-lubrication.html" data-fr="Lubrification Industrielle" data-en="Industrial Lubrication">Lubrification Industrielle</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://sujo-engineering.com/brands.html" data-fr="Marques" data-en="Brands">Marques</a></li>
+                <li><a href="https://sujo-engineering.com/contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
+                <li><a href="http://129.213.160.94/" target="_blank" class="btn btn-outline" style="padding: 8px 16px;" data-fr="Mon Compte" data-en="My Account">Mon Compte</a></li>
+                <li><a href="https://sujo-engineering.com/quote.html" class="btn btn-primary" style="padding: 8px 16px;" data-fr="Demander un devis" data-en="Request Quote">Demander un devis</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- 1. INTRO / HERO -->
+    <main class="container" style="padding-top: 60px;">
+        <div class="section-header" style="text-align: left; max-width: 760px; margin: 0 0 24px 0;">
+            <div class="section-label" data-fr="Études Techniques" data-en="Technical Studies">Études Techniques</div>
+            <h1 class="section-title" style="font-size: 2.5rem;" data-fr="Des Analyses d'Ingénierie pour de Meilleurs Projets" data-en="Engineering Analysis That Supports Better Projects">Des Analyses d'Ingénierie pour de Meilleurs Projets</h1>
+        </div>
+
+        <div style="max-width: 760px; margin-bottom: 24px;">
+            <p style="color: var(--text-muted); margin-bottom: 20px;" data-fr="Les décisions d'ingénierie doivent être basées sur une analyse technique précise, et non sur des suppositions. SUJO Engineering Consulting réalise des études techniques complètes qui aident les clients à comprendre la faisabilité des projets, la performance technique, les risques opérationnels et les opportunités d'investissement." data-en="Engineering decisions should be based on accurate technical analysis—not assumptions. SUJO Engineering Consulting performs comprehensive technical studies that help clients understand project feasibility, engineering performance, operational risks, and investment opportunities.">Les décisions d'ingénierie doivent être basées sur une analyse technique précise, et non sur des suppositions. SUJO Engineering Consulting réalise des études techniques complètes qui aident les clients à comprendre la faisabilité des projets, la performance technique, les risques opérationnels et les opportunités d'investissement.</p>
+            <p style="color: var(--text-muted);" data-fr="Nos études fournissent la base technique nécessaire avant le démarrage de la conception, de l'approvisionnement et de la construction." data-en="Our studies provide the technical foundation needed before design, procurement, and construction begin.">Nos études fournissent la base technique nécessaire avant le démarrage de la conception, de l'approvisionnement et de la construction.</p>
+        </div>
+    </main>
+
+    <!-- 2. TECHNICAL STUDIES SERVICES -->
+    <section class="container" style="padding-top: 24px;">
+        <div class="section-header">
+            <div class="section-label" data-fr="Domaines d'Analyse" data-en="Areas of Analysis">Domaines d'Analyse</div>
+            <h2 class="section-title" data-fr="Nos Études Techniques" data-en="Our Technical Studies">Nos Études Techniques</h2>
+        </div>
+
+        <div class="grid-3">
+            <div class="card-system">
+                <h3 data-fr="Études de Faisabilité" data-en="Feasibility Studies">Études de Faisabilité</h3>
+                <p data-fr="Évaluation de la viabilité technique, des contraintes du projet, de la performance attendue et des stratégies de mise en œuvre." data-en="Assess technical viability, project constraints, expected performance, and implementation strategies.">Évaluation de la viabilité technique, des contraintes du projet, de la performance attendue et des stratégies de mise en œuvre.</p>
+            </div>
+
+            <div class="card-system">
+                <h3 data-fr="Évaluations de Site" data-en="Site Assessments">Évaluations de Site</h3>
+                <p data-fr="Analyse des conditions existantes du site, des infrastructures, des services publics, de l'accessibilité et des considérations environnementales." data-en="Evaluate existing site conditions, infrastructure, utilities, accessibility, and environmental considerations.">Analyse des conditions existantes du site, des infrastructures, des services publics, de l'accessibilité et des considérations environnementales.</p>
+            </div>
+
+            <div class="card-system">
+                <h3 data-fr="Analyse d'Ingénierie" data-en="Engineering Analysis">Analyse d'Ingénierie</h3>
+                <p data-fr="Réalisation de calculs, d'évaluations de systèmes, d'analyses de charges et de simulations d'ingénierie pour appuyer les décisions de conception." data-en="Perform calculations, system evaluations, load analysis, and engineering simulations to support design decisions.">Réalisation de calculs, d'évaluations de systèmes, d'analyses de charges et de simulations d'ingénierie pour appuyer les décisions de conception.</p>
+            </div>
+
+            <div class="card-system">
+                <h3 data-fr="Due Diligence Technique" data-en="Technical Due Diligence">Due Diligence Technique</h3>
+                <p data-fr="Examen de la documentation d'ingénierie, des hypothèses de projet et des risques techniques avant un investissement ou une acquisition." data-en="Review engineering documentation, project assumptions, and technical risks before investment or acquisition.">Examen de la documentation d'ingénierie, des hypothèses de projet et des risques techniques avant un investissement ou une acquisition.</p>
+            </div>
+
+            <div class="card-system">
+                <h3 data-fr="Évaluation de Performance des Systèmes" data-en="System Performance Evaluation">Évaluation de Performance des Systèmes</h3>
+                <p data-fr="Analyse des installations existantes afin d'identifier les inefficacités, les problèmes de fiabilité et les possibilités d'amélioration." data-en="Analyze existing facilities to identify inefficiencies, reliability issues, and opportunities for improvement.">Analyse des installations existantes afin d'identifier les inefficacités, les problèmes de fiabilité et les possibilités d'amélioration.</p>
+            </div>
+
+            <div class="card-system">
+                <h3 data-fr="Rapports Techniques" data-en="Technical Reports">Rapports Techniques</h3>
+                <p data-fr="Préparation de rapports d'ingénierie professionnels avec recommandations, calculs justificatifs, dessins et stratégies de mise en œuvre." data-en="Prepare professional engineering reports with recommendations, supporting calculations, drawings, and implementation strategies.">Préparation de rapports d'ingénierie professionnels avec recommandations, calculs justificatifs, dessins et stratégies de mise en œuvre.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. DELIVERABLES -->
+    <section class="container" style="padding-top: 60px;">
+        <div class="section-header">
+            <div class="section-label" data-fr="Livrables" data-en="Deliverables">Livrables</div>
+            <h2 class="section-title" data-fr="Ce Que Peut Inclure Une Étude Technique" data-en="What a Technical Study May Include">Ce Que Peut Inclure Une Étude Technique</h2>
+        </div>
+
+        <div class="grid-4">
+            <div class="card-system"><h3 data-fr="Résumé Exécutif" data-en="Executive Summary">Résumé Exécutif</h3></div>
+            <div class="card-system"><h3 data-fr="Constats Techniques" data-en="Technical Findings">Constats Techniques</h3></div>
+            <div class="card-system"><h3 data-fr="Calculs d'Ingénierie" data-en="Engineering Calculations">Calculs d'Ingénierie</h3></div>
+            <div class="card-system"><h3 data-fr="Évaluation des Risques" data-en="Risk Assessment">Évaluation des Risques</h3></div>
+            <div class="card-system"><h3 data-fr="Solutions Alternatives" data-en="Alternative Solutions">Solutions Alternatives</h3></div>
+            <div class="card-system"><h3 data-fr="Considérations de Coût" data-en="Cost Considerations">Considérations de Coût</h3></div>
+            <div class="card-system"><h3 data-fr="Recommandations de Mise en Œuvre" data-en="Implementation Recommendations">Recommandations de Mise en Œuvre</h3></div>
+            <div class="card-system"><h3 data-fr="Rapport d'Ingénierie Final" data-en="Final Engineering Report">Rapport d'Ingénierie Final</h3></div>
+        </div>
+    </section>
+
+    <!-- 4. WHY TECHNICAL STUDIES MATTER -->
+    <section class="container" style="padding-top: 60px;">
+        <div class="section-header">
+            <div class="section-label" data-fr="Valeur Technique" data-en="Technical Value">Valeur Technique</div>
+            <h2 class="section-title" data-fr="Pourquoi les Études Techniques Sont Importantes" data-en="Why Technical Studies Matter">Pourquoi les Études Techniques Sont Importantes</h2>
+        </div>
+
+        <div class="grid-3">
+            <div class="card-system"><h3 data-fr="Réduire les Risques Techniques" data-en="Reduce Technical Risk">Réduire les Risques Techniques</h3></div>
+            <div class="card-system"><h3 data-fr="Améliorer la Planification du Projet" data-en="Improve Project Planning">Améliorer la Planification du Projet</h3></div>
+            <div class="card-system"><h3 data-fr="Optimiser les Solutions d'Ingénierie" data-en="Optimize Engineering Solutions">Optimiser les Solutions d'Ingénierie</h3></div>
+            <div class="card-system"><h3 data-fr="Renforcer la Confiance des Investisseurs" data-en="Increase Investment Confidence">Renforcer la Confiance des Investisseurs</h3></div>
+            <div class="card-system"><h3 data-fr="Limiter les Changements Coûteux" data-en="Minimize Costly Design Changes">Limiter les Changements Coûteux</h3></div>
+            <div class="card-system"><h3 data-fr="Soutenir la Prise de Décision" data-en="Support Informed Decision-Making">Soutenir la Prise de Décision</h3></div>
+        </div>
+    </section>
+
+    <!-- 5. CTA -->
+    <section style="background: linear-gradient(180deg, var(--dark-bg) 0%, rgba(214,0,0,0.1) 100%); border-top: 1px solid var(--border-color); margin-top: 60px;">
+        <div class="container" style="text-align: center; padding: 100px 24px;">
+            <h2 class="hero-title" style="font-size: 2.5rem; margin-bottom: 16px;" data-fr="Besoin d'une Étude Technique Fiable ?" data-en="Need a Reliable Technical Study?">Besoin d'une Étude Technique Fiable ?</h2>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 32px auto;" data-fr="Parlons de votre projet et des analyses nécessaires pour avancer avec confiance avant la conception, l'approvisionnement ou la construction." data-en="Let's discuss your project and the analysis needed to move forward with confidence before design, procurement, or construction.">Parlons de votre projet et des analyses nécessaires pour avancer avec confiance avant la conception, l'approvisionnement ou la construction.</p>
+            <a href="https://sujo-engineering.com/quote.html" class="btn btn-primary" data-fr="Demander un devis" data-en="Request a Quote">Demander un devis</a>
+        </div>
+    </section>
+
+    <!-- 6. FOOTER -->
+    <footer style="background: #0a0c0f; border-top: 1px solid var(--border-color); padding: 60px 0 30px 0;">
+        <div class="container grid-3" style="padding: 0 24px 40px 24px;">
+            <div>
+                <img src="logo.png" alt="SUJO" style="height: 40px; margin-bottom: 16px;">
+                <p style="color: var(--text-muted); font-size: 0.9rem;" data-fr="SUJO Engineering Consulting SARL<br>Kinshasa, République Démocratique du Congo" data-en="SUJO Engineering Consulting SARL<br>Kinshasa, Democratic Republic of Congo">SUJO Engineering Consulting SARL<br>Kinshasa, République Démocratique du Congo</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 16px; font-size: 0.95rem;" data-fr="Matrices Technologiques" data-en="Technology Index">Matrices Technologiques</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 8px;"><a href="https://sujo-engineering.com/products.html" style="color: var(--text-muted); text-decoration: none;" data-fr="Index Global des Produits" data-en="Global Product Index">Index Global des Produits</a></p>
+                <p style="font-size: 0.9rem; margin-bottom: 8px;"><a href="https://sujo-engineering.com/brands.html" style="color: var(--text-muted); text-decoration: none;" data-fr="Marques Validées" data-en="Approved Brands">Marques Validées</a></p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 16px; font-size: 0.95rem;" data-fr="Canaux Directs" data-en="Direct Channels">Canaux Directs</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;">DRC: +243 974 570 630</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem;" data-fr="Email: contact@sujo-engineering.com" data-en="Email: contact@sujo-engineering.com">Email: contact@sujo-engineering.com</p>
+            </div>
+        </div>
+        <div style="text-align: center; border-top: 1px solid var(--border-color); padding-top: 30px; font-size: 0.8rem; color: var(--text-muted);" data-fr="&copy; 2026 SUJO Engineering Consulting SARL. Tous droits réservés." data-en="&copy; 2026 SUJO Engineering Consulting SARL. All rights reserved.">
+            &copy; 2026 SUJO Engineering Consulting SARL. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function applyLang(lang) {
+            document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+                el.innerHTML = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+            });
+            document.documentElement.lang = lang;
+        }
+
+        function setLang(lang) {
+            localStorage.setItem('sujoLang', lang);
+            const btnFr = document.getElementById('btn-fr');
+            const btnEn = document.getElementById('btn-en');
+            if (btnFr && btnEn) {
+                btnFr.classList.toggle('active', lang === 'fr');
+                btnEn.classList.toggle('active', lang === 'en');
+            }
+            applyLang(lang);
+        }
+
+        (function () {
+            const saved = localStorage.getItem('sujoLang') || 'fr';
+            applyLang(saved);
+            const btnFr = document.getElementById('btn-fr');
+            const btnEn = document.getElementById('btn-en');
+            if (btnFr && btnEn) {
+                btnFr.classList.toggle('active', saved === 'fr');
+                btnEn.classList.toggle('active', saved === 'en');
+            }
+        })();
+
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+            document.querySelector('.hamburger').classList.toggle('open');
+        }
+
+        document.querySelectorAll('.dropdown > a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 900) {
+                    e.preventDefault();
+                    link.parentElement.classList.toggle('open');
+                }
+            });
+        });
+
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (link.parentElement.classList.contains('dropdown')) return;
+                document.getElementById('mobileMenu').classList.remove('open');
+                document.querySelector('.hamburger').classList.remove('open');
+            });
+        });
+    </script>
+
+</body>
+</html>
