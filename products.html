@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Index des Composants Spécifiés — SUJO</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<script defer="" src="app.js"></script>
+</head>
+<body>
+<!-- NAV BAR -->
+<header>
+<a class="nav-logo" href="https://sujo-engineering.com/index.html">
+<img alt="SUJO" src="logo.png" style="height: 50px;"/>
+</a>
+<nav>
+<ul class="nav-links" id="mobileMenu">
+<li><a data-en="Home" data-fr="Accueil" href="https://sujo-engineering.com/index.html">Accueil</a></li>
+<li><a data-en="About" data-fr="À Propos" href="https://sujo-engineering.com/about.html">À Propos</a></li>
+<li class="dropdown">
+<a class="active" data-en="Products ▾" data-fr="Produits ▾" href="https://sujo-engineering.com/products.html">Produits ▾</a>
+<ul class="dropdown-menu">
+<li><a data-en="Mechanical Components" data-fr="Composants Mécaniques" href="product-mechanical.html">Composants Mécaniques</a></li>
+<li><a data-en="Automation &amp; Motion" data-fr="Automatisation &amp; Mouvement" href="product-automation.html">Automatisation &amp; Mouvement</a></li>
+<li><a data-en="Hydraulics &amp; Pneumatics" data-fr="Hydraulique &amp; Pneumatique" href="product-hydraulics.html">Hydraulique &amp; Pneumatique</a></li>
+<li><a data-en="Industrial Safety" data-fr="Sécurité Industrielle" href="product-safety.html">Sécurité Industrielle</a></li>
+<li><a data-en="Power Transmission" data-fr="Transmission de Puissance" href="product-transmission.html">Transmission de Puissance</a></li>
+<li><a data-en="Industrial Lubrication" data-fr="Lubrification Industrielle" href="product-lubrication.html">Lubrification Industrielle</a></li>
+</ul>
+</li>
+<li><a data-en="Brands" data-fr="Marques" href="https://sujo-engineering.com/brands.html">Marques</a></li>
+<li><a data-en="Contact" data-fr="Contact" href="https://sujo-engineering.com/contact.html">Contact</a></li>
+<li><a class="btn btn-outline" data-en="My Account" data-fr="Mon Compte" href="http://129.213.160.94/" style="padding: 8px 16px;" target="_blank">Mon Compte</a></li>
+<li><a class="btn btn-primary" data-en="Request Quote" data-fr="Demander un devis" href="https://sujo-engineering.com/quote.html" style="padding: 8px 16px;">Demander un devis</a></li>
+</ul>
+</nav>
+<div aria-label="Menu" class="hamburger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</header>
+<main class="container">
+<div class="section-header" style="text-align: left;">
+<div class="section-label" data-en="Hardware Architecture" data-fr="Architecture Matérielle">Architecture Matérielle</div>
+<h1 class="section-title" data-en="Industrial Product Categories" data-fr="Catégories de Produits Industriels" style="font-size: 2.75rem;">Industrial Product Categories</h1>
+<p data-en="Select a category to explore the hardware specifications, tolerances, and manufacturers integrated into our industrial designs." data-fr="Sélectionnez une catégorie pour explorer les spécifications matérielles, tolérances et constructeurs intégrés à nos conceptions industrielles." style="color: var(--text-muted); margin-top: 12px; max-width: 700px;">Sélectionnez une catégorie pour explorer les spécifications matérielles, tolérances et constructeurs intégrés à nos conceptions industrielles.</p>
+</div>
+<div class="grid-3" style="margin-top: 48px;">
+<!-- CARD 1: MECHANICAL -->
+<a class="card-system" href="product-mechanical.html">
+<div class="card-icon">⚙️</div>
+<h3 data-en="Bearings &amp; Mounted Units" data-fr="Bearings &amp; Mounted Units">Bearings &amp; Mounted Units</h3>
+<p data-en="Deep groove, tapered, spherical, mounted bearings, insert bearings and ceramic bearings from SKF, FAG, NTN, NSK, Timken and Koyo." data-fr="Deep groove, tapered, spherical, mounted bearings, insert bearings and ceramic bearings from SKF, FAG, NTN, NSK, Timken and Koyo.">Deep groove, tapered, spherical, mounted bearings, insert bearings and ceramic bearings from SKF, FAG, NTN, NSK, Timken and Koyo.</p>
+<div class="btn-text" data-en="Explore Matrix →" data-fr="Explorer la matrice →">Explorer la matrice →</div>
+</a>
+<!-- CARD 2: AUTOMATION -->
+<a class="card-system" href="product-automation.html">
+<div class="card-icon">🤖</div>
+<h3 data-en="Linear Motion &amp; Precision Guides" data-fr="Linear Motion &amp; Precision Guides">Linear Motion &amp; Precision Guides</h3>
+<p data-en="Linear guides, ball screws, actuators, shafts and crossed roller bearings from THK, Hiwin, Bosch Rexroth, IKO and NSK." data-fr="Linear guides, ball screws, actuators, shafts and crossed roller bearings from THK, Hiwin, Bosch Rexroth, IKO and NSK.">Linear guides, ball screws, actuators, shafts and crossed roller bearings from THK, Hiwin, Bosch Rexroth, IKO and NSK.</p>
+<div class="btn-text" data-en="Explore Matrix →" data-fr="Explorer la matrice →">Explorer la matrice →</div>
+</a>
+<!-- CARD 3: HYDRAULICS -->
+<a class="card-system" href="product-hydraulics.html">
+<div class="card-icon">💧</div>
+<h3 data-en="Power Transmission" data-fr="Power Transmission">Power Transmission</h3>
+<p data-en="Industrial belts, couplings, gearboxes, geared motors, VFDs and drive components from Gates, SEW, Nord, Flender and Bonfiglioli." data-fr="Industrial belts, couplings, gearboxes, geared motors, VFDs and drive components from Gates, SEW, Nord, Flender and Bonfiglioli.">Industrial belts, couplings, gearboxes, geared motors, VFDs and drive components from Gates, SEW, Nord, Flender and Bonfiglioli.</p>
+<div class="btn-text" data-en="Explore Matrix →" data-fr="Explorer la matrice →">Explorer la matrice →</div>
+</a>
+<!-- CARD 4: SAFETY -->
+<a class="card-system" href="product-safety.html">
+<div class="card-icon">🛡️</div>
+<h3 data-en="Hydraulic &amp; Pneumatic Systems" data-fr="Hydraulic &amp; Pneumatic Systems">Hydraulic &amp; Pneumatic Systems</h3>
+<p data-en="Hydraulic pumps, valves, cylinders, hoses, pneumatic cylinders, FRLs and fittings from Parker, Bosch Rexroth, Eaton, Festo and SMC." data-fr="Hydraulic pumps, valves, cylinders, hoses, pneumatic cylinders, FRLs and fittings from Parker, Bosch Rexroth, Eaton, Festo and SMC.">Hydraulic pumps, valves, cylinders, hoses, pneumatic cylinders, FRLs and fittings from Parker, Bosch Rexroth, Eaton, Festo and SMC.</p>
+<div class="btn-text" data-en="Explore Matrix →" data-fr="Explorer la matrice →">Explorer la matrice →</div>
+</a>
+<!-- CARD 5: POWER TRANSMISSION -->
+<a class="card-system" href="product-transmission.html">
+<div class="card-icon">🔄</div>
+<h3 data-en="Industrial Automation &amp; Electrical" data-fr="Industrial Automation &amp; Electrical">Industrial Automation &amp; Electrical</h3>
+<p data-en="PLCs, HMIs, sensors, servo drives, relays, terminal blocks and industrial connectivity from Siemens, ABB, Omron, Phoenix Contact and WAGO." data-fr="PLCs, HMIs, sensors, servo drives, relays, terminal blocks and industrial connectivity from Siemens, ABB, Omron, Phoenix Contact and WAGO.">PLCs, HMIs, sensors, servo drives, relays, terminal blocks and industrial connectivity from Siemens, ABB, Omron, Phoenix Contact and WAGO.</p>
+<div class="btn-text" data-en="Explore Matrix →" data-fr="Explorer la matrice →">Explorer la matrice →</div>
+</a>
+<!-- CARD 6: LUBRICATION -->
+<a class="card-system" href="product-lubrication.html">
+<div class="card-icon">🧪</div>
+<h3 data-en="Industrial Safety, Lubrication &amp; Lifting" data-fr="Industrial Safety, Lubrication &amp; Lifting">Industrial Safety, Lubrication &amp; Lifting</h3>
+<p data-en="PPE, lubrication systems, oils, hoists, rigging equipment, cleaning systems and maintenance products from SKF, Lincoln, 3M, MSA, Kito and Kärcher." data-fr="PPE, lubrication systems, oils, hoists, rigging equipment, cleaning systems and maintenance products from SKF, Lincoln, 3M, MSA, Kito and Kärcher.">PPE, lubrication systems, oils, hoists, rigging equipment, cleaning systems and maintenance products from SKF, Lincoln, 3M, MSA, Kito and Kärcher.</p>
+<div class="btn-text" data-en="Explore Matrix →" data-fr="Explorer la matrice →">Explorer la matrice →</div>
+</a>
+</div>
+</main>
+<!-- 8. COMPONENT: FOOTER SECTION -->
+<footer style="background: #0a0c0f; border-top: 1px solid var(--border-color); padding: 60px 0 30px 0; margin-top: 80px;">
+<div class="container grid-3" style="padding: 0 24px 40px 24px;">
+<div>
+<img alt="SUJO" src="logo.png" style="height: 40px; margin-bottom: 16px;"/>
+<p data-en="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, Democratic Republic of Congo" data-fr="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, République Démocratique du Congo" style="color: var(--text-muted); font-size: 0.9rem;">SUJO Engineering Consulting SARL<br/>Kinshasa, République Démocratique du Congo</p>
+</div>
+<div>
+<h4 data-en="Technology Index" data-fr="Matrices Technologiques" style="margin-bottom: 16px; font-size: 0.95rem;">Matrices Technologiques</h4>
+<p style="font-size: 0.9rem; margin-bottom: 8px;"><a data-en="Global Product Index" data-fr="Index Global des Produits" href="https://sujo-engineering.com/products.html" style="color: var(--text-muted); text-decoration: none;">Index Global des Produits</a></p>
+<p style="font-size: 0.9rem; margin-bottom: 8px;"><a data-en="Approved Brands" data-fr="Marques Validées" href="https://sujo-engineering.com/brands.html" style="color: var(--text-muted); text-decoration: none;">Marques Validées</a></p>
+</div>
+<div>
+<h4 data-en="Direct Channels" data-fr="Canaux Directs" style="margin-bottom: 16px; font-size: 0.95rem;">Canaux Directs</h4>
+<p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;">DRC: +243 974 570 630</p>
+<p data-en="Email: contact@sujo-engineering.com" data-fr="Email: contact@sujo-engineering.com" style="color: var(--text-muted); font-size: 0.9rem;">Email: contact@sujo-engineering.com</p>
+</div>
+</div>
+<div data-en="© 2026 SUJO Engineering Consulting SARL. All rights reserved." data-fr="© 2026 SUJO Engineering Consulting SARL. Tous droits réservés." style="text-align: center; border-top: 1px solid var(--border-color); padding-top: 30px; font-size: 0.8rem; color: var(--text-muted);">
+            © 2026 SUJO Engineering Consulting SARL. All rights reserved.
+        </div>
+</footer>
+<script>
+        function applyLang(lang) {
+            document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+                el.innerHTML = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+            });
+            document.documentElement.lang = lang;
+        }
+
+        function setLang(lang) {
+            localStorage.setItem('sujoLang', lang);
+            const btnFr = document.getElementById('btn-fr');
+            const btnEn = document.getElementById('btn-en');
+            if (btnFr && btnEn) {
+                btnFr.classList.toggle('active', lang === 'fr');
+                btnEn.classList.toggle('active', lang === 'en');
+            }
+            applyLang(lang);
+        }
+
+        // Apply the site-wide saved language preference on every page load
+        (function () {
+            const saved = localStorage.getItem('sujoLang') || 'fr';
+            applyLang(saved);
+            const btnFr = document.getElementById('btn-fr');
+            const btnEn = document.getElementById('btn-en');
+            if (btnFr && btnEn) {
+                btnFr.classList.toggle('active', saved === 'fr');
+                btnEn.classList.toggle('active', saved === 'en');
+            }
+        })();
+
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+            document.querySelector('.hamburger').classList.toggle('open');
+        }
+
+        // On mobile, tapping "Produits ▾" expands the submenu instead of navigating
+        document.querySelectorAll('.dropdown > a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 900) {
+                    e.preventDefault();
+                    link.parentElement.classList.toggle('open');
+                }
+            });
+        });
+
+        // Close mobile menu when an actual navigation link is tapped
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (link.parentElement.classList.contains('dropdown')) return; // handled separately
+                document.getElementById('mobileMenu').classList.remove('open');
+                document.querySelector('.hamburger').classList.remove('open');
+            });
+        });
+    </script>
+</body>
+</html>
