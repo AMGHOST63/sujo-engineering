@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimation des Coûts — SUJO Engineering Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <!-- NAV BAR -->
+    <header>
+        <a href="https://sujo-engineering.com/index.html" class="nav-logo">
+            <img src="logo.png" alt="SUJO" style="height: 50px;">
+        </a>
+        <nav>
+            <ul class="nav-links" id="mobileMenu">
+                <li><a href="https://sujo-engineering.com/index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
+                <li><a href="https://sujo-engineering.com/about.html" data-fr="À Propos" data-en="About">À Propos</a></li>
+                <li class="dropdown">
+                    <a href="https://sujo-engineering.com/products.html" data-fr="Produits ▾" data-en="Products ▾">Produits ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="product-mechanical.html" data-fr="Composants Mécaniques" data-en="Mechanical Components">Composants Mécaniques</a></li>
+                        <li><a href="product-automation.html" data-fr="Automatisation &amp; Mouvement" data-en="Automation &amp; Motion">Automatisation &amp; Mouvement</a></li>
+                        <li><a href="product-hydraulics.html" data-fr="Hydraulique &amp; Pneumatique" data-en="Hydraulics &amp; Pneumatics">Hydraulique &amp; Pneumatique</a></li>
+                        <li><a href="product-safety.html" data-fr="Sécurité Industrielle" data-en="Industrial Safety">Sécurité Industrielle</a></li>
+                        <li><a href="product-transmission.html" data-fr="Transmission de Puissance" data-en="Power Transmission">Transmission de Puissance</a></li>
+                        <li><a href="product-lubrication.html" data-fr="Lubrification Industrielle" data-en="Industrial Lubrication">Lubrification Industrielle</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://sujo-engineering.com/brands.html" data-fr="Marques" data-en="Brands">Marques</a></li>
+                <li><a href="https://sujo-engineering.com/contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
+                <li><a href="http://129.213.160.94/" target="_blank" class="btn btn-outline" style="padding: 8px 16px;" data-fr="Mon Compte" data-en="My Account">Mon Compte</a></li>
+                <li><a href="https://sujo-engineering.com/quote.html" class="btn btn-primary" style="padding: 8px 16px;" data-fr="Demander un devis" data-en="Request Quote">Demander un devis</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- 1. INTRO / HERO -->
+    <main class="container" style="padding-top: 60px;">
+        <div class="section-header" style="text-align: left; max-width: 760px; margin: 0 0 24px 0;">
+            <div class="section-label" data-fr="Estimation des Coûts" data-en="Cost Estimation">Estimation des Coûts</div>
+            <h1 class="section-title" style="font-size: 2.5rem;" data-fr="Des Estimations de Coûts Précises et Fiables" data-en="Accurate Project Cost Estimates You Can Trust">Des Estimations de Coûts Précises et Fiables</h1>
+        </div>
+
+        <div style="max-width: 760px; margin-bottom: 24px;">
+            <p style="color: var(--text-muted); margin-bottom: 20px;" data-fr="Une estimation fiable des coûts est essentielle à une bonne planification de projet. Chez SUJO Engineering Consulting, nous préparons des estimations détaillées des coûts d'ingénierie qui aident les investisseurs, entrepreneurs, promoteurs et organisations gouvernementales à prendre des décisions financières confiantes avant le début des travaux." data-en="Reliable cost estimation is essential for successful project planning. At SUJO Engineering Consulting, we prepare detailed engineering cost estimates that help investors, contractors, developers, and government organizations make confident financial decisions before construction begins.">Une estimation fiable des coûts est essentielle à une bonne planification de projet. Chez SUJO Engineering Consulting, nous préparons des estimations détaillées des coûts d'ingénierie qui aident les investisseurs, entrepreneurs, promoteurs et organisations gouvernementales à prendre des décisions financières confiantes avant le début des travaux.</p>
+            <p style="color: var(--text-muted);" data-fr="Nos estimations combinent l'expertise d'ingénierie avec les prix actuels du marché, l'analyse de la main-d'œuvre, les coûts des matériaux et les conditions spécifiques du projet." data-en="Our estimates combine engineering knowledge with current market pricing, labor analysis, material costs, and project-specific conditions.">Nos estimations combinent l'expertise d'ingénierie avec les prix actuels du marché, l'analyse de la main-d'œuvre, les coûts des matériaux et les conditions spécifiques du projet.</p>
+        </div>
+    </main>
+
+    <!-- 2. COST ESTIMATION SERVICES -->
+    <section class="container" style="padding-top: 24px;">
+        <div class="section-header">
+            <div class="section-label" data-fr="Domaines d'Intervention" data-en="Areas of Practice">Domaines d'Intervention</div>
+            <h2 class="section-title" data-fr="Nos Services d'Estimation des Coûts" data-en="Our Cost Estimation Services">Nos Services d'Estimation des Coûts</h2>
+        </div>
+
+        <div class="grid-3">
+            <div class="card-system">
+                <h3 data-fr="Estimations Budgétaires Préliminaires" data-en="Preliminary Budget Estimates">Estimations Budgétaires Préliminaires</h3>
+                <p data-fr="Estimations de haut niveau utilisées pendant la planification de projet et les études de faisabilité." data-en="High-level estimates used during project planning and feasibility studies.">Estimations de haut niveau utilisées pendant la planification de projet et les études de faisabilité.</p>
+            </div>
+
+            <div class="card-system">
+                <h3 data-fr="Métrés Détaillés" data-en="Detailed Quantity Takeoffs">Métrés Détaillés</h3>
+                <p data-fr="Mesure précise des matériaux, de la main-d'œuvre, des équipements et des activités de construction nécessaires à l'exécution du projet." data-en="Accurate measurement of materials, labor, equipment, and construction activities required for project execution.">Mesure précise des matériaux, de la main-d'œuvre, des équipements et des activités de construction nécessaires à l'exécution du projet.</p>
+            </div>
+
+            <div class="card-system">
+                <h3 data-fr="Analyse des Coûts de Construction" data-en="Construction Cost Analysis">Analyse des Coûts de Construction</h3>
+                <p data-fr="Évaluation complète des coûts directs et indirects de construction, de la planification des contingences et des prévisions budgétaires." data-en="Comprehensive evaluation of direct and indirect construction costs, contingency planning, and budget forecasting.">Évaluation complète des coûts directs et indirects de construction, de la planification des contingences et des prévisions budgétaires.</p>
+            </div>
+
+            <div class="card-system">
+                <h3 data-fr="Estimation des Coûts d'Équipement" data-en="Equipment Cost Estimation">Estimation des Coûts d'Équipement</h3>
+                <p data-fr="Analyse des prix et du coût du cycle de vie pour les équipements industriels, les machines et les systèmes spécialisés." data-en="Pricing and lifecycle cost analysis for industrial equipment, machinery, and specialized systems.">Analyse des prix et du coût du cycle de vie pour les équipements industriels, les machines et les systèmes spécialisés.</p>
+            </div>
+
+            <div class="card-system">
+                <h3 data-fr="Appui à l'Évaluation des Offres" data-en="Bid Evaluation Support">Appui à l'Évaluation des Offres</h3>
+                <p data-fr="Comparaison technique des propositions des entrepreneurs afin de s'assurer que les prix correspondent au périmètre du projet et aux exigences d'ingénierie." data-en="Technical comparison of contractor proposals to ensure pricing aligns with project scope and engineering requirements.">Comparaison technique des propositions des entrepreneurs afin de s'assurer que les prix correspondent au périmètre du projet et aux exigences d'ingénierie.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ESTIMATION PROCESS -->
+    <section class="container" style="padding-top: 60px;">
+        <div class="section-header">
+            <div class="section-label" data-fr="Méthodologie" data-en="Methodology">Méthodologie</div>
+            <h2 class="section-title" data-fr="Notre Processus d'Estimation" data-en="Our Estimation Process">Notre Processus d'Estimation</h2>
+        </div>
+
+        <div class="grid-3">
+            <div class="card-system"><h3 data-fr="Revue du Périmètre" data-en="Project Scope Review">Revue du Périmètre</h3><p data-fr="Analyse initiale des objectifs, contraintes, plans et exigences techniques du projet." data-en="Initial review of project objectives, constraints, drawings, and technical requirements.">Analyse initiale des objectifs, contraintes, plans et exigences techniques du projet.</p></div>
+            <div class="card-system"><h3 data-fr="Métré Quantitatif" data-en="Quantity Takeoff">Métré Quantitatif</h3><p data-fr="Identification et mesure des quantités nécessaires pour les matériaux, équipements et activités de construction." data-en="Identification and measurement of the quantities required for materials, equipment, and construction activities.">Identification et mesure des quantités nécessaires pour les matériaux, équipements et activités de construction.</p></div>
+            <div class="card-system"><h3 data-fr="Prix des Matériaux et Équipements" data-en="Material and Equipment Pricing">Prix des Matériaux et Équipements</h3><p data-fr="Évaluation des coûts selon les prix du marché, les fournisseurs disponibles et les conditions locales d'approvisionnement." data-en="Cost evaluation based on market pricing, available suppliers, and local procurement conditions.">Évaluation des coûts selon les prix du marché, les fournisseurs disponibles et les conditions locales d'approvisionnement.</p></div>
+            <div class="card-system"><h3 data-fr="Analyse de la Main-d'Œuvre" data-en="Labor Analysis">Analyse de la Main-d'Œuvre</h3><p data-fr="Estimation des besoins en main-d'œuvre, productivité, durée d'exécution et coûts associés." data-en="Estimation of labor needs, productivity, execution duration, and associated costs.">Estimation des besoins en main-d'œuvre, productivité, durée d'exécution et coûts associés.</p></div>
+            <div class="card-system"><h3 data-fr="Évaluation des Risques" data-en="Risk Assessment">Évaluation des Risques</h3><p data-fr="Identification des incertitudes, contraintes techniques, contingences et facteurs pouvant influencer le budget final." data-en="Identification of uncertainties, technical constraints, contingencies, and factors that may influence the final budget.">Identification des incertitudes, contraintes techniques, contingences et facteurs pouvant influencer le budget final.</p></div>
+            <div class="card-system"><h3 data-fr="Rapport Final des Coûts" data-en="Final Cost Report">Rapport Final des Coûts</h3><p data-fr="Présentation d'un rapport clair avec les hypothèses, quantités, prix, risques et recommandations budgétaires." data-en="Delivery of a clear report with assumptions, quantities, pricing, risks, and budget recommendations.">Présentation d'un rapport clair avec les hypothèses, quantités, prix, risques et recommandations budgétaires.</p></div>
+        </div>
+    </section>
+
+    <!-- 4. BENEFITS -->
+    <section class="container" style="padding-top: 60px;">
+        <div class="section-header">
+            <div class="section-label" data-fr="Avantages" data-en="Benefits">Avantages</div>
+            <h2 class="section-title" data-fr="Pourquoi une Estimation Professionnelle est Importante" data-en="Why Professional Estimation Matters">Pourquoi une Estimation Professionnelle est Importante</h2>
+        </div>
+
+        <div class="grid-3">
+            <div class="card-system"><h3 data-fr="Meilleure Planification Budgétaire" data-en="Better Budget Planning">Meilleure Planification Budgétaire</h3><p data-fr="Planifiez vos investissements avec des chiffres plus clairs et mieux structurés." data-en="Plan your investments with clearer and better-structured numbers.">Planifiez vos investissements avec des chiffres plus clairs et mieux structurés.</p></div>
+            <div class="card-system"><h3 data-fr="Réduction du Risque Financier" data-en="Reduced Financial Risk">Réduction du Risque Financier</h3><p data-fr="Identifiez les risques de dépassement avant qu'ils ne deviennent des problèmes coûteux." data-en="Identify cost overrun risks before they become expensive problems.">Identifiez les risques de dépassement avant qu'ils ne deviennent des problèmes coûteux.</p></div>
+            <div class="card-system"><h3 data-fr="Décisions d'Investissement Améliorées" data-en="Improved Investment Decisions">Décisions d'Investissement Améliorées</h3><p data-fr="Comparez les options techniques et financières avec plus de confiance." data-en="Compare technical and financial options with greater confidence.">Comparez les options techniques et financières avec plus de confiance.</p></div>
+            <div class="card-system"><h3 data-fr="Coûts de Projet Transparents" data-en="Transparent Project Costing">Coûts de Projet Transparents</h3><p data-fr="Comprenez ce qui influence le budget grâce à des hypothèses et postes de coûts clairs." data-en="Understand what drives the budget through clear assumptions and cost items.">Comprenez ce qui influence le budget grâce à des hypothèses et postes de coûts clairs.</p></div>
+            <div class="card-system"><h3 data-fr="Confiance pendant l'Approvisionnement" data-en="Greater Confidence During Procurement">Confiance pendant l'Approvisionnement</h3><p data-fr="Évaluez les offres et les prix fournisseurs avec une base technique solide." data-en="Evaluate bids and supplier pricing with a stronger technical foundation.">Évaluez les offres et les prix fournisseurs avec une base technique solide.</p></div>
+        </div>
+    </section>
+
+    <!-- 5. CTA -->
+    <section style="background: linear-gradient(180deg, var(--dark-bg) 0%, rgba(214,0,0,0.1) 100%); border-top: 1px solid var(--border-color); margin-top: 60px;">
+        <div class="container" style="text-align: center; padding: 100px 24px;">
+            <h2 class="hero-title" style="font-size: 2.5rem; margin-bottom: 16px;" data-fr="Besoin d'une Estimation Fiable pour Votre Projet ?" data-en="Need a Reliable Estimate for Your Project?">Besoin d'une Estimation Fiable pour Votre Projet ?</h2>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 32px auto;" data-fr="Parlons de votre périmètre, de votre budget et de la manière dont SUJO peut vous aider à planifier avec précision." data-en="Let's discuss your scope, budget, and how SUJO can help you plan with precision.">Parlons de votre périmètre, de votre budget et de la manière dont SUJO peut vous aider à planifier avec précision.</p>
+            <a href="https://sujo-engineering.com/quote.html" class="btn btn-primary" data-fr="Demander un devis" data-en="Request a Quote">Demander un devis</a>
+        </div>
+    </section>
+
+    <!-- 6. FOOTER -->
+    <footer style="background: #0a0c0f; border-top: 1px solid var(--border-color); padding: 60px 0 30px 0;">
+        <div class="container grid-3" style="padding: 0 24px 40px 24px;">
+            <div>
+                <img src="logo.png" alt="SUJO" style="height: 40px; margin-bottom: 16px;">
+                <p style="color: var(--text-muted); font-size: 0.9rem;" data-fr="SUJO Engineering Consulting SARL<br>Kinshasa, République Démocratique du Congo" data-en="SUJO Engineering Consulting SARL<br>Kinshasa, Democratic Republic of Congo">SUJO Engineering Consulting SARL<br>Kinshasa, République Démocratique du Congo</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 16px; font-size: 0.95rem;" data-fr="Matrices Technologiques" data-en="Technology Index">Matrices Technologiques</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 8px;"><a href="https://sujo-engineering.com/products.html" style="color: var(--text-muted); text-decoration: none;" data-fr="Index Global des Produits" data-en="Global Product Index">Index Global des Produits</a></p>
+                <p style="font-size: 0.9rem; margin-bottom: 8px;"><a href="https://sujo-engineering.com/brands.html" style="color: var(--text-muted); text-decoration: none;" data-fr="Marques Validées" data-en="Approved Brands">Marques Validées</a></p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 16px; font-size: 0.95rem;" data-fr="Canaux Directs" data-en="Direct Channels">Canaux Directs</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;">DRC: +243 974 570 630</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem;" data-fr="Email: contact@sujo-engineering.com" data-en="Email: contact@sujo-engineering.com">Email: contact@sujo-engineering.com</p>
+            </div>
+        </div>
+        <div style="text-align: center; border-top: 1px solid var(--border-color); padding-top: 30px; font-size: 0.8rem; color: var(--text-muted);" data-fr="&copy; 2026 SUJO Engineering Consulting SARL. Tous droits réservés." data-en="&copy; 2026 SUJO Engineering Consulting SARL. All rights reserved.">
+            &copy; 2026 SUJO Engineering Consulting SARL. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function applyLang(lang) {
+            document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+                el.innerHTML = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+            });
+            document.documentElement.lang = lang;
+        }
+
+        function setLang(lang) {
+            localStorage.setItem('sujoLang', lang);
+            const btnFr = document.getElementById('btn-fr');
+            const btnEn = document.getElementById('btn-en');
+            if (btnFr && btnEn) {
+                btnFr.classList.toggle('active', lang === 'fr');
+                btnEn.classList.toggle('active', lang === 'en');
+            }
+            applyLang(lang);
+        }
+
+        (function () {
+            const saved = localStorage.getItem('sujoLang') || 'fr';
+            applyLang(saved);
+            const btnFr = document.getElementById('btn-fr');
+            const btnEn = document.getElementById('btn-en');
+            if (btnFr && btnEn) {
+                btnFr.classList.toggle('active', saved === 'fr');
+                btnEn.classList.toggle('active', saved === 'en');
+            }
+        })();
+
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+            document.querySelector('.hamburger').classList.toggle('open');
+        }
+
+        document.querySelectorAll('.dropdown > a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 900) {
+                    e.preventDefault();
+                    link.parentElement.classList.toggle('open');
+                }
+            });
+        });
+
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (link.parentElement.classList.contains('dropdown')) return;
+                document.getElementById('mobileMenu').classList.remove('open');
+                document.querySelector('.hamburger').classList.remove('open');
+            });
+        });
+    </script>
+
+</body>
+</html>
