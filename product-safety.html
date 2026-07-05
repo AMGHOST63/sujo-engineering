@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
@@ -7,7 +8,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="style.css" rel="stylesheet"/>
-<script defer src="app.js"></script>
+<script defer="" src="app.js"></script>
 <style>
 header{position:sticky;top:0;z-index:1000;backdrop-filter:blur(14px);}
 html{scroll-padding-top:96px;}
@@ -42,7 +43,7 @@ html{scroll-padding-top:96px;}
 <li><a data-en="Contact" data-fr="Contact" href="https://sujo-engineering.com/contact.html">Contact</a></li>
 <li><a class="btn btn-outline" data-en="My Account" data-fr="Mon Compte" href="http://129.213.160.94/" style="padding: 8px 16px;" target="_blank">Mon Compte</a></li>
 <li><a class="btn btn-primary" data-en="Request Quote" data-fr="Demander un devis" href="https://sujo-engineering.com/quote.html" style="padding: 8px 16px;">Demander un devis</a></li>
-</ul>
+<li><div class="lang-switch"><button class="active" id="btn-fr" onclick="setLang('fr')" type="button">FR</button><button id="btn-en" onclick="setLang('en')" type="button">EN</button></div></li></ul>
 </nav>
 <div aria-label="Menu" class="hamburger" onclick="toggleMenu()">
 <span></span>
@@ -50,236 +51,230 @@ html{scroll-padding-top:96px;}
 <span></span>
 </div>
 </header>
-
 <main class="container">
 <div class="section-header" style="text-align: left;">
 <div class="section-label" data-en="Industrial Safety" data-fr="Sécurité Industrielle">Sécurité Industrielle</div>
 <h1 class="section-title" data-en="Safety Products" data-fr="Produits de Sécurité" style="font-size: 2.75rem;">Produits de Sécurité</h1>
 <p data-en="Explore personal protective equipment, machine safety devices, lockout systems, emergency response products, fall protection, signage, and workplace safety solutions for industrial operations." data-fr="Explorez les équipements de protection individuelle, dispositifs de sécurité machine, systèmes de consignation, produits d’urgence, protection antichute, signalisation et solutions de sécurité pour opérations industrielles." style="color: var(--text-muted); margin-top: 12px; max-width: 780px;">Explorez les équipements de protection individuelle, dispositifs de sécurité machine, systèmes de consignation, produits d’urgence, protection antichute, signalisation et solutions de sécurité pour opérations industrielles.</p>
 </div>
-
-<div style="margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center;">
+<div class="product-actions" style="margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center;">
 <a class="btn btn-outline" data-en="← Back to Products" data-fr="← Retour aux produits" href="products.html">← Retour aux produits</a>
 </div>
-
 <div class="grid-3" style="margin-top: 48px;">
-
-<a class="card-system" href="quote.html?product=Safety%20Helmet">
+<a class="card-system">
 <h3 data-en="Safety Helmet" data-fr="Safety Helmet">Safety Helmet</h3>
-<p data-en="Protects the head from impact, falling objects, and site hazards on construction, mining, and industrial work areas." data-fr="Protège la tête contre les impacts, les chutes d’objets et les risques présents sur les chantiers et sites industriels.">Protège la tête contre les impacts, les chutes d’objets et les risques présents sur les chantiers et sites industriels.</p>
+<p data-en="The Safety Helmet protects workers from head impacts and falling objects in construction, mining, and industrial zones." data-fr="Le Safety Helmet protège les travailleurs contre les impacts à la tête et les chutes d’objets sur chantiers, mines et sites industriels.">Le Safety Helmet protège les travailleurs contre les impacts à la tête et les chutes d’objets sur chantiers, mines et sites industriels.</p>
 </a>
-<a class="card-system" href="quote.html?product=Safety%20Goggles">
+<a class="card-system">
 <h3 data-en="Safety Goggles" data-fr="Safety Goggles">Safety Goggles</h3>
-<p data-en="Seals around the eyes to protect against dust, splashes, particles, and flying debris during industrial tasks." data-fr="Protège les yeux contre la poussière, les éclaboussures, les particules et les projections pendant les travaux industriels.">Protège les yeux contre la poussière, les éclaboussures, les particules et les projections pendant les travaux industriels.</p>
+<p data-en="The Safety Goggles protects the eyes or face against dust, splashes, sparks, debris, and light impact during hazardous tasks." data-fr="Le Safety Goggles protège les yeux ou le visage contre poussières, éclaboussures, étincelles, débris et impacts légers.">Le Safety Goggles protège les yeux ou le visage contre poussières, éclaboussures, étincelles, débris et impacts légers.</p>
 </a>
-<a class="card-system" href="quote.html?product=Face%20Shield">
+<a class="card-system">
 <h3 data-en="Face Shield" data-fr="Face Shield">Face Shield</h3>
-<p data-en="Provides full-face protection against splashes, sparks, debris, and light impact when used with proper eye protection." data-fr="Assure une protection du visage contre les éclaboussures, étincelles, débris et impacts légers avec une protection oculaire adaptée.">Assure une protection du visage contre les éclaboussures, étincelles, débris et impacts légers avec une protection oculaire adaptée.</p>
+<p data-en="The Face Shield protects the eyes or face against dust, splashes, sparks, debris, and light impact during hazardous tasks." data-fr="Le Face Shield protège les yeux ou le visage contre poussières, éclaboussures, étincelles, débris et impacts légers.">Le Face Shield protège les yeux ou le visage contre poussières, éclaboussures, étincelles, débris et impacts légers.</p>
 </a>
-<a class="card-system" href="quote.html?product=Ear%20Plugs">
+<a class="card-system">
 <h3 data-en="Ear Plugs" data-fr="Ear Plugs">Ear Plugs</h3>
-<p data-en="Reduces exposure to harmful noise levels in plants, workshops, construction areas, and heavy equipment environments." data-fr="Réduit l’exposition aux niveaux sonores dangereux dans les usines, ateliers, chantiers et environnements d’équipements lourds.">Réduit l’exposition aux niveaux sonores dangereux dans les usines, ateliers, chantiers et environnements d’équipements lourds.</p>
+<p data-en="The Ear Plugs reduces noise exposure for workers operating near machinery, generators, compressors, and heavy equipment." data-fr="Le Ear Plugs réduit l’exposition au bruit pour les travailleurs proches des machines, groupes électrogènes, compresseurs et équipements lourds.">Le Ear Plugs réduit l’exposition au bruit pour les travailleurs proches des machines, groupes électrogènes, compresseurs et équipements lourds.</p>
 </a>
-<a class="card-system" href="quote.html?product=Ear%20Muffs">
+<a class="card-system">
 <h3 data-en="Ear Muffs" data-fr="Ear Muffs">Ear Muffs</h3>
-<p data-en="Covers the ears to provide reusable hearing protection in high-noise industrial and construction environments." data-fr="Couvre les oreilles pour offrir une protection auditive réutilisable dans les environnements industriels bruyants.">Couvre les oreilles pour offrir une protection auditive réutilisable dans les environnements industriels bruyants.</p>
+<p data-en="The Ear Muffs reduces noise exposure for workers operating near machinery, generators, compressors, and heavy equipment." data-fr="Le Ear Muffs réduit l’exposition au bruit pour les travailleurs proches des machines, groupes électrogènes, compresseurs et équipements lourds.">Le Ear Muffs réduit l’exposition au bruit pour les travailleurs proches des machines, groupes électrogènes, compresseurs et équipements lourds.</p>
 </a>
-<a class="card-system" href="quote.html?product=Respirator%20Mask">
+<a class="card-system">
 <h3 data-en="Respirator Mask" data-fr="Respirator Mask">Respirator Mask</h3>
-<p data-en="Filters airborne particles, dust, fumes, or vapors depending on the selected cartridge and workplace requirement." data-fr="Filtre les particules, poussières, fumées ou vapeurs selon la cartouche choisie et l’exigence du poste de travail.">Filtre les particules, poussières, fumées ou vapeurs selon la cartouche choisie et l’exigence du poste de travail.</p>
+<p data-en="The Respirator Mask helps filter airborne particles, dust, fumes, or vapors based on the required workplace protection level." data-fr="Le Respirator Mask aide à filtrer les particules, poussières, fumées ou vapeurs selon le niveau de protection requis au poste de travail.">Le Respirator Mask aide à filtrer les particules, poussières, fumées ou vapeurs selon le niveau de protection requis au poste de travail.</p>
 </a>
-<a class="card-system" href="quote.html?product=Disposable%20Mask">
+<a class="card-system">
 <h3 data-en="Disposable Mask" data-fr="Disposable Mask">Disposable Mask</h3>
-<p data-en="Provides lightweight respiratory protection for dust control, hygiene, and short-duration work in non-oil particulate areas." data-fr="Fournit une protection respiratoire légère pour la poussière, l’hygiène et les travaux de courte durée.">Fournit une protection respiratoire légère pour la poussière, l’hygiène et les travaux de courte durée.</p>
+<p data-en="The Disposable Mask helps filter airborne particles, dust, fumes, or vapors based on the required workplace protection level." data-fr="Le Disposable Mask aide à filtrer les particules, poussières, fumées ou vapeurs selon le niveau de protection requis au poste de travail.">Le Disposable Mask aide à filtrer les particules, poussières, fumées ou vapeurs selon le niveau de protection requis au poste de travail.</p>
 </a>
-<a class="card-system" href="quote.html?product=Full-Face%20Respirator">
+<a class="card-system">
 <h3 data-en="Full-Face Respirator" data-fr="Full-Face Respirator">Full-Face Respirator</h3>
-<p data-en="Protects the eyes, face, and respiratory system when working around hazardous dust, gases, vapors, or chemicals." data-fr="Protège les yeux, le visage et les voies respiratoires lors des travaux exposés aux poussières, gaz, vapeurs ou produits chimiques.">Protège les yeux, le visage et les voies respiratoires lors des travaux exposés aux poussières, gaz, vapeurs ou produits chimiques.</p>
+<p data-en="The Full-Face Respirator helps filter airborne particles, dust, fumes, or vapors based on the required workplace protection level." data-fr="Le Full-Face Respirator aide à filtrer les particules, poussières, fumées ou vapeurs selon le niveau de protection requis au poste de travail.">Le Full-Face Respirator aide à filtrer les particules, poussières, fumées ou vapeurs selon le niveau de protection requis au poste de travail.</p>
 </a>
-<a class="card-system" href="quote.html?product=Safety%20Gloves%20%28Cut-Resistant%29">
+<a class="card-system">
 <h3 data-en="Safety Gloves (Cut-Resistant)" data-fr="Safety Gloves (Cut-Resistant)">Safety Gloves (Cut-Resistant)</h3>
-<p data-en="Protects hands from sharp edges, blades, sheet metal, glass, and handling hazards during maintenance or fabrication." data-fr="Protège les mains contre les arêtes vives, lames, tôles, verre et risques de manipulation.">Protège les mains contre les arêtes vives, lames, tôles, verre et risques de manipulation.</p>
+<p data-en="The Safety Gloves (Cut-Resistant) protects hands from cuts, chemicals, heat, abrasion, or handling hazards depending on the selected material." data-fr="Le Safety Gloves (Cut-Resistant) protège les mains contre coupures, produits chimiques, chaleur, abrasion ou risques de manutention selon le matériau choisi.">Le Safety Gloves (Cut-Resistant) protège les mains contre coupures, produits chimiques, chaleur, abrasion ou risques de manutention selon le matériau choisi.</p>
 </a>
-<a class="card-system" href="quote.html?product=Safety%20Gloves%20%28Chemical-Resistant%29">
+<a class="card-system">
 <h3 data-en="Safety Gloves (Chemical-Resistant)" data-fr="Safety Gloves (Chemical-Resistant)">Safety Gloves (Chemical-Resistant)</h3>
-<p data-en="Helps protect hands from chemical contact, oils, solvents, and corrosive materials in controlled work conditions." data-fr="Protège les mains contre le contact avec les produits chimiques, huiles, solvants et matériaux corrosifs.">Protège les mains contre le contact avec les produits chimiques, huiles, solvants et matériaux corrosifs.</p>
+<p data-en="The Safety Gloves (Chemical-Resistant) protects hands from cuts, chemicals, heat, abrasion, or handling hazards depending on the selected material." data-fr="Le Safety Gloves (Chemical-Resistant) protège les mains contre coupures, produits chimiques, chaleur, abrasion ou risques de manutention selon le matériau choisi.">Le Safety Gloves (Chemical-Resistant) protège les mains contre coupures, produits chimiques, chaleur, abrasion ou risques de manutention selon le matériau choisi.</p>
 </a>
-<a class="card-system" href="quote.html?product=Safety%20Gloves%20%28Heat-Resistant%29">
+<a class="card-system">
 <h3 data-en="Safety Gloves (Heat-Resistant)" data-fr="Safety Gloves (Heat-Resistant)">Safety Gloves (Heat-Resistant)</h3>
-<p data-en="Protects hands from elevated temperatures, hot surfaces, sparks, and thermal exposure during industrial operations." data-fr="Protège les mains contre les températures élevées, surfaces chaudes, étincelles et expositions thermiques.">Protège les mains contre les températures élevées, surfaces chaudes, étincelles et expositions thermiques.</p>
+<p data-en="The Safety Gloves (Heat-Resistant) protects hands from cuts, chemicals, heat, abrasion, or handling hazards depending on the selected material." data-fr="Le Safety Gloves (Heat-Resistant) protège les mains contre coupures, produits chimiques, chaleur, abrasion ou risques de manutention selon le matériau choisi.">Le Safety Gloves (Heat-Resistant) protège les mains contre coupures, produits chimiques, chaleur, abrasion ou risques de manutention selon le matériau choisi.</p>
 </a>
-<a class="card-system" href="quote.html?product=Safety%20Shoes">
+<a class="card-system">
 <h3 data-en="Safety Shoes" data-fr="Safety Shoes">Safety Shoes</h3>
-<p data-en="Protects feet with reinforced toes, durable soles, and slip-resistant construction for industrial work areas." data-fr="Protège les pieds grâce à des embouts renforcés, semelles durables et conception antidérapante.">Protège les pieds grâce à des embouts renforcés, semelles durables et conception antidérapante.</p>
+<p data-en="The Safety Shoes protects feet from impact, slips, punctures, and harsh site conditions during industrial operations." data-fr="Le Safety Shoes protège les pieds contre impacts, glissades, perforations et conditions difficiles sur les sites industriels.">Le Safety Shoes protège les pieds contre impacts, glissades, perforations et conditions difficiles sur les sites industriels.</p>
 </a>
-<a class="card-system" href="quote.html?product=Safety%20Boots">
+<a class="card-system">
 <h3 data-en="Safety Boots" data-fr="Safety Boots">Safety Boots</h3>
-<p data-en="Provides heavy-duty foot protection for wet, muddy, rugged, or high-risk industrial and construction environments." data-fr="Offre une protection robuste des pieds pour les environnements humides, boueux, difficiles ou à risque élevé.">Offre une protection robuste des pieds pour les environnements humides, boueux, difficiles ou à risque élevé.</p>
+<p data-en="The Safety Boots protects feet from impact, slips, punctures, and harsh site conditions during industrial operations." data-fr="Le Safety Boots protège les pieds contre impacts, glissades, perforations et conditions difficiles sur les sites industriels.">Le Safety Boots protège les pieds contre impacts, glissades, perforations et conditions difficiles sur les sites industriels.</p>
 </a>
-<a class="card-system" href="quote.html?product=High-Visibility%20Vest">
+<a class="card-system">
 <h3 data-en="High-Visibility Vest" data-fr="High-Visibility Vest">High-Visibility Vest</h3>
-<p data-en="Improves worker visibility around vehicles, equipment, traffic zones, and low-light work areas." data-fr="Améliore la visibilité des travailleurs près des véhicules, équipements, zones de circulation et environnements peu éclairés.">Améliore la visibilité des travailleurs près des véhicules, équipements, zones de circulation et environnements peu éclairés.</p>
+<p data-en="The High-Visibility Vest helps improve workplace safety, hazard control, and worker protection across industrial operations." data-fr="Le High-Visibility Vest contribue à améliorer la sécurité au travail, la maîtrise des risques et la protection des travailleurs.">Le High-Visibility Vest contribue à améliorer la sécurité au travail, la maîtrise des risques et la protection des travailleurs.</p>
 </a>
-<a class="card-system" href="quote.html?product=High-Visibility%20Jacket">
+<a class="card-system">
 <h3 data-en="High-Visibility Jacket" data-fr="High-Visibility Jacket">High-Visibility Jacket</h3>
-<p data-en="Combines upper-body protection with high visibility for outdoor work, traffic control, and site operations." data-fr="Combine protection du haut du corps et haute visibilité pour les travaux extérieurs et opérations de chantier.">Combine protection du haut du corps et haute visibilité pour les travaux extérieurs et opérations de chantier.</p>
+<p data-en="The High-Visibility Jacket helps improve workplace safety, hazard control, and worker protection across industrial operations." data-fr="Le High-Visibility Jacket contribue à améliorer la sécurité au travail, la maîtrise des risques et la protection des travailleurs.">Le High-Visibility Jacket contribue à améliorer la sécurité au travail, la maîtrise des risques et la protection des travailleurs.</p>
 </a>
-<a class="card-system" href="quote.html?product=Fall%20Arrest%20Harness">
+<a class="card-system">
 <h3 data-en="Fall Arrest Harness" data-fr="Fall Arrest Harness">Fall Arrest Harness</h3>
-<p data-en="Secures workers at height and distributes arrest forces during fall protection applications." data-fr="Sécurise les travailleurs en hauteur et répartit les forces d’arrêt lors des applications de protection contre les chutes.">Sécurise les travailleurs en hauteur et répartit les forces d’arrêt lors des applications de protection contre les chutes.</p>
+<p data-en="The Fall Arrest Harness supports fall protection systems for work at height, access platforms, scaffolding, and elevated maintenance tasks." data-fr="Le Fall Arrest Harness soutient les systèmes de protection antichute pour travaux en hauteur, plateformes, échafaudages et maintenance élevée.">Le Fall Arrest Harness soutient les systèmes de protection antichute pour travaux en hauteur, plateformes, échafaudages et maintenance élevée.</p>
 </a>
-<a class="card-system" href="quote.html?product=Safety%20Lanyard">
+<a class="card-system">
 <h3 data-en="Safety Lanyard" data-fr="Safety Lanyard">Safety Lanyard</h3>
-<p data-en="Connects a harness to an anchorage point to support fall restraint or fall arrest systems." data-fr="Relie le harnais à un point d’ancrage pour les systèmes de retenue ou d’arrêt de chute.">Relie le harnais à un point d’ancrage pour les systèmes de retenue ou d’arrêt de chute.</p>
+<p data-en="The Safety Lanyard supports fall protection systems for work at height, access platforms, scaffolding, and elevated maintenance tasks." data-fr="Le Safety Lanyard soutient les systèmes de protection antichute pour travaux en hauteur, plateformes, échafaudages et maintenance élevée.">Le Safety Lanyard soutient les systèmes de protection antichute pour travaux en hauteur, plateformes, échafaudages et maintenance élevée.</p>
 </a>
-<a class="card-system" href="quote.html?product=Lifeline%20System">
+<a class="card-system">
 <h3 data-en="Lifeline System" data-fr="Lifeline System">Lifeline System</h3>
-<p data-en="Provides a continuous anchorage path for workers moving across elevated or exposed work areas." data-fr="Fournit une ligne d’ancrage continue pour les travailleurs se déplaçant en hauteur ou en zone exposée.">Fournit une ligne d’ancrage continue pour les travailleurs se déplaçant en hauteur ou en zone exposée.</p>
+<p data-en="The Lifeline System supports fall protection systems for work at height, access platforms, scaffolding, and elevated maintenance tasks." data-fr="Le Lifeline System soutient les systèmes de protection antichute pour travaux en hauteur, plateformes, échafaudages et maintenance élevée.">Le Lifeline System soutient les systèmes de protection antichute pour travaux en hauteur, plateformes, échafaudages et maintenance élevée.</p>
 </a>
-<a class="card-system" href="quote.html?product=Safety%20Rope">
+<a class="card-system">
 <h3 data-en="Safety Rope" data-fr="Safety Rope">Safety Rope</h3>
-<p data-en="Used for fall protection, rescue support, access control, and temporary securing applications on site." data-fr="Utilisée pour la protection antichute, le sauvetage, le contrôle d’accès et la sécurisation temporaire.">Utilisée pour la protection antichute, le sauvetage, le contrôle d’accès et la sécurisation temporaire.</p>
+<p data-en="The Safety Rope supports fall protection systems for work at height, access platforms, scaffolding, and elevated maintenance tasks." data-fr="Le Safety Rope soutient les systèmes de protection antichute pour travaux en hauteur, plateformes, échafaudages et maintenance élevée.">Le Safety Rope soutient les systèmes de protection antichute pour travaux en hauteur, plateformes, échafaudages et maintenance élevée.</p>
 </a>
-<a class="card-system" href="quote.html?product=Safety%20Net">
+<a class="card-system">
 <h3 data-en="Safety Net" data-fr="Safety Net">Safety Net</h3>
-<p data-en="Helps catch falling workers, tools, or debris in construction, elevated work, and industrial maintenance zones." data-fr="Aide à retenir les travailleurs, outils ou débris en chute dans les zones de construction et maintenance en hauteur.">Aide à retenir les travailleurs, outils ou débris en chute dans les zones de construction et maintenance en hauteur.</p>
+<p data-en="The Safety Net supports fall protection systems for work at height, access platforms, scaffolding, and elevated maintenance tasks." data-fr="Le Safety Net soutient les systèmes de protection antichute pour travaux en hauteur, plateformes, échafaudages et maintenance élevée.">Le Safety Net soutient les systèmes de protection antichute pour travaux en hauteur, plateformes, échafaudages et maintenance élevée.</p>
 </a>
-<a class="card-system" href="quote.html?product=Emergency%20Stop%20Button">
+<a class="card-system">
 <h3 data-en="Emergency Stop Button" data-fr="Emergency Stop Button">Emergency Stop Button</h3>
-<p data-en="Allows operators to quickly stop machinery or processes during unsafe or abnormal conditions." data-fr="Permet aux opérateurs d’arrêter rapidement les machines ou procédés en situation dangereuse ou anormale.">Permet aux opérateurs d’arrêter rapidement les machines ou procédés en situation dangereuse ou anormale.</p>
+<p data-en="The Emergency Stop Button helps improve workplace safety, hazard control, and worker protection across industrial operations." data-fr="Le Emergency Stop Button contribue à améliorer la sécurité au travail, la maîtrise des risques et la protection des travailleurs.">Le Emergency Stop Button contribue à améliorer la sécurité au travail, la maîtrise des risques et la protection des travailleurs.</p>
 </a>
-<a class="card-system" href="quote.html?product=Safety%20Interlock%20Switch">
+<a class="card-system">
 <h3 data-en="Safety Interlock Switch" data-fr="Safety Interlock Switch">Safety Interlock Switch</h3>
-<p data-en="Monitors guards, doors, and access panels to prevent unsafe machine operation when protection is opened." data-fr="Surveille les carters, portes et panneaux d’accès pour empêcher le fonctionnement dangereux des machines.">Surveille les carters, portes et panneaux d’accès pour empêcher le fonctionnement dangereux des machines.</p>
+<p data-en="The Safety Interlock Switch helps improve workplace safety, hazard control, and worker protection across industrial operations." data-fr="Le Safety Interlock Switch contribue à améliorer la sécurité au travail, la maîtrise des risques et la protection des travailleurs.">Le Safety Interlock Switch contribue à améliorer la sécurité au travail, la maîtrise des risques et la protection des travailleurs.</p>
 </a>
-<a class="card-system" href="quote.html?product=Safety%20Light%20Curtain">
+<a class="card-system">
 <h3 data-en="Safety Light Curtain" data-fr="Safety Light Curtain">Safety Light Curtain</h3>
-<p data-en="Creates an invisible sensing field that stops equipment when a person enters a hazardous machine area." data-fr="Crée un champ de détection qui arrête l’équipement lorsqu’une personne entre dans une zone dangereuse.">Crée un champ de détection qui arrête l’équipement lorsqu’une personne entre dans une zone dangereuse.</p>
+<p data-en="The Safety Light Curtain helps improve workplace safety, hazard control, and worker protection across industrial operations." data-fr="Le Safety Light Curtain contribue à améliorer la sécurité au travail, la maîtrise des risques et la protection des travailleurs.">Le Safety Light Curtain contribue à améliorer la sécurité au travail, la maîtrise des risques et la protection des travailleurs.</p>
 </a>
-<a class="card-system" href="quote.html?product=Safety%20Relay">
+<a class="card-system">
 <h3 data-en="Safety Relay" data-fr="Safety Relay">Safety Relay</h3>
-<p data-en="Monitors emergency stops, guards, and safety devices to ensure controlled shutdown of hazardous equipment." data-fr="Surveille les arrêts d’urgence, protections et dispositifs de sécurité pour assurer l’arrêt contrôlé des équipements.">Surveille les arrêts d’urgence, protections et dispositifs de sécurité pour assurer l’arrêt contrôlé des équipements.</p>
+<p data-en="The Safety Relay helps improve workplace safety, hazard control, and worker protection across industrial operations." data-fr="Le Safety Relay contribue à améliorer la sécurité au travail, la maîtrise des risques et la protection des travailleurs.">Le Safety Relay contribue à améliorer la sécurité au travail, la maîtrise des risques et la protection des travailleurs.</p>
 </a>
-<a class="card-system" href="quote.html?product=Safety%20Controller">
+<a class="card-system">
 <h3 data-en="Safety Controller" data-fr="Safety Controller">Safety Controller</h3>
-<p data-en="Manages multiple safety inputs and outputs for machine guarding, emergency stops, and safety automation." data-fr="Gère plusieurs entrées et sorties de sécurité pour les protections machine, arrêts d’urgence et automatisation de sécurité.">Gère plusieurs entrées et sorties de sécurité pour les protections machine, arrêts d’urgence et automatisation de sécurité.</p>
+<p data-en="The Safety Controller helps improve workplace safety, hazard control, and worker protection across industrial operations." data-fr="Le Safety Controller contribue à améliorer la sécurité au travail, la maîtrise des risques et la protection des travailleurs.">Le Safety Controller contribue à améliorer la sécurité au travail, la maîtrise des risques et la protection des travailleurs.</p>
 </a>
-<a class="card-system" href="quote.html?product=Lockout%20Padlock">
+<a class="card-system">
 <h3 data-en="Lockout Padlock" data-fr="Lockout Padlock">Lockout Padlock</h3>
-<p data-en="Secures isolated energy points during maintenance to prevent accidental startup or energization." data-fr="Sécurise les points d’énergie isolés pendant la maintenance afin d’éviter tout démarrage accidentel.">Sécurise les points d’énergie isolés pendant la maintenance afin d’éviter tout démarrage accidentel.</p>
+<p data-en="The Lockout Padlock supports lockout/tagout procedures to isolate hazardous energy before maintenance or repair work begins." data-fr="Le Lockout Padlock soutient les procédures de consignation afin d’isoler les énergies dangereuses avant maintenance ou réparation.">Le Lockout Padlock soutient les procédures de consignation afin d’isoler les énergies dangereuses avant maintenance ou réparation.</p>
 </a>
-<a class="card-system" href="quote.html?product=Lockout%20Hasp">
+<a class="card-system">
 <h3 data-en="Lockout Hasp" data-fr="Lockout Hasp">Lockout Hasp</h3>
-<p data-en="Allows multiple workers to lock the same isolation point during group lockout procedures." data-fr="Permet à plusieurs travailleurs de verrouiller le même point d’isolation pendant une consignation de groupe.">Permet à plusieurs travailleurs de verrouiller le même point d’isolation pendant une consignation de groupe.</p>
+<p data-en="The Lockout Hasp supports lockout/tagout procedures to isolate hazardous energy before maintenance or repair work begins." data-fr="Le Lockout Hasp soutient les procédures de consignation afin d’isoler les énergies dangereuses avant maintenance ou réparation.">Le Lockout Hasp soutient les procédures de consignation afin d’isoler les énergies dangereuses avant maintenance ou réparation.</p>
 </a>
-<a class="card-system" href="quote.html?product=Lockout%20Tag">
+<a class="card-system">
 <h3 data-en="Lockout Tag" data-fr="Lockout Tag">Lockout Tag</h3>
-<p data-en="Communicates lockout status, worker identity, and safety warnings during maintenance or servicing." data-fr="Indique l’état de consignation, l’identité de l’intervenant et les avertissements de sécurité.">Indique l’état de consignation, l’identité de l’intervenant et les avertissements de sécurité.</p>
+<p data-en="The Lockout Tag supports lockout/tagout procedures to isolate hazardous energy before maintenance or repair work begins." data-fr="Le Lockout Tag soutient les procédures de consignation afin d’isoler les énergies dangereuses avant maintenance ou réparation.">Le Lockout Tag soutient les procédures de consignation afin d’isoler les énergies dangereuses avant maintenance ou réparation.</p>
 </a>
-<a class="card-system" href="quote.html?product=Lockout%20Station">
+<a class="card-system">
 <h3 data-en="Lockout Station" data-fr="Lockout Station">Lockout Station</h3>
-<p data-en="Organizes padlocks, tags, hasps, and lockout devices for fast access during isolation procedures." data-fr="Organise cadenas, étiquettes, moraillons et dispositifs de consignation pour un accès rapide.">Organise cadenas, étiquettes, moraillons et dispositifs de consignation pour un accès rapide.</p>
+<p data-en="The Lockout Station supports lockout/tagout procedures to isolate hazardous energy before maintenance or repair work begins." data-fr="Le Lockout Station soutient les procédures de consignation afin d’isoler les énergies dangereuses avant maintenance ou réparation.">Le Lockout Station soutient les procédures de consignation afin d’isoler les énergies dangereuses avant maintenance ou réparation.</p>
 </a>
-<a class="card-system" href="quote.html?product=Circuit%20Breaker%20Lockout">
+<a class="card-system">
 <h3 data-en="Circuit Breaker Lockout" data-fr="Circuit Breaker Lockout">Circuit Breaker Lockout</h3>
-<p data-en="Prevents electrical breakers from being switched on during maintenance, inspection, or repair work." data-fr="Empêche le réenclenchement des disjoncteurs électriques pendant la maintenance, l’inspection ou la réparation.">Empêche le réenclenchement des disjoncteurs électriques pendant la maintenance, l’inspection ou la réparation.</p>
+<p data-en="The Circuit Breaker Lockout supports lockout/tagout procedures to isolate hazardous energy before maintenance or repair work begins." data-fr="Le Circuit Breaker Lockout soutient les procédures de consignation afin d’isoler les énergies dangereuses avant maintenance ou réparation.">Le Circuit Breaker Lockout soutient les procédures de consignation afin d’isoler les énergies dangereuses avant maintenance ou réparation.</p>
 </a>
-<a class="card-system" href="quote.html?product=Valve%20Lockout">
+<a class="card-system">
 <h3 data-en="Valve Lockout" data-fr="Valve Lockout">Valve Lockout</h3>
-<p data-en="Secures valve handles to prevent accidental opening or closing of process lines and energy sources." data-fr="Verrouille les poignées de vannes pour éviter l’ouverture ou la fermeture accidentelle des lignes de procédé.">Verrouille les poignées de vannes pour éviter l’ouverture ou la fermeture accidentelle des lignes de procédé.</p>
+<p data-en="The Valve Lockout supports lockout/tagout procedures to isolate hazardous energy before maintenance or repair work begins." data-fr="Le Valve Lockout soutient les procédures de consignation afin d’isoler les énergies dangereuses avant maintenance ou réparation.">Le Valve Lockout soutient les procédures de consignation afin d’isoler les énergies dangereuses avant maintenance ou réparation.</p>
 </a>
-<a class="card-system" href="quote.html?product=Pneumatic%20Lockout">
+<a class="card-system">
 <h3 data-en="Pneumatic Lockout" data-fr="Pneumatic Lockout">Pneumatic Lockout</h3>
-<p data-en="Isolates compressed air connections to prevent unexpected machine movement during maintenance." data-fr="Isole les connexions d’air comprimé afin d’éviter les mouvements imprévus des machines.">Isole les connexions d’air comprimé afin d’éviter les mouvements imprévus des machines.</p>
+<p data-en="The Pneumatic Lockout supports lockout/tagout procedures to isolate hazardous energy before maintenance or repair work begins." data-fr="Le Pneumatic Lockout soutient les procédures de consignation afin d’isoler les énergies dangereuses avant maintenance ou réparation.">Le Pneumatic Lockout soutient les procédures de consignation afin d’isoler les énergies dangereuses avant maintenance ou réparation.</p>
 </a>
-<a class="card-system" href="quote.html?product=Electrical%20Insulated%20Tools">
+<a class="card-system">
 <h3 data-en="Electrical Insulated Tools" data-fr="Electrical Insulated Tools">Electrical Insulated Tools</h3>
-<p data-en="Reduces shock risk when technicians work near energized components within approved voltage ratings." data-fr="Réduit les risques de choc électrique lors des travaux près de composants sous tension dans les limites nominales.">Réduit les risques de choc électrique lors des travaux près de composants sous tension dans les limites nominales.</p>
+<p data-en="The Electrical Insulated Tools helps improve workplace safety, hazard control, and worker protection across industrial operations." data-fr="Le Electrical Insulated Tools contribue à améliorer la sécurité au travail, la maîtrise des risques et la protection des travailleurs.">Le Electrical Insulated Tools contribue à améliorer la sécurité au travail, la maîtrise des risques et la protection des travailleurs.</p>
 </a>
-<a class="card-system" href="quote.html?product=Fire%20Extinguisher">
+<a class="card-system">
 <h3 data-en="Fire Extinguisher" data-fr="Fire Extinguisher">Fire Extinguisher</h3>
-<p data-en="Provides first-response fire protection for suitable fire classes in facilities, vehicles, and work sites." data-fr="Offre une première intervention contre les incendies adaptés aux classes de feu des sites et installations.">Offre une première intervention contre les incendies adaptés aux classes de feu des sites et installations.</p>
+<p data-en="The Fire Extinguisher improves emergency preparedness by helping teams detect hazards, respond quickly, and limit injury or damage." data-fr="Le Fire Extinguisher améliore la préparation aux urgences en aidant les équipes à détecter les risques, répondre vite et limiter les dommages.">Le Fire Extinguisher améliore la préparation aux urgences en aidant les équipes à détecter les risques, répondre vite et limiter les dommages.</p>
 </a>
-<a class="card-system" href="quote.html?product=Fire%20Blanket">
+<a class="card-system">
 <h3 data-en="Fire Blanket" data-fr="Fire Blanket">Fire Blanket</h3>
-<p data-en="Smothers small fires and helps protect people from heat or flames during emergency response." data-fr="Étouffe les petits feux et aide à protéger les personnes de la chaleur ou des flammes.">Étouffe les petits feux et aide à protéger les personnes de la chaleur ou des flammes.</p>
+<p data-en="The Fire Blanket improves emergency preparedness by helping teams detect hazards, respond quickly, and limit injury or damage." data-fr="Le Fire Blanket améliore la préparation aux urgences en aidant les équipes à détecter les risques, répondre vite et limiter les dommages.">Le Fire Blanket améliore la préparation aux urgences en aidant les équipes à détecter les risques, répondre vite et limiter les dommages.</p>
 </a>
-<a class="card-system" href="quote.html?product=Smoke%20Detector">
+<a class="card-system">
 <h3 data-en="Smoke Detector" data-fr="Smoke Detector">Smoke Detector</h3>
-<p data-en="Detects smoke early and supports alarm systems for faster evacuation and emergency response." data-fr="Détecte rapidement la fumée et soutient les systèmes d’alarme pour accélérer l’évacuation.">Détecte rapidement la fumée et soutient les systèmes d’alarme pour accélérer l’évacuation.</p>
+<p data-en="The Smoke Detector improves emergency preparedness by helping teams detect hazards, respond quickly, and limit injury or damage." data-fr="Le Smoke Detector améliore la préparation aux urgences en aidant les équipes à détecter les risques, répondre vite et limiter les dommages.">Le Smoke Detector améliore la préparation aux urgences en aidant les équipes à détecter les risques, répondre vite et limiter les dommages.</p>
 </a>
-<a class="card-system" href="quote.html?product=Gas%20Detector">
+<a class="card-system">
 <h3 data-en="Gas Detector" data-fr="Gas Detector">Gas Detector</h3>
-<p data-en="Monitors hazardous gases to warn workers before exposure reaches unsafe levels." data-fr="Surveille les gaz dangereux afin d’avertir les travailleurs avant que l’exposition ne devienne dangereuse.">Surveille les gaz dangereux afin d’avertir les travailleurs avant que l’exposition ne devienne dangereuse.</p>
+<p data-en="The Gas Detector improves emergency preparedness by helping teams detect hazards, respond quickly, and limit injury or damage." data-fr="Le Gas Detector améliore la préparation aux urgences en aidant les équipes à détecter les risques, répondre vite et limiter les dommages.">Le Gas Detector améliore la préparation aux urgences en aidant les équipes à détecter les risques, répondre vite et limiter les dommages.</p>
 </a>
-<a class="card-system" href="quote.html?product=CO%E2%82%82%20Detector">
+<a class="card-system">
 <h3 data-en="CO₂ Detector" data-fr="CO₂ Detector">CO₂ Detector</h3>
-<p data-en="Detects carbon dioxide buildup in confined, mechanical, or process areas where ventilation must be monitored." data-fr="Détecte l’accumulation de dioxyde de carbone dans les zones confinées, mécaniques ou de procédé.">Détecte l’accumulation de dioxyde de carbone dans les zones confinées, mécaniques ou de procédé.</p>
+<p data-en="The CO₂ Detector improves emergency preparedness by helping teams detect hazards, respond quickly, and limit injury or damage." data-fr="Le CO₂ Detector améliore la préparation aux urgences en aidant les équipes à détecter les risques, répondre vite et limiter les dommages.">Le CO₂ Detector améliore la préparation aux urgences en aidant les équipes à détecter les risques, répondre vite et limiter les dommages.</p>
 </a>
-<a class="card-system" href="quote.html?product=Emergency%20Shower">
+<a class="card-system">
 <h3 data-en="Emergency Shower" data-fr="Emergency Shower">Emergency Shower</h3>
-<p data-en="Provides immediate flushing for workers exposed to hazardous chemicals, heat, or contamination." data-fr="Permet un rinçage immédiat des travailleurs exposés aux produits chimiques, à la chaleur ou à la contamination.">Permet un rinçage immédiat des travailleurs exposés aux produits chimiques, à la chaleur ou à la contamination.</p>
+<p data-en="The Emergency Shower improves emergency preparedness by helping teams detect hazards, respond quickly, and limit injury or damage." data-fr="Le Emergency Shower améliore la préparation aux urgences en aidant les équipes à détecter les risques, répondre vite et limiter les dommages.">Le Emergency Shower améliore la préparation aux urgences en aidant les équipes à détecter les risques, répondre vite et limiter les dommages.</p>
 </a>
-<a class="card-system" href="quote.html?product=Eye%20Wash%20Station">
+<a class="card-system">
 <h3 data-en="Eye Wash Station" data-fr="Eye Wash Station">Eye Wash Station</h3>
-<p data-en="Flushes the eyes quickly after exposure to dust, chemicals, splashes, or irritating materials." data-fr="Rince rapidement les yeux après exposition à la poussière, aux produits chimiques ou aux éclaboussures.">Rince rapidement les yeux après exposition à la poussière, aux produits chimiques ou aux éclaboussures.</p>
+<p data-en="The Eye Wash Station improves emergency preparedness by helping teams detect hazards, respond quickly, and limit injury or damage." data-fr="Le Eye Wash Station améliore la préparation aux urgences en aidant les équipes à détecter les risques, répondre vite et limiter les dommages.">Le Eye Wash Station améliore la préparation aux urgences en aidant les équipes à détecter les risques, répondre vite et limiter les dommages.</p>
 </a>
-<a class="card-system" href="quote.html?product=First%20Aid%20Kit">
+<a class="card-system">
 <h3 data-en="First Aid Kit" data-fr="First Aid Kit">First Aid Kit</h3>
-<p data-en="Stores essential medical supplies for immediate response to minor workplace injuries." data-fr="Regroupe les fournitures médicales essentielles pour intervenir rapidement sur les blessures mineures.">Regroupe les fournitures médicales essentielles pour intervenir rapidement sur les blessures mineures.</p>
+<p data-en="The First Aid Kit improves emergency preparedness by helping teams detect hazards, respond quickly, and limit injury or damage." data-fr="Le First Aid Kit améliore la préparation aux urgences en aidant les équipes à détecter les risques, répondre vite et limiter les dommages.">Le First Aid Kit améliore la préparation aux urgences en aidant les équipes à détecter les risques, répondre vite et limiter les dommages.</p>
 </a>
-<a class="card-system" href="quote.html?product=Spill%20Kit">
+<a class="card-system">
 <h3 data-en="Spill Kit" data-fr="Spill Kit">Spill Kit</h3>
-<p data-en="Contains absorbents, tools, and disposal materials for rapid control of liquid spills." data-fr="Contient absorbants, outils et matériaux d’élimination pour maîtriser rapidement les déversements liquides.">Contient absorbants, outils et matériaux d’élimination pour maîtriser rapidement les déversements liquides.</p>
+<p data-en="The Spill Kit improves emergency preparedness by helping teams detect hazards, respond quickly, and limit injury or damage." data-fr="Le Spill Kit améliore la préparation aux urgences en aidant les équipes à détecter les risques, répondre vite et limiter les dommages.">Le Spill Kit améliore la préparation aux urgences en aidant les équipes à détecter les risques, répondre vite et limiter les dommages.</p>
 </a>
-<a class="card-system" href="quote.html?product=Chemical%20Spill%20Absorbent">
+<a class="card-system">
 <h3 data-en="Chemical Spill Absorbent" data-fr="Chemical Spill Absorbent">Chemical Spill Absorbent</h3>
-<p data-en="Absorbs chemical spills to help contain hazards and support safe cleanup procedures." data-fr="Absorbe les déversements chimiques pour contenir les risques et faciliter le nettoyage sécurisé.">Absorbe les déversements chimiques pour contenir les risques et faciliter le nettoyage sécurisé.</p>
+<p data-en="The Chemical Spill Absorbent improves emergency preparedness by helping teams detect hazards, respond quickly, and limit injury or damage." data-fr="Le Chemical Spill Absorbent améliore la préparation aux urgences en aidant les équipes à détecter les risques, répondre vite et limiter les dommages.">Le Chemical Spill Absorbent améliore la préparation aux urgences en aidant les équipes à détecter les risques, répondre vite et limiter les dommages.</p>
 </a>
-<a class="card-system" href="quote.html?product=Safety%20Signage">
+<a class="card-system">
 <h3 data-en="Safety Signage" data-fr="Safety Signage">Safety Signage</h3>
-<p data-en="Communicates hazards, instructions, restricted areas, and emergency information throughout the workplace." data-fr="Communique les dangers, consignes, zones restreintes et informations d’urgence sur le lieu de travail.">Communique les dangers, consignes, zones restreintes et informations d’urgence sur le lieu de travail.</p>
+<p data-en="The Safety Signage marks, separates, or protects work areas to reduce trips, collisions, machine contact, and unsafe access." data-fr="Le Safety Signage signale, sépare ou protège les zones de travail afin de réduire chutes, collisions, contact machine et accès dangereux.">Le Safety Signage signale, sépare ou protège les zones de travail afin de réduire chutes, collisions, contact machine et accès dangereux.</p>
 </a>
-<a class="card-system" href="quote.html?product=Floor%20Marking%20Tape">
+<a class="card-system">
 <h3 data-en="Floor Marking Tape" data-fr="Floor Marking Tape">Floor Marking Tape</h3>
-<p data-en="Defines walkways, storage areas, hazards, and traffic routes to improve visual workplace organization." data-fr="Délimite passages, zones de stockage, dangers et voies de circulation pour améliorer l’organisation visuelle.">Délimite passages, zones de stockage, dangers et voies de circulation pour améliorer l’organisation visuelle.</p>
+<p data-en="The Floor Marking Tape marks, separates, or protects work areas to reduce trips, collisions, machine contact, and unsafe access." data-fr="Le Floor Marking Tape signale, sépare ou protège les zones de travail afin de réduire chutes, collisions, contact machine et accès dangereux.">Le Floor Marking Tape signale, sépare ou protège les zones de travail afin de réduire chutes, collisions, contact machine et accès dangereux.</p>
 </a>
-<a class="card-system" href="quote.html?product=Barricade%20Tape">
+<a class="card-system">
 <h3 data-en="Barricade Tape" data-fr="Barricade Tape">Barricade Tape</h3>
-<p data-en="Creates temporary visual barriers around hazards, restricted zones, and work-in-progress areas." data-fr="Crée des barrières visuelles temporaires autour des dangers, zones restreintes et zones de travaux.">Crée des barrières visuelles temporaires autour des dangers, zones restreintes et zones de travaux.</p>
+<p data-en="The Barricade Tape marks, separates, or protects work areas to reduce trips, collisions, machine contact, and unsafe access." data-fr="Le Barricade Tape signale, sépare ou protège les zones de travail afin de réduire chutes, collisions, contact machine et accès dangereux.">Le Barricade Tape signale, sépare ou protège les zones de travail afin de réduire chutes, collisions, contact machine et accès dangereux.</p>
 </a>
-<a class="card-system" href="quote.html?product=Safety%20Cone">
+<a class="card-system">
 <h3 data-en="Safety Cone" data-fr="Safety Cone">Safety Cone</h3>
-<p data-en="Marks temporary hazards, traffic paths, maintenance zones, and restricted access areas." data-fr="Signale les dangers temporaires, voies de circulation, zones de maintenance et accès restreints.">Signale les dangers temporaires, voies de circulation, zones de maintenance et accès restreints.</p>
+<p data-en="The Safety Cone marks, separates, or protects work areas to reduce trips, collisions, machine contact, and unsafe access." data-fr="Le Safety Cone signale, sépare ou protège les zones de travail afin de réduire chutes, collisions, contact machine et accès dangereux.">Le Safety Cone signale, sépare ou protège les zones de travail afin de réduire chutes, collisions, contact machine et accès dangereux.</p>
 </a>
-<a class="card-system" href="quote.html?product=Safety%20Barrier">
+<a class="card-system">
 <h3 data-en="Safety Barrier" data-fr="Safety Barrier">Safety Barrier</h3>
-<p data-en="Separates people from hazards, traffic, equipment movement, and restricted work zones." data-fr="Sépare les personnes des dangers, de la circulation, des mouvements d’équipement et des zones restreintes.">Sépare les personnes des dangers, de la circulation, des mouvements d’équipement et des zones restreintes.</p>
+<p data-en="The Safety Barrier marks, separates, or protects work areas to reduce trips, collisions, machine contact, and unsafe access." data-fr="Le Safety Barrier signale, sépare ou protège les zones de travail afin de réduire chutes, collisions, contact machine et accès dangereux.">Le Safety Barrier signale, sépare ou protège les zones de travail afin de réduire chutes, collisions, contact machine et accès dangereux.</p>
 </a>
-<a class="card-system" href="quote.html?product=Guardrail">
+<a class="card-system">
 <h3 data-en="Guardrail" data-fr="Guardrail">Guardrail</h3>
-<p data-en="Provides edge protection and physical separation around platforms, walkways, pits, and elevated areas." data-fr="Fournit une protection de bord et une séparation physique autour des plateformes, passerelles et zones en hauteur.">Fournit une protection de bord et une séparation physique autour des plateformes, passerelles et zones en hauteur.</p>
+<p data-en="The Guardrail marks, separates, or protects work areas to reduce trips, collisions, machine contact, and unsafe access." data-fr="Le Guardrail signale, sépare ou protège les zones de travail afin de réduire chutes, collisions, contact machine et accès dangereux.">Le Guardrail signale, sépare ou protège les zones de travail afin de réduire chutes, collisions, contact machine et accès dangereux.</p>
 </a>
-<a class="card-system" href="quote.html?product=Machine%20Guard">
+<a class="card-system">
 <h3 data-en="Machine Guard" data-fr="Machine Guard">Machine Guard</h3>
-<p data-en="Covers moving parts and danger zones to reduce contact with rotating, cutting, or pinch-point hazards." data-fr="Couvre les pièces mobiles et zones dangereuses pour réduire le contact avec les risques mécaniques.">Couvre les pièces mobiles et zones dangereuses pour réduire le contact avec les risques mécaniques.</p>
+<p data-en="The Machine Guard marks, separates, or protects work areas to reduce trips, collisions, machine contact, and unsafe access." data-fr="Le Machine Guard signale, sépare ou protège les zones de travail afin de réduire chutes, collisions, contact machine et accès dangereux.">Le Machine Guard signale, sépare ou protège les zones de travail afin de réduire chutes, collisions, contact machine et accès dangereux.</p>
 </a>
-<a class="card-system" href="quote.html?product=Protective%20Curtain">
+<a class="card-system">
 <h3 data-en="Protective Curtain" data-fr="Protective Curtain">Protective Curtain</h3>
-<p data-en="Creates a flexible barrier against sparks, spray, dust, light exposure, or process separation needs." data-fr="Crée une barrière flexible contre les étincelles, projections, poussières ou besoins de séparation de procédé.">Crée une barrière flexible contre les étincelles, projections, poussières ou besoins de séparation de procédé.</p>
+<p data-en="The Protective Curtain helps improve workplace safety, hazard control, and worker protection across industrial operations." data-fr="Le Protective Curtain contribue à améliorer la sécurité au travail, la maîtrise des risques et la protection des travailleurs.">Le Protective Curtain contribue à améliorer la sécurité au travail, la maîtrise des risques et la protection des travailleurs.</p>
 </a>
-<a class="card-system" href="quote.html?product=Anti-Slip%20Mat">
+<a class="card-system">
 <h3 data-en="Anti-Slip Mat" data-fr="Anti-Slip Mat">Anti-Slip Mat</h3>
-<p data-en="Improves footing in wet, oily, or high-traffic areas to reduce slip and fatigue risks." data-fr="Améliore l’adhérence dans les zones humides, huileuses ou très fréquentées afin de réduire les glissades.">Améliore l’adhérence dans les zones humides, huileuses ou très fréquentées afin de réduire les glissades.</p>
+<p data-en="The Anti-Slip Mat marks, separates, or protects work areas to reduce trips, collisions, machine contact, and unsafe access." data-fr="Le Anti-Slip Mat signale, sépare ou protège les zones de travail afin de réduire chutes, collisions, contact machine et accès dangereux.">Le Anti-Slip Mat signale, sépare ou protège les zones de travail afin de réduire chutes, collisions, contact machine et accès dangereux.</p>
 </a>
-<a class="card-system" href="quote.html?product=Anti-Slip%20Tape">
+<a class="card-system">
 <h3 data-en="Anti-Slip Tape" data-fr="Anti-Slip Tape">Anti-Slip Tape</h3>
-<p data-en="Adds traction to stairs, ramps, platforms, and walkways where slipping hazards are present." data-fr="Ajoute de l’adhérence aux escaliers, rampes, plateformes et passages présentant des risques de glissade.">Ajoute de l’adhérence aux escaliers, rampes, plateformes et passages présentant des risques de glissade.</p>
+<p data-en="The Anti-Slip Tape marks, separates, or protects work areas to reduce trips, collisions, machine contact, and unsafe access." data-fr="Le Anti-Slip Tape signale, sépare ou protège les zones de travail afin de réduire chutes, collisions, contact machine et accès dangereux.">Le Anti-Slip Tape signale, sépare ou protège les zones de travail afin de réduire chutes, collisions, contact machine et accès dangereux.</p>
 </a>
-
 </div>
 </main>
-
 <footer style="background: #0a0c0f; border-top: 1px solid var(--border-color); padding: 60px 0 30px 0; margin-top: 80px;">
 <div class="container grid-3" style="padding: 0 24px 40px 24px;">
 <div>
@@ -301,5 +296,24 @@ html{scroll-padding-top:96px;}
 © 2026 SUJO Engineering Consulting SARL. All rights reserved.
 </div>
 </footer>
+
+<script>
+function applyLang(lang) {
+    document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+        el.innerHTML = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+    });
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-switch button').forEach(btn => btn.classList.remove('active'));
+    const active = document.getElementById(lang === 'fr' ? 'btn-fr' : 'btn-en');
+    if (active) active.classList.add('active');
+}
+function setLang(lang) {
+    localStorage.setItem('sujoLang', lang);
+    applyLang(lang);
+}
+document.addEventListener('DOMContentLoaded', function () {
+    applyLang(localStorage.getItem('sujoLang') || 'fr');
+});
+</script>
 </body>
 </html>
