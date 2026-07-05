@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conseil en Ingénierie — SUJO Engineering Consulting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <!-- NAV BAR -->
+    <header>
+        <a href="https://sujo-engineering.com/index.html" class="nav-logo">
+            <img src="logo.png" alt="SUJO" style="height: 50px;">
+        </a>
+        <nav>
+            <ul class="nav-links" id="mobileMenu">
+                <li><a href="https://sujo-engineering.com/index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
+                <li><a href="https://sujo-engineering.com/about.html" data-fr="À Propos" data-en="About">À Propos</a></li>
+                <li class="dropdown">
+                    <a href="https://sujo-engineering.com/products.html" data-fr="Produits ▾" data-en="Products ▾">Produits ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="product-mechanical.html" data-fr="Composants Mécaniques" data-en="Mechanical Components">Composants Mécaniques</a></li>
+                        <li><a href="product-automation.html" data-fr="Automatisation &amp; Mouvement" data-en="Automation &amp; Motion">Automatisation &amp; Mouvement</a></li>
+                        <li><a href="product-hydraulics.html" data-fr="Hydraulique &amp; Pneumatique" data-en="Hydraulics &amp; Pneumatics">Hydraulique &amp; Pneumatique</a></li>
+                        <li><a href="product-safety.html" data-fr="Sécurité Industrielle" data-en="Industrial Safety">Sécurité Industrielle</a></li>
+                        <li><a href="product-transmission.html" data-fr="Transmission de Puissance" data-en="Power Transmission">Transmission de Puissance</a></li>
+                        <li><a href="product-lubrication.html" data-fr="Lubrification Industrielle" data-en="Industrial Lubrication">Lubrification Industrielle</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://sujo-engineering.com/brands.html" data-fr="Marques" data-en="Brands">Marques</a></li>
+                <li><a href="https://sujo-engineering.com/contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
+                <li><a href="http://129.213.160.94/" target="_blank" class="btn btn-outline" style="padding: 8px 16px;" data-fr="Mon Compte" data-en="My Account">Mon Compte</a></li>
+                <li><a href="https://sujo-engineering.com/quote.html" class="btn btn-primary" style="padding: 8px 16px;" data-fr="Demander un devis" data-en="Request Quote">Demander un devis</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- 1. INTRO / HERO -->
+    <main class="container" style="padding-top: 60px;">
+        <div class="section-header" style="text-align: left; max-width: 760px; margin: 0 0 24px 0;">
+            <div class="section-label" data-fr="Conseil en Ingénierie" data-en="Engineering Consulting">Conseil en Ingénierie</div>
+            <h1 class="section-title" style="font-size: 2.5rem;" data-fr="Une Expertise en Ingénierie au Service de Meilleures Décisions" data-en="Engineering Expertise That Drives Better Decisions">Une Expertise en Ingénierie au Service de Meilleures Décisions</h1>
+        </div>
+
+        <div style="max-width: 760px; margin-bottom: 24px;">
+            <p style="color: var(--text-muted); margin-bottom: 20px;" data-fr="Chez SUJO Engineering Consulting, nous aidons les organisations à prendre des décisions d'ingénierie éclairées à chaque phase d'un projet. Nos consultants travaillent en étroite collaboration avec les clients pour évaluer les défis techniques, recommander des solutions pratiques et garantir que les projets sont conçus pour la sécurité, l'efficacité et la performance à long terme." data-en="At SUJO Engineering Consulting, we help organizations make informed engineering decisions throughout every phase of a project. Our consultants work closely with clients to evaluate technical challenges, recommend practical solutions, and ensure that projects are designed for safety, efficiency, and long-term performance.">Chez SUJO Engineering Consulting, nous aidons les organisations à prendre des décisions d'ingénierie éclairées à chaque phase d'un projet. Nos consultants travaillent en étroite collaboration avec les clients pour évaluer les défis techniques, recommander des solutions pratiques et garantir que les projets sont conçus pour la sécurité, l'efficacité et la performance à long terme.</p>
+            <p style="color: var(--text-muted);" data-fr="Qu'il s'agisse de planifier une nouvelle installation industrielle, de moderniser une infrastructure existante ou de sélectionner un équipement spécialisé, nous fournissons des conseils d'ingénierie objectifs basés sur les normes de l'industrie et les exigences opérationnelles réelles." data-en="Whether planning a new industrial facility, upgrading existing infrastructure, or selecting specialized equipment, we provide objective engineering guidance based on industry standards and real operational requirements.">Qu'il s'agisse de planifier une nouvelle installation industrielle, de moderniser une infrastructure existante ou de sélectionner un équipement spécialisé, nous fournissons des conseils d'ingénierie objectifs basés sur les normes de l'industrie et les exigences opérationnelles réelles.</p>
+        </div>
+
+        <!-- PLACEHOLDER HERO IMAGE — swap by adding a file named "engineering-consulting.jpg" to the project folder -->
+        <div class="img-placeholder-wrap" style="height: 340px; margin-bottom: 60px;">
+            <img src="engineering-consulting.jpg" alt="Engineering Consulting" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="img-placeholder-fallback">
+                <div class="icon">🖼️</div>
+                <p data-fr="Emplacement réservé — ajoutez un fichier « engineering-consulting.jpg » dans ce dossier pour afficher une image ici." data-en="Placeholder — add a file named &quot;engineering-consulting.jpg&quot; to this folder to display an image here.">Emplacement réservé — ajoutez un fichier « engineering-consulting.jpg » dans ce dossier pour afficher une image ici.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- 2. OUR CONSULTING SERVICES -->
+<section class="container" style="padding-top: 24px;">
+    <div class="section-header">
+        <div class="section-label" data-fr="Domaines d'Intervention" data-en="Areas of Practice">
+            Domaines d'Intervention
+        </div>
+        <h2 class="section-title" data-fr="Nos Services de Conseil" data-en="Our Consulting Services">
+            Nos Services de Conseil
+        </h2>
+    </div>
+
+    <div class="grid-3">
+
+        <!-- TECHNICAL ADVISORY -->
+        <div class="card-system">
+            <h3 data-fr="Conseil Technique" data-en="Technical Advisory">
+                Conseil Technique
+            </h3>
+            <p data-fr="Nous fournissons des conseils d'ingénierie pour appuyer la planification de projet, la sélection d'équipements, l'optimisation des processus et les améliorations opérationnelles."
+               data-en="We provide engineering advice to support project planning, equipment selection, process optimization, and operational improvements.">
+                Nous fournissons des conseils d'ingénierie pour appuyer la planification de projet, la sélection d'équipements, l'optimisation des processus et les améliorations opérationnelles.
+            </p>
+        </div>
+
+        <!-- DESIGN REVIEW -->
+        <div class="card-system">
+            <h3 data-fr="Revue de Conception" data-en="Design Review">
+                Revue de Conception
+            </h3>
+            <p data-fr="Nos ingénieurs examinent les plans, les spécifications et la documentation technique afin d'identifier les risques, d'améliorer la constructibilité et de vérifier la conformité aux normes d'ingénierie."
+               data-en="Our engineers review drawings, specifications, and technical documentation to identify risks, improve constructability, and verify compliance with engineering standards.">
+                Nos ingénieurs examinent les plans, les spécifications et la documentation technique afin d'identifier les risques, d'améliorer la constructibilité et de vérifier la conformité aux normes d'ingénierie.
+            </p>
+        </div>
+
+        <!-- EQUIPMENT SELECTION -->
+        <div class="card-system">
+            <h3 data-fr="Sélection d'Équipements" data-en="Equipment Selection">
+                Sélection d'Équipements
+            </h3>
+            <p data-fr="Nous aidons nos clients à sélectionner les équipements mécaniques, électriques, hydrauliques et industriels les plus adaptés, en fonction des exigences opérationnelles, du coût du cycle de vie et de la fiabilité."
+               data-en="We assist clients in selecting the most suitable mechanical, electrical, hydraulic, and industrial equipment based on operational requirements, lifecycle cost, and reliability.">
+                Nous aidons nos clients à sélectionner les équipements mécaniques, électriques, hydrauliques et industriels les plus adaptés, en fonction des exigences opérationnelles, du coût du cycle de vie et de la fiabilité.
+            </p>
+        </div>
+
+        <!-- ENGINEERING PROBLEM SOLVING -->
+        <div class="card-system">
+            <h3 data-fr="Résolution de Problèmes d'Ingénierie" data-en="Engineering Problem Solving">
+                Résolution de Problèmes d'Ingénierie
+            </h3>
+            <p data-fr="Les défis d'ingénierie complexes exigent des solutions pratiques. Nous enquêtons sur les défaillances, analysons la performance des systèmes et recommandons des mesures correctives qui réduisent les temps d'arrêt et améliorent la productivité."
+               data-en="Complex engineering challenges require practical solutions. We investigate failures, analyze system performance, and recommend corrective actions that reduce downtime and improve productivity.">
+                Les défis d'ingénierie complexes exigent des solutions pratiques. Nous enquêtons sur les défaillances, analysons la performance des systèmes et recommandons des mesures correctives qui réduisent les temps d'arrêt et améliorent la productivité.
+            </p>
+        </div>
+
+        <!-- OWNER'S ENGINEERING SUPPORT -->
+        <div class="card-system">
+            <h3 data-fr="Assistance à la Maîtrise d'Ouvrage" data-en="Owner's Engineering Support">
+                Assistance à la Maîtrise d'Ouvrage
+            </h3>
+            <p data-fr="Nous représentons les intérêts techniques de nos clients pendant l'exécution du projet en examinant les soumissions des contractants, en surveillant la qualité de l'ingénierie et en veillant à l'atteinte des objectifs du projet."
+               data-en="We represent our clients' technical interests during project execution by reviewing contractor submissions, monitoring engineering quality, and ensuring project objectives are achieved.">
+                Nous représentons les intérêts techniques de nos clients pendant l'exécution du projet en examinant les soumissions des contractants, en surveillant la qualité de l'ingénierie et en veillant à l'atteinte des objectifs du projet.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+    <!-- 3. CTA -->
+    <section style="background: linear-gradient(180deg, var(--dark-bg) 0%, rgba(214,0,0,0.1) 100%); border-top: 1px solid var(--border-color); margin-top: 60px;">
+        <div class="container" style="text-align: center; padding: 100px 24px;">
+            <h2 class="hero-title" style="font-size: 2.5rem; margin-bottom: 16px;" data-fr="Besoin d'un Avis d'Ingénierie Objectif ?" data-en="Need an Objective Engineering Opinion?">Besoin d'un Avis d'Ingénierie Objectif ?</h2>
+            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 32px auto;" data-fr="Parlons de votre projet et de la manière dont notre équipe de conseil peut vous aider à avancer avec confiance." data-en="Let's discuss your project and how our consulting team can help you move forward with confidence.">Parlons de votre projet et de la manière dont notre équipe de conseil peut vous aider à avancer avec confiance.</p>
+            <a href="https://sujo-engineering.com/quote.html" class="btn btn-primary" data-fr="Demander un devis" data-en="Request a Quote">Demander un devis</a>
+        </div>
+    </section>
+
+    <!-- 4. FOOTER -->
+    <footer style="background: #0a0c0f; border-top: 1px solid var(--border-color); padding: 60px 0 30px 0;">
+        <div class="container grid-3" style="padding: 0 24px 40px 24px;">
+            <div>
+                <img src="logo.png" alt="SUJO" style="height: 40px; margin-bottom: 16px;">
+                <p style="color: var(--text-muted); font-size: 0.9rem;" data-fr="SUJO Engineering Consulting SARL<br>Kinshasa, République Démocratique du Congo" data-en="SUJO Engineering Consulting SARL<br>Kinshasa, Democratic Republic of Congo">SUJO Engineering Consulting SARL<br>Kinshasa, République Démocratique du Congo</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 16px; font-size: 0.95rem;" data-fr="Matrices Technologiques" data-en="Technology Index">Matrices Technologiques</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 8px;"><a href="https://sujo-engineering.com/products.html" style="color: var(--text-muted); text-decoration: none;" data-fr="Index Global des Produits" data-en="Global Product Index">Index Global des Produits</a></p>
+                <p style="font-size: 0.9rem; margin-bottom: 8px;"><a href="https://sujo-engineering.com/brands.html" style="color: var(--text-muted); text-decoration: none;" data-fr="Marques Validées" data-en="Approved Brands">Marques Validées</a></p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 16px; font-size: 0.95rem;" data-fr="Canaux Directs" data-en="Direct Channels">Canaux Directs</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;">DRC: +243 974 570 630</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem;" data-fr="Email: contact@sujo-engineering.com" data-en="Email: contact@sujo-engineering.com">Email: contact@sujo-engineering.com</p>
+            </div>
+        </div>
+        <div style="text-align: center; border-top: 1px solid var(--border-color); padding-top: 30px; font-size: 0.8rem; color: var(--text-muted);" data-fr="&copy; 2026 SUJO Engineering Consulting SARL. Tous droits réservés." data-en="&copy; 2026 SUJO Engineering Consulting SARL. All rights reserved.">
+            &copy; 2026 SUJO Engineering Consulting SARL. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function applyLang(lang) {
+            document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+                el.innerHTML = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+            });
+            document.documentElement.lang = lang;
+        }
+
+        function setLang(lang) {
+            localStorage.setItem('sujoLang', lang);
+            const btnFr = document.getElementById('btn-fr');
+            const btnEn = document.getElementById('btn-en');
+            if (btnFr && btnEn) {
+                btnFr.classList.toggle('active', lang === 'fr');
+                btnEn.classList.toggle('active', lang === 'en');
+            }
+            applyLang(lang);
+        }
+
+        // Apply the site-wide saved language preference on every page load
+        (function () {
+            const saved = localStorage.getItem('sujoLang') || 'fr';
+            applyLang(saved);
+            const btnFr = document.getElementById('btn-fr');
+            const btnEn = document.getElementById('btn-en');
+            if (btnFr && btnEn) {
+                btnFr.classList.toggle('active', saved === 'fr');
+                btnEn.classList.toggle('active', saved === 'en');
+            }
+        })();
+
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+            document.querySelector('.hamburger').classList.toggle('open');
+        }
+
+        // On mobile, tapping "Produits ▾" expands the submenu instead of navigating
+        document.querySelectorAll('.dropdown > a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 900) {
+                    e.preventDefault();
+                    link.parentElement.classList.toggle('open');
+                }
+            });
+        });
+
+        // Close mobile menu when an actual navigation link is tapped
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (link.parentElement.classList.contains('dropdown')) return; // handled separately
+                document.getElementById('mobileMenu').classList.remove('open');
+                document.querySelector('.hamburger').classList.remove('open');
+            });
+        });
+    </script>
+
+</body>
+</html>
