@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index des Composants Spécifiés — SUJO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <!-- NAV BAR -->
+    <header>
+        <a href="https://sujo-engineering.com/index.html" class="nav-logo">
+            <img src="logo.png" alt="SUJO" style="height: 50px;">
+        </a>
+        <nav>
+            <ul class="nav-links" id="mobileMenu">
+                <li><a href="https://sujo-engineering.com/index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
+                <li><a href="https://sujo-engineering.com/about.html" data-fr="À Propos" data-en="About">À Propos</a></li>
+                <li class="dropdown">
+                    <a href="https://sujo-engineering.com/products.html" class="active" data-fr="Produits ▾" data-en="Products ▾">Produits ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="product-mechanical.html" data-fr="Composants Mécaniques" data-en="Mechanical Components">Composants Mécaniques</a></li>
+                        <li><a href="product-automation.html" data-fr="Automatisation &amp; Mouvement" data-en="Automation &amp; Motion">Automatisation &amp; Mouvement</a></li>
+                        <li><a href="product-hydraulics.html" data-fr="Hydraulique &amp; Pneumatique" data-en="Hydraulics &amp; Pneumatics">Hydraulique &amp; Pneumatique</a></li>
+                        <li><a href="product-safety.html" data-fr="Sécurité Industrielle" data-en="Industrial Safety">Sécurité Industrielle</a></li>
+                        <li><a href="product-transmission.html" data-fr="Transmission de Puissance" data-en="Power Transmission">Transmission de Puissance</a></li>
+                        <li><a href="product-lubrication.html" data-fr="Lubrification Industrielle" data-en="Industrial Lubrication">Lubrification Industrielle</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://sujo-engineering.com/brands.html" data-fr="Marques" data-en="Brands">Marques</a></li>
+                <li><a href="https://sujo-engineering.com/contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
+                <li><a href="http://129.213.160.94/" target="_blank" class="btn btn-outline" style="padding: 8px 16px;" data-fr="Mon Compte" data-en="My Account">Mon Compte</a></li>
+                <li><a href="https://sujo-engineering.com/quote.html" class="btn btn-primary" style="padding: 8px 16px;" data-fr="Demander un devis" data-en="Request Quote">Demander un devis</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="section-header" style="text-align: left;">
+            <div class="section-label" data-fr="Architecture Matérielle" data-en="Hardware Architecture">Architecture Matérielle</div>
+            <h1 class="section-title" style="font-size: 2.75rem;" data-fr="Index des Catégories de Produits" data-en="Product Category Index">Index des Catégories de Produits</h1>
+            <p style="color: var(--text-muted); margin-top: 12px; max-width: 700px;" data-fr="Sélectionnez une catégorie pour explorer les spécifications matérielles, tolérances et constructeurs intégrés à nos conceptions industrielles." data-en="Select a category to explore the hardware specifications, tolerances, and manufacturers integrated into our industrial designs.">Sélectionnez une catégorie pour explorer les spécifications matérielles, tolérances et constructeurs intégrés à nos conceptions industrielles.</p>
+        </div>
+
+        <div class="grid-3" style="margin-top: 48px;">
+            <!-- CARD 1: MECHANICAL -->
+            <a href="product-mechanical.html" class="card-system">
+                <div class="card-icon">⚙️</div>
+                <h3 data-fr="Composants Mécaniques" data-en="Mechanical Components">Composants Mécaniques</h3>
+                <p data-fr="Paliers de précision, roulements à billes, rotules de guidage et éléments de fixation mécanique industrielle." data-en="Precision bearings, ball bearings, guide rod ends, and industrial mechanical fastening elements.">Paliers de précision, roulements à billes, rotules de guidage et éléments de fixation mécanique industrielle.</p>
+                <div class="btn-text" data-fr="Explorer la matrice →" data-en="Explore Matrix →">Explorer la matrice →</div>
+            </a>
+
+            <!-- CARD 2: AUTOMATION -->
+            <a href="product-automation.html" class="card-system">
+                <div class="card-icon">🤖</div>
+                <h3 data-fr="Automatisation &amp; Mouvement" data-en="Automation &amp; Motion">Automatisation &amp; Mouvement</h3>
+                <p data-fr="Automates programmables (PLC), capteurs de proximité, moteurs pas-à-pas et servomoteurs industriels." data-en="Programmable logic controllers (PLC), proximity sensors, stepper motors, and industrial servo motors.">Automates programmables (PLC), capteurs de proximité, moteurs pas-à-pas et servomoteurs industriels.</p>
+                <div class="btn-text" data-fr="Explorer la matrice →" data-en="Explore Matrix →">Explorer la matrice →</div>
+            </a>
+
+            <!-- CARD 3: HYDRAULICS -->
+            <a href="product-hydraulics.html" class="card-system">
+                <div class="card-icon">💧</div>
+                <h3 data-fr="Hydraulique &amp; Pneumatique" data-en="Hydraulics &amp; Pneumatics">Hydraulique &amp; Pneumatique</h3>
+                <p data-fr="Centrales hydrauliques de puissance, vérins, électrovannes et circuits de distribution pneumatiques." data-en="Hydraulic power units, cylinders, solenoid valves, and pneumatic distribution circuits.">Centrales hydrauliques de puissance, vérins, électrovannes et circuits de distribution pneumatiques.</p>
+                <div class="btn-text" data-fr="Explorer la matrice →" data-en="Explore Matrix →">Explorer la matrice →</div>
+            </a>
+
+            <!-- CARD 4: SAFETY -->
+            <a href="product-safety.html" class="card-system">
+                <div class="card-icon">🛡️</div>
+                <h3 data-fr="Sécurité Industrielle" data-en="Industrial Safety">Sécurité Industrielle</h3>
+                <p data-fr="Barrières immatérielles, relais de sécurité de commande et rideaux de protection automatisés." data-en="Light curtains, safety control relays, and automated protective screens.">Barrières immatérielles, relais de sécurité de commande et rideaux de protection automatisés.</p>
+                <div class="btn-text" data-fr="Explorer la matrice →" data-en="Explore Matrix →">Explorer la matrice →</div>
+            </a>
+
+            <!-- CARD 5: POWER TRANSMISSION -->
+            <a href="product-transmission.html" class="card-system">
+                <div class="card-icon">🔄</div>
+                <h3 data-fr="Transmission de Puissance" data-en="Power Transmission">Transmission de Puissance</h3>
+                <p data-fr="Motoréducteurs hélicoïdaux, accouplements d'arbres, courroies synchrones et chaînes de transmission lourdes." data-en="Helical gear motors, shaft couplings, synchronous belts, and heavy-duty transmission chains.">Motoréducteurs hélicoïdaux, accouplements d'arbres, courroies synchrones et chaînes de transmission lourdes.</p>
+                <div class="btn-text" data-fr="Explorer la matrice →" data-en="Explore Matrix →">Explorer la matrice →</div>
+            </a>
+
+            <!-- CARD 6: LUBRICATION -->
+            <a href="product-lubrication.html" class="card-system">
+                <div class="card-icon">🧪</div>
+                <h3 data-fr="Lubrification Industrielle" data-en="Industrial Lubrication">Lubrification Industrielle</h3>
+                <p data-fr="Systèmes de lubrification centralisés automatiques, pompes de distribution et cartouches de dosage précises." data-en="Automatic centralized lubrication systems, distribution pumps, and precise metering cartridges.">Systèmes de lubrification centralisés automatiques, pompes de distribution et cartouches de dosage précises.</p>
+                <div class="btn-text" data-fr="Explorer la matrice →" data-en="Explore Matrix →">Explorer la matrice →</div>
+            </a>
+        </div>
+    </main>
+
+    <!-- 8. COMPONENT: FOOTER SECTION -->
+    <footer style="background: #0a0c0f; border-top: 1px solid var(--border-color); padding: 60px 0 30px 0; margin-top: 80px;">
+        <div class="container grid-3" style="padding: 0 24px 40px 24px;">
+            <div>
+                <img src="logo.png" alt="SUJO" style="height: 40px; margin-bottom: 16px;">
+                <p style="color: var(--text-muted); font-size: 0.9rem;" data-fr="SUJO Engineering Consulting SARL<br>Kinshasa, République Démocratique du Congo" data-en="SUJO Engineering Consulting SARL<br>Kinshasa, Democratic Republic of Congo">SUJO Engineering Consulting SARL<br>Kinshasa, République Démocratique du Congo</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 16px; font-size: 0.95rem;" data-fr="Matrices Technologiques" data-en="Technology Index">Matrices Technologiques</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 8px;"><a href="https://sujo-engineering.com/products.html" style="color: var(--text-muted); text-decoration: none;" data-fr="Index Global des Produits" data-en="Global Product Index">Index Global des Produits</a></p>
+                <p style="font-size: 0.9rem; margin-bottom: 8px;"><a href="https://sujo-engineering.com/brands.html" style="color: var(--text-muted); text-decoration: none;" data-fr="Marques Validées" data-en="Approved Brands">Marques Validées</a></p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 16px; font-size: 0.95rem;" data-fr="Canaux Directs" data-en="Direct Channels">Canaux Directs</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;">DRC: +243 974 570 630</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem;" data-fr="Email: contact@sujo-engineering.com" data-en="Email: contact@sujo-engineering.com">Email: contact@sujo-engineering.com</p>
+            </div>
+        </div>
+        <div style="text-align: center; border-top: 1px solid var(--border-color); padding-top: 30px; font-size: 0.8rem; color: var(--text-muted);" data-fr="&copy; 2026 SUJO Engineering Consulting SARL. Tous droits réservés." data-en="&copy; 2026 SUJO Engineering Consulting SARL. All rights reserved.">
+            &copy; 2026 SUJO Engineering Consulting SARL. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function applyLang(lang) {
+            document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+                el.innerHTML = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+            });
+            document.documentElement.lang = lang;
+        }
+
+        function setLang(lang) {
+            localStorage.setItem('sujoLang', lang);
+            const btnFr = document.getElementById('btn-fr');
+            const btnEn = document.getElementById('btn-en');
+            if (btnFr && btnEn) {
+                btnFr.classList.toggle('active', lang === 'fr');
+                btnEn.classList.toggle('active', lang === 'en');
+            }
+            applyLang(lang);
+        }
+
+        // Apply the site-wide saved language preference on every page load
+        (function () {
+            const saved = localStorage.getItem('sujoLang') || 'fr';
+            applyLang(saved);
+            const btnFr = document.getElementById('btn-fr');
+            const btnEn = document.getElementById('btn-en');
+            if (btnFr && btnEn) {
+                btnFr.classList.toggle('active', saved === 'fr');
+                btnEn.classList.toggle('active', saved === 'en');
+            }
+        })();
+
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+            document.querySelector('.hamburger').classList.toggle('open');
+        }
+
+        // On mobile, tapping "Produits ▾" expands the submenu instead of navigating
+        document.querySelectorAll('.dropdown > a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 900) {
+                    e.preventDefault();
+                    link.parentElement.classList.toggle('open');
+                }
+            });
+        });
+
+        // Close mobile menu when an actual navigation link is tapped
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (link.parentElement.classList.contains('dropdown')) return; // handled separately
+                document.getElementById('mobileMenu').classList.remove('open');
+                document.querySelector('.hamburger').classList.remove('open');
+            });
+        });
+    </script>
+
+</body>
+</html>

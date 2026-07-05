@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Constructeurs Intégrés — SUJO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <!-- NAV BAR -->
+    <header>
+        <a href="https://sujo-engineering.com/index.html" class="nav-logo">
+            <img src="logo.png" alt="SUJO" style="height: 50px;">
+        </a>
+        <nav>
+            <ul class="nav-links" id="mobileMenu">
+                <li><a href="https://sujo-engineering.com/index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
+                <li><a href="https://sujo-engineering.com/about.html" data-fr="À Propos" data-en="About">À Propos</a></li>
+                <li class="dropdown">
+                    <a href="https://sujo-engineering.com/products.html" data-fr="Produits ▾" data-en="Products ▾">Produits ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="product-mechanical.html" data-fr="Composants Mécaniques" data-en="Mechanical Components">Composants Mécaniques</a></li>
+                        <li><a href="product-automation.html" data-fr="Automatisation &amp; Mouvement" data-en="Automation &amp; Motion">Automatisation &amp; Mouvement</a></li>
+                        <li><a href="product-hydraulics.html" data-fr="Hydraulique &amp; Pneumatique" data-en="Hydraulics &amp; Pneumatics">Hydraulique &amp; Pneumatique</a></li>
+                        <li><a href="product-safety.html" data-fr="Sécurité Industrielle" data-en="Industrial Safety">Sécurité Industrielle</a></li>
+                        <li><a href="product-transmission.html" data-fr="Transmission de Puissance" data-en="Power Transmission">Transmission de Puissance</a></li>
+                        <li><a href="product-lubrication.html" data-fr="Lubrification Industrielle" data-en="Industrial Lubrication">Lubrification Industrielle</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://sujo-engineering.com/brands.html" class="active" data-fr="Marques" data-en="Brands">Marques</a></li>
+                <li><a href="https://sujo-engineering.com/contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
+                <li><a href="http://129.213.160.94/" target="_blank" class="btn btn-outline" style="padding: 8px 16px;" data-fr="Mon Compte" data-en="My Account">Mon Compte</a></li>
+                <li><a href="https://sujo-engineering.com/quote.html" class="btn btn-primary" style="padding: 8px 16px;" data-fr="Demander un devis" data-en="Request Quote">Demander un devis</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="section-header" style="text-align: left;">
+            <div class="section-label" data-fr="Matrice d'Entreprise" data-en="Enterprise Matrix">Matrice d'Entreprise</div>
+            <h1 class="section-title" data-fr="Écosystème de Marques Prises en Charge" data-en="Supported Brand Ecosystem">Écosystème de Marques Prises en Charge</h1>
+            <div class="filter-wrapper" style="margin-top: 24px;">
+                <input type="text" id="brandSearch" class="form-control" data-fr-placeholder="Rechercher un constructeur ou type de produit..." data-en-placeholder="Search brand or product type..." placeholder="Rechercher un constructeur ou type de produit..." onkeyup="filterBrands()" style="max-width: 450px;">
+            </div>
+        </div>
+
+        <div class="grid-3" id="brandMatrix" style="margin-top: 40px;">
+            <!-- BRAND CARD: SKF -->
+            <div class="brand-enterprise-card" data-search="skf bearings mechanical roulements">
+                <div class="brand-hero-logo"><img src="skf-logo.png" alt="SKF Logo"></div>
+                <div class="brand-body">
+                    <div class="brand-meta-label" data-fr="Mécanique / Roulements" data-en="Mechanical / Bearings">Mécanique / Roulements</div>
+                    <h3>SKF Group</h3>
+                    <p data-fr="Intégration complète des roulements haute vélocité, paliers auto-aligneurs et outils d'analyse vibratoire." data-en="Full integration of high-speed bearings, self-aligning housings, and vibration analysis tools.">Intégration complète des roulements haute vélocité, paliers auto-aligneurs et outils d'analyse vibratoire.</p>
+                    <div class="pills-container">
+                        <span class="pill-node" data-fr="Paliers" data-en="Housings">Paliers</span><span class="pill-node" data-fr="Rotations" data-en="Rotation">Rotations</span>
+                    </div>
+                    <a href="brand-skf.html" class="btn-text" style="margin-top: 24px;" data-fr="En savoir plus →" data-en="Learn More →">Learn More →</a>
+                </div>
+            </div>
+
+            <!-- BRAND CARD: BOSCH -->
+            <div class="brand-enterprise-card" data-search="bosch rexroth hydraulics fluid hydraulique">
+                <div class="brand-hero-logo"><img src="bosch-logo.png" alt="Bosch Rexroth Logo"></div>
+                <div class="brand-body">
+                    <div class="brand-meta-label" data-fr="Puissance Fluide / Commande" data-en="Fluid Power / Control">Puissance Fluide / Commande</div>
+                    <h3>Bosch Rexroth</h3>
+                    <p data-fr="Déploiement de blocs de distribution proportionnels, pompes à pistons axiaux et systèmes de commande linéaires." data-en="Deployment of proportional distribution blocks, axial piston pumps, and linear control systems.">Déploiement de blocs de distribution proportionnels, pompes à pistons axiaux et systèmes de commande linéaires.</p>
+                    <div class="pills-container">
+                        <span class="pill-node" data-fr="Hydraulique" data-en="Hydraulics">Hydraulique</span><span class="pill-node" data-fr="Vannes" data-en="Valves">Vannes</span>
+                    </div>
+                    <a href="brand-bosch.html" class="btn-text" style="margin-top: 24px;" data-fr="En savoir plus →" data-en="Learn More →">Learn More →</a>
+                </div>
+            </div>
+
+            <!-- BRAND CARD: SIEMENS -->
+            <div class="brand-enterprise-card" data-search="siemens automation plc electricity automatisation">
+                <div class="brand-hero-logo"><img src="siemens-logo.png" alt="Siemens Logo"></div>
+                <div class="brand-body">
+                    <div class="brand-meta-label" data-fr="Automatisation Industrielle" data-en="Industrial Automation">Automatisation Industrielle</div>
+                    <h3>Siemens AG</h3>
+                    <p data-fr="Conception d'architectures d'automates programmables S7-1200/1500, pupitres IHM et réseaux de terrain Profinet." data-en="Design of S7-1200/1500 PLC architectures, HMI panels, and Profinet field networks.">Conception d'architectures d'automates programmables S7-1200/1500, pupitres IHM et réseaux de terrain Profinet.</p>
+                    <div class="pills-container">
+                        <span class="pill-node">PLC</span><span class="pill-node" data-fr="IHM Simatic" data-en="Simatic HMI">IHM Simatic</span>
+                    </div>
+                    <a href="brand-siemens.html" class="btn-text" style="margin-top: 24px;" data-fr="En savoir plus →" data-en="Learn More →">Learn More →</a>
+                </div>
+            </div>
+
+            <!-- BRAND CARD: ABB -->
+            <div class="brand-enterprise-card" data-search="abb electrical drive power electrique">
+                <div class="brand-hero-logo"><img src="abb-logo.png" alt="ABB Logo"></div>
+                <div class="brand-body">
+                    <div class="brand-meta-label" data-fr="Systèmes Électriques" data-en="Electrical Systems">Systèmes Électriques</div>
+                    <h3>ABB Industrial</h3>
+                    <p data-fr="Spécification de variateurs de fréquence forte puissance, disjoncteurs moteurs de tête et contacteurs réseaux." data-en="Specification of high-power frequency drives, motor circuit breakers, and network contactors.">Spécification de variateurs de fréquence forte puissance, disjoncteurs moteurs de tête et contacteurs réseaux.</p>
+                    <div class="pills-container">
+                        <span class="pill-node" data-fr="Variateurs" data-en="Drives">Variateurs</span><span class="pill-node" data-fr="Distribution" data-en="Distribution">Distribution</span>
+                    </div>
+                    <a href="brand-abb.html" class="btn-text" style="margin-top: 24px;" data-fr="En savoir plus →" data-en="Learn More →">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 8. COMPONENT: FOOTER SECTION -->
+    <footer style="background: #0a0c0f; border-top: 1px solid var(--border-color); padding: 60px 0 30px 0; margin-top: 80px;">
+        <div class="container grid-3" style="padding: 0 24px 40px 24px;">
+            <div>
+                <img src="logo.png" alt="SUJO" style="height: 40px; margin-bottom: 16px;">
+                <p style="color: var(--text-muted); font-size: 0.9rem;" data-fr="SUJO Engineering Consulting SARL<br>Kinshasa, République Démocratique du Congo" data-en="SUJO Engineering Consulting SARL<br>Kinshasa, Democratic Republic of Congo">SUJO Engineering Consulting SARL<br>Kinshasa, République Démocratique du Congo</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 16px; font-size: 0.95rem;" data-fr="Matrices Technologiques" data-en="Technology Index">Matrices Technologiques</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 8px;"><a href="https://sujo-engineering.com/products.html" style="color: var(--text-muted); text-decoration: none;" data-fr="Index Global des Produits" data-en="Global Product Index">Index Global des Produits</a></p>
+                <p style="font-size: 0.9rem; margin-bottom: 8px;"><a href="https://sujo-engineering.com/brands.html" style="color: var(--text-muted); text-decoration: none;" data-fr="Marques Validées" data-en="Approved Brands">Marques Validées</a></p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 16px; font-size: 0.95rem;" data-fr="Canaux Directs" data-en="Direct Channels">Canaux Directs</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;">DRC: +243 974 570 630</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem;" data-fr="Email: contact@sujo-engineering.com" data-en="Email: contact@sujo-engineering.com">Email: contact@sujo-engineering.com</p>
+            </div>
+        </div>
+        <div style="text-align: center; border-top: 1px solid var(--border-color); padding-top: 30px; font-size: 0.8rem; color: var(--text-muted);" data-fr="&copy; 2026 SUJO Engineering Consulting SARL. Tous droits réservés." data-en="&copy; 2026 SUJO Engineering Consulting SARL. All rights reserved.">
+            &copy; 2026 SUJO Engineering Consulting SARL. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function applyLang(lang) {
+            document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+                el.innerHTML = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+            });
+            document.querySelectorAll('[data-fr-placeholder][data-en-placeholder]').forEach(el => {
+                el.placeholder = lang === 'fr' ? el.getAttribute('data-fr-placeholder') : el.getAttribute('data-en-placeholder');
+            });
+            document.documentElement.lang = lang;
+        }
+
+        function setLang(lang) {
+            localStorage.setItem('sujoLang', lang);
+            const btnFr = document.getElementById('btn-fr');
+            const btnEn = document.getElementById('btn-en');
+            if (btnFr && btnEn) {
+                btnFr.classList.toggle('active', lang === 'fr');
+                btnEn.classList.toggle('active', lang === 'en');
+            }
+            applyLang(lang);
+        }
+
+        // Apply the site-wide saved language preference on every page load
+        (function () {
+            const saved = localStorage.getItem('sujoLang') || 'fr';
+            applyLang(saved);
+            const btnFr = document.getElementById('btn-fr');
+            const btnEn = document.getElementById('btn-en');
+            if (btnFr && btnEn) {
+                btnFr.classList.toggle('active', saved === 'fr');
+                btnEn.classList.toggle('active', saved === 'en');
+            }
+        })();
+
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+            document.querySelector('.hamburger').classList.toggle('open');
+        }
+
+        // On mobile, tapping "Produits ▾" expands the submenu instead of navigating
+        document.querySelectorAll('.dropdown > a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 900) {
+                    e.preventDefault();
+                    link.parentElement.classList.toggle('open');
+                }
+            });
+        });
+
+        // Close mobile menu when an actual navigation link is tapped
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (link.parentElement.classList.contains('dropdown')) return; // handled separately
+                document.getElementById('mobileMenu').classList.remove('open');
+                document.querySelector('.hamburger').classList.remove('open');
+            });
+        });
+
+        // Live brand search filter
+        function filterBrands() {
+            const query = document.getElementById('brandSearch').value.toLowerCase().trim();
+            document.querySelectorAll('#brandMatrix .brand-enterprise-card').forEach(card => {
+                const searchData = (card.getAttribute('data-search') || '').toLowerCase();
+                const text = card.textContent.toLowerCase();
+                card.style.display = (searchData.includes(query) || text.includes(query)) ? '' : 'none';
+            });
+        }
+    </script>
+
+</body>
+</html>
