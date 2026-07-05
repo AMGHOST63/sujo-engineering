@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos de SUJO — Rigueur d'Ingénierie</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <!-- NAV BAR -->
+    <header>
+        <a href="index.html" class="nav-logo">
+            <img src="logo.png" alt="SUJO" style="height: 50px;">
+        </a>
+        <nav>
+            <ul class="nav-links" id="mobileMenu">
+                <li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
+                <li><a href="about.html" class="active" data-fr="À Propos" data-en="About">À Propos</a></li>
+                <li class="dropdown">
+                    <a href="products.html" data-fr="Produits ▾" data-en="Products ▾">Produits ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="product-mechanical.html" data-fr="Composants Mécaniques" data-en="Mechanical Components">Composants Mécaniques</a></li>
+                        <li><a href="product-automation.html" data-fr="Automatisation &amp; Mouvement" data-en="Automation &amp; Motion">Automatisation &amp; Mouvement</a></li>
+                        <li><a href="product-hydraulics.html" data-fr="Hydraulique &amp; Pneumatique" data-en="Hydraulics &amp; Pneumatics">Hydraulique &amp; Pneumatique</a></li>
+                        <li><a href="product-safety.html" data-fr="Sécurité Industrielle" data-en="Industrial Safety">Sécurité Industrielle</a></li>
+                        <li><a href="product-transmission.html" data-fr="Transmission de Puissance" data-en="Power Transmission">Transmission de Puissance</a></li>
+                        <li><a href="product-lubrication.html" data-fr="Lubrification Industrielle" data-en="Industrial Lubrication">Lubrification Industrielle</a></li>
+                    </ul>
+                </li>
+                <li><a href="brands.html" data-fr="Marques" data-en="Brands">Marques</a></li>
+                <li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
+                <li><a href="http://129.213.160.94" target="_blank" class="btn btn-outline" style="padding: 8px 16px;" data-fr="Mon Compte" data-en="My Account">Mon Compte</a></li>
+                <li><a href="quote.html" class="btn btn-primary" style="padding: 8px 16px;" data-fr="Demander un devis" data-en="Request Quote">Demander un devis</a></li>
+                <li>
+                    <div class="lang-switch">
+                        <button type="button" id="btn-fr" class="active" onclick="setLang('fr')">FR</button>
+                        <button type="button" id="btn-en" onclick="setLang('en')">EN</button>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main class="container grid-2" style="padding-top: 60px;">
+        <!-- LEFT COLUMN: GRAPHIC ANCHOR -->
+        <div>
+            <img src="ouroperations.png" alt="SUJO Operations" class="split-graphic" style="height: 550px;">
+        </div>
+
+        <!-- RIGHT COLUMN: MODULAR CONTENT BLOCKS -->
+        <div>
+            <div class="section-label" data-fr="Identité Technologique" data-en="Technological Identity">Identité Technologique</div>
+            <h1 class="section-title" style="margin-bottom: 32px;" data-fr="Cabinet de Conseil en Ingénierie Stratégique" data-en="Strategic Engineering Consulting Firm">Cabinet de Conseil en Ingénierie Stratégique</h1>
+
+            <div class="split-list">
+                <!-- MISSION -->
+                <div class="split-item">
+                    <div class="split-icon">🎯</div>
+                    <div>
+                        <h3 style="font-size:1.2rem; margin-bottom:6px;" data-fr="Notre Mission" data-en="Our Mission">Notre Mission</h3>
+                        <p style="color:var(--text-muted); font-size:0.95rem;" data-fr="Fournir une expertise de calcul, de chiffrage analytique et de validation technique pour sécuriser le déploiement opérationnel des infrastructures en RDC." data-en="Provide calculation expertise, analytical costing, and technical validation to secure the operational deployment of infrastructure in the DRC.">Fournir une expertise de calcul, de chiffrage analytique et de validation technique pour sécuriser le déploiement opérationnel des infrastructures en RDC.</p>
+                    </div>
+                </div>
+
+                <!-- VISION -->
+                <div class="split-item">
+                    <div class="split-icon">👁️‍🗨️</div>
+                    <div>
+                        <h3 style="font-size:1.2rem; margin-bottom:6px;" data-fr="Notre Vision" data-en="Our Vision">Notre Vision</h3>
+                        <p style="color:var(--text-muted); font-size:0.95rem;" data-fr="Devenir la référence technologique en ingénierie d'architecture industrielle en Afrique Centrale en appliquant des méthodologies logicielles strictes aux structures physiques." data-en="Become the technological reference in industrial architecture engineering in Central Africa by applying rigorous software methodologies to physical structures.">Devenir la référence technologique en ingénierie d'architecture industrielle en Afrique Centrale en appliquant des méthodologies logicielles strictes aux structures physiques.</p>
+                    </div>
+                </div>
+
+                <!-- WHY CHOOSE SUJO -->
+                <div class="split-item">
+                    <div class="split-icon">💎</div>
+                    <div>
+                        <h3 style="font-size:1.2rem; margin-bottom:6px;" data-fr="Pourquoi Choisir SUJO" data-en="Why Choose SUJO">Pourquoi Choisir SUJO</h3>
+                        <p style="color:var(--text-muted); font-size:0.95rem;" data-fr="Une intégration native systémique, une maîtrise approfondie des spécifications des plus grands constructeurs mondiaux et des livrables exploitables sans équivoque." data-en="Native systemic integration, deep mastery of the world's leading manufacturers' specifications, and unambiguous, actionable deliverables.">Une intégration native systémique, une maîtrise approfondie des spécifications des plus grands constructeurs mondiaux et des livrables exploitables sans équivoque.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function setLang(lang) {
+            document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+            document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+                const text = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+                el.innerHTML = text;
+            });
+
+            document.documentElement.lang = lang;
+        }
+
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+            document.querySelector('.hamburger').classList.toggle('open');
+        }
+
+        // On mobile, tapping "Produits ▾" expands the submenu instead of navigating
+        document.querySelectorAll('.dropdown > a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 900) {
+                    e.preventDefault();
+                    link.parentElement.classList.toggle('open');
+                }
+            });
+        });
+
+        // Close mobile menu when an actual navigation link is tapped
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (link.parentElement.classList.contains('dropdown')) return; // handled separately
+                document.getElementById('mobileMenu').classList.remove('open');
+                document.querySelector('.hamburger').classList.remove('open');
+            });
+        });
+    </script>
+
+</body>
+</html>
