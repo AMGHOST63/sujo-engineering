@@ -1436,7 +1436,7 @@ footer{background:#0a0c0f!important;border-top:1px solid var(--border-color);pad
 <li><a data-en="Home" data-fr="Accueil" href="https://sujo-engineering.com/index.html">Accueil</a></li>
 <li><a data-en="About" data-fr="À Propos" href="https://sujo-engineering.com/about.html">À Propos</a></li>
 <li class="dropdown">
-<a aria-haspopup="true" data-en="Products ▾" data-fr="Produits ▾" href="https://sujo-engineering.com/products.html">Produits ▾</a>
+<a aria-haspopup="true" aria-expanded="false" data-en="Products ▾" data-fr="Produits ▾" href="https://sujo-engineering.com/products.html">Produits ▾</a>
 <ul class="dropdown-menu">
 <li><a data-en="Mechanical Components" data-fr="Composants Mécaniques" href="product-mechanical.html">Composants Mécaniques</a></li>
 <li><a data-en="Automation &amp; Motion" data-fr="Automatisation &amp; Mouvement" href="product-automation.html">Automatisation &amp; Mouvement</a></li>
@@ -1597,8 +1597,13 @@ footer{background:#0a0c0f!important;border-top:1px solid var(--border-color);pad
     }
 
     function toggleMenu() {
-        document.getElementById('mobileMenu').classList.toggle('open');
-        document.querySelector('.hamburger').classList.toggle('open');
+        const menu = document.getElementById('mobileMenu');
+        const hamburger = document.querySelector('.hamburger');
+        if (!menu || !hamburger) return;
+        const isOpen = menu.classList.toggle('open');
+        hamburger.classList.toggle('open', isOpen);
+        hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        hamburger.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
     }
 
     document.addEventListener('DOMContentLoaded', () => applyLang(currentLang));
@@ -1823,23 +1828,6 @@ footer{background:#0a0c0f!important;border-top:1px solid var(--border-color);pad
         });
     })();
     </script>
-<script>
-document.querySelectorAll('.dropdown > a').forEach(link => {
-    link.addEventListener('click', (e) => {
-        if (window.innerWidth <= 1000) {
-            e.preventDefault();
-            link.parentElement.classList.toggle('open');
-        }
-    });
-});
-document.querySelectorAll('#mobileMenu a').forEach(link => {
-    link.addEventListener('click', () => {
-        if (!link.parentElement.classList.contains('dropdown')) {
-            document.getElementById('mobileMenu').classList.remove('open');
-            document.querySelector('.hamburger').classList.remove('open');
-        }
-    });
-});
-</script>
+
 </body>
 </html>
