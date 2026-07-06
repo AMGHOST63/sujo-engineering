@@ -43,10 +43,21 @@
         color: var(--text-muted, #999);
     }
     .founder-card {
+        position: relative;
         display: flex;
         gap: 28px;
         align-items: center;
         flex-wrap: wrap;
+        overflow: hidden;
+        padding: 30px;
+        border: 1px solid var(--border-color, #262b36);
+        border-radius: 18px;
+        background-image:
+            linear-gradient(90deg, rgba(15,17,21,0.94), rgba(15,17,21,0.78)),
+            url('pousseou-or-sujo.png');
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 18px 48px rgba(0,0,0,0.28);
     }
     .founder-card img {
         width: 230px;
@@ -111,7 +122,7 @@
         text-align: center;
         background-image:
             linear-gradient(180deg, rgba(15,17,21,0.86), rgba(15,17,21,0.92)),
-            url('pousseou-or-sujo.png');
+            url('Joinpousseou.png');
         background-size: cover;
         background-position: center;
         border-top: 1px solid var(--border-color, #262b36);
@@ -184,7 +195,7 @@
 </div>
 </header>
 <main id="main-content" tabindex="-1">
-<nav aria-label="Breadcrumb" class="breadcrumb"><a data-en="Home" data-fr="Accueil" href="index.html">Accueil</a><span aria-hidden="true">›</span><a data-en="Partners" data-fr="Partenaires" href="partners.html">Partenaires</a><span aria-hidden="true">›</span><span>Pousse-Où</span></nav>
+<nav aria-label="Breadcrumb" class="breadcrumb breadcrumb-buttons"><a data-en="Home" data-fr="Accueil" href="index.html">Accueil</a><span aria-hidden="true">›</span><a data-en="Partners" data-fr="Partenaires" href="partners.html">Partenaires</a><span aria-hidden="true">›</span><span>Pousse-Où</span></nav>
 
 <!-- HERO -->
 <section class="container" style="padding-top:70px;">
