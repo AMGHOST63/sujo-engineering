@@ -1129,3 +1129,43 @@ header nav {
     line-height: 1.5;
     margin-bottom: 16px;
 }
+
+
+/* ===== MOBILE NAV FIX - applied site-wide ===== */
+@media (max-width: 900px) {
+  .hamburger { display: flex; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background: var(--surface-card);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.5);
+    padding: 16px;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links li, .nav-links .btn { width: 100%; }
+  .dropdown-menu {
+    position: static;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    pointer-events: auto;
+    width: 100%;
+    min-width: 0;
+    margin-top: 4px;
+    box-shadow: none;
+    border: 0;
+    background: rgba(255,255,255,0.03);
+  }
+  .dropdown.open > .dropdown-menu { display: block; }
+}

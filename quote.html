@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Demander un Devis — SUJO Engineering Consulting</title>
-<meta content="Générez et envoyez votre demande de devis à SUJO Engineering Consulting — sourcing de pièces, conseil en ingénierie et développement de projets industriels en RDC." name="description">
+<meta content="Générez et envoyez votre demande de devis à SUJO Engineering Consulting — sourcing de pièces, conseil en ingénierie et développement de projets industriels en RDC." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <style>
@@ -1425,7 +1425,7 @@ header{background:rgba(15,17,21,.88)!important;backdrop-filter:blur(14px);border
 footer{background:#0a0c0f!important;border-top:1px solid var(--border-color);padding:0!important;margin-top:0;color:var(--text-muted)!important;}.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px;padding:56px 24px 40px!important;}footer h4{color:var(--text-main)!important;margin-bottom:16px;font-size:.95rem;}footer p{color:var(--text-muted)!important;font-size:.9rem;margin-bottom:8px;}.footer-bottom{text-align:center;border-top:1px solid var(--border-color)!important;padding:28px 24px!important;margin:0!important;font-size:.8rem;color:var(--text-muted)!important;}
 @media(max-width:1000px){.quote-tool .panel-body{grid-template-columns:1fr!important}.nav-links{display:none!important;position:absolute;top:74px;left:0;right:0;background:var(--surface-card);border-bottom:1px solid var(--border-color);padding:20px 24px;flex-direction:column;align-items:flex-start;gap:18px}.nav-links.open{display:flex!important}.dropdown-menu{position:static;display:none;box-shadow:none;margin-top:8px}.dropdown.open .dropdown-menu{display:block}.hamburger{display:flex}}@media(max-width:768px){header{padding:14px 20px!important}.section-title{font-size:2.1rem!important}.quote-tool .panel-body{padding:22px 20px 8px!important}.quote-tool .li-head,.quote-tool .li-row{grid-template-columns:1fr 50px 50px 24px!important}.quote-tool .sheet{padding:28px 20px 36px!important}.quote-tool .cards{grid-template-columns:1fr!important}}
 </style>
-</meta><link href="style.css" rel="stylesheet"/><script defer="True" src="app.js"></script></head>
+<link href="style.css" rel="stylesheet"/><script defer="True" src="app.js"></script></head>
 <body><a class="skip-link" data-en="Skip to main content" data-fr="Aller au contenu principal" href="#main-content">Aller au contenu principal</a>
 <header>
 <a class="nav-logo" href="index.html">
@@ -1436,7 +1436,7 @@ footer{background:#0a0c0f!important;border-top:1px solid var(--border-color);pad
 <li><a data-en="Home" data-fr="Accueil" href="https://sujo-engineering.com/index.html">Accueil</a></li>
 <li><a data-en="About" data-fr="À Propos" href="https://sujo-engineering.com/about.html">À Propos</a></li>
 <li class="dropdown">
-<a aria-haspopup="true" aria-expanded="false" data-en="Products ▾" data-fr="Produits ▾" href="https://sujo-engineering.com/products.html">Produits ▾</a>
+<a aria-expanded="false" aria-haspopup="true" data-en="Products ▾" data-fr="Produits ▾" href="https://sujo-engineering.com/products.html">Produits ▾</a>
 <ul class="dropdown-menu">
 <li><a data-en="Mechanical Components" data-fr="Composants Mécaniques" href="product-mechanical.html">Composants Mécaniques</a></li>
 <li><a data-en="Automation &amp; Motion" data-fr="Automatisation &amp; Mouvement" href="product-automation.html">Automatisation &amp; Mouvement</a></li>
@@ -1452,8 +1452,8 @@ footer{background:#0a0c0f!important;border-top:1px solid var(--border-color);pad
 <li><a aria-current="page" class="btn btn-primary active" data-en="Request Quote" data-fr="Demander un devis" href="https://sujo-engineering.com/quote.html">Demander un devis</a></li>
 <li>
 <div class="lang-switch">
-<button aria-label="Changer la langue en français" class="active" data-lang-button="fr" id="btn-fr" onclick="setLang('fr')" type="button">FR</button>
-<button aria-label="Switch language to English" data-lang-button="en" id="btn-en" onclick="setLang('en')" type="button">EN</button>
+<button aria-label="Changer la langue en français" class="active" data-lang-button="fr" id="btn-fr" type="button">FR</button>
+<button aria-label="Switch language to English" data-lang-button="en" id="btn-en" type="button">EN</button>
 </div>
 </li>
 </ul>
@@ -1572,42 +1572,7 @@ footer{background:#0a0c0f!important;border-top:1px solid var(--border-color);pad
             © 2026 SUJO Engineering Consulting SARL. All rights reserved.
         </div>
 </footer>
-<script>
-    let currentLang = localStorage.getItem('sujoLang') || 'fr';
 
-    function applyLang(lang) {
-        currentLang = lang;
-        document.querySelectorAll('#btn-fr').forEach(btn => btn.classList.toggle('active', lang === 'fr'));
-        document.querySelectorAll('#btn-en').forEach(btn => btn.classList.toggle('active', lang === 'en'));
-        document.querySelectorAll('[data-fr][data-en]').forEach(el => {
-            const text = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
-            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                if (el.placeholder) el.placeholder = text;
-            } else {
-                el.innerHTML = text;
-            }
-        });
-        document.documentElement.lang = lang;
-    }
-
-    function setLang(lang) {
-        localStorage.setItem('sujoLang', lang);
-        applyLang(lang);
-        if (typeof qtSetDocLang === 'function') qtSetDocLang(lang);
-    }
-
-    function toggleMenu() {
-        const menu = document.getElementById('mobileMenu');
-        const hamburger = document.querySelector('.hamburger');
-        if (!menu || !hamburger) return;
-        const isOpen = menu.classList.toggle('open');
-        hamburger.classList.toggle('open', isOpen);
-        hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        hamburger.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
-    }
-
-    document.addEventListener('DOMContentLoaded', () => applyLang(currentLang));
-</script>
 <script>
     // ===== QUOTE GENERATOR TOOL =====
     (function(){
@@ -1828,6 +1793,5 @@ footer{background:#0a0c0f!important;border-top:1px solid var(--border-color);pad
         });
     })();
     </script>
-
 </body>
 </html>

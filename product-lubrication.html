@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="style.css" rel="stylesheet"/>
-<script defer="" src="app.js"></script>
+
 <style>
 header{position:sticky;top:0;z-index:1000;backdrop-filter:blur(14px);}
 html{scroll-padding-top:96px;}
@@ -17,41 +17,47 @@ html{scroll-padding-top:96px;}
 .card-system{cursor:default;}
 .card-system p{margin-bottom:0;}
 </style>
-</head>
-<body>
+<script defer="True" src="app.js"></script></head>
+<body><a class="skip-link" data-en="Skip to main content" data-fr="Aller au contenu principal" href="#main-content">Aller au contenu principal</a>
 <!-- NAV BAR -->
 <header>
-<a class="nav-logo" href="https://sujo-engineering.com/index.html">
-<img alt="SUJO" src="logo.png" style="height: 50px;"/>
+<a class="nav-logo" href="index.html">
+<img alt="SUJO" class="site-logo" decoding="async" fetchpriority="high" loading="eager" src="logo.png"/>
 </a>
-<nav>
+<nav aria-label="Main navigation">
 <ul class="nav-links" id="mobileMenu">
 <li><a data-en="Home" data-fr="Accueil" href="https://sujo-engineering.com/index.html">Accueil</a></li>
 <li><a data-en="About" data-fr="À Propos" href="https://sujo-engineering.com/about.html">À Propos</a></li>
 <li class="dropdown">
-<a class="active" data-en="Products ▾" data-fr="Produits ▾" href="https://sujo-engineering.com/products.html">Produits ▾</a>
+<a aria-expanded="false" aria-haspopup="true" class="active" data-en="Products ▾" data-fr="Produits ▾" href="https://sujo-engineering.com/products.html">Produits ▾</a>
 <ul class="dropdown-menu">
 <li><a data-en="Mechanical Components" data-fr="Composants Mécaniques" href="product-mechanical.html">Composants Mécaniques</a></li>
 <li><a data-en="Automation &amp; Motion" data-fr="Automatisation &amp; Mouvement" href="product-automation.html">Automatisation &amp; Mouvement</a></li>
 <li><a data-en="Hydraulics &amp; Pneumatics" data-fr="Hydraulique &amp; Pneumatique" href="product-hydraulics.html">Hydraulique &amp; Pneumatique</a></li>
 <li><a data-en="Industrial Safety" data-fr="Sécurité Industrielle" href="product-safety.html">Sécurité Industrielle</a></li>
 <li><a data-en="Power Transmission" data-fr="Transmission de Puissance" href="product-transmission.html">Transmission de Puissance</a></li>
-<li><a class="active" data-en="Industrial Lubrication" data-fr="Lubrification Industrielle" href="product-lubrication.html">Lubrification Industrielle</a></li>
+<li><a aria-current="page" class="active" data-en="Industrial Lubrication" data-fr="Lubrification Industrielle" href="product-lubrication.html">Lubrification Industrielle</a></li>
 </ul>
 </li>
-<li><a data-en="Partners" data-fr="Partenaires" href="partners.html">Partenaires</a></li>
+<li><a data-en="Partners" data-fr="Partenaires" href="https://sujo-engineering.com/partners.html">Partenaires</a></li>
 <li><a data-en="Contact" data-fr="Contact" href="https://sujo-engineering.com/contact.html">Contact</a></li>
-<li><a class="btn btn-outline" data-en="My Account" data-fr="Mon Compte" href="https://portal.sujo-engineering.com/" rel="noopener noreferrer" style="padding: 8px 16px;" target="_blank">Mon Compte</a></li>
-<li><a class="btn btn-primary" data-en="Request Quote" data-fr="Demander un devis" href="https://sujo-engineering.com/quote.html" style="padding: 8px 16px;">Demander un devis</a></li>
-<li><div class="lang-switch"><button class="active" id="btn-fr" onclick="setLang('fr')" type="button">FR</button><button id="btn-en" onclick="setLang('en')" type="button">EN</button></div></li></ul>
+<li><a class="btn btn-outline nav-account" data-en="My Account" data-fr="Mon Compte" href="https://portal.sujo-engineering.com/" rel="noopener noreferrer" target="_blank">Mon Compte</a></li>
+<li><a class="btn btn-primary" data-en="Request Quote" data-fr="Demander un devis" href="https://sujo-engineering.com/quote.html">Demander un devis</a></li>
+<li>
+<div class="lang-switch">
+<button aria-label="Changer la langue en français" class="active" data-lang-button="fr" id="btn-fr" type="button">FR</button>
+<button aria-label="Switch language to English" data-lang-button="en" id="btn-en" type="button">EN</button>
+</div>
+</li>
+</ul>
 </nav>
-<div aria-label="Menu" class="hamburger" onclick="toggleMenu()">
+<div aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation menu" class="hamburger" role="button" tabindex="0">
 <span></span>
 <span></span>
 <span></span>
 </div>
 </header>
-<main class="container">
+<main class="container" id="main-content" tabindex="-1">
 <div class="section-header" style="text-align: left;">
 <div class="section-label" data-en="Industrial Lubrication" data-fr="Lubrification Industrielle">Lubrification Industrielle</div>
 <h1 class="section-title" data-en="Lubrication Products" data-fr="Produits de Lubrification" style="font-size: 2.75rem;">Produits de Lubrification</h1>
@@ -63,306 +69,255 @@ html{scroll-padding-top:96px;}
 <div class="grid-3" style="margin-top: 48px;">
 <a class="card-system">
 <h3 data-en="Lubrication Pump" data-fr="Lubrication Pump">Lubrication Pump</h3>
-<p data-en="Designed for maintenance programs where friction reduction and clean lubricant delivery are critical. Requested as part of SUJO’s lubrication pump sourcing support." data-fr="Conçu pour les programmes de maintenance où la réduction du frottement et la distribution propre du lubrifiant sont essentiels. Disponible dans l’accompagnement SUJO pour Lubrication Pump.">Conçu pour les programmes de maintenance où la réduction du frottement et la distribution propre du lubrifiant sont essentiels. Disponible dans l’accompagnement SUJO pour Lubrication Pump.</p>
+<p data-en="The Lubrication Pump delivers oil or grease to lubrication points with the pressure and volume needed for consistent machine protection." data-fr="Le Lubrication Pump distribue l’huile ou la graisse aux points de lubrification avec la pression et le volume nécessaires à la protection machine.">Le Lubrication Pump distribue l’huile ou la graisse aux points de lubrification avec la pression et le volume nécessaires à la protection machine.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Manual Lubrication Pump" data-fr="Manual Lubrication Pump">Manual Lubrication Pump</h3>
-<p data-en="Helps teams maintain component protection while improving friction reduction in demanding environments. Requested as part of SUJO’s manual lubrication pump sourcing support." data-fr="Aide les équipes à maintenir la protection des composants tout en améliorant la réduction du frottement dans les environnements exigeants. Disponible dans l’accompagnement SUJO pour Manual Lubrication Pump.">Aide les équipes à maintenir la protection des composants tout en améliorant la réduction du frottement dans les environnements exigeants. Disponible dans l’accompagnement SUJO pour Manual Lubrication Pump.</p>
+<p data-en="The Manual Lubrication Pump delivers oil or grease to lubrication points with the pressure and volume needed for consistent machine protection." data-fr="Le Manual Lubrication Pump distribue l’huile ou la graisse aux points de lubrification avec la pression et le volume nécessaires à la protection machine.">Le Manual Lubrication Pump distribue l’huile ou la graisse aux points de lubrification avec la pression et le volume nécessaires à la protection machine.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Electric Lubrication Pump" data-fr="Electric Lubrication Pump">Electric Lubrication Pump</h3>
-<p data-en="Suited for applications that require clean lubricant delivery, consistent performance, and dependable operation. Requested as part of SUJO’s electric lubrication pump sourcing support." data-fr="Adapté aux applications qui exigent la distribution propre du lubrifiant, une performance régulière et un fonctionnement fiable. Disponible dans l’accompagnement SUJO pour Electric Lubrication Pump.">Adapté aux applications qui exigent la distribution propre du lubrifiant, une performance régulière et un fonctionnement fiable. Disponible dans l’accompagnement SUJO pour Electric Lubrication Pump.</p>
+<p data-en="The Electric Lubrication Pump delivers oil or grease to lubrication points with the pressure and volume needed for consistent machine protection." data-fr="Le Electric Lubrication Pump distribue l’huile ou la graisse aux points de lubrification avec la pression et le volume nécessaires à la protection machine.">Le Electric Lubrication Pump distribue l’huile ou la graisse aux points de lubrification avec la pression et le volume nécessaires à la protection machine.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Pneumatic Lubrication Pump" data-fr="Pneumatic Lubrication Pump">Pneumatic Lubrication Pump</h3>
-<p data-en="Provides a practical solution for maintenance programs with a focus on component protection and long-term reliability. Requested as part of SUJO’s pneumatic lubrication pump sourcing support." data-fr="Offre une solution pratique pour les programmes de maintenance, avec un accent sur la protection des composants et la fiabilité à long terme. Disponible dans l’accompagnement SUJO pour Pneumatic Lubrication Pump.">Offre une solution pratique pour les programmes de maintenance, avec un accent sur la protection des composants et la fiabilité à long terme. Disponible dans l’accompagnement SUJO pour Pneumatic Lubrication Pump.</p>
+<p data-en="The Pneumatic Lubrication Pump delivers oil or grease to lubrication points with the pressure and volume needed for consistent machine protection." data-fr="Le Pneumatic Lubrication Pump distribue l’huile ou la graisse aux points de lubrification avec la pression et le volume nécessaires à la protection machine.">Le Pneumatic Lubrication Pump distribue l’huile ou la graisse aux points de lubrification avec la pression et le volume nécessaires à la protection machine.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Grease Pump" data-fr="Grease Pump">Grease Pump</h3>
-<p data-en="Supports daily operation by improving friction reduction, reducing avoidable downtime, and protecting equipment. Requested as part of SUJO’s grease pump sourcing support." data-fr="Soutient l’exploitation quotidienne en améliorant la réduction du frottement, en limitant les arrêts évitables et en protégeant les équipements. Disponible dans l’accompagnement SUJO pour Grease Pump.">Soutient l’exploitation quotidienne en améliorant la réduction du frottement, en limitant les arrêts évitables et en protégeant les équipements. Disponible dans l’accompagnement SUJO pour Grease Pump.</p>
+<p data-en="The Grease Pump delivers oil or grease to lubrication points with the pressure and volume needed for consistent machine protection." data-fr="Le Grease Pump distribue l’huile ou la graisse aux points de lubrification avec la pression et le volume nécessaires à la protection machine.">Le Grease Pump distribue l’huile ou la graisse aux points de lubrification avec la pression et le volume nécessaires à la protection machine.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Oil Pump (Low-Pressure / High-Pressure)" data-fr="Oil Pump (Low-Pressure / High-Pressure)">Oil Pump (Low-Pressure / High-Pressure)</h3>
-<p data-en="Built for industrial service where clean lubricant delivery, component protection, and safe maintenance access matter. Requested as part of SUJO’s oil pump (low-pressure / high-pressure) sourcing support." data-fr="Prévu pour le service industriel lorsque la distribution propre du lubrifiant, la protection des composants et l’accès à la maintenance sont importants. Disponible dans l’accompagnement SUJO pour Oil Pump (Low-Pressure / High-Pressure).">Prévu pour le service industriel lorsque la distribution propre du lubrifiant, la protection des composants et l’accès à la maintenance sont importants. Disponible dans l’accompagnement SUJO pour Oil Pump (Low-Pressure / High-Pressure).</p>
+<p data-en="The Oil Pump (Low-Pressure / High-Pressure) delivers oil or grease to lubrication points with the pressure and volume needed for consistent machine protection." data-fr="Le Oil Pump (Low-Pressure / High-Pressure) distribue l’huile ou la graisse aux points de lubrification avec la pression et le volume nécessaires à la protection machine.">Le Oil Pump (Low-Pressure / High-Pressure) distribue l’huile ou la graisse aux points de lubrification avec la pression et le volume nécessaires à la protection machine.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Lubrication Controller" data-fr="Lubrication Controller">Lubrication Controller</h3>
-<p data-en="Useful in projects that need stable performance, easier servicing, and better planned uptime. Requested as part of SUJO’s lubrication controller sourcing support." data-fr="Utile pour les projets qui demandent une performance stable, un entretien plus simple et une meilleure la disponibilité planifiée. Disponible dans l’accompagnement SUJO pour Lubrication Controller.">Utile pour les projets qui demandent une performance stable, un entretien plus simple et une meilleure la disponibilité planifiée. Disponible dans l’accompagnement SUJO pour Lubrication Controller.</p>
+<p data-en="The Lubrication Controller schedules lubrication cycles to reduce manual service, prevent under-lubrication, and control lubricant consumption." data-fr="Le Lubrication Controller programme les cycles de lubrification pour réduire l’intervention manuelle, éviter le manque de lubrifiant et contrôler la consommation.">Le Lubrication Controller programme les cycles de lubrification pour réduire l’intervention manuelle, éviter le manque de lubrifiant et contrôler la consommation.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Lubrication Timer" data-fr="Lubrication Timer">Lubrication Timer</h3>
-<p data-en="Fits demanding installations that require precise function, reliable response, and controlled wear. Requested as part of SUJO’s lubrication timer sourcing support." data-fr="S’intègre aux installations exigeantes nécessitant une fonction précise, une réponse fiable et une usure maîtrisée. Disponible dans l’accompagnement SUJO pour Lubrication Timer.">S’intègre aux installations exigeantes nécessitant une fonction précise, une réponse fiable et une usure maîtrisée. Disponible dans l’accompagnement SUJO pour Lubrication Timer.</p>
+<p data-en="The Lubrication Timer schedules lubrication cycles to reduce manual service, prevent under-lubrication, and control lubricant consumption." data-fr="Le Lubrication Timer programme les cycles de lubrification pour réduire l’intervention manuelle, éviter le manque de lubrifiant et contrôler la consommation.">Le Lubrication Timer programme les cycles de lubrification pour réduire l’intervention manuelle, éviter le manque de lubrifiant et contrôler la consommation.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Lubrication Manifold" data-fr="Lubrication Manifold">Lubrication Manifold</h3>
-<p data-en="Selected for systems where friction reduction must remain consistent during heavy or continuous use. Requested as part of SUJO’s lubrication manifold sourcing support." data-fr="Sélectionné pour les systèmes où la réduction du frottement doit rester constant pendant une utilisation intensive ou continue. Disponible dans l’accompagnement SUJO pour Lubrication Manifold.">Sélectionné pour les systèmes où la réduction du frottement doit rester constant pendant une utilisation intensive ou continue. Disponible dans l’accompagnement SUJO pour Lubrication Manifold.</p>
+<p data-en="The Lubrication Manifold meters and distributes lubricant to multiple machine points so bearings, chains, and guides receive the right amount." data-fr="Le Lubrication Manifold dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.">Le Lubrication Manifold dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Progressive Divider Valve" data-fr="Progressive Divider Valve">Progressive Divider Valve</h3>
-<p data-en="Improves equipment dependability by supporting clean lubricant delivery and predictable operating behavior. Requested as part of SUJO’s progressive divider valve sourcing support." data-fr="Améliore la dépendance des équipements en soutenant la distribution propre du lubrifiant et un comportement d’exploitation prévisible. Disponible dans l’accompagnement SUJO pour Progressive Divider Valve.">Améliore la dépendance des équipements en soutenant la distribution propre du lubrifiant et un comportement d’exploitation prévisible. Disponible dans l’accompagnement SUJO pour Progressive Divider Valve.</p>
+<p data-en="The Progressive Divider Valve meters and distributes lubricant to multiple machine points so bearings, chains, and guides receive the right amount." data-fr="Le Progressive Divider Valve dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.">Le Progressive Divider Valve dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Injector Valve" data-fr="Injector Valve">Injector Valve</h3>
-<p data-en="Works well in production areas that need robust components, clean installation, and practical upkeep. Requested as part of SUJO’s injector valve sourcing support." data-fr="Convient aux zones de production qui exigent des composants robustes, une installation propre et un entretien pratique. Disponible dans l’accompagnement SUJO pour Injector Valve.">Convient aux zones de production qui exigent des composants robustes, une installation propre et un entretien pratique. Disponible dans l’accompagnement SUJO pour Injector Valve.</p>
+<p data-en="The Injector Valve meters and distributes lubricant to multiple machine points so bearings, chains, and guides receive the right amount." data-fr="Le Injector Valve dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.">Le Injector Valve dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Metering Valve" data-fr="Metering Valve">Metering Valve</h3>
-<p data-en="Chosen for machinery upgrades where component protection, durability, and maintainability are important. Requested as part of SUJO’s metering valve sourcing support." data-fr="Choisi pour les modernisations de machines où la protection des composants, la durabilité et la maintenabilité sont prioritaires. Disponible dans l’accompagnement SUJO pour Metering Valve.">Choisi pour les modernisations de machines où la protection des composants, la durabilité et la maintenabilité sont prioritaires. Disponible dans l’accompagnement SUJO pour Metering Valve.</p>
+<p data-en="The Metering Valve meters and distributes lubricant to multiple machine points so bearings, chains, and guides receive the right amount." data-fr="Le Metering Valve dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.">Le Metering Valve dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Flow Divider" data-fr="Flow Divider">Flow Divider</h3>
-<p data-en="Helps protect assets by keeping friction reduction steady and reducing stress on connected equipment. Requested as part of SUJO’s flow divider sourcing support." data-fr="Aide à protéger les actifs en gardant la réduction du frottement stable et en réduisant les contraintes sur les équipements connectés. Disponible dans l’accompagnement SUJO pour Flow Divider.">Aide à protéger les actifs en gardant la réduction du frottement stable et en réduisant les contraintes sur les équipements connectés. Disponible dans l’accompagnement SUJO pour Flow Divider.</p>
+<p data-en="The Flow Divider meters and distributes lubricant to multiple machine points so bearings, chains, and guides receive the right amount." data-fr="Le Flow Divider dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.">Le Flow Divider dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Grease Injector" data-fr="Grease Injector">Grease Injector</h3>
-<p data-en="Prepared for industrial environments that demand consistent output and simple field replacement. Requested as part of SUJO’s grease injector sourcing support." data-fr="Préparé pour les environnements industriels qui exigent une sortie régulière et un remplacement simple sur site. Disponible dans l’accompagnement SUJO pour Grease Injector.">Préparé pour les environnements industriels qui exigent une sortie régulière et un remplacement simple sur site. Disponible dans l’accompagnement SUJO pour Grease Injector.</p>
+<p data-en="The Grease Injector meters and distributes lubricant to multiple machine points so bearings, chains, and guides receive the right amount." data-fr="Le Grease Injector dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.">Le Grease Injector dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Oil Injector" data-fr="Oil Injector">Oil Injector</h3>
-<p data-en="Adds reliability to maintenance programs by supporting controlled operation and efficient maintenance planning. Requested as part of SUJO’s oil injector sourcing support." data-fr="Ajoute de la fiabilité aux programmes de maintenance en soutenant un fonctionnement contrôlé et une planification efficace de la maintenance. Disponible dans l’accompagnement SUJO pour Oil Injector.">Ajoute de la fiabilité aux programmes de maintenance en soutenant un fonctionnement contrôlé et une planification efficace de la maintenance. Disponible dans l’accompagnement SUJO pour Oil Injector.</p>
+<p data-en="The Oil Injector meters and distributes lubricant to multiple machine points so bearings, chains, and guides receive the right amount." data-fr="Le Oil Injector dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.">Le Oil Injector dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Lubrication Filter" data-fr="Lubrication Filter">Lubrication Filter</h3>
-<p data-en="Designed for maintenance programs where friction reduction and clean lubricant delivery are critical. Requested as part of SUJO’s lubrication filter sourcing support." data-fr="Conçu pour les programmes de maintenance où la réduction du frottement et la distribution propre du lubrifiant sont essentiels. Disponible dans l’accompagnement SUJO pour Lubrication Filter.">Conçu pour les programmes de maintenance où la réduction du frottement et la distribution propre du lubrifiant sont essentiels. Disponible dans l’accompagnement SUJO pour Lubrication Filter.</p>
+<p data-en="The Lubrication Filter keeps lubricant clean by removing particles that can damage bearings, gears, pumps, and precision surfaces." data-fr="Le Lubrication Filter maintient le lubrifiant propre en retirant les particules capables d’endommager roulements, engrenages, pompes et surfaces précises.">Le Lubrication Filter maintient le lubrifiant propre en retirant les particules capables d’endommager roulements, engrenages, pompes et surfaces précises.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Oil Filter" data-fr="Oil Filter">Oil Filter</h3>
-<p data-en="Helps teams maintain component protection while improving friction reduction in demanding environments. Requested as part of SUJO’s oil filter sourcing support." data-fr="Aide les équipes à maintenir la protection des composants tout en améliorant la réduction du frottement dans les environnements exigeants. Disponible dans l’accompagnement SUJO pour Oil Filter.">Aide les équipes à maintenir la protection des composants tout en améliorant la réduction du frottement dans les environnements exigeants. Disponible dans l’accompagnement SUJO pour Oil Filter.</p>
+<p data-en="The Oil Filter keeps lubricant clean by removing particles that can damage bearings, gears, pumps, and precision surfaces." data-fr="Le Oil Filter maintient le lubrifiant propre en retirant les particules capables d’endommager roulements, engrenages, pompes et surfaces précises.">Le Oil Filter maintient le lubrifiant propre en retirant les particules capables d’endommager roulements, engrenages, pompes et surfaces précises.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Grease Filter" data-fr="Grease Filter">Grease Filter</h3>
-<p data-en="Suited for applications that require clean lubricant delivery, consistent performance, and dependable operation. Requested as part of SUJO’s grease filter sourcing support." data-fr="Adapté aux applications qui exigent la distribution propre du lubrifiant, une performance régulière et un fonctionnement fiable. Disponible dans l’accompagnement SUJO pour Grease Filter.">Adapté aux applications qui exigent la distribution propre du lubrifiant, une performance régulière et un fonctionnement fiable. Disponible dans l’accompagnement SUJO pour Grease Filter.</p>
+<p data-en="The Grease Filter keeps lubricant clean by removing particles that can damage bearings, gears, pumps, and precision surfaces." data-fr="Le Grease Filter maintient le lubrifiant propre en retirant les particules capables d’endommager roulements, engrenages, pompes et surfaces précises.">Le Grease Filter maintient le lubrifiant propre en retirant les particules capables d’endommager roulements, engrenages, pompes et surfaces précises.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Lubrication Hose" data-fr="Lubrication Hose">Lubrication Hose</h3>
-<p data-en="Provides a practical solution for maintenance programs with a focus on component protection and long-term reliability. Requested as part of SUJO’s lubrication hose sourcing support." data-fr="Offre une solution pratique pour les programmes de maintenance, avec un accent sur la protection des composants et la fiabilité à long terme. Disponible dans l’accompagnement SUJO pour Lubrication Hose.">Offre une solution pratique pour les programmes de maintenance, avec un accent sur la protection des composants et la fiabilité à long terme. Disponible dans l’accompagnement SUJO pour Lubrication Hose.</p>
+<p data-en="The Lubrication Hose routes lubricant safely from pumps or reservoirs to equipment points while supporting service access." data-fr="Le Lubrication Hose achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.">Le Lubrication Hose achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.</p>
 </a>
 <a class="card-system">
 <h3 data-en="High-Pressure Grease Hose" data-fr="High-Pressure Grease Hose">High-Pressure Grease Hose</h3>
-<p data-en="Supports daily operation by improving friction reduction, reducing avoidable downtime, and protecting equipment. Requested as part of SUJO’s high-pressure grease hose sourcing support." data-fr="Soutient l’exploitation quotidienne en améliorant la réduction du frottement, en limitant les arrêts évitables et en protégeant les équipements. Disponible dans l’accompagnement SUJO pour High-Pressure Grease Hose.">Soutient l’exploitation quotidienne en améliorant la réduction du frottement, en limitant les arrêts évitables et en protégeant les équipements. Disponible dans l’accompagnement SUJO pour High-Pressure Grease Hose.</p>
+<p data-en="The High-Pressure Grease Hose routes lubricant safely from pumps or reservoirs to equipment points while supporting service access." data-fr="Le High-Pressure Grease Hose achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.">Le High-Pressure Grease Hose achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Oil Hose" data-fr="Oil Hose">Oil Hose</h3>
-<p data-en="Built for industrial service where clean lubricant delivery, component protection, and safe maintenance access matter. Requested as part of SUJO’s oil hose sourcing support." data-fr="Prévu pour le service industriel lorsque la distribution propre du lubrifiant, la protection des composants et l’accès à la maintenance sont importants. Disponible dans l’accompagnement SUJO pour Oil Hose.">Prévu pour le service industriel lorsque la distribution propre du lubrifiant, la protection des composants et l’accès à la maintenance sont importants. Disponible dans l’accompagnement SUJO pour Oil Hose.</p>
+<p data-en="The Oil Hose routes lubricant safely from pumps or reservoirs to equipment points while supporting service access." data-fr="Le Oil Hose achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.">Le Oil Hose achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hose Fittings" data-fr="Hose Fittings">Hose Fittings</h3>
-<p data-en="Useful in projects that need stable performance, easier servicing, and better planned uptime. Requested as part of SUJO’s hose fittings sourcing support." data-fr="Utile pour les projets qui demandent une performance stable, un entretien plus simple et une meilleure la disponibilité planifiée. Disponible dans l’accompagnement SUJO pour Hose Fittings.">Utile pour les projets qui demandent une performance stable, un entretien plus simple et une meilleure la disponibilité planifiée. Disponible dans l’accompagnement SUJO pour Hose Fittings.</p>
+<p data-en="The Hose Fittings routes lubricant safely from pumps or reservoirs to equipment points while supporting service access." data-fr="Le Hose Fittings achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.">Le Hose Fittings achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Grease Gun (Manual)" data-fr="Grease Gun (Manual)">Grease Gun (Manual)</h3>
-<p data-en="Fits demanding installations that require precise function, reliable response, and controlled wear. Requested as part of SUJO’s grease gun (manual) sourcing support." data-fr="S’intègre aux installations exigeantes nécessitant une fonction précise, une réponse fiable et une usure maîtrisée. Disponible dans l’accompagnement SUJO pour Grease Gun (Manual).">S’intègre aux installations exigeantes nécessitant une fonction précise, une réponse fiable et une usure maîtrisée. Disponible dans l’accompagnement SUJO pour Grease Gun (Manual).</p>
+<p data-en="The Grease Gun (Manual) provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Grease Gun (Manual) offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Grease Gun (Manual) offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Grease Gun (Electric)" data-fr="Grease Gun (Electric)">Grease Gun (Electric)</h3>
-<p data-en="Selected for systems where friction reduction must remain consistent during heavy or continuous use. Requested as part of SUJO’s grease gun (electric) sourcing support." data-fr="Sélectionné pour les systèmes où la réduction du frottement doit rester constant pendant une utilisation intensive ou continue. Disponible dans l’accompagnement SUJO pour Grease Gun (Electric).">Sélectionné pour les systèmes où la réduction du frottement doit rester constant pendant une utilisation intensive ou continue. Disponible dans l’accompagnement SUJO pour Grease Gun (Electric).</p>
+<p data-en="The Grease Gun (Electric) provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Grease Gun (Electric) offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Grease Gun (Electric) offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Grease Gun (Pneumatic)" data-fr="Grease Gun (Pneumatic)">Grease Gun (Pneumatic)</h3>
-<p data-en="Improves equipment dependability by supporting clean lubricant delivery and predictable operating behavior. Requested as part of SUJO’s grease gun (pneumatic) sourcing support." data-fr="Améliore la dépendance des équipements en soutenant la distribution propre du lubrifiant et un comportement d’exploitation prévisible. Disponible dans l’accompagnement SUJO pour Grease Gun (Pneumatic).">Améliore la dépendance des équipements en soutenant la distribution propre du lubrifiant et un comportement d’exploitation prévisible. Disponible dans l’accompagnement SUJO pour Grease Gun (Pneumatic).</p>
+<p data-en="The Grease Gun (Pneumatic) provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Grease Gun (Pneumatic) offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Grease Gun (Pneumatic) offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Grease Cartridge" data-fr="Grease Cartridge">Grease Cartridge</h3>
-<p data-en="Works well in production areas that need robust components, clean installation, and practical upkeep. Requested as part of SUJO’s grease cartridge sourcing support." data-fr="Convient aux zones de production qui exigent des composants robustes, une installation propre et un entretien pratique. Disponible dans l’accompagnement SUJO pour Grease Cartridge.">Convient aux zones de production qui exigent des composants robustes, une installation propre et un entretien pratique. Disponible dans l’accompagnement SUJO pour Grease Cartridge.</p>
+<p data-en="The Grease Cartridge provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Grease Cartridge offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Grease Cartridge offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Grease Nipple / Zerk Fitting" data-fr="Grease Nipple / Zerk Fitting">Grease Nipple / Zerk Fitting</h3>
-<p data-en="Chosen for machinery upgrades where component protection, durability, and maintainability are important. Requested as part of SUJO’s grease nipple / zerk fitting sourcing support." data-fr="Choisi pour les modernisations de machines où la protection des composants, la durabilité et la maintenabilité sont prioritaires. Disponible dans l’accompagnement SUJO pour Grease Nipple / Zerk Fitting.">Choisi pour les modernisations de machines où la protection des composants, la durabilité et la maintenabilité sont prioritaires. Disponible dans l’accompagnement SUJO pour Grease Nipple / Zerk Fitting.</p>
+<p data-en="The Grease Nipple / Zerk Fitting routes lubricant safely from pumps or reservoirs to equipment points while supporting service access." data-fr="Le Grease Nipple / Zerk Fitting achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.">Le Grease Nipple / Zerk Fitting achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Lubrication Coupler" data-fr="Lubrication Coupler">Lubrication Coupler</h3>
-<p data-en="Helps protect assets by keeping friction reduction steady and reducing stress on connected equipment. Requested as part of SUJO’s lubrication coupler sourcing support." data-fr="Aide à protéger les actifs en gardant la réduction du frottement stable et en réduisant les contraintes sur les équipements connectés. Disponible dans l’accompagnement SUJO pour Lubrication Coupler.">Aide à protéger les actifs en gardant la réduction du frottement stable et en réduisant les contraintes sur les équipements connectés. Disponible dans l’accompagnement SUJO pour Lubrication Coupler.</p>
+<p data-en="The Lubrication Coupler routes lubricant safely from pumps or reservoirs to equipment points while supporting service access." data-fr="Le Lubrication Coupler achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.">Le Lubrication Coupler achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Lubrication Nozzle" data-fr="Lubrication Nozzle">Lubrication Nozzle</h3>
-<p data-en="Prepared for industrial environments that demand consistent output and simple field replacement. Requested as part of SUJO’s lubrication nozzle sourcing support." data-fr="Préparé pour les environnements industriels qui exigent une sortie régulière et un remplacement simple sur site. Disponible dans l’accompagnement SUJO pour Lubrication Nozzle.">Préparé pour les environnements industriels qui exigent une sortie régulière et un remplacement simple sur site. Disponible dans l’accompagnement SUJO pour Lubrication Nozzle.</p>
+<p data-en="The Lubrication Nozzle routes lubricant safely from pumps or reservoirs to equipment points while supporting service access." data-fr="Le Lubrication Nozzle achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.">Le Lubrication Nozzle achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Spray Nozzle" data-fr="Spray Nozzle">Spray Nozzle</h3>
-<p data-en="Adds reliability to maintenance programs by supporting controlled operation and efficient maintenance planning. Requested as part of SUJO’s spray nozzle sourcing support." data-fr="Ajoute de la fiabilité aux programmes de maintenance en soutenant un fonctionnement contrôlé et une planification efficace de la maintenance. Disponible dans l’accompagnement SUJO pour Spray Nozzle.">Ajoute de la fiabilité aux programmes de maintenance en soutenant un fonctionnement contrôlé et une planification efficace de la maintenance. Disponible dans l’accompagnement SUJO pour Spray Nozzle.</p>
+<p data-en="The Spray Nozzle routes lubricant safely from pumps or reservoirs to equipment points while supporting service access." data-fr="Le Spray Nozzle achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.">Le Spray Nozzle achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Mist Lubrication Unit" data-fr="Mist Lubrication Unit">Mist Lubrication Unit</h3>
-<p data-en="Designed for maintenance programs where friction reduction and clean lubricant delivery are critical. Requested as part of SUJO’s mist lubrication unit sourcing support." data-fr="Conçu pour les programmes de maintenance où la réduction du frottement et la distribution propre du lubrifiant sont essentiels. Disponible dans l’accompagnement SUJO pour Mist Lubrication Unit.">Conçu pour les programmes de maintenance où la réduction du frottement et la distribution propre du lubrifiant sont essentiels. Disponible dans l’accompagnement SUJO pour Mist Lubrication Unit.</p>
+<p data-en="The Mist Lubrication Unit improves lubrication reliability, reduces component wear, and supports longer service intervals for industrial machinery." data-fr="Le Mist Lubrication Unit améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.">Le Mist Lubrication Unit améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Oil Mist Generator" data-fr="Oil Mist Generator">Oil Mist Generator</h3>
-<p data-en="Helps teams maintain component protection while improving friction reduction in demanding environments. Requested as part of SUJO’s oil mist generator sourcing support." data-fr="Aide les équipes à maintenir la protection des composants tout en améliorant la réduction du frottement dans les environnements exigeants. Disponible dans l’accompagnement SUJO pour Oil Mist Generator.">Aide les équipes à maintenir la protection des composants tout en améliorant la réduction du frottement dans les environnements exigeants. Disponible dans l’accompagnement SUJO pour Oil Mist Generator.</p>
+<p data-en="The Oil Mist Generator provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Oil Mist Generator offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Oil Mist Generator offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Drip Feed Oiler" data-fr="Drip Feed Oiler">Drip Feed Oiler</h3>
-<p data-en="Suited for applications that require clean lubricant delivery, consistent performance, and dependable operation. Requested as part of SUJO’s drip feed oiler sourcing support." data-fr="Adapté aux applications qui exigent la distribution propre du lubrifiant, une performance régulière et un fonctionnement fiable. Disponible dans l’accompagnement SUJO pour Drip Feed Oiler.">Adapté aux applications qui exigent la distribution propre du lubrifiant, une performance régulière et un fonctionnement fiable. Disponible dans l’accompagnement SUJO pour Drip Feed Oiler.</p>
+<p data-en="The Drip Feed Oiler provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Drip Feed Oiler offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Drip Feed Oiler offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Sight Glass" data-fr="Sight Glass">Sight Glass</h3>
-<p data-en="Provides a practical solution for maintenance programs with a focus on component protection and long-term reliability. Requested as part of SUJO’s sight glass sourcing support." data-fr="Offre une solution pratique pour les programmes de maintenance, avec un accent sur la protection des composants et la fiabilité à long terme. Disponible dans l’accompagnement SUJO pour Sight Glass.">Offre une solution pratique pour les programmes de maintenance, avec un accent sur la protection des composants et la fiabilité à long terme. Disponible dans l’accompagnement SUJO pour Sight Glass.</p>
+<p data-en="The Sight Glass improves lubrication reliability, reduces component wear, and supports longer service intervals for industrial machinery." data-fr="Le Sight Glass améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.">Le Sight Glass améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Oil Level Indicator" data-fr="Oil Level Indicator">Oil Level Indicator</h3>
-<p data-en="Supports daily operation by improving friction reduction, reducing avoidable downtime, and protecting equipment. Requested as part of SUJO’s oil level indicator sourcing support." data-fr="Soutient l’exploitation quotidienne en améliorant la réduction du frottement, en limitant les arrêts évitables et en protégeant les équipements. Disponible dans l’accompagnement SUJO pour Oil Level Indicator.">Soutient l’exploitation quotidienne en améliorant la réduction du frottement, en limitant les arrêts évitables et en protégeant les équipements. Disponible dans l’accompagnement SUJO pour Oil Level Indicator.</p>
+<p data-en="The Oil Level Indicator provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Oil Level Indicator offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Oil Level Indicator offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Breather Filter" data-fr="Breather Filter">Breather Filter</h3>
-<p data-en="Built for industrial service where clean lubricant delivery, component protection, and safe maintenance access matter. Requested as part of SUJO’s breather filter sourcing support." data-fr="Prévu pour le service industriel lorsque la distribution propre du lubrifiant, la protection des composants et l’accès à la maintenance sont importants. Disponible dans l’accompagnement SUJO pour Breather Filter.">Prévu pour le service industriel lorsque la distribution propre du lubrifiant, la protection des composants et l’accès à la maintenance sont importants. Disponible dans l’accompagnement SUJO pour Breather Filter.</p>
+<p data-en="The Breather Filter keeps lubricant clean by removing particles that can damage bearings, gears, pumps, and precision surfaces." data-fr="Le Breather Filter maintient le lubrifiant propre en retirant les particules capables d’endommager roulements, engrenages, pompes et surfaces précises.">Le Breather Filter maintient le lubrifiant propre en retirant les particules capables d’endommager roulements, engrenages, pompes et surfaces précises.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Oil Reservoir" data-fr="Oil Reservoir">Oil Reservoir</h3>
-<p data-en="Useful in projects that need stable performance, easier servicing, and better planned uptime. Requested as part of SUJO’s oil reservoir sourcing support." data-fr="Utile pour les projets qui demandent une performance stable, un entretien plus simple et une meilleure la disponibilité planifiée. Disponible dans l’accompagnement SUJO pour Oil Reservoir.">Utile pour les projets qui demandent une performance stable, un entretien plus simple et une meilleure la disponibilité planifiée. Disponible dans l’accompagnement SUJO pour Oil Reservoir.</p>
+<p data-en="The Oil Reservoir provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Oil Reservoir offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Oil Reservoir offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Grease Reservoir" data-fr="Grease Reservoir">Grease Reservoir</h3>
-<p data-en="Fits demanding installations that require precise function, reliable response, and controlled wear. Requested as part of SUJO’s grease reservoir sourcing support." data-fr="S’intègre aux installations exigeantes nécessitant une fonction précise, une réponse fiable et une usure maîtrisée. Disponible dans l’accompagnement SUJO pour Grease Reservoir.">S’intègre aux installations exigeantes nécessitant une fonction précise, une réponse fiable et une usure maîtrisée. Disponible dans l’accompagnement SUJO pour Grease Reservoir.</p>
+<p data-en="The Grease Reservoir provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Grease Reservoir offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Grease Reservoir offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Automatic Lubricator" data-fr="Automatic Lubricator">Automatic Lubricator</h3>
-<p data-en="Selected for systems where friction reduction must remain consistent during heavy or continuous use. Requested as part of SUJO’s automatic lubricator sourcing support." data-fr="Sélectionné pour les systèmes où la réduction du frottement doit rester constant pendant une utilisation intensive ou continue. Disponible dans l’accompagnement SUJO pour Automatic Lubricator.">Sélectionné pour les systèmes où la réduction du frottement doit rester constant pendant une utilisation intensive ou continue. Disponible dans l’accompagnement SUJO pour Automatic Lubricator.</p>
+<p data-en="The Automatic Lubricator improves lubrication reliability, reduces component wear, and supports longer service intervals for industrial machinery." data-fr="Le Automatic Lubricator améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.">Le Automatic Lubricator améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Single-Point Lubricator" data-fr="Single-Point Lubricator">Single-Point Lubricator</h3>
-<p data-en="Improves equipment dependability by supporting clean lubricant delivery and predictable operating behavior. Requested as part of SUJO’s single-point lubricator sourcing support." data-fr="Améliore la dépendance des équipements en soutenant la distribution propre du lubrifiant et un comportement d’exploitation prévisible. Disponible dans l’accompagnement SUJO pour Single-Point Lubricator.">Améliore la dépendance des équipements en soutenant la distribution propre du lubrifiant et un comportement d’exploitation prévisible. Disponible dans l’accompagnement SUJO pour Single-Point Lubricator.</p>
+<p data-en="The Single-Point Lubricator improves lubrication reliability, reduces component wear, and supports longer service intervals for industrial machinery." data-fr="Le Single-Point Lubricator améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.">Le Single-Point Lubricator améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Multi-Point Lubricator" data-fr="Multi-Point Lubricator">Multi-Point Lubricator</h3>
-<p data-en="Works well in production areas that need robust components, clean installation, and practical upkeep. Requested as part of SUJO’s multi-point lubricator sourcing support." data-fr="Convient aux zones de production qui exigent des composants robustes, une installation propre et un entretien pratique. Disponible dans l’accompagnement SUJO pour Multi-Point Lubricator.">Convient aux zones de production qui exigent des composants robustes, une installation propre et un entretien pratique. Disponible dans l’accompagnement SUJO pour Multi-Point Lubricator.</p>
+<p data-en="The Multi-Point Lubricator improves lubrication reliability, reduces component wear, and supports longer service intervals for industrial machinery." data-fr="Le Multi-Point Lubricator améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.">Le Multi-Point Lubricator améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Chain Lubricator" data-fr="Chain Lubricator">Chain Lubricator</h3>
-<p data-en="Chosen for machinery upgrades where component protection, durability, and maintainability are important. Requested as part of SUJO’s chain lubricator sourcing support." data-fr="Choisi pour les modernisations de machines où la protection des composants, la durabilité et la maintenabilité sont prioritaires. Disponible dans l’accompagnement SUJO pour Chain Lubricator.">Choisi pour les modernisations de machines où la protection des composants, la durabilité et la maintenabilité sont prioritaires. Disponible dans l’accompagnement SUJO pour Chain Lubricator.</p>
+<p data-en="The Chain Lubricator improves lubrication reliability, reduces component wear, and supports longer service intervals for industrial machinery." data-fr="Le Chain Lubricator améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.">Le Chain Lubricator améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Conveyor Lubrication System" data-fr="Conveyor Lubrication System">Conveyor Lubrication System</h3>
-<p data-en="Helps protect assets by keeping friction reduction steady and reducing stress on connected equipment. Requested as part of SUJO’s conveyor lubrication system sourcing support." data-fr="Aide à protéger les actifs en gardant la réduction du frottement stable et en réduisant les contraintes sur les équipements connectés. Disponible dans l’accompagnement SUJO pour Conveyor Lubrication System.">Aide à protéger les actifs en gardant la réduction du frottement stable et en réduisant les contraintes sur les équipements connectés. Disponible dans l’accompagnement SUJO pour Conveyor Lubrication System.</p>
+<p data-en="The Conveyor Lubrication System improves lubrication reliability, reduces component wear, and supports longer service intervals for industrial machinery." data-fr="Le Conveyor Lubrication System améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.">Le Conveyor Lubrication System améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Centralized Lubrication System" data-fr="Centralized Lubrication System">Centralized Lubrication System</h3>
-<p data-en="Prepared for industrial environments that demand consistent output and simple field replacement. Requested as part of SUJO’s centralized lubrication system sourcing support." data-fr="Préparé pour les environnements industriels qui exigent une sortie régulière et un remplacement simple sur site. Disponible dans l’accompagnement SUJO pour Centralized Lubrication System.">Préparé pour les environnements industriels qui exigent une sortie régulière et un remplacement simple sur site. Disponible dans l’accompagnement SUJO pour Centralized Lubrication System.</p>
+<p data-en="The Centralized Lubrication System improves lubrication reliability, reduces component wear, and supports longer service intervals for industrial machinery." data-fr="Le Centralized Lubrication System améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.">Le Centralized Lubrication System améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Circulating Oil System" data-fr="Circulating Oil System">Circulating Oil System</h3>
-<p data-en="Adds reliability to maintenance programs by supporting controlled operation and efficient maintenance planning. Requested as part of SUJO’s circulating oil system sourcing support." data-fr="Ajoute de la fiabilité aux programmes de maintenance en soutenant un fonctionnement contrôlé et une planification efficace de la maintenance. Disponible dans l’accompagnement SUJO pour Circulating Oil System.">Ajoute de la fiabilité aux programmes de maintenance en soutenant un fonctionnement contrôlé et une planification efficace de la maintenance. Disponible dans l’accompagnement SUJO pour Circulating Oil System.</p>
+<p data-en="The Circulating Oil System provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Circulating Oil System offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Circulating Oil System offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Lubrication Heat Exchanger" data-fr="Lubrication Heat Exchanger">Lubrication Heat Exchanger</h3>
-<p data-en="Designed for maintenance programs where friction reduction and clean lubricant delivery are critical. Requested as part of SUJO’s lubrication heat exchanger sourcing support." data-fr="Conçu pour les programmes de maintenance où la réduction du frottement et la distribution propre du lubrifiant sont essentiels. Disponible dans l’accompagnement SUJO pour Lubrication Heat Exchanger.">Conçu pour les programmes de maintenance où la réduction du frottement et la distribution propre du lubrifiant sont essentiels. Disponible dans l’accompagnement SUJO pour Lubrication Heat Exchanger.</p>
+<p data-en="The Lubrication Heat Exchanger improves lubrication reliability, reduces component wear, and supports longer service intervals for industrial machinery." data-fr="Le Lubrication Heat Exchanger améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.">Le Lubrication Heat Exchanger améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Oil Cooler" data-fr="Oil Cooler">Oil Cooler</h3>
-<p data-en="Helps teams maintain component protection while improving friction reduction in demanding environments. Requested as part of SUJO’s oil cooler sourcing support." data-fr="Aide les équipes à maintenir la protection des composants tout en améliorant la réduction du frottement dans les environnements exigeants. Disponible dans l’accompagnement SUJO pour Oil Cooler.">Aide les équipes à maintenir la protection des composants tout en améliorant la réduction du frottement dans les environnements exigeants. Disponible dans l’accompagnement SUJO pour Oil Cooler.</p>
+<p data-en="The Oil Cooler provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Oil Cooler offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Oil Cooler offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Lubrication Monitoring Sensor" data-fr="Lubrication Monitoring Sensor">Lubrication Monitoring Sensor</h3>
-<p data-en="Suited for applications that require clean lubricant delivery, consistent performance, and dependable operation. Requested as part of SUJO’s lubrication monitoring sensor sourcing support." data-fr="Adapté aux applications qui exigent la distribution propre du lubrifiant, une performance régulière et un fonctionnement fiable. Disponible dans l’accompagnement SUJO pour Lubrication Monitoring Sensor.">Adapté aux applications qui exigent la distribution propre du lubrifiant, une performance régulière et un fonctionnement fiable. Disponible dans l’accompagnement SUJO pour Lubrication Monitoring Sensor.</p>
+<p data-en="The Lubrication Monitoring Sensor improves lubrication reliability, reduces component wear, and supports longer service intervals for industrial machinery." data-fr="Le Lubrication Monitoring Sensor améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.">Le Lubrication Monitoring Sensor améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Oil Quality Sensor" data-fr="Oil Quality Sensor">Oil Quality Sensor</h3>
-<p data-en="Provides a practical solution for maintenance programs with a focus on component protection and long-term reliability. Requested as part of SUJO’s oil quality sensor sourcing support." data-fr="Offre une solution pratique pour les programmes de maintenance, avec un accent sur la protection des composants et la fiabilité à long terme. Disponible dans l’accompagnement SUJO pour Oil Quality Sensor.">Offre une solution pratique pour les programmes de maintenance, avec un accent sur la protection des composants et la fiabilité à long terme. Disponible dans l’accompagnement SUJO pour Oil Quality Sensor.</p>
+<p data-en="The Oil Quality Sensor provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Oil Quality Sensor offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Oil Quality Sensor offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Oil Flow Sensor" data-fr="Oil Flow Sensor">Oil Flow Sensor</h3>
-<p data-en="Supports daily operation by improving friction reduction, reducing avoidable downtime, and protecting equipment. Requested as part of SUJO’s oil flow sensor sourcing support." data-fr="Soutient l’exploitation quotidienne en améliorant la réduction du frottement, en limitant les arrêts évitables et en protégeant les équipements. Disponible dans l’accompagnement SUJO pour Oil Flow Sensor.">Soutient l’exploitation quotidienne en améliorant la réduction du frottement, en limitant les arrêts évitables et en protégeant les équipements. Disponible dans l’accompagnement SUJO pour Oil Flow Sensor.</p>
+<p data-en="The Oil Flow Sensor provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Oil Flow Sensor offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Oil Flow Sensor offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Lubrication Accessories (Clamps, Brackets, Adapters)" data-fr="Lubrication Accessories (Clamps, Brackets, Adapters)">Lubrication Accessories (Clamps, Brackets, Adapters)</h3>
-<p data-en="Built for industrial service where clean lubricant delivery, component protection, and safe maintenance access matter. Requested as part of SUJO’s lubrication accessories (clamps, brackets, adapters) sourcing support." data-fr="Prévu pour le service industriel lorsque la distribution propre du lubrifiant, la protection des composants et l’accès à la maintenance sont importants. Disponible dans l’accompagnement SUJO pour Lubrication Accessories (Clamps, Brackets, Adapters).">Prévu pour le service industriel lorsque la distribution propre du lubrifiant, la protection des composants et l’accès à la maintenance sont importants. Disponible dans l’accompagnement SUJO pour Lubrication Accessories (Clamps, Brackets, Adapters).</p>
+<p data-en="The Lubrication Accessories (Clamps, Brackets, Adapters) improves lubrication reliability, reduces component wear, and supports longer service intervals for industrial machinery." data-fr="Le Lubrication Accessories (Clamps, Brackets, Adapters) améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.">Le Lubrication Accessories (Clamps, Brackets, Adapters) améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Industrial Grease" data-fr="Industrial Grease">Industrial Grease</h3>
-<p data-en="Useful in projects that need stable performance, easier servicing, and better planned uptime. Requested as part of SUJO’s industrial grease sourcing support." data-fr="Utile pour les projets qui demandent une performance stable, un entretien plus simple et une meilleure la disponibilité planifiée. Disponible dans l’accompagnement SUJO pour Industrial Grease.">Utile pour les projets qui demandent une performance stable, un entretien plus simple et une meilleure la disponibilité planifiée. Disponible dans l’accompagnement SUJO pour Industrial Grease.</p>
+<p data-en="The Industrial Grease provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Industrial Grease offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Industrial Grease offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Synthetic Grease" data-fr="Synthetic Grease">Synthetic Grease</h3>
-<p data-en="Fits demanding installations that require precise function, reliable response, and controlled wear. Requested as part of SUJO’s synthetic grease sourcing support." data-fr="S’intègre aux installations exigeantes nécessitant une fonction précise, une réponse fiable et une usure maîtrisée. Disponible dans l’accompagnement SUJO pour Synthetic Grease.">S’intègre aux installations exigeantes nécessitant une fonction précise, une réponse fiable et une usure maîtrisée. Disponible dans l’accompagnement SUJO pour Synthetic Grease.</p>
+<p data-en="The Synthetic Grease provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Synthetic Grease offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Synthetic Grease offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="High-Temperature Grease" data-fr="High-Temperature Grease">High-Temperature Grease</h3>
-<p data-en="Selected for systems where friction reduction must remain consistent during heavy or continuous use. Requested as part of SUJO’s high-temperature grease sourcing support." data-fr="Sélectionné pour les systèmes où la réduction du frottement doit rester constant pendant une utilisation intensive ou continue. Disponible dans l’accompagnement SUJO pour High-Temperature Grease.">Sélectionné pour les systèmes où la réduction du frottement doit rester constant pendant une utilisation intensive ou continue. Disponible dans l’accompagnement SUJO pour High-Temperature Grease.</p>
+<p data-en="The High-Temperature Grease provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le High-Temperature Grease offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le High-Temperature Grease offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Gear Oil" data-fr="Gear Oil">Gear Oil</h3>
-<p data-en="Improves equipment dependability by supporting clean lubricant delivery and predictable operating behavior. Requested as part of SUJO’s gear oil sourcing support." data-fr="Améliore la dépendance des équipements en soutenant la distribution propre du lubrifiant et un comportement d’exploitation prévisible. Disponible dans l’accompagnement SUJO pour Gear Oil.">Améliore la dépendance des équipements en soutenant la distribution propre du lubrifiant et un comportement d’exploitation prévisible. Disponible dans l’accompagnement SUJO pour Gear Oil.</p>
+<p data-en="The Gear Oil provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Gear Oil offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Gear Oil offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hydraulic Oil" data-fr="Hydraulic Oil">Hydraulic Oil</h3>
-<p data-en="Works well in production areas that need robust components, clean installation, and practical upkeep. Requested as part of SUJO’s hydraulic oil sourcing support." data-fr="Convient aux zones de production qui exigent des composants robustes, une installation propre et un entretien pratique. Disponible dans l’accompagnement SUJO pour Hydraulic Oil.">Convient aux zones de production qui exigent des composants robustes, une installation propre et un entretien pratique. Disponible dans l’accompagnement SUJO pour Hydraulic Oil.</p>
+<p data-en="The Hydraulic Oil provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Hydraulic Oil offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Hydraulic Oil offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Food-Grade Lubricant" data-fr="Food-Grade Lubricant">Food-Grade Lubricant</h3>
-<p data-en="Chosen for machinery upgrades where component protection, durability, and maintainability are important. Requested as part of SUJO’s food-grade lubricant sourcing support." data-fr="Choisi pour les modernisations de machines où la protection des composants, la durabilité et la maintenabilité sont prioritaires. Disponible dans l’accompagnement SUJO pour Food-Grade Lubricant.">Choisi pour les modernisations de machines où la protection des composants, la durabilité et la maintenabilité sont prioritaires. Disponible dans l’accompagnement SUJO pour Food-Grade Lubricant.</p>
+<p data-en="The Food-Grade Lubricant provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Food-Grade Lubricant offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Food-Grade Lubricant offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
 </a>
 </div>
 </main>
-<footer style="background: #0a0c0f; border-top: 1px solid var(--border-color); padding: 60px 0 30px 0; margin-top: 80px;">
+<footer class="footer-shell">
 <div class="container grid-3" style="padding: 0 24px 40px 24px;">
 <div>
-<img alt="SUJO" src="logo.png" style="height: 40px; margin-bottom: 16px;"/>
+<img alt="SUJO" class="site-logo" decoding="async" fetchpriority="high" loading="eager" src="logo.png"/>
 <p data-en="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, Democratic Republic of Congo" data-fr="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, République Démocratique du Congo" style="color: var(--text-muted); font-size: 0.9rem;">SUJO Engineering Consulting SARL<br/>Kinshasa, République Démocratique du Congo</p>
 </div>
 <div>
 <h4 data-en="Technology Index" data-fr="Matrices Technologiques" style="margin-bottom: 16px; font-size: 0.95rem;">Matrices Technologiques</h4>
-<p style="font-size: 0.9rem; margin-bottom: 8px;">Index Global des Produits</p>
-<p style="font-size: 0.9rem; margin-bottom: 8px;">Marques Validées</p>
+<p style="font-size: 0.9rem; margin-bottom: 8px;"><a data-en="Global Product Index" data-fr="Index Global des Produits" href="products.html" style="color: var(--text-muted); text-decoration: none;">Index Global des Produits</a></p>
+<p style="font-size: 0.9rem; margin-bottom: 8px;"><a data-en="Partners" data-fr="Partenaires" href="partners.html" style="color: var(--text-muted); text-decoration: none;">Partenaires</a></p>
 </div>
 <div>
 <h4 data-en="Direct Channels" data-fr="Canaux Directs" style="margin-bottom: 16px; font-size: 0.95rem;">Canaux Directs</h4>
-<p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;">DRC: +243 974 570 630</p>
+<p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;"><span data-en="DRC:" data-fr="RDC:">RDC:</span> +243 974 570 630</p>
 <p data-en="Email: contact@sujo-engineering.com" data-fr="Email: contact@sujo-engineering.com" style="color: var(--text-muted); font-size: 0.9rem;">Email: contact@sujo-engineering.com</p>
 </div>
 </div>
 <div data-en="© 2026 SUJO Engineering Consulting SARL. All rights reserved." data-fr="© 2026 SUJO Engineering Consulting SARL. Tous droits réservés." style="text-align: center; border-top: 1px solid var(--border-color); padding-top: 30px; font-size: 0.8rem; color: var(--text-muted);">
-© 2026 SUJO Engineering Consulting SARL. All rights reserved.
-</div>
+            © 2026 SUJO Engineering Consulting SARL. All rights reserved.
+        </div>
 </footer>
-<script>
-function applyLang(lang) {
-    document.querySelectorAll('[data-fr][data-en]').forEach(el => {
-        el.innerHTML = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
-    });
-    document.documentElement.lang = lang;
-}
 
-function setLang(lang) {
-    localStorage.setItem('sujoLang', lang);
-    const btnFr = document.getElementById('btn-fr');
-    const btnEn = document.getElementById('btn-en');
-    if (btnFr && btnEn) {
-        btnFr.classList.toggle('active', lang === 'fr');
-        btnEn.classList.toggle('active', lang === 'en');
-    }
-    applyLang(lang);
-}
-
-(function () {
-    const saved = localStorage.getItem('sujoLang') || 'fr';
-    applyLang(saved);
-    const btnFr = document.getElementById('btn-fr');
-    const btnEn = document.getElementById('btn-en');
-    if (btnFr && btnEn) {
-        btnFr.classList.toggle('active', saved === 'fr');
-        btnEn.classList.toggle('active', saved === 'en');
-    }
-})();
-
-function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('open');
-    document.querySelector('.hamburger').classList.toggle('open');
-}
-
-document.querySelectorAll('.dropdown > a').forEach(link => {
-    link.addEventListener('click', (e) => {
-        if (window.innerWidth <= 900) {
-            e.preventDefault();
-            link.parentElement.classList.toggle('open');
-        }
-    });
-});
-
-document.querySelectorAll('#mobileMenu a').forEach(link => {
-    link.addEventListener('click', () => {
-        if (link.parentElement.classList.contains('dropdown')) return;
-        document.getElementById('mobileMenu').classList.remove('open');
-        document.querySelector('.hamburger').classList.remove('open');
-    });
-});
-</script>
 </body>
 </html>

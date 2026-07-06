@@ -8,20 +8,20 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="style.css" rel="stylesheet"/>
-<script defer="" src="app.js"></script>
-</head>
-<body>
+
+<script defer="True" src="app.js"></script></head>
+<body><a class="skip-link" data-en="Skip to main content" data-fr="Aller au contenu principal" href="#main-content">Aller au contenu principal</a>
 <!-- NAV BAR -->
 <header>
-<a class="nav-logo" href="https://sujo-engineering.com/index.html">
-<img alt="SUJO" src="logo.png" style="height: 50px;"/>
+<a class="nav-logo" href="index.html">
+<img alt="SUJO" class="site-logo" decoding="async" fetchpriority="high" loading="eager" src="logo.png"/>
 </a>
-<nav>
+<nav aria-label="Main navigation">
 <ul class="nav-links" id="mobileMenu">
 <li><a data-en="Home" data-fr="Accueil" href="https://sujo-engineering.com/index.html">Accueil</a></li>
 <li><a data-en="About" data-fr="À Propos" href="https://sujo-engineering.com/about.html">À Propos</a></li>
 <li class="dropdown">
-<a data-en="Products ▾" data-fr="Produits ▾" href="https://sujo-engineering.com/products.html">Produits ▾</a>
+<a aria-expanded="false" aria-haspopup="true" data-en="Products ▾" data-fr="Produits ▾" href="https://sujo-engineering.com/products.html">Produits ▾</a>
 <ul class="dropdown-menu">
 <li><a data-en="Mechanical Components" data-fr="Composants Mécaniques" href="product-mechanical.html">Composants Mécaniques</a></li>
 <li><a data-en="Automation &amp; Motion" data-fr="Automatisation &amp; Mouvement" href="product-automation.html">Automatisation &amp; Mouvement</a></li>
@@ -31,20 +31,26 @@
 <li><a data-en="Industrial Lubrication" data-fr="Lubrification Industrielle" href="product-lubrication.html">Lubrification Industrielle</a></li>
 </ul>
 </li>
-<li><a data-en="Partners" data-fr="Partenaires" href="partners.html">Partenaires</a></li>
+<li><a data-en="Partners" data-fr="Partenaires" href="https://sujo-engineering.com/partners.html">Partenaires</a></li>
 <li><a data-en="Contact" data-fr="Contact" href="https://sujo-engineering.com/contact.html">Contact</a></li>
-<li><a class="btn btn-outline" data-en="My Account" data-fr="Mon Compte" href="https://portal.sujo-engineering.com/" rel="noopener noreferrer" style="padding: 8px 16px;" target="_blank">Mon Compte</a></li>
-<li><a class="btn btn-primary" data-en="Request Quote" data-fr="Demander un devis" href="https://sujo-engineering.com/quote.html" style="padding: 8px 16px;">Demander un devis</a></li>
+<li><a class="btn btn-outline nav-account" data-en="My Account" data-fr="Mon Compte" href="https://portal.sujo-engineering.com/" rel="noopener noreferrer" target="_blank">Mon Compte</a></li>
+<li><a class="btn btn-primary" data-en="Request Quote" data-fr="Demander un devis" href="https://sujo-engineering.com/quote.html">Demander un devis</a></li>
+<li>
+<div class="lang-switch">
+<button aria-label="Changer la langue en français" class="active" data-lang-button="fr" id="btn-fr" type="button">FR</button>
+<button aria-label="Switch language to English" data-lang-button="en" id="btn-en" type="button">EN</button>
+</div>
+</li>
 </ul>
 </nav>
-<div aria-label="Menu" class="hamburger" onclick="toggleMenu()">
+<div aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation menu" class="hamburger" role="button" tabindex="0">
 <span></span>
 <span></span>
 <span></span>
 </div>
 </header>
 <!-- 1. INTRO / HERO -->
-<main class="container" style="padding-top: 60px;">
+<main class="container" id="main-content" style="padding-top: 60px;" tabindex="-1">
 <div class="section-header" style="text-align: left; max-width: 760px; margin: 0 0 24px 0;">
 <div class="section-label" data-en="Cost Estimation" data-fr="Estimation des Coûts">Estimation des Coûts</div>
 <h1 class="section-title" data-en="Accurate Project Cost Estimates You Can Trust" data-fr="Des Estimations de Coûts Précises et Fiables" style="font-size: 2.5rem;">Des Estimations de Coûts Précises et Fiables</h1>
@@ -121,20 +127,20 @@
 </div>
 </section>
 <!-- 6. FOOTER -->
-<footer style="background: #0a0c0f; border-top: 1px solid var(--border-color); padding: 60px 0 30px 0;">
+<footer class="footer-shell">
 <div class="container grid-3" style="padding: 0 24px 40px 24px;">
 <div>
-<img alt="SUJO" src="logo.png" style="height: 40px; margin-bottom: 16px;"/>
+<img alt="SUJO" class="site-logo" decoding="async" fetchpriority="high" loading="eager" src="logo.png"/>
 <p data-en="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, Democratic Republic of Congo" data-fr="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, République Démocratique du Congo" style="color: var(--text-muted); font-size: 0.9rem;">SUJO Engineering Consulting SARL<br/>Kinshasa, République Démocratique du Congo</p>
 </div>
 <div>
 <h4 data-en="Technology Index" data-fr="Matrices Technologiques" style="margin-bottom: 16px; font-size: 0.95rem;">Matrices Technologiques</h4>
-<p style="font-size: 0.9rem; margin-bottom: 8px;"><a data-en="Global Product Index" data-fr="Index Global des Produits" href="https://sujo-engineering.com/products.html" style="color: var(--text-muted); text-decoration: none;">Index Global des Produits</a></p>
+<p style="font-size: 0.9rem; margin-bottom: 8px;"><a data-en="Global Product Index" data-fr="Index Global des Produits" href="products.html" style="color: var(--text-muted); text-decoration: none;">Index Global des Produits</a></p>
 <p style="font-size: 0.9rem; margin-bottom: 8px;"><a data-en="Partners" data-fr="Partenaires" href="partners.html" style="color: var(--text-muted); text-decoration: none;">Partenaires</a></p>
 </div>
 <div>
 <h4 data-en="Direct Channels" data-fr="Canaux Directs" style="margin-bottom: 16px; font-size: 0.95rem;">Canaux Directs</h4>
-<p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;">DRC: +243 974 570 630</p>
+<p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;"><span data-en="DRC:" data-fr="RDC:">RDC:</span> +243 974 570 630</p>
 <p data-en="Email: contact@sujo-engineering.com" data-fr="Email: contact@sujo-engineering.com" style="color: var(--text-muted); font-size: 0.9rem;">Email: contact@sujo-engineering.com</p>
 </div>
 </div>
@@ -142,57 +148,6 @@
             © 2026 SUJO Engineering Consulting SARL. All rights reserved.
         </div>
 </footer>
-<script>
-        function applyLang(lang) {
-            document.querySelectorAll('[data-fr][data-en]').forEach(el => {
-                el.innerHTML = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
-            });
-            document.documentElement.lang = lang;
-        }
 
-        function setLang(lang) {
-            localStorage.setItem('sujoLang', lang);
-            const btnFr = document.getElementById('btn-fr');
-            const btnEn = document.getElementById('btn-en');
-            if (btnFr && btnEn) {
-                btnFr.classList.toggle('active', lang === 'fr');
-                btnEn.classList.toggle('active', lang === 'en');
-            }
-            applyLang(lang);
-        }
-
-        (function () {
-            const saved = localStorage.getItem('sujoLang') || 'fr';
-            applyLang(saved);
-            const btnFr = document.getElementById('btn-fr');
-            const btnEn = document.getElementById('btn-en');
-            if (btnFr && btnEn) {
-                btnFr.classList.toggle('active', saved === 'fr');
-                btnEn.classList.toggle('active', saved === 'en');
-            }
-        })();
-
-        function toggleMenu() {
-            document.getElementById('mobileMenu').classList.toggle('open');
-            document.querySelector('.hamburger').classList.toggle('open');
-        }
-
-        document.querySelectorAll('.dropdown > a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                if (window.innerWidth <= 900) {
-                    e.preventDefault();
-                    link.parentElement.classList.toggle('open');
-                }
-            });
-        });
-
-        document.querySelectorAll('#mobileMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (link.parentElement.classList.contains('dropdown')) return;
-                document.getElementById('mobileMenu').classList.remove('open');
-                document.querySelector('.hamburger').classList.remove('open');
-            });
-        });
-    </script>
 </body>
 </html>

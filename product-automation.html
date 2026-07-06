@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="style.css" rel="stylesheet"/>
-<script defer="" src="app.js"></script>
+
 <style>
 header{position:sticky;top:0;z-index:1000;backdrop-filter:blur(14px);}
 html{scroll-padding-top:96px;}
@@ -17,41 +17,47 @@ html{scroll-padding-top:96px;}
 .card-system{cursor:default;}
 .card-system p{margin-bottom:0;}
 </style>
-</head>
-<body>
+<script defer="True" src="app.js"></script></head>
+<body><a class="skip-link" data-en="Skip to main content" data-fr="Aller au contenu principal" href="#main-content">Aller au contenu principal</a>
 <!-- NAV BAR -->
 <header>
-<a class="nav-logo" href="https://sujo-engineering.com/index.html">
-<img alt="SUJO" src="logo.png" style="height: 50px;"/>
+<a class="nav-logo" href="index.html">
+<img alt="SUJO" class="site-logo" decoding="async" fetchpriority="high" loading="eager" src="logo.png"/>
 </a>
-<nav>
+<nav aria-label="Main navigation">
 <ul class="nav-links" id="mobileMenu">
 <li><a data-en="Home" data-fr="Accueil" href="https://sujo-engineering.com/index.html">Accueil</a></li>
 <li><a data-en="About" data-fr="À Propos" href="https://sujo-engineering.com/about.html">À Propos</a></li>
 <li class="dropdown">
-<a class="active" data-en="Products ▾" data-fr="Produits ▾" href="https://sujo-engineering.com/products.html">Produits ▾</a>
+<a aria-expanded="false" aria-haspopup="true" class="active" data-en="Products ▾" data-fr="Produits ▾" href="https://sujo-engineering.com/products.html">Produits ▾</a>
 <ul class="dropdown-menu">
 <li><a data-en="Mechanical Components" data-fr="Composants Mécaniques" href="product-mechanical.html">Composants Mécaniques</a></li>
-<li><a class="active" data-en="Automation &amp; Motion" data-fr="Automatisation &amp; Mouvement" href="product-automation.html">Automatisation &amp; Mouvement</a></li>
+<li><a aria-current="page" class="active" data-en="Automation &amp; Motion" data-fr="Automatisation &amp; Mouvement" href="product-automation.html">Automatisation &amp; Mouvement</a></li>
 <li><a data-en="Hydraulics &amp; Pneumatics" data-fr="Hydraulique &amp; Pneumatique" href="product-hydraulics.html">Hydraulique &amp; Pneumatique</a></li>
 <li><a data-en="Industrial Safety" data-fr="Sécurité Industrielle" href="product-safety.html">Sécurité Industrielle</a></li>
 <li><a data-en="Power Transmission" data-fr="Transmission de Puissance" href="product-transmission.html">Transmission de Puissance</a></li>
 <li><a data-en="Industrial Lubrication" data-fr="Lubrification Industrielle" href="product-lubrication.html">Lubrification Industrielle</a></li>
 </ul>
 </li>
-<li><a data-en="Partners" data-fr="Partenaires" href="partners.html">Partenaires</a></li>
+<li><a data-en="Partners" data-fr="Partenaires" href="https://sujo-engineering.com/partners.html">Partenaires</a></li>
 <li><a data-en="Contact" data-fr="Contact" href="https://sujo-engineering.com/contact.html">Contact</a></li>
-<li><a class="btn btn-outline" data-en="My Account" data-fr="Mon Compte" href="https://portal.sujo-engineering.com/" rel="noopener noreferrer" style="padding: 8px 16px;" target="_blank">Mon Compte</a></li>
-<li><a class="btn btn-primary" data-en="Request Quote" data-fr="Demander un devis" href="https://sujo-engineering.com/quote.html" style="padding: 8px 16px;">Demander un devis</a></li>
-<li><div class="lang-switch"><button class="active" id="btn-fr" onclick="setLang('fr')" type="button">FR</button><button id="btn-en" onclick="setLang('en')" type="button">EN</button></div></li></ul>
+<li><a class="btn btn-outline nav-account" data-en="My Account" data-fr="Mon Compte" href="https://portal.sujo-engineering.com/" rel="noopener noreferrer" target="_blank">Mon Compte</a></li>
+<li><a class="btn btn-primary" data-en="Request Quote" data-fr="Demander un devis" href="https://sujo-engineering.com/quote.html">Demander un devis</a></li>
+<li>
+<div class="lang-switch">
+<button aria-label="Changer la langue en français" class="active" data-lang-button="fr" id="btn-fr" type="button">FR</button>
+<button aria-label="Switch language to English" data-lang-button="en" id="btn-en" type="button">EN</button>
+</div>
+</li>
+</ul>
 </nav>
-<div aria-label="Menu" class="hamburger" onclick="toggleMenu()">
+<div aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation menu" class="hamburger" role="button" tabindex="0">
 <span></span>
 <span></span>
 <span></span>
 </div>
 </header>
-<main class="container">
+<main class="container" id="main-content" tabindex="-1">
 <div class="section-header" style="text-align: left;">
 <div class="section-label" data-en="Automation &amp; Motion" data-fr="Automatisation &amp; Mouvement">Automatisation &amp; Mouvement</div>
 <h1 class="section-title" data-en="Automation Products" data-fr="Produits d'Automatisation" style="font-size: 2.75rem;">Produits d'Automatisation</h1>
@@ -63,346 +69,295 @@ html{scroll-padding-top:96px;}
 <div class="grid-3" style="margin-top: 48px;">
 <a class="card-system">
 <h3 data-en="PLC (Programmable Logic Controller)" data-fr="PLC (Programmable Logic Controller)">PLC (Programmable Logic Controller)</h3>
-<p data-en="Designed for automation panels where signal accuracy and operator visibility are critical. Requested as part of SUJO’s plc (programmable logic controller) sourcing support." data-fr="Conçu pour les armoires d’automatisation où la précision des signaux et la visibilité opérateur sont essentiels. Disponible dans l’accompagnement SUJO pour PLC (Programmable Logic Controller).">Conçu pour les armoires d’automatisation où la précision des signaux et la visibilité opérateur sont essentiels. Disponible dans l’accompagnement SUJO pour PLC (Programmable Logic Controller).</p>
+<p data-en="The PLC (Programmable Logic Controller) coordinates machine logic, sequencing, alarms, and interlocks for dependable automated equipment control." data-fr="Le PLC (Programmable Logic Controller) coordonne la logique machine, les séquences, les alarmes et les interverrouillages pour un contrôle automatisé fiable.">Le PLC (Programmable Logic Controller) coordonne la logique machine, les séquences, les alarmes et les interverrouillages pour un contrôle automatisé fiable.</p>
 </a>
 <a class="card-system">
 <h3 data-en="PLC Expansion Module" data-fr="PLC Expansion Module">PLC Expansion Module</h3>
-<p data-en="Helps teams maintain machine coordination while improving signal accuracy in demanding environments. Requested as part of SUJO’s plc expansion module sourcing support." data-fr="Aide les équipes à maintenir la coordination machine tout en améliorant la précision des signaux dans les environnements exigeants. Disponible dans l’accompagnement SUJO pour PLC Expansion Module.">Aide les équipes à maintenir la coordination machine tout en améliorant la précision des signaux dans les environnements exigeants. Disponible dans l’accompagnement SUJO pour PLC Expansion Module.</p>
+<p data-en="The PLC Expansion Module expands control-panel capacity by connecting additional field sensors, actuators, and digital or analog signals." data-fr="Le PLC Expansion Module augmente la capacité de l’armoire de contrôle en reliant davantage de capteurs, actionneurs et signaux terrain.">Le PLC Expansion Module augmente la capacité de l’armoire de contrôle en reliant davantage de capteurs, actionneurs et signaux terrain.</p>
 </a>
 <a class="card-system">
 <h3 data-en="I/O Module (Digital, Analog)" data-fr="I/O Module (Digital, Analog)">I/O Module (Digital, Analog)</h3>
-<p data-en="Suited for applications that require operator visibility, consistent performance, and dependable operation. Requested as part of SUJO’s i/o module (digital, analog) sourcing support." data-fr="Adapté aux applications qui exigent la visibilité opérateur, une performance régulière et un fonctionnement fiable. Disponible dans l’accompagnement SUJO pour I/O Module (Digital, Analog).">Adapté aux applications qui exigent la visibilité opérateur, une performance régulière et un fonctionnement fiable. Disponible dans l’accompagnement SUJO pour I/O Module (Digital, Analog).</p>
+<p data-en="The I/O Module (Digital, Analog) expands control-panel capacity by connecting additional field sensors, actuators, and digital or analog signals." data-fr="Le I/O Module (Digital, Analog) augmente la capacité de l’armoire de contrôle en reliant davantage de capteurs, actionneurs et signaux terrain.">Le I/O Module (Digital, Analog) augmente la capacité de l’armoire de contrôle en reliant davantage de capteurs, actionneurs et signaux terrain.</p>
 </a>
 <a class="card-system">
 <h3 data-en="HMI Touch Panel" data-fr="HMI Touch Panel">HMI Touch Panel</h3>
-<p data-en="Provides a practical solution for automation panels with a focus on machine coordination and long-term reliability. Requested as part of SUJO’s hmi touch panel sourcing support." data-fr="Offre une solution pratique pour les armoires d’automatisation, avec un accent sur la coordination machine et la fiabilité à long terme. Disponible dans l’accompagnement SUJO pour HMI Touch Panel.">Offre une solution pratique pour les armoires d’automatisation, avec un accent sur la coordination machine et la fiabilité à long terme. Disponible dans l’accompagnement SUJO pour HMI Touch Panel.</p>
+<p data-en="The HMI Touch Panel gives operators a clear interface for equipment status, setpoints, alarms, and production information." data-fr="Le HMI Touch Panel offre aux opérateurs une interface claire pour l’état des équipements, les consignes, les alarmes et les données de production.">Le HMI Touch Panel offre aux opérateurs une interface claire pour l’état des équipements, les consignes, les alarmes et les données de production.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Industrial PC" data-fr="Industrial PC">Industrial PC</h3>
-<p data-en="Supports daily operation by improving signal accuracy, reducing avoidable downtime, and protecting equipment. Requested as part of SUJO’s industrial pc sourcing support." data-fr="Soutient l’exploitation quotidienne en améliorant la précision des signaux, en limitant les arrêts évitables et en protégeant les équipements. Disponible dans l’accompagnement SUJO pour Industrial PC.">Soutient l’exploitation quotidienne en améliorant la précision des signaux, en limitant les arrêts évitables et en protégeant les équipements. Disponible dans l’accompagnement SUJO pour Industrial PC.</p>
+<p data-en="The Industrial PC supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Industrial PC soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Industrial PC soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="SCADA System" data-fr="SCADA System">SCADA System</h3>
-<p data-en="Built for industrial service where operator visibility, machine coordination, and safe maintenance access matter. Requested as part of SUJO’s scada system sourcing support." data-fr="Prévu pour le service industriel lorsque la visibilité opérateur, la coordination machine et l’accès à la maintenance sont importants. Disponible dans l’accompagnement SUJO pour SCADA System.">Prévu pour le service industriel lorsque la visibilité opérateur, la coordination machine et l’accès à la maintenance sont importants. Disponible dans l’accompagnement SUJO pour SCADA System.</p>
+<p data-en="The SCADA System supervises distributed processes, records operating data, and supports remote monitoring of industrial assets." data-fr="Le SCADA System supervise les procédés distribués, enregistre les données d’exploitation et permet le suivi à distance des actifs industriels.">Le SCADA System supervise les procédés distribués, enregistre les données d’exploitation et permet le suivi à distance des actifs industriels.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Servo Motor" data-fr="Servo Motor">Servo Motor</h3>
-<p data-en="Useful in projects that need stable performance, easier servicing, and better process reliability. Requested as part of SUJO’s servo motor sourcing support." data-fr="Utile pour les projets qui demandent une performance stable, un entretien plus simple et une meilleure la fiabilité des procédés. Disponible dans l’accompagnement SUJO pour Servo Motor.">Utile pour les projets qui demandent une performance stable, un entretien plus simple et une meilleure la fiabilité des procédés. Disponible dans l’accompagnement SUJO pour Servo Motor.</p>
+<p data-en="The Servo Motor provides precise speed, torque, and position control for high-performance automated motion applications." data-fr="Le Servo Motor assure un contrôle précis de la vitesse, du couple et de la position pour les applications de mouvement automatisé.">Le Servo Motor assure un contrôle précis de la vitesse, du couple et de la position pour les applications de mouvement automatisé.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Servo Drive" data-fr="Servo Drive">Servo Drive</h3>
-<p data-en="Fits demanding installations that require precise function, reliable response, and controlled wear. Requested as part of SUJO’s servo drive sourcing support." data-fr="S’intègre aux installations exigeantes nécessitant une fonction précise, une réponse fiable et une usure maîtrisée. Disponible dans l’accompagnement SUJO pour Servo Drive.">S’intègre aux installations exigeantes nécessitant une fonction précise, une réponse fiable et une usure maîtrisée. Disponible dans l’accompagnement SUJO pour Servo Drive.</p>
+<p data-en="The Servo Drive provides precise speed, torque, and position control for high-performance automated motion applications." data-fr="Le Servo Drive assure un contrôle précis de la vitesse, du couple et de la position pour les applications de mouvement automatisé.">Le Servo Drive assure un contrôle précis de la vitesse, du couple et de la position pour les applications de mouvement automatisé.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Stepper Motor" data-fr="Stepper Motor">Stepper Motor</h3>
-<p data-en="Selected for systems where signal accuracy must remain consistent during heavy or continuous use. Requested as part of SUJO’s stepper motor sourcing support." data-fr="Sélectionné pour les systèmes où la précision des signaux doit rester constant pendant une utilisation intensive ou continue. Disponible dans l’accompagnement SUJO pour Stepper Motor.">Sélectionné pour les systèmes où la précision des signaux doit rester constant pendant une utilisation intensive ou continue. Disponible dans l’accompagnement SUJO pour Stepper Motor.</p>
+<p data-en="The Stepper Motor delivers repeatable incremental movement for indexing, positioning, and compact automation assemblies." data-fr="Le Stepper Motor fournit un mouvement incrémental répétable pour l’indexation, le positionnement et les ensembles automatisés compacts.">Le Stepper Motor fournit un mouvement incrémental répétable pour l’indexation, le positionnement et les ensembles automatisés compacts.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Stepper Driver" data-fr="Stepper Driver">Stepper Driver</h3>
-<p data-en="Improves equipment dependability by supporting operator visibility and predictable operating behavior. Requested as part of SUJO’s stepper driver sourcing support." data-fr="Améliore la dépendance des équipements en soutenant la visibilité opérateur et un comportement d’exploitation prévisible. Disponible dans l’accompagnement SUJO pour Stepper Driver.">Améliore la dépendance des équipements en soutenant la visibilité opérateur et un comportement d’exploitation prévisible. Disponible dans l’accompagnement SUJO pour Stepper Driver.</p>
+<p data-en="The Stepper Driver delivers repeatable incremental movement for indexing, positioning, and compact automation assemblies." data-fr="Le Stepper Driver fournit un mouvement incrémental répétable pour l’indexation, le positionnement et les ensembles automatisés compacts.">Le Stepper Driver fournit un mouvement incrémental répétable pour l’indexation, le positionnement et les ensembles automatisés compacts.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Brushless DC Motor" data-fr="Brushless DC Motor">Brushless DC Motor</h3>
-<p data-en="Works well in production areas that need robust components, clean installation, and practical upkeep. Requested as part of SUJO’s brushless dc motor sourcing support." data-fr="Convient aux zones de production qui exigent des composants robustes, une installation propre et un entretien pratique. Disponible dans l’accompagnement SUJO pour Brushless DC Motor.">Convient aux zones de production qui exigent des composants robustes, une installation propre et un entretien pratique. Disponible dans l’accompagnement SUJO pour Brushless DC Motor.</p>
+<p data-en="The Brushless DC Motor supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Brushless DC Motor soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Brushless DC Motor soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="AC Motor Controller" data-fr="AC Motor Controller">AC Motor Controller</h3>
-<p data-en="Chosen for machinery upgrades where machine coordination, durability, and maintainability are important. Requested as part of SUJO’s ac motor controller sourcing support." data-fr="Choisi pour les modernisations de machines où la coordination machine, la durabilité et la maintenabilité sont prioritaires. Disponible dans l’accompagnement SUJO pour AC Motor Controller.">Choisi pour les modernisations de machines où la coordination machine, la durabilité et la maintenabilité sont prioritaires. Disponible dans l’accompagnement SUJO pour AC Motor Controller.</p>
+<p data-en="The AC Motor Controller regulates motor operation to improve starting, speed control, energy use, and equipment protection." data-fr="Le AC Motor Controller régule le fonctionnement du moteur pour améliorer le démarrage, la vitesse, l’efficacité énergétique et la protection.">Le AC Motor Controller régule le fonctionnement du moteur pour améliorer le démarrage, la vitesse, l’efficacité énergétique et la protection.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Variable Frequency Drive (VFD)" data-fr="Variable Frequency Drive (VFD)">Variable Frequency Drive (VFD)</h3>
-<p data-en="Helps protect assets by keeping signal accuracy steady and reducing stress on connected equipment. Requested as part of SUJO’s variable frequency drive (vfd) sourcing support." data-fr="Aide à protéger les actifs en gardant la précision des signaux stable et en réduisant les contraintes sur les équipements connectés. Disponible dans l’accompagnement SUJO pour Variable Frequency Drive (VFD).">Aide à protéger les actifs en gardant la précision des signaux stable et en réduisant les contraintes sur les équipements connectés. Disponible dans l’accompagnement SUJO pour Variable Frequency Drive (VFD).</p>
+<p data-en="The Variable Frequency Drive (VFD) regulates motor operation to improve starting, speed control, energy use, and equipment protection." data-fr="Le Variable Frequency Drive (VFD) régule le fonctionnement du moteur pour améliorer le démarrage, la vitesse, l’efficacité énergétique et la protection.">Le Variable Frequency Drive (VFD) régule le fonctionnement du moteur pour améliorer le démarrage, la vitesse, l’efficacité énergétique et la protection.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Soft Starter" data-fr="Soft Starter">Soft Starter</h3>
-<p data-en="Prepared for industrial environments that demand consistent output and simple field replacement. Requested as part of SUJO’s soft starter sourcing support." data-fr="Préparé pour les environnements industriels qui exigent une sortie régulière et un remplacement simple sur site. Disponible dans l’accompagnement SUJO pour Soft Starter.">Préparé pour les environnements industriels qui exigent une sortie régulière et un remplacement simple sur site. Disponible dans l’accompagnement SUJO pour Soft Starter.</p>
+<p data-en="The Soft Starter regulates motor operation to improve starting, speed control, energy use, and equipment protection." data-fr="Le Soft Starter régule le fonctionnement du moteur pour améliorer le démarrage, la vitesse, l’efficacité énergétique et la protection.">Le Soft Starter régule le fonctionnement du moteur pour améliorer le démarrage, la vitesse, l’efficacité énergétique et la protection.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Motor Protection Relay" data-fr="Motor Protection Relay">Motor Protection Relay</h3>
-<p data-en="Adds reliability to automation panels by supporting controlled operation and efficient maintenance planning. Requested as part of SUJO’s motor protection relay sourcing support." data-fr="Ajoute de la fiabilité aux armoires d’automatisation en soutenant un fonctionnement contrôlé et une planification efficace de la maintenance. Disponible dans l’accompagnement SUJO pour Motor Protection Relay.">Ajoute de la fiabilité aux armoires d’automatisation en soutenant un fonctionnement contrôlé et une planification efficace de la maintenance. Disponible dans l’accompagnement SUJO pour Motor Protection Relay.</p>
+<p data-en="The Motor Protection Relay manages electrical switching and protection inside automation panels and industrial control circuits." data-fr="Le Motor Protection Relay assure la commutation et la protection électrique dans les armoires d’automatisation et circuits de contrôle.">Le Motor Protection Relay assure la commutation et la protection électrique dans les armoires d’automatisation et circuits de contrôle.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Proximity Sensor (Inductive, Capacitive)" data-fr="Proximity Sensor (Inductive, Capacitive)">Proximity Sensor (Inductive, Capacitive)</h3>
-<p data-en="Designed for automation panels where signal accuracy and operator visibility are critical. Requested as part of SUJO’s proximity sensor (inductive, capacitive) sourcing support." data-fr="Conçu pour les armoires d’automatisation où la précision des signaux et la visibilité opérateur sont essentiels. Disponible dans l’accompagnement SUJO pour Proximity Sensor (Inductive, Capacitive).">Conçu pour les armoires d’automatisation où la précision des signaux et la visibilité opérateur sont essentiels. Disponible dans l’accompagnement SUJO pour Proximity Sensor (Inductive, Capacitive).</p>
+<p data-en="The Proximity Sensor (Inductive, Capacitive) detects position, movement, level, distance, or machine condition so control systems can react accurately." data-fr="Le Proximity Sensor (Inductive, Capacitive) détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.">Le Proximity Sensor (Inductive, Capacitive) détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Photoelectric Sensor" data-fr="Photoelectric Sensor">Photoelectric Sensor</h3>
-<p data-en="Helps teams maintain machine coordination while improving signal accuracy in demanding environments. Requested as part of SUJO’s photoelectric sensor sourcing support." data-fr="Aide les équipes à maintenir la coordination machine tout en améliorant la précision des signaux dans les environnements exigeants. Disponible dans l’accompagnement SUJO pour Photoelectric Sensor.">Aide les équipes à maintenir la coordination machine tout en améliorant la précision des signaux dans les environnements exigeants. Disponible dans l’accompagnement SUJO pour Photoelectric Sensor.</p>
+<p data-en="The Photoelectric Sensor detects position, movement, level, distance, or machine condition so control systems can react accurately." data-fr="Le Photoelectric Sensor détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.">Le Photoelectric Sensor détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Laser Sensor" data-fr="Laser Sensor">Laser Sensor</h3>
-<p data-en="Suited for applications that require operator visibility, consistent performance, and dependable operation. Requested as part of SUJO’s laser sensor sourcing support." data-fr="Adapté aux applications qui exigent la visibilité opérateur, une performance régulière et un fonctionnement fiable. Disponible dans l’accompagnement SUJO pour Laser Sensor.">Adapté aux applications qui exigent la visibilité opérateur, une performance régulière et un fonctionnement fiable. Disponible dans l’accompagnement SUJO pour Laser Sensor.</p>
+<p data-en="The Laser Sensor detects position, movement, level, distance, or machine condition so control systems can react accurately." data-fr="Le Laser Sensor détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.">Le Laser Sensor détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Ultrasonic Sensor" data-fr="Ultrasonic Sensor">Ultrasonic Sensor</h3>
-<p data-en="Provides a practical solution for automation panels with a focus on machine coordination and long-term reliability. Requested as part of SUJO’s ultrasonic sensor sourcing support." data-fr="Offre une solution pratique pour les armoires d’automatisation, avec un accent sur la coordination machine et la fiabilité à long terme. Disponible dans l’accompagnement SUJO pour Ultrasonic Sensor.">Offre une solution pratique pour les armoires d’automatisation, avec un accent sur la coordination machine et la fiabilité à long terme. Disponible dans l’accompagnement SUJO pour Ultrasonic Sensor.</p>
+<p data-en="The Ultrasonic Sensor detects position, movement, level, distance, or machine condition so control systems can react accurately." data-fr="Le Ultrasonic Sensor détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.">Le Ultrasonic Sensor détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Magnetic Sensor" data-fr="Magnetic Sensor">Magnetic Sensor</h3>
-<p data-en="Supports daily operation by improving signal accuracy, reducing avoidable downtime, and protecting equipment. Requested as part of SUJO’s magnetic sensor sourcing support." data-fr="Soutient l’exploitation quotidienne en améliorant la précision des signaux, en limitant les arrêts évitables et en protégeant les équipements. Disponible dans l’accompagnement SUJO pour Magnetic Sensor.">Soutient l’exploitation quotidienne en améliorant la précision des signaux, en limitant les arrêts évitables et en protégeant les équipements. Disponible dans l’accompagnement SUJO pour Magnetic Sensor.</p>
+<p data-en="The Magnetic Sensor detects position, movement, level, distance, or machine condition so control systems can react accurately." data-fr="Le Magnetic Sensor détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.">Le Magnetic Sensor détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Limit Switch" data-fr="Limit Switch">Limit Switch</h3>
-<p data-en="Built for industrial service where operator visibility, machine coordination, and safe maintenance access matter. Requested as part of SUJO’s limit switch sourcing support." data-fr="Prévu pour le service industriel lorsque la visibilité opérateur, la coordination machine et l’accès à la maintenance sont importants. Disponible dans l’accompagnement SUJO pour Limit Switch.">Prévu pour le service industriel lorsque la visibilité opérateur, la coordination machine et l’accès à la maintenance sont importants. Disponible dans l’accompagnement SUJO pour Limit Switch.</p>
+<p data-en="The Limit Switch detects position, movement, level, distance, or machine condition so control systems can react accurately." data-fr="Le Limit Switch détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.">Le Limit Switch détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Micro Switch" data-fr="Micro Switch">Micro Switch</h3>
-<p data-en="Useful in projects that need stable performance, easier servicing, and better process reliability. Requested as part of SUJO’s micro switch sourcing support." data-fr="Utile pour les projets qui demandent une performance stable, un entretien plus simple et une meilleure la fiabilité des procédés. Disponible dans l’accompagnement SUJO pour Micro Switch.">Utile pour les projets qui demandent une performance stable, un entretien plus simple et une meilleure la fiabilité des procédés. Disponible dans l’accompagnement SUJO pour Micro Switch.</p>
+<p data-en="The Micro Switch detects position, movement, level, distance, or machine condition so control systems can react accurately." data-fr="Le Micro Switch détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.">Le Micro Switch détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Encoder (Incremental, Absolute)" data-fr="Encoder (Incremental, Absolute)">Encoder (Incremental, Absolute)</h3>
-<p data-en="Fits demanding installations that require precise function, reliable response, and controlled wear. Requested as part of SUJO’s encoder (incremental, absolute) sourcing support." data-fr="S’intègre aux installations exigeantes nécessitant une fonction précise, une réponse fiable et une usure maîtrisée. Disponible dans l’accompagnement SUJO pour Encoder (Incremental, Absolute).">S’intègre aux installations exigeantes nécessitant une fonction précise, une réponse fiable et une usure maîtrisée. Disponible dans l’accompagnement SUJO pour Encoder (Incremental, Absolute).</p>
+<p data-en="The Encoder (Incremental, Absolute) detects position, movement, level, distance, or machine condition so control systems can react accurately." data-fr="Le Encoder (Incremental, Absolute) détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.">Le Encoder (Incremental, Absolute) détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Resolver" data-fr="Resolver">Resolver</h3>
-<p data-en="Selected for systems where signal accuracy must remain consistent during heavy or continuous use. Requested as part of SUJO’s resolver sourcing support." data-fr="Sélectionné pour les systèmes où la précision des signaux doit rester constant pendant une utilisation intensive ou continue. Disponible dans l’accompagnement SUJO pour Resolver.">Sélectionné pour les systèmes où la précision des signaux doit rester constant pendant une utilisation intensive ou continue. Disponible dans l’accompagnement SUJO pour Resolver.</p>
+<p data-en="The Resolver detects position, movement, level, distance, or machine condition so control systems can react accurately." data-fr="Le Resolver détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.">Le Resolver détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Relay" data-fr="Relay">Relay</h3>
-<p data-en="Improves equipment dependability by supporting operator visibility and predictable operating behavior. Requested as part of SUJO’s relay sourcing support." data-fr="Améliore la dépendance des équipements en soutenant la visibilité opérateur et un comportement d’exploitation prévisible. Disponible dans l’accompagnement SUJO pour Relay.">Améliore la dépendance des équipements en soutenant la visibilité opérateur et un comportement d’exploitation prévisible. Disponible dans l’accompagnement SUJO pour Relay.</p>
+<p data-en="The Relay manages electrical switching and protection inside automation panels and industrial control circuits." data-fr="Le Relay assure la commutation et la protection électrique dans les armoires d’automatisation et circuits de contrôle.">Le Relay assure la commutation et la protection électrique dans les armoires d’automatisation et circuits de contrôle.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Solid State Relay" data-fr="Solid State Relay">Solid State Relay</h3>
-<p data-en="Works well in production areas that need robust components, clean installation, and practical upkeep. Requested as part of SUJO’s solid state relay sourcing support." data-fr="Convient aux zones de production qui exigent des composants robustes, une installation propre et un entretien pratique. Disponible dans l’accompagnement SUJO pour Solid State Relay.">Convient aux zones de production qui exigent des composants robustes, une installation propre et un entretien pratique. Disponible dans l’accompagnement SUJO pour Solid State Relay.</p>
+<p data-en="The Solid State Relay manages electrical switching and protection inside automation panels and industrial control circuits." data-fr="Le Solid State Relay assure la commutation et la protection électrique dans les armoires d’automatisation et circuits de contrôle.">Le Solid State Relay assure la commutation et la protection électrique dans les armoires d’automatisation et circuits de contrôle.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Contactor" data-fr="Contactor">Contactor</h3>
-<p data-en="Chosen for machinery upgrades where machine coordination, durability, and maintainability are important. Requested as part of SUJO’s contactor sourcing support." data-fr="Choisi pour les modernisations de machines où la coordination machine, la durabilité et la maintenabilité sont prioritaires. Disponible dans l’accompagnement SUJO pour Contactor.">Choisi pour les modernisations de machines où la coordination machine, la durabilité et la maintenabilité sont prioritaires. Disponible dans l’accompagnement SUJO pour Contactor.</p>
+<p data-en="The Contactor manages electrical switching and protection inside automation panels and industrial control circuits." data-fr="Le Contactor assure la commutation et la protection électrique dans les armoires d’automatisation et circuits de contrôle.">Le Contactor assure la commutation et la protection électrique dans les armoires d’automatisation et circuits de contrôle.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Circuit Breaker" data-fr="Circuit Breaker">Circuit Breaker</h3>
-<p data-en="Helps protect assets by keeping signal accuracy steady and reducing stress on connected equipment. Requested as part of SUJO’s circuit breaker sourcing support." data-fr="Aide à protéger les actifs en gardant la précision des signaux stable et en réduisant les contraintes sur les équipements connectés. Disponible dans l’accompagnement SUJO pour Circuit Breaker.">Aide à protéger les actifs en gardant la précision des signaux stable et en réduisant les contraintes sur les équipements connectés. Disponible dans l’accompagnement SUJO pour Circuit Breaker.</p>
+<p data-en="The Circuit Breaker manages electrical switching and protection inside automation panels and industrial control circuits." data-fr="Le Circuit Breaker assure la commutation et la protection électrique dans les armoires d’automatisation et circuits de contrôle.">Le Circuit Breaker assure la commutation et la protection électrique dans les armoires d’automatisation et circuits de contrôle.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Power Supply (SMPS)" data-fr="Power Supply (SMPS)">Power Supply (SMPS)</h3>
-<p data-en="Prepared for industrial environments that demand consistent output and simple field replacement. Requested as part of SUJO’s power supply (smps) sourcing support." data-fr="Préparé pour les environnements industriels qui exigent une sortie régulière et un remplacement simple sur site. Disponible dans l’accompagnement SUJO pour Power Supply (SMPS).">Préparé pour les environnements industriels qui exigent une sortie régulière et un remplacement simple sur site. Disponible dans l’accompagnement SUJO pour Power Supply (SMPS).</p>
+<p data-en="The Power Supply (SMPS) supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Power Supply (SMPS) soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Power Supply (SMPS) soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Industrial Transformer" data-fr="Industrial Transformer">Industrial Transformer</h3>
-<p data-en="Adds reliability to automation panels by supporting controlled operation and efficient maintenance planning. Requested as part of SUJO’s industrial transformer sourcing support." data-fr="Ajoute de la fiabilité aux armoires d’automatisation en soutenant un fonctionnement contrôlé et une planification efficace de la maintenance. Disponible dans l’accompagnement SUJO pour Industrial Transformer.">Ajoute de la fiabilité aux armoires d’automatisation en soutenant un fonctionnement contrôlé et une planification efficace de la maintenance. Disponible dans l’accompagnement SUJO pour Industrial Transformer.</p>
+<p data-en="The Industrial Transformer supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Industrial Transformer soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Industrial Transformer soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Control Cabinet" data-fr="Control Cabinet">Control Cabinet</h3>
-<p data-en="Designed for automation panels where signal accuracy and operator visibility are critical. Requested as part of SUJO’s control cabinet sourcing support." data-fr="Conçu pour les armoires d’automatisation où la précision des signaux et la visibilité opérateur sont essentiels. Disponible dans l’accompagnement SUJO pour Control Cabinet.">Conçu pour les armoires d’automatisation où la précision des signaux et la visibilité opérateur sont essentiels. Disponible dans l’accompagnement SUJO pour Control Cabinet.</p>
+<p data-en="The Control Cabinet supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Control Cabinet soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Control Cabinet soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Control Panel Components" data-fr="Control Panel Components">Control Panel Components</h3>
-<p data-en="Helps teams maintain machine coordination while improving signal accuracy in demanding environments. Requested as part of SUJO’s control panel components sourcing support." data-fr="Aide les équipes à maintenir la coordination machine tout en améliorant la précision des signaux dans les environnements exigeants. Disponible dans l’accompagnement SUJO pour Control Panel Components.">Aide les équipes à maintenir la coordination machine tout en améliorant la précision des signaux dans les environnements exigeants. Disponible dans l’accompagnement SUJO pour Control Panel Components.</p>
+<p data-en="The Control Panel Components supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Control Panel Components soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Control Panel Components soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Terminal Block" data-fr="Terminal Block">Terminal Block</h3>
-<p data-en="Suited for applications that require operator visibility, consistent performance, and dependable operation. Requested as part of SUJO’s terminal block sourcing support." data-fr="Adapté aux applications qui exigent la visibilité opérateur, une performance régulière et un fonctionnement fiable. Disponible dans l’accompagnement SUJO pour Terminal Block.">Adapté aux applications qui exigent la visibilité opérateur, une performance régulière et un fonctionnement fiable. Disponible dans l’accompagnement SUJO pour Terminal Block.</p>
+<p data-en="The Terminal Block supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Terminal Block soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Terminal Block soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Industrial Connector" data-fr="Industrial Connector">Industrial Connector</h3>
-<p data-en="Provides a practical solution for automation panels with a focus on machine coordination and long-term reliability. Requested as part of SUJO’s industrial connector sourcing support." data-fr="Offre une solution pratique pour les armoires d’automatisation, avec un accent sur la coordination machine et la fiabilité à long terme. Disponible dans l’accompagnement SUJO pour Industrial Connector.">Offre une solution pratique pour les armoires d’automatisation, avec un accent sur la coordination machine et la fiabilité à long terme. Disponible dans l’accompagnement SUJO pour Industrial Connector.</p>
+<p data-en="The Industrial Connector supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Industrial Connector soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Industrial Connector soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Cable Chain / Drag Chain" data-fr="Cable Chain / Drag Chain">Cable Chain / Drag Chain</h3>
-<p data-en="Supports daily operation by improving signal accuracy, reducing avoidable downtime, and protecting equipment. Requested as part of SUJO’s cable chain / drag chain sourcing support." data-fr="Soutient l’exploitation quotidienne en améliorant la précision des signaux, en limitant les arrêts évitables et en protégeant les équipements. Disponible dans l’accompagnement SUJO pour Cable Chain / Drag Chain.">Soutient l’exploitation quotidienne en améliorant la précision des signaux, en limitant les arrêts évitables et en protégeant les équipements. Disponible dans l’accompagnement SUJO pour Cable Chain / Drag Chain.</p>
+<p data-en="The Cable Chain / Drag Chain supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Cable Chain / Drag Chain soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Cable Chain / Drag Chain soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Industrial Ethernet Switch" data-fr="Industrial Ethernet Switch">Industrial Ethernet Switch</h3>
-<p data-en="Built for industrial service where operator visibility, machine coordination, and safe maintenance access matter. Requested as part of SUJO’s industrial ethernet switch sourcing support." data-fr="Prévu pour le service industriel lorsque la visibilité opérateur, la coordination machine et l’accès à la maintenance sont importants. Disponible dans l’accompagnement SUJO pour Industrial Ethernet Switch.">Prévu pour le service industriel lorsque la visibilité opérateur, la coordination machine et l’accès à la maintenance sont importants. Disponible dans l’accompagnement SUJO pour Industrial Ethernet Switch.</p>
+<p data-en="The Industrial Ethernet Switch detects position, movement, level, distance, or machine condition so control systems can react accurately." data-fr="Le Industrial Ethernet Switch détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.">Le Industrial Ethernet Switch détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Communication Module (Modbus, Profibus, CAN, EtherCAT)" data-fr="Communication Module (Modbus, Profibus, CAN, EtherCAT)">Communication Module (Modbus, Profibus, CAN, EtherCAT)</h3>
-<p data-en="Useful in projects that need stable performance, easier servicing, and better process reliability. Requested as part of SUJO’s communication module (modbus, profibus, can, ethercat) sourcing support." data-fr="Utile pour les projets qui demandent une performance stable, un entretien plus simple et une meilleure la fiabilité des procédés. Disponible dans l’accompagnement SUJO pour Communication Module (Modbus, Profibus, CAN, EtherCAT).">Utile pour les projets qui demandent une performance stable, un entretien plus simple et une meilleure la fiabilité des procédés. Disponible dans l’accompagnement SUJO pour Communication Module (Modbus, Profibus, CAN, EtherCAT).</p>
+<p data-en="The Communication Module (Modbus, Profibus, CAN, EtherCAT) expands control-panel capacity by connecting additional field sensors, actuators, and digital or analog signals." data-fr="Le Communication Module (Modbus, Profibus, CAN, EtherCAT) augmente la capacité de l’armoire de contrôle en reliant davantage de capteurs, actionneurs et signaux terrain.">Le Communication Module (Modbus, Profibus, CAN, EtherCAT) augmente la capacité de l’armoire de contrôle en reliant davantage de capteurs, actionneurs et signaux terrain.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Industrial Router" data-fr="Industrial Router">Industrial Router</h3>
-<p data-en="Fits demanding installations that require precise function, reliable response, and controlled wear. Requested as part of SUJO’s industrial router sourcing support." data-fr="S’intègre aux installations exigeantes nécessitant une fonction précise, une réponse fiable et une usure maîtrisée. Disponible dans l’accompagnement SUJO pour Industrial Router.">S’intègre aux installations exigeantes nécessitant une fonction précise, une réponse fiable et une usure maîtrisée. Disponible dans l’accompagnement SUJO pour Industrial Router.</p>
+<p data-en="The Industrial Router supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Industrial Router soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Industrial Router soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Industrial Gateway" data-fr="Industrial Gateway">Industrial Gateway</h3>
-<p data-en="Selected for systems where signal accuracy must remain consistent during heavy or continuous use. Requested as part of SUJO’s industrial gateway sourcing support." data-fr="Sélectionné pour les systèmes où la précision des signaux doit rester constant pendant une utilisation intensive ou continue. Disponible dans l’accompagnement SUJO pour Industrial Gateway.">Sélectionné pour les systèmes où la précision des signaux doit rester constant pendant une utilisation intensive ou continue. Disponible dans l’accompagnement SUJO pour Industrial Gateway.</p>
+<p data-en="The Industrial Gateway supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Industrial Gateway soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Industrial Gateway soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Safety Light Curtain" data-fr="Safety Light Curtain">Safety Light Curtain</h3>
-<p data-en="Improves equipment dependability by supporting operator visibility and predictable operating behavior. Requested as part of SUJO’s safety light curtain sourcing support." data-fr="Améliore la dépendance des équipements en soutenant la visibilité opérateur et un comportement d’exploitation prévisible. Disponible dans l’accompagnement SUJO pour Safety Light Curtain.">Améliore la dépendance des équipements en soutenant la visibilité opérateur et un comportement d’exploitation prévisible. Disponible dans l’accompagnement SUJO pour Safety Light Curtain.</p>
+<p data-en="The Safety Light Curtain supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Safety Light Curtain soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Safety Light Curtain soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Safety Relay" data-fr="Safety Relay">Safety Relay</h3>
-<p data-en="Works well in production areas that need robust components, clean installation, and practical upkeep. Requested as part of SUJO’s safety relay sourcing support." data-fr="Convient aux zones de production qui exigent des composants robustes, une installation propre et un entretien pratique. Disponible dans l’accompagnement SUJO pour Safety Relay.">Convient aux zones de production qui exigent des composants robustes, une installation propre et un entretien pratique. Disponible dans l’accompagnement SUJO pour Safety Relay.</p>
+<p data-en="The Safety Relay manages electrical switching and protection inside automation panels and industrial control circuits." data-fr="Le Safety Relay assure la commutation et la protection électrique dans les armoires d’automatisation et circuits de contrôle.">Le Safety Relay assure la commutation et la protection électrique dans les armoires d’automatisation et circuits de contrôle.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Emergency Stop Button" data-fr="Emergency Stop Button">Emergency Stop Button</h3>
-<p data-en="Chosen for machinery upgrades where machine coordination, durability, and maintainability are important. Requested as part of SUJO’s emergency stop button sourcing support." data-fr="Choisi pour les modernisations de machines où la coordination machine, la durabilité et la maintenabilité sont prioritaires. Disponible dans l’accompagnement SUJO pour Emergency Stop Button.">Choisi pour les modernisations de machines où la coordination machine, la durabilité et la maintenabilité sont prioritaires. Disponible dans l’accompagnement SUJO pour Emergency Stop Button.</p>
+<p data-en="The Emergency Stop Button supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Emergency Stop Button soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Emergency Stop Button soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Safety Interlock Switch" data-fr="Safety Interlock Switch">Safety Interlock Switch</h3>
-<p data-en="Helps protect assets by keeping signal accuracy steady and reducing stress on connected equipment. Requested as part of SUJO’s safety interlock switch sourcing support." data-fr="Aide à protéger les actifs en gardant la précision des signaux stable et en réduisant les contraintes sur les équipements connectés. Disponible dans l’accompagnement SUJO pour Safety Interlock Switch.">Aide à protéger les actifs en gardant la précision des signaux stable et en réduisant les contraintes sur les équipements connectés. Disponible dans l’accompagnement SUJO pour Safety Interlock Switch.</p>
+<p data-en="The Safety Interlock Switch detects position, movement, level, distance, or machine condition so control systems can react accurately." data-fr="Le Safety Interlock Switch détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.">Le Safety Interlock Switch détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Pneumatic Valve" data-fr="Pneumatic Valve">Pneumatic Valve</h3>
-<p data-en="Prepared for industrial environments that demand consistent output and simple field replacement. Requested as part of SUJO’s pneumatic valve sourcing support." data-fr="Préparé pour les environnements industriels qui exigent une sortie régulière et un remplacement simple sur site. Disponible dans l’accompagnement SUJO pour Pneumatic Valve.">Préparé pour les environnements industriels qui exigent une sortie régulière et un remplacement simple sur site. Disponible dans l’accompagnement SUJO pour Pneumatic Valve.</p>
+<p data-en="The Pneumatic Valve supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Pneumatic Valve soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Pneumatic Valve soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Solenoid Valve" data-fr="Solenoid Valve">Solenoid Valve</h3>
-<p data-en="Adds reliability to automation panels by supporting controlled operation and efficient maintenance planning. Requested as part of SUJO’s solenoid valve sourcing support." data-fr="Ajoute de la fiabilité aux armoires d’automatisation en soutenant un fonctionnement contrôlé et une planification efficace de la maintenance. Disponible dans l’accompagnement SUJO pour Solenoid Valve.">Ajoute de la fiabilité aux armoires d’automatisation en soutenant un fonctionnement contrôlé et une planification efficace de la maintenance. Disponible dans l’accompagnement SUJO pour Solenoid Valve.</p>
+<p data-en="The Solenoid Valve supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Solenoid Valve soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Solenoid Valve soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Pneumatic Cylinder" data-fr="Pneumatic Cylinder">Pneumatic Cylinder</h3>
-<p data-en="Designed for automation panels where signal accuracy and operator visibility are critical. Requested as part of SUJO’s pneumatic cylinder sourcing support." data-fr="Conçu pour les armoires d’automatisation où la précision des signaux et la visibilité opérateur sont essentiels. Disponible dans l’accompagnement SUJO pour Pneumatic Cylinder.">Conçu pour les armoires d’automatisation où la précision des signaux et la visibilité opérateur sont essentiels. Disponible dans l’accompagnement SUJO pour Pneumatic Cylinder.</p>
+<p data-en="The Pneumatic Cylinder supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Pneumatic Cylinder soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Pneumatic Cylinder soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Air Preparation Unit (FRL)" data-fr="Air Preparation Unit (FRL)">Air Preparation Unit (FRL)</h3>
-<p data-en="Helps teams maintain machine coordination while improving signal accuracy in demanding environments. Requested as part of SUJO’s air preparation unit (frl) sourcing support." data-fr="Aide les équipes à maintenir la coordination machine tout en améliorant la précision des signaux dans les environnements exigeants. Disponible dans l’accompagnement SUJO pour Air Preparation Unit (FRL).">Aide les équipes à maintenir la coordination machine tout en améliorant la précision des signaux dans les environnements exigeants. Disponible dans l’accompagnement SUJO pour Air Preparation Unit (FRL).</p>
+<p data-en="The Air Preparation Unit (FRL) supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Air Preparation Unit (FRL) soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Air Preparation Unit (FRL) soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Vacuum Pump" data-fr="Vacuum Pump">Vacuum Pump</h3>
-<p data-en="Suited for applications that require operator visibility, consistent performance, and dependable operation. Requested as part of SUJO’s vacuum pump sourcing support." data-fr="Adapté aux applications qui exigent la visibilité opérateur, une performance régulière et un fonctionnement fiable. Disponible dans l’accompagnement SUJO pour Vacuum Pump.">Adapté aux applications qui exigent la visibilité opérateur, une performance régulière et un fonctionnement fiable. Disponible dans l’accompagnement SUJO pour Vacuum Pump.</p>
+<p data-en="The Vacuum Pump supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Vacuum Pump soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Vacuum Pump soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Vacuum Generator" data-fr="Vacuum Generator">Vacuum Generator</h3>
-<p data-en="Provides a practical solution for automation panels with a focus on machine coordination and long-term reliability. Requested as part of SUJO’s vacuum generator sourcing support." data-fr="Offre une solution pratique pour les armoires d’automatisation, avec un accent sur la coordination machine et la fiabilité à long terme. Disponible dans l’accompagnement SUJO pour Vacuum Generator.">Offre une solution pratique pour les armoires d’automatisation, avec un accent sur la coordination machine et la fiabilité à long terme. Disponible dans l’accompagnement SUJO pour Vacuum Generator.</p>
+<p data-en="The Vacuum Generator supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Vacuum Generator soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Vacuum Generator soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Vacuum Cup" data-fr="Vacuum Cup">Vacuum Cup</h3>
-<p data-en="Supports daily operation by improving signal accuracy, reducing avoidable downtime, and protecting equipment. Requested as part of SUJO’s vacuum cup sourcing support." data-fr="Soutient l’exploitation quotidienne en améliorant la précision des signaux, en limitant les arrêts évitables et en protégeant les équipements. Disponible dans l’accompagnement SUJO pour Vacuum Cup.">Soutient l’exploitation quotidienne en améliorant la précision des signaux, en limitant les arrêts évitables et en protégeant les équipements. Disponible dans l’accompagnement SUJO pour Vacuum Cup.</p>
+<p data-en="The Vacuum Cup supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Vacuum Cup soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Vacuum Cup soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Actuator (Electric, Pneumatic)" data-fr="Actuator (Electric, Pneumatic)">Actuator (Electric, Pneumatic)</h3>
-<p data-en="Built for industrial service where operator visibility, machine coordination, and safe maintenance access matter. Requested as part of SUJO’s actuator (electric, pneumatic) sourcing support." data-fr="Prévu pour le service industriel lorsque la visibilité opérateur, la coordination machine et l’accès à la maintenance sont importants. Disponible dans l’accompagnement SUJO pour Actuator (Electric, Pneumatic).">Prévu pour le service industriel lorsque la visibilité opérateur, la coordination machine et l’accès à la maintenance sont importants. Disponible dans l’accompagnement SUJO pour Actuator (Electric, Pneumatic).</p>
+<p data-en="The Actuator (Electric, Pneumatic) supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Actuator (Electric, Pneumatic) soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Actuator (Electric, Pneumatic) soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Linear Actuator" data-fr="Linear Actuator">Linear Actuator</h3>
-<p data-en="Useful in projects that need stable performance, easier servicing, and better process reliability. Requested as part of SUJO’s linear actuator sourcing support." data-fr="Utile pour les projets qui demandent une performance stable, un entretien plus simple et une meilleure la fiabilité des procédés. Disponible dans l’accompagnement SUJO pour Linear Actuator.">Utile pour les projets qui demandent une performance stable, un entretien plus simple et une meilleure la fiabilité des procédés. Disponible dans l’accompagnement SUJO pour Linear Actuator.</p>
+<p data-en="The Linear Actuator supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Linear Actuator soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Linear Actuator soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Rotary Actuator" data-fr="Rotary Actuator">Rotary Actuator</h3>
-<p data-en="Fits demanding installations that require precise function, reliable response, and controlled wear. Requested as part of SUJO’s rotary actuator sourcing support." data-fr="S’intègre aux installations exigeantes nécessitant une fonction précise, une réponse fiable et une usure maîtrisée. Disponible dans l’accompagnement SUJO pour Rotary Actuator.">S’intègre aux installations exigeantes nécessitant une fonction précise, une réponse fiable et une usure maîtrisée. Disponible dans l’accompagnement SUJO pour Rotary Actuator.</p>
+<p data-en="The Rotary Actuator supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Rotary Actuator soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Rotary Actuator soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Motion Controller" data-fr="Motion Controller">Motion Controller</h3>
-<p data-en="Selected for systems where signal accuracy must remain consistent during heavy or continuous use. Requested as part of SUJO’s motion controller sourcing support." data-fr="Sélectionné pour les systèmes où la précision des signaux doit rester constant pendant une utilisation intensive ou continue. Disponible dans l’accompagnement SUJO pour Motion Controller.">Sélectionné pour les systèmes où la précision des signaux doit rester constant pendant une utilisation intensive ou continue. Disponible dans l’accompagnement SUJO pour Motion Controller.</p>
+<p data-en="The Motion Controller supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Motion Controller soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Motion Controller soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Positioning Controller" data-fr="Positioning Controller">Positioning Controller</h3>
-<p data-en="Improves equipment dependability by supporting operator visibility and predictable operating behavior. Requested as part of SUJO’s positioning controller sourcing support." data-fr="Améliore la dépendance des équipements en soutenant la visibilité opérateur et un comportement d’exploitation prévisible. Disponible dans l’accompagnement SUJO pour Positioning Controller.">Améliore la dépendance des équipements en soutenant la visibilité opérateur et un comportement d’exploitation prévisible. Disponible dans l’accompagnement SUJO pour Positioning Controller.</p>
+<p data-en="The Positioning Controller supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Positioning Controller soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Positioning Controller soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Robot Arm" data-fr="Robot Arm">Robot Arm</h3>
-<p data-en="Works well in production areas that need robust components, clean installation, and practical upkeep. Requested as part of SUJO’s robot arm sourcing support." data-fr="Convient aux zones de production qui exigent des composants robustes, une installation propre et un entretien pratique. Disponible dans l’accompagnement SUJO pour Robot Arm.">Convient aux zones de production qui exigent des composants robustes, une installation propre et un entretien pratique. Disponible dans l’accompagnement SUJO pour Robot Arm.</p>
+<p data-en="The Robot Arm supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Robot Arm soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Robot Arm soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Collaborative Robot (Cobot)" data-fr="Collaborative Robot (Cobot)">Collaborative Robot (Cobot)</h3>
-<p data-en="Chosen for machinery upgrades where machine coordination, durability, and maintainability are important. Requested as part of SUJO’s collaborative robot (cobot) sourcing support." data-fr="Choisi pour les modernisations de machines où la coordination machine, la durabilité et la maintenabilité sont prioritaires. Disponible dans l’accompagnement SUJO pour Collaborative Robot (Cobot).">Choisi pour les modernisations de machines où la coordination machine, la durabilité et la maintenabilité sont prioritaires. Disponible dans l’accompagnement SUJO pour Collaborative Robot (Cobot).</p>
+<p data-en="The Collaborative Robot (Cobot) supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Collaborative Robot (Cobot) soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Collaborative Robot (Cobot) soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Servo Gearbox" data-fr="Servo Gearbox">Servo Gearbox</h3>
-<p data-en="Helps protect assets by keeping signal accuracy steady and reducing stress on connected equipment. Requested as part of SUJO’s servo gearbox sourcing support." data-fr="Aide à protéger les actifs en gardant la précision des signaux stable et en réduisant les contraintes sur les équipements connectés. Disponible dans l’accompagnement SUJO pour Servo Gearbox.">Aide à protéger les actifs en gardant la précision des signaux stable et en réduisant les contraintes sur les équipements connectés. Disponible dans l’accompagnement SUJO pour Servo Gearbox.</p>
+<p data-en="The Servo Gearbox provides precise speed, torque, and position control for high-performance automated motion applications." data-fr="Le Servo Gearbox assure un contrôle précis de la vitesse, du couple et de la position pour les applications de mouvement automatisé.">Le Servo Gearbox assure un contrôle précis de la vitesse, du couple et de la position pour les applications de mouvement automatisé.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Planetary Gearbox" data-fr="Planetary Gearbox">Planetary Gearbox</h3>
-<p data-en="Prepared for industrial environments that demand consistent output and simple field replacement. Requested as part of SUJO’s planetary gearbox sourcing support." data-fr="Préparé pour les environnements industriels qui exigent une sortie régulière et un remplacement simple sur site. Disponible dans l’accompagnement SUJO pour Planetary Gearbox.">Préparé pour les environnements industriels qui exigent une sortie régulière et un remplacement simple sur site. Disponible dans l’accompagnement SUJO pour Planetary Gearbox.</p>
+<p data-en="The Planetary Gearbox supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Planetary Gearbox soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Planetary Gearbox soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Timing Belt Drive" data-fr="Timing Belt Drive">Timing Belt Drive</h3>
-<p data-en="Adds reliability to automation panels by supporting controlled operation and efficient maintenance planning. Requested as part of SUJO’s timing belt drive sourcing support." data-fr="Ajoute de la fiabilité aux armoires d’automatisation en soutenant un fonctionnement contrôlé et une planification efficace de la maintenance. Disponible dans l’accompagnement SUJO pour Timing Belt Drive.">Ajoute de la fiabilité aux armoires d’automatisation en soutenant un fonctionnement contrôlé et une planification efficace de la maintenance. Disponible dans l’accompagnement SUJO pour Timing Belt Drive.</p>
+<p data-en="The Timing Belt Drive regulates motor operation to improve starting, speed control, energy use, and equipment protection." data-fr="Le Timing Belt Drive régule le fonctionnement du moteur pour améliorer le démarrage, la vitesse, l’efficacité énergétique et la protection.">Le Timing Belt Drive régule le fonctionnement du moteur pour améliorer le démarrage, la vitesse, l’efficacité énergétique et la protection.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Synchronous Pulley" data-fr="Synchronous Pulley">Synchronous Pulley</h3>
-<p data-en="Designed for automation panels where signal accuracy and operator visibility are critical. Requested as part of SUJO’s synchronous pulley sourcing support." data-fr="Conçu pour les armoires d’automatisation où la précision des signaux et la visibilité opérateur sont essentiels. Disponible dans l’accompagnement SUJO pour Synchronous Pulley.">Conçu pour les armoires d’automatisation où la précision des signaux et la visibilité opérateur sont essentiels. Disponible dans l’accompagnement SUJO pour Synchronous Pulley.</p>
+<p data-en="The Synchronous Pulley supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Synchronous Pulley soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Synchronous Pulley soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Industrial Sensor Cable" data-fr="Industrial Sensor Cable">Industrial Sensor Cable</h3>
-<p data-en="Helps teams maintain machine coordination while improving signal accuracy in demanding environments. Requested as part of SUJO’s industrial sensor cable sourcing support." data-fr="Aide les équipes à maintenir la coordination machine tout en améliorant la précision des signaux dans les environnements exigeants. Disponible dans l’accompagnement SUJO pour Industrial Sensor Cable.">Aide les équipes à maintenir la coordination machine tout en améliorant la précision des signaux dans les environnements exigeants. Disponible dans l’accompagnement SUJO pour Industrial Sensor Cable.</p>
+<p data-en="The Industrial Sensor Cable detects position, movement, level, distance, or machine condition so control systems can react accurately." data-fr="Le Industrial Sensor Cable détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.">Le Industrial Sensor Cable détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Encoder Cable" data-fr="Encoder Cable">Encoder Cable</h3>
-<p data-en="Suited for applications that require operator visibility, consistent performance, and dependable operation. Requested as part of SUJO’s encoder cable sourcing support." data-fr="Adapté aux applications qui exigent la visibilité opérateur, une performance régulière et un fonctionnement fiable. Disponible dans l’accompagnement SUJO pour Encoder Cable.">Adapté aux applications qui exigent la visibilité opérateur, une performance régulière et un fonctionnement fiable. Disponible dans l’accompagnement SUJO pour Encoder Cable.</p>
+<p data-en="The Encoder Cable detects position, movement, level, distance, or machine condition so control systems can react accurately." data-fr="Le Encoder Cable détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.">Le Encoder Cable détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Control Cable" data-fr="Control Cable">Control Cable</h3>
-<p data-en="Provides a practical solution for automation panels with a focus on machine coordination and long-term reliability. Requested as part of SUJO’s control cable sourcing support." data-fr="Offre une solution pratique pour les armoires d’automatisation, avec un accent sur la coordination machine et la fiabilité à long terme. Disponible dans l’accompagnement SUJO pour Control Cable.">Offre une solution pratique pour les armoires d’automatisation, avec un accent sur la coordination machine et la fiabilité à long terme. Disponible dans l’accompagnement SUJO pour Control Cable.</p>
+<p data-en="The Control Cable supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Control Cable soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Control Cable soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Industrial IoT Sensor" data-fr="Industrial IoT Sensor">Industrial IoT Sensor</h3>
-<p data-en="Supports daily operation by improving signal accuracy, reducing avoidable downtime, and protecting equipment. Requested as part of SUJO’s industrial iot sensor sourcing support." data-fr="Soutient l’exploitation quotidienne en améliorant la précision des signaux, en limitant les arrêts évitables et en protégeant les équipements. Disponible dans l’accompagnement SUJO pour Industrial IoT Sensor.">Soutient l’exploitation quotidienne en améliorant la précision des signaux, en limitant les arrêts évitables et en protégeant les équipements. Disponible dans l’accompagnement SUJO pour Industrial IoT Sensor.</p>
+<p data-en="The Industrial IoT Sensor detects position, movement, level, distance, or machine condition so control systems can react accurately." data-fr="Le Industrial IoT Sensor détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.">Le Industrial IoT Sensor détecte la position, le mouvement, le niveau, la distance ou l’état machine afin que le système réagisse correctement.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Data Logger" data-fr="Data Logger">Data Logger</h3>
-<p data-en="Built for industrial service where operator visibility, machine coordination, and safe maintenance access matter. Requested as part of SUJO’s data logger sourcing support." data-fr="Prévu pour le service industriel lorsque la visibilité opérateur, la coordination machine et l’accès à la maintenance sont importants. Disponible dans l’accompagnement SUJO pour Data Logger.">Prévu pour le service industriel lorsque la visibilité opérateur, la coordination machine et l’accès à la maintenance sont importants. Disponible dans l’accompagnement SUJO pour Data Logger.</p>
+<p data-en="The Data Logger supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Data Logger soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Data Logger soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Automation Software License" data-fr="Automation Software License">Automation Software License</h3>
-<p data-en="Useful in projects that need stable performance, easier servicing, and better process reliability. Requested as part of SUJO’s automation software license sourcing support." data-fr="Utile pour les projets qui demandent une performance stable, un entretien plus simple et une meilleure la fiabilité des procédés. Disponible dans l’accompagnement SUJO pour Automation Software License.">Utile pour les projets qui demandent une performance stable, un entretien plus simple et une meilleure la fiabilité des procédés. Disponible dans l’accompagnement SUJO pour Automation Software License.</p>
+<p data-en="The Automation Software License supports reliable automation, signal control, and machine integration in industrial production environments." data-fr="Le Automation Software License soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.">Le Automation Software License soutient l’automatisation fiable, la gestion des signaux et l’intégration machine en environnement industriel.</p>
 </a>
 </div>
 </main>
-<footer style="background: #0a0c0f; border-top: 1px solid var(--border-color); padding: 60px 0 30px 0; margin-top: 80px;">
+<footer class="footer-shell">
 <div class="container grid-3" style="padding: 0 24px 40px 24px;">
 <div>
-<img alt="SUJO" src="logo.png" style="height: 40px; margin-bottom: 16px;"/>
+<img alt="SUJO" class="site-logo" decoding="async" fetchpriority="high" loading="eager" src="logo.png"/>
 <p data-en="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, Democratic Republic of Congo" data-fr="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, République Démocratique du Congo" style="color: var(--text-muted); font-size: 0.9rem;">SUJO Engineering Consulting SARL<br/>Kinshasa, République Démocratique du Congo</p>
 </div>
 <div>
 <h4 data-en="Technology Index" data-fr="Matrices Technologiques" style="margin-bottom: 16px; font-size: 0.95rem;">Matrices Technologiques</h4>
-<p style="font-size: 0.9rem; margin-bottom: 8px;">Index Global des Produits</p>
-<p style="font-size: 0.9rem; margin-bottom: 8px;">Marques Validées</p>
+<p style="font-size: 0.9rem; margin-bottom: 8px;"><a data-en="Global Product Index" data-fr="Index Global des Produits" href="products.html" style="color: var(--text-muted); text-decoration: none;">Index Global des Produits</a></p>
+<p style="font-size: 0.9rem; margin-bottom: 8px;"><a data-en="Partners" data-fr="Partenaires" href="partners.html" style="color: var(--text-muted); text-decoration: none;">Partenaires</a></p>
 </div>
 <div>
 <h4 data-en="Direct Channels" data-fr="Canaux Directs" style="margin-bottom: 16px; font-size: 0.95rem;">Canaux Directs</h4>
-<p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;">DRC: +243 974 570 630</p>
+<p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;"><span data-en="DRC:" data-fr="RDC:">RDC:</span> +243 974 570 630</p>
 <p data-en="Email: contact@sujo-engineering.com" data-fr="Email: contact@sujo-engineering.com" style="color: var(--text-muted); font-size: 0.9rem;">Email: contact@sujo-engineering.com</p>
 </div>
 </div>
 <div data-en="© 2026 SUJO Engineering Consulting SARL. All rights reserved." data-fr="© 2026 SUJO Engineering Consulting SARL. Tous droits réservés." style="text-align: center; border-top: 1px solid var(--border-color); padding-top: 30px; font-size: 0.8rem; color: var(--text-muted);">
-© 2026 SUJO Engineering Consulting SARL. All rights reserved.
-</div>
+            © 2026 SUJO Engineering Consulting SARL. All rights reserved.
+        </div>
 </footer>
-<script>
-function applyLang(lang) {
-    document.querySelectorAll('[data-fr][data-en]').forEach(el => {
-        el.innerHTML = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
-    });
-    document.documentElement.lang = lang;
-}
 
-function setLang(lang) {
-    localStorage.setItem('sujoLang', lang);
-    const btnFr = document.getElementById('btn-fr');
-    const btnEn = document.getElementById('btn-en');
-    if (btnFr && btnEn) {
-        btnFr.classList.toggle('active', lang === 'fr');
-        btnEn.classList.toggle('active', lang === 'en');
-    }
-    applyLang(lang);
-}
-
-(function () {
-    const saved = localStorage.getItem('sujoLang') || 'fr';
-    applyLang(saved);
-    const btnFr = document.getElementById('btn-fr');
-    const btnEn = document.getElementById('btn-en');
-    if (btnFr && btnEn) {
-        btnFr.classList.toggle('active', saved === 'fr');
-        btnEn.classList.toggle('active', saved === 'en');
-    }
-})();
-
-function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('open');
-    document.querySelector('.hamburger').classList.toggle('open');
-}
-
-document.querySelectorAll('.dropdown > a').forEach(link => {
-    link.addEventListener('click', (e) => {
-        if (window.innerWidth <= 900) {
-            e.preventDefault();
-            link.parentElement.classList.toggle('open');
-        }
-    });
-});
-
-document.querySelectorAll('#mobileMenu a').forEach(link => {
-    link.addEventListener('click', () => {
-        if (link.parentElement.classList.contains('dropdown')) return;
-        document.getElementById('mobileMenu').classList.remove('open');
-        document.querySelector('.hamburger').classList.remove('open');
-    });
-});
-</script>
 </body>
 </html>
