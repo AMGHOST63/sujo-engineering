@@ -1064,3 +1064,68 @@ header nav {
     }
 }
 
+
+/* ===========================
+   Partners naming compatibility
+   =========================== */
+.partner-enterprise-card,
+.partners-enterprise-card {
+    background: var(--surface-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.partner-hero-logo,
+.partners-hero-logo {
+    background: #fff;
+    padding: 32px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.partner-hero-logo img,
+.partners-hero-logo img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.partner-body,
+.partners-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.partner-meta-label,
+.partners-meta-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--primary-red);
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.partner-body h3,
+.partners-body h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    color: var(--text-main);
+}
+
+.partner-body p,
+.partners-body p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
