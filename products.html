@@ -1,27 +1,46 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Index des Composants Spécifiés — SUJO</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Explore SUJO Engineering Consulting industrial product categories for bearings, linear motion, power transmission, hydraulics, automation, safety, and lubrication."/>
+<title>Produits Industriels — SUJO Engineering Consulting</title>
+<script>
+(function(){
+  try {
+    var lang = localStorage.getItem('sujoLang') || 'fr';
+    document.documentElement.lang = lang;
+    document.documentElement.classList.add('lang-loading');
+  } catch(e) {
+    document.documentElement.classList.add('lang-loading');
+  }
+})();
+</script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="style.css" rel="stylesheet"/>
-<script defer="" src="app.js"></script>
+<script defer src="app.js"></script>
+<link href="https://sujo-engineering.com/products.html" rel="canonical"/>
+<meta property="og:title" content="Produits Industriels — SUJO Engineering Consulting"/>
+<meta property="og:description" content="Explore SUJO industrial product categories for engineering projects, maintenance, construction, mining, and industrial operations."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://sujo-engineering.com/products.html"/>
+<meta property="og:image" content="https://sujo-engineering.com/logo.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
 </head>
 <body>
-<!-- NAV BAR -->
+<a class="skip-link" data-en="Skip to main content" data-fr="Aller au contenu principal" href="#main-content">Aller au contenu principal</a>
 <header>
 <a class="nav-logo" href="https://sujo-engineering.com/index.html">
-<img alt="SUJO" src="logo.png" style="height: 50px;"/>
+<img alt="SUJO" class="site-logo" decoding="async" fetchpriority="high" loading="eager" src="logo.png"/>
 </a>
-<nav>
+<nav aria-label="Main navigation">
 <ul class="nav-links" id="mobileMenu">
 <li><a data-en="Home" data-fr="Accueil" href="https://sujo-engineering.com/index.html">Accueil</a></li>
 <li><a data-en="About" data-fr="À Propos" href="https://sujo-engineering.com/about.html">À Propos</a></li>
 <li class="dropdown">
-<a class="active" data-en="Products ▾" data-fr="Produits ▾" href="https://sujo-engineering.com/products.html">Produits ▾</a>
+<a aria-current="page" aria-haspopup="true" class="active" data-en="Products ▾" data-fr="Produits ▾" href="https://sujo-engineering.com/products.html">Produits ▾</a>
 <ul class="dropdown-menu">
 <li><a data-en="Mechanical Components" data-fr="Composants Mécaniques" href="product-mechanical.html">Composants Mécaniques</a></li>
 <li><a data-en="Automation &amp; Motion" data-fr="Automatisation &amp; Mouvement" href="product-automation.html">Automatisation &amp; Mouvement</a></li>
@@ -31,145 +50,47 @@
 <li><a data-en="Industrial Lubrication" data-fr="Lubrification Industrielle" href="product-lubrication.html">Lubrification Industrielle</a></li>
 </ul>
 </li>
-<li><a data-en="Brands" data-fr="Marques" href="https://sujo-engineering.com/brands.html">Marques</a></li>
+<li><a data-en="Partners" data-fr="Partenaires" href="https://sujo-engineering.com/partners.html">Partenaires</a></li>
 <li><a data-en="Contact" data-fr="Contact" href="https://sujo-engineering.com/contact.html">Contact</a></li>
-<li><a class="btn btn-outline" data-en="My Account" data-fr="Mon Compte" href="http://129.213.160.94/" style="padding: 8px 16px;" target="_blank">Mon Compte</a></li>
-<li><a class="btn btn-primary" data-en="Request Quote" data-fr="Demander un devis" href="https://sujo-engineering.com/quote.html" style="padding: 8px 16px;">Demander un devis</a></li>
+<li><a class="btn btn-outline nav-account nav-cta" data-en="My Account" data-fr="Mon Compte" href="https://portal.sujo-engineering.com/" rel="noopener noreferrer" target="_blank">Mon Compte</a></li>
+<li><a class="btn btn-primary nav-cta" data-en="Request Quote" data-fr="Demander un devis" href="https://sujo-engineering.com/quote.html">Demander un devis</a></li>
+<li>
+<div class="lang-switch">
+<button aria-label="Changer la langue en français" class="active" data-lang-button="fr" id="btn-fr" type="button">FR</button>
+<button aria-label="Switch language to English" data-lang-button="en" id="btn-en" type="button">EN</button>
+</div>
+</li>
 </ul>
 </nav>
-<div aria-label="Menu" class="hamburger" onclick="toggleMenu()">
-<span></span>
-<span></span>
-<span></span>
+<div aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation menu" class="hamburger" role="button" tabindex="0">
+<span></span><span></span><span></span>
 </div>
 </header>
-<main class="container">
-<div class="section-header" style="text-align: left;">
-<div class="section-label" data-en="Hardware Architecture" data-fr="Architecture Matérielle">Architecture Matérielle</div>
-<h1 class="section-title" data-en="Industrial Product Categories" data-fr="Catégories de Produits Industriels" style="font-size: 2.75rem;">Industrial Product Categories</h1>
-<p data-en="Select a category to explore the hardware specifications, tolerances, and manufacturers integrated into our industrial designs." data-fr="Sélectionnez une catégorie pour explorer les spécifications matérielles, tolérances et constructeurs intégrés à nos conceptions industrielles." style="color: var(--text-muted); margin-top: 12px; max-width: 700px;">Sélectionnez une catégorie pour explorer les spécifications matérielles, tolérances et constructeurs intégrés à nos conceptions industrielles.</p>
+<main class="container" id="main-content" tabindex="-1">
+<nav aria-label="Breadcrumb" class="breadcrumb"><a data-en="Home" data-fr="Accueil" href="index.html">Accueil</a><span aria-hidden="true">›</span><span data-en="Products" data-fr="Produits">Produits</span></nav>
+<section>
+<div class="section-header" style="text-align:left; max-width:850px;">
+<div class="section-label" data-en="Industrial Product Matrix" data-fr="Matrice de Produits Industriels">Matrice de Produits Industriels</div>
+<h1 class="section-title" data-en="Industrial Product Categories" data-fr="Catégories de Produits Industriels" style="font-size:2.75rem;">Catégories de Produits Industriels</h1>
+<p class="muted-text" data-en="Select a category to explore components commonly specified for construction, mining, energy, manufacturing, and industrial maintenance projects." data-fr="Sélectionnez une catégorie pour explorer les composants couramment spécifiés pour les projets de construction, mines, énergie, fabrication et maintenance industrielle." style="margin-top:12px; max-width:760px;">Sélectionnez une catégorie pour explorer les composants couramment spécifiés pour les projets de construction, mines, énergie, fabrication et maintenance industrielle.</p>
 </div>
-<div class="grid-3" style="margin-top: 48px;">
-<!-- CARD 1: MECHANICAL -->
-<a class="card-system" href="product-mechanical.html">
-<div class="card-icon">⚙️</div>
-<h3 data-en="Bearings &amp; Mounted Units" data-fr="Bearings &amp; Mounted Units">Bearings &amp; Mounted Units</h3>
-<p data-en="Deep groove, tapered, spherical, mounted bearings, insert bearings and ceramic bearings." data-fr="Deep groove, tapered, spherical, mounted bearings, insert bearings and ceramic bearings.">Deep groove, tapered, spherical, mounted bearings, insert bearings and ceramic bearings.</p>
-<div class="btn-text" data-en="Explore Matrix →" data-fr="Explorer la matrice →">Explorer la matrice →</div>
-</a>
-<!-- CARD 2: AUTOMATION -->
-<a class="card-system" href="product-automation.html">
-<div class="card-icon">🤖</div>
-<h3 data-en="Linear Motion &amp; Precision Guides" data-fr="Linear Motion &amp; Precision Guides">Linear Motion &amp; Precision Guides</h3>
-<p data-en="Linear guides, ball screws, actuators, shafts and crossed roller bearings." data-fr="Linear guides, ball screws, actuators, shafts and crossed roller bearings.">Linear guides, ball screws, actuators, shafts and crossed roller bearings.</p>
-<div class="btn-text" data-en="Explore Matrix →" data-fr="Explorer la matrice →">Explorer la matrice →</div>
-</a>
-<!-- CARD 3: HYDRAULICS -->
-<a class="card-system" href="product-hydraulics.html">
-<div class="card-icon">💧</div>
-<h3 data-en="Power Transmission" data-fr="Power Transmission">Power Transmission</h3>
-<p data-en="Industrial belts, couplings, gearboxes, geared motors, VFDs and drive components." data-fr="Industrial belts, couplings, gearboxes, geared motors, VFDs and drive components.">Industrial belts, couplings, gearboxes, geared motors, VFDs and drive components.</p>
-<div class="btn-text" data-en="Explore Matrix →" data-fr="Explorer la matrice →">Explorer la matrice →</div>
-</a>
-<!-- CARD 4: SAFETY -->
-<a class="card-system" href="product-safety.html">
-<div class="card-icon">🛡️</div>
-<h3 data-en="Hydraulic &amp; Pneumatic Systems" data-fr="Hydraulic &amp; Pneumatic Systems">Hydraulic &amp; Pneumatic Systems</h3>
-<p data-en="Hydraulic pumps, valves, cylinders, hoses, pneumatic cylinders, FRLs and fittings." data-fr="Hydraulic pumps, valves, cylinders, hoses, pneumatic cylinders, FRLs and fittings.">Hydraulic pumps, valves, cylinders, hoses, pneumatic cylinders, FRLs and fittings.</p>
-<div class="btn-text" data-en="Explore Matrix →" data-fr="Explorer la matrice →">Explorer la matrice →</div>
-</a>
-<!-- CARD 5: POWER TRANSMISSION -->
-<a class="card-system" href="product-transmission.html">
-<div class="card-icon">🔄</div>
-<h3 data-en="Industrial Automation &amp; Electrical" data-fr="Industrial Automation &amp; Electrical">Industrial Automation &amp; Electrical</h3>
-<p data-en="PLCs, HMIs, sensors, servo drives, relays, terminal blocks and industrial connectivity." data-fr="PLCs, HMIs, sensors, servo drives, relays, terminal blocks and industrial connectivity.">PLCs, HMIs, sensors, servo drives, relays, terminal blocks and industrial connectivity.</p>
-<div class="btn-text" data-en="Explore Matrix →" data-fr="Explorer la matrice →">Explorer la matrice →</div>
-</a>
-<!-- CARD 6: LUBRICATION -->
-<a class="card-system" href="product-lubrication.html">
-<div class="card-icon">🧪</div>
-<h3 data-en="Industrial Safety, Lubrication &amp; Lifting" data-fr="Industrial Safety, Lubrication &amp; Lifting">Industrial Safety, Lubrication &amp; Lifting</h3>
-<p data-en="PPE, lubrication systems, oils, hoists, rigging equipment, cleaning systems and maintenance products." data-fr="PPE, lubrication systems, oils, hoists, rigging equipment, cleaning systems and maintenance products.">PPE, lubrication systems, oils, hoists, rigging equipment, cleaning systems and maintenance products.</p>
-<div class="btn-text" data-en="Explore Matrix →" data-fr="Explorer la matrice →">Explorer la matrice →</div>
-</a>
+<div class="grid-3" style="margin-top:48px;">
+<a class="card-system card-link" href="product-mechanical.html"><div class="card-icon">⚙️</div><h3 data-en="Bearings" data-fr="Roulements">Roulements</h3><p data-en="A simplified bearing category for ball, roller, mounted, thrust, precision, and specialty bearing needs." data-fr="Une catégorie simplifiée pour les roulements à billes, à rouleaux, montés, de butée, de précision et spécialisés.">Une catégorie simplifiée pour les roulements à billes, à rouleaux, montés, de butée, de précision et spécialisés.</p><span class="btn-text" data-en="Explore Category →" data-fr="Explorer la catégorie →">Explorer la catégorie →</span></a>
+<a class="card-system card-link" href="product-automation.html"><div class="card-icon">📐</div><h3 data-en="Linear Motion" data-fr="Guidage Linéaire">Guidage Linéaire</h3><p data-en="Linear guides, shafts, ball screws, lead screws, carriages, actuators, and positioning components." data-fr="Guides linéaires, arbres, vis à billes, vis trapézoïdales, chariots, actionneurs et composants de positionnement.">Guides linéaires, arbres, vis à billes, vis trapézoïdales, chariots, actionneurs et composants de positionnement.</p><span class="btn-text" data-en="Explore Category →" data-fr="Explorer la catégorie →">Explorer la catégorie →</span></a>
+<a class="card-system card-link" href="product-transmission.html"><div class="card-icon">🔄</div><h3 data-en="Power Transmission" data-fr="Transmission de Puissance">Transmission de Puissance</h3><p data-en="Belts, chains, couplings, pulleys, sprockets, gearboxes, motors, drives, and mechanical transmission parts." data-fr="Courroies, chaînes, accouplements, poulies, pignons, réducteurs, moteurs, variateurs et pièces de transmission mécanique.">Courroies, chaînes, accouplements, poulies, pignons, réducteurs, moteurs, variateurs et pièces de transmission mécanique.</p><span class="btn-text" data-en="Explore Category →" data-fr="Explorer la catégorie →">Explorer la catégorie →</span></a>
+<a class="card-system card-link" href="product-hydraulics.html"><div class="card-icon">💧</div><h3 data-en="Hydraulics &amp; Pneumatics" data-fr="Hydraulique &amp; Pneumatique">Hydraulique &amp; Pneumatique</h3><p data-en="Pumps, valves, cylinders, hoses, fittings, regulators, compressors, pneumatic cylinders, and FRL units." data-fr="Pompes, vannes, vérins, flexibles, raccords, régulateurs, compresseurs, vérins pneumatiques et unités FRL.">Pompes, vannes, vérins, flexibles, raccords, régulateurs, compresseurs, vérins pneumatiques et unités FRL.</p><span class="btn-text" data-en="Explore Category →" data-fr="Explorer la catégorie →">Explorer la catégorie →</span></a>
+<a class="card-system card-link" href="product-automation.html"><div class="card-icon">🤖</div><h3 data-en="Automation &amp; Electrical" data-fr="Automatisation &amp; Électricité">Automatisation &amp; Électricité</h3><p data-en="PLCs, HMIs, sensors, relays, terminals, servo systems, industrial connectivity, and electrical control components." data-fr="API, IHM, capteurs, relais, borniers, systèmes servo, connectique industrielle et composants de commande électrique.">API, IHM, capteurs, relais, borniers, systèmes servo, connectique industrielle et composants de commande électrique.</p><span class="btn-text" data-en="Explore Category →" data-fr="Explorer la catégorie →">Explorer la catégorie →</span></a>
+<a class="card-system card-link" href="product-safety.html"><div class="card-icon">🛡️</div><h3 data-en="Safety &amp; Lubrication" data-fr="Sécurité &amp; Lubrification">Sécurité &amp; Lubrification</h3><p data-en="PPE, lockout equipment, safety devices, grease systems, oil systems, filters, lubricators, and maintenance supplies." data-fr="EPI, consignation, dispositifs de sécurité, systèmes de graisse, systèmes d’huile, filtres, lubrificateurs et fournitures de maintenance.">EPI, consignation, dispositifs de sécurité, systèmes de graisse, systèmes d’huile, filtres, lubrificateurs et fournitures de maintenance.</p><span class="btn-text" data-en="Explore Category →" data-fr="Explorer la catégorie →">Explorer la catégorie →</span></a>
 </div>
+</section>
 </main>
-<!-- 8. COMPONENT: FOOTER SECTION -->
-<footer style="background: #0a0c0f; border-top: 1px solid var(--border-color); padding: 60px 0 30px 0; margin-top: 80px;">
-<div class="container grid-3" style="padding: 0 24px 40px 24px;">
-<div>
-<img alt="SUJO" src="logo.png" style="height: 40px; margin-bottom: 16px;"/>
-<p data-en="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, Democratic Republic of Congo" data-fr="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, République Démocratique du Congo" style="color: var(--text-muted); font-size: 0.9rem;">SUJO Engineering Consulting SARLKinshasa, République Démocratique du Congo</p>
+<footer class="footer-shell">
+<div class="container grid-3 footer-grid">
+<div class="footer-brand"><a class="footer-logo-link" href="index.html"><img alt="SUJO" class="site-logo footer-logo" decoding="async" loading="lazy" src="logo.png"/></a><p data-en="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, Democratic Republic of Congo" data-fr="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, République Démocratique du Congo">SUJO Engineering Consulting SARL<br>Kinshasa, République Démocratique du Congo</p></div>
+<div class="footer-column"><h4 data-en="Navigation" data-fr="Navigation">Navigation</h4><p><a data-en="Products" data-fr="Produits" href="products.html">Produits</a></p><p><a data-en="Partners" data-fr="Partenaires" href="partners.html">Partenaires</a></p><p><a data-en="Contact" data-fr="Contact" href="contact.html">Contact</a></p></div>
+<div class="footer-column"><h4 data-en="Direct Channels" data-fr="Canaux Directs">Canaux Directs</h4><p><span data-en="DRC:" data-fr="RDC:">RDC:</span> +243 974 570 630</p><p data-en="Email: contact@sujo-engineering.com" data-fr="Email: contact@sujo-engineering.com">Email: contact@sujo-engineering.com</p><div class="footer-actions"><a class="btn btn-primary" data-en="Request Quote" data-fr="Demander un devis" href="quote.html">Demander un devis</a></div></div>
 </div>
-<div>
-<h4 data-en="Technology Index" data-fr="Matrices Technologiques" style="margin-bottom: 16px; font-size: 0.95rem;">Matrices Technologiques</h4>
-<p style="font-size: 0.9rem; margin-bottom: 8px;">Index Global des Produits</p>
-<p style="font-size: 0.9rem; margin-bottom: 8px;">Marques Validées</p>
-</div>
-<div>
-<h4 data-en="Direct Channels" data-fr="Canaux Directs" style="margin-bottom: 16px; font-size: 0.95rem;">Canaux Directs</h4>
-<p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;">DRC: +243 974 570 630</p>
-<p data-en="Email: contact@sujo-engineering.com" data-fr="Email: contact@sujo-engineering.com" style="color: var(--text-muted); font-size: 0.9rem;">Email: contact@sujo-engineering.com</p>
-</div>
-</div>
-<div data-en="© 2026 SUJO Engineering Consulting SARL. All rights reserved." data-fr="© 2026 SUJO Engineering Consulting SARL. Tous droits réservés." style="text-align: center; border-top: 1px solid var(--border-color); padding-top: 30px; font-size: 0.8rem; color: var(--text-muted);">
-            © 2026 SUJO Engineering Consulting SARL. All rights reserved.
-        </div>
+<div class="footer-bottom" data-en="© 2026 SUJO Engineering Consulting SARL. All rights reserved." data-fr="© 2026 SUJO Engineering Consulting SARL. Tous droits réservés.">© 2026 SUJO Engineering Consulting SARL. Tous droits réservés.</div>
 </footer>
-<script>
-        function applyLang(lang) {
-            document.querySelectorAll('[data-fr][data-en]').forEach(el => {
-                el.innerHTML = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
-            });
-            document.documentElement.lang = lang;
-        }
-
-        function setLang(lang) {
-            localStorage.setItem('sujoLang', lang);
-            const btnFr = document.getElementById('btn-fr');
-            const btnEn = document.getElementById('btn-en');
-            if (btnFr && btnEn) {
-                btnFr.classList.toggle('active', lang === 'fr');
-                btnEn.classList.toggle('active', lang === 'en');
-            }
-            applyLang(lang);
-        }
-
-        // Apply the site-wide saved language preference on every page load
-        (function () {
-            const saved = localStorage.getItem('sujoLang') || 'fr';
-            applyLang(saved);
-            const btnFr = document.getElementById('btn-fr');
-            const btnEn = document.getElementById('btn-en');
-            if (btnFr && btnEn) {
-                btnFr.classList.toggle('active', saved === 'fr');
-                btnEn.classList.toggle('active', saved === 'en');
-            }
-        })();
-
-        function toggleMenu() {
-            document.getElementById('mobileMenu').classList.toggle('open');
-            document.querySelector('.hamburger').classList.toggle('open');
-        }
-
-        // On mobile, tapping "Produits ▾" expands the submenu instead of navigating
-        document.querySelectorAll('.dropdown > a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                if (window.innerWidth <= 900) {
-                    e.preventDefault();
-                    link.parentElement.classList.toggle('open');
-                }
-            });
-        });
-
-        // Close mobile menu when an actual navigation link is tapped
-        document.querySelectorAll('#mobileMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (link.parentElement.classList.contains('dropdown')) return; // handled separately
-                document.getElementById('mobileMenu').classList.remove('open');
-                document.querySelector('.hamburger').classList.remove('open');
-            });
-        });
-    </script>
 </body>
 </html>
