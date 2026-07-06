@@ -51,6 +51,65 @@
         hamburger.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
     };
 
+
+
+    function setupReliableMobileNavigation() {
+        if (window.__sujoMobileNavBound) return;
+        window.__sujoMobileNavBound = true;
+
+        function isMobileNav() {
+            return window.matchMedia('(max-width: 900px)').matches;
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            if (menu) menu.classList.remove('open');
+            document.querySelectorAll('#mobileMenu .dropdown.open').forEach(dropdown => dropdown.classList.remove('open'));
+            if (hamburger) {
+                hamburger.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+                hamburger.setAttribute('aria-label', 'Open navigation menu');
+            }
+        }
+
+        // Capture mobile clicks before older inline handlers can double-toggle the menu.
+        document.addEventListener('click', function (event) {
+            const hamburger = event.target.closest('.hamburger');
+            if (hamburger) {
+                event.preventDefault();
+                event.stopImmediatePropagation();
+                window.toggleMenu();
+                return;
+            }
+
+            const dropdownTrigger = event.target.closest('#mobileMenu .dropdown > a');
+            if (dropdownTrigger && isMobileNav()) {
+                event.preventDefault();
+                event.stopImmediatePropagation();
+                const dropdown = dropdownTrigger.parentElement;
+                const isOpen = dropdown.classList.toggle('open');
+                dropdownTrigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                return;
+            }
+
+            const menuLink = event.target.closest('#mobileMenu a');
+            if (menuLink && isMobileNav()) {
+                closeMobileMenu();
+            }
+        }, true);
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && isMobileNav()) {
+                closeMobileMenu();
+            }
+        });
+
+        window.addEventListener('resize', function () {
+            if (!isMobileNav()) closeMobileMenu();
+        });
+    }
+
     function loadLazyBackgrounds() {
         const applyBg = el => {
             const src = el.getAttribute('data-bg');
@@ -198,6 +257,7 @@
         updateLangButtons(savedLang);
         setActiveNav();
         bindUI();
+        setupReliableMobileNavigation();
         loadLazyBackgrounds();
         document.documentElement.classList.remove('lang-loading');
         document.documentElement.classList.add('lang-ready');
