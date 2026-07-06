@@ -1065,107 +1065,50 @@ header nav {
 }
 
 
-/* ===========================
-   Partners naming compatibility
-   =========================== */
-.partner-enterprise-card,
-.partners-enterprise-card {
-    background: var(--surface-card);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
+
+
+/* ===== Sectors of Intervention background cards ===== */
+.card-photo {
+    position: relative;
+    min-height: 280px;
     overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    justify-content: flex-end;
 }
 
-.partner-hero-logo,
-.partners-hero-logo {
-    background: #fff;
-    padding: 32px;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid var(--border-color);
+.card-photo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(15,17,21,0.18) 0%, rgba(15,17,21,0.90) 100%),
+        linear-gradient(90deg, rgba(15,17,21,0.72), rgba(15,17,21,0.10));
+    z-index: 0;
 }
 
-.partner-hero-logo img,
-.partners-hero-logo img {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
+.card-photo > * {
+    position: relative;
+    z-index: 1;
 }
 
-.partner-body,
-.partners-body {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-.partner-meta-label,
-.partners-meta-label {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    color: var(--primary-red);
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 4px;
-}
-
-.partner-body h3,
-.partners-body h3 {
-    font-size: 1.25rem;
-    margin-bottom: 12px;
+.card-photo h3 {
     color: var(--text-main);
 }
 
-.partner-body p,
-.partners-body p {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 16px;
+.card-photo p {
+    color: rgba(240, 242, 245, 0.88);
 }
 
+.lazy-bg {
+    background-color: var(--surface-card);
+}
 
-/* ===== MOBILE NAV FIX - applied site-wide ===== */
-@media (max-width: 900px) {
-  .hamburger { display: flex; }
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 4px;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    background: var(--surface-card);
-    border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 16px 32px rgba(0,0,0,0.5);
-    padding: 16px;
-    max-height: calc(100vh - 70px);
-    overflow-y: auto;
-  }
-  .nav-links.open { display: flex; }
-  .nav-links li, .nav-links .btn { width: 100%; }
-  .dropdown-menu {
-    position: static;
-    display: none;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    pointer-events: auto;
-    width: 100%;
-    min-width: 0;
-    margin-top: 4px;
-    box-shadow: none;
-    border: 0;
-    background: rgba(255,255,255,0.03);
-  }
-  .dropdown.open > .dropdown-menu { display: block; }
+.lazy-bg.lazy-bg-loaded {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
