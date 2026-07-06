@@ -113,10 +113,7 @@
             link.addEventListener('click', event => {
                 if (window.innerWidth <= 900) {
                     event.preventDefault();
-                    event.stopPropagation();
-                    const dropdown = link.parentElement;
-                    const isOpen = dropdown.classList.toggle('open');
-                    link.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    link.parentElement.classList.toggle('open');
                 }
             });
             link.dataset.bound = 'true';
@@ -148,14 +145,10 @@
 
         document.querySelectorAll('#mobileMenu a, .mobile-menu a').forEach(link => {
             if (link.dataset.closeBound) return;
-            link.addEventListener('click', event => {
-                if (window.innerWidth <= 900 && link.parentElement && link.parentElement.classList.contains('dropdown')) {
-                    return;
-                }
+            link.addEventListener('click', () => {
                 const menu = document.getElementById('mobileMenu');
                 const hamburgerIcon = document.querySelector('.hamburger');
                 if (menu) menu.classList.remove('open');
-                document.querySelectorAll('.dropdown.open').forEach(dropdown => dropdown.classList.remove('open'));
                 if (hamburgerIcon) {
                     hamburgerIcon.classList.remove('open');
                     hamburgerIcon.setAttribute('aria-expanded', 'false');

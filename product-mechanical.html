@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="style.css" rel="stylesheet"/>
-
+<script defer="" src="app.js"></script>
 <style>
 header{position:sticky;top:0;z-index:1000;backdrop-filter:blur(14px);}
 html{scroll-padding-top:96px;}
@@ -17,21 +17,21 @@ html{scroll-padding-top:96px;}
 .card-system{cursor:default;}
 .card-system p{margin-bottom:0;}
 </style>
-<script defer="True" src="app.js"></script></head>
-<body><a class="skip-link" data-en="Skip to main content" data-fr="Aller au contenu principal" href="#main-content">Aller au contenu principal</a>
+</head>
+<body>
 <!-- NAV BAR -->
 <header>
-<a class="nav-logo" href="index.html">
-<img alt="SUJO" class="site-logo" decoding="async" fetchpriority="high" loading="eager" src="logo.png"/>
+<a class="nav-logo" href="https://sujo-engineering.com/index.html">
+<img alt="SUJO" src="logo.png" style="height: 50px;"/>
 </a>
-<nav aria-label="Main navigation">
+<nav>
 <ul class="nav-links" id="mobileMenu">
 <li><a data-en="Home" data-fr="Accueil" href="https://sujo-engineering.com/index.html">Accueil</a></li>
 <li><a data-en="About" data-fr="À Propos" href="https://sujo-engineering.com/about.html">À Propos</a></li>
 <li class="dropdown">
-<a aria-expanded="false" aria-haspopup="true" class="active" data-en="Products ▾" data-fr="Produits ▾" href="https://sujo-engineering.com/products.html">Produits ▾</a>
+<a class="active" data-en="Products ▾" data-fr="Produits ▾" href="https://sujo-engineering.com/products.html">Produits ▾</a>
 <ul class="dropdown-menu">
-<li><a aria-current="page" class="active" data-en="Mechanical Components" data-fr="Composants Mécaniques" href="product-mechanical.html">Composants Mécaniques</a></li>
+<li><a class="active" data-en="Mechanical Components" data-fr="Composants Mécaniques" href="product-mechanical.html">Composants Mécaniques</a></li>
 <li><a data-en="Automation &amp; Motion" data-fr="Automatisation &amp; Mouvement" href="product-automation.html">Automatisation &amp; Mouvement</a></li>
 <li><a data-en="Hydraulics &amp; Pneumatics" data-fr="Hydraulique &amp; Pneumatique" href="product-hydraulics.html">Hydraulique &amp; Pneumatique</a></li>
 <li><a data-en="Industrial Safety" data-fr="Sécurité Industrielle" href="product-safety.html">Sécurité Industrielle</a></li>
@@ -41,23 +41,17 @@ html{scroll-padding-top:96px;}
 </li>
 <li><a data-en="Partners" data-fr="Partenaires" href="https://sujo-engineering.com/partners.html">Partenaires</a></li>
 <li><a data-en="Contact" data-fr="Contact" href="https://sujo-engineering.com/contact.html">Contact</a></li>
-<li><a class="btn btn-outline nav-account" data-en="My Account" data-fr="Mon Compte" href="https://portal.sujo-engineering.com/" rel="noopener noreferrer" target="_blank">Mon Compte</a></li>
-<li><a class="btn btn-primary" data-en="Request Quote" data-fr="Demander un devis" href="https://sujo-engineering.com/quote.html">Demander un devis</a></li>
-<li>
-<div class="lang-switch">
-<button aria-label="Changer la langue en français" class="active" data-lang-button="fr" id="btn-fr" type="button">FR</button>
-<button aria-label="Switch language to English" data-lang-button="en" id="btn-en" type="button">EN</button>
-</div>
-</li>
-</ul>
+<li><a class="btn btn-outline" data-en="My Account" data-fr="Mon Compte" href="http://129.213.160.94/" style="padding: 8px 16px;" target="_blank">Mon Compte</a></li>
+<li><a class="btn btn-primary" data-en="Request Quote" data-fr="Demander un devis" href="https://sujo-engineering.com/quote.html" style="padding: 8px 16px;">Demander un devis</a></li>
+<li><div class="lang-switch"><button class="active" id="btn-fr" onclick="setLang('fr')" type="button">FR</button><button id="btn-en" onclick="setLang('en')" type="button">EN</button></div></li></ul>
 </nav>
-<div aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation menu" class="hamburger" role="button" tabindex="0">
+<div aria-label="Menu" class="hamburger" onclick="toggleMenu()">
 <span></span>
 <span></span>
 <span></span>
 </div>
 </header>
-<main class="container" id="main-content" tabindex="-1">
+<main class="container">
 <div class="section-header" style="text-align: left;">
 <div class="section-label" data-en="Mechanical Components" data-fr="Composants Mécaniques">Composants Mécaniques</div>
 <h1 class="section-title" data-en="Bearings &amp; Shafts" data-fr="Roulements &amp; Arbres" style="font-size: 2.75rem;">Roulements &amp; Arbres</h1>
@@ -69,259 +63,310 @@ html{scroll-padding-top:96px;}
 <div class="grid-3" style="margin-top: 48px;">
 <a class="card-system">
 <h3 data-en="Deep Groove Ball Bearing" data-fr="Deep Groove Ball Bearing">Deep Groove Ball Bearing</h3>
-<p data-en="The Deep Groove Ball Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Deep Groove Ball Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Deep Groove Ball Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="For Deep Groove Ball Bearing applications, this solution supports rotating loads while reducing friction, making it suitable for motors, conveyors, pumps, fans, and general machinery." data-fr="Pour les applications de Deep Groove Ball Bearing, cette solution supporte les charges rotatives tout en réduisant les frottements, idéal pour moteurs, convoyeurs, pompes, ventilateurs et machines industrielles.">Pour les applications de Deep Groove Ball Bearing, cette solution supporte les charges rotatives tout en réduisant les frottements, idéal pour moteurs, convoyeurs, pompes, ventilateurs et machines industrielles.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Angular Contact Bearing" data-fr="Angular Contact Bearing">Angular Contact Bearing</h3>
-<p data-en="The Angular Contact Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Angular Contact Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Angular Contact Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="In Angular Contact Bearing systems, this component maintains smooth shaft rotation under demanding loads, helping equipment run with less heat, vibration, and wear." data-fr="Dans les systèmes de Angular Contact Bearing, ce composant maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.">Dans les systèmes de Angular Contact Bearing, ce composant maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Spherical Roller Bearing" data-fr="Spherical Roller Bearing">Spherical Roller Bearing</h3>
-<p data-en="The Spherical Roller Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Spherical Roller Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Spherical Roller Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="In Spherical Roller Bearing installations, this component delivers reliable motion in industrial assemblies where load capacity, service life, and accurate alignment matter." data-fr="Dans les installations de Spherical Roller Bearing, ce composant assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.">Dans les installations de Spherical Roller Bearing, ce composant assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Tapered Roller Bearing" data-fr="Tapered Roller Bearing">Tapered Roller Bearing</h3>
-<p data-en="The Tapered Roller Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Tapered Roller Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Tapered Roller Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="Specified for Tapered Roller Bearing use, it supports rotating loads while reducing friction, making it suitable for motors, conveyors, pumps, fans, and general machinery." data-fr="Sélectionné pour l’usage de Tapered Roller Bearing, il supporte les charges rotatives tout en réduisant les frottements, idéal pour moteurs, convoyeurs, pompes, ventilateurs et machines industrielles.">Sélectionné pour l’usage de Tapered Roller Bearing, il supporte les charges rotatives tout en réduisant les frottements, idéal pour moteurs, convoyeurs, pompes, ventilateurs et machines industrielles.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Cylindrical Roller Bearing" data-fr="Cylindrical Roller Bearing">Cylindrical Roller Bearing</h3>
-<p data-en="The Cylindrical Roller Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Cylindrical Roller Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Cylindrical Roller Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="Across industrial cylindrical roller bearing projects, it maintains smooth shaft rotation under demanding loads, helping equipment run with less heat, vibration, and wear." data-fr="Dans les projets industriels de Cylindrical Roller Bearing, il maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.">Dans les projets industriels de Cylindrical Roller Bearing, il maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Needle Roller Bearing" data-fr="Needle Roller Bearing">Needle Roller Bearing</h3>
-<p data-en="The Needle Roller Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Needle Roller Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Needle Roller Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="For Needle Roller Bearing applications, this solution delivers reliable motion in industrial assemblies where load capacity, service life, and accurate alignment matter." data-fr="Pour les applications de Needle Roller Bearing, cette solution assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.">Pour les applications de Needle Roller Bearing, cette solution assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Self-Aligning Ball Bearing" data-fr="Self-Aligning Ball Bearing">Self-Aligning Ball Bearing</h3>
-<p data-en="The Self-Aligning Ball Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Self-Aligning Ball Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Self-Aligning Ball Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="In Self-Aligning Ball Bearing systems, this component supports rotating loads while reducing friction, making it suitable for motors, conveyors, pumps, fans, and general machinery." data-fr="Dans les systèmes de Self-Aligning Ball Bearing, ce composant supporte les charges rotatives tout en réduisant les frottements, idéal pour moteurs, convoyeurs, pompes, ventilateurs et machines industrielles.">Dans les systèmes de Self-Aligning Ball Bearing, ce composant supporte les charges rotatives tout en réduisant les frottements, idéal pour moteurs, convoyeurs, pompes, ventilateurs et machines industrielles.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Thrust Ball Bearing" data-fr="Thrust Ball Bearing">Thrust Ball Bearing</h3>
-<p data-en="The Thrust Ball Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Thrust Ball Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Thrust Ball Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="In Thrust Ball Bearing installations, this component maintains smooth shaft rotation under demanding loads, helping equipment run with less heat, vibration, and wear." data-fr="Dans les installations de Thrust Ball Bearing, ce composant maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.">Dans les installations de Thrust Ball Bearing, ce composant maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Thrust Roller Bearing" data-fr="Thrust Roller Bearing">Thrust Roller Bearing</h3>
-<p data-en="The Thrust Roller Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Thrust Roller Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Thrust Roller Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="Specified for Thrust Roller Bearing use, it delivers reliable motion in industrial assemblies where load capacity, service life, and accurate alignment matter." data-fr="Sélectionné pour l’usage de Thrust Roller Bearing, il assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.">Sélectionné pour l’usage de Thrust Roller Bearing, il assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Pillow Block Bearing Unit" data-fr="Pillow Block Bearing Unit">Pillow Block Bearing Unit</h3>
-<p data-en="The Pillow Block Bearing Unit supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Pillow Block Bearing Unit supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Pillow Block Bearing Unit supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="Across industrial pillow block bearing unit projects, it supports rotating loads while reducing friction, making it suitable for motors, conveyors, pumps, fans, and general machinery." data-fr="Dans les projets industriels de Pillow Block Bearing Unit, il supporte les charges rotatives tout en réduisant les frottements, idéal pour moteurs, convoyeurs, pompes, ventilateurs et machines industrielles.">Dans les projets industriels de Pillow Block Bearing Unit, il supporte les charges rotatives tout en réduisant les frottements, idéal pour moteurs, convoyeurs, pompes, ventilateurs et machines industrielles.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Flanged Bearing Unit" data-fr="Flanged Bearing Unit">Flanged Bearing Unit</h3>
-<p data-en="The Flanged Bearing Unit supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Flanged Bearing Unit supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Flanged Bearing Unit supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="For Flanged Bearing Unit applications, this solution maintains smooth shaft rotation under demanding loads, helping equipment run with less heat, vibration, and wear." data-fr="Pour les applications de Flanged Bearing Unit, cette solution maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.">Pour les applications de Flanged Bearing Unit, cette solution maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Take-Up Bearing Unit" data-fr="Take-Up Bearing Unit">Take-Up Bearing Unit</h3>
-<p data-en="The Take-Up Bearing Unit supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Take-Up Bearing Unit supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Take-Up Bearing Unit supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="In Take-Up Bearing Unit systems, this component delivers reliable motion in industrial assemblies where load capacity, service life, and accurate alignment matter." data-fr="Dans les systèmes de Take-Up Bearing Unit, ce composant assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.">Dans les systèmes de Take-Up Bearing Unit, ce composant assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Ceramic Hybrid Bearing" data-fr="Ceramic Hybrid Bearing">Ceramic Hybrid Bearing</h3>
-<p data-en="The Ceramic Hybrid Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Ceramic Hybrid Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Ceramic Hybrid Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="In Ceramic Hybrid Bearing installations, this component supports rotating loads while reducing friction, making it suitable for motors, conveyors, pumps, fans, and general machinery." data-fr="Dans les installations de Ceramic Hybrid Bearing, ce composant supporte les charges rotatives tout en réduisant les frottements, idéal pour moteurs, convoyeurs, pompes, ventilateurs et machines industrielles.">Dans les installations de Ceramic Hybrid Bearing, ce composant supporte les charges rotatives tout en réduisant les frottements, idéal pour moteurs, convoyeurs, pompes, ventilateurs et machines industrielles.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Stainless Steel Bearing" data-fr="Stainless Steel Bearing">Stainless Steel Bearing</h3>
-<p data-en="The Stainless Steel Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Stainless Steel Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Stainless Steel Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="Specified for Stainless Steel Bearing use, it maintains smooth shaft rotation under demanding loads, helping equipment run with less heat, vibration, and wear." data-fr="Sélectionné pour l’usage de Stainless Steel Bearing, il maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.">Sélectionné pour l’usage de Stainless Steel Bearing, il maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Insert Bearing" data-fr="Insert Bearing">Insert Bearing</h3>
-<p data-en="The Insert Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Insert Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Insert Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="Across industrial insert bearing projects, it delivers reliable motion in industrial assemblies where load capacity, service life, and accurate alignment matter." data-fr="Dans les projets industriels de Insert Bearing, il assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.">Dans les projets industriels de Insert Bearing, il assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Linear Ball Bearing" data-fr="Linear Ball Bearing">Linear Ball Bearing</h3>
-<p data-en="The Linear Ball Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Linear Ball Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Linear Ball Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="For Linear Ball Bearing applications, this solution supports precise straight-line positioning where repeatability, alignment, and stable machine motion are essential." data-fr="Pour les applications de Linear Ball Bearing, cette solution assure un positionnement rectiligne précis lorsque la répétabilité, l’alignement et la stabilité du mouvement sont essentiels.">Pour les applications de Linear Ball Bearing, cette solution assure un positionnement rectiligne précis lorsque la répétabilité, l’alignement et la stabilité du mouvement sont essentiels.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Linear Shaft" data-fr="Linear Shaft">Linear Shaft</h3>
-<p data-en="The Linear Shaft transmits rotation or provides a precision guide surface for bearings, couplings, and linear motion assemblies." data-fr="Le Linear Shaft transmet la rotation ou fournit une surface de guidage précise pour roulements, accouplements et ensembles linéaires.">Le Linear Shaft transmet la rotation ou fournit une surface de guidage précise pour roulements, accouplements et ensembles linéaires.</p>
+<p data-en="In Linear Shaft systems, this component guides controlled linear travel in automation frames, inspection stations, and production equipment with smooth low-friction movement." data-fr="Dans les systèmes de Linear Shaft, ce composant guide les déplacements linéaires des bâtis automatisés, postes d’inspection et équipements de production avec un mouvement fluide à faible friction.">Dans les systèmes de Linear Shaft, ce composant guide les déplacements linéaires des bâtis automatisés, postes d’inspection et équipements de production avec un mouvement fluide à faible friction.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Guide Rail" data-fr="Guide Rail">Guide Rail</h3>
-<p data-en="The Guide Rail provides guided movement and stable alignment for linear systems, machine frames, and automated equipment." data-fr="Le Guide Rail assure un mouvement guidé et un alignement stable pour systèmes linéaires, bâtis machine et équipements automatisés.">Le Guide Rail assure un mouvement guidé et un alignement stable pour systèmes linéaires, bâtis machine et équipements automatisés.</p>
+<p data-en="In Guide Rail installations, this component delivers reliable motion in industrial assemblies where load capacity, service life, and accurate alignment matter." data-fr="Dans les installations de Guide Rail, ce composant assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.">Dans les installations de Guide Rail, ce composant assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Ball Screw" data-fr="Ball Screw">Ball Screw</h3>
-<p data-en="The Ball Screw converts rotary input into controlled linear motion for positioning, lifting, adjustment, or automation tasks." data-fr="Le Ball Screw transforme une entrée rotative en mouvement linéaire contrôlé pour positionnement, levage, réglage ou automatisation.">Le Ball Screw transforme une entrée rotative en mouvement linéaire contrôlé pour positionnement, levage, réglage ou automatisation.</p>
+<p data-en="Specified for Ball Screw use, it converts rotary input into accurate linear travel for positioning axes, lifting mechanisms, and automated adjustment systems." data-fr="Sélectionné pour l’usage de Ball Screw, il transforme la rotation en déplacement linéaire précis pour axes de positionnement, mécanismes de levage et réglages automatisés.">Sélectionné pour l’usage de Ball Screw, il transforme la rotation en déplacement linéaire précis pour axes de positionnement, mécanismes de levage et réglages automatisés.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Lead Screw" data-fr="Lead Screw">Lead Screw</h3>
-<p data-en="The Lead Screw converts rotary input into controlled linear motion for positioning, lifting, adjustment, or automation tasks." data-fr="Le Lead Screw transforme une entrée rotative en mouvement linéaire contrôlé pour positionnement, levage, réglage ou automatisation.">Le Lead Screw transforme une entrée rotative en mouvement linéaire contrôlé pour positionnement, levage, réglage ou automatisation.</p>
+<p data-en="Across industrial lead screw projects, it improves controlled motion by delivering efficient force transfer with consistent positioning over repeated cycles." data-fr="Dans les projets industriels de Lead Screw, il améliore le mouvement contrôlé grâce à une transmission efficace de l’effort et un positionnement constant sur cycles répétés.">Dans les projets industriels de Lead Screw, il améliore le mouvement contrôlé grâce à une transmission efficace de l’effort et un positionnement constant sur cycles répétés.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Crossed Roller Bearing" data-fr="Crossed Roller Bearing">Crossed Roller Bearing</h3>
-<p data-en="The Crossed Roller Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Crossed Roller Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Crossed Roller Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="For Crossed Roller Bearing applications, this solution delivers reliable motion in industrial assemblies where load capacity, service life, and accurate alignment matter." data-fr="Pour les applications de Crossed Roller Bearing, cette solution assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.">Pour les applications de Crossed Roller Bearing, cette solution assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Miniature Ball Bearing" data-fr="Miniature Ball Bearing">Miniature Ball Bearing</h3>
-<p data-en="The Miniature Ball Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Miniature Ball Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Miniature Ball Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="In Miniature Ball Bearing systems, this component supports rotating loads while reducing friction, making it suitable for motors, conveyors, pumps, fans, and general machinery." data-fr="Dans les systèmes de Miniature Ball Bearing, ce composant supporte les charges rotatives tout en réduisant les frottements, idéal pour moteurs, convoyeurs, pompes, ventilateurs et machines industrielles.">Dans les systèmes de Miniature Ball Bearing, ce composant supporte les charges rotatives tout en réduisant les frottements, idéal pour moteurs, convoyeurs, pompes, ventilateurs et machines industrielles.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Thin-Section Bearing" data-fr="Thin-Section Bearing">Thin-Section Bearing</h3>
-<p data-en="The Thin-Section Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Thin-Section Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Thin-Section Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="In Thin-Section Bearing installations, this component maintains smooth shaft rotation under demanding loads, helping equipment run with less heat, vibration, and wear." data-fr="Dans les installations de Thin-Section Bearing, ce composant maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.">Dans les installations de Thin-Section Bearing, ce composant maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Precision Roller Bearing" data-fr="Precision Roller Bearing">Precision Roller Bearing</h3>
-<p data-en="The Precision Roller Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Precision Roller Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Precision Roller Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="Specified for Precision Roller Bearing use, it delivers reliable motion in industrial assemblies where load capacity, service life, and accurate alignment matter." data-fr="Sélectionné pour l’usage de Precision Roller Bearing, il assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.">Sélectionné pour l’usage de Precision Roller Bearing, il assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Cam Follower Bearing" data-fr="Cam Follower Bearing">Cam Follower Bearing</h3>
-<p data-en="The Cam Follower Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Cam Follower Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Cam Follower Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="Across industrial cam follower bearing projects, it supports rotating loads while reducing friction, making it suitable for motors, conveyors, pumps, fans, and general machinery." data-fr="Dans les projets industriels de Cam Follower Bearing, il supporte les charges rotatives tout en réduisant les frottements, idéal pour moteurs, convoyeurs, pompes, ventilateurs et machines industrielles.">Dans les projets industriels de Cam Follower Bearing, il supporte les charges rotatives tout en réduisant les frottements, idéal pour moteurs, convoyeurs, pompes, ventilateurs et machines industrielles.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Track Roller Bearing" data-fr="Track Roller Bearing">Track Roller Bearing</h3>
-<p data-en="The Track Roller Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Track Roller Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Track Roller Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="For Track Roller Bearing applications, this solution maintains smooth shaft rotation under demanding loads, helping equipment run with less heat, vibration, and wear." data-fr="Pour les applications de Track Roller Bearing, cette solution maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.">Pour les applications de Track Roller Bearing, cette solution maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Needle Thrust Bearing" data-fr="Needle Thrust Bearing">Needle Thrust Bearing</h3>
-<p data-en="The Needle Thrust Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Needle Thrust Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Needle Thrust Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="In Needle Thrust Bearing systems, this component delivers reliable motion in industrial assemblies where load capacity, service life, and accurate alignment matter." data-fr="Dans les systèmes de Needle Thrust Bearing, ce composant assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.">Dans les systèmes de Needle Thrust Bearing, ce composant assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Thrust Washer Assembly" data-fr="Thrust Washer Assembly">Thrust Washer Assembly</h3>
-<p data-en="The Thrust Washer Assembly supports mechanical motion, load carrying, alignment, or equipment assembly in industrial machinery." data-fr="Le Thrust Washer Assembly soutient le mouvement mécanique, la reprise de charge, l’alignement ou l’assemblage d’équipements industriels.">Le Thrust Washer Assembly soutient le mouvement mécanique, la reprise de charge, l’alignement ou l’assemblage d’équipements industriels.</p>
+<p data-en="In Thrust Washer Assembly installations, this component provides a compact mechanical interface for shaft support, spacing, sealing, or retention in demanding equipment layouts." data-fr="Dans les installations de Thrust Washer Assembly, ce composant offre une interface mécanique compacte pour support d’arbre, espacement, étanchéité ou retenue dans des équipements exigeants.">Dans les installations de Thrust Washer Assembly, ce composant offre une interface mécanique compacte pour support d’arbre, espacement, étanchéité ou retenue dans des équipements exigeants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Cartridge Bearing Unit" data-fr="Cartridge Bearing Unit">Cartridge Bearing Unit</h3>
-<p data-en="The Cartridge Bearing Unit supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Cartridge Bearing Unit supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Cartridge Bearing Unit supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="Specified for Cartridge Bearing Unit use, it maintains smooth shaft rotation under demanding loads, helping equipment run with less heat, vibration, and wear." data-fr="Sélectionné pour l’usage de Cartridge Bearing Unit, il maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.">Sélectionné pour l’usage de Cartridge Bearing Unit, il maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hanger Bearing Unit" data-fr="Hanger Bearing Unit">Hanger Bearing Unit</h3>
-<p data-en="The Hanger Bearing Unit supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Hanger Bearing Unit supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Hanger Bearing Unit supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="Across industrial hanger bearing unit projects, it delivers reliable motion in industrial assemblies where load capacity, service life, and accurate alignment matter." data-fr="Dans les projets industriels de Hanger Bearing Unit, il assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.">Dans les projets industriels de Hanger Bearing Unit, il assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Thermoplastic Bearing Unit" data-fr="Thermoplastic Bearing Unit">Thermoplastic Bearing Unit</h3>
-<p data-en="The Thermoplastic Bearing Unit supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Thermoplastic Bearing Unit supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Thermoplastic Bearing Unit supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="For Thermoplastic Bearing Unit applications, this solution supports rotating loads while reducing friction, making it suitable for motors, conveyors, pumps, fans, and general machinery." data-fr="Pour les applications de Thermoplastic Bearing Unit, cette solution supporte les charges rotatives tout en réduisant les frottements, idéal pour moteurs, convoyeurs, pompes, ventilateurs et machines industrielles.">Pour les applications de Thermoplastic Bearing Unit, cette solution supporte les charges rotatives tout en réduisant les frottements, idéal pour moteurs, convoyeurs, pompes, ventilateurs et machines industrielles.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Linear Roller Bearing" data-fr="Linear Roller Bearing">Linear Roller Bearing</h3>
-<p data-en="The Linear Roller Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Linear Roller Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Linear Roller Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="In Linear Roller Bearing systems, this component supports precise straight-line positioning where repeatability, alignment, and stable machine motion are essential." data-fr="Dans les systèmes de Linear Roller Bearing, ce composant assure un positionnement rectiligne précis lorsque la répétabilité, l’alignement et la stabilité du mouvement sont essentiels.">Dans les systèmes de Linear Roller Bearing, ce composant assure un positionnement rectiligne précis lorsque la répétabilité, l’alignement et la stabilité du mouvement sont essentiels.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Linear Plain Bearing" data-fr="Linear Plain Bearing">Linear Plain Bearing</h3>
-<p data-en="The Linear Plain Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Linear Plain Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Linear Plain Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="In Linear Plain Bearing installations, this component guides controlled linear travel in automation frames, inspection stations, and production equipment with smooth low-friction movement." data-fr="Dans les installations de Linear Plain Bearing, ce composant guide les déplacements linéaires des bâtis automatisés, postes d’inspection et équipements de production avec un mouvement fluide à faible friction.">Dans les installations de Linear Plain Bearing, ce composant guide les déplacements linéaires des bâtis automatisés, postes d’inspection et équipements de production avec un mouvement fluide à faible friction.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Linear Shaft Support" data-fr="Linear Shaft Support">Linear Shaft Support</h3>
-<p data-en="The Linear Shaft Support transmits rotation or provides a precision guide surface for bearings, couplings, and linear motion assemblies." data-fr="Le Linear Shaft Support transmet la rotation ou fournit une surface de guidage précise pour roulements, accouplements et ensembles linéaires.">Le Linear Shaft Support transmet la rotation ou fournit une surface de guidage précise pour roulements, accouplements et ensembles linéaires.</p>
+<p data-en="Specified for Linear Shaft Support use, it supports precise straight-line positioning where repeatability, alignment, and stable machine motion are essential." data-fr="Sélectionné pour l’usage de Linear Shaft Support, il assure un positionnement rectiligne précis lorsque la répétabilité, l’alignement et la stabilité du mouvement sont essentiels.">Sélectionné pour l’usage de Linear Shaft Support, il assure un positionnement rectiligne précis lorsque la répétabilité, l’alignement et la stabilité du mouvement sont essentiels.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Linear Guide Block / Carriage" data-fr="Linear Guide Block / Carriage">Linear Guide Block / Carriage</h3>
-<p data-en="The Linear Guide Block / Carriage provides guided movement and stable alignment for linear systems, machine frames, and automated equipment." data-fr="Le Linear Guide Block / Carriage assure un mouvement guidé et un alignement stable pour systèmes linéaires, bâtis machine et équipements automatisés.">Le Linear Guide Block / Carriage assure un mouvement guidé et un alignement stable pour systèmes linéaires, bâtis machine et équipements automatisés.</p>
+<p data-en="Across industrial linear guide block / carriage projects, it guides controlled linear travel in automation frames, inspection stations, and production equipment with smooth low-friction movement." data-fr="Dans les projets industriels de Linear Guide Block / Carriage, il guide les déplacements linéaires des bâtis automatisés, postes d’inspection et équipements de production avec un mouvement fluide à faible friction.">Dans les projets industriels de Linear Guide Block / Carriage, il guide les déplacements linéaires des bâtis automatisés, postes d’inspection et équipements de production avec un mouvement fluide à faible friction.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Ball Nut" data-fr="Ball Nut">Ball Nut</h3>
-<p data-en="The Ball Nut converts rotary input into controlled linear motion for positioning, lifting, adjustment, or automation tasks." data-fr="Le Ball Nut transforme une entrée rotative en mouvement linéaire contrôlé pour positionnement, levage, réglage ou automatisation.">Le Ball Nut transforme une entrée rotative en mouvement linéaire contrôlé pour positionnement, levage, réglage ou automatisation.</p>
+<p data-en="For Ball Nut applications, this solution improves controlled motion by delivering efficient force transfer with consistent positioning over repeated cycles." data-fr="Pour les applications de Ball Nut, cette solution améliore le mouvement contrôlé grâce à une transmission efficace de l’effort et un positionnement constant sur cycles répétés.">Pour les applications de Ball Nut, cette solution améliore le mouvement contrôlé grâce à une transmission efficace de l’effort et un positionnement constant sur cycles répétés.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Lead Nut" data-fr="Lead Nut">Lead Nut</h3>
-<p data-en="The Lead Nut converts rotary input into controlled linear motion for positioning, lifting, adjustment, or automation tasks." data-fr="Le Lead Nut transforme une entrée rotative en mouvement linéaire contrôlé pour positionnement, levage, réglage ou automatisation.">Le Lead Nut transforme une entrée rotative en mouvement linéaire contrôlé pour positionnement, levage, réglage ou automatisation.</p>
+<p data-en="In Lead Nut systems, this component converts rotary input into accurate linear travel for positioning axes, lifting mechanisms, and automated adjustment systems." data-fr="Dans les systèmes de Lead Nut, ce composant transforme la rotation en déplacement linéaire précis pour axes de positionnement, mécanismes de levage et réglages automatisés.">Dans les systèmes de Lead Nut, ce composant transforme la rotation en déplacement linéaire précis pour axes de positionnement, mécanismes de levage et réglages automatisés.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Linear Actuator" data-fr="Linear Actuator">Linear Actuator</h3>
-<p data-en="The Linear Actuator converts rotary input into controlled linear motion for positioning, lifting, adjustment, or automation tasks." data-fr="Le Linear Actuator transforme une entrée rotative en mouvement linéaire contrôlé pour positionnement, levage, réglage ou automatisation.">Le Linear Actuator transforme une entrée rotative en mouvement linéaire contrôlé pour positionnement, levage, réglage ou automatisation.</p>
+<p data-en="In Linear Actuator installations, this component supports precise straight-line positioning where repeatability, alignment, and stable machine motion are essential." data-fr="Dans les installations de Linear Actuator, ce composant assure un positionnement rectiligne précis lorsque la répétabilité, l’alignement et la stabilité du mouvement sont essentiels.">Dans les installations de Linear Actuator, ce composant assure un positionnement rectiligne précis lorsque la répétabilité, l’alignement et la stabilité du mouvement sont essentiels.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Magnetic Bearing" data-fr="Magnetic Bearing">Magnetic Bearing</h3>
-<p data-en="The Magnetic Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Magnetic Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Magnetic Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="Specified for Magnetic Bearing use, it delivers reliable motion in industrial assemblies where load capacity, service life, and accurate alignment matter." data-fr="Sélectionné pour l’usage de Magnetic Bearing, il assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.">Sélectionné pour l’usage de Magnetic Bearing, il assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Air Bearing" data-fr="Air Bearing">Air Bearing</h3>
-<p data-en="The Air Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Air Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Air Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="Across industrial air bearing projects, it supports rotating loads while reducing friction, making it suitable for motors, conveyors, pumps, fans, and general machinery." data-fr="Dans les projets industriels de Air Bearing, il supporte les charges rotatives tout en réduisant les frottements, idéal pour moteurs, convoyeurs, pompes, ventilateurs et machines industrielles.">Dans les projets industriels de Air Bearing, il supporte les charges rotatives tout en réduisant les frottements, idéal pour moteurs, convoyeurs, pompes, ventilateurs et machines industrielles.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Plastic/Polymer Bearing" data-fr="Plastic/Polymer Bearing">Plastic/Polymer Bearing</h3>
-<p data-en="The Plastic/Polymer Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Plastic/Polymer Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Plastic/Polymer Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="For Plastic/Polymer Bearing applications, this solution maintains smooth shaft rotation under demanding loads, helping equipment run with less heat, vibration, and wear." data-fr="Pour les applications de Plastic/Polymer Bearing, cette solution maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.">Pour les applications de Plastic/Polymer Bearing, cette solution maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Insulated Bearing" data-fr="Insulated Bearing">Insulated Bearing</h3>
-<p data-en="The Insulated Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Insulated Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Insulated Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="In Insulated Bearing systems, this component delivers reliable motion in industrial assemblies where load capacity, service life, and accurate alignment matter." data-fr="Dans les systèmes de Insulated Bearing, ce composant assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.">Dans les systèmes de Insulated Bearing, ce composant assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Split Roller Bearing" data-fr="Split Roller Bearing">Split Roller Bearing</h3>
-<p data-en="The Split Roller Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Split Roller Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Split Roller Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="In Split Roller Bearing installations, this component supports rotating loads while reducing friction, making it suitable for motors, conveyors, pumps, fans, and general machinery." data-fr="Dans les installations de Split Roller Bearing, ce composant supporte les charges rotatives tout en réduisant les frottements, idéal pour moteurs, convoyeurs, pompes, ventilateurs et machines industrielles.">Dans les installations de Split Roller Bearing, ce composant supporte les charges rotatives tout en réduisant les frottements, idéal pour moteurs, convoyeurs, pompes, ventilateurs et machines industrielles.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Slewing Bearing" data-fr="Slewing Bearing">Slewing Bearing</h3>
-<p data-en="The Slewing Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Slewing Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Slewing Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="Specified for Slewing Bearing use, it maintains smooth shaft rotation under demanding loads, helping equipment run with less heat, vibration, and wear." data-fr="Sélectionné pour l’usage de Slewing Bearing, il maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.">Sélectionné pour l’usage de Slewing Bearing, il maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Turntable Bearing" data-fr="Turntable Bearing">Turntable Bearing</h3>
-<p data-en="The Turntable Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Turntable Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Turntable Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="Across industrial turntable bearing projects, it delivers reliable motion in industrial assemblies where load capacity, service life, and accurate alignment matter." data-fr="Dans les projets industriels de Turntable Bearing, il assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.">Dans les projets industriels de Turntable Bearing, il assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Clutch Bearing (One-Way / Sprag)" data-fr="Clutch Bearing (One-Way / Sprag)">Clutch Bearing (One-Way / Sprag)</h3>
-<p data-en="The Clutch Bearing (One-Way / Sprag) supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Clutch Bearing (One-Way / Sprag) supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Clutch Bearing (One-Way / Sprag) supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="For Clutch Bearing (One-Way / Sprag) applications, this solution supports rotating loads while reducing friction, making it suitable for motors, conveyors, pumps, fans, and general machinery." data-fr="Pour les applications de Clutch Bearing (One-Way / Sprag), cette solution supporte les charges rotatives tout en réduisant les frottements, idéal pour moteurs, convoyeurs, pompes, ventilateurs et machines industrielles.">Pour les applications de Clutch Bearing (One-Way / Sprag), cette solution supporte les charges rotatives tout en réduisant les frottements, idéal pour moteurs, convoyeurs, pompes, ventilateurs et machines industrielles.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Wheel Hub Bearing" data-fr="Wheel Hub Bearing">Wheel Hub Bearing</h3>
-<p data-en="The Wheel Hub Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Wheel Hub Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Wheel Hub Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="In Wheel Hub Bearing systems, this component maintains smooth shaft rotation under demanding loads, helping equipment run with less heat, vibration, and wear." data-fr="Dans les systèmes de Wheel Hub Bearing, ce composant maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.">Dans les systèmes de Wheel Hub Bearing, ce composant maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Conveyor Bearing" data-fr="Conveyor Bearing">Conveyor Bearing</h3>
-<p data-en="The Conveyor Bearing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Conveyor Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Conveyor Bearing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="In Conveyor Bearing installations, this component delivers reliable motion in industrial assemblies where load capacity, service life, and accurate alignment matter." data-fr="Dans les installations de Conveyor Bearing, ce composant assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.">Dans les installations de Conveyor Bearing, ce composant assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Shaft Collar" data-fr="Shaft Collar">Shaft Collar</h3>
-<p data-en="The Shaft Collar transmits rotation or provides a precision guide surface for bearings, couplings, and linear motion assemblies." data-fr="Le Shaft Collar transmet la rotation ou fournit une surface de guidage précise pour roulements, accouplements et ensembles linéaires.">Le Shaft Collar transmet la rotation ou fournit une surface de guidage précise pour roulements, accouplements et ensembles linéaires.</p>
+<p data-en="Specified for Shaft Collar use, it helps secure, protect, or locate rotating assemblies so machinery stays aligned during continuous industrial operation." data-fr="Sélectionné pour l’usage de Shaft Collar, il aide à sécuriser, protéger ou positionner les ensembles rotatifs afin de maintenir l’alignement des machines en service continu.">Sélectionné pour l’usage de Shaft Collar, il aide à sécuriser, protéger ou positionner les ensembles rotatifs afin de maintenir l’alignement des machines en service continu.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Shaft Coupling" data-fr="Shaft Coupling">Shaft Coupling</h3>
-<p data-en="The Shaft Coupling transmits rotation or provides a precision guide surface for bearings, couplings, and linear motion assemblies." data-fr="Le Shaft Coupling transmet la rotation ou fournit une surface de guidage précise pour roulements, accouplements et ensembles linéaires.">Le Shaft Coupling transmet la rotation ou fournit une surface de guidage précise pour roulements, accouplements et ensembles linéaires.</p>
+<p data-en="Across industrial shaft coupling projects, it maintains smooth shaft rotation under demanding loads, helping equipment run with less heat, vibration, and wear." data-fr="Dans les projets industriels de Shaft Coupling, il maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.">Dans les projets industriels de Shaft Coupling, il maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Keyed Shaft" data-fr="Keyed Shaft">Keyed Shaft</h3>
-<p data-en="The Keyed Shaft transmits rotation or provides a precision guide surface for bearings, couplings, and linear motion assemblies." data-fr="Le Keyed Shaft transmet la rotation ou fournit une surface de guidage précise pour roulements, accouplements et ensembles linéaires.">Le Keyed Shaft transmet la rotation ou fournit une surface de guidage précise pour roulements, accouplements et ensembles linéaires.</p>
+<p data-en="For Keyed Shaft applications, this solution delivers reliable motion in industrial assemblies where load capacity, service life, and accurate alignment matter." data-fr="Pour les applications de Keyed Shaft, cette solution assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.">Pour les applications de Keyed Shaft, cette solution assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Splined Shaft" data-fr="Splined Shaft">Splined Shaft</h3>
-<p data-en="The Splined Shaft transmits rotation or provides a precision guide surface for bearings, couplings, and linear motion assemblies." data-fr="Le Splined Shaft transmet la rotation ou fournit une surface de guidage précise pour roulements, accouplements et ensembles linéaires.">Le Splined Shaft transmet la rotation ou fournit une surface de guidage précise pour roulements, accouplements et ensembles linéaires.</p>
+<p data-en="In Splined Shaft systems, this component supports rotating loads while reducing friction, making it suitable for motors, conveyors, pumps, fans, and general machinery." data-fr="Dans les systèmes de Splined Shaft, ce composant supporte les charges rotatives tout en réduisant les frottements, idéal pour moteurs, convoyeurs, pompes, ventilateurs et machines industrielles.">Dans les systèmes de Splined Shaft, ce composant supporte les charges rotatives tout en réduisant les frottements, idéal pour moteurs, convoyeurs, pompes, ventilateurs et machines industrielles.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Shaft Extension" data-fr="Shaft Extension">Shaft Extension</h3>
-<p data-en="The Shaft Extension transmits rotation or provides a precision guide surface for bearings, couplings, and linear motion assemblies." data-fr="Le Shaft Extension transmet la rotation ou fournit une surface de guidage précise pour roulements, accouplements et ensembles linéaires.">Le Shaft Extension transmet la rotation ou fournit une surface de guidage précise pour roulements, accouplements et ensembles linéaires.</p>
+<p data-en="In Shaft Extension installations, this component maintains smooth shaft rotation under demanding loads, helping equipment run with less heat, vibration, and wear." data-fr="Dans les installations de Shaft Extension, ce composant maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.">Dans les installations de Shaft Extension, ce composant maintient une rotation fluide de l’arbre sous charges exigeantes, avec moins de chaleur, de vibrations et d’usure.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Bearing Housing" data-fr="Bearing Housing">Bearing Housing</h3>
-<p data-en="The Bearing Housing supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Bearing Housing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Bearing Housing supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="Specified for Bearing Housing use, it delivers reliable motion in industrial assemblies where load capacity, service life, and accurate alignment matter." data-fr="Sélectionné pour l’usage de Bearing Housing, il assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.">Sélectionné pour l’usage de Bearing Housing, il assure un mouvement fiable dans les ensembles industriels où capacité de charge, durée de vie et alignement précis sont importants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Bearing Seal" data-fr="Bearing Seal">Bearing Seal</h3>
-<p data-en="The Bearing Seal supports rotating loads while reducing friction, controlling alignment, and extending machinery service life." data-fr="Le Bearing Seal supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.">Le Bearing Seal supporte les charges rotatives tout en réduisant la friction, maîtrisant l’alignement et prolongeant la durée de vie machine.</p>
+<p data-en="Across industrial bearing seal projects, it helps secure, protect, or locate rotating assemblies so machinery stays aligned during continuous industrial operation." data-fr="Dans les projets industriels de Bearing Seal, il aide à sécuriser, protéger ou positionner les ensembles rotatifs afin de maintenir l’alignement des machines en service continu.">Dans les projets industriels de Bearing Seal, il aide à sécuriser, protéger ou positionner les ensembles rotatifs afin de maintenir l’alignement des machines en service continu.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Retaining Ring" data-fr="Retaining Ring">Retaining Ring</h3>
-<p data-en="The Retaining Ring supports mechanical motion, load carrying, alignment, or equipment assembly in industrial machinery." data-fr="Le Retaining Ring soutient le mouvement mécanique, la reprise de charge, l’alignement ou l’assemblage d’équipements industriels.">Le Retaining Ring soutient le mouvement mécanique, la reprise de charge, l’alignement ou l’assemblage d’équipements industriels.</p>
+<p data-en="For Retaining Ring applications, this solution provides a compact mechanical interface for shaft support, spacing, sealing, or retention in demanding equipment layouts." data-fr="Pour les applications de Retaining Ring, cette solution offre une interface mécanique compacte pour support d’arbre, espacement, étanchéité ou retenue dans des équipements exigeants.">Pour les applications de Retaining Ring, cette solution offre une interface mécanique compacte pour support d’arbre, espacement, étanchéité ou retenue dans des équipements exigeants.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Lock Nut" data-fr="Lock Nut">Lock Nut</h3>
-<p data-en="The Lock Nut converts rotary input into controlled linear motion for positioning, lifting, adjustment, or automation tasks." data-fr="Le Lock Nut transforme une entrée rotative en mouvement linéaire contrôlé pour positionnement, levage, réglage ou automatisation.">Le Lock Nut transforme une entrée rotative en mouvement linéaire contrôlé pour positionnement, levage, réglage ou automatisation.</p>
+<p data-en="In Lock Nut systems, this component converts rotary input into accurate linear travel for positioning axes, lifting mechanisms, and automated adjustment systems." data-fr="Dans les systèmes de Lock Nut, ce composant transforme la rotation en déplacement linéaire précis pour axes de positionnement, mécanismes de levage et réglages automatisés.">Dans les systèmes de Lock Nut, ce composant transforme la rotation en déplacement linéaire précis pour axes de positionnement, mécanismes de levage et réglages automatisés.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Lock Washer" data-fr="Lock Washer">Lock Washer</h3>
-<p data-en="The Lock Washer supports mechanical motion, load carrying, alignment, or equipment assembly in industrial machinery." data-fr="Le Lock Washer soutient le mouvement mécanique, la reprise de charge, l’alignement ou l’assemblage d’équipements industriels.">Le Lock Washer soutient le mouvement mécanique, la reprise de charge, l’alignement ou l’assemblage d’équipements industriels.</p>
+<p data-en="In Lock Washer installations, this component provides a compact mechanical interface for shaft support, spacing, sealing, or retention in demanding equipment layouts." data-fr="Dans les installations de Lock Washer, ce composant offre une interface mécanique compacte pour support d’arbre, espacement, étanchéité ou retenue dans des équipements exigeants.">Dans les installations de Lock Washer, ce composant offre une interface mécanique compacte pour support d’arbre, espacement, étanchéité ou retenue dans des équipements exigeants.</p>
 </a>
 </div>
 </main>
-<footer class="footer-shell">
+<footer style="background: #0a0c0f; border-top: 1px solid var(--border-color); padding: 60px 0 30px 0; margin-top: 80px;">
 <div class="container grid-3" style="padding: 0 24px 40px 24px;">
 <div>
-<img alt="SUJO" class="site-logo" decoding="async" fetchpriority="high" loading="eager" src="logo.png"/>
+<img alt="SUJO" src="logo.png" style="height: 40px; margin-bottom: 16px;"/>
 <p data-en="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, Democratic Republic of Congo" data-fr="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, République Démocratique du Congo" style="color: var(--text-muted); font-size: 0.9rem;">SUJO Engineering Consulting SARL<br/>Kinshasa, République Démocratique du Congo</p>
 </div>
 <div>
 <h4 data-en="Technology Index" data-fr="Matrices Technologiques" style="margin-bottom: 16px; font-size: 0.95rem;">Matrices Technologiques</h4>
-<p style="font-size: 0.9rem; margin-bottom: 8px;"><a data-en="Global Product Index" data-fr="Index Global des Produits" href="products.html" style="color: var(--text-muted); text-decoration: none;">Index Global des Produits</a></p>
-<p style="font-size: 0.9rem; margin-bottom: 8px;"><a data-en="Partners" data-fr="Partenaires" href="partners.html" style="color: var(--text-muted); text-decoration: none;">Partenaires</a></p>
+<p style="font-size: 0.9rem; margin-bottom: 8px;">Index Global des Produits</p>
+<p style="font-size: 0.9rem; margin-bottom: 8px;">Marques Validées</p>
 </div>
 <div>
 <h4 data-en="Direct Channels" data-fr="Canaux Directs" style="margin-bottom: 16px; font-size: 0.95rem;">Canaux Directs</h4>
-<p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;"><span data-en="DRC:" data-fr="RDC:">RDC:</span> +243 974 570 630</p>
+<p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;">DRC: +243 974 570 630</p>
 <p data-en="Email: contact@sujo-engineering.com" data-fr="Email: contact@sujo-engineering.com" style="color: var(--text-muted); font-size: 0.9rem;">Email: contact@sujo-engineering.com</p>
 </div>
 </div>
 <div data-en="© 2026 SUJO Engineering Consulting SARL. All rights reserved." data-fr="© 2026 SUJO Engineering Consulting SARL. Tous droits réservés." style="text-align: center; border-top: 1px solid var(--border-color); padding-top: 30px; font-size: 0.8rem; color: var(--text-muted);">
-            © 2026 SUJO Engineering Consulting SARL. All rights reserved.
-        </div>
+© 2026 SUJO Engineering Consulting SARL. All rights reserved.
+</div>
 </footer>
+<script>
+function applyLang(lang) {
+    document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+        el.innerHTML = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+    });
+    document.documentElement.lang = lang;
+}
 
+function setLang(lang) {
+    localStorage.setItem('sujoLang', lang);
+    const btnFr = document.getElementById('btn-fr');
+    const btnEn = document.getElementById('btn-en');
+    if (btnFr && btnEn) {
+        btnFr.classList.toggle('active', lang === 'fr');
+        btnEn.classList.toggle('active', lang === 'en');
+    }
+    applyLang(lang);
+}
+
+(function () {
+    const saved = localStorage.getItem('sujoLang') || 'fr';
+    applyLang(saved);
+    const btnFr = document.getElementById('btn-fr');
+    const btnEn = document.getElementById('btn-en');
+    if (btnFr && btnEn) {
+        btnFr.classList.toggle('active', saved === 'fr');
+        btnEn.classList.toggle('active', saved === 'en');
+    }
+})();
+
+function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+    document.querySelector('.hamburger').classList.toggle('open');
+}
+
+document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        if (window.innerWidth <= 900) {
+            e.preventDefault();
+            link.parentElement.classList.toggle('open');
+        }
+    });
+});
+
+document.querySelectorAll('#mobileMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (link.parentElement.classList.contains('dropdown')) return;
+        document.getElementById('mobileMenu').classList.remove('open');
+        document.querySelector('.hamburger').classList.remove('open');
+    });
+});
+</script>
 </body>
 </html>

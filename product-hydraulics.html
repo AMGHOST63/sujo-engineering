@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="style.css" rel="stylesheet"/>
-
+<script defer="" src="app.js"></script>
 <style>
 header{position:sticky;top:0;z-index:1000;backdrop-filter:blur(14px);}
 html{scroll-padding-top:96px;}
@@ -17,23 +17,23 @@ html{scroll-padding-top:96px;}
 .card-system{cursor:default;}
 .card-system p{margin-bottom:0;}
 </style>
-<script defer="True" src="app.js"></script></head>
-<body><a class="skip-link" data-en="Skip to main content" data-fr="Aller au contenu principal" href="#main-content">Aller au contenu principal</a>
+</head>
+<body>
 <!-- NAV BAR -->
 <header>
-<a class="nav-logo" href="index.html">
-<img alt="SUJO" class="site-logo" decoding="async" fetchpriority="high" loading="eager" src="logo.png"/>
+<a class="nav-logo" href="https://sujo-engineering.com/index.html">
+<img alt="SUJO" src="logo.png" style="height: 50px;"/>
 </a>
-<nav aria-label="Main navigation">
+<nav>
 <ul class="nav-links" id="mobileMenu">
 <li><a data-en="Home" data-fr="Accueil" href="https://sujo-engineering.com/index.html">Accueil</a></li>
 <li><a data-en="About" data-fr="À Propos" href="https://sujo-engineering.com/about.html">À Propos</a></li>
 <li class="dropdown">
-<a aria-expanded="false" aria-haspopup="true" class="active" data-en="Products ▾" data-fr="Produits ▾" href="https://sujo-engineering.com/products.html">Produits ▾</a>
+<a class="active" data-en="Products ▾" data-fr="Produits ▾" href="https://sujo-engineering.com/products.html">Produits ▾</a>
 <ul class="dropdown-menu">
 <li><a data-en="Mechanical Components" data-fr="Composants Mécaniques" href="product-mechanical.html">Composants Mécaniques</a></li>
 <li><a data-en="Automation &amp; Motion" data-fr="Automatisation &amp; Mouvement" href="product-automation.html">Automatisation &amp; Mouvement</a></li>
-<li><a aria-current="page" class="active" data-en="Hydraulics &amp; Pneumatics" data-fr="Hydraulique &amp; Pneumatique" href="product-hydraulics.html">Hydraulique &amp; Pneumatique</a></li>
+<li><a class="active" data-en="Hydraulics &amp; Pneumatics" data-fr="Hydraulique &amp; Pneumatique" href="product-hydraulics.html">Hydraulique &amp; Pneumatique</a></li>
 <li><a data-en="Industrial Safety" data-fr="Sécurité Industrielle" href="product-safety.html">Sécurité Industrielle</a></li>
 <li><a data-en="Power Transmission" data-fr="Transmission de Puissance" href="product-transmission.html">Transmission de Puissance</a></li>
 <li><a data-en="Industrial Lubrication" data-fr="Lubrification Industrielle" href="product-lubrication.html">Lubrification Industrielle</a></li>
@@ -41,23 +41,17 @@ html{scroll-padding-top:96px;}
 </li>
 <li><a data-en="Partners" data-fr="Partenaires" href="https://sujo-engineering.com/partners.html">Partenaires</a></li>
 <li><a data-en="Contact" data-fr="Contact" href="https://sujo-engineering.com/contact.html">Contact</a></li>
-<li><a class="btn btn-outline nav-account" data-en="My Account" data-fr="Mon Compte" href="https://portal.sujo-engineering.com/" rel="noopener noreferrer" target="_blank">Mon Compte</a></li>
-<li><a class="btn btn-primary" data-en="Request Quote" data-fr="Demander un devis" href="https://sujo-engineering.com/quote.html">Demander un devis</a></li>
-<li>
-<div class="lang-switch">
-<button aria-label="Changer la langue en français" class="active" data-lang-button="fr" id="btn-fr" type="button">FR</button>
-<button aria-label="Switch language to English" data-lang-button="en" id="btn-en" type="button">EN</button>
-</div>
-</li>
-</ul>
+<li><a class="btn btn-outline" data-en="My Account" data-fr="Mon Compte" href="http://129.213.160.94/" style="padding: 8px 16px;" target="_blank">Mon Compte</a></li>
+<li><a class="btn btn-primary" data-en="Request Quote" data-fr="Demander un devis" href="https://sujo-engineering.com/quote.html" style="padding: 8px 16px;">Demander un devis</a></li>
+<li><div class="lang-switch"><button class="active" id="btn-fr" onclick="setLang('fr')" type="button">FR</button><button id="btn-en" onclick="setLang('en')" type="button">EN</button></div></li></ul>
 </nav>
-<div aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation menu" class="hamburger" role="button" tabindex="0">
+<div aria-label="Menu" class="hamburger" onclick="toggleMenu()">
 <span></span>
 <span></span>
 <span></span>
 </div>
 </header>
-<main class="container" id="main-content" tabindex="-1">
+<main class="container">
 <div class="section-header" style="text-align: left;">
 <div class="section-label" data-en="Hydraulics &amp; Pneumatics" data-fr="Hydraulique &amp; Pneumatique">Hydraulique &amp; Pneumatique</div>
 <h1 class="section-title" data-en="Hydraulics Products" data-fr="Produits Hydrauliques" style="font-size: 2.75rem;">Produits Hydrauliques</h1>
@@ -69,251 +63,302 @@ html{scroll-padding-top:96px;}
 <div class="grid-3" style="margin-top: 48px;">
 <a class="card-system">
 <h3 data-en="Hydraulic Pump" data-fr="Hydraulic Pump">Hydraulic Pump</h3>
-<p data-en="The Hydraulic Pump generates hydraulic flow for cylinders, motors, tooling, and fluid-power systems under controlled pressure." data-fr="Le Hydraulic Pump génère le débit hydraulique pour vérins, moteurs, outillage et systèmes de puissance fluide sous pression contrôlée.">Le Hydraulic Pump génère le débit hydraulique pour vérins, moteurs, outillage et systèmes de puissance fluide sous pression contrôlée.</p>
+<p data-en="For Hydraulic Pump applications, this solution generates hydraulic flow for cylinders, motors, presses, and mobile equipment where stable pressure and efficiency are required." data-fr="Pour les applications de Hydraulic Pump, cette solution génère le débit hydraulique pour vérins, moteurs, presses et équipements mobiles nécessitant pression stable et efficacité.">Pour les applications de Hydraulic Pump, cette solution génère le débit hydraulique pour vérins, moteurs, presses et équipements mobiles nécessitant pression stable et efficacité.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Gear Pump" data-fr="Gear Pump">Gear Pump</h3>
-<p data-en="The Gear Pump generates hydraulic flow for cylinders, motors, tooling, and fluid-power systems under controlled pressure." data-fr="Le Gear Pump génère le débit hydraulique pour vérins, moteurs, outillage et systèmes de puissance fluide sous pression contrôlée.">Le Gear Pump génère le débit hydraulique pour vérins, moteurs, outillage et systèmes de puissance fluide sous pression contrôlée.</p>
+<p data-en="In Gear Pump systems, this component supplies fluid power to demanding circuits, helping machinery deliver controlled force under heavy-duty operating conditions." data-fr="Dans les systèmes de Gear Pump, ce composant alimente les circuits en puissance fluide pour permettre aux machines de fournir un effort contrôlé en conditions sévères.">Dans les systèmes de Gear Pump, ce composant alimente les circuits en puissance fluide pour permettre aux machines de fournir un effort contrôlé en conditions sévères.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Vane Pump" data-fr="Vane Pump">Vane Pump</h3>
-<p data-en="The Vane Pump generates hydraulic flow for cylinders, motors, tooling, and fluid-power systems under controlled pressure." data-fr="Le Vane Pump génère le débit hydraulique pour vérins, moteurs, outillage et systèmes de puissance fluide sous pression contrôlée.">Le Vane Pump génère le débit hydraulique pour vérins, moteurs, outillage et systèmes de puissance fluide sous pression contrôlée.</p>
+<p data-en="In Vane Pump installations, this component generates hydraulic flow for cylinders, motors, presses, and mobile equipment where stable pressure and efficiency are required." data-fr="Dans les installations de Vane Pump, ce composant génère le débit hydraulique pour vérins, moteurs, presses et équipements mobiles nécessitant pression stable et efficacité.">Dans les installations de Vane Pump, ce composant génère le débit hydraulique pour vérins, moteurs, presses et équipements mobiles nécessitant pression stable et efficacité.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Piston Pump" data-fr="Piston Pump">Piston Pump</h3>
-<p data-en="The Piston Pump generates hydraulic flow for cylinders, motors, tooling, and fluid-power systems under controlled pressure." data-fr="Le Piston Pump génère le débit hydraulique pour vérins, moteurs, outillage et systèmes de puissance fluide sous pression contrôlée.">Le Piston Pump génère le débit hydraulique pour vérins, moteurs, outillage et systèmes de puissance fluide sous pression contrôlée.</p>
+<p data-en="Specified for Piston Pump use, it supplies fluid power to demanding circuits, helping machinery deliver controlled force under heavy-duty operating conditions." data-fr="Sélectionné pour l’usage de Piston Pump, il alimente les circuits en puissance fluide pour permettre aux machines de fournir un effort contrôlé en conditions sévères.">Sélectionné pour l’usage de Piston Pump, il alimente les circuits en puissance fluide pour permettre aux machines de fournir un effort contrôlé en conditions sévères.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hydraulic Motor" data-fr="Hydraulic Motor">Hydraulic Motor</h3>
-<p data-en="The Hydraulic Motor supports dependable fluid-power operation for mobile equipment, plants, workshops, and industrial machinery." data-fr="Le Hydraulic Motor soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.">Le Hydraulic Motor soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.</p>
+<p data-en="Across industrial hydraulic motor projects, it converts fluid power into controlled mechanical force for lifting, pressing, clamping, steering, or positioning tasks." data-fr="Dans les projets industriels de Hydraulic Motor, il transforme la puissance fluide en effort mécanique contrôlé pour levage, pressage, serrage, direction ou positionnement.">Dans les projets industriels de Hydraulic Motor, il transforme la puissance fluide en effort mécanique contrôlé pour levage, pressage, serrage, direction ou positionnement.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hydraulic Power Unit (HPU)" data-fr="Hydraulic Power Unit (HPU)">Hydraulic Power Unit (HPU)</h3>
-<p data-en="The Hydraulic Power Unit (HPU) supports dependable fluid-power operation for mobile equipment, plants, workshops, and industrial machinery." data-fr="Le Hydraulic Power Unit (HPU) soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.">Le Hydraulic Power Unit (HPU) soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.</p>
+<p data-en="For Hydraulic Power Unit (HPU) applications, this solution helps maintain pressure stability, cleanliness, and serviceability across hydraulic power units and pneumatic installations." data-fr="Pour les applications de Hydraulic Power Unit (HPU), cette solution aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.">Pour les applications de Hydraulic Power Unit (HPU), cette solution aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hydraulic Cylinder (Single-Acting)" data-fr="Hydraulic Cylinder (Single-Acting)">Hydraulic Cylinder (Single-Acting)</h3>
-<p data-en="The Hydraulic Cylinder (Single-Acting) converts hydraulic pressure into linear force for lifting, clamping, pushing, pulling, or positioning equipment." data-fr="Le Hydraulic Cylinder (Single-Acting) transforme la pression hydraulique en force linéaire pour lever, serrer, pousser, tirer ou positionner les équipements.">Le Hydraulic Cylinder (Single-Acting) transforme la pression hydraulique en force linéaire pour lever, serrer, pousser, tirer ou positionner les équipements.</p>
+<p data-en="In Hydraulic Cylinder (Single-Acting) systems, this component converts fluid power into controlled mechanical force for lifting, pressing, clamping, steering, or positioning tasks." data-fr="Dans les systèmes de Hydraulic Cylinder (Single-Acting), ce composant transforme la puissance fluide en effort mécanique contrôlé pour levage, pressage, serrage, direction ou positionnement.">Dans les systèmes de Hydraulic Cylinder (Single-Acting), ce composant transforme la puissance fluide en effort mécanique contrôlé pour levage, pressage, serrage, direction ou positionnement.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hydraulic Cylinder (Double-Acting)" data-fr="Hydraulic Cylinder (Double-Acting)">Hydraulic Cylinder (Double-Acting)</h3>
-<p data-en="The Hydraulic Cylinder (Double-Acting) converts hydraulic pressure into linear force for lifting, clamping, pushing, pulling, or positioning equipment." data-fr="Le Hydraulic Cylinder (Double-Acting) transforme la pression hydraulique en force linéaire pour lever, serrer, pousser, tirer ou positionner les équipements.">Le Hydraulic Cylinder (Double-Acting) transforme la pression hydraulique en force linéaire pour lever, serrer, pousser, tirer ou positionner les équipements.</p>
+<p data-en="In Hydraulic Cylinder (Double-Acting) installations, this component provides dependable actuation where high force density and smooth movement are needed in industrial or mobile machinery." data-fr="Dans les installations de Hydraulic Cylinder (Double-Acting), ce composant fournit une action fiable lorsque forte densité de puissance et mouvement souple sont nécessaires sur machines industrielles ou mobiles.">Dans les installations de Hydraulic Cylinder (Double-Acting), ce composant fournit une action fiable lorsque forte densité de puissance et mouvement souple sont nécessaires sur machines industrielles ou mobiles.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Telescopic Cylinder" data-fr="Telescopic Cylinder">Telescopic Cylinder</h3>
-<p data-en="The Telescopic Cylinder converts hydraulic pressure into linear force for lifting, clamping, pushing, pulling, or positioning equipment." data-fr="Le Telescopic Cylinder transforme la pression hydraulique en force linéaire pour lever, serrer, pousser, tirer ou positionner les équipements.">Le Telescopic Cylinder transforme la pression hydraulique en force linéaire pour lever, serrer, pousser, tirer ou positionner les équipements.</p>
+<p data-en="Specified for Telescopic Cylinder use, it converts fluid power into controlled mechanical force for lifting, pressing, clamping, steering, or positioning tasks." data-fr="Sélectionné pour l’usage de Telescopic Cylinder, il transforme la puissance fluide en effort mécanique contrôlé pour levage, pressage, serrage, direction ou positionnement.">Sélectionné pour l’usage de Telescopic Cylinder, il transforme la puissance fluide en effort mécanique contrôlé pour levage, pressage, serrage, direction ou positionnement.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Tie-Rod Cylinder" data-fr="Tie-Rod Cylinder">Tie-Rod Cylinder</h3>
-<p data-en="The Tie-Rod Cylinder converts hydraulic pressure into linear force for lifting, clamping, pushing, pulling, or positioning equipment." data-fr="Le Tie-Rod Cylinder transforme la pression hydraulique en force linéaire pour lever, serrer, pousser, tirer ou positionner les équipements.">Le Tie-Rod Cylinder transforme la pression hydraulique en force linéaire pour lever, serrer, pousser, tirer ou positionner les équipements.</p>
+<p data-en="Across industrial tie-rod cylinder projects, it provides dependable actuation where high force density and smooth movement are needed in industrial or mobile machinery." data-fr="Dans les projets industriels de Tie-Rod Cylinder, il fournit une action fiable lorsque forte densité de puissance et mouvement souple sont nécessaires sur machines industrielles ou mobiles.">Dans les projets industriels de Tie-Rod Cylinder, il fournit une action fiable lorsque forte densité de puissance et mouvement souple sont nécessaires sur machines industrielles ou mobiles.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Welded Cylinder" data-fr="Welded Cylinder">Welded Cylinder</h3>
-<p data-en="The Welded Cylinder converts hydraulic pressure into linear force for lifting, clamping, pushing, pulling, or positioning equipment." data-fr="Le Welded Cylinder transforme la pression hydraulique en force linéaire pour lever, serrer, pousser, tirer ou positionner les équipements.">Le Welded Cylinder transforme la pression hydraulique en force linéaire pour lever, serrer, pousser, tirer ou positionner les équipements.</p>
+<p data-en="For Welded Cylinder applications, this solution converts fluid power into controlled mechanical force for lifting, pressing, clamping, steering, or positioning tasks." data-fr="Pour les applications de Welded Cylinder, cette solution transforme la puissance fluide en effort mécanique contrôlé pour levage, pressage, serrage, direction ou positionnement.">Pour les applications de Welded Cylinder, cette solution transforme la puissance fluide en effort mécanique contrôlé pour levage, pressage, serrage, direction ou positionnement.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hydraulic Valve (Directional Control)" data-fr="Hydraulic Valve (Directional Control)">Hydraulic Valve (Directional Control)</h3>
-<p data-en="The Hydraulic Valve (Directional Control) controls hydraulic direction, pressure, or flow to keep machinery movement safe, smooth, and predictable." data-fr="Le Hydraulic Valve (Directional Control) contrôle la direction, la pression ou le débit hydraulique pour un mouvement machine sûr, souple et prévisible.">Le Hydraulic Valve (Directional Control) contrôle la direction, la pression ou le débit hydraulique pour un mouvement machine sûr, souple et prévisible.</p>
+<p data-en="In Hydraulic Valve (Directional Control) systems, this component improves circuit performance by regulating fluid movement, protecting components, and stabilizing machine behavior." data-fr="Dans les systèmes de Hydraulic Valve (Directional Control), ce composant améliore la performance du circuit en régulant le fluide, protégeant les composants et stabilisant le comportement machine.">Dans les systèmes de Hydraulic Valve (Directional Control), ce composant améliore la performance du circuit en régulant le fluide, protégeant les composants et stabilisant le comportement machine.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Proportional Valve" data-fr="Proportional Valve">Proportional Valve</h3>
-<p data-en="The Proportional Valve controls hydraulic direction, pressure, or flow to keep machinery movement safe, smooth, and predictable." data-fr="Le Proportional Valve contrôle la direction, la pression ou le débit hydraulique pour un mouvement machine sûr, souple et prévisible.">Le Proportional Valve contrôle la direction, la pression ou le débit hydraulique pour un mouvement machine sûr, souple et prévisible.</p>
+<p data-en="In Proportional Valve installations, this component controls hydraulic direction, pressure, or flow so actuators respond accurately to operator commands and process demands." data-fr="Dans les installations de Proportional Valve, ce composant contrôle direction, pression ou débit hydraulique afin que les actionneurs répondent précisément aux commandes et besoins du procédé.">Dans les installations de Proportional Valve, ce composant contrôle direction, pression ou débit hydraulique afin que les actionneurs répondent précisément aux commandes et besoins du procédé.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Servo Valve" data-fr="Servo Valve">Servo Valve</h3>
-<p data-en="The Servo Valve controls hydraulic direction, pressure, or flow to keep machinery movement safe, smooth, and predictable." data-fr="Le Servo Valve contrôle la direction, la pression ou le débit hydraulique pour un mouvement machine sûr, souple et prévisible.">Le Servo Valve contrôle la direction, la pression ou le débit hydraulique pour un mouvement machine sûr, souple et prévisible.</p>
+<p data-en="Specified for Servo Valve use, it improves circuit performance by regulating fluid movement, protecting components, and stabilizing machine behavior." data-fr="Sélectionné pour l’usage de Servo Valve, il améliore la performance du circuit en régulant le fluide, protégeant les composants et stabilisant le comportement machine.">Sélectionné pour l’usage de Servo Valve, il améliore la performance du circuit en régulant le fluide, protégeant les composants et stabilisant le comportement machine.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Pressure Relief Valve" data-fr="Pressure Relief Valve">Pressure Relief Valve</h3>
-<p data-en="The Pressure Relief Valve controls hydraulic direction, pressure, or flow to keep machinery movement safe, smooth, and predictable." data-fr="Le Pressure Relief Valve contrôle la direction, la pression ou le débit hydraulique pour un mouvement machine sûr, souple et prévisible.">Le Pressure Relief Valve contrôle la direction, la pression ou le débit hydraulique pour un mouvement machine sûr, souple et prévisible.</p>
+<p data-en="Across industrial pressure relief valve projects, it controls hydraulic direction, pressure, or flow so actuators respond accurately to operator commands and process demands." data-fr="Dans les projets industriels de Pressure Relief Valve, il contrôle direction, pression ou débit hydraulique afin que les actionneurs répondent précisément aux commandes et besoins du procédé.">Dans les projets industriels de Pressure Relief Valve, il contrôle direction, pression ou débit hydraulique afin que les actionneurs répondent précisément aux commandes et besoins du procédé.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Pressure Reducing Valve" data-fr="Pressure Reducing Valve">Pressure Reducing Valve</h3>
-<p data-en="The Pressure Reducing Valve controls hydraulic direction, pressure, or flow to keep machinery movement safe, smooth, and predictable." data-fr="Le Pressure Reducing Valve contrôle la direction, la pression ou le débit hydraulique pour un mouvement machine sûr, souple et prévisible.">Le Pressure Reducing Valve contrôle la direction, la pression ou le débit hydraulique pour un mouvement machine sûr, souple et prévisible.</p>
+<p data-en="For Pressure Reducing Valve applications, this solution improves circuit performance by regulating fluid movement, protecting components, and stabilizing machine behavior." data-fr="Pour les applications de Pressure Reducing Valve, cette solution améliore la performance du circuit en régulant le fluide, protégeant les composants et stabilisant le comportement machine.">Pour les applications de Pressure Reducing Valve, cette solution améliore la performance du circuit en régulant le fluide, protégeant les composants et stabilisant le comportement machine.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Flow Control Valve" data-fr="Flow Control Valve">Flow Control Valve</h3>
-<p data-en="The Flow Control Valve controls hydraulic direction, pressure, or flow to keep machinery movement safe, smooth, and predictable." data-fr="Le Flow Control Valve contrôle la direction, la pression ou le débit hydraulique pour un mouvement machine sûr, souple et prévisible.">Le Flow Control Valve contrôle la direction, la pression ou le débit hydraulique pour un mouvement machine sûr, souple et prévisible.</p>
+<p data-en="In Flow Control Valve systems, this component controls hydraulic direction, pressure, or flow so actuators respond accurately to operator commands and process demands." data-fr="Dans les systèmes de Flow Control Valve, ce composant contrôle direction, pression ou débit hydraulique afin que les actionneurs répondent précisément aux commandes et besoins du procédé.">Dans les systèmes de Flow Control Valve, ce composant contrôle direction, pression ou débit hydraulique afin que les actionneurs répondent précisément aux commandes et besoins du procédé.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Check Valve" data-fr="Check Valve">Check Valve</h3>
-<p data-en="The Check Valve controls hydraulic direction, pressure, or flow to keep machinery movement safe, smooth, and predictable." data-fr="Le Check Valve contrôle la direction, la pression ou le débit hydraulique pour un mouvement machine sûr, souple et prévisible.">Le Check Valve contrôle la direction, la pression ou le débit hydraulique pour un mouvement machine sûr, souple et prévisible.</p>
+<p data-en="In Check Valve installations, this component improves circuit performance by regulating fluid movement, protecting components, and stabilizing machine behavior." data-fr="Dans les installations de Check Valve, ce composant améliore la performance du circuit en régulant le fluide, protégeant les composants et stabilisant le comportement machine.">Dans les installations de Check Valve, ce composant améliore la performance du circuit en régulant le fluide, protégeant les composants et stabilisant le comportement machine.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Sequence Valve" data-fr="Sequence Valve">Sequence Valve</h3>
-<p data-en="The Sequence Valve controls hydraulic direction, pressure, or flow to keep machinery movement safe, smooth, and predictable." data-fr="Le Sequence Valve contrôle la direction, la pression ou le débit hydraulique pour un mouvement machine sûr, souple et prévisible.">Le Sequence Valve contrôle la direction, la pression ou le débit hydraulique pour un mouvement machine sûr, souple et prévisible.</p>
+<p data-en="Specified for Sequence Valve use, it controls hydraulic direction, pressure, or flow so actuators respond accurately to operator commands and process demands." data-fr="Sélectionné pour l’usage de Sequence Valve, il contrôle direction, pression ou débit hydraulique afin que les actionneurs répondent précisément aux commandes et besoins du procédé.">Sélectionné pour l’usage de Sequence Valve, il contrôle direction, pression ou débit hydraulique afin que les actionneurs répondent précisément aux commandes et besoins du procédé.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Solenoid Operated Valve" data-fr="Solenoid Operated Valve">Solenoid Operated Valve</h3>
-<p data-en="The Solenoid Operated Valve controls hydraulic direction, pressure, or flow to keep machinery movement safe, smooth, and predictable." data-fr="Le Solenoid Operated Valve contrôle la direction, la pression ou le débit hydraulique pour un mouvement machine sûr, souple et prévisible.">Le Solenoid Operated Valve contrôle la direction, la pression ou le débit hydraulique pour un mouvement machine sûr, souple et prévisible.</p>
+<p data-en="Across industrial solenoid operated valve projects, it improves circuit performance by regulating fluid movement, protecting components, and stabilizing machine behavior." data-fr="Dans les projets industriels de Solenoid Operated Valve, il améliore la performance du circuit en régulant le fluide, protégeant les composants et stabilisant le comportement machine.">Dans les projets industriels de Solenoid Operated Valve, il améliore la performance du circuit en régulant le fluide, protégeant les composants et stabilisant le comportement machine.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Manifold Block" data-fr="Manifold Block">Manifold Block</h3>
-<p data-en="The Manifold Block supports dependable fluid-power operation for mobile equipment, plants, workshops, and industrial machinery." data-fr="Le Manifold Block soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.">Le Manifold Block soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.</p>
+<p data-en="For Manifold Block applications, this solution supports reliable fluid-power operation by monitoring, storing, sealing, or conditioning hydraulic and pneumatic circuits." data-fr="Pour les applications de Manifold Block, cette solution soutient le fonctionnement fiable des systèmes fluides en surveillant, stockant, étanchéifiant ou conditionnant les circuits.">Pour les applications de Manifold Block, cette solution soutient le fonctionnement fiable des systèmes fluides en surveillant, stockant, étanchéifiant ou conditionnant les circuits.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hydraulic Filter" data-fr="Hydraulic Filter">Hydraulic Filter</h3>
-<p data-en="The Hydraulic Filter removes contamination from hydraulic oil to protect pumps, valves, seals, and precision components." data-fr="Le Hydraulic Filter élimine les contaminants de l’huile hydraulique afin de protéger pompes, valves, joints et composants de précision.">Le Hydraulic Filter élimine les contaminants de l’huile hydraulique afin de protéger pompes, valves, joints et composants de précision.</p>
+<p data-en="In Hydraulic Filter systems, this component extends equipment life by keeping oil or air cleaner through continuous filtration in demanding operating environments." data-fr="Dans les systèmes de Hydraulic Filter, ce composant prolonge la durée de vie des équipements en maintenant l’huile ou l’air plus propre grâce à une filtration continue.">Dans les systèmes de Hydraulic Filter, ce composant prolonge la durée de vie des équipements en maintenant l’huile ou l’air plus propre grâce à une filtration continue.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Return Line Filter" data-fr="Return Line Filter">Return Line Filter</h3>
-<p data-en="The Return Line Filter removes contamination from hydraulic oil to protect pumps, valves, seals, and precision components." data-fr="Le Return Line Filter élimine les contaminants de l’huile hydraulique afin de protéger pompes, valves, joints et composants de précision.">Le Return Line Filter élimine les contaminants de l’huile hydraulique afin de protéger pompes, valves, joints et composants de précision.</p>
+<p data-en="In Return Line Filter installations, this component protects fluid systems by removing contamination that can damage pumps, valves, seals, and precision components." data-fr="Dans les installations de Return Line Filter, ce composant protège les systèmes fluides en retirant les contaminants pouvant endommager pompes, valves, joints et composants de précision.">Dans les installations de Return Line Filter, ce composant protège les systèmes fluides en retirant les contaminants pouvant endommager pompes, valves, joints et composants de précision.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Pressure Line Filter" data-fr="Pressure Line Filter">Pressure Line Filter</h3>
-<p data-en="The Pressure Line Filter removes contamination from hydraulic oil to protect pumps, valves, seals, and precision components." data-fr="Le Pressure Line Filter élimine les contaminants de l’huile hydraulique afin de protéger pompes, valves, joints et composants de précision.">Le Pressure Line Filter élimine les contaminants de l’huile hydraulique afin de protéger pompes, valves, joints et composants de précision.</p>
+<p data-en="Specified for Pressure Line Filter use, it extends equipment life by keeping oil or air cleaner through continuous filtration in demanding operating environments." data-fr="Sélectionné pour l’usage de Pressure Line Filter, il prolonge la durée de vie des équipements en maintenant l’huile ou l’air plus propre grâce à une filtration continue.">Sélectionné pour l’usage de Pressure Line Filter, il prolonge la durée de vie des équipements en maintenant l’huile ou l’air plus propre grâce à une filtration continue.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Suction Filter" data-fr="Suction Filter">Suction Filter</h3>
-<p data-en="The Suction Filter removes contamination from hydraulic oil to protect pumps, valves, seals, and precision components." data-fr="Le Suction Filter élimine les contaminants de l’huile hydraulique afin de protéger pompes, valves, joints et composants de précision.">Le Suction Filter élimine les contaminants de l’huile hydraulique afin de protéger pompes, valves, joints et composants de précision.</p>
+<p data-en="Across industrial suction filter projects, it protects fluid systems by removing contamination that can damage pumps, valves, seals, and precision components." data-fr="Dans les projets industriels de Suction Filter, il protège les systèmes fluides en retirant les contaminants pouvant endommager pompes, valves, joints et composants de précision.">Dans les projets industriels de Suction Filter, il protège les systèmes fluides en retirant les contaminants pouvant endommager pompes, valves, joints et composants de précision.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hydraulic Reservoir / Tank" data-fr="Hydraulic Reservoir / Tank">Hydraulic Reservoir / Tank</h3>
-<p data-en="The Hydraulic Reservoir / Tank supports dependable fluid-power operation for mobile equipment, plants, workshops, and industrial machinery." data-fr="Le Hydraulic Reservoir / Tank soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.">Le Hydraulic Reservoir / Tank soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.</p>
+<p data-en="For Hydraulic Reservoir / Tank applications, this solution helps maintain pressure stability, cleanliness, and serviceability across hydraulic power units and pneumatic installations." data-fr="Pour les applications de Hydraulic Reservoir / Tank, cette solution aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.">Pour les applications de Hydraulic Reservoir / Tank, cette solution aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Breather Cap" data-fr="Breather Cap">Breather Cap</h3>
-<p data-en="The Breather Cap supports dependable fluid-power operation for mobile equipment, plants, workshops, and industrial machinery." data-fr="Le Breather Cap soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.">Le Breather Cap soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.</p>
+<p data-en="In Breather Cap systems, this component protects fluid systems by removing contamination that can damage pumps, valves, seals, and precision components." data-fr="Dans les systèmes de Breather Cap, ce composant protège les systèmes fluides en retirant les contaminants pouvant endommager pompes, valves, joints et composants de précision.">Dans les systèmes de Breather Cap, ce composant protège les systèmes fluides en retirant les contaminants pouvant endommager pompes, valves, joints et composants de précision.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Level Gauge" data-fr="Level Gauge">Level Gauge</h3>
-<p data-en="The Level Gauge helps technicians measure hydraulic performance, diagnose faults, and verify operating conditions in the field." data-fr="Le Level Gauge aide les techniciens à mesurer la performance hydraulique, diagnostiquer les défauts et vérifier les conditions d’exploitation.">Le Level Gauge aide les techniciens à mesurer la performance hydraulique, diagnostiquer les défauts et vérifier les conditions d’exploitation.</p>
+<p data-en="In Level Gauge installations, this component helps maintain pressure stability, cleanliness, and serviceability across hydraulic power units and pneumatic installations." data-fr="Dans les installations de Level Gauge, ce composant aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.">Dans les installations de Level Gauge, ce composant aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hydraulic Accumulator (Bladder)" data-fr="Hydraulic Accumulator (Bladder)">Hydraulic Accumulator (Bladder)</h3>
-<p data-en="The Hydraulic Accumulator (Bladder) supports dependable fluid-power operation for mobile equipment, plants, workshops, and industrial machinery." data-fr="Le Hydraulic Accumulator (Bladder) soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.">Le Hydraulic Accumulator (Bladder) soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.</p>
+<p data-en="Specified for Hydraulic Accumulator (Bladder) use, it supports reliable fluid-power operation by monitoring, storing, sealing, or conditioning hydraulic and pneumatic circuits." data-fr="Sélectionné pour l’usage de Hydraulic Accumulator (Bladder), il soutient le fonctionnement fiable des systèmes fluides en surveillant, stockant, étanchéifiant ou conditionnant les circuits.">Sélectionné pour l’usage de Hydraulic Accumulator (Bladder), il soutient le fonctionnement fiable des systèmes fluides en surveillant, stockant, étanchéifiant ou conditionnant les circuits.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hydraulic Accumulator (Piston)" data-fr="Hydraulic Accumulator (Piston)">Hydraulic Accumulator (Piston)</h3>
-<p data-en="The Hydraulic Accumulator (Piston) supports dependable fluid-power operation for mobile equipment, plants, workshops, and industrial machinery." data-fr="Le Hydraulic Accumulator (Piston) soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.">Le Hydraulic Accumulator (Piston) soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.</p>
+<p data-en="Across industrial hydraulic accumulator (piston) projects, it helps maintain pressure stability, cleanliness, and serviceability across hydraulic power units and pneumatic installations." data-fr="Dans les projets industriels de Hydraulic Accumulator (Piston), il aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.">Dans les projets industriels de Hydraulic Accumulator (Piston), il aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hydraulic Hose" data-fr="Hydraulic Hose">Hydraulic Hose</h3>
-<p data-en="The Hydraulic Hose connects hydraulic circuits securely while handling pressure, vibration, routing needs, and maintenance access." data-fr="Le Hydraulic Hose raccorde les circuits hydrauliques de façon sûre en tenant compte de la pression, des vibrations et de la maintenance.">Le Hydraulic Hose raccorde les circuits hydrauliques de façon sûre en tenant compte de la pression, des vibrations et de la maintenance.</p>
+<p data-en="For Hydraulic Hose applications, this solution carries pressurized fluid between components while supporting flexible routing, secure connections, and dependable sealing." data-fr="Pour les applications de Hydraulic Hose, cette solution transporte le fluide sous pression entre composants avec routage flexible, connexions sûres et étanchéité fiable.">Pour les applications de Hydraulic Hose, cette solution transporte le fluide sous pression entre composants avec routage flexible, connexions sûres et étanchéité fiable.</p>
 </a>
 <a class="card-system">
 <h3 data-en="High-Pressure Hose Assembly" data-fr="High-Pressure Hose Assembly">High-Pressure Hose Assembly</h3>
-<p data-en="The High-Pressure Hose Assembly connects hydraulic circuits securely while handling pressure, vibration, routing needs, and maintenance access." data-fr="Le High-Pressure Hose Assembly raccorde les circuits hydrauliques de façon sûre en tenant compte de la pression, des vibrations et de la maintenance.">Le High-Pressure Hose Assembly raccorde les circuits hydrauliques de façon sûre en tenant compte de la pression, des vibrations et de la maintenance.</p>
+<p data-en="In High-Pressure Hose Assembly systems, this component keeps hydraulic and pneumatic lines serviceable in mobile and plant equipment where vibration and pressure changes are common." data-fr="Dans les systèmes de High-Pressure Hose Assembly, ce composant maintient les lignes hydrauliques et pneumatiques opérationnelles sur équipements mobiles et industriels soumis aux vibrations et variations de pression.">Dans les systèmes de High-Pressure Hose Assembly, ce composant maintient les lignes hydrauliques et pneumatiques opérationnelles sur équipements mobiles et industriels soumis aux vibrations et variations de pression.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hose Fittings" data-fr="Hose Fittings">Hose Fittings</h3>
-<p data-en="The Hose Fittings connects hydraulic circuits securely while handling pressure, vibration, routing needs, and maintenance access." data-fr="Le Hose Fittings raccorde les circuits hydrauliques de façon sûre en tenant compte de la pression, des vibrations et de la maintenance.">Le Hose Fittings raccorde les circuits hydrauliques de façon sûre en tenant compte de la pression, des vibrations et de la maintenance.</p>
+<p data-en="In Hose Fittings installations, this component carries pressurized fluid between components while supporting flexible routing, secure connections, and dependable sealing." data-fr="Dans les installations de Hose Fittings, ce composant transporte le fluide sous pression entre composants avec routage flexible, connexions sûres et étanchéité fiable.">Dans les installations de Hose Fittings, ce composant transporte le fluide sous pression entre composants avec routage flexible, connexions sûres et étanchéité fiable.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Quick Coupler" data-fr="Quick Coupler">Quick Coupler</h3>
-<p data-en="The Quick Coupler connects hydraulic circuits securely while handling pressure, vibration, routing needs, and maintenance access." data-fr="Le Quick Coupler raccorde les circuits hydrauliques de façon sûre en tenant compte de la pression, des vibrations et de la maintenance.">Le Quick Coupler raccorde les circuits hydrauliques de façon sûre en tenant compte de la pression, des vibrations et de la maintenance.</p>
+<p data-en="Specified for Quick Coupler use, it keeps hydraulic and pneumatic lines serviceable in mobile and plant equipment where vibration and pressure changes are common." data-fr="Sélectionné pour l’usage de Quick Coupler, il maintient les lignes hydrauliques et pneumatiques opérationnelles sur équipements mobiles et industriels soumis aux vibrations et variations de pression.">Sélectionné pour l’usage de Quick Coupler, il maintient les lignes hydrauliques et pneumatiques opérationnelles sur équipements mobiles et industriels soumis aux vibrations et variations de pression.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hydraulic Tube" data-fr="Hydraulic Tube">Hydraulic Tube</h3>
-<p data-en="The Hydraulic Tube connects hydraulic circuits securely while handling pressure, vibration, routing needs, and maintenance access." data-fr="Le Hydraulic Tube raccorde les circuits hydrauliques de façon sûre en tenant compte de la pression, des vibrations et de la maintenance.">Le Hydraulic Tube raccorde les circuits hydrauliques de façon sûre en tenant compte de la pression, des vibrations et de la maintenance.</p>
+<p data-en="Across industrial hydraulic tube projects, it supports reliable fluid-power operation by monitoring, storing, sealing, or conditioning hydraulic and pneumatic circuits." data-fr="Dans les projets industriels de Hydraulic Tube, il soutient le fonctionnement fiable des systèmes fluides en surveillant, stockant, étanchéifiant ou conditionnant les circuits.">Dans les projets industriels de Hydraulic Tube, il soutient le fonctionnement fiable des systèmes fluides en surveillant, stockant, étanchéifiant ou conditionnant les circuits.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Tube Fittings" data-fr="Tube Fittings">Tube Fittings</h3>
-<p data-en="The Tube Fittings connects hydraulic circuits securely while handling pressure, vibration, routing needs, and maintenance access." data-fr="Le Tube Fittings raccorde les circuits hydrauliques de façon sûre en tenant compte de la pression, des vibrations et de la maintenance.">Le Tube Fittings raccorde les circuits hydrauliques de façon sûre en tenant compte de la pression, des vibrations et de la maintenance.</p>
+<p data-en="For Tube Fittings applications, this solution keeps hydraulic and pneumatic lines serviceable in mobile and plant equipment where vibration and pressure changes are common." data-fr="Pour les applications de Tube Fittings, cette solution maintient les lignes hydrauliques et pneumatiques opérationnelles sur équipements mobiles et industriels soumis aux vibrations et variations de pression.">Pour les applications de Tube Fittings, cette solution maintient les lignes hydrauliques et pneumatiques opérationnelles sur équipements mobiles et industriels soumis aux vibrations et variations de pression.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Flange Fittings" data-fr="Flange Fittings">Flange Fittings</h3>
-<p data-en="The Flange Fittings connects hydraulic circuits securely while handling pressure, vibration, routing needs, and maintenance access." data-fr="Le Flange Fittings raccorde les circuits hydrauliques de façon sûre en tenant compte de la pression, des vibrations et de la maintenance.">Le Flange Fittings raccorde les circuits hydrauliques de façon sûre en tenant compte de la pression, des vibrations et de la maintenance.</p>
+<p data-en="In Flange Fittings systems, this component carries pressurized fluid between components while supporting flexible routing, secure connections, and dependable sealing." data-fr="Dans les systèmes de Flange Fittings, ce composant transporte le fluide sous pression entre composants avec routage flexible, connexions sûres et étanchéité fiable.">Dans les systèmes de Flange Fittings, ce composant transporte le fluide sous pression entre composants avec routage flexible, connexions sûres et étanchéité fiable.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hose Clamp" data-fr="Hose Clamp">Hose Clamp</h3>
-<p data-en="The Hose Clamp connects hydraulic circuits securely while handling pressure, vibration, routing needs, and maintenance access." data-fr="Le Hose Clamp raccorde les circuits hydrauliques de façon sûre en tenant compte de la pression, des vibrations et de la maintenance.">Le Hose Clamp raccorde les circuits hydrauliques de façon sûre en tenant compte de la pression, des vibrations et de la maintenance.</p>
+<p data-en="In Hose Clamp installations, this component keeps hydraulic and pneumatic lines serviceable in mobile and plant equipment where vibration and pressure changes are common." data-fr="Dans les installations de Hose Clamp, ce composant maintient les lignes hydrauliques et pneumatiques opérationnelles sur équipements mobiles et industriels soumis aux vibrations et variations de pression.">Dans les installations de Hose Clamp, ce composant maintient les lignes hydrauliques et pneumatiques opérationnelles sur équipements mobiles et industriels soumis aux vibrations et variations de pression.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hydraulic Pressure Gauge" data-fr="Hydraulic Pressure Gauge">Hydraulic Pressure Gauge</h3>
-<p data-en="The Hydraulic Pressure Gauge helps technicians measure hydraulic performance, diagnose faults, and verify operating conditions in the field." data-fr="Le Hydraulic Pressure Gauge aide les techniciens à mesurer la performance hydraulique, diagnostiquer les défauts et vérifier les conditions d’exploitation.">Le Hydraulic Pressure Gauge aide les techniciens à mesurer la performance hydraulique, diagnostiquer les défauts et vérifier les conditions d’exploitation.</p>
+<p data-en="Specified for Hydraulic Pressure Gauge use, it supports reliable fluid-power operation by monitoring, storing, sealing, or conditioning hydraulic and pneumatic circuits." data-fr="Sélectionné pour l’usage de Hydraulic Pressure Gauge, il soutient le fonctionnement fiable des systèmes fluides en surveillant, stockant, étanchéifiant ou conditionnant les circuits.">Sélectionné pour l’usage de Hydraulic Pressure Gauge, il soutient le fonctionnement fiable des systèmes fluides en surveillant, stockant, étanchéifiant ou conditionnant les circuits.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Temperature Gauge" data-fr="Temperature Gauge">Temperature Gauge</h3>
-<p data-en="The Temperature Gauge helps technicians measure hydraulic performance, diagnose faults, and verify operating conditions in the field." data-fr="Le Temperature Gauge aide les techniciens à mesurer la performance hydraulique, diagnostiquer les défauts et vérifier les conditions d’exploitation.">Le Temperature Gauge aide les techniciens à mesurer la performance hydraulique, diagnostiquer les défauts et vérifier les conditions d’exploitation.</p>
+<p data-en="Across industrial temperature gauge projects, it helps maintain pressure stability, cleanliness, and serviceability across hydraulic power units and pneumatic installations." data-fr="Dans les projets industriels de Temperature Gauge, il aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.">Dans les projets industriels de Temperature Gauge, il aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hydraulic Directional Control Lever" data-fr="Hydraulic Directional Control Lever">Hydraulic Directional Control Lever</h3>
-<p data-en="The Hydraulic Directional Control Lever supports dependable fluid-power operation for mobile equipment, plants, workshops, and industrial machinery." data-fr="Le Hydraulic Directional Control Lever soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.">Le Hydraulic Directional Control Lever soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.</p>
+<p data-en="For Hydraulic Directional Control Lever applications, this solution supports reliable fluid-power operation by monitoring, storing, sealing, or conditioning hydraulic and pneumatic circuits." data-fr="Pour les applications de Hydraulic Directional Control Lever, cette solution soutient le fonctionnement fiable des systèmes fluides en surveillant, stockant, étanchéifiant ou conditionnant les circuits.">Pour les applications de Hydraulic Directional Control Lever, cette solution soutient le fonctionnement fiable des systèmes fluides en surveillant, stockant, étanchéifiant ou conditionnant les circuits.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hydraulic Flow Meter" data-fr="Hydraulic Flow Meter">Hydraulic Flow Meter</h3>
-<p data-en="The Hydraulic Flow Meter helps technicians measure hydraulic performance, diagnose faults, and verify operating conditions in the field." data-fr="Le Hydraulic Flow Meter aide les techniciens à mesurer la performance hydraulique, diagnostiquer les défauts et vérifier les conditions d’exploitation.">Le Hydraulic Flow Meter aide les techniciens à mesurer la performance hydraulique, diagnostiquer les défauts et vérifier les conditions d’exploitation.</p>
+<p data-en="In Hydraulic Flow Meter systems, this component helps maintain pressure stability, cleanliness, and serviceability across hydraulic power units and pneumatic installations." data-fr="Dans les systèmes de Hydraulic Flow Meter, ce composant aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.">Dans les systèmes de Hydraulic Flow Meter, ce composant aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hydraulic Test Kit" data-fr="Hydraulic Test Kit">Hydraulic Test Kit</h3>
-<p data-en="The Hydraulic Test Kit helps technicians measure hydraulic performance, diagnose faults, and verify operating conditions in the field." data-fr="Le Hydraulic Test Kit aide les techniciens à mesurer la performance hydraulique, diagnostiquer les défauts et vérifier les conditions d’exploitation.">Le Hydraulic Test Kit aide les techniciens à mesurer la performance hydraulique, diagnostiquer les défauts et vérifier les conditions d’exploitation.</p>
+<p data-en="In Hydraulic Test Kit installations, this component supports reliable fluid-power operation by monitoring, storing, sealing, or conditioning hydraulic and pneumatic circuits." data-fr="Dans les installations de Hydraulic Test Kit, ce composant soutient le fonctionnement fiable des systèmes fluides en surveillant, stockant, étanchéifiant ou conditionnant les circuits.">Dans les installations de Hydraulic Test Kit, ce composant soutient le fonctionnement fiable des systèmes fluides en surveillant, stockant, étanchéifiant ou conditionnant les circuits.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hydraulic Seal Kit" data-fr="Hydraulic Seal Kit">Hydraulic Seal Kit</h3>
-<p data-en="The Hydraulic Seal Kit prevents leakage and protects moving hydraulic components from pressure loss, dirt, and premature wear." data-fr="Le Hydraulic Seal Kit évite les fuites et protège les composants hydrauliques mobiles contre les pertes de pression, la saleté et l’usure.">Le Hydraulic Seal Kit évite les fuites et protège les composants hydrauliques mobiles contre les pertes de pression, la saleté et l’usure.</p>
+<p data-en="Specified for Hydraulic Seal Kit use, it helps maintain pressure stability, cleanliness, and serviceability across hydraulic power units and pneumatic installations." data-fr="Sélectionné pour l’usage de Hydraulic Seal Kit, il aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.">Sélectionné pour l’usage de Hydraulic Seal Kit, il aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Rod Seal" data-fr="Rod Seal">Rod Seal</h3>
-<p data-en="The Rod Seal prevents leakage and protects moving hydraulic components from pressure loss, dirt, and premature wear." data-fr="Le Rod Seal évite les fuites et protège les composants hydrauliques mobiles contre les pertes de pression, la saleté et l’usure.">Le Rod Seal évite les fuites et protège les composants hydrauliques mobiles contre les pertes de pression, la saleté et l’usure.</p>
+<p data-en="Across industrial rod seal projects, it supports reliable fluid-power operation by monitoring, storing, sealing, or conditioning hydraulic and pneumatic circuits." data-fr="Dans les projets industriels de Rod Seal, il soutient le fonctionnement fiable des systèmes fluides en surveillant, stockant, étanchéifiant ou conditionnant les circuits.">Dans les projets industriels de Rod Seal, il soutient le fonctionnement fiable des systèmes fluides en surveillant, stockant, étanchéifiant ou conditionnant les circuits.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Piston Seal" data-fr="Piston Seal">Piston Seal</h3>
-<p data-en="The Piston Seal prevents leakage and protects moving hydraulic components from pressure loss, dirt, and premature wear." data-fr="Le Piston Seal évite les fuites et protège les composants hydrauliques mobiles contre les pertes de pression, la saleté et l’usure.">Le Piston Seal évite les fuites et protège les composants hydrauliques mobiles contre les pertes de pression, la saleté et l’usure.</p>
+<p data-en="For Piston Seal applications, this solution helps maintain pressure stability, cleanliness, and serviceability across hydraulic power units and pneumatic installations." data-fr="Pour les applications de Piston Seal, cette solution aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.">Pour les applications de Piston Seal, cette solution aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Wiper Seal" data-fr="Wiper Seal">Wiper Seal</h3>
-<p data-en="The Wiper Seal prevents leakage and protects moving hydraulic components from pressure loss, dirt, and premature wear." data-fr="Le Wiper Seal évite les fuites et protège les composants hydrauliques mobiles contre les pertes de pression, la saleté et l’usure.">Le Wiper Seal évite les fuites et protège les composants hydrauliques mobiles contre les pertes de pression, la saleté et l’usure.</p>
+<p data-en="In Wiper Seal systems, this component supports reliable fluid-power operation by monitoring, storing, sealing, or conditioning hydraulic and pneumatic circuits." data-fr="Dans les systèmes de Wiper Seal, ce composant soutient le fonctionnement fiable des systèmes fluides en surveillant, stockant, étanchéifiant ou conditionnant les circuits.">Dans les systèmes de Wiper Seal, ce composant soutient le fonctionnement fiable des systèmes fluides en surveillant, stockant, étanchéifiant ou conditionnant les circuits.</p>
 </a>
 <a class="card-system">
 <h3 data-en="O-Ring" data-fr="O-Ring">O-Ring</h3>
-<p data-en="The O-Ring prevents leakage and protects moving hydraulic components from pressure loss, dirt, and premature wear." data-fr="Le O-Ring évite les fuites et protège les composants hydrauliques mobiles contre les pertes de pression, la saleté et l’usure.">Le O-Ring évite les fuites et protège les composants hydrauliques mobiles contre les pertes de pression, la saleté et l’usure.</p>
+<p data-en="In O-Ring installations, this component helps maintain pressure stability, cleanliness, and serviceability across hydraulic power units and pneumatic installations." data-fr="Dans les installations de O-Ring, ce composant aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.">Dans les installations de O-Ring, ce composant aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Back-Up Ring" data-fr="Back-Up Ring">Back-Up Ring</h3>
-<p data-en="The Back-Up Ring prevents leakage and protects moving hydraulic components from pressure loss, dirt, and premature wear." data-fr="Le Back-Up Ring évite les fuites et protège les composants hydrauliques mobiles contre les pertes de pression, la saleté et l’usure.">Le Back-Up Ring évite les fuites et protège les composants hydrauliques mobiles contre les pertes de pression, la saleté et l’usure.</p>
+<p data-en="Specified for Back-Up Ring use, it supports reliable fluid-power operation by monitoring, storing, sealing, or conditioning hydraulic and pneumatic circuits." data-fr="Sélectionné pour l’usage de Back-Up Ring, il soutient le fonctionnement fiable des systèmes fluides en surveillant, stockant, étanchéifiant ou conditionnant les circuits.">Sélectionné pour l’usage de Back-Up Ring, il soutient le fonctionnement fiable des systèmes fluides en surveillant, stockant, étanchéifiant ou conditionnant les circuits.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hydraulic Heat Exchanger" data-fr="Hydraulic Heat Exchanger">Hydraulic Heat Exchanger</h3>
-<p data-en="The Hydraulic Heat Exchanger supports dependable fluid-power operation for mobile equipment, plants, workshops, and industrial machinery." data-fr="Le Hydraulic Heat Exchanger soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.">Le Hydraulic Heat Exchanger soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.</p>
+<p data-en="Across industrial hydraulic heat exchanger projects, it helps maintain pressure stability, cleanliness, and serviceability across hydraulic power units and pneumatic installations." data-fr="Dans les projets industriels de Hydraulic Heat Exchanger, il aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.">Dans les projets industriels de Hydraulic Heat Exchanger, il aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Oil Cooler" data-fr="Oil Cooler">Oil Cooler</h3>
-<p data-en="The Oil Cooler supports dependable fluid-power operation for mobile equipment, plants, workshops, and industrial machinery." data-fr="Le Oil Cooler soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.">Le Oil Cooler soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.</p>
+<p data-en="For Oil Cooler applications, this solution supports reliable fluid-power operation by monitoring, storing, sealing, or conditioning hydraulic and pneumatic circuits." data-fr="Pour les applications de Oil Cooler, cette solution soutient le fonctionnement fiable des systèmes fluides en surveillant, stockant, étanchéifiant ou conditionnant les circuits.">Pour les applications de Oil Cooler, cette solution soutient le fonctionnement fiable des systèmes fluides en surveillant, stockant, étanchéifiant ou conditionnant les circuits.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hydraulic Oil" data-fr="Hydraulic Oil">Hydraulic Oil</h3>
-<p data-en="The Hydraulic Oil supports dependable fluid-power operation for mobile equipment, plants, workshops, and industrial machinery." data-fr="Le Hydraulic Oil soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.">Le Hydraulic Oil soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.</p>
+<p data-en="In Hydraulic Oil systems, this component helps maintain pressure stability, cleanliness, and serviceability across hydraulic power units and pneumatic installations." data-fr="Dans les systèmes de Hydraulic Oil, ce composant aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.">Dans les systèmes de Hydraulic Oil, ce composant aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Biodegradable Hydraulic Fluid" data-fr="Biodegradable Hydraulic Fluid">Biodegradable Hydraulic Fluid</h3>
-<p data-en="The Biodegradable Hydraulic Fluid supports dependable fluid-power operation for mobile equipment, plants, workshops, and industrial machinery." data-fr="Le Biodegradable Hydraulic Fluid soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.">Le Biodegradable Hydraulic Fluid soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.</p>
+<p data-en="In Biodegradable Hydraulic Fluid installations, this component supports reliable fluid-power operation by monitoring, storing, sealing, or conditioning hydraulic and pneumatic circuits." data-fr="Dans les installations de Biodegradable Hydraulic Fluid, ce composant soutient le fonctionnement fiable des systèmes fluides en surveillant, stockant, étanchéifiant ou conditionnant les circuits.">Dans les installations de Biodegradable Hydraulic Fluid, ce composant soutient le fonctionnement fiable des systèmes fluides en surveillant, stockant, étanchéifiant ou conditionnant les circuits.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hydraulic Power Pack" data-fr="Hydraulic Power Pack">Hydraulic Power Pack</h3>
-<p data-en="The Hydraulic Power Pack supports dependable fluid-power operation for mobile equipment, plants, workshops, and industrial machinery." data-fr="Le Hydraulic Power Pack soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.">Le Hydraulic Power Pack soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.</p>
+<p data-en="Specified for Hydraulic Power Pack use, it helps maintain pressure stability, cleanliness, and serviceability across hydraulic power units and pneumatic installations." data-fr="Sélectionné pour l’usage de Hydraulic Power Pack, il aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.">Sélectionné pour l’usage de Hydraulic Power Pack, il aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Compact Power Unit" data-fr="Compact Power Unit">Compact Power Unit</h3>
-<p data-en="The Compact Power Unit supports dependable fluid-power operation for mobile equipment, plants, workshops, and industrial machinery." data-fr="Le Compact Power Unit soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.">Le Compact Power Unit soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.</p>
+<p data-en="Across industrial compact power unit projects, it supports reliable fluid-power operation by monitoring, storing, sealing, or conditioning hydraulic and pneumatic circuits." data-fr="Dans les projets industriels de Compact Power Unit, il soutient le fonctionnement fiable des systèmes fluides en surveillant, stockant, étanchéifiant ou conditionnant les circuits.">Dans les projets industriels de Compact Power Unit, il soutient le fonctionnement fiable des systèmes fluides en surveillant, stockant, étanchéifiant ou conditionnant les circuits.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Mobile Hydraulic Unit" data-fr="Mobile Hydraulic Unit">Mobile Hydraulic Unit</h3>
-<p data-en="The Mobile Hydraulic Unit supports dependable fluid-power operation for mobile equipment, plants, workshops, and industrial machinery." data-fr="Le Mobile Hydraulic Unit soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.">Le Mobile Hydraulic Unit soutient une exploitation hydraulique fiable pour équipements mobiles, usines, ateliers et machines industrielles.</p>
+<p data-en="For Mobile Hydraulic Unit applications, this solution helps maintain pressure stability, cleanliness, and serviceability across hydraulic power units and pneumatic installations." data-fr="Pour les applications de Mobile Hydraulic Unit, cette solution aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.">Pour les applications de Mobile Hydraulic Unit, cette solution aide à maintenir stabilité de pression, propreté et facilité d’entretien sur centrales hydrauliques et installations pneumatiques.</p>
 </a>
 </div>
 </main>
-<footer class="footer-shell">
+<footer style="background: #0a0c0f; border-top: 1px solid var(--border-color); padding: 60px 0 30px 0; margin-top: 80px;">
 <div class="container grid-3" style="padding: 0 24px 40px 24px;">
 <div>
-<img alt="SUJO" class="site-logo" decoding="async" fetchpriority="high" loading="eager" src="logo.png"/>
+<img alt="SUJO" src="logo.png" style="height: 40px; margin-bottom: 16px;"/>
 <p data-en="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, Democratic Republic of Congo" data-fr="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, République Démocratique du Congo" style="color: var(--text-muted); font-size: 0.9rem;">SUJO Engineering Consulting SARL<br/>Kinshasa, République Démocratique du Congo</p>
 </div>
 <div>
 <h4 data-en="Technology Index" data-fr="Matrices Technologiques" style="margin-bottom: 16px; font-size: 0.95rem;">Matrices Technologiques</h4>
-<p style="font-size: 0.9rem; margin-bottom: 8px;"><a data-en="Global Product Index" data-fr="Index Global des Produits" href="products.html" style="color: var(--text-muted); text-decoration: none;">Index Global des Produits</a></p>
-<p style="font-size: 0.9rem; margin-bottom: 8px;"><a data-en="Partners" data-fr="Partenaires" href="partners.html" style="color: var(--text-muted); text-decoration: none;">Partenaires</a></p>
+<p style="font-size: 0.9rem; margin-bottom: 8px;">Index Global des Produits</p>
+<p style="font-size: 0.9rem; margin-bottom: 8px;">Marques Validées</p>
 </div>
 <div>
 <h4 data-en="Direct Channels" data-fr="Canaux Directs" style="margin-bottom: 16px; font-size: 0.95rem;">Canaux Directs</h4>
-<p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;"><span data-en="DRC:" data-fr="RDC:">RDC:</span> +243 974 570 630</p>
+<p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;">DRC: +243 974 570 630</p>
 <p data-en="Email: contact@sujo-engineering.com" data-fr="Email: contact@sujo-engineering.com" style="color: var(--text-muted); font-size: 0.9rem;">Email: contact@sujo-engineering.com</p>
 </div>
 </div>
 <div data-en="© 2026 SUJO Engineering Consulting SARL. All rights reserved." data-fr="© 2026 SUJO Engineering Consulting SARL. Tous droits réservés." style="text-align: center; border-top: 1px solid var(--border-color); padding-top: 30px; font-size: 0.8rem; color: var(--text-muted);">
-            © 2026 SUJO Engineering Consulting SARL. All rights reserved.
-        </div>
+© 2026 SUJO Engineering Consulting SARL. All rights reserved.
+</div>
 </footer>
+<script>
+function applyLang(lang) {
+    document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+        el.innerHTML = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+    });
+    document.documentElement.lang = lang;
+}
 
+function setLang(lang) {
+    localStorage.setItem('sujoLang', lang);
+    const btnFr = document.getElementById('btn-fr');
+    const btnEn = document.getElementById('btn-en');
+    if (btnFr && btnEn) {
+        btnFr.classList.toggle('active', lang === 'fr');
+        btnEn.classList.toggle('active', lang === 'en');
+    }
+    applyLang(lang);
+}
+
+(function () {
+    const saved = localStorage.getItem('sujoLang') || 'fr';
+    applyLang(saved);
+    const btnFr = document.getElementById('btn-fr');
+    const btnEn = document.getElementById('btn-en');
+    if (btnFr && btnEn) {
+        btnFr.classList.toggle('active', saved === 'fr');
+        btnEn.classList.toggle('active', saved === 'en');
+    }
+})();
+
+function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+    document.querySelector('.hamburger').classList.toggle('open');
+}
+
+document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        if (window.innerWidth <= 900) {
+            e.preventDefault();
+            link.parentElement.classList.toggle('open');
+        }
+    });
+});
+
+document.querySelectorAll('#mobileMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (link.parentElement.classList.contains('dropdown')) return;
+        document.getElementById('mobileMenu').classList.remove('open');
+        document.querySelector('.hamburger').classList.remove('open');
+    });
+});
+</script>
 </body>
 </html>

@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="style.css" rel="stylesheet"/>
-
+<script defer="" src="app.js"></script>
 <style>
 header{position:sticky;top:0;z-index:1000;backdrop-filter:blur(14px);}
 html{scroll-padding-top:96px;}
@@ -17,47 +17,41 @@ html{scroll-padding-top:96px;}
 .card-system{cursor:default;}
 .card-system p{margin-bottom:0;}
 </style>
-<script defer="True" src="app.js"></script></head>
-<body><a class="skip-link" data-en="Skip to main content" data-fr="Aller au contenu principal" href="#main-content">Aller au contenu principal</a>
+</head>
+<body>
 <!-- NAV BAR -->
 <header>
-<a class="nav-logo" href="index.html">
-<img alt="SUJO" class="site-logo" decoding="async" fetchpriority="high" loading="eager" src="logo.png"/>
+<a class="nav-logo" href="https://sujo-engineering.com/index.html">
+<img alt="SUJO" src="logo.png" style="height: 50px;"/>
 </a>
-<nav aria-label="Main navigation">
+<nav>
 <ul class="nav-links" id="mobileMenu">
 <li><a data-en="Home" data-fr="Accueil" href="https://sujo-engineering.com/index.html">Accueil</a></li>
 <li><a data-en="About" data-fr="À Propos" href="https://sujo-engineering.com/about.html">À Propos</a></li>
 <li class="dropdown">
-<a aria-expanded="false" aria-haspopup="true" class="active" data-en="Products ▾" data-fr="Produits ▾" href="https://sujo-engineering.com/products.html">Produits ▾</a>
+<a class="active" data-en="Products ▾" data-fr="Produits ▾" href="https://sujo-engineering.com/products.html">Produits ▾</a>
 <ul class="dropdown-menu">
 <li><a data-en="Mechanical Components" data-fr="Composants Mécaniques" href="product-mechanical.html">Composants Mécaniques</a></li>
 <li><a data-en="Automation &amp; Motion" data-fr="Automatisation &amp; Mouvement" href="product-automation.html">Automatisation &amp; Mouvement</a></li>
 <li><a data-en="Hydraulics &amp; Pneumatics" data-fr="Hydraulique &amp; Pneumatique" href="product-hydraulics.html">Hydraulique &amp; Pneumatique</a></li>
 <li><a data-en="Industrial Safety" data-fr="Sécurité Industrielle" href="product-safety.html">Sécurité Industrielle</a></li>
 <li><a data-en="Power Transmission" data-fr="Transmission de Puissance" href="product-transmission.html">Transmission de Puissance</a></li>
-<li><a aria-current="page" class="active" data-en="Industrial Lubrication" data-fr="Lubrification Industrielle" href="product-lubrication.html">Lubrification Industrielle</a></li>
+<li><a class="active" data-en="Industrial Lubrication" data-fr="Lubrification Industrielle" href="product-lubrication.html">Lubrification Industrielle</a></li>
 </ul>
 </li>
 <li><a data-en="Partners" data-fr="Partenaires" href="https://sujo-engineering.com/partners.html">Partenaires</a></li>
 <li><a data-en="Contact" data-fr="Contact" href="https://sujo-engineering.com/contact.html">Contact</a></li>
-<li><a class="btn btn-outline nav-account" data-en="My Account" data-fr="Mon Compte" href="https://portal.sujo-engineering.com/" rel="noopener noreferrer" target="_blank">Mon Compte</a></li>
-<li><a class="btn btn-primary" data-en="Request Quote" data-fr="Demander un devis" href="https://sujo-engineering.com/quote.html">Demander un devis</a></li>
-<li>
-<div class="lang-switch">
-<button aria-label="Changer la langue en français" class="active" data-lang-button="fr" id="btn-fr" type="button">FR</button>
-<button aria-label="Switch language to English" data-lang-button="en" id="btn-en" type="button">EN</button>
-</div>
-</li>
-</ul>
+<li><a class="btn btn-outline" data-en="My Account" data-fr="Mon Compte" href="http://129.213.160.94/" style="padding: 8px 16px;" target="_blank">Mon Compte</a></li>
+<li><a class="btn btn-primary" data-en="Request Quote" data-fr="Demander un devis" href="https://sujo-engineering.com/quote.html" style="padding: 8px 16px;">Demander un devis</a></li>
+<li><div class="lang-switch"><button class="active" id="btn-fr" onclick="setLang('fr')" type="button">FR</button><button id="btn-en" onclick="setLang('en')" type="button">EN</button></div></li></ul>
 </nav>
-<div aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation menu" class="hamburger" role="button" tabindex="0">
+<div aria-label="Menu" class="hamburger" onclick="toggleMenu()">
 <span></span>
 <span></span>
 <span></span>
 </div>
 </header>
-<main class="container" id="main-content" tabindex="-1">
+<main class="container">
 <div class="section-header" style="text-align: left;">
 <div class="section-label" data-en="Industrial Lubrication" data-fr="Lubrification Industrielle">Lubrification Industrielle</div>
 <h1 class="section-title" data-en="Lubrication Products" data-fr="Produits de Lubrification" style="font-size: 2.75rem;">Produits de Lubrification</h1>
@@ -69,255 +63,306 @@ html{scroll-padding-top:96px;}
 <div class="grid-3" style="margin-top: 48px;">
 <a class="card-system">
 <h3 data-en="Lubrication Pump" data-fr="Lubrication Pump">Lubrication Pump</h3>
-<p data-en="The Lubrication Pump delivers oil or grease to lubrication points with the pressure and volume needed for consistent machine protection." data-fr="Le Lubrication Pump distribue l’huile ou la graisse aux points de lubrification avec la pression et le volume nécessaires à la protection machine.">Le Lubrication Pump distribue l’huile ou la graisse aux points de lubrification avec la pression et le volume nécessaires à la protection machine.</p>
+<p data-en="For Lubrication Pump applications, this solution delivers oil or grease to critical points with controlled timing, helping bearings, chains, and guides run longer with less wear." data-fr="Pour les applications de Lubrication Pump, cette solution distribue huile ou graisse aux points critiques avec un dosage contrôlé pour prolonger la vie des roulements, chaînes et guidages.">Pour les applications de Lubrication Pump, cette solution distribue huile ou graisse aux points critiques avec un dosage contrôlé pour prolonger la vie des roulements, chaînes et guidages.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Manual Lubrication Pump" data-fr="Manual Lubrication Pump">Manual Lubrication Pump</h3>
-<p data-en="The Manual Lubrication Pump delivers oil or grease to lubrication points with the pressure and volume needed for consistent machine protection." data-fr="Le Manual Lubrication Pump distribue l’huile ou la graisse aux points de lubrification avec la pression et le volume nécessaires à la protection machine.">Le Manual Lubrication Pump distribue l’huile ou la graisse aux points de lubrification avec la pression et le volume nécessaires à la protection machine.</p>
+<p data-en="In Manual Lubrication Pump systems, this component automates lubrication tasks so maintenance teams can reduce manual servicing while protecting equipment in continuous operation." data-fr="Dans les systèmes de Manual Lubrication Pump, ce composant automatise les tâches de lubrification pour réduire les interventions manuelles tout en protégeant les équipements en fonctionnement continu.">Dans les systèmes de Manual Lubrication Pump, ce composant automatise les tâches de lubrification pour réduire les interventions manuelles tout en protégeant les équipements en fonctionnement continu.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Electric Lubrication Pump" data-fr="Electric Lubrication Pump">Electric Lubrication Pump</h3>
-<p data-en="The Electric Lubrication Pump delivers oil or grease to lubrication points with the pressure and volume needed for consistent machine protection." data-fr="Le Electric Lubrication Pump distribue l’huile ou la graisse aux points de lubrification avec la pression et le volume nécessaires à la protection machine.">Le Electric Lubrication Pump distribue l’huile ou la graisse aux points de lubrification avec la pression et le volume nécessaires à la protection machine.</p>
+<p data-en="In Electric Lubrication Pump installations, this component delivers oil or grease to critical points with controlled timing, helping bearings, chains, and guides run longer with less wear." data-fr="Dans les installations de Electric Lubrication Pump, ce composant distribue huile ou graisse aux points critiques avec un dosage contrôlé pour prolonger la vie des roulements, chaînes et guidages.">Dans les installations de Electric Lubrication Pump, ce composant distribue huile ou graisse aux points critiques avec un dosage contrôlé pour prolonger la vie des roulements, chaînes et guidages.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Pneumatic Lubrication Pump" data-fr="Pneumatic Lubrication Pump">Pneumatic Lubrication Pump</h3>
-<p data-en="The Pneumatic Lubrication Pump delivers oil or grease to lubrication points with the pressure and volume needed for consistent machine protection." data-fr="Le Pneumatic Lubrication Pump distribue l’huile ou la graisse aux points de lubrification avec la pression et le volume nécessaires à la protection machine.">Le Pneumatic Lubrication Pump distribue l’huile ou la graisse aux points de lubrification avec la pression et le volume nécessaires à la protection machine.</p>
+<p data-en="Specified for Pneumatic Lubrication Pump use, it automates lubrication tasks so maintenance teams can reduce manual servicing while protecting equipment in continuous operation." data-fr="Sélectionné pour l’usage de Pneumatic Lubrication Pump, il automatise les tâches de lubrification pour réduire les interventions manuelles tout en protégeant les équipements en fonctionnement continu.">Sélectionné pour l’usage de Pneumatic Lubrication Pump, il automatise les tâches de lubrification pour réduire les interventions manuelles tout en protégeant les équipements en fonctionnement continu.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Grease Pump" data-fr="Grease Pump">Grease Pump</h3>
-<p data-en="The Grease Pump delivers oil or grease to lubrication points with the pressure and volume needed for consistent machine protection." data-fr="Le Grease Pump distribue l’huile ou la graisse aux points de lubrification avec la pression et le volume nécessaires à la protection machine.">Le Grease Pump distribue l’huile ou la graisse aux points de lubrification avec la pression et le volume nécessaires à la protection machine.</p>
+<p data-en="Across industrial grease pump projects, it delivers oil or grease to critical points with controlled timing, helping bearings, chains, and guides run longer with less wear." data-fr="Dans les projets industriels de Grease Pump, il distribue huile ou graisse aux points critiques avec un dosage contrôlé pour prolonger la vie des roulements, chaînes et guidages.">Dans les projets industriels de Grease Pump, il distribue huile ou graisse aux points critiques avec un dosage contrôlé pour prolonger la vie des roulements, chaînes et guidages.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Oil Pump (Low-Pressure / High-Pressure)" data-fr="Oil Pump (Low-Pressure / High-Pressure)">Oil Pump (Low-Pressure / High-Pressure)</h3>
-<p data-en="The Oil Pump (Low-Pressure / High-Pressure) delivers oil or grease to lubrication points with the pressure and volume needed for consistent machine protection." data-fr="Le Oil Pump (Low-Pressure / High-Pressure) distribue l’huile ou la graisse aux points de lubrification avec la pression et le volume nécessaires à la protection machine.">Le Oil Pump (Low-Pressure / High-Pressure) distribue l’huile ou la graisse aux points de lubrification avec la pression et le volume nécessaires à la protection machine.</p>
+<p data-en="For Oil Pump (Low-Pressure / High-Pressure) applications, this solution automates lubrication tasks so maintenance teams can reduce manual servicing while protecting equipment in continuous operation." data-fr="Pour les applications de Oil Pump (Low-Pressure / High-Pressure), cette solution automatise les tâches de lubrification pour réduire les interventions manuelles tout en protégeant les équipements en fonctionnement continu.">Pour les applications de Oil Pump (Low-Pressure / High-Pressure), cette solution automatise les tâches de lubrification pour réduire les interventions manuelles tout en protégeant les équipements en fonctionnement continu.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Lubrication Controller" data-fr="Lubrication Controller">Lubrication Controller</h3>
-<p data-en="The Lubrication Controller schedules lubrication cycles to reduce manual service, prevent under-lubrication, and control lubricant consumption." data-fr="Le Lubrication Controller programme les cycles de lubrification pour réduire l’intervention manuelle, éviter le manque de lubrifiant et contrôler la consommation.">Le Lubrication Controller programme les cycles de lubrification pour réduire l’intervention manuelle, éviter le manque de lubrifiant et contrôler la consommation.</p>
+<p data-en="In Lubrication Controller systems, this component improves lubrication visibility and storage control so maintenance teams can monitor condition, level, and delivery more easily." data-fr="Dans les systèmes de Lubrication Controller, ce composant améliore la visibilité et la gestion du lubrifiant afin que la maintenance suive plus facilement l’état, le niveau et la distribution.">Dans les systèmes de Lubrication Controller, ce composant améliore la visibilité et la gestion du lubrifiant afin que la maintenance suive plus facilement l’état, le niveau et la distribution.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Lubrication Timer" data-fr="Lubrication Timer">Lubrication Timer</h3>
-<p data-en="The Lubrication Timer schedules lubrication cycles to reduce manual service, prevent under-lubrication, and control lubricant consumption." data-fr="Le Lubrication Timer programme les cycles de lubrification pour réduire l’intervention manuelle, éviter le manque de lubrifiant et contrôler la consommation.">Le Lubrication Timer programme les cycles de lubrification pour réduire l’intervention manuelle, éviter le manque de lubrifiant et contrôler la consommation.</p>
+<p data-en="In Lubrication Timer installations, this component supports preventive maintenance by keeping lubricant available, measurable, and correctly applied to critical machine parts." data-fr="Dans les installations de Lubrication Timer, ce composant soutient la maintenance préventive en gardant le lubrifiant disponible, mesurable et correctement appliqué aux pièces critiques.">Dans les installations de Lubrication Timer, ce composant soutient la maintenance préventive en gardant le lubrifiant disponible, mesurable et correctement appliqué aux pièces critiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Lubrication Manifold" data-fr="Lubrication Manifold">Lubrication Manifold</h3>
-<p data-en="The Lubrication Manifold meters and distributes lubricant to multiple machine points so bearings, chains, and guides receive the right amount." data-fr="Le Lubrication Manifold dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.">Le Lubrication Manifold dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.</p>
+<p data-en="Specified for Lubrication Manifold use, it meters lubricant accurately across multiple points so each component receives the right quantity during each cycle." data-fr="Sélectionné pour l’usage de Lubrication Manifold, il dose précisément le lubrifiant sur plusieurs points afin que chaque composant reçoive la bonne quantité à chaque cycle.">Sélectionné pour l’usage de Lubrication Manifold, il dose précisément le lubrifiant sur plusieurs points afin que chaque composant reçoive la bonne quantité à chaque cycle.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Progressive Divider Valve" data-fr="Progressive Divider Valve">Progressive Divider Valve</h3>
-<p data-en="The Progressive Divider Valve meters and distributes lubricant to multiple machine points so bearings, chains, and guides receive the right amount." data-fr="Le Progressive Divider Valve dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.">Le Progressive Divider Valve dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.</p>
+<p data-en="Across industrial progressive divider valve projects, it distributes grease or oil through centralized systems, improving consistency and reducing over-lubrication or dry-running risks." data-fr="Dans les projets industriels de Progressive Divider Valve, il distribue graisse ou huile dans les systèmes centralisés, avec plus de constance et moins de risques de sur-lubrification ou marche à sec.">Dans les projets industriels de Progressive Divider Valve, il distribue graisse ou huile dans les systèmes centralisés, avec plus de constance et moins de risques de sur-lubrification ou marche à sec.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Injector Valve" data-fr="Injector Valve">Injector Valve</h3>
-<p data-en="The Injector Valve meters and distributes lubricant to multiple machine points so bearings, chains, and guides receive the right amount." data-fr="Le Injector Valve dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.">Le Injector Valve dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.</p>
+<p data-en="For Injector Valve applications, this solution meters lubricant accurately across multiple points so each component receives the right quantity during each cycle." data-fr="Pour les applications de Injector Valve, cette solution dose précisément le lubrifiant sur plusieurs points afin que chaque composant reçoive la bonne quantité à chaque cycle.">Pour les applications de Injector Valve, cette solution dose précisément le lubrifiant sur plusieurs points afin que chaque composant reçoive la bonne quantité à chaque cycle.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Metering Valve" data-fr="Metering Valve">Metering Valve</h3>
-<p data-en="The Metering Valve meters and distributes lubricant to multiple machine points so bearings, chains, and guides receive the right amount." data-fr="Le Metering Valve dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.">Le Metering Valve dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.</p>
+<p data-en="In Metering Valve systems, this component distributes grease or oil through centralized systems, improving consistency and reducing over-lubrication or dry-running risks." data-fr="Dans les systèmes de Metering Valve, ce composant distribue graisse ou huile dans les systèmes centralisés, avec plus de constance et moins de risques de sur-lubrification ou marche à sec.">Dans les systèmes de Metering Valve, ce composant distribue graisse ou huile dans les systèmes centralisés, avec plus de constance et moins de risques de sur-lubrification ou marche à sec.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Flow Divider" data-fr="Flow Divider">Flow Divider</h3>
-<p data-en="The Flow Divider meters and distributes lubricant to multiple machine points so bearings, chains, and guides receive the right amount." data-fr="Le Flow Divider dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.">Le Flow Divider dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.</p>
+<p data-en="In Flow Divider installations, this component meters lubricant accurately across multiple points so each component receives the right quantity during each cycle." data-fr="Dans les installations de Flow Divider, ce composant dose précisément le lubrifiant sur plusieurs points afin que chaque composant reçoive la bonne quantité à chaque cycle.">Dans les installations de Flow Divider, ce composant dose précisément le lubrifiant sur plusieurs points afin que chaque composant reçoive la bonne quantité à chaque cycle.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Grease Injector" data-fr="Grease Injector">Grease Injector</h3>
-<p data-en="The Grease Injector meters and distributes lubricant to multiple machine points so bearings, chains, and guides receive the right amount." data-fr="Le Grease Injector dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.">Le Grease Injector dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.</p>
+<p data-en="Specified for Grease Injector use, it distributes grease or oil through centralized systems, improving consistency and reducing over-lubrication or dry-running risks." data-fr="Sélectionné pour l’usage de Grease Injector, il distribue graisse ou huile dans les systèmes centralisés, avec plus de constance et moins de risques de sur-lubrification ou marche à sec.">Sélectionné pour l’usage de Grease Injector, il distribue graisse ou huile dans les systèmes centralisés, avec plus de constance et moins de risques de sur-lubrification ou marche à sec.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Oil Injector" data-fr="Oil Injector">Oil Injector</h3>
-<p data-en="The Oil Injector meters and distributes lubricant to multiple machine points so bearings, chains, and guides receive the right amount." data-fr="Le Oil Injector dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.">Le Oil Injector dose et distribue le lubrifiant vers plusieurs points machine afin que roulements, chaînes et guides reçoivent la bonne quantité.</p>
+<p data-en="Across industrial oil injector projects, it meters lubricant accurately across multiple points so each component receives the right quantity during each cycle." data-fr="Dans les projets industriels de Oil Injector, il dose précisément le lubrifiant sur plusieurs points afin que chaque composant reçoive la bonne quantité à chaque cycle.">Dans les projets industriels de Oil Injector, il dose précisément le lubrifiant sur plusieurs points afin que chaque composant reçoive la bonne quantité à chaque cycle.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Lubrication Filter" data-fr="Lubrication Filter">Lubrication Filter</h3>
-<p data-en="The Lubrication Filter keeps lubricant clean by removing particles that can damage bearings, gears, pumps, and precision surfaces." data-fr="Le Lubrication Filter maintient le lubrifiant propre en retirant les particules capables d’endommager roulements, engrenages, pompes et surfaces précises.">Le Lubrication Filter maintient le lubrifiant propre en retirant les particules capables d’endommager roulements, engrenages, pompes et surfaces précises.</p>
+<p data-en="For Lubrication Filter applications, this solution protects oil quality in demanding environments where dust, moisture, and particles can shorten equipment life." data-fr="Pour les applications de Lubrication Filter, cette solution protège la qualité de l’huile dans les environnements exigeants où poussière, humidité et particules réduisent la durée de vie.">Pour les applications de Lubrication Filter, cette solution protège la qualité de l’huile dans les environnements exigeants où poussière, humidité et particules réduisent la durée de vie.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Oil Filter" data-fr="Oil Filter">Oil Filter</h3>
-<p data-en="The Oil Filter keeps lubricant clean by removing particles that can damage bearings, gears, pumps, and precision surfaces." data-fr="Le Oil Filter maintient le lubrifiant propre en retirant les particules capables d’endommager roulements, engrenages, pompes et surfaces précises.">Le Oil Filter maintient le lubrifiant propre en retirant les particules capables d’endommager roulements, engrenages, pompes et surfaces précises.</p>
+<p data-en="In Oil Filter systems, this component keeps lubricant cleaner by limiting contamination that can accelerate wear inside pumps, bearings, gearboxes, and reservoirs." data-fr="Dans les systèmes de Oil Filter, ce composant maintient le lubrifiant plus propre en limitant les contaminants qui accélèrent l’usure des pompes, roulements, réducteurs et réservoirs.">Dans les systèmes de Oil Filter, ce composant maintient le lubrifiant plus propre en limitant les contaminants qui accélèrent l’usure des pompes, roulements, réducteurs et réservoirs.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Grease Filter" data-fr="Grease Filter">Grease Filter</h3>
-<p data-en="The Grease Filter keeps lubricant clean by removing particles that can damage bearings, gears, pumps, and precision surfaces." data-fr="Le Grease Filter maintient le lubrifiant propre en retirant les particules capables d’endommager roulements, engrenages, pompes et surfaces précises.">Le Grease Filter maintient le lubrifiant propre en retirant les particules capables d’endommager roulements, engrenages, pompes et surfaces précises.</p>
+<p data-en="In Grease Filter installations, this component protects oil quality in demanding environments where dust, moisture, and particles can shorten equipment life." data-fr="Dans les installations de Grease Filter, ce composant protège la qualité de l’huile dans les environnements exigeants où poussière, humidité et particules réduisent la durée de vie.">Dans les installations de Grease Filter, ce composant protège la qualité de l’huile dans les environnements exigeants où poussière, humidité et particules réduisent la durée de vie.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Lubrication Hose" data-fr="Lubrication Hose">Lubrication Hose</h3>
-<p data-en="The Lubrication Hose routes lubricant safely from pumps or reservoirs to equipment points while supporting service access." data-fr="Le Lubrication Hose achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.">Le Lubrication Hose achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.</p>
+<p data-en="Specified for Lubrication Hose use, it routes lubricant safely from pumps to application points with secure connections and dependable flow under service pressure." data-fr="Sélectionné pour l’usage de Lubrication Hose, il achemine le lubrifiant des pompes aux points d’application avec connexions sûres et débit fiable sous pression de service.">Sélectionné pour l’usage de Lubrication Hose, il achemine le lubrifiant des pompes aux points d’application avec connexions sûres et débit fiable sous pression de service.</p>
 </a>
 <a class="card-system">
 <h3 data-en="High-Pressure Grease Hose" data-fr="High-Pressure Grease Hose">High-Pressure Grease Hose</h3>
-<p data-en="The High-Pressure Grease Hose routes lubricant safely from pumps or reservoirs to equipment points while supporting service access." data-fr="Le High-Pressure Grease Hose achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.">Le High-Pressure Grease Hose achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.</p>
+<p data-en="Across industrial high-pressure grease hose projects, it supports clean, targeted lubricant application during maintenance, assembly, or automatic greasing operations." data-fr="Dans les projets industriels de High-Pressure Grease Hose, il permet une application propre et ciblée du lubrifiant pendant la maintenance, l’assemblage ou le graissage automatique.">Dans les projets industriels de High-Pressure Grease Hose, il permet une application propre et ciblée du lubrifiant pendant la maintenance, l’assemblage ou le graissage automatique.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Oil Hose" data-fr="Oil Hose">Oil Hose</h3>
-<p data-en="The Oil Hose routes lubricant safely from pumps or reservoirs to equipment points while supporting service access." data-fr="Le Oil Hose achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.">Le Oil Hose achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.</p>
+<p data-en="For Oil Hose applications, this solution routes lubricant safely from pumps to application points with secure connections and dependable flow under service pressure." data-fr="Pour les applications de Oil Hose, cette solution achemine le lubrifiant des pompes aux points d’application avec connexions sûres et débit fiable sous pression de service.">Pour les applications de Oil Hose, cette solution achemine le lubrifiant des pompes aux points d’application avec connexions sûres et débit fiable sous pression de service.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hose Fittings" data-fr="Hose Fittings">Hose Fittings</h3>
-<p data-en="The Hose Fittings routes lubricant safely from pumps or reservoirs to equipment points while supporting service access." data-fr="Le Hose Fittings achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.">Le Hose Fittings achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.</p>
+<p data-en="In Hose Fittings systems, this component supports clean, targeted lubricant application during maintenance, assembly, or automatic greasing operations." data-fr="Dans les systèmes de Hose Fittings, ce composant permet une application propre et ciblée du lubrifiant pendant la maintenance, l’assemblage ou le graissage automatique.">Dans les systèmes de Hose Fittings, ce composant permet une application propre et ciblée du lubrifiant pendant la maintenance, l’assemblage ou le graissage automatique.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Grease Gun (Manual)" data-fr="Grease Gun (Manual)">Grease Gun (Manual)</h3>
-<p data-en="The Grease Gun (Manual) provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Grease Gun (Manual) offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Grease Gun (Manual) offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
+<p data-en="In Grease Gun (Manual) installations, this component reduces friction and wear in moving assemblies, helping equipment resist heat, load, contamination, and long operating hours." data-fr="Dans les installations de Grease Gun (Manual), ce composant réduit les frottements et l’usure des ensembles mobiles, aidant les équipements à résister à la chaleur, aux charges et aux longues heures.">Dans les installations de Grease Gun (Manual), ce composant réduit les frottements et l’usure des ensembles mobiles, aidant les équipements à résister à la chaleur, aux charges et aux longues heures.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Grease Gun (Electric)" data-fr="Grease Gun (Electric)">Grease Gun (Electric)</h3>
-<p data-en="The Grease Gun (Electric) provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Grease Gun (Electric) offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Grease Gun (Electric) offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
+<p data-en="Specified for Grease Gun (Electric) use, it provides the protective film needed for bearings, gears, chains, and sliding surfaces in industrial service." data-fr="Sélectionné pour l’usage de Grease Gun (Electric), il fournit le film protecteur nécessaire aux roulements, engrenages, chaînes et surfaces de glissement en service industriel.">Sélectionné pour l’usage de Grease Gun (Electric), il fournit le film protecteur nécessaire aux roulements, engrenages, chaînes et surfaces de glissement en service industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Grease Gun (Pneumatic)" data-fr="Grease Gun (Pneumatic)">Grease Gun (Pneumatic)</h3>
-<p data-en="The Grease Gun (Pneumatic) provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Grease Gun (Pneumatic) offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Grease Gun (Pneumatic) offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
+<p data-en="Across industrial grease gun (pneumatic) projects, it reduces friction and wear in moving assemblies, helping equipment resist heat, load, contamination, and long operating hours." data-fr="Dans les projets industriels de Grease Gun (Pneumatic), il réduit les frottements et l’usure des ensembles mobiles, aidant les équipements à résister à la chaleur, aux charges et aux longues heures.">Dans les projets industriels de Grease Gun (Pneumatic), il réduit les frottements et l’usure des ensembles mobiles, aidant les équipements à résister à la chaleur, aux charges et aux longues heures.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Grease Cartridge" data-fr="Grease Cartridge">Grease Cartridge</h3>
-<p data-en="The Grease Cartridge provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Grease Cartridge offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Grease Cartridge offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
+<p data-en="For Grease Cartridge applications, this solution provides the protective film needed for bearings, gears, chains, and sliding surfaces in industrial service." data-fr="Pour les applications de Grease Cartridge, cette solution fournit le film protecteur nécessaire aux roulements, engrenages, chaînes et surfaces de glissement en service industriel.">Pour les applications de Grease Cartridge, cette solution fournit le film protecteur nécessaire aux roulements, engrenages, chaînes et surfaces de glissement en service industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Grease Nipple / Zerk Fitting" data-fr="Grease Nipple / Zerk Fitting">Grease Nipple / Zerk Fitting</h3>
-<p data-en="The Grease Nipple / Zerk Fitting routes lubricant safely from pumps or reservoirs to equipment points while supporting service access." data-fr="Le Grease Nipple / Zerk Fitting achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.">Le Grease Nipple / Zerk Fitting achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.</p>
+<p data-en="In Grease Nipple / Zerk Fitting systems, this component routes lubricant safely from pumps to application points with secure connections and dependable flow under service pressure." data-fr="Dans les systèmes de Grease Nipple / Zerk Fitting, ce composant achemine le lubrifiant des pompes aux points d’application avec connexions sûres et débit fiable sous pression de service.">Dans les systèmes de Grease Nipple / Zerk Fitting, ce composant achemine le lubrifiant des pompes aux points d’application avec connexions sûres et débit fiable sous pression de service.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Lubrication Coupler" data-fr="Lubrication Coupler">Lubrication Coupler</h3>
-<p data-en="The Lubrication Coupler routes lubricant safely from pumps or reservoirs to equipment points while supporting service access." data-fr="Le Lubrication Coupler achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.">Le Lubrication Coupler achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.</p>
+<p data-en="In Lubrication Coupler installations, this component supports clean, targeted lubricant application during maintenance, assembly, or automatic greasing operations." data-fr="Dans les installations de Lubrication Coupler, ce composant permet une application propre et ciblée du lubrifiant pendant la maintenance, l’assemblage ou le graissage automatique.">Dans les installations de Lubrication Coupler, ce composant permet une application propre et ciblée du lubrifiant pendant la maintenance, l’assemblage ou le graissage automatique.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Lubrication Nozzle" data-fr="Lubrication Nozzle">Lubrication Nozzle</h3>
-<p data-en="The Lubrication Nozzle routes lubricant safely from pumps or reservoirs to equipment points while supporting service access." data-fr="Le Lubrication Nozzle achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.">Le Lubrication Nozzle achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.</p>
+<p data-en="Specified for Lubrication Nozzle use, it routes lubricant safely from pumps to application points with secure connections and dependable flow under service pressure." data-fr="Sélectionné pour l’usage de Lubrication Nozzle, il achemine le lubrifiant des pompes aux points d’application avec connexions sûres et débit fiable sous pression de service.">Sélectionné pour l’usage de Lubrication Nozzle, il achemine le lubrifiant des pompes aux points d’application avec connexions sûres et débit fiable sous pression de service.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Spray Nozzle" data-fr="Spray Nozzle">Spray Nozzle</h3>
-<p data-en="The Spray Nozzle routes lubricant safely from pumps or reservoirs to equipment points while supporting service access." data-fr="Le Spray Nozzle achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.">Le Spray Nozzle achemine le lubrifiant de façon sûre depuis les pompes ou réservoirs vers les points machine avec accès de maintenance.</p>
+<p data-en="Across industrial spray nozzle projects, it supports clean, targeted lubricant application during maintenance, assembly, or automatic greasing operations." data-fr="Dans les projets industriels de Spray Nozzle, il permet une application propre et ciblée du lubrifiant pendant la maintenance, l’assemblage ou le graissage automatique.">Dans les projets industriels de Spray Nozzle, il permet une application propre et ciblée du lubrifiant pendant la maintenance, l’assemblage ou le graissage automatique.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Mist Lubrication Unit" data-fr="Mist Lubrication Unit">Mist Lubrication Unit</h3>
-<p data-en="The Mist Lubrication Unit improves lubrication reliability, reduces component wear, and supports longer service intervals for industrial machinery." data-fr="Le Mist Lubrication Unit améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.">Le Mist Lubrication Unit améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.</p>
+<p data-en="For Mist Lubrication Unit applications, this solution delivers oil or grease to critical points with controlled timing, helping bearings, chains, and guides run longer with less wear." data-fr="Pour les applications de Mist Lubrication Unit, cette solution distribue huile ou graisse aux points critiques avec un dosage contrôlé pour prolonger la vie des roulements, chaînes et guidages.">Pour les applications de Mist Lubrication Unit, cette solution distribue huile ou graisse aux points critiques avec un dosage contrôlé pour prolonger la vie des roulements, chaînes et guidages.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Oil Mist Generator" data-fr="Oil Mist Generator">Oil Mist Generator</h3>
-<p data-en="The Oil Mist Generator provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Oil Mist Generator offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Oil Mist Generator offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
+<p data-en="In Oil Mist Generator systems, this component automates lubrication tasks so maintenance teams can reduce manual servicing while protecting equipment in continuous operation." data-fr="Dans les systèmes de Oil Mist Generator, ce composant automatise les tâches de lubrification pour réduire les interventions manuelles tout en protégeant les équipements en fonctionnement continu.">Dans les systèmes de Oil Mist Generator, ce composant automatise les tâches de lubrification pour réduire les interventions manuelles tout en protégeant les équipements en fonctionnement continu.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Drip Feed Oiler" data-fr="Drip Feed Oiler">Drip Feed Oiler</h3>
-<p data-en="The Drip Feed Oiler provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Drip Feed Oiler offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Drip Feed Oiler offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
+<p data-en="In Drip Feed Oiler installations, this component reduces friction and wear in moving assemblies, helping equipment resist heat, load, contamination, and long operating hours." data-fr="Dans les installations de Drip Feed Oiler, ce composant réduit les frottements et l’usure des ensembles mobiles, aidant les équipements à résister à la chaleur, aux charges et aux longues heures.">Dans les installations de Drip Feed Oiler, ce composant réduit les frottements et l’usure des ensembles mobiles, aidant les équipements à résister à la chaleur, aux charges et aux longues heures.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Sight Glass" data-fr="Sight Glass">Sight Glass</h3>
-<p data-en="The Sight Glass improves lubrication reliability, reduces component wear, and supports longer service intervals for industrial machinery." data-fr="Le Sight Glass améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.">Le Sight Glass améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.</p>
+<p data-en="Specified for Sight Glass use, it supports preventive maintenance by keeping lubricant available, measurable, and correctly applied to critical machine parts." data-fr="Sélectionné pour l’usage de Sight Glass, il soutient la maintenance préventive en gardant le lubrifiant disponible, mesurable et correctement appliqué aux pièces critiques.">Sélectionné pour l’usage de Sight Glass, il soutient la maintenance préventive en gardant le lubrifiant disponible, mesurable et correctement appliqué aux pièces critiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Oil Level Indicator" data-fr="Oil Level Indicator">Oil Level Indicator</h3>
-<p data-en="The Oil Level Indicator provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Oil Level Indicator offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Oil Level Indicator offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
+<p data-en="Across industrial oil level indicator projects, it reduces friction and wear in moving assemblies, helping equipment resist heat, load, contamination, and long operating hours." data-fr="Dans les projets industriels de Oil Level Indicator, il réduit les frottements et l’usure des ensembles mobiles, aidant les équipements à résister à la chaleur, aux charges et aux longues heures.">Dans les projets industriels de Oil Level Indicator, il réduit les frottements et l’usure des ensembles mobiles, aidant les équipements à résister à la chaleur, aux charges et aux longues heures.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Breather Filter" data-fr="Breather Filter">Breather Filter</h3>
-<p data-en="The Breather Filter keeps lubricant clean by removing particles that can damage bearings, gears, pumps, and precision surfaces." data-fr="Le Breather Filter maintient le lubrifiant propre en retirant les particules capables d’endommager roulements, engrenages, pompes et surfaces précises.">Le Breather Filter maintient le lubrifiant propre en retirant les particules capables d’endommager roulements, engrenages, pompes et surfaces précises.</p>
+<p data-en="For Breather Filter applications, this solution protects oil quality in demanding environments where dust, moisture, and particles can shorten equipment life." data-fr="Pour les applications de Breather Filter, cette solution protège la qualité de l’huile dans les environnements exigeants où poussière, humidité et particules réduisent la durée de vie.">Pour les applications de Breather Filter, cette solution protège la qualité de l’huile dans les environnements exigeants où poussière, humidité et particules réduisent la durée de vie.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Oil Reservoir" data-fr="Oil Reservoir">Oil Reservoir</h3>
-<p data-en="The Oil Reservoir provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Oil Reservoir offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Oil Reservoir offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
+<p data-en="In Oil Reservoir systems, this component reduces friction and wear in moving assemblies, helping equipment resist heat, load, contamination, and long operating hours." data-fr="Dans les systèmes de Oil Reservoir, ce composant réduit les frottements et l’usure des ensembles mobiles, aidant les équipements à résister à la chaleur, aux charges et aux longues heures.">Dans les systèmes de Oil Reservoir, ce composant réduit les frottements et l’usure des ensembles mobiles, aidant les équipements à résister à la chaleur, aux charges et aux longues heures.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Grease Reservoir" data-fr="Grease Reservoir">Grease Reservoir</h3>
-<p data-en="The Grease Reservoir provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Grease Reservoir offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Grease Reservoir offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
+<p data-en="In Grease Reservoir installations, this component provides the protective film needed for bearings, gears, chains, and sliding surfaces in industrial service." data-fr="Dans les installations de Grease Reservoir, ce composant fournit le film protecteur nécessaire aux roulements, engrenages, chaînes et surfaces de glissement en service industriel.">Dans les installations de Grease Reservoir, ce composant fournit le film protecteur nécessaire aux roulements, engrenages, chaînes et surfaces de glissement en service industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Automatic Lubricator" data-fr="Automatic Lubricator">Automatic Lubricator</h3>
-<p data-en="The Automatic Lubricator improves lubrication reliability, reduces component wear, and supports longer service intervals for industrial machinery." data-fr="Le Automatic Lubricator améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.">Le Automatic Lubricator améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.</p>
+<p data-en="Specified for Automatic Lubricator use, it delivers oil or grease to critical points with controlled timing, helping bearings, chains, and guides run longer with less wear." data-fr="Sélectionné pour l’usage de Automatic Lubricator, il distribue huile ou graisse aux points critiques avec un dosage contrôlé pour prolonger la vie des roulements, chaînes et guidages.">Sélectionné pour l’usage de Automatic Lubricator, il distribue huile ou graisse aux points critiques avec un dosage contrôlé pour prolonger la vie des roulements, chaînes et guidages.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Single-Point Lubricator" data-fr="Single-Point Lubricator">Single-Point Lubricator</h3>
-<p data-en="The Single-Point Lubricator improves lubrication reliability, reduces component wear, and supports longer service intervals for industrial machinery." data-fr="Le Single-Point Lubricator améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.">Le Single-Point Lubricator améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.</p>
+<p data-en="Across industrial single-point lubricator projects, it automates lubrication tasks so maintenance teams can reduce manual servicing while protecting equipment in continuous operation." data-fr="Dans les projets industriels de Single-Point Lubricator, il automatise les tâches de lubrification pour réduire les interventions manuelles tout en protégeant les équipements en fonctionnement continu.">Dans les projets industriels de Single-Point Lubricator, il automatise les tâches de lubrification pour réduire les interventions manuelles tout en protégeant les équipements en fonctionnement continu.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Multi-Point Lubricator" data-fr="Multi-Point Lubricator">Multi-Point Lubricator</h3>
-<p data-en="The Multi-Point Lubricator improves lubrication reliability, reduces component wear, and supports longer service intervals for industrial machinery." data-fr="Le Multi-Point Lubricator améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.">Le Multi-Point Lubricator améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.</p>
+<p data-en="For Multi-Point Lubricator applications, this solution delivers oil or grease to critical points with controlled timing, helping bearings, chains, and guides run longer with less wear." data-fr="Pour les applications de Multi-Point Lubricator, cette solution distribue huile ou graisse aux points critiques avec un dosage contrôlé pour prolonger la vie des roulements, chaînes et guidages.">Pour les applications de Multi-Point Lubricator, cette solution distribue huile ou graisse aux points critiques avec un dosage contrôlé pour prolonger la vie des roulements, chaînes et guidages.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Chain Lubricator" data-fr="Chain Lubricator">Chain Lubricator</h3>
-<p data-en="The Chain Lubricator improves lubrication reliability, reduces component wear, and supports longer service intervals for industrial machinery." data-fr="Le Chain Lubricator améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.">Le Chain Lubricator améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.</p>
+<p data-en="In Chain Lubricator systems, this component automates lubrication tasks so maintenance teams can reduce manual servicing while protecting equipment in continuous operation." data-fr="Dans les systèmes de Chain Lubricator, ce composant automatise les tâches de lubrification pour réduire les interventions manuelles tout en protégeant les équipements en fonctionnement continu.">Dans les systèmes de Chain Lubricator, ce composant automatise les tâches de lubrification pour réduire les interventions manuelles tout en protégeant les équipements en fonctionnement continu.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Conveyor Lubrication System" data-fr="Conveyor Lubrication System">Conveyor Lubrication System</h3>
-<p data-en="The Conveyor Lubrication System improves lubrication reliability, reduces component wear, and supports longer service intervals for industrial machinery." data-fr="Le Conveyor Lubrication System améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.">Le Conveyor Lubrication System améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.</p>
+<p data-en="In Conveyor Lubrication System installations, this component improves lubrication visibility and storage control so maintenance teams can monitor condition, level, and delivery more easily." data-fr="Dans les installations de Conveyor Lubrication System, ce composant améliore la visibilité et la gestion du lubrifiant afin que la maintenance suive plus facilement l’état, le niveau et la distribution.">Dans les installations de Conveyor Lubrication System, ce composant améliore la visibilité et la gestion du lubrifiant afin que la maintenance suive plus facilement l’état, le niveau et la distribution.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Centralized Lubrication System" data-fr="Centralized Lubrication System">Centralized Lubrication System</h3>
-<p data-en="The Centralized Lubrication System improves lubrication reliability, reduces component wear, and supports longer service intervals for industrial machinery." data-fr="Le Centralized Lubrication System améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.">Le Centralized Lubrication System améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.</p>
+<p data-en="Specified for Centralized Lubrication System use, it supports preventive maintenance by keeping lubricant available, measurable, and correctly applied to critical machine parts." data-fr="Sélectionné pour l’usage de Centralized Lubrication System, il soutient la maintenance préventive en gardant le lubrifiant disponible, mesurable et correctement appliqué aux pièces critiques.">Sélectionné pour l’usage de Centralized Lubrication System, il soutient la maintenance préventive en gardant le lubrifiant disponible, mesurable et correctement appliqué aux pièces critiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Circulating Oil System" data-fr="Circulating Oil System">Circulating Oil System</h3>
-<p data-en="The Circulating Oil System provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Circulating Oil System offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Circulating Oil System offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
+<p data-en="Across industrial circulating oil system projects, it reduces friction and wear in moving assemblies, helping equipment resist heat, load, contamination, and long operating hours." data-fr="Dans les projets industriels de Circulating Oil System, il réduit les frottements et l’usure des ensembles mobiles, aidant les équipements à résister à la chaleur, aux charges et aux longues heures.">Dans les projets industriels de Circulating Oil System, il réduit les frottements et l’usure des ensembles mobiles, aidant les équipements à résister à la chaleur, aux charges et aux longues heures.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Lubrication Heat Exchanger" data-fr="Lubrication Heat Exchanger">Lubrication Heat Exchanger</h3>
-<p data-en="The Lubrication Heat Exchanger improves lubrication reliability, reduces component wear, and supports longer service intervals for industrial machinery." data-fr="Le Lubrication Heat Exchanger améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.">Le Lubrication Heat Exchanger améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.</p>
+<p data-en="For Lubrication Heat Exchanger applications, this solution supports preventive maintenance by keeping lubricant available, measurable, and correctly applied to critical machine parts." data-fr="Pour les applications de Lubrication Heat Exchanger, cette solution soutient la maintenance préventive en gardant le lubrifiant disponible, mesurable et correctement appliqué aux pièces critiques.">Pour les applications de Lubrication Heat Exchanger, cette solution soutient la maintenance préventive en gardant le lubrifiant disponible, mesurable et correctement appliqué aux pièces critiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Oil Cooler" data-fr="Oil Cooler">Oil Cooler</h3>
-<p data-en="The Oil Cooler provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Oil Cooler offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Oil Cooler offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
+<p data-en="In Oil Cooler systems, this component reduces friction and wear in moving assemblies, helping equipment resist heat, load, contamination, and long operating hours." data-fr="Dans les systèmes de Oil Cooler, ce composant réduit les frottements et l’usure des ensembles mobiles, aidant les équipements à résister à la chaleur, aux charges et aux longues heures.">Dans les systèmes de Oil Cooler, ce composant réduit les frottements et l’usure des ensembles mobiles, aidant les équipements à résister à la chaleur, aux charges et aux longues heures.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Lubrication Monitoring Sensor" data-fr="Lubrication Monitoring Sensor">Lubrication Monitoring Sensor</h3>
-<p data-en="The Lubrication Monitoring Sensor improves lubrication reliability, reduces component wear, and supports longer service intervals for industrial machinery." data-fr="Le Lubrication Monitoring Sensor améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.">Le Lubrication Monitoring Sensor améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.</p>
+<p data-en="In Lubrication Monitoring Sensor installations, this component supports preventive maintenance by keeping lubricant available, measurable, and correctly applied to critical machine parts." data-fr="Dans les installations de Lubrication Monitoring Sensor, ce composant soutient la maintenance préventive en gardant le lubrifiant disponible, mesurable et correctement appliqué aux pièces critiques.">Dans les installations de Lubrication Monitoring Sensor, ce composant soutient la maintenance préventive en gardant le lubrifiant disponible, mesurable et correctement appliqué aux pièces critiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Oil Quality Sensor" data-fr="Oil Quality Sensor">Oil Quality Sensor</h3>
-<p data-en="The Oil Quality Sensor provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Oil Quality Sensor offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Oil Quality Sensor offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
+<p data-en="Specified for Oil Quality Sensor use, it reduces friction and wear in moving assemblies, helping equipment resist heat, load, contamination, and long operating hours." data-fr="Sélectionné pour l’usage de Oil Quality Sensor, il réduit les frottements et l’usure des ensembles mobiles, aidant les équipements à résister à la chaleur, aux charges et aux longues heures.">Sélectionné pour l’usage de Oil Quality Sensor, il réduit les frottements et l’usure des ensembles mobiles, aidant les équipements à résister à la chaleur, aux charges et aux longues heures.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Oil Flow Sensor" data-fr="Oil Flow Sensor">Oil Flow Sensor</h3>
-<p data-en="The Oil Flow Sensor provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Oil Flow Sensor offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Oil Flow Sensor offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
+<p data-en="Across industrial oil flow sensor projects, it provides the protective film needed for bearings, gears, chains, and sliding surfaces in industrial service." data-fr="Dans les projets industriels de Oil Flow Sensor, il fournit le film protecteur nécessaire aux roulements, engrenages, chaînes et surfaces de glissement en service industriel.">Dans les projets industriels de Oil Flow Sensor, il fournit le film protecteur nécessaire aux roulements, engrenages, chaînes et surfaces de glissement en service industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Lubrication Accessories (Clamps, Brackets, Adapters)" data-fr="Lubrication Accessories (Clamps, Brackets, Adapters)">Lubrication Accessories (Clamps, Brackets, Adapters)</h3>
-<p data-en="The Lubrication Accessories (Clamps, Brackets, Adapters) improves lubrication reliability, reduces component wear, and supports longer service intervals for industrial machinery." data-fr="Le Lubrication Accessories (Clamps, Brackets, Adapters) améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.">Le Lubrication Accessories (Clamps, Brackets, Adapters) améliore la fiabilité de lubrification, réduit l’usure des composants et prolonge les intervalles de maintenance.</p>
+<p data-en="For Lubrication Accessories (Clamps, Brackets, Adapters) applications, this solution improves lubrication visibility and storage control so maintenance teams can monitor condition, level, and delivery more easily." data-fr="Pour les applications de Lubrication Accessories (Clamps, Brackets, Adapters), cette solution améliore la visibilité et la gestion du lubrifiant afin que la maintenance suive plus facilement l’état, le niveau et la distribution.">Pour les applications de Lubrication Accessories (Clamps, Brackets, Adapters), cette solution améliore la visibilité et la gestion du lubrifiant afin que la maintenance suive plus facilement l’état, le niveau et la distribution.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Industrial Grease" data-fr="Industrial Grease">Industrial Grease</h3>
-<p data-en="The Industrial Grease provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Industrial Grease offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Industrial Grease offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
+<p data-en="In Industrial Grease systems, this component provides the protective film needed for bearings, gears, chains, and sliding surfaces in industrial service." data-fr="Dans les systèmes de Industrial Grease, ce composant fournit le film protecteur nécessaire aux roulements, engrenages, chaînes et surfaces de glissement en service industriel.">Dans les systèmes de Industrial Grease, ce composant fournit le film protecteur nécessaire aux roulements, engrenages, chaînes et surfaces de glissement en service industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Synthetic Grease" data-fr="Synthetic Grease">Synthetic Grease</h3>
-<p data-en="The Synthetic Grease provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Synthetic Grease offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Synthetic Grease offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
+<p data-en="In Synthetic Grease installations, this component reduces friction and wear in moving assemblies, helping equipment resist heat, load, contamination, and long operating hours." data-fr="Dans les installations de Synthetic Grease, ce composant réduit les frottements et l’usure des ensembles mobiles, aidant les équipements à résister à la chaleur, aux charges et aux longues heures.">Dans les installations de Synthetic Grease, ce composant réduit les frottements et l’usure des ensembles mobiles, aidant les équipements à résister à la chaleur, aux charges et aux longues heures.</p>
 </a>
 <a class="card-system">
 <h3 data-en="High-Temperature Grease" data-fr="High-Temperature Grease">High-Temperature Grease</h3>
-<p data-en="The High-Temperature Grease provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le High-Temperature Grease offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le High-Temperature Grease offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
+<p data-en="Specified for High-Temperature Grease use, it provides the protective film needed for bearings, gears, chains, and sliding surfaces in industrial service." data-fr="Sélectionné pour l’usage de High-Temperature Grease, il fournit le film protecteur nécessaire aux roulements, engrenages, chaînes et surfaces de glissement en service industriel.">Sélectionné pour l’usage de High-Temperature Grease, il fournit le film protecteur nécessaire aux roulements, engrenages, chaînes et surfaces de glissement en service industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Gear Oil" data-fr="Gear Oil">Gear Oil</h3>
-<p data-en="The Gear Oil provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Gear Oil offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Gear Oil offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
+<p data-en="Across industrial gear oil projects, it reduces friction and wear in moving assemblies, helping equipment resist heat, load, contamination, and long operating hours." data-fr="Dans les projets industriels de Gear Oil, il réduit les frottements et l’usure des ensembles mobiles, aidant les équipements à résister à la chaleur, aux charges et aux longues heures.">Dans les projets industriels de Gear Oil, il réduit les frottements et l’usure des ensembles mobiles, aidant les équipements à résister à la chaleur, aux charges et aux longues heures.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Hydraulic Oil" data-fr="Hydraulic Oil">Hydraulic Oil</h3>
-<p data-en="The Hydraulic Oil provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Hydraulic Oil offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Hydraulic Oil offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
+<p data-en="For Hydraulic Oil applications, this solution provides the protective film needed for bearings, gears, chains, and sliding surfaces in industrial service." data-fr="Pour les applications de Hydraulic Oil, cette solution fournit le film protecteur nécessaire aux roulements, engrenages, chaînes et surfaces de glissement en service industriel.">Pour les applications de Hydraulic Oil, cette solution fournit le film protecteur nécessaire aux roulements, engrenages, chaînes et surfaces de glissement en service industriel.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Food-Grade Lubricant" data-fr="Food-Grade Lubricant">Food-Grade Lubricant</h3>
-<p data-en="The Food-Grade Lubricant provides the film strength, temperature stability, and wear protection required by demanding industrial equipment." data-fr="Le Food-Grade Lubricant offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.">Le Food-Grade Lubricant offre la résistance du film, la stabilité thermique et la protection anti-usure nécessaires aux équipements industriels exigeants.</p>
+<p data-en="In Food-Grade Lubricant systems, this component improves lubrication visibility and storage control so maintenance teams can monitor condition, level, and delivery more easily." data-fr="Dans les systèmes de Food-Grade Lubricant, ce composant améliore la visibilité et la gestion du lubrifiant afin que la maintenance suive plus facilement l’état, le niveau et la distribution.">Dans les systèmes de Food-Grade Lubricant, ce composant améliore la visibilité et la gestion du lubrifiant afin que la maintenance suive plus facilement l’état, le niveau et la distribution.</p>
 </a>
 </div>
 </main>
-<footer class="footer-shell">
+<footer style="background: #0a0c0f; border-top: 1px solid var(--border-color); padding: 60px 0 30px 0; margin-top: 80px;">
 <div class="container grid-3" style="padding: 0 24px 40px 24px;">
 <div>
-<img alt="SUJO" class="site-logo" decoding="async" fetchpriority="high" loading="eager" src="logo.png"/>
+<img alt="SUJO" src="logo.png" style="height: 40px; margin-bottom: 16px;"/>
 <p data-en="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, Democratic Republic of Congo" data-fr="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, République Démocratique du Congo" style="color: var(--text-muted); font-size: 0.9rem;">SUJO Engineering Consulting SARL<br/>Kinshasa, République Démocratique du Congo</p>
 </div>
 <div>
 <h4 data-en="Technology Index" data-fr="Matrices Technologiques" style="margin-bottom: 16px; font-size: 0.95rem;">Matrices Technologiques</h4>
-<p style="font-size: 0.9rem; margin-bottom: 8px;"><a data-en="Global Product Index" data-fr="Index Global des Produits" href="products.html" style="color: var(--text-muted); text-decoration: none;">Index Global des Produits</a></p>
-<p style="font-size: 0.9rem; margin-bottom: 8px;"><a data-en="Partners" data-fr="Partenaires" href="partners.html" style="color: var(--text-muted); text-decoration: none;">Partenaires</a></p>
+<p style="font-size: 0.9rem; margin-bottom: 8px;">Index Global des Produits</p>
+<p style="font-size: 0.9rem; margin-bottom: 8px;">Marques Validées</p>
 </div>
 <div>
 <h4 data-en="Direct Channels" data-fr="Canaux Directs" style="margin-bottom: 16px; font-size: 0.95rem;">Canaux Directs</h4>
-<p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;"><span data-en="DRC:" data-fr="RDC:">RDC:</span> +243 974 570 630</p>
+<p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;">DRC: +243 974 570 630</p>
 <p data-en="Email: contact@sujo-engineering.com" data-fr="Email: contact@sujo-engineering.com" style="color: var(--text-muted); font-size: 0.9rem;">Email: contact@sujo-engineering.com</p>
 </div>
 </div>
 <div data-en="© 2026 SUJO Engineering Consulting SARL. All rights reserved." data-fr="© 2026 SUJO Engineering Consulting SARL. Tous droits réservés." style="text-align: center; border-top: 1px solid var(--border-color); padding-top: 30px; font-size: 0.8rem; color: var(--text-muted);">
-            © 2026 SUJO Engineering Consulting SARL. All rights reserved.
-        </div>
+© 2026 SUJO Engineering Consulting SARL. All rights reserved.
+</div>
 </footer>
+<script>
+function applyLang(lang) {
+    document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+        el.innerHTML = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+    });
+    document.documentElement.lang = lang;
+}
 
+function setLang(lang) {
+    localStorage.setItem('sujoLang', lang);
+    const btnFr = document.getElementById('btn-fr');
+    const btnEn = document.getElementById('btn-en');
+    if (btnFr && btnEn) {
+        btnFr.classList.toggle('active', lang === 'fr');
+        btnEn.classList.toggle('active', lang === 'en');
+    }
+    applyLang(lang);
+}
+
+(function () {
+    const saved = localStorage.getItem('sujoLang') || 'fr';
+    applyLang(saved);
+    const btnFr = document.getElementById('btn-fr');
+    const btnEn = document.getElementById('btn-en');
+    if (btnFr && btnEn) {
+        btnFr.classList.toggle('active', saved === 'fr');
+        btnEn.classList.toggle('active', saved === 'en');
+    }
+})();
+
+function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+    document.querySelector('.hamburger').classList.toggle('open');
+}
+
+document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        if (window.innerWidth <= 900) {
+            e.preventDefault();
+            link.parentElement.classList.toggle('open');
+        }
+    });
+});
+
+document.querySelectorAll('#mobileMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (link.parentElement.classList.contains('dropdown')) return;
+        document.getElementById('mobileMenu').classList.remove('open');
+        document.querySelector('.hamburger').classList.remove('open');
+    });
+});
+</script>
 </body>
 </html>

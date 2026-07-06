@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="style.css" rel="stylesheet"/>
-
+<script defer="" src="app.js"></script>
 <style>
 header{position:sticky;top:0;z-index:1000;backdrop-filter:blur(14px);}
 html{scroll-padding-top:96px;}
@@ -17,47 +17,41 @@ html{scroll-padding-top:96px;}
 .card-system{cursor:default;}
 .card-system p{margin-bottom:0;}
 </style>
-<script defer="True" src="app.js"></script></head>
-<body><a class="skip-link" data-en="Skip to main content" data-fr="Aller au contenu principal" href="#main-content">Aller au contenu principal</a>
+</head>
+<body>
 <!-- NAV BAR -->
 <header>
-<a class="nav-logo" href="index.html">
-<img alt="SUJO" class="site-logo" decoding="async" fetchpriority="high" loading="eager" src="logo.png"/>
+<a class="nav-logo" href="https://sujo-engineering.com/index.html">
+<img alt="SUJO" src="logo.png" style="height: 50px;"/>
 </a>
-<nav aria-label="Main navigation">
+<nav>
 <ul class="nav-links" id="mobileMenu">
 <li><a data-en="Home" data-fr="Accueil" href="https://sujo-engineering.com/index.html">Accueil</a></li>
 <li><a data-en="About" data-fr="À Propos" href="https://sujo-engineering.com/about.html">À Propos</a></li>
 <li class="dropdown">
-<a aria-expanded="false" aria-haspopup="true" class="active" data-en="Products ▾" data-fr="Produits ▾" href="https://sujo-engineering.com/products.html">Produits ▾</a>
+<a class="active" data-en="Products ▾" data-fr="Produits ▾" href="https://sujo-engineering.com/products.html">Produits ▾</a>
 <ul class="dropdown-menu">
 <li><a data-en="Mechanical Components" data-fr="Composants Mécaniques" href="product-mechanical.html">Composants Mécaniques</a></li>
 <li><a data-en="Automation &amp; Motion" data-fr="Automatisation &amp; Mouvement" href="product-automation.html">Automatisation &amp; Mouvement</a></li>
 <li><a data-en="Hydraulics &amp; Pneumatics" data-fr="Hydraulique &amp; Pneumatique" href="product-hydraulics.html">Hydraulique &amp; Pneumatique</a></li>
 <li><a data-en="Industrial Safety" data-fr="Sécurité Industrielle" href="product-safety.html">Sécurité Industrielle</a></li>
-<li><a aria-current="page" class="active" data-en="Power Transmission" data-fr="Transmission de Puissance" href="product-transmission.html">Transmission de Puissance</a></li>
+<li><a class="active" data-en="Power Transmission" data-fr="Transmission de Puissance" href="product-transmission.html">Transmission de Puissance</a></li>
 <li><a data-en="Industrial Lubrication" data-fr="Lubrification Industrielle" href="product-lubrication.html">Lubrification Industrielle</a></li>
 </ul>
 </li>
 <li><a data-en="Partners" data-fr="Partenaires" href="https://sujo-engineering.com/partners.html">Partenaires</a></li>
 <li><a data-en="Contact" data-fr="Contact" href="https://sujo-engineering.com/contact.html">Contact</a></li>
-<li><a class="btn btn-outline nav-account" data-en="My Account" data-fr="Mon Compte" href="https://portal.sujo-engineering.com/" rel="noopener noreferrer" target="_blank">Mon Compte</a></li>
-<li><a class="btn btn-primary" data-en="Request Quote" data-fr="Demander un devis" href="https://sujo-engineering.com/quote.html">Demander un devis</a></li>
-<li>
-<div class="lang-switch">
-<button aria-label="Changer la langue en français" class="active" data-lang-button="fr" id="btn-fr" type="button">FR</button>
-<button aria-label="Switch language to English" data-lang-button="en" id="btn-en" type="button">EN</button>
-</div>
-</li>
-</ul>
+<li><a class="btn btn-outline" data-en="My Account" data-fr="Mon Compte" href="http://129.213.160.94/" style="padding: 8px 16px;" target="_blank">Mon Compte</a></li>
+<li><a class="btn btn-primary" data-en="Request Quote" data-fr="Demander un devis" href="https://sujo-engineering.com/quote.html" style="padding: 8px 16px;">Demander un devis</a></li>
+<li><div class="lang-switch"><button class="active" id="btn-fr" onclick="setLang('fr')" type="button">FR</button><button id="btn-en" onclick="setLang('en')" type="button">EN</button></div></li></ul>
 </nav>
-<div aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation menu" class="hamburger" role="button" tabindex="0">
+<div aria-label="Menu" class="hamburger" onclick="toggleMenu()">
 <span></span>
 <span></span>
 <span></span>
 </div>
 </header>
-<main class="container" id="main-content" tabindex="-1">
+<main class="container">
 <div class="section-header" style="text-align: left;">
 <div class="section-label" data-en="Power Transmission" data-fr="Transmission de Puissance">Transmission de Puissance</div>
 <h1 class="section-title" data-en="Transmission Products" data-fr="Produits de Transmission" style="font-size: 2.75rem;">Produits de Transmission</h1>
@@ -69,223 +63,274 @@ html{scroll-padding-top:96px;}
 <div class="grid-3" style="margin-top: 48px;">
 <a class="card-system">
 <h3 data-en="V-Belt" data-fr="V-Belt">V-Belt</h3>
-<p data-en="The V-Belt transfers power smoothly between pulleys for drives, conveyors, fans, pumps, and industrial machinery." data-fr="Le V-Belt transmet la puissance entre poulies pour entraînements, convoyeurs, ventilateurs, pompes et machines industrielles.">Le V-Belt transmet la puissance entre poulies pour entraînements, convoyeurs, ventilateurs, pompes et machines industrielles.</p>
+<p data-en="For V-Belt applications, this solution transfers power between pulleys with dependable grip, helping compact drives run smoothly in fans, pumps, and conveyors." data-fr="Pour les applications de V-Belt, cette solution transmet la puissance entre poulies avec une adhérence fiable pour des entraînements compacts de ventilateurs, pompes et convoyeurs.">Pour les applications de V-Belt, cette solution transmet la puissance entre poulies avec une adhérence fiable pour des entraînements compacts de ventilateurs, pompes et convoyeurs.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Timing Belt" data-fr="Timing Belt">Timing Belt</h3>
-<p data-en="The Timing Belt transfers power smoothly between pulleys for drives, conveyors, fans, pumps, and industrial machinery." data-fr="Le Timing Belt transmet la puissance entre poulies pour entraînements, convoyeurs, ventilateurs, pompes et machines industrielles.">Le Timing Belt transmet la puissance entre poulies pour entraînements, convoyeurs, ventilateurs, pompes et machines industrielles.</p>
+<p data-en="In Timing Belt systems, this component provides flexible mechanical drive performance where quiet operation, reduced slip, and easy maintenance are priorities." data-fr="Dans les systèmes de Timing Belt, ce composant offre une transmission flexible lorsque le fonctionnement silencieux, la réduction du glissement et l’entretien facile sont prioritaires.">Dans les systèmes de Timing Belt, ce composant offre une transmission flexible lorsque le fonctionnement silencieux, la réduction du glissement et l’entretien facile sont prioritaires.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Poly-V Belt" data-fr="Poly-V Belt">Poly-V Belt</h3>
-<p data-en="The Poly-V Belt transfers power smoothly between pulleys for drives, conveyors, fans, pumps, and industrial machinery." data-fr="Le Poly-V Belt transmet la puissance entre poulies pour entraînements, convoyeurs, ventilateurs, pompes et machines industrielles.">Le Poly-V Belt transmet la puissance entre poulies pour entraînements, convoyeurs, ventilateurs, pompes et machines industrielles.</p>
+<p data-en="In Poly-V Belt installations, this component keeps motion efficient in belt-driven equipment by balancing traction, speed stability, and resistance to wear." data-fr="Dans les installations de Poly-V Belt, ce composant maintient l’efficacité des équipements à courroie grâce à un équilibre entre traction, stabilité de vitesse et résistance à l’usure.">Dans les installations de Poly-V Belt, ce composant maintient l’efficacité des équipements à courroie grâce à un équilibre entre traction, stabilité de vitesse et résistance à l’usure.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Flat Belt" data-fr="Flat Belt">Flat Belt</h3>
-<p data-en="The Flat Belt transfers power smoothly between pulleys for drives, conveyors, fans, pumps, and industrial machinery." data-fr="Le Flat Belt transmet la puissance entre poulies pour entraînements, convoyeurs, ventilateurs, pompes et machines industrielles.">Le Flat Belt transmet la puissance entre poulies pour entraînements, convoyeurs, ventilateurs, pompes et machines industrielles.</p>
+<p data-en="Specified for Flat Belt use, it transfers power between pulleys with dependable grip, helping compact drives run smoothly in fans, pumps, and conveyors." data-fr="Sélectionné pour l’usage de Flat Belt, il transmet la puissance entre poulies avec une adhérence fiable pour des entraînements compacts de ventilateurs, pompes et convoyeurs.">Sélectionné pour l’usage de Flat Belt, il transmet la puissance entre poulies avec une adhérence fiable pour des entraînements compacts de ventilateurs, pompes et convoyeurs.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Conveyor Belt" data-fr="Conveyor Belt">Conveyor Belt</h3>
-<p data-en="The Conveyor Belt transfers power smoothly between pulleys for drives, conveyors, fans, pumps, and industrial machinery." data-fr="Le Conveyor Belt transmet la puissance entre poulies pour entraînements, convoyeurs, ventilateurs, pompes et machines industrielles.">Le Conveyor Belt transmet la puissance entre poulies pour entraînements, convoyeurs, ventilateurs, pompes et machines industrielles.</p>
+<p data-en="Across industrial conveyor belt projects, it provides flexible mechanical drive performance where quiet operation, reduced slip, and easy maintenance are priorities." data-fr="Dans les projets industriels de Conveyor Belt, il offre une transmission flexible lorsque le fonctionnement silencieux, la réduction du glissement et l’entretien facile sont prioritaires.">Dans les projets industriels de Conveyor Belt, il offre une transmission flexible lorsque le fonctionnement silencieux, la réduction du glissement et l’entretien facile sont prioritaires.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Chain (Roller Chain)" data-fr="Chain (Roller Chain)">Chain (Roller Chain)</h3>
-<p data-en="The Chain (Roller Chain) provides positive mechanical engagement for conveyors, lifting equipment, and heavy-duty drive systems." data-fr="Le Chain (Roller Chain) assure un engagement mécanique positif pour convoyeurs, équipements de levage et entraînements lourds.">Le Chain (Roller Chain) assure un engagement mécanique positif pour convoyeurs, équipements de levage et entraînements lourds.</p>
+<p data-en="For Chain (Roller Chain) applications, this solution handles synchronized power transfer in rugged applications where strength, timing, and long service life are required." data-fr="Pour les applications de Chain (Roller Chain), cette solution gère une transmission synchronisée dans les applications robustes où résistance, calage et longue durée de vie sont requis.">Pour les applications de Chain (Roller Chain), cette solution gère une transmission synchronisée dans les applications robustes où résistance, calage et longue durée de vie sont requis.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Heavy-Duty Chain" data-fr="Heavy-Duty Chain">Heavy-Duty Chain</h3>
-<p data-en="The Heavy-Duty Chain provides positive mechanical engagement for conveyors, lifting equipment, and heavy-duty drive systems." data-fr="Le Heavy-Duty Chain assure un engagement mécanique positif pour convoyeurs, équipements de levage et entraînements lourds.">Le Heavy-Duty Chain assure un engagement mécanique positif pour convoyeurs, équipements de levage et entraînements lourds.</p>
+<p data-en="In Heavy-Duty Chain systems, this component delivers positive mechanical engagement for conveyors, packaging lines, and heavy-duty drive systems that require steady torque." data-fr="Dans les systèmes de Heavy-Duty Chain, ce composant assure un engagement mécanique positif pour convoyeurs, lignes d’emballage et entraînements lourds nécessitant un couple régulier.">Dans les systèmes de Heavy-Duty Chain, ce composant assure un engagement mécanique positif pour convoyeurs, lignes d’emballage et entraînements lourds nécessitant un couple régulier.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Leaf Chain" data-fr="Leaf Chain">Leaf Chain</h3>
-<p data-en="The Leaf Chain provides positive mechanical engagement for conveyors, lifting equipment, and heavy-duty drive systems." data-fr="Le Leaf Chain assure un engagement mécanique positif pour convoyeurs, équipements de levage et entraînements lourds.">Le Leaf Chain assure un engagement mécanique positif pour convoyeurs, équipements de levage et entraînements lourds.</p>
+<p data-en="In Leaf Chain installations, this component handles synchronized power transfer in rugged applications where strength, timing, and long service life are required." data-fr="Dans les installations de Leaf Chain, ce composant gère une transmission synchronisée dans les applications robustes où résistance, calage et longue durée de vie sont requis.">Dans les installations de Leaf Chain, ce composant gère une transmission synchronisée dans les applications robustes où résistance, calage et longue durée de vie sont requis.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Silent Chain" data-fr="Silent Chain">Silent Chain</h3>
-<p data-en="The Silent Chain provides positive mechanical engagement for conveyors, lifting equipment, and heavy-duty drive systems." data-fr="Le Silent Chain assure un engagement mécanique positif pour convoyeurs, équipements de levage et entraînements lourds.">Le Silent Chain assure un engagement mécanique positif pour convoyeurs, équipements de levage et entraînements lourds.</p>
+<p data-en="Specified for Silent Chain use, it delivers positive mechanical engagement for conveyors, packaging lines, and heavy-duty drive systems that require steady torque." data-fr="Sélectionné pour l’usage de Silent Chain, il assure un engagement mécanique positif pour convoyeurs, lignes d’emballage et entraînements lourds nécessitant un couple régulier.">Sélectionné pour l’usage de Silent Chain, il assure un engagement mécanique positif pour convoyeurs, lignes d’emballage et entraînements lourds nécessitant un couple régulier.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Sprocket" data-fr="Sprocket">Sprocket</h3>
-<p data-en="The Sprocket guides belts or chains while maintaining speed ratio, alignment, and reliable torque transmission." data-fr="Le Sprocket guide les courroies ou chaînes tout en maintenant le rapport de vitesse, l’alignement et la transmission du couple.">Le Sprocket guide les courroies ou chaînes tout en maintenant le rapport de vitesse, l’alignement et la transmission du couple.</p>
+<p data-en="Across industrial sprocket projects, it handles synchronized power transfer in rugged applications where strength, timing, and long service life are required." data-fr="Dans les projets industriels de Sprocket, il gère une transmission synchronisée dans les applications robustes où résistance, calage et longue durée de vie sont requis.">Dans les projets industriels de Sprocket, il gère une transmission synchronisée dans les applications robustes où résistance, calage et longue durée de vie sont requis.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Timing Pulley" data-fr="Timing Pulley">Timing Pulley</h3>
-<p data-en="The Timing Pulley guides belts or chains while maintaining speed ratio, alignment, and reliable torque transmission." data-fr="Le Timing Pulley guide les courroies ou chaînes tout en maintenant le rapport de vitesse, l’alignement et la transmission du couple.">Le Timing Pulley guide les courroies ou chaînes tout en maintenant le rapport de vitesse, l’alignement et la transmission du couple.</p>
+<p data-en="For Timing Pulley applications, this solution supports efficient power transmission in industrial drivetrains where alignment, torque capacity, and uptime are critical." data-fr="Pour les applications de Timing Pulley, cette solution soutient une transmission efficace dans les chaînes cinématiques industrielles où alignement, couple et disponibilité sont critiques.">Pour les applications de Timing Pulley, cette solution soutient une transmission efficace dans les chaînes cinématiques industrielles où alignement, couple et disponibilité sont critiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="V-Pulley" data-fr="V-Pulley">V-Pulley</h3>
-<p data-en="The V-Pulley guides belts or chains while maintaining speed ratio, alignment, and reliable torque transmission." data-fr="Le V-Pulley guide les courroies ou chaînes tout en maintenant le rapport de vitesse, l’alignement et la transmission du couple.">Le V-Pulley guide les courroies ou chaînes tout en maintenant le rapport de vitesse, l’alignement et la transmission du couple.</p>
+<p data-en="In V-Pulley systems, this component helps mechanical systems move power reliably from the prime mover to the driven equipment with reduced losses." data-fr="Dans les systèmes de V-Pulley, ce composant aide les systèmes mécaniques à transmettre la puissance de l’entraînement vers l’équipement entraîné avec moins de pertes.">Dans les systèmes de V-Pulley, ce composant aide les systèmes mécaniques à transmettre la puissance de l’entraînement vers l’équipement entraîné avec moins de pertes.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Flat Pulley" data-fr="Flat Pulley">Flat Pulley</h3>
-<p data-en="The Flat Pulley guides belts or chains while maintaining speed ratio, alignment, and reliable torque transmission." data-fr="Le Flat Pulley guide les courroies ou chaînes tout en maintenant le rapport de vitesse, l’alignement et la transmission du couple.">Le Flat Pulley guide les courroies ou chaînes tout en maintenant le rapport de vitesse, l’alignement et la transmission du couple.</p>
+<p data-en="In Flat Pulley installations, this component supports efficient power transmission in industrial drivetrains where alignment, torque capacity, and uptime are critical." data-fr="Dans les installations de Flat Pulley, ce composant soutient une transmission efficace dans les chaînes cinématiques industrielles où alignement, couple et disponibilité sont critiques.">Dans les installations de Flat Pulley, ce composant soutient une transmission efficace dans les chaînes cinématiques industrielles où alignement, couple et disponibilité sont critiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Coupling (Jaw)" data-fr="Coupling (Jaw)">Coupling (Jaw)</h3>
-<p data-en="The Coupling (Jaw) connects shafts while accommodating alignment needs and transferring torque between rotating machines." data-fr="Le Coupling (Jaw) raccorde les arbres tout en gérant les besoins d’alignement et le transfert du couple entre machines rotatives.">Le Coupling (Jaw) raccorde les arbres tout en gérant les besoins d’alignement et le transfert du couple entre machines rotatives.</p>
+<p data-en="Specified for Coupling (Jaw) use, it improves drivetrain reliability by supporting controlled engagement, alignment compensation, or safe stopping performance." data-fr="Sélectionné pour l’usage de Coupling (Jaw), il améliore la fiabilité de la chaîne cinématique grâce à l’engagement contrôlé, la compensation d’alignement ou l’arrêt sécurisé.">Sélectionné pour l’usage de Coupling (Jaw), il améliore la fiabilité de la chaîne cinématique grâce à l’engagement contrôlé, la compensation d’alignement ou l’arrêt sécurisé.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Coupling (Gear)" data-fr="Coupling (Gear)">Coupling (Gear)</h3>
-<p data-en="The Coupling (Gear) connects shafts while accommodating alignment needs and transferring torque between rotating machines." data-fr="Le Coupling (Gear) raccorde les arbres tout en gérant les besoins d’alignement et le transfert du couple entre machines rotatives.">Le Coupling (Gear) raccorde les arbres tout en gérant les besoins d’alignement et le transfert du couple entre machines rotatives.</p>
+<p data-en="Across industrial coupling (gear) projects, it adjusts speed and torque for industrial machines, helping drives match the load requirements of each application." data-fr="Dans les projets industriels de Coupling (Gear), il adapte la vitesse et le couple des machines industrielles pour aligner l’entraînement aux exigences de chaque charge.">Dans les projets industriels de Coupling (Gear), il adapte la vitesse et le couple des machines industrielles pour aligner l’entraînement aux exigences de chaque charge.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Coupling (Grid)" data-fr="Coupling (Grid)">Coupling (Grid)</h3>
-<p data-en="The Coupling (Grid) connects shafts while accommodating alignment needs and transferring torque between rotating machines." data-fr="Le Coupling (Grid) raccorde les arbres tout en gérant les besoins d’alignement et le transfert du couple entre machines rotatives.">Le Coupling (Grid) raccorde les arbres tout en gérant les besoins d’alignement et le transfert du couple entre machines rotatives.</p>
+<p data-en="For Coupling (Grid) applications, this solution improves drivetrain reliability by supporting controlled engagement, alignment compensation, or safe stopping performance." data-fr="Pour les applications de Coupling (Grid), cette solution améliore la fiabilité de la chaîne cinématique grâce à l’engagement contrôlé, la compensation d’alignement ou l’arrêt sécurisé.">Pour les applications de Coupling (Grid), cette solution améliore la fiabilité de la chaîne cinématique grâce à l’engagement contrôlé, la compensation d’alignement ou l’arrêt sécurisé.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Coupling (Flexible)" data-fr="Coupling (Flexible)">Coupling (Flexible)</h3>
-<p data-en="The Coupling (Flexible) connects shafts while accommodating alignment needs and transferring torque between rotating machines." data-fr="Le Coupling (Flexible) raccorde les arbres tout en gérant les besoins d’alignement et le transfert du couple entre machines rotatives.">Le Coupling (Flexible) raccorde les arbres tout en gérant les besoins d’alignement et le transfert du couple entre machines rotatives.</p>
+<p data-en="In Coupling (Flexible) systems, this component connects or controls rotating shafts while helping manage vibration, torque changes, and equipment start-stop cycles." data-fr="Dans les systèmes de Coupling (Flexible), ce composant connecte ou contrôle les arbres rotatifs tout en maîtrisant vibrations, variations de couple et cycles marche-arrêt.">Dans les systèmes de Coupling (Flexible), ce composant connecte ou contrôle les arbres rotatifs tout en maîtrisant vibrations, variations de couple et cycles marche-arrêt.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Coupling (Rigid)" data-fr="Coupling (Rigid)">Coupling (Rigid)</h3>
-<p data-en="The Coupling (Rigid) connects shafts while accommodating alignment needs and transferring torque between rotating machines." data-fr="Le Coupling (Rigid) raccorde les arbres tout en gérant les besoins d’alignement et le transfert du couple entre machines rotatives.">Le Coupling (Rigid) raccorde les arbres tout en gérant les besoins d’alignement et le transfert du couple entre machines rotatives.</p>
+<p data-en="In Coupling (Rigid) installations, this component improves drivetrain reliability by supporting controlled engagement, alignment compensation, or safe stopping performance." data-fr="Dans les installations de Coupling (Rigid), ce composant améliore la fiabilité de la chaîne cinématique grâce à l’engagement contrôlé, la compensation d’alignement ou l’arrêt sécurisé.">Dans les installations de Coupling (Rigid), ce composant améliore la fiabilité de la chaîne cinématique grâce à l’engagement contrôlé, la compensation d’alignement ou l’arrêt sécurisé.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Universal Joint" data-fr="Universal Joint">Universal Joint</h3>
-<p data-en="The Universal Joint connects shafts while accommodating alignment needs and transferring torque between rotating machines." data-fr="Le Universal Joint raccorde les arbres tout en gérant les besoins d’alignement et le transfert du couple entre machines rotatives.">Le Universal Joint raccorde les arbres tout en gérant les besoins d’alignement et le transfert du couple entre machines rotatives.</p>
+<p data-en="Specified for Universal Joint use, it supports efficient power transmission in industrial drivetrains where alignment, torque capacity, and uptime are critical." data-fr="Sélectionné pour l’usage de Universal Joint, il soutient une transmission efficace dans les chaînes cinématiques industrielles où alignement, couple et disponibilité sont critiques.">Sélectionné pour l’usage de Universal Joint, il soutient une transmission efficace dans les chaînes cinématiques industrielles où alignement, couple et disponibilité sont critiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Shaft" data-fr="Shaft">Shaft</h3>
-<p data-en="The Shaft secures rotating assemblies and supports accurate torque transfer, shaft positioning, and component retention." data-fr="Le Shaft sécurise les ensembles rotatifs et assure le transfert du couple, le positionnement d’arbre et le maintien des composants.">Le Shaft sécurise les ensembles rotatifs et assure le transfert du couple, le positionnement d’arbre et le maintien des composants.</p>
+<p data-en="Across industrial shaft projects, it helps mechanical systems move power reliably from the prime mover to the driven equipment with reduced losses." data-fr="Dans les projets industriels de Shaft, il aide les systèmes mécaniques à transmettre la puissance de l’entraînement vers l’équipement entraîné avec moins de pertes.">Dans les projets industriels de Shaft, il aide les systèmes mécaniques à transmettre la puissance de l’entraînement vers l’équipement entraîné avec moins de pertes.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Keyed Shaft" data-fr="Keyed Shaft">Keyed Shaft</h3>
-<p data-en="The Keyed Shaft secures rotating assemblies and supports accurate torque transfer, shaft positioning, and component retention." data-fr="Le Keyed Shaft sécurise les ensembles rotatifs et assure le transfert du couple, le positionnement d’arbre et le maintien des composants.">Le Keyed Shaft sécurise les ensembles rotatifs et assure le transfert du couple, le positionnement d’arbre et le maintien des composants.</p>
+<p data-en="For Keyed Shaft applications, this solution supports efficient power transmission in industrial drivetrains where alignment, torque capacity, and uptime are critical." data-fr="Pour les applications de Keyed Shaft, cette solution soutient une transmission efficace dans les chaînes cinématiques industrielles où alignement, couple et disponibilité sont critiques.">Pour les applications de Keyed Shaft, cette solution soutient une transmission efficace dans les chaînes cinématiques industrielles où alignement, couple et disponibilité sont critiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Splined Shaft" data-fr="Splined Shaft">Splined Shaft</h3>
-<p data-en="The Splined Shaft secures rotating assemblies and supports accurate torque transfer, shaft positioning, and component retention." data-fr="Le Splined Shaft sécurise les ensembles rotatifs et assure le transfert du couple, le positionnement d’arbre et le maintien des composants.">Le Splined Shaft sécurise les ensembles rotatifs et assure le transfert du couple, le positionnement d’arbre et le maintien des composants.</p>
+<p data-en="In Splined Shaft systems, this component helps mechanical systems move power reliably from the prime mover to the driven equipment with reduced losses." data-fr="Dans les systèmes de Splined Shaft, ce composant aide les systèmes mécaniques à transmettre la puissance de l’entraînement vers l’équipement entraîné avec moins de pertes.">Dans les systèmes de Splined Shaft, ce composant aide les systèmes mécaniques à transmettre la puissance de l’entraînement vers l’équipement entraîné avec moins de pertes.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Shaft Hub" data-fr="Shaft Hub">Shaft Hub</h3>
-<p data-en="The Shaft Hub secures rotating assemblies and supports accurate torque transfer, shaft positioning, and component retention." data-fr="Le Shaft Hub sécurise les ensembles rotatifs et assure le transfert du couple, le positionnement d’arbre et le maintien des composants.">Le Shaft Hub sécurise les ensembles rotatifs et assure le transfert du couple, le positionnement d’arbre et le maintien des composants.</p>
+<p data-en="In Shaft Hub installations, this component supports efficient power transmission in industrial drivetrains where alignment, torque capacity, and uptime are critical." data-fr="Dans les installations de Shaft Hub, ce composant soutient une transmission efficace dans les chaînes cinématiques industrielles où alignement, couple et disponibilité sont critiques.">Dans les installations de Shaft Hub, ce composant soutient une transmission efficace dans les chaînes cinématiques industrielles où alignement, couple et disponibilité sont critiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Shaft Collar" data-fr="Shaft Collar">Shaft Collar</h3>
-<p data-en="The Shaft Collar secures rotating assemblies and supports accurate torque transfer, shaft positioning, and component retention." data-fr="Le Shaft Collar sécurise les ensembles rotatifs et assure le transfert du couple, le positionnement d’arbre et le maintien des composants.">Le Shaft Collar sécurise les ensembles rotatifs et assure le transfert du couple, le positionnement d’arbre et le maintien des composants.</p>
+<p data-en="Specified for Shaft Collar use, it helps mechanical systems move power reliably from the prime mover to the driven equipment with reduced losses." data-fr="Sélectionné pour l’usage de Shaft Collar, il aide les systèmes mécaniques à transmettre la puissance de l’entraînement vers l’équipement entraîné avec moins de pertes.">Sélectionné pour l’usage de Shaft Collar, il aide les systèmes mécaniques à transmettre la puissance de l’entraînement vers l’équipement entraîné avec moins de pertes.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Key &amp; Keyway" data-fr="Key &amp; Keyway">Key &amp; Keyway</h3>
-<p data-en="The Key &amp; Keyway secures rotating assemblies and supports accurate torque transfer, shaft positioning, and component retention." data-fr="Le Key &amp; Keyway sécurise les ensembles rotatifs et assure le transfert du couple, le positionnement d’arbre et le maintien des composants.">Le Key &amp; Keyway sécurise les ensembles rotatifs et assure le transfert du couple, le positionnement d’arbre et le maintien des composants.</p>
+<p data-en="Across industrial key &amp; keyway projects, it supports efficient power transmission in industrial drivetrains where alignment, torque capacity, and uptime are critical." data-fr="Dans les projets industriels de Key &amp; Keyway, il soutient une transmission efficace dans les chaînes cinématiques industrielles où alignement, couple et disponibilité sont critiques.">Dans les projets industriels de Key &amp; Keyway, il soutient une transmission efficace dans les chaînes cinématiques industrielles où alignement, couple et disponibilité sont critiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Locking Assembly" data-fr="Locking Assembly">Locking Assembly</h3>
-<p data-en="The Locking Assembly secures rotating assemblies and supports accurate torque transfer, shaft positioning, and component retention." data-fr="Le Locking Assembly sécurise les ensembles rotatifs et assure le transfert du couple, le positionnement d’arbre et le maintien des composants.">Le Locking Assembly sécurise les ensembles rotatifs et assure le transfert du couple, le positionnement d’arbre et le maintien des composants.</p>
+<p data-en="For Locking Assembly applications, this solution helps mechanical systems move power reliably from the prime mover to the driven equipment with reduced losses." data-fr="Pour les applications de Locking Assembly, cette solution aide les systèmes mécaniques à transmettre la puissance de l’entraînement vers l’équipement entraîné avec moins de pertes.">Pour les applications de Locking Assembly, cette solution aide les systèmes mécaniques à transmettre la puissance de l’entraînement vers l’équipement entraîné avec moins de pertes.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Taper Lock Bush" data-fr="Taper Lock Bush">Taper Lock Bush</h3>
-<p data-en="The Taper Lock Bush secures rotating assemblies and supports accurate torque transfer, shaft positioning, and component retention." data-fr="Le Taper Lock Bush sécurise les ensembles rotatifs et assure le transfert du couple, le positionnement d’arbre et le maintien des composants.">Le Taper Lock Bush sécurise les ensembles rotatifs et assure le transfert du couple, le positionnement d’arbre et le maintien des composants.</p>
+<p data-en="In Taper Lock Bush systems, this component supports efficient power transmission in industrial drivetrains where alignment, torque capacity, and uptime are critical." data-fr="Dans les systèmes de Taper Lock Bush, ce composant soutient une transmission efficace dans les chaînes cinématiques industrielles où alignement, couple et disponibilité sont critiques.">Dans les systèmes de Taper Lock Bush, ce composant soutient une transmission efficace dans les chaînes cinématiques industrielles où alignement, couple et disponibilité sont critiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Bearing Housing" data-fr="Bearing Housing">Bearing Housing</h3>
-<p data-en="The Bearing Housing supports reliable power transmission, motion control, and equipment uptime in industrial drive systems." data-fr="Le Bearing Housing soutient une transmission de puissance fiable, le contrôle du mouvement et la disponibilité des entraînements industriels.">Le Bearing Housing soutient une transmission de puissance fiable, le contrôle du mouvement et la disponibilité des entraînements industriels.</p>
+<p data-en="In Bearing Housing installations, this component helps mechanical systems move power reliably from the prime mover to the driven equipment with reduced losses." data-fr="Dans les installations de Bearing Housing, ce composant aide les systèmes mécaniques à transmettre la puissance de l’entraînement vers l’équipement entraîné avec moins de pertes.">Dans les installations de Bearing Housing, ce composant aide les systèmes mécaniques à transmettre la puissance de l’entraînement vers l’équipement entraîné avec moins de pertes.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Gearbox (Helical)" data-fr="Gearbox (Helical)">Gearbox (Helical)</h3>
-<p data-en="The Gearbox (Helical) adjusts speed and torque so driven equipment receives the mechanical output required by the process." data-fr="Le Gearbox (Helical) adapte la vitesse et le couple afin que l’équipement entraîné reçoive la sortie mécanique requise par le procédé.">Le Gearbox (Helical) adapte la vitesse et le couple afin que l’équipement entraîné reçoive la sortie mécanique requise par le procédé.</p>
+<p data-en="Specified for Gearbox (Helical) use, it adjusts speed and torque for industrial machines, helping drives match the load requirements of each application." data-fr="Sélectionné pour l’usage de Gearbox (Helical), il adapte la vitesse et le couple des machines industrielles pour aligner l’entraînement aux exigences de chaque charge.">Sélectionné pour l’usage de Gearbox (Helical), il adapte la vitesse et le couple des machines industrielles pour aligner l’entraînement aux exigences de chaque charge.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Gearbox (Worm)" data-fr="Gearbox (Worm)">Gearbox (Worm)</h3>
-<p data-en="The Gearbox (Worm) adjusts speed and torque so driven equipment receives the mechanical output required by the process." data-fr="Le Gearbox (Worm) adapte la vitesse et le couple afin que l’équipement entraîné reçoive la sortie mécanique requise par le procédé.">Le Gearbox (Worm) adapte la vitesse et le couple afin que l’équipement entraîné reçoive la sortie mécanique requise par le procédé.</p>
+<p data-en="Across industrial gearbox (worm) projects, it provides controlled torque multiplication for equipment that needs dependable power delivery at lower operating speeds." data-fr="Dans les projets industriels de Gearbox (Worm), il fournit une multiplication contrôlée du couple pour les équipements nécessitant une puissance fiable à basse vitesse.">Dans les projets industriels de Gearbox (Worm), il fournit une multiplication contrôlée du couple pour les équipements nécessitant une puissance fiable à basse vitesse.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Gearbox (Bevel)" data-fr="Gearbox (Bevel)">Gearbox (Bevel)</h3>
-<p data-en="The Gearbox (Bevel) adjusts speed and torque so driven equipment receives the mechanical output required by the process." data-fr="Le Gearbox (Bevel) adapte la vitesse et le couple afin que l’équipement entraîné reçoive la sortie mécanique requise par le procédé.">Le Gearbox (Bevel) adapte la vitesse et le couple afin que l’équipement entraîné reçoive la sortie mécanique requise par le procédé.</p>
+<p data-en="For Gearbox (Bevel) applications, this solution adjusts speed and torque for industrial machines, helping drives match the load requirements of each application." data-fr="Pour les applications de Gearbox (Bevel), cette solution adapte la vitesse et le couple des machines industrielles pour aligner l’entraînement aux exigences de chaque charge.">Pour les applications de Gearbox (Bevel), cette solution adapte la vitesse et le couple des machines industrielles pour aligner l’entraînement aux exigences de chaque charge.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Gearbox (Planetary)" data-fr="Gearbox (Planetary)">Gearbox (Planetary)</h3>
-<p data-en="The Gearbox (Planetary) adjusts speed and torque so driven equipment receives the mechanical output required by the process." data-fr="Le Gearbox (Planetary) adapte la vitesse et le couple afin que l’équipement entraîné reçoive la sortie mécanique requise par le procédé.">Le Gearbox (Planetary) adapte la vitesse et le couple afin que l’équipement entraîné reçoive la sortie mécanique requise par le procédé.</p>
+<p data-en="In Gearbox (Planetary) systems, this component provides controlled torque multiplication for equipment that needs dependable power delivery at lower operating speeds." data-fr="Dans les systèmes de Gearbox (Planetary), ce composant fournit une multiplication contrôlée du couple pour les équipements nécessitant une puissance fiable à basse vitesse.">Dans les systèmes de Gearbox (Planetary), ce composant fournit une multiplication contrôlée du couple pour les équipements nécessitant une puissance fiable à basse vitesse.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Speed Reducer" data-fr="Speed Reducer">Speed Reducer</h3>
-<p data-en="The Speed Reducer adjusts speed and torque so driven equipment receives the mechanical output required by the process." data-fr="Le Speed Reducer adapte la vitesse et le couple afin que l’équipement entraîné reçoive la sortie mécanique requise par le procédé.">Le Speed Reducer adapte la vitesse et le couple afin que l’équipement entraîné reçoive la sortie mécanique requise par le procédé.</p>
+<p data-en="In Speed Reducer installations, this component adjusts speed and torque for industrial machines, helping drives match the load requirements of each application." data-fr="Dans les installations de Speed Reducer, ce composant adapte la vitesse et le couple des machines industrielles pour aligner l’entraînement aux exigences de chaque charge.">Dans les installations de Speed Reducer, ce composant adapte la vitesse et le couple des machines industrielles pour aligner l’entraînement aux exigences de chaque charge.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Speed Variator" data-fr="Speed Variator">Speed Variator</h3>
-<p data-en="The Speed Variator adjusts speed and torque so driven equipment receives the mechanical output required by the process." data-fr="Le Speed Variator adapte la vitesse et le couple afin que l’équipement entraîné reçoive la sortie mécanique requise par le procédé.">Le Speed Variator adapte la vitesse et le couple afin que l’équipement entraîné reçoive la sortie mécanique requise par le procédé.</p>
+<p data-en="Specified for Speed Variator use, it helps mechanical systems move power reliably from the prime mover to the driven equipment with reduced losses." data-fr="Sélectionné pour l’usage de Speed Variator, il aide les systèmes mécaniques à transmettre la puissance de l’entraînement vers l’équipement entraîné avec moins de pertes.">Sélectionné pour l’usage de Speed Variator, il aide les systèmes mécaniques à transmettre la puissance de l’entraînement vers l’équipement entraîné avec moins de pertes.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Gear Set (Spur)" data-fr="Gear Set (Spur)">Gear Set (Spur)</h3>
-<p data-en="The Gear Set (Spur) adjusts speed and torque so driven equipment receives the mechanical output required by the process." data-fr="Le Gear Set (Spur) adapte la vitesse et le couple afin que l’équipement entraîné reçoive la sortie mécanique requise par le procédé.">Le Gear Set (Spur) adapte la vitesse et le couple afin que l’équipement entraîné reçoive la sortie mécanique requise par le procédé.</p>
+<p data-en="Across industrial gear set (spur) projects, it adjusts speed and torque for industrial machines, helping drives match the load requirements of each application." data-fr="Dans les projets industriels de Gear Set (Spur), il adapte la vitesse et le couple des machines industrielles pour aligner l’entraînement aux exigences de chaque charge.">Dans les projets industriels de Gear Set (Spur), il adapte la vitesse et le couple des machines industrielles pour aligner l’entraînement aux exigences de chaque charge.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Gear Set (Helical)" data-fr="Gear Set (Helical)">Gear Set (Helical)</h3>
-<p data-en="The Gear Set (Helical) adjusts speed and torque so driven equipment receives the mechanical output required by the process." data-fr="Le Gear Set (Helical) adapte la vitesse et le couple afin que l’équipement entraîné reçoive la sortie mécanique requise par le procédé.">Le Gear Set (Helical) adapte la vitesse et le couple afin que l’équipement entraîné reçoive la sortie mécanique requise par le procédé.</p>
+<p data-en="For Gear Set (Helical) applications, this solution provides controlled torque multiplication for equipment that needs dependable power delivery at lower operating speeds." data-fr="Pour les applications de Gear Set (Helical), cette solution fournit une multiplication contrôlée du couple pour les équipements nécessitant une puissance fiable à basse vitesse.">Pour les applications de Gear Set (Helical), cette solution fournit une multiplication contrôlée du couple pour les équipements nécessitant une puissance fiable à basse vitesse.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Gear Set (Bevel)" data-fr="Gear Set (Bevel)">Gear Set (Bevel)</h3>
-<p data-en="The Gear Set (Bevel) adjusts speed and torque so driven equipment receives the mechanical output required by the process." data-fr="Le Gear Set (Bevel) adapte la vitesse et le couple afin que l’équipement entraîné reçoive la sortie mécanique requise par le procédé.">Le Gear Set (Bevel) adapte la vitesse et le couple afin que l’équipement entraîné reçoive la sortie mécanique requise par le procédé.</p>
+<p data-en="In Gear Set (Bevel) systems, this component adjusts speed and torque for industrial machines, helping drives match the load requirements of each application." data-fr="Dans les systèmes de Gear Set (Bevel), ce composant adapte la vitesse et le couple des machines industrielles pour aligner l’entraînement aux exigences de chaque charge.">Dans les systèmes de Gear Set (Bevel), ce composant adapte la vitesse et le couple des machines industrielles pour aligner l’entraînement aux exigences de chaque charge.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Gear Set (Worm)" data-fr="Gear Set (Worm)">Gear Set (Worm)</h3>
-<p data-en="The Gear Set (Worm) adjusts speed and torque so driven equipment receives the mechanical output required by the process." data-fr="Le Gear Set (Worm) adapte la vitesse et le couple afin que l’équipement entraîné reçoive la sortie mécanique requise par le procédé.">Le Gear Set (Worm) adapte la vitesse et le couple afin que l’équipement entraîné reçoive la sortie mécanique requise par le procédé.</p>
+<p data-en="In Gear Set (Worm) installations, this component provides controlled torque multiplication for equipment that needs dependable power delivery at lower operating speeds." data-fr="Dans les installations de Gear Set (Worm), ce composant fournit une multiplication contrôlée du couple pour les équipements nécessitant une puissance fiable à basse vitesse.">Dans les installations de Gear Set (Worm), ce composant fournit une multiplication contrôlée du couple pour les équipements nécessitant une puissance fiable à basse vitesse.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Rack &amp; Pinion" data-fr="Rack &amp; Pinion">Rack &amp; Pinion</h3>
-<p data-en="The Rack &amp; Pinion supports reliable power transmission, motion control, and equipment uptime in industrial drive systems." data-fr="Le Rack &amp; Pinion soutient une transmission de puissance fiable, le contrôle du mouvement et la disponibilité des entraînements industriels.">Le Rack &amp; Pinion soutient une transmission de puissance fiable, le contrôle du mouvement et la disponibilité des entraînements industriels.</p>
+<p data-en="Specified for Rack &amp; Pinion use, it supports efficient power transmission in industrial drivetrains where alignment, torque capacity, and uptime are critical." data-fr="Sélectionné pour l’usage de Rack &amp; Pinion, il soutient une transmission efficace dans les chaînes cinématiques industrielles où alignement, couple et disponibilité sont critiques.">Sélectionné pour l’usage de Rack &amp; Pinion, il soutient une transmission efficace dans les chaînes cinématiques industrielles où alignement, couple et disponibilité sont critiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Torque Limiter" data-fr="Torque Limiter">Torque Limiter</h3>
-<p data-en="The Torque Limiter controls engagement, stopping, or overload protection in mechanical drive and transmission systems." data-fr="Le Torque Limiter contrôle l’engagement, l’arrêt ou la protection contre surcharge dans les systèmes de transmission mécanique.">Le Torque Limiter contrôle l’engagement, l’arrêt ou la protection contre surcharge dans les systèmes de transmission mécanique.</p>
+<p data-en="Across industrial torque limiter projects, it helps mechanical systems move power reliably from the prime mover to the driven equipment with reduced losses." data-fr="Dans les projets industriels de Torque Limiter, il aide les systèmes mécaniques à transmettre la puissance de l’entraînement vers l’équipement entraîné avec moins de pertes.">Dans les projets industriels de Torque Limiter, il aide les systèmes mécaniques à transmettre la puissance de l’entraînement vers l’équipement entraîné avec moins de pertes.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Clutch (Mechanical)" data-fr="Clutch (Mechanical)">Clutch (Mechanical)</h3>
-<p data-en="The Clutch (Mechanical) controls engagement, stopping, or overload protection in mechanical drive and transmission systems." data-fr="Le Clutch (Mechanical) contrôle l’engagement, l’arrêt ou la protection contre surcharge dans les systèmes de transmission mécanique.">Le Clutch (Mechanical) contrôle l’engagement, l’arrêt ou la protection contre surcharge dans les systèmes de transmission mécanique.</p>
+<p data-en="For Clutch (Mechanical) applications, this solution connects or controls rotating shafts while helping manage vibration, torque changes, and equipment start-stop cycles." data-fr="Pour les applications de Clutch (Mechanical), cette solution connecte ou contrôle les arbres rotatifs tout en maîtrisant vibrations, variations de couple et cycles marche-arrêt.">Pour les applications de Clutch (Mechanical), cette solution connecte ou contrôle les arbres rotatifs tout en maîtrisant vibrations, variations de couple et cycles marche-arrêt.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Brake (Mechanical)" data-fr="Brake (Mechanical)">Brake (Mechanical)</h3>
-<p data-en="The Brake (Mechanical) controls engagement, stopping, or overload protection in mechanical drive and transmission systems." data-fr="Le Brake (Mechanical) contrôle l’engagement, l’arrêt ou la protection contre surcharge dans les systèmes de transmission mécanique.">Le Brake (Mechanical) contrôle l’engagement, l’arrêt ou la protection contre surcharge dans les systèmes de transmission mécanique.</p>
+<p data-en="In Brake (Mechanical) systems, this component improves drivetrain reliability by supporting controlled engagement, alignment compensation, or safe stopping performance." data-fr="Dans les systèmes de Brake (Mechanical), ce composant améliore la fiabilité de la chaîne cinématique grâce à l’engagement contrôlé, la compensation d’alignement ou l’arrêt sécurisé.">Dans les systèmes de Brake (Mechanical), ce composant améliore la fiabilité de la chaîne cinématique grâce à l’engagement contrôlé, la compensation d’alignement ou l’arrêt sécurisé.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Tensioner" data-fr="Tensioner">Tensioner</h3>
-<p data-en="The Tensioner supports reliable power transmission, motion control, and equipment uptime in industrial drive systems." data-fr="Le Tensioner soutient une transmission de puissance fiable, le contrôle du mouvement et la disponibilité des entraînements industriels.">Le Tensioner soutient une transmission de puissance fiable, le contrôle du mouvement et la disponibilité des entraînements industriels.</p>
+<p data-en="In Tensioner installations, this component supports efficient power transmission in industrial drivetrains where alignment, torque capacity, and uptime are critical." data-fr="Dans les installations de Tensioner, ce composant soutient une transmission efficace dans les chaînes cinématiques industrielles où alignement, couple et disponibilité sont critiques.">Dans les installations de Tensioner, ce composant soutient une transmission efficace dans les chaînes cinématiques industrielles où alignement, couple et disponibilité sont critiques.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Idler Pulley" data-fr="Idler Pulley">Idler Pulley</h3>
-<p data-en="The Idler Pulley guides belts or chains while maintaining speed ratio, alignment, and reliable torque transmission." data-fr="Le Idler Pulley guide les courroies ou chaînes tout en maintenant le rapport de vitesse, l’alignement et la transmission du couple.">Le Idler Pulley guide les courroies ou chaînes tout en maintenant le rapport de vitesse, l’alignement et la transmission du couple.</p>
+<p data-en="Specified for Idler Pulley use, it helps mechanical systems move power reliably from the prime mover to the driven equipment with reduced losses." data-fr="Sélectionné pour l’usage de Idler Pulley, il aide les systèmes mécaniques à transmettre la puissance de l’entraînement vers l’équipement entraîné avec moins de pertes.">Sélectionné pour l’usage de Idler Pulley, il aide les systèmes mécaniques à transmettre la puissance de l’entraînement vers l’équipement entraîné avec moins de pertes.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Idler Sprocket" data-fr="Idler Sprocket">Idler Sprocket</h3>
-<p data-en="The Idler Sprocket guides belts or chains while maintaining speed ratio, alignment, and reliable torque transmission." data-fr="Le Idler Sprocket guide les courroies ou chaînes tout en maintenant le rapport de vitesse, l’alignement et la transmission du couple.">Le Idler Sprocket guide les courroies ou chaînes tout en maintenant le rapport de vitesse, l’alignement et la transmission du couple.</p>
+<p data-en="Across industrial idler sprocket projects, it delivers positive mechanical engagement for conveyors, packaging lines, and heavy-duty drive systems that require steady torque." data-fr="Dans les projets industriels de Idler Sprocket, il assure un engagement mécanique positif pour convoyeurs, lignes d’emballage et entraînements lourds nécessitant un couple régulier.">Dans les projets industriels de Idler Sprocket, il assure un engagement mécanique positif pour convoyeurs, lignes d’emballage et entraînements lourds nécessitant un couple régulier.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Chain Guide" data-fr="Chain Guide">Chain Guide</h3>
-<p data-en="The Chain Guide provides positive mechanical engagement for conveyors, lifting equipment, and heavy-duty drive systems." data-fr="Le Chain Guide assure un engagement mécanique positif pour convoyeurs, équipements de levage et entraînements lourds.">Le Chain Guide assure un engagement mécanique positif pour convoyeurs, équipements de levage et entraînements lourds.</p>
+<p data-en="For Chain Guide applications, this solution handles synchronized power transfer in rugged applications where strength, timing, and long service life are required." data-fr="Pour les applications de Chain Guide, cette solution gère une transmission synchronisée dans les applications robustes où résistance, calage et longue durée de vie sont requis.">Pour les applications de Chain Guide, cette solution gère une transmission synchronisée dans les applications robustes où résistance, calage et longue durée de vie sont requis.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Belt Guide" data-fr="Belt Guide">Belt Guide</h3>
-<p data-en="The Belt Guide transfers power smoothly between pulleys for drives, conveyors, fans, pumps, and industrial machinery." data-fr="Le Belt Guide transmet la puissance entre poulies pour entraînements, convoyeurs, ventilateurs, pompes et machines industrielles.">Le Belt Guide transmet la puissance entre poulies pour entraînements, convoyeurs, ventilateurs, pompes et machines industrielles.</p>
+<p data-en="In Belt Guide systems, this component provides flexible mechanical drive performance where quiet operation, reduced slip, and easy maintenance are priorities." data-fr="Dans les systèmes de Belt Guide, ce composant offre une transmission flexible lorsque le fonctionnement silencieux, la réduction du glissement et l’entretien facile sont prioritaires.">Dans les systèmes de Belt Guide, ce composant offre une transmission flexible lorsque le fonctionnement silencieux, la réduction du glissement et l’entretien facile sont prioritaires.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Lubrication Unit" data-fr="Lubrication Unit">Lubrication Unit</h3>
-<p data-en="The Lubrication Unit supports reliable power transmission, motion control, and equipment uptime in industrial drive systems." data-fr="Le Lubrication Unit soutient une transmission de puissance fiable, le contrôle du mouvement et la disponibilité des entraînements industriels.">Le Lubrication Unit soutient une transmission de puissance fiable, le contrôle du mouvement et la disponibilité des entraînements industriels.</p>
+<p data-en="In Lubrication Unit installations, this component helps mechanical systems move power reliably from the prime mover to the driven equipment with reduced losses." data-fr="Dans les installations de Lubrication Unit, ce composant aide les systèmes mécaniques à transmettre la puissance de l’entraînement vers l’équipement entraîné avec moins de pertes.">Dans les installations de Lubrication Unit, ce composant aide les systèmes mécaniques à transmettre la puissance de l’entraînement vers l’équipement entraîné avec moins de pertes.</p>
 </a>
 <a class="card-system">
 <h3 data-en="Transmission Oil" data-fr="Transmission Oil">Transmission Oil</h3>
-<p data-en="The Transmission Oil supports reliable power transmission, motion control, and equipment uptime in industrial drive systems." data-fr="Le Transmission Oil soutient une transmission de puissance fiable, le contrôle du mouvement et la disponibilité des entraînements industriels.">Le Transmission Oil soutient une transmission de puissance fiable, le contrôle du mouvement et la disponibilité des entraînements industriels.</p>
+<p data-en="Specified for Transmission Oil use, it supports efficient power transmission in industrial drivetrains where alignment, torque capacity, and uptime are critical." data-fr="Sélectionné pour l’usage de Transmission Oil, il soutient une transmission efficace dans les chaînes cinématiques industrielles où alignement, couple et disponibilité sont critiques.">Sélectionné pour l’usage de Transmission Oil, il soutient une transmission efficace dans les chaînes cinématiques industrielles où alignement, couple et disponibilité sont critiques.</p>
 </a>
 </div>
 </main>
-<footer class="footer-shell">
+<footer style="background: #0a0c0f; border-top: 1px solid var(--border-color); padding: 60px 0 30px 0; margin-top: 80px;">
 <div class="container grid-3" style="padding: 0 24px 40px 24px;">
 <div>
-<img alt="SUJO" class="site-logo" decoding="async" fetchpriority="high" loading="eager" src="logo.png"/>
+<img alt="SUJO" src="logo.png" style="height: 40px; margin-bottom: 16px;"/>
 <p data-en="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, Democratic Republic of Congo" data-fr="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, République Démocratique du Congo" style="color: var(--text-muted); font-size: 0.9rem;">SUJO Engineering Consulting SARL<br/>Kinshasa, République Démocratique du Congo</p>
 </div>
 <div>
 <h4 data-en="Technology Index" data-fr="Matrices Technologiques" style="margin-bottom: 16px; font-size: 0.95rem;">Matrices Technologiques</h4>
-<p style="font-size: 0.9rem; margin-bottom: 8px;"><a data-en="Global Product Index" data-fr="Index Global des Produits" href="products.html" style="color: var(--text-muted); text-decoration: none;">Index Global des Produits</a></p>
-<p style="font-size: 0.9rem; margin-bottom: 8px;"><a data-en="Partners" data-fr="Partenaires" href="partners.html" style="color: var(--text-muted); text-decoration: none;">Partenaires</a></p>
+<p style="font-size: 0.9rem; margin-bottom: 8px;">Index Global des Produits</p>
+<p style="font-size: 0.9rem; margin-bottom: 8px;">Marques Validées</p>
 </div>
 <div>
 <h4 data-en="Direct Channels" data-fr="Canaux Directs" style="margin-bottom: 16px; font-size: 0.95rem;">Canaux Directs</h4>
-<p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;"><span data-en="DRC:" data-fr="RDC:">RDC:</span> +243 974 570 630</p>
+<p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;">DRC: +243 974 570 630</p>
 <p data-en="Email: contact@sujo-engineering.com" data-fr="Email: contact@sujo-engineering.com" style="color: var(--text-muted); font-size: 0.9rem;">Email: contact@sujo-engineering.com</p>
 </div>
 </div>
 <div data-en="© 2026 SUJO Engineering Consulting SARL. All rights reserved." data-fr="© 2026 SUJO Engineering Consulting SARL. Tous droits réservés." style="text-align: center; border-top: 1px solid var(--border-color); padding-top: 30px; font-size: 0.8rem; color: var(--text-muted);">
-            © 2026 SUJO Engineering Consulting SARL. All rights reserved.
-        </div>
+© 2026 SUJO Engineering Consulting SARL. All rights reserved.
+</div>
 </footer>
+<script>
+function applyLang(lang) {
+    document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+        el.innerHTML = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+    });
+    document.documentElement.lang = lang;
+}
 
+function setLang(lang) {
+    localStorage.setItem('sujoLang', lang);
+    const btnFr = document.getElementById('btn-fr');
+    const btnEn = document.getElementById('btn-en');
+    if (btnFr && btnEn) {
+        btnFr.classList.toggle('active', lang === 'fr');
+        btnEn.classList.toggle('active', lang === 'en');
+    }
+    applyLang(lang);
+}
+
+(function () {
+    const saved = localStorage.getItem('sujoLang') || 'fr';
+    applyLang(saved);
+    const btnFr = document.getElementById('btn-fr');
+    const btnEn = document.getElementById('btn-en');
+    if (btnFr && btnEn) {
+        btnFr.classList.toggle('active', saved === 'fr');
+        btnEn.classList.toggle('active', saved === 'en');
+    }
+})();
+
+function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+    document.querySelector('.hamburger').classList.toggle('open');
+}
+
+document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        if (window.innerWidth <= 900) {
+            e.preventDefault();
+            link.parentElement.classList.toggle('open');
+        }
+    });
+});
+
+document.querySelectorAll('#mobileMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (link.parentElement.classList.contains('dropdown')) return;
+        document.getElementById('mobileMenu').classList.remove('open');
+        document.querySelector('.hamburger').classList.remove('open');
+    });
+});
+</script>
 </body>
 </html>
