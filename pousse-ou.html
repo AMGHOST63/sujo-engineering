@@ -49,11 +49,88 @@
         flex-wrap: wrap;
     }
     .founder-card img {
-        width: 160px;
-        height: 160px;
+        width: 230px;
+        height: 230px;
         border-radius: 50%;
         object-fit: cover;
-        border: 2px solid var(--primary-red, #d60000);
+        object-position: center 28%;
+        border: 3px solid var(--primary-red, #d60000);
+        box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+        flex-shrink: 0;
+    }
+    .founder-role {
+        color: var(--primary-red, #d60000);
+        font-size: 0.9rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+    }
+    .breadcrumb {
+        max-width: 1200px;
+        margin: 22px auto 0 auto;
+        padding: 0 24px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .breadcrumb a,
+    .breadcrumb span {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        padding: 7px 12px;
+        border: 1px solid var(--border-color, #262b36);
+        border-radius: 999px;
+        background: rgba(255,255,255,0.03);
+        color: var(--text-muted, #aeb7c7);
+        text-decoration: none;
+        font-size: 0.85rem;
+        font-weight: 700;
+    }
+    .breadcrumb a:hover {
+        color: #fff;
+        border-color: var(--primary-red, #d60000);
+        background: rgba(214,0,0,0.12);
+    }
+    .breadcrumb span[aria-hidden="true"] {
+        min-height: auto;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: var(--primary-red, #d60000);
+    }
+    .breadcrumb span:last-child {
+        color: #fff;
+        border-color: rgba(214,0,0,0.45);
+        background: rgba(214,0,0,0.16);
+    }
+    .pousseou-cta-bg {
+        position: relative;
+        text-align: center;
+        background-image:
+            linear-gradient(180deg, rgba(15,17,21,0.86), rgba(15,17,21,0.92)),
+            url('pousseou-or-sujo.png');
+        background-size: cover;
+        background-position: center;
+        border-top: 1px solid var(--border-color, #262b36);
+        border-bottom: 1px solid var(--border-color, #262b36);
+        margin-top: 50px;
+    }
+    .pousseou-cta-bg .container {
+        position: relative;
+        z-index: 1;
+    }
+    @media (max-width: 700px) {
+        .founder-card {
+            justify-content: center;
+            text-align: center;
+        }
+        .founder-card img {
+            width: 190px;
+            height: 190px;
+        }
     }
     .pride-quote {
         border-left: 3px solid var(--primary-red, #d60000);
@@ -125,7 +202,8 @@
 <div>
 <div class="section-label" data-en="Founder" data-fr="Fondateur">Fondateur</div>
 <h2 style="margin-bottom:8px;">Aaron Nzangi</h2>
-<p data-en="Aaron founded Pousse-Où to prove that waste management in Kinshasa doesn't have to stay informal. Every truckload his teams collect is sorted by hand and pushed toward a second life as a construction material." data-fr="Aaron a fondé Pousse-Où pour prouver que la gestion des déchets à Kinshasa n'a pas à rester informelle. Chaque chargement collecté par ses équipes est trié à la main et transformé pour une seconde vie comme matériau de construction." style="color:var(--text-muted); margin-bottom:0;">Aaron a fondé Pousse-Où pour prouver que la gestion des déchets à Kinshasa n'a pas à rester informelle. Chaque chargement collecté par ses équipes est trié à la main et transformé pour une seconde vie comme matériau de construction.</p>
+<div class="founder-role" data-en="SUJO Procurement Manager · Founder of Pousse-Où" data-fr="Responsable des Achats SUJO · Fondateur de Pousse-Où">Responsable des Achats SUJO · Fondateur de Pousse-Où</div>
+<p data-en="Aaron Nzangi serves as SUJO's Procurement Manager and leads Pousse-Où with a practical understanding of sourcing, supplier coordination, site needs, and local operations. He founded Pousse-Où to prove that waste management in Kinshasa doesn't have to stay informal. Every truckload his teams collect is sorted by hand and pushed toward a second life as a construction material." data-fr="Aaron Nzangi est Responsable des Achats chez SUJO et dirige Pousse-Où avec une compréhension pratique de l’approvisionnement, de la coordination des fournisseurs, des besoins de chantier et des opérations locales. Il a fondé Pousse-Où pour prouver que la gestion des déchets à Kinshasa n'a pas à rester informelle. Chaque chargement collecté par ses équipes est trié à la main et transformé pour une seconde vie comme matériau de construction." style="color:var(--text-muted); margin-bottom:0;">Aaron Nzangi est Responsable des Achats chez SUJO et dirige Pousse-Où avec une compréhension pratique de l’approvisionnement, de la coordination des fournisseurs, des besoins de chantier et des opérations locales. Il a fondé Pousse-Où pour prouver que la gestion des déchets à Kinshasa n'a pas à rester informelle. Chaque chargement collecté par ses équipes est trié à la main et transformé pour une seconde vie comme matériau de construction.</p>
 </div>
 </div>
 <p class="pride-quote" data-en="“We're proud of this because it's real work — real trucks on real streets, real hands sorting real waste, and a real product you can hold at the end of it.”" data-fr="« Nous sommes fiers de ce travail parce qu'il est réel — de vrais camions dans de vraies rues, de vraies mains qui trient de vrais déchets, et un vrai produit que l'on peut tenir à la fin. »">« Nous sommes fiers de ce travail parce qu'il est réel — de vrais camions dans de vraies rues, de vraies mains qui trient de vrais déchets, et un vrai produit que l'on peut tenir à la fin. »</p>
@@ -168,11 +246,13 @@
 </section>
 
 <!-- CTA -->
-<section class="container" style="text-align:center;">
+<section class="pousseou-cta-bg">
+<div class="container">
 <div class="section-label" data-en="Support Local Impact" data-fr="Soutenir l'Impact Local">Soutenir l'Impact Local</div>
 <h2 class="section-title" data-en="Want to Work With Pousse-Où or SUJO?" data-fr="Vous Souhaitez Collaborer avec Pousse-Où ou SUJO ?">Vous Souhaitez Collaborer avec Pousse-Où ou SUJO ?</h2>
 <p data-en="Whether you need collection services, construction pavers, or want to explore a similar partnership with SUJO, reach out and we'll connect you with the right team." data-fr="Que vous ayez besoin de services de collecte, de pavés de construction, ou que vous souhaitiez explorer un partenariat similaire avec SUJO, contactez-nous et nous vous mettrons en relation avec la bonne équipe." style="color:var(--text-muted); max-width:820px; margin:16px auto 30px auto;">Que vous ayez besoin de services de collecte, de pavés de construction, ou que vous souhaitiez explorer un partenariat similaire avec SUJO, contactez-nous et nous vous mettrons en relation avec la bonne équipe.</p>
 <a class="btn btn-primary" data-en="Contact Us: contact@sujo-engineering.com" data-fr="Contactez-nous : contact@sujo-engineering.com" href="mailto:contact@sujo-engineering.com">Contactez-nous : contact@sujo-engineering.com</a>
+</div>
 </section>
 </main>
 <footer class="footer-shell">
