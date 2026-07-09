@@ -1064,3 +1064,168 @@ header nav {
     }
 }
 
+
+/* ==========================================
+   PARTNER PROFILE PAGES (Pousse-Où, Mulohwe Group)
+   Shared styles moved out of the page <style> blocks.
+   ========================================== */
+
+/* Pill-style breadcrumb */
+.breadcrumb {
+    max-width: 1200px;
+    margin: 22px auto 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.breadcrumb a,
+.breadcrumb span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 7px 12px;
+    border: 1px solid var(--border-color, #262b36);
+    border-radius: 999px;
+    background: rgba(255,255,255,0.03);
+    color: var(--text-muted, #aeb7c7);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.breadcrumb a:hover {
+    color: #fff;
+    border-color: var(--primary-red, #d60000);
+    background: rgba(214,0,0,0.12);
+}
+
+.breadcrumb span[aria-hidden="true"] {
+    min-height: auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--primary-red, #d60000);
+}
+
+.breadcrumb span:last-child {
+    color: #fff;
+    border-color: rgba(214,0,0,0.45);
+    background: rgba(214,0,0,0.16);
+}
+
+/* Photo gallery grid */
+.pousseou-gallery,
+.partner-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.pousseou-gallery figure,
+.partner-gallery figure {
+    margin: 0;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--border-color, #2a2a2a);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.pousseou-gallery img,
+.partner-gallery img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+.pousseou-gallery figcaption,
+.partner-gallery figcaption {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+    color: var(--text-muted, #999);
+}
+
+/* Founder spotlight card.
+   Set the photo per page with an inline style, e.g.
+   style="background-image: linear-gradient(90deg, rgba(15,17,21,0.94), rgba(15,17,21,0.78)), url('your-image.png');" */
+.founder-card {
+    position: relative;
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    padding: 30px;
+    border: 1px solid var(--border-color, #262b36);
+    border-radius: 18px;
+    background-image: linear-gradient(90deg, rgba(15,17,21,0.94), rgba(15,17,21,0.78));
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 18px 48px rgba(0,0,0,0.28);
+}
+
+.founder-card img {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 28%;
+    border: 3px solid var(--primary-red, #d60000);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+    flex-shrink: 0;
+}
+
+.founder-role {
+    color: var(--primary-red, #d60000);
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+/* Pull quote */
+.pride-quote {
+    border-left: 3px solid var(--primary-red, #d60000);
+    padding-left: 20px;
+    font-size: 1.15rem;
+    font-style: italic;
+    margin: 28px 0;
+    max-width: 720px;
+}
+
+/* Full-width CTA band with background photo.
+   Set the photo per page with an inline style, e.g.
+   style="background-image: linear-gradient(180deg, rgba(15,17,21,0.86), rgba(15,17,21,0.92)), url('your-image.png');" */
+.pousseou-cta-bg,
+.partner-cta-bg {
+    position: relative;
+    text-align: center;
+    background-image: linear-gradient(180deg, rgba(15,17,21,0.86), rgba(15,17,21,0.92));
+    background-size: cover;
+    background-position: center;
+    border-top: 1px solid var(--border-color, #262b36);
+    border-bottom: 1px solid var(--border-color, #262b36);
+    margin-top: 50px;
+}
+
+.pousseou-cta-bg .container,
+.partner-cta-bg .container {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 700px) {
+    .founder-card {
+        justify-content: center;
+        text-align: center;
+    }
+    .founder-card img {
+        width: 190px;
+        height: 190px;
+    }
+}
