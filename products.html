@@ -28,6 +28,71 @@
 <meta property="og:url" content="https://sujo-engineering.com/products.html"/>
 <meta property="og:image" content="https://sujo-engineering.com/logo.png"/>
 <meta name="twitter:card" content="summary_large_image"/>
+
+<style>
+/* Product grid background image fix */
+.category-card {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    min-height: 320px;
+    justify-content: flex-end;
+    background-color: var(--surface-card, #181b22);
+}
+
+.category-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.24;
+    pointer-events: none;
+    z-index: -2;
+    transform: scale(1.02);
+    transition: opacity .25s ease, transform .25s ease;
+}
+
+.category-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15,17,21,0.30) 0%, rgba(15,17,21,0.72) 52%, rgba(15,17,21,0.97) 100%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.category-card:hover::before,
+.category-card:focus-visible::before {
+    opacity: 0.34;
+    transform: scale(1.06);
+}
+
+.category-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.category-card .card-icon {
+    margin-top: auto;
+}
+
+.category-card.cat-bearings::before { background-image: url('product-bearings.png'); }
+.category-card.cat-linearmotion::before { background-image: url('product-linearmotion.png'); }
+.category-card.cat-powertransmission::before { background-image: url('product-powertransmition.png'); }
+.category-card.cat-hydraulics::before { background-image: url('product-hydraulics&pneumatics.png'); }
+.category-card.cat-automation::before { background-image: url('product-automation&electrical.png'); }
+.category-card.cat-safety::before { background-image: url('product-safety&lubrication.png'); }
+.category-card.cat-construction::before { background-image: url('product-construction.png'); }
+
+@media (max-width: 768px) {
+    .category-card { min-height: 280px; }
+    .category-card::before { background-size: cover; }
+}
+</style>
 </head>
 <body>
 <a class="skip-link" data-en="Skip to main content" data-fr="Aller au contenu principal" href="#main-content">Aller au contenu principal</a>
