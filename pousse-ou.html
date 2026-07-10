@@ -69,6 +69,32 @@
         box-shadow: 0 12px 32px rgba(0,0,0,0.35);
         flex-shrink: 0;
     }
+    .founder-photo-wrap {
+        position: relative;
+        width: 230px;
+        height: 230px;
+        flex-shrink: 0;
+    }
+    .founder-card img.founder-photo-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 340px;
+        height: 340px;
+        max-width: none;
+        transform: translate(-50%, -50%);
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        object-fit: contain;
+        z-index: 0;
+        opacity: 0.9;
+        pointer-events: none;
+    }
+    .founder-card img:not(.founder-photo-glow) {
+        position: relative;
+        z-index: 1;
+    }
     .founder-role {
         color: var(--primary-red, #d60000);
         font-size: 0.9rem;
@@ -142,6 +168,14 @@
             width: 190px;
             height: 190px;
         }
+        .founder-photo-wrap {
+            width: 190px;
+            height: 190px;
+        }
+        .founder-card img.founder-photo-glow {
+            width: 280px;
+            height: 280px;
+        }
     }
     .pride-quote {
         border-left: 3px solid var(--primary-red, #d60000);
@@ -209,7 +243,10 @@
 <!-- FOUNDER -->
 <section class="container" style="padding-top:10px;">
 <div class="founder-card">
+<div class="founder-photo-wrap">
+<img alt="" aria-hidden="true" class="founder-photo-glow" decoding="async" loading="lazy" src="aaron2.png"/>
 <img alt="Aaron Nzangi, fondateur de Pousse-Où" decoding="async" loading="lazy" src="aaron.png"/>
+</div>
 <div>
 <div class="section-label" data-en="Founder" data-fr="Fondateur">Fondateur</div>
 <h2 style="margin-bottom:8px;">Aaron Nzangi</h2>
