@@ -1229,3 +1229,95 @@ header nav {
         height: 190px;
     }
 }
+
+/* ==========================================
+   PRODUCT CATEGORY WATERMARK ILLUSTRATIONS
+   Transparent PNG renders sit faded behind each
+   category card on products.html. Missing files
+   simply show nothing (no broken-image icon)
+   since these are CSS backgrounds, not <img> tags.
+   Drop the PNGs into the site root using the
+   filenames referenced below.
+   ========================================== */
+.category-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.category-card::before {
+    content: "";
+    position: absolute;
+    right: -10px;
+    bottom: -10px;
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.16;
+    pointer-events: none;
+    z-index: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.category-card:hover::before {
+    opacity: 0.26;
+    transform: scale(1.05);
+}
+
+.category-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.category-card.cat-bearings::before { background-image: url("product-bearings.png"); }
+.category-card.cat-linearmotion::before { background-image: url("product-linearmotion.png"); }
+.category-card.cat-powertransmission::before { background-image: url("product-powertransmition.png"); }
+.category-card.cat-hydraulics::before { background-image: url("product-hydraulics&pneumatics.png"); }
+.category-card.cat-automation::before { background-image: url("product-automation&electrical.png"); }
+.category-card.cat-safety::before { background-image: url("product-safety&lubrication.png"); }
+.category-card.cat-construction::before { background-image: url("product-construction.png"); }
+
+/* ==========================================
+   FOUNDER PHOTO GLOW (Aaron Nzangi / Pousse-Où)
+   A transparent PNG glow/backdrop sits behind the
+   circular founder photo. Apply by wrapping the
+   existing founder <img> like this:
+
+   <div class="founder-photo-wrap">
+     <img src="aaron2.png" class="founder-photo-glow" alt="" aria-hidden="true"/>
+     <img src="aaron-profile.png" alt="Aaron Nzangi, fondateur de Pousse-Où"/>
+   </div>
+
+   inside .founder-card in place of the plain <img>.
+   ========================================== */
+.founder-photo-wrap {
+    position: relative;
+    flex-shrink: 0;
+    width: 230px;
+    height: 230px;
+}
+
+.founder-photo-wrap .founder-photo-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 340px;
+    height: 340px;
+    max-width: none;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    object-fit: contain;
+    z-index: 0;
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+.founder-photo-wrap img:not(.founder-photo-glow) {
+    position: relative;
+    z-index: 1;
+    width: 230px;
+    height: 230px;
+}
