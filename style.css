@@ -265,6 +265,28 @@ header {
     z-index: 1;
 }
 
+/* TECHNICAL EXPERTISE SECTION BACKGROUND */
+.services-bg {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.services-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15,17,21,0.93) 0%, rgba(15,17,21,0.88) 35%, rgba(15,17,21,0.97) 100%);
+    z-index: 0;
+}
+
+.services-bg > .section-header,
+.services-bg > .grid-4 {
+    position: relative;
+    z-index: 1;
+}
+
 /* HEADER: ACCOUNT BUTTON & LANGUAGE SWITCH */
 .lang-switch {
     display: flex;
@@ -1122,7 +1144,7 @@ header nav {
 /* Pill-style breadcrumb */
 .breadcrumb {
     max-width: 1200px;
-    margin: 22px auto 0 auto;
+    margin: 22px auto 28px auto;
     padding: 0 24px;
     display: flex;
     align-items: center;
