@@ -31,6 +31,7 @@
         try { localStorage.setItem('sujoLang', lang); } catch (e) {}
         applyLang(lang);
         updateLangButtons(lang);
+        if (window.__sujoRefreshProductSearch) window.__sujoRefreshProductSearch();
     };
 
     window.toggleService = function (btn) {
@@ -252,6 +253,70 @@
         });
     }
 
+    function setupProductSearch() {
+        const input = document.getElementById('productSearch');
+        const grid = document.querySelector('.grid-3');
+        if (!input || !grid) return;
+
+        const cards = Array.from(grid.querySelectorAll(':scope > .card-system'));
+        if (!cards.length) return;
+
+        let emptyState = document.querySelector('.search-empty-state');
+        if (!emptyState) {
+            emptyState = document.createElement('p');
+            emptyState.className = 'search-empty-state';
+            emptyState.setAttribute('data-fr', 'Aucun produit ne correspond à votre recherche.');
+            emptyState.setAttribute('data-en', 'No products match your search.');
+            emptyState.hidden = true;
+            grid.insertAdjacentElement('afterend', emptyState);
+        }
+
+        function refresh() {
+            const query = input.value.trim().toLowerCase();
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const heading = card.querySelector('h3');
+                const headingText = heading ? heading.textContent.toLowerCase() : '';
+                const pills = Array.from(card.querySelectorAll('.pill-node'));
+
+                if (!query) {
+                    pills.forEach(pill => { pill.style.display = ''; });
+                    card.style.display = '';
+                    visibleCount++;
+                    return;
+                }
+
+                if (headingText.includes(query)) {
+                    pills.forEach(pill => { pill.style.display = ''; });
+                    card.style.display = '';
+                    visibleCount++;
+                    return;
+                }
+
+                const matchingPills = pills.filter(pill => pill.textContent.toLowerCase().includes(query));
+                if (matchingPills.length) {
+                    pills.forEach(pill => {
+                        pill.style.display = matchingPills.includes(pill) ? '' : 'none';
+                    });
+                    card.style.display = '';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            emptyState.hidden = visibleCount !== 0;
+            emptyState.textContent = document.documentElement.lang === 'fr'
+                ? emptyState.getAttribute('data-fr')
+                : emptyState.getAttribute('data-en');
+        }
+
+        input.addEventListener('input', refresh);
+        window.__sujoRefreshProductSearch = refresh;
+        refresh();
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
         applyLang(savedLang);
         updateLangButtons(savedLang);
@@ -259,6 +324,7 @@
         bindUI();
         setupReliableMobileNavigation();
         loadLazyBackgrounds();
+        setupProductSearch();
         document.documentElement.classList.remove('lang-loading');
         document.documentElement.classList.add('lang-ready');
     });
