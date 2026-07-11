@@ -128,7 +128,7 @@ header {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgba(15,17,21,0.95) 30%, rgba(15,17,21,0.6) 60%, rgba(15,17,21,0.2) 100%);
+    background: linear-gradient(90deg, rgba(15,17,21,0.96) 20%, rgba(15,17,21,0.82) 55%, rgba(15,17,21,0.55) 100%);
     z-index: 1;
 }
 
@@ -281,8 +281,7 @@ header {
     z-index: 0;
 }
 
-.services-bg > .section-header,
-.services-bg > .grid-4 {
+.services-bg .container {
     position: relative;
     z-index: 1;
 }
@@ -1318,21 +1317,27 @@ header nav {
 .category-card::before {
     content: "";
     position: absolute;
-    right: -10px;
-    bottom: -10px;
-    width: 200px;
-    height: 200px;
+    inset: 0;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
-    opacity: 0.16;
+    background-size: cover;
+    opacity: 0.3;
     pointer-events: none;
     z-index: 0;
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition: opacity 0.2s ease, transform 0.3s ease;
+}
+
+.category-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15,17,21,0.35) 0%, rgba(15,17,21,0.85) 60%, rgba(15,17,21,0.97) 100%);
+    pointer-events: none;
+    z-index: 0;
 }
 
 .category-card:hover::before {
-    opacity: 0.26;
+    opacity: 0.42;
     transform: scale(1.05);
 }
 
