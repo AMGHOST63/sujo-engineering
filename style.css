@@ -1,12 +1,12 @@
-:root {
+﻿:root {
     --primary-red: #d60000;
     --primary-hover: #b30000;
-    --dark-bg: #0f1115;
-    --surface-card: #181b22;
-    --surface-hover: #1f242e;
-    --text-main: #f0f2f5;
-    --text-muted: #8a94a6;
-    --border-color: #262b36;
+    --dark-bg: #ffffff;
+    --surface-card: #f6f7f9;
+    --surface-hover: #eceef1;
+    --text-main: #15171c;
+    --text-muted: #5c6472;
+    --border-color: #e2e5ea;
     --accent-glow: rgba(214, 0, 0, 0.15);
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
@@ -54,7 +54,7 @@ body {
 
 /* HIGH-END NAVIGATION */
 header {
-    background: rgba(15, 17, 21, 0.85);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-color);
     padding: 16px 40px;
@@ -167,9 +167,9 @@ header {
     cursor: pointer;
 }
 
-.btn-primary { background: var(--primary-red); color: #fff; border: none; }
+.btn-primary { background: var(--primary-red); color: #fff !important; border: none; }
 .btn-primary:hover { background: var(--primary-hover); }
-.btn-outline { background: transparent; color: var(--text-main); border: 1px solid var(--border-color); }
+.btn-outline { background: transparent; color: var(--text-main) !important; border: 1px solid var(--border-color); }
 .btn-outline:hover { background: var(--surface-card); border-color: var(--text-muted); }
 .btn-text { color: var(--primary-red); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; margin-top: auto; }
 .btn-text:hover { color: var(--primary-hover); }
@@ -621,7 +621,7 @@ img {
         margin-top: 4px;
         box-shadow: none;
         border: none;
-        background: rgba(255,255,255,0.03);
+        background: rgba(15,17,21,0.04);
     }
 
     .dropdown.open .dropdown-menu {
@@ -739,7 +739,7 @@ html {
 }
 
 :root {
-    --text-muted: #aeb7c7;
+    --text-muted: #5c6472;
 }
 
 .skip-link {
@@ -766,7 +766,7 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-    outline: 3px solid rgba(255, 255, 255, 0.95);
+    outline: 3px solid rgba(15, 17, 21, 0.85);
     outline-offset: 3px;
     box-shadow: 0 0 0 5px rgba(214, 0, 0, 0.45);
 }
@@ -846,7 +846,7 @@ button.is-loading,
 }
 
 .footer-shell {
-    background: #0a0c0f;
+    background: #f0f1f3;
     border-top: 1px solid var(--border-color);
     padding: 60px 0 30px 0;
 }
@@ -873,7 +873,7 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 28px;
-    background: rgba(15, 17, 21, 0.94);
+    background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border-color);
@@ -981,7 +981,7 @@ header nav {
 }
 
 .footer-shell {
-    background: #0a0c0f;
+    background: #f0f1f3;
     border-top: 1px solid var(--border-color);
     margin-top: 0;
     padding-top: 64px;
@@ -1107,7 +1107,7 @@ header nav {
         margin-top: 4px;
         box-shadow: none;
         border: none;
-        background: rgba(255,255,255,0.03);
+        background: rgba(15,17,21,0.04);
         opacity: 1;
         visibility: visible;
         transform: none;
@@ -1136,7 +1136,7 @@ header nav {
 
 
 /* ==========================================
-   PARTNER PROFILE PAGES (Pousse-Où, Mulohwe Group)
+   PARTNER PROFILE PAGES (Pousse-OÃ¹, Mulohwe Group)
    Shared styles moved out of the page <style> blocks.
    ========================================== */
 
@@ -1157,9 +1157,9 @@ header nav {
     align-items: center;
     min-height: 34px;
     padding: 7px 12px;
-    border: 1px solid var(--border-color, #262b36);
+    border: 1px solid var(--border-color, #e2e5ea);
     border-radius: 999px;
-    background: rgba(255,255,255,0.03);
+    background: rgba(15,17,21,0.04);
     color: var(--text-muted, #aeb7c7);
     text-decoration: none;
     font-size: 0.85rem;
@@ -1198,7 +1198,7 @@ header nav {
 .pousseou-gallery figure,
 .partner-gallery figure {
     margin: 0;
-    background: rgba(255,255,255,0.02);
+    background: rgba(15,17,21,0.03);
     border: 1px solid var(--border-color, #2a2a2a);
     border-radius: 14px;
     overflow: hidden;
@@ -1230,7 +1230,7 @@ header nav {
     flex-wrap: wrap;
     overflow: hidden;
     padding: 30px;
-    border: 1px solid var(--border-color, #262b36);
+    border: 1px solid var(--border-color, #e2e5ea);
     border-radius: 18px;
     background-image: linear-gradient(90deg, rgba(15,17,21,0.94), rgba(15,17,21,0.78));
     background-size: cover;
@@ -1278,8 +1278,8 @@ header nav {
     background-image: linear-gradient(180deg, rgba(15,17,21,0.86), rgba(15,17,21,0.92));
     background-size: cover;
     background-position: center;
-    border-top: 1px solid var(--border-color, #262b36);
-    border-bottom: 1px solid var(--border-color, #262b36);
+    border-top: 1px solid var(--border-color, #e2e5ea);
+    border-bottom: 1px solid var(--border-color, #e2e5ea);
     margin-top: 50px;
 }
 
@@ -1355,14 +1355,14 @@ header nav {
 .category-card.cat-construction::before { background-image: url("product-construction.png"); }
 
 /* ==========================================
-   FOUNDER PHOTO GLOW (Aaron Nzangi / Pousse-Où)
+   FOUNDER PHOTO GLOW (Aaron Nzangi / Pousse-OÃ¹)
    A transparent PNG glow/backdrop sits behind the
    circular founder photo. Apply by wrapping the
    existing founder <img> like this:
 
    <div class="founder-photo-wrap">
      <img src="aaron2.png" class="founder-photo-glow" alt="" aria-hidden="true"/>
-     <img src="aaron-profile.png" alt="Aaron Nzangi, fondateur de Pousse-Où"/>
+     <img src="aaron-profile.png" alt="Aaron Nzangi, fondateur de Pousse-OÃ¹"/>
    </div>
 
    inside .founder-card in place of the plain <img>.
