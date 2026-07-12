@@ -153,6 +153,17 @@ header {
     margin-top: 32px;
 }
 
+/* Hero sits on a dark photo overlay regardless of site theme, so its text stays light */
+.hero-viewport .hero-title { color: #fff !important; }
+.hero-viewport .hero-actions .btn-outline {
+    color: #fff !important;
+    border-color: rgba(255, 255, 255, 0.55) !important;
+}
+.hero-viewport .hero-actions .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-color: #fff !important;
+}
+
 /* BUTTONS */
 .btn {
     display: inline-flex;
@@ -265,6 +276,16 @@ header {
     z-index: 1;
 }
 
+/* Photo background stays dark for legibility, so its text stays light regardless of theme */
+.why-sujo-bg .container h2,
+.why-sujo-bg .container h3,
+.why-sujo-bg .container h4 {
+    color: #fff !important;
+}
+.why-sujo-bg .container p {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
 /* TECHNICAL EXPERTISE SECTION BACKGROUND */
 .services-bg {
     position: relative;
@@ -284,6 +305,16 @@ header {
 .services-bg .container {
     position: relative;
     z-index: 1;
+}
+
+/* Photo background stays dark for legibility, so its text stays light regardless of theme */
+.services-bg .container h2,
+.services-bg .container h3,
+.services-bg .container h4 {
+    color: #fff !important;
+}
+.services-bg .container p {
+    color: rgba(255, 255, 255, 0.75) !important;
 }
 
 /* HEADER: ACCOUNT BUTTON & LANGUAGE SWITCH */
