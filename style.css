@@ -1388,6 +1388,8 @@ header nav {
 .category-card.cat-automation::before { background-image: url("product-automation&electrical.png"); }
 .category-card.cat-safety::before { background-image: url("product-safety&lubrication.png"); }
 .category-card.cat-construction::before { background-image: url("product-construction.png"); }
+.category-card.cat-telecom::before { background-image: url("product-telecom.png"); }
+.category-card.cat-automotive::before { background-image: url("product-automotive&fleet.png"); }
 
 /* ==========================================
    FOUNDER PHOTO GLOW (Aaron Nzangi / Pousse-OÃ¹)

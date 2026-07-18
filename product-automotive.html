@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Automotive &amp; Fleet Maintenance Products — SUJO</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<script defer="" src="app.js"></script>
+<style>
+header{position:sticky;top:0;z-index:1000;backdrop-filter:blur(14px);}
+html{scroll-padding-top:96px;}
+.product-actions .btn-primary{display:none;}
+.card-system .btn-text{display:none;}
+.card-system{cursor:default;}
+.card-system p{margin-bottom:0;}
+</style>
+</head>
+<body>
+<!-- NAV BAR -->
+<header>
+<a class="nav-logo" href="https://sujo-engineering.com/index.html">
+<img alt="SUJO" src="logo.png" style="height: 50px;"/>
+</a>
+<nav>
+<ul class="nav-links" id="mobileMenu">
+<li><a data-en="Home" data-fr="Accueil" href="https://sujo-engineering.com/index.html">Accueil</a></li>
+<li><a data-en="About" data-fr="À Propos" href="https://sujo-engineering.com/about.html">À Propos</a></li>
+<li class="dropdown">
+<a class="active" data-en="Products ▾" data-fr="Produits ▾" href="https://sujo-engineering.com/products.html">Produits ▾</a>
+<ul class="dropdown-menu">
+<li><a data-en="Mechanical Components" data-fr="Composants Mécaniques" href="product-mechanical.html">Composants Mécaniques</a></li>
+<li><a data-en="Automation &amp; Motion" data-fr="Automatisation &amp; Mouvement" href="product-automation.html">Automatisation &amp; Mouvement</a></li>
+<li><a data-en="Hydraulics &amp; Pneumatics" data-fr="Hydraulique &amp; Pneumatique" href="product-hydraulics.html">Hydraulique &amp; Pneumatique</a></li>
+<li><a data-en="Industrial Safety" data-fr="Sécurité Industrielle" href="product-safety.html">Sécurité Industrielle</a></li>
+<li><a data-en="Power Transmission" data-fr="Transmission de Puissance" href="product-transmission.html">Transmission de Puissance</a></li>
+<li><a data-en="Industrial Lubrication" data-fr="Lubrification Industrielle" href="product-lubrication.html">Lubrification Industrielle</a></li>
+<li><a data-en="Construction" data-fr="Construction" href="product-construction.html">Construction</a></li>
+<li><a data-en="Telecom Infrastructure" data-fr="Infrastructure Télécom" href="product-telecom.html">Infrastructure Télécom</a></li>
+<li><a class="active" data-en="Automotive &amp; Fleet" data-fr="Automobile &amp; Flotte" href="product-automotive.html">Automobile &amp; Flotte</a></li>
+</ul>
+</li>
+<li><a data-en="Partners" data-fr="Partenaires" href="https://sujo-engineering.com/partners.html">Partenaires</a></li>
+<li><a data-en="Contact" data-fr="Contact" href="https://sujo-engineering.com/contact.html">Contact</a></li>
+<li><a class="btn btn-outline" data-en="My Account" data-fr="Mon Compte" href="http://129.213.160.94/" style="padding: 8px 16px;" target="_blank">Mon Compte</a></li>
+<li><a class="btn btn-primary" data-en="Request Quote" data-fr="Demander un devis" href="https://sujo-engineering.com/quote.html" style="padding: 8px 16px;">Demander un devis</a></li>
+<li><div class="lang-switch"><button class="active" id="btn-fr" onclick="setLang('fr')" type="button">FR</button><button id="btn-en" onclick="setLang('en')" type="button">EN</button></div></li></ul>
+</nav>
+<div aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation menu" class="hamburger" role="button" tabindex="0">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</header>
+<main class="container">
+<div class="section-header" style="text-align: left;">
+<div class="section-label" data-en="Automotive &amp; Fleet Maintenance" data-fr="Maintenance Automobile &amp; Flotte">Maintenance Automobile &amp; Flotte</div>
+<h1 class="section-title" data-en="Automotive &amp; Fleet Maintenance Products" data-fr="Produits de Maintenance Automobile &amp; Flotte" style="font-size: 2.75rem;">Produits de Maintenance Automobile &amp; Flotte</h1>
+<p data-en="Explore filters, batteries, fluids, and wear parts for vehicle and heavy-equipment fleet maintenance programs." data-fr="Explorez les filtres, batteries, fluides et pièces d'usure pour les programmes de maintenance de véhicules et de flottes d'équipements lourds." style="color: var(--text-muted); margin-top: 12px; max-width: 780px;">Explorez les filtres, batteries, fluides et pièces d'usure pour les programmes de maintenance de véhicules et de flottes d'équipements lourds.</p>
+</div>
+<div class="product-actions" style="margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center;">
+<a class="btn btn-outline" data-en="← Back to Products" data-fr="← Retour aux produits" href="products.html">← Retour aux produits</a>
+<div class="product-search-wrap">
+<svg aria-hidden="true" class="search-icon" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><circle cx="11" cy="11" r="7"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+<input aria-label="Rechercher un produit" class="product-search" data-en-placeholder="Search products…" data-fr-placeholder="Rechercher un produit…" id="productSearch" placeholder="Rechercher un produit…" type="search"/>
+</div>
+</div>
+<div class="grid-3 grouped-grid" style="margin-top: 48px;">
+<div class="card-system group-card">
+<h3 data-en="Filters" data-fr="Filtres">Filtres</h3>
+<p data-en="Oil, air, fuel, and cabin filters that protect engines and cabins across a mixed vehicle fleet." data-fr="Filtres à huile, à air, à carburant et d'habitacle qui protègent les moteurs et les cabines d'une flotte mixte de véhicules.">Filtres à huile, à air, à carburant et d'habitacle qui protègent les moteurs et les cabines d'une flotte mixte de véhicules.</p>
+<div class="pills-container">
+<span class="pill-node" data-en="Engine Oil Filter" data-fr="Engine Oil Filter">Engine Oil Filter</span>
+<span class="pill-node" data-en="Air Filter" data-fr="Air Filter">Air Filter</span>
+<span class="pill-node" data-en="Fuel Filter" data-fr="Fuel Filter">Fuel Filter</span>
+<span class="pill-node" data-en="Cabin Air Filter" data-fr="Cabin Air Filter">Cabin Air Filter</span>
+<span class="pill-node" data-en="Hydraulic Filter (Fleet)" data-fr="Hydraulic Filter (Fleet)">Hydraulic Filter (Fleet)</span>
+<span class="pill-node" data-en="Transmission Filter" data-fr="Transmission Filter">Transmission Filter</span>
+</div>
+</div>
+<div class="card-system group-card">
+<h3 data-en="Batteries &amp; Electrical" data-fr="Batteries &amp; Électricité">Batteries &amp; Électricité</h3>
+<p data-en="Batteries, starters, and electrical components that keep fleet vehicles starting and running reliably." data-fr="Batteries, démarreurs et composants électriques qui assurent le démarrage et le fonctionnement fiable des véhicules de la flotte.">Batteries, démarreurs et composants électriques qui assurent le démarrage et le fonctionnement fiable des véhicules de la flotte.</p>
+<div class="pills-container">
+<span class="pill-node" data-en="Vehicle Battery" data-fr="Vehicle Battery">Vehicle Battery</span>
+<span class="pill-node" data-en="Alternator" data-fr="Alternator">Alternator</span>
+<span class="pill-node" data-en="Starter Motor" data-fr="Starter Motor">Starter Motor</span>
+<span class="pill-node" data-en="Vehicle Wiring Harness" data-fr="Vehicle Wiring Harness">Vehicle Wiring Harness</span>
+<span class="pill-node" data-en="Fuse &amp; Relay Kit" data-fr="Fuse &amp; Relay Kit">Fuse &amp; Relay Kit</span>
+<span class="pill-node" data-en="Headlamp &amp; Signal Bulb" data-fr="Headlamp &amp; Signal Bulb">Headlamp &amp; Signal Bulb</span>
+</div>
+</div>
+<div class="card-system group-card">
+<h3 data-en="Fluids &amp; Lubricants" data-fr="Fluides &amp; Lubrifiants">Fluides &amp; Lubrifiants</h3>
+<p data-en="Engine oils, transmission fluids, and coolants formulated for scheduled fleet maintenance intervals." data-fr="Huiles moteur, fluides de transmission et liquides de refroidissement formulés pour les intervalles d'entretien programmés de la flotte.">Huiles moteur, fluides de transmission et liquides de refroidissement formulés pour les intervalles d'entretien programmés de la flotte.</p>
+<div class="pills-container">
+<span class="pill-node" data-en="Engine Oil" data-fr="Engine Oil">Engine Oil</span>
+<span class="pill-node" data-en="Transmission Fluid" data-fr="Transmission Fluid">Transmission Fluid</span>
+<span class="pill-node" data-en="Coolant / Antifreeze" data-fr="Coolant / Antifreeze">Coolant / Antifreeze</span>
+<span class="pill-node" data-en="Brake Fluid" data-fr="Brake Fluid">Brake Fluid</span>
+<span class="pill-node" data-en="Power Steering Fluid" data-fr="Power Steering Fluid">Power Steering Fluid</span>
+<span class="pill-node" data-en="Chassis Grease Cartridge" data-fr="Chassis Grease Cartridge">Chassis Grease Cartridge</span>
+</div>
+</div>
+<div class="card-system group-card">
+<h3 data-en="Brakes &amp; Wear Parts" data-fr="Freins &amp; Pièces d'Usure">Freins &amp; Pièces d'Usure</h3>
+<p data-en="Brake, belt, and suspension wear parts replaced on a predictable schedule across a vehicle fleet." data-fr="Pièces d'usure de freinage, de courroies et de suspension remplacées selon un calendrier prévisible sur une flotte de véhicules.">Pièces d'usure de freinage, de courroies et de suspension remplacées selon un calendrier prévisible sur une flotte de véhicules.</p>
+<div class="pills-container">
+<span class="pill-node" data-en="Brake Pads" data-fr="Brake Pads">Brake Pads</span>
+<span class="pill-node" data-en="Brake Discs" data-fr="Brake Discs">Brake Discs</span>
+<span class="pill-node" data-en="Serpentine Drive Belt" data-fr="Serpentine Drive Belt">Serpentine Drive Belt</span>
+<span class="pill-node" data-en="Automotive Timing Belt" data-fr="Automotive Timing Belt">Automotive Timing Belt</span>
+<span class="pill-node" data-en="Wiper Blades" data-fr="Wiper Blades">Wiper Blades</span>
+<span class="pill-node" data-en="Vehicle Shock Absorber" data-fr="Vehicle Shock Absorber">Vehicle Shock Absorber</span>
+</div>
+</div>
+</div>
+</main>
+<footer style="background: #f0f1f3; border-top: 1px solid var(--border-color); padding: 60px 0 30px 0; margin-top: 80px;">
+<div class="container grid-3" style="padding: 0 24px 40px 24px;">
+<div>
+<img alt="SUJO" src="logo.png" style="height: 40px; margin-bottom: 16px;"/>
+<p data-en="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, Democratic Republic of Congo" data-fr="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, République Démocratique du Congo" style="color: var(--text-muted); font-size: 0.9rem;">SUJO Engineering Consulting SARL<br/>Kinshasa, République Démocratique du Congo</p>
+</div>
+<div>
+<h4 data-en="Technology Index" data-fr="Matrices Technologiques" style="margin-bottom: 16px; font-size: 0.95rem;">Matrices Technologiques</h4>
+<p style="font-size: 0.9rem; margin-bottom: 8px;">Index Global des Produits</p>
+<p style="font-size: 0.9rem; margin-bottom: 8px;">Marques Validées</p>
+</div>
+<div>
+<h4 data-en="Direct Channels" data-fr="Canaux Directs" style="margin-bottom: 16px; font-size: 0.95rem;">Canaux Directs</h4>
+<p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;">DRC: +243 974 570 630</p>
+<p data-en="Email: contact@sujo-engineering.com" data-fr="Email: contact@sujo-engineering.com" style="color: var(--text-muted); font-size: 0.9rem;">Email: contact@sujo-engineering.com</p>
+</div>
+</div>
+<div data-en="© 2026 SUJO Engineering Consulting SARL. All rights reserved." data-fr="© 2026 SUJO Engineering Consulting SARL. Tous droits réservés." style="text-align: center; border-top: 1px solid var(--border-color); padding-top: 30px; font-size: 0.8rem; color: var(--text-muted);">
+© 2026 SUJO Engineering Consulting SARL. All rights reserved.
+</div>
+</footer>
+<script>
+function applyLang(lang) {
+    document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+        el.innerHTML = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+    });
+    document.documentElement.lang = lang;
+}
+
+function setLang(lang) {
+    localStorage.setItem('sujoLang', lang);
+    const btnFr = document.getElementById('btn-fr');
+    const btnEn = document.getElementById('btn-en');
+    if (btnFr && btnEn) {
+        btnFr.classList.toggle('active', lang === 'fr');
+        btnEn.classList.toggle('active', lang === 'en');
+    }
+    applyLang(lang);
+}
+
+(function () {
+    const saved = localStorage.getItem('sujoLang') || 'fr';
+    applyLang(saved);
+    const btnFr = document.getElementById('btn-fr');
+    const btnEn = document.getElementById('btn-en');
+    if (btnFr && btnEn) {
+        btnFr.classList.toggle('active', saved === 'fr');
+        btnEn.classList.toggle('active', saved === 'en');
+    }
+})();
+
+function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+    document.querySelector('.hamburger').classList.toggle('open');
+}
+
+document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        if (window.innerWidth <= 900) {
+            e.preventDefault();
+            link.parentElement.classList.toggle('open');
+        }
+    });
+});
+
+document.querySelectorAll('#mobileMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (link.parentElement.classList.contains('dropdown')) return;
+        document.getElementById('mobileMenu').classList.remove('open');
+        document.querySelector('.hamburger').classList.remove('open');
+    });
+});
+</script>
+</body>
+</html>

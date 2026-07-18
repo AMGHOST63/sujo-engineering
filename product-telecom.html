@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Telecom Infrastructure Products — SUJO</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+<script defer="" src="app.js"></script>
+<style>
+header{position:sticky;top:0;z-index:1000;backdrop-filter:blur(14px);}
+html{scroll-padding-top:96px;}
+.product-actions .btn-primary{display:none;}
+.card-system .btn-text{display:none;}
+.card-system{cursor:default;}
+.card-system p{margin-bottom:0;}
+</style>
+</head>
+<body>
+<!-- NAV BAR -->
+<header>
+<a class="nav-logo" href="https://sujo-engineering.com/index.html">
+<img alt="SUJO" src="logo.png" style="height: 50px;"/>
+</a>
+<nav>
+<ul class="nav-links" id="mobileMenu">
+<li><a data-en="Home" data-fr="Accueil" href="https://sujo-engineering.com/index.html">Accueil</a></li>
+<li><a data-en="About" data-fr="À Propos" href="https://sujo-engineering.com/about.html">À Propos</a></li>
+<li class="dropdown">
+<a class="active" data-en="Products ▾" data-fr="Produits ▾" href="https://sujo-engineering.com/products.html">Produits ▾</a>
+<ul class="dropdown-menu">
+<li><a data-en="Mechanical Components" data-fr="Composants Mécaniques" href="product-mechanical.html">Composants Mécaniques</a></li>
+<li><a data-en="Automation &amp; Motion" data-fr="Automatisation &amp; Mouvement" href="product-automation.html">Automatisation &amp; Mouvement</a></li>
+<li><a data-en="Hydraulics &amp; Pneumatics" data-fr="Hydraulique &amp; Pneumatique" href="product-hydraulics.html">Hydraulique &amp; Pneumatique</a></li>
+<li><a data-en="Industrial Safety" data-fr="Sécurité Industrielle" href="product-safety.html">Sécurité Industrielle</a></li>
+<li><a data-en="Power Transmission" data-fr="Transmission de Puissance" href="product-transmission.html">Transmission de Puissance</a></li>
+<li><a data-en="Industrial Lubrication" data-fr="Lubrification Industrielle" href="product-lubrication.html">Lubrification Industrielle</a></li>
+<li><a data-en="Construction" data-fr="Construction" href="product-construction.html">Construction</a></li>
+<li><a class="active" data-en="Telecom Infrastructure" data-fr="Infrastructure Télécom" href="product-telecom.html">Infrastructure Télécom</a></li>
+<li><a data-en="Automotive &amp; Fleet" data-fr="Automobile &amp; Flotte" href="product-automotive.html">Automobile &amp; Flotte</a></li>
+</ul>
+</li>
+<li><a data-en="Partners" data-fr="Partenaires" href="https://sujo-engineering.com/partners.html">Partenaires</a></li>
+<li><a data-en="Contact" data-fr="Contact" href="https://sujo-engineering.com/contact.html">Contact</a></li>
+<li><a class="btn btn-outline" data-en="My Account" data-fr="Mon Compte" href="http://129.213.160.94/" style="padding: 8px 16px;" target="_blank">Mon Compte</a></li>
+<li><a class="btn btn-primary" data-en="Request Quote" data-fr="Demander un devis" href="https://sujo-engineering.com/quote.html" style="padding: 8px 16px;">Demander un devis</a></li>
+<li><div class="lang-switch"><button class="active" id="btn-fr" onclick="setLang('fr')" type="button">FR</button><button id="btn-en" onclick="setLang('en')" type="button">EN</button></div></li></ul>
+</nav>
+<div aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation menu" class="hamburger" role="button" tabindex="0">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</header>
+<main class="container">
+<div class="section-header" style="text-align: left;">
+<div class="section-label" data-en="Telecom Infrastructure" data-fr="Infrastructure Télécom">Infrastructure Télécom</div>
+<h1 class="section-title" data-en="Telecom Infrastructure Products" data-fr="Produits d'Infrastructure Télécom" style="font-size: 2.75rem;">Produits d'Infrastructure Télécom</h1>
+<p data-en="Explore earthing and grounding systems, backup power, tower rigging and climbing safety, and cable and fiber management components for telecom tower sites and network infrastructure." data-fr="Explorez les systèmes de mise à la terre, l'alimentation de secours, le gréement et la sécurité d'escalade de pylônes, ainsi que la gestion des câbles et de la fibre pour les sites de pylônes télécoms et les infrastructures réseau." style="color: var(--text-muted); margin-top: 12px; max-width: 780px;">Explorez les systèmes de mise à la terre, l'alimentation de secours, le gréement et la sécurité d'escalade de pylônes, ainsi que la gestion des câbles et de la fibre pour les sites de pylônes télécoms et les infrastructures réseau.</p>
+</div>
+<div class="product-actions" style="margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center;">
+<a class="btn btn-outline" data-en="← Back to Products" data-fr="← Retour aux produits" href="products.html">← Retour aux produits</a>
+<div class="product-search-wrap">
+<svg aria-hidden="true" class="search-icon" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><circle cx="11" cy="11" r="7"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+<input aria-label="Rechercher un produit" class="product-search" data-en-placeholder="Search products…" data-fr-placeholder="Rechercher un produit…" id="productSearch" placeholder="Rechercher un produit…" type="search"/>
+</div>
+</div>
+<div class="grid-3 grouped-grid" style="margin-top: 48px;">
+<div class="card-system group-card">
+<h3 data-en="Earthing &amp; Grounding Systems" data-fr="Systèmes de Mise à la Terre">Systèmes de Mise à la Terre</h3>
+<p data-en="Grounding hardware that protects tower sites, equipment, and personnel from lightning strikes and fault currents." data-fr="Matériel de mise à la terre qui protège les sites de pylônes, les équipements et le personnel contre la foudre et les courants de défaut.">Matériel de mise à la terre qui protège les sites de pylônes, les équipements et le personnel contre la foudre et les courants de défaut.</p>
+<div class="pills-container">
+<span class="pill-node" data-en="Earthing Rod" data-fr="Earthing Rod">Earthing Rod</span>
+<span class="pill-node" data-en="Earthing Cable" data-fr="Earthing Cable">Earthing Cable</span>
+<span class="pill-node" data-en="Earth Bar" data-fr="Earth Bar">Earth Bar</span>
+<span class="pill-node" data-en="Exothermic Weld Kit" data-fr="Exothermic Weld Kit">Exothermic Weld Kit</span>
+<span class="pill-node" data-en="Grounding Clamp" data-fr="Grounding Clamp">Grounding Clamp</span>
+<span class="pill-node" data-en="Lightning Arrestor" data-fr="Lightning Arrestor">Lightning Arrestor</span>
+</div>
+</div>
+<div class="card-system group-card">
+<h3 data-en="Backup Power &amp; Generators" data-fr="Alimentation de Secours &amp; Groupes Électrogènes">Alimentation de Secours &amp; Groupes Électrogènes</h3>
+<p data-en="Generators, transfer switches, and battery banks that keep telecom sites powered through grid outages." data-fr="Groupes électrogènes, commutateurs de transfert et bancs de batteries qui maintiennent les sites télécoms alimentés lors des coupures de réseau.">Groupes électrogènes, commutateurs de transfert et bancs de batteries qui maintiennent les sites télécoms alimentés lors des coupures de réseau.</p>
+<div class="pills-container">
+<span class="pill-node" data-en="Diesel Generator" data-fr="Diesel Generator">Diesel Generator</span>
+<span class="pill-node" data-en="Generator Control Panel" data-fr="Generator Control Panel">Generator Control Panel</span>
+<span class="pill-node" data-en="Automatic Transfer Switch (ATS)" data-fr="Automatic Transfer Switch (ATS)">Automatic Transfer Switch (ATS)</span>
+<span class="pill-node" data-en="Battery Bank (VRLA)" data-fr="Battery Bank (VRLA)">Battery Bank (VRLA)</span>
+<span class="pill-node" data-en="Fuel Tank" data-fr="Fuel Tank">Fuel Tank</span>
+<span class="pill-node" data-en="Solar Hybrid Power System" data-fr="Solar Hybrid Power System">Solar Hybrid Power System</span>
+</div>
+</div>
+<div class="card-system group-card">
+<h3 data-en="Tower Rigging &amp; Climbing Safety" data-fr="Gréement &amp; Sécurité d'Escalade de Pylône">Gréement &amp; Sécurité d'Escalade de Pylône</h3>
+<p data-en="Rigging and fall-protection equipment for safe installation and maintenance work at height on telecom towers." data-fr="Équipements de gréement et de protection antichute pour des travaux d'installation et de maintenance en hauteur en toute sécurité sur les pylônes télécoms.">Équipements de gréement et de protection antichute pour des travaux d'installation et de maintenance en hauteur en toute sécurité sur les pylônes télécoms.</p>
+<div class="pills-container">
+<span class="pill-node" data-en="Tower Climbing Kit" data-fr="Tower Climbing Kit">Tower Climbing Kit</span>
+<span class="pill-node" data-en="Fall Arrest Harness" data-fr="Fall Arrest Harness">Fall Arrest Harness</span>
+<span class="pill-node" data-en="Rigging Winch" data-fr="Rigging Winch">Rigging Winch</span>
+<span class="pill-node" data-en="Cable-Type Fall Arrester" data-fr="Cable-Type Fall Arrester">Cable-Type Fall Arrester</span>
+<span class="pill-node" data-en="Anchor Point" data-fr="Anchor Point">Anchor Point</span>
+<span class="pill-node" data-en="Rescue Kit" data-fr="Rescue Kit">Rescue Kit</span>
+</div>
+</div>
+<div class="card-system group-card">
+<h3 data-en="Cable &amp; Fiber Management" data-fr="Gestion des Câbles &amp; Fibre">Gestion des Câbles &amp; Fibre</h3>
+<p data-en="Fiber, feeder cable, and cable-routing hardware that organize and protect connectivity runs across a tower site." data-fr="Câbles fibre, câbles d'alimentation RF et matériel de cheminement qui organisent et protègent les liaisons sur un site de pylône.">Câbles fibre, câbles d'alimentation RF et matériel de cheminement qui organisent et protègent les liaisons sur un site de pylône.</p>
+<div class="pills-container">
+<span class="pill-node" data-en="Fiber Optic Cable" data-fr="Fiber Optic Cable">Fiber Optic Cable</span>
+<span class="pill-node" data-en="RF Feeder Cable" data-fr="RF Feeder Cable">RF Feeder Cable</span>
+<span class="pill-node" data-en="Cable Tray" data-fr="Cable Tray">Cable Tray</span>
+<span class="pill-node" data-en="Cable Ladder" data-fr="Cable Ladder">Cable Ladder</span>
+<span class="pill-node" data-en="Cable Gland" data-fr="Cable Gland">Cable Gland</span>
+<span class="pill-node" data-en="Outdoor Site Cabinet" data-fr="Outdoor Site Cabinet">Outdoor Site Cabinet</span>
+</div>
+</div>
+</div>
+</main>
+<footer style="background: #f0f1f3; border-top: 1px solid var(--border-color); padding: 60px 0 30px 0; margin-top: 80px;">
+<div class="container grid-3" style="padding: 0 24px 40px 24px;">
+<div>
+<img alt="SUJO" src="logo.png" style="height: 40px; margin-bottom: 16px;"/>
+<p data-en="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, Democratic Republic of Congo" data-fr="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, République Démocratique du Congo" style="color: var(--text-muted); font-size: 0.9rem;">SUJO Engineering Consulting SARL<br/>Kinshasa, République Démocratique du Congo</p>
+</div>
+<div>
+<h4 data-en="Technology Index" data-fr="Matrices Technologiques" style="margin-bottom: 16px; font-size: 0.95rem;">Matrices Technologiques</h4>
+<p style="font-size: 0.9rem; margin-bottom: 8px;">Index Global des Produits</p>
+<p style="font-size: 0.9rem; margin-bottom: 8px;">Marques Validées</p>
+</div>
+<div>
+<h4 data-en="Direct Channels" data-fr="Canaux Directs" style="margin-bottom: 16px; font-size: 0.95rem;">Canaux Directs</h4>
+<p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;">DRC: +243 974 570 630</p>
+<p data-en="Email: contact@sujo-engineering.com" data-fr="Email: contact@sujo-engineering.com" style="color: var(--text-muted); font-size: 0.9rem;">Email: contact@sujo-engineering.com</p>
+</div>
+</div>
+<div data-en="© 2026 SUJO Engineering Consulting SARL. All rights reserved." data-fr="© 2026 SUJO Engineering Consulting SARL. Tous droits réservés." style="text-align: center; border-top: 1px solid var(--border-color); padding-top: 30px; font-size: 0.8rem; color: var(--text-muted);">
+© 2026 SUJO Engineering Consulting SARL. All rights reserved.
+</div>
+</footer>
+<script>
+function applyLang(lang) {
+    document.querySelectorAll('[data-fr][data-en]').forEach(el => {
+        el.innerHTML = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+    });
+    document.documentElement.lang = lang;
+}
+
+function setLang(lang) {
+    localStorage.setItem('sujoLang', lang);
+    const btnFr = document.getElementById('btn-fr');
+    const btnEn = document.getElementById('btn-en');
+    if (btnFr && btnEn) {
+        btnFr.classList.toggle('active', lang === 'fr');
+        btnEn.classList.toggle('active', lang === 'en');
+    }
+    applyLang(lang);
+}
+
+(function () {
+    const saved = localStorage.getItem('sujoLang') || 'fr';
+    applyLang(saved);
+    const btnFr = document.getElementById('btn-fr');
+    const btnEn = document.getElementById('btn-en');
+    if (btnFr && btnEn) {
+        btnFr.classList.toggle('active', saved === 'fr');
+        btnEn.classList.toggle('active', saved === 'en');
+    }
+})();
+
+function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+    document.querySelector('.hamburger').classList.toggle('open');
+}
+
+document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        if (window.innerWidth <= 900) {
+            e.preventDefault();
+            link.parentElement.classList.toggle('open');
+        }
+    });
+});
+
+document.querySelectorAll('#mobileMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (link.parentElement.classList.contains('dropdown')) return;
+        document.getElementById('mobileMenu').classList.remove('open');
+        document.querySelector('.hamburger').classList.remove('open');
+    });
+});
+</script>
+</body>
+</html>
