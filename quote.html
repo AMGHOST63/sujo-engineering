@@ -1835,6 +1835,17 @@ footer{background:#f0f1f3!important;border-top:1px solid var(--border-color);pad
     </script>
 
 <script>
+document.querySelector('.hamburger').addEventListener('click', () => {
+    toggleMenu();
+    const expanded = document.getElementById('mobileMenu').classList.contains('open');
+    document.querySelector('.hamburger').setAttribute('aria-expanded', expanded);
+});
+document.querySelector('.hamburger').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        document.querySelector('.hamburger').click();
+    }
+});
 document.querySelectorAll('.dropdown > a').forEach(link => {
     link.addEventListener('click', (e) => {
         if (window.innerWidth <= 1000) {
