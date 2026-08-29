@@ -1,221 +1,313 @@
-﻿<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE html>
+<html lang="fr" class="lang-boot" data-title-fr="Développement de projet en RDC | SUJO" data-title-en="Project development in the DRC | SUJO" data-desc-fr="Cadrage du périmètre technique, planification, coordination fournisseurs et suivi des exigences critiques, du cadrage à l’exécution." data-desc-en="Technical scoping, planning, supplier coordination and tracking of critical requirements, from scoping through execution.">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Développement de Projet — SUJO Engineering Consulting</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="app.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Développement de projet en RDC | SUJO</title>
+<meta name="description" content="Cadrage du périmètre technique, planification, coordination fournisseurs et suivi des exigences critiques, du cadrage à l’exécution.">
+<link rel="canonical" href="https://sujo-engineering.com/project-development.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SUJO Engineering Consulting SARL">
+<meta property="og:title" content="Développement de projet en RDC | SUJO">
+<meta property="og:description" content="Cadrage du périmètre technique, planification, coordination fournisseurs et suivi des exigences critiques, du cadrage à l’exécution.">
+<meta property="og:url" content="https://sujo-engineering.com/project-development.html">
+<meta property="og:image" content="https://sujo-engineering.com/img/og-default.jpg">
+<meta property="og:locale" content="fr_CD">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1520">
+<link rel="icon" href="img/favicon.png" type="image/png" sizes="64x64">
+<link rel="apple-touch-icon" href="img/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
+<link rel="stylesheet" href="style.css">
+<script>
+// Apply the stored language before first paint so the page never flashes the
+// wrong one. The full swap happens in app.js.
+(function(){try{var l=localStorage.getItem('sujoLang');if(l==='en'||l==='fr'){document.documentElement.lang=l;document.documentElement.setAttribute('data-lang',l);}else{document.documentElement.setAttribute('data-lang','fr');}}catch(e){document.documentElement.setAttribute('data-lang','fr');}document.documentElement.classList.remove('lang-boot');})();
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://sujo-engineering.com/#organization","name":"SUJO Engineering Consulting SARL","alternateName":"SUJO","url":"https://sujo-engineering.com/","logo":"https://sujo-engineering.com/img/logo-512.png","image":"https://sujo-engineering.com/img/og-default.jpg","email":"contact@sujo-engineering.com","telephone":"+243974570630","address":{"@type":"PostalAddress","addressLocality":"Kinshasa","addressCountry":"CD"},"areaServed":[{"@type":"Country","name":"Democratic Republic of the Congo"},{"@type":"AdministrativeArea","name":"Kinshasa"}],"availableLanguage":["fr","en"],"contactPoint":[{"@type":"ContactPoint","contactType":"sales","telephone":"+243974570630","email":"contact@sujo-engineering.com","areaServed":"CD","availableLanguage":["fr","en"]},{"@type":"ContactPoint","contactType":"customer support","telephone":"+14123453307","email":"contact@sujo-engineering.com","areaServed":"US","availableLanguage":["en","fr"]}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"17:00"}],"knowsAbout":["Engineering consulting","Technical studies","Cost estimation","Project development","Industrial sourcing","Spare parts identification"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sujo-engineering.com/index.html"},{"@type":"ListItem","position":2,"name":"Services","item":"https://sujo-engineering.com/services.html"},{"@type":"ListItem","position":3,"name":"Project Development & Support","item":"https://sujo-engineering.com/project-development.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Project Development & Support","description":"Defining technical scope, planning activities, coordinating with contractors, manufacturers and suppliers, and tracking critical requirements.","provider":{"@id":"https://sujo-engineering.com/#organization"},"areaServed":{"@type":"Country","name":"Democratic Republic of the Congo"},"serviceType":"Project Development & Support","hasOfferCatalog":{"@type":"OfferCatalog","name":"Project Development & Support deliverables","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Scoping note and technical scope"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Action plan and implementation roadmap"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Requirements and critical-actions register"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Supplier coordination records"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Decision file for management"}}]}}</script>
+<script defer src="app.js"></script>
 </head>
-<body>
+<body class="">
+<a class="skip-link" href="#main" data-fr="Aller au contenu principal" data-en="Skip to main content">Aller au contenu principal</a>
+<header class="site-header" id="site-header">
+<div class="header-inner">
+<a class="brand" href="index.html" aria-label="SUJO Engineering Consulting — accueil">
+<img class="brand-logo" src="img/logo.png" alt="SUJO Engineering Consulting" width="484" height="132" fetchpriority="high">
+</a>
+<nav class="primary-nav" aria-label="Navigation principale">
+<ul class="nav-list" id="nav-list">
+<li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
+<li class="has-menu">
+<button type="button" class="menu-trigger active" aria-expanded="false" aria-haspopup="true" data-fr="Services" data-en="Services">Services</button>
+<div class="menu-panel">
+<ul class="menu-list">
+<li class="menu-overview"><a href="services.html" data-fr="Tous nos services" data-en="All services">Tous nos services</a></li>
+<li><a href="engineering.html" data-fr="Conseil en Ingénierie" data-en="Engineering Consulting">Conseil en Ingénierie</a></li>
+<li><a href="technical-studies.html" data-fr="Études Techniques" data-en="Technical Studies">Études Techniques</a></li>
+<li><a href="cost-estimation.html" data-fr="Estimation des Coûts" data-en="Cost Estimation">Estimation des Coûts</a></li>
+<li><a href="project-development.html" aria-current="page" data-fr="Développement de Projet" data-en="Project Development">Développement de Projet</a></li>
+<li><a href="industrial-sourcing.html" data-fr="Sourcing Industriel" data-en="Industrial Sourcing">Sourcing Industriel</a></li>
+<li><a href="how-we-work.html" data-fr="Notre Méthode" data-en="How We Work">Notre Méthode</a></li>
+</ul>
+</div>
+</li>
+<li class="has-menu">
+<button type="button" class="menu-trigger" aria-expanded="false" aria-haspopup="true" data-fr="Secteurs" data-en="Sectors">Secteurs</button>
+<div class="menu-panel">
+<ul class="menu-list">
+<li class="menu-overview"><a href="sectors.html" data-fr="Tous les secteurs" data-en="All sectors">Tous les secteurs</a></li>
+<li><a href="sector-construction.html" data-fr="Construction &amp; Génie Civil" data-en="Construction &amp; Civil Engineering">Construction &amp; Génie Civil</a></li>
+<li><a href="sector-mining.html" data-fr="Mines &amp; Industries Extractives" data-en="Mining &amp; Extractive Industries">Mines &amp; Industries Extractives</a></li>
+<li><a href="sector-energy.html" data-fr="Énergie &amp; Hydroélectricité" data-en="Energy, Power &amp; Hydropower">Énergie &amp; Hydroélectricité</a></li>
+<li><a href="sector-oil-gas.html" data-fr="Pétrole &amp; Gaz" data-en="Oil &amp; Gas">Pétrole &amp; Gaz</a></li>
+<li><a href="sector-manufacturing.html" data-fr="Industrie Manufacturière" data-en="Manufacturing">Industrie Manufacturière</a></li>
+<li><a href="sector-water.html" data-fr="Eau &amp; Assainissement" data-en="Water &amp; Sanitation">Eau &amp; Assainissement</a></li>
+<li><a href="sector-logistics.html" data-fr="Logistique &amp; Ferroviaire" data-en="Logistics &amp; Rail">Logistique &amp; Ferroviaire</a></li>
+<li><a href="sector-public-infrastructure.html" data-fr="Administration &amp; Infrastructures Publiques" data-en="Public Administration &amp; Infrastructure">Administration &amp; Infrastructures Publiques</a></li>
+<li><a href="sector-industrial-facilities.html" data-fr="Installations &amp; Maintenance Industrielles" data-en="Industrial Facilities &amp; Maintenance">Installations &amp; Maintenance Industrielles</a></li>
+</ul>
+</div>
+</li>
+<li class="has-menu">
+<button type="button" class="menu-trigger" aria-expanded="false" aria-haspopup="true" data-fr="Produits" data-en="Products">Produits</button>
+<div class="menu-panel">
+<ul class="menu-list">
+<li class="menu-overview"><a href="products.html" data-fr="Tous nos services" data-en="All services">Tous les produits</a></li>
+<li><a href="product-mechanical.html" data-fr="Composants Mécaniques" data-en="Mechanical Components">Composants Mécaniques</a></li>
+<li><a href="product-automation.html" data-fr="Automatisation &amp; Mouvement" data-en="Automation &amp; Motion">Automatisation &amp; Mouvement</a></li>
+<li><a href="product-hydraulics.html" data-fr="Hydraulique &amp; Pneumatique" data-en="Hydraulics &amp; Pneumatics">Hydraulique &amp; Pneumatique</a></li>
+<li><a href="product-transmission.html" data-fr="Transmission de Puissance" data-en="Power Transmission">Transmission de Puissance</a></li>
+<li><a href="product-lubrication.html" data-fr="Lubrification Industrielle" data-en="Industrial Lubrication">Lubrification Industrielle</a></li>
+<li><a href="product-safety.html" data-fr="Sécurité Industrielle" data-en="Industrial Safety">Sécurité Industrielle</a></li>
+<li><a href="product-construction.html" data-fr="Construction" data-en="Construction">Construction</a></li>
+<li><a href="product-automotive.html" data-fr="Maintenance Automobile &amp; Flotte" data-en="Automotive &amp; Fleet Maintenance">Maintenance Automobile &amp; Flotte</a></li>
+<li><a href="product-telecom.html" data-fr="Infrastructure Télécom" data-en="Telecom Infrastructure">Infrastructure Télécom</a></li>
+</ul>
+</div>
+</li>
+<li><a href="case-studies.html" data-fr="Références" data-en="Case Studies">Références</a></li>
+<li><a href="about.html" data-fr="À Propos" data-en="About">À Propos</a></li>
+<li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
+</ul>
+</nav>
+<div class="header-actions">
+<div class="lang-switch" role="group" aria-label="Language / Langue">
+<button type="button" class="lang-btn" data-lang-button="fr" aria-pressed="true">FR</button>
+<button type="button" class="lang-btn" data-lang-button="en" aria-pressed="false">EN</button>
+</div>
+<a class="btn btn-ghost header-account" href="https://portal.sujo-engineering.com/" target="_blank" rel="noopener noreferrer" data-fr="Mon Compte" data-en="My Account">Mon Compte</a>
+<a class="btn btn-primary header-quote" href="quote.html" data-fr="Demander un devis" data-en="Request a Quote">Demander un devis</a>
+</div>
+<button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Ouvrir le menu">
+<span></span><span></span><span></span>
+</button>
+</div>
+</header>
+<main id="main" tabindex="-1">
+<section class="page-head page-head--media">
+<div class="wrap">
+<nav class="breadcrumb" aria-label="Fil d’Ariane"><ol><li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li><li class="crumb-sep" aria-hidden="true">/</li><li><a href="services.html" data-fr="Services" data-en="Services">Services</a></li><li class="crumb-sep" aria-hidden="true">/</li><li data-fr="Développement de Projet &amp; Appui" data-en="Project Development &amp; Support" aria-current="page">Développement de Projet &amp; Appui</li></ol></nav>
+<p class="eyebrow" data-fr="Développement de Projet &amp; Appui" data-en="Project Development &amp; Support">Développement de Projet &amp; Appui</p>
+<h1 class="page-title" data-fr="De la décision technique à l’exécution, sans rupture de continuité" data-en="From technical decision to execution, without losing the thread">De la décision technique à l’exécution, sans rupture de continuité</h1>
+<p class="page-lead" data-fr="Définition du périmètre technique, planification des activités, coordination avec les entreprises, fabricants et fournisseurs, et suivi des exigences critiques." data-en="Defining technical scope, planning activities, coordinating with contractors, manufacturers and suppliers, and tracking critical requirements.">Définition du périmètre technique, planification des activités, coordination avec les entreprises, fabricants et fournisseurs, et suivi des exigences critiques.</p>
+<div class="page-head-actions">
+<a class="btn btn-primary" href="quote.html" data-fr="Demander un devis" data-en="Request a Quote">Demander un devis</a>
+<a class="btn btn-outline" href="contact.html" data-fr="Discuter de votre projet" data-en="Discuss Your Project">Discuter de votre projet</a>
+</div>
+</div>
+<figure class="page-head-media"><picture>
+<source type="image/webp" sizes="100vw" srcset="img/svc-project-development-960.webp 960w">
+<img src="img/svc-project-development-960.jpg" sizes="100vw" srcset="img/svc-project-development-960.jpg 960w" alt="Définition du périmètre technique, planification des activités, coordination avec les entreprises, fabricants et fournisseurs, et suivi des exigences critiques." data-fr-alt="Définition du périmètre technique, planification des activités, coordination avec les entreprises, fabricants et fournisseurs, et suivi des exigences critiques." data-en-alt="Defining technical scope, planning activities, coordinating with contractors, manufacturers and suppliers, and tracking critical requirements." width="960" height="640" loading="eager" decoding="async" fetchpriority="high">
+</picture></figure>
+</section>
 
-    <!-- NAV BAR -->
-    <header>
-        <a href="https://sujo-engineering.com/index.html" class="nav-logo">
-            <img src="logo.png" alt="SUJO" style="height: 50px;">
-        </a>
-        <nav>
-            <ul class="nav-links" id="mobileMenu">
-                <li><a href="https://sujo-engineering.com/index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
-                <li><a href="https://sujo-engineering.com/about.html" data-fr="À Propos" data-en="About">À Propos</a></li>
-                <li class="dropdown">
-                    <a href="https://sujo-engineering.com/products.html" data-fr="Produits ▾" data-en="Products ▾">Produits ▾</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="product-mechanical.html" data-fr="Composants Mécaniques" data-en="Mechanical Components">Composants Mécaniques</a></li>
-                        <li><a href="product-automation.html" data-fr="Automatisation &amp; Mouvement" data-en="Automation &amp; Motion">Automatisation &amp; Mouvement</a></li>
-                        <li><a href="product-hydraulics.html" data-fr="Hydraulique &amp; Pneumatique" data-en="Hydraulics &amp; Pneumatics">Hydraulique &amp; Pneumatique</a></li>
-                        <li><a href="product-safety.html" data-fr="Sécurité Industrielle" data-en="Industrial Safety">Sécurité Industrielle</a></li>
-                        <li><a href="product-transmission.html" data-fr="Transmission de Puissance" data-en="Power Transmission">Transmission de Puissance</a></li>
-                        <li><a href="product-lubrication.html" data-fr="Lubrification Industrielle" data-en="Industrial Lubrication">Lubrification Industrielle</a></li>
-                    </ul>
-                </li>
-                <li><a href="https://sujo-engineering.com/partners.html" data-fr="Partenaires" data-en="Partners">Partenaires</a></li>
-                <li><a href="https://sujo-engineering.com/contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
-                <li><a href="http://129.213.160.94/" target="_blank" class="btn btn-outline" style="padding: 8px 16px;" data-fr="Mon Compte" data-en="My Account">Mon Compte</a></li>
-                <li><a href="https://sujo-engineering.com/quote.html" class="btn btn-primary" style="padding: 8px 16px;" data-fr="Demander un devis" data-en="Request Quote">Demander un devis</a></li>
-            </ul>
-        </nav>
-        <div aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation menu" class="hamburger" role="button" tabindex="0">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </header>
+<section class="section section--tight">
+<div class="wrap split split--wide">
+<div class="split-text">
+<h2 class="h-sub" data-fr="Le problème que nous traitons" data-en="The problem we address">Le problème que nous traitons</h2>
+<p class="prose prose--lead" data-fr="Entre l’étude et le chantier, l’information se perd. Les exigences techniques validées en amont ne parviennent pas aux fournisseurs, et les arbitrages faits sur site ne remontent pas aux décideurs." data-en="Between the study and the site, information gets lost. Technical requirements validated upstream never reach the suppliers, and the trade-offs made on site never reach the decision-makers.">Entre l’étude et le chantier, l’information se perd. Les exigences techniques validées en amont ne parviennent pas aux fournisseurs, et les arbitrages faits sur site ne remontent pas aux décideurs.</p>
+<h2 class="h-sub" data-fr="Ce que fait SUJO" data-en="What SUJO does">Ce que fait SUJO</h2>
+<p class="prose" data-fr="SUJO accompagne les projets d’infrastructure, d’équipement et d’amélioration industrielle par une coordination technique structurée, du cadrage jusqu’à l’appui à l’exécution." data-en="SUJO supports infrastructure, equipment and industrial-improvement projects through structured technical coordination, from scoping through implementation support.">SUJO accompagne les projets d’infrastructure, d’équipement et d’amélioration industrielle par une coordination technique structurée, du cadrage jusqu’à l’appui à l’exécution.</p>
+<ul class="check-list"><li><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span data-fr="Définition du périmètre technique du projet" data-en="Defining the project’s technical scope">Définition du périmètre technique du projet</span></li><li><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span data-fr="Planification des activités et des priorités d’intervention" data-en="Planning activities and intervention priorities">Planification des activités et des priorités d’intervention</span></li><li><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span data-fr="Coordination avec entreprises, fabricants et fournisseurs" data-en="Coordination with contractors, manufacturers and suppliers">Coordination avec entreprises, fabricants et fournisseurs</span></li><li><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span data-fr="Suivi des exigences techniques et des actions critiques" data-en="Tracking technical requirements and critical actions">Suivi des exigences techniques et des actions critiques</span></li><li><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span data-fr="Préparation des dossiers de projet et documents d’aide à la décision" data-en="Preparing project files and decision-support documents">Préparation des dossiers de projet et documents d’aide à la décision</span></li></ul>
 
-    <!-- 1. INTRO / HERO -->
-    <main class="container" style="padding-top: 60px;">
-        <div class="section-header" style="text-align: left; max-width: 760px; margin: 0 0 24px 0;">
-            <div class="section-label" data-fr="Développement de Projet" data-en="Project Development">Développement de Projet</div>
-            <h1 class="section-title" style="font-size: 2.5rem;" data-fr="Du Concept à la Réalisation Réussie" data-en="From Concept to Successful Delivery">Du Concept à la Réalisation Réussie</h1>
-        </div>
+</div>
+<aside class="split-aside">
+<div class="aside-card">
+<h2 class="aside-title" data-fr="Livrables types" data-en="Typical deliverables">Livrables types</h2>
+<ul class="check-list check-list--tight"><li><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span data-fr="Note de cadrage et périmètre technique" data-en="Scoping note and technical scope">Note de cadrage et périmètre technique</span></li><li><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span data-fr="Plan d’action et feuille de route de mise en œuvre" data-en="Action plan and implementation roadmap">Plan d’action et feuille de route de mise en œuvre</span></li><li><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span data-fr="Registre des exigences et des actions critiques" data-en="Requirements and critical-actions register">Registre des exigences et des actions critiques</span></li><li><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span data-fr="Comptes rendus de coordination fournisseurs" data-en="Supplier coordination records">Comptes rendus de coordination fournisseurs</span></li><li><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span data-fr="Dossier de décision pour la direction" data-en="Decision file for management">Dossier de décision pour la direction</span></li></ul>
+</div>
+<div class="aside-card">
+<h2 class="aside-title" data-fr="Ce que nous attendons de vous" data-en="What we need from you">Ce que nous attendons de vous</h2>
+<ul class="check-list check-list--tight"><li><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span data-fr="Objectifs du projet et contraintes de calendrier" data-en="Project objectives and schedule constraints">Objectifs du projet et contraintes de calendrier</span></li><li><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span data-fr="Interlocuteurs désignés côté client et côté fournisseurs" data-en="Named counterparts on the client and supplier side">Interlocuteurs désignés côté client et côté fournisseurs</span></li><li><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span data-fr="Études, plans et décisions déjà arrêtées" data-en="Studies, drawings and decisions already made">Études, plans et décisions déjà arrêtées</span></li><li><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12l5 5L20 6"/></svg><span data-fr="Périmètre budgétaire disponible" data-en="Available budget envelope">Périmètre budgétaire disponible</span></li></ul>
+</div>
+</aside>
+</div>
+</section>
 
-        <div style="max-width: 760px; margin-bottom: 24px;">
-            <p style="color: var(--text-muted); margin-bottom: 20px;" data-fr="Tout projet réussi commence par une planification rigoureuse. SUJO Engineering Consulting fournit des services complets de développement de projet qui transforment les idées en projets d'ingénierie techniquement solides et financièrement viables." data-en="Every successful project begins with careful planning. SUJO Engineering Consulting provides complete project development services that transform ideas into technically sound and financially viable engineering projects.">Tout projet réussi commence par une planification rigoureuse. SUJO Engineering Consulting fournit des services complets de développement de projet qui transforment les idées en projets d'ingénierie techniquement solides et financièrement viables.</p>
-            <p style="color: var(--text-muted);" data-fr="Nous accompagnons nos clients à chaque étape — de la planification initiale à la conception d'ingénierie, l'appui à l'approvisionnement, la coordination de construction et la clôture du projet." data-en="We guide clients throughout every stage—from initial planning to engineering design, procurement support, construction coordination, and project closeout.">Nous accompagnons nos clients à chaque étape — de la planification initiale à la conception d'ingénierie, l'appui à l'approvisionnement, la coordination de construction et la clôture du projet.</p>
-        </div>
-    </main>
+<section class="section section--alt">
+<div class="wrap">
+<div class="section-head">
+<p class="eyebrow" data-fr="Secteurs" data-en="Sectors">Secteurs</p>
+<h2 class="section-title" data-fr="Où ce service est le plus utile" data-en="Where this service is most useful">Où ce service est le plus utile</h2>
 
-    <!-- 2. PROJECT DEVELOPMENT SERVICES -->
-    <section class="container" style="padding-top: 24px;">
-        <div class="section-header">
-            <div class="section-label" data-fr="Domaines d'Intervention" data-en="Areas of Practice">Domaines d'Intervention</div>
-            <h2 class="section-title" data-fr="Nos Services de Développement de Projet" data-en="Our Project Development Services">Nos Services de Développement de Projet</h2>
-        </div>
+</div>
+<div class="grid grid-3">
+<a class="card card-sector" href="sector-construction.html">
+<div class="card-media"><picture>
+<source type="image/webp" sizes="(max-width: 700px) 100vw, 380px" srcset="img/sector-construction-960.webp 960w">
+<img src="img/sector-construction-960.jpg" sizes="(max-width: 700px) 100vw, 380px" srcset="img/sector-construction-960.jpg 960w" alt="Deux ingénieurs en gilet haute visibilité examinant un bâtiment en structure sur un chantier." data-fr-alt="Deux ingénieurs en gilet haute visibilité examinant un bâtiment en structure sur un chantier." data-en-alt="Two engineers in high-visibility vests reviewing a building under construction on site." width="960" height="640" loading="lazy" decoding="async">
+</picture></div>
+<div class="card-body">
+<h3 class="card-title" data-fr="Construction &amp; Génie Civil" data-en="Construction &amp; Civil Engineering">Construction &amp; Génie Civil</h3>
+<p class="card-text" data-fr="Appui technique aux bâtiments, travaux de voirie, ouvrages et infrastructures publiques : cadrage, chiffrage et coordination." data-en="Technical support for buildings, roadworks, structures and public infrastructure: scoping, costing and coordination.">Appui technique aux bâtiments, travaux de voirie, ouvrages et infrastructures publiques : cadrage, chiffrage et coordination.</p>
+</div>
+</a>
+<a class="card card-sector card-sector--plain" href="sector-public-infrastructure.html">
+<div class="card-media card-media--plain" aria-hidden="true"><svg class="plain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V6l7-3 7 3v15"/><path d="M9 21v-4h6v4"/><path d="M9 9h2M13 9h2M9 13h2M13 13h2"/></svg></div>
+<div class="card-body">
+<h3 class="card-title" data-fr="Administration Publique &amp; Projets d’Infrastructure" data-en="Public Administration &amp; Infrastructure Projects">Administration Publique &amp; Projets d’Infrastructure</h3>
+<p class="card-text" data-fr="Assistance technique aux projets institutionnels : cadrage, chiffrage, dossiers de consultation et documents d’aide à la décision." data-en="Technical assistance for institutional projects: scoping, costing, consultation files and decision-support documents.">Assistance technique aux projets institutionnels : cadrage, chiffrage, dossiers de consultation et documents d’aide à la décision.</p>
+</div>
+</a>
+<a class="card card-sector" href="sector-mining.html">
+<div class="card-media"><picture>
+<source type="image/webp" sizes="(max-width: 700px) 100vw, 380px" srcset="img/sector-mining-960.webp 960w">
+<img src="img/sector-mining-960.jpg" sizes="(max-width: 700px) 100vw, 380px" srcset="img/sector-mining-960.jpg 960w" alt="Excavatrice et tombereau de chantier dans une mine à ciel ouvert au lever du jour." data-fr-alt="Excavatrice et tombereau de chantier dans une mine à ciel ouvert au lever du jour." data-en-alt="Excavator and haul truck working an open-pit mine at first light." width="960" height="640" loading="lazy" decoding="async">
+</picture></div>
+<div class="card-body">
+<h3 class="card-title" data-fr="Mines, Carrières &amp; Industries Extractives" data-en="Mining, Quarrying &amp; Extractive Activities">Mines, Carrières &amp; Industries Extractives</h3>
+<p class="card-text" data-fr="Identification de pièces critiques, évaluation d’équipements lourds et appui à la disponibilité opérationnelle des installations." data-en="Identification of critical spare parts, heavy equipment assessment, and support for the operational availability of installations.">Identification de pièces critiques, évaluation d’équipements lourds et appui à la disponibilité opérationnelle des installations.</p>
+</div>
+</a>
+<a class="card card-sector card-sector--plain" href="sector-water.html">
+<div class="card-media card-media--plain" aria-hidden="true"><svg class="plain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.6 6 10.5A6 6 0 0 1 6 13.5C6 9.6 12 3 12 3z"/><path d="M9.5 14a2.5 2.5 0 0 0 2.5 2.5"/></svg></div>
+<div class="card-body">
+<h3 class="card-title" data-fr="Eau, Assainissement &amp; Traitement des Eaux Usées" data-en="Water, Sanitation &amp; Wastewater Treatment">Eau, Assainissement &amp; Traitement des Eaux Usées</h3>
+<p class="card-text" data-fr="Solutions techniques pour stations de pompage, traitement de l’eau, assainissement et infrastructures municipales." data-en="Technical solutions for pumping stations, water treatment, sanitation and municipal infrastructure.">Solutions techniques pour stations de pompage, traitement de l’eau, assainissement et infrastructures municipales.</p>
+</div>
+</a>
+<a class="card card-sector" href="sector-industrial-facilities.html">
+<div class="card-media"><picture>
+<source type="image/webp" sizes="(max-width: 700px) 100vw, 380px" srcset="img/sector-industrial-facilities-960.webp 960w, img/sector-industrial-facilities-1600.webp 1600w">
+<img src="img/sector-industrial-facilities-1600.jpg" sizes="(max-width: 700px) 100vw, 380px" srcset="img/sector-industrial-facilities-960.jpg 960w, img/sector-industrial-facilities-1600.jpg 1600w" alt="Vue en hauteur d’un atelier industriel avec rayonnages, établis et machines." data-fr-alt="Vue en hauteur d’un atelier industriel avec rayonnages, établis et machines." data-en-alt="Elevated view of an industrial workshop with racking, benches and machines." width="1600" height="900" loading="lazy" decoding="async">
+</picture></div>
+<div class="card-body">
+<h3 class="card-title" data-fr="Installations Industrielles &amp; Maintenance des Équipements" data-en="Industrial Facilities &amp; Equipment Maintenance">Installations Industrielles &amp; Maintenance des Équipements</h3>
+<p class="card-text" data-fr="Appui d’ingénierie pour usines, ateliers, entrepôts et installations techniques, avec un accent sur la disponibilité des équipements." data-en="Engineering support for plants, workshops, warehouses and technical facilities, focused on keeping equipment available.">Appui d’ingénierie pour usines, ateliers, entrepôts et installations techniques, avec un accent sur la disponibilité des équipements.</p>
+</div>
+</a>
+</div>
+</div>
+</section>
 
-        <div class="grid-3">
-            <div class="card-system">
-                <h3 data-fr="Planification de Projet" data-en="Project Planning">Planification de Projet</h3>
-                <p data-fr="Définition des objectifs du projet, des exigences d'ingénierie, des calendriers et de la planification des ressources." data-en="Define project objectives, engineering requirements, schedules, and resource planning.">Définition des objectifs du projet, des exigences d'ingénierie, des calendriers et de la planification des ressources.</p>
-            </div>
+<section class="section">
+<div class="wrap narrow">
+<div class="section-head">
+<p class="eyebrow" data-fr="Mission conduite" data-en="Engagement delivered">Mission conduite</p>
+<h2 class="section-title" data-fr="Un exemple concret" data-en="A concrete example">Un exemple concret</h2>
 
-            <div class="card-system">
-                <h3 data-fr="Évaluation de Faisabilité" data-en="Feasibility Assessment">Évaluation de Faisabilité</h3>
-                <p data-fr="Évaluation de la viabilité technique, financière et opérationnelle avant la réalisation d'investissements importants." data-en="Evaluate technical, financial, and operational viability before significant investments are made.">Évaluation de la viabilité technique, financière et opérationnelle avant la réalisation d'investissements importants.</p>
-            </div>
+</div>
+<article class="case-card">
+<div class="case-card-head">
+<p class="eyebrow eyebrow--muted" data-fr="Sourcing Industriel &amp; Pièces Détachées" data-en="Industrial Sourcing &amp; Spare Parts">Sourcing Industriel &amp; Pièces Détachées</p>
+<h3 class="case-title" data-fr="Évaluation d’équipement industriel" data-en="Industrial equipment assessment">Évaluation d’équipement industriel</h3>
+<p class="case-loc" data-fr="République Démocratique du Congo" data-en="Democratic Republic of Congo">République Démocratique du Congo</p>
+</div>
+<dl class="case-fields">
+<dt data-fr="Besoin client" data-en="Client need">Besoin client</dt>
+<dd data-fr="Identifier une solution de remplacement pour un composant critique affectant la disponibilité d’un équipement." data-en="Identify a replacement solution for a critical component affecting equipment availability.">Identifier une solution de remplacement pour un composant critique affectant la disponibilité d’un équipement.</dd>
+<dt data-fr="Périmètre SUJO" data-en="SUJO scope">Périmètre SUJO</dt>
+<dd data-fr="Analyse des spécifications, identification des composants compatibles, comparaison des options fournisseurs et estimation des coûts." data-en="Specification analysis, identification of compatible components, comparison of supplier options and cost estimation.">Analyse des spécifications, identification des composants compatibles, comparaison des options fournisseurs et estimation des coûts.</dd>
+<dt data-fr="Résultat" data-en="Outcome">Résultat</dt>
+<dd data-fr="Une décision d’achat mieux documentée, un risque d’incompatibilité réduit et une meilleure continuité opérationnelle." data-en="A better-documented procurement decision, reduced risk of incompatibility and improved operational continuity.">Une décision d’achat mieux documentée, un risque d’incompatibilité réduit et une meilleure continuité opérationnelle.</dd>
+</dl>
+</article>
+</div>
+</section>
 
-            <div class="card-system">
-                <h3 data-fr="Coordination d'Ingénierie" data-en="Engineering Coordination">Coordination d'Ingénierie</h3>
-                <p data-fr="Coordination des activités d'ingénierie multidisciplinaires entre les parties prenantes, consultants, entrepreneurs et fournisseurs." data-en="Coordinate multidisciplinary engineering activities between stakeholders, consultants, contractors, and suppliers.">Coordination des activités d'ingénierie multidisciplinaires entre les parties prenantes, consultants, entrepreneurs et fournisseurs.</p>
-            </div>
+<section class="section section--alt">
+<div class="wrap">
+<div class="section-head">
+<p class="eyebrow" data-fr="Services liés" data-en="Related services">Services liés</p>
+<h2 class="section-title" data-fr="Souvent combinés avec celui-ci" data-en="Often combined with this one">Souvent combinés avec celui-ci</h2>
 
-            <div class="card-system">
-                <h3 data-fr="Appui à l'Approvisionnement" data-en="Procurement Support">Appui à l'Approvisionnement</h3>
-                <p data-fr="Préparation des spécifications techniques, assistance à la sélection des fournisseurs et évaluation des propositions d'équipements." data-en="Prepare technical specifications, assist with vendor selection, and evaluate equipment proposals.">Préparation des spécifications techniques, assistance à la sélection des fournisseurs et évaluation des propositions d'équipements.</p>
-            </div>
+</div>
+<div class="grid grid-3">
+<a class="card card-service" href="technical-studies.html">
+<span class="card-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h11l5 5v11H4z"/><path d="M15 4v5h5"/><path d="M8 13h8M8 17h5"/></svg></span>
+<h3 class="card-title" data-fr="Études Techniques" data-en="Technical Studies">Études Techniques</h3>
+<p class="card-text" data-fr="Évaluations techniques, diagnostics d’équipements, plans et schémas, études comparatives et dossiers de consultation pour la planification, la conception ou la modernisation d’installations." data-en="Technical assessments, equipment diagnostics, drawings and schematics, comparative studies, and consultation files for planning, designing, or modernizing facilities and equipment.">Évaluations techniques, diagnostics d’équipements, plans et schémas, études comparatives et dossiers de consultation pour la planification, la conception ou la modernisation d’installations.</p>
+<span class="card-more" data-fr="En savoir plus" data-en="Learn more">En savoir plus</span>
+</a>
+<a class="card card-service" href="cost-estimation.html">
+<span class="card-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h3M13 11h3M8 15h3M13 15h3"/></svg></span>
+<h3 class="card-title" data-fr="Estimation des Coûts" data-en="Cost Estimation">Estimation des Coûts</h3>
+<p class="card-text" data-fr="Estimations budgétaires pour projets et équipements, analyse comparative des prix fournisseurs et prise en compte des facteurs de coût du marché local." data-en="Budget estimates for projects and equipment, comparative analysis of supplier pricing, and the local market cost factors that decide the final number.">Estimations budgétaires pour projets et équipements, analyse comparative des prix fournisseurs et prise en compte des facteurs de coût du marché local.</p>
+<span class="card-more" data-fr="En savoir plus" data-en="Learn more">En savoir plus</span>
+</a>
+<a class="card card-service" href="industrial-sourcing.html">
+<span class="card-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></svg></span>
+<h3 class="card-title" data-fr="Sourcing Industriel &amp; Pièces Détachées" data-en="Industrial Sourcing &amp; Spare Parts">Sourcing Industriel &amp; Pièces Détachées</h3>
+<p class="card-text" data-fr="Identification de composants et de pièces critiques, consultation de fabricants et de distributeurs spécialisés, analyse comparative des offres et appui à la définition des besoins d’achat." data-en="Identification of components and critical spare parts, consultation with specialized manufacturers and distributors, comparative analysis of offers, and support in defining procurement needs.">Identification de composants et de pièces critiques, consultation de fabricants et de distributeurs spécialisés, analyse comparative des offres et appui à la définition des besoins d’achat.</p>
+<span class="card-more" data-fr="En savoir plus" data-en="Learn more">En savoir plus</span>
+</a>
+</div>
+</div>
+</section>
 
-            <div class="card-system">
-                <h3 data-fr="Appui à la Construction" data-en="Construction Support">Appui à la Construction</h3>
-                <p data-fr="Fourniture d'une supervision technique, de clarifications d'ingénierie et de coordination tout au long de la construction." data-en="Provide technical oversight, engineering clarification, and coordination throughout construction.">Fourniture d'une supervision technique, de clarifications d'ingénierie et de coordination tout au long de la construction.</p>
-            </div>
-
-            <div class="card-system">
-                <h3 data-fr="Suivi de Projet" data-en="Project Monitoring">Suivi de Projet</h3>
-                <p data-fr="Suivi de l'avancement, gestion des changements techniques, identification des risques et appui au maintien des calendriers de projet." data-en="Track progress, manage technical changes, identify risks, and help maintain project schedules.">Suivi de l'avancement, gestion des changements techniques, identification des risques et appui au maintien des calendriers de projet.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. DEVELOPMENT APPROACH -->
-    <section class="container" style="padding-top: 60px;">
-        <div class="section-header">
-            <div class="section-label" data-fr="Méthodologie" data-en="Methodology">Méthodologie</div>
-            <h2 class="section-title" data-fr="Notre Approche de Développement" data-en="Our Development Approach">Notre Approche de Développement</h2>
-            <p style="color: var(--text-muted); max-width: 720px; margin: 0 auto;" data-fr="Nous croyons que les projets réussis sont construits grâce à une coordination rigoureuse, une communication claire et une excellence technique à chaque étape." data-en="We believe successful projects are built through careful coordination, clear communication, and technical excellence at every stage.">Nous croyons que les projets réussis sont construits grâce à une coordination rigoureuse, une communication claire et une excellence technique à chaque étape.</p>
-        </div>
-
-        <div class="grid-3">
-            <div class="card-system"><h3 data-fr="Planification d'Ingénierie Rigoureuse" data-en="Careful Engineering Planning">Planification d'Ingénierie Rigoureuse</h3><p data-fr="Structurer le projet dès le départ avec des objectifs, exigences et livrables clairement définis." data-en="Structure the project from the beginning with clearly defined objectives, requirements, and deliverables.">Structurer le projet dès le départ avec des objectifs, exigences et livrables clairement définis.</p></div>
-            <div class="card-system"><h3 data-fr="Communication Efficace" data-en="Effective Communication">Communication Efficace</h3><p data-fr="Maintenir une coordination claire entre le client, les ingénieurs, les entrepreneurs et les fournisseurs." data-en="Maintain clear coordination between the client, engineers, contractors, and suppliers.">Maintenir une coordination claire entre le client, les ingénieurs, les entrepreneurs et les fournisseurs.</p></div>
-            <div class="card-system"><h3 data-fr="Gestion des Risques" data-en="Risk Management">Gestion des Risques</h3><p data-fr="Identifier les risques techniques, financiers et opérationnels avant qu'ils n'affectent l'exécution du projet." data-en="Identify technical, financial, and operational risks before they affect project execution.">Identifier les risques techniques, financiers et opérationnels avant qu'ils n'affectent l'exécution du projet.</p></div>
-            <div class="card-system"><h3 data-fr="Assurance Qualité" data-en="Quality Assurance">Assurance Qualité</h3><p data-fr="Vérifier que les travaux, documents et décisions techniques respectent les standards attendus." data-en="Verify that work, documents, and technical decisions meet the expected standards.">Vérifier que les travaux, documents et décisions techniques respectent les standards attendus.</p></div>
-            <div class="card-system"><h3 data-fr="Excellence Technique" data-en="Technical Excellence">Excellence Technique</h3><p data-fr="Appliquer une expertise d'ingénierie solide pour améliorer la performance, la sécurité et la durabilité." data-en="Apply strong engineering expertise to improve performance, safety, and durability.">Appliquer une expertise d'ingénierie solide pour améliorer la performance, la sécurité et la durabilité.</p></div>
-            <div class="card-system"><h3 data-fr="Collaboration Continue avec le Client" data-en="Continuous Client Collaboration">Collaboration Continue avec le Client</h3><p data-fr="Travailler avec le client à chaque phase pour garder le projet aligné avec ses objectifs." data-en="Work with the client at every phase to keep the project aligned with its objectives.">Travailler avec le client à chaque phase pour garder le projet aligné avec ses objectifs.</p></div>
-        </div>
-    </section>
-
-    <!-- 4. TYPICAL PROJECTS -->
-    <section class="container" style="padding-top: 60px;">
-        <div class="section-header">
-            <div class="section-label" data-fr="Applications" data-en="Applications">Applications</div>
-            <h2 class="section-title" data-fr="Projets Typiques" data-en="Typical Projects">Projets Typiques</h2>
-        </div>
-
-        <div class="grid-3">
-            <div class="card-system"><h3 data-fr="Usines Industrielles" data-en="Industrial Plants">Usines Industrielles</h3><p data-fr="Développement et coordination technique d'installations industrielles adaptées aux exigences opérationnelles." data-en="Development and technical coordination of industrial facilities aligned with operational requirements.">Développement et coordination technique d'installations industrielles adaptées aux exigences opérationnelles.</p></div>
-            <div class="card-system"><h3 data-fr="Installations Minières" data-en="Mining Facilities">Installations Minières</h3><p data-fr="Appui au développement d'infrastructures minières, systèmes industriels et installations de support." data-en="Support for the development of mining infrastructure, industrial systems, and support facilities.">Appui au développement d'infrastructures minières, systèmes industriels et installations de support.</p></div>
-            <div class="card-system"><h3 data-fr="Bâtiments Commerciaux" data-en="Commercial Buildings">Bâtiments Commerciaux</h3><p data-fr="Planification et coordination de projets commerciaux avec des exigences techniques et budgétaires claires." data-en="Planning and coordination of commercial projects with clear technical and budget requirements.">Planification et coordination de projets commerciaux avec des exigences techniques et budgétaires claires.</p></div>
-            <div class="card-system"><h3 data-fr="Infrastructure Énergétique" data-en="Energy Infrastructure">Infrastructure Énergétique</h3><p data-fr="Développement de projets liés à la production, distribution et gestion de l'énergie." data-en="Development of projects related to power generation, distribution, and energy management.">Développement de projets liés à la production, distribution et gestion de l'énergie.</p></div>
-            <div class="card-system"><h3 data-fr="Installations Hydroélectriques" data-en="Hydroelectric Installations">Installations Hydroélectriques</h3><p data-fr="Appui technique aux projets hydroélectriques, ouvrages associés et systèmes électromécaniques." data-en="Technical support for hydropower projects, associated civil works, and electromechanical systems.">Appui technique aux projets hydroélectriques, ouvrages associés et systèmes électromécaniques.</p></div>
-            <div class="card-system"><h3 data-fr="Systèmes Mécaniques et Électriques" data-en="Mechanical & Electrical Systems">Systèmes Mécaniques et Électriques</h3><p data-fr="Coordination des systèmes techniques essentiels pour améliorer la fiabilité et la performance des installations." data-en="Coordination of essential technical systems to improve facility reliability and performance.">Coordination des systèmes techniques essentiels pour améliorer la fiabilité et la performance des installations.</p></div>
-        </div>
-    </section>
-
-    <!-- 5. CTA -->
-    <section style="background: linear-gradient(180deg, var(--dark-bg) 0%, rgba(214,0,0,0.1) 100%); border-top: 1px solid var(--border-color); margin-top: 60px;">
-        <div class="container" style="text-align: center; padding: 100px 24px;">
-            <h2 class="hero-title" style="font-size: 2.5rem; margin-bottom: 16px;" data-fr="Prêt à Développer Votre Projet avec Confiance ?" data-en="Ready to Develop Your Project with Confidence?">Prêt à Développer Votre Projet avec Confiance ?</h2>
-            <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 32px auto;" data-fr="Parlons de votre idée, de vos objectifs et de la manière dont SUJO peut transformer votre projet en solution techniquement solide." data-en="Let's discuss your idea, objectives, and how SUJO can help transform your project into a technically sound solution.">Parlons de votre idée, de vos objectifs et de la manière dont SUJO peut transformer votre projet en solution techniquement solide.</p>
-            <a href="https://sujo-engineering.com/quote.html" class="btn btn-primary" data-fr="Demander un devis" data-en="Request a Quote">Demander un devis</a>
-        </div>
-    </section>
-
-    <!-- 6. FOOTER -->
-    <footer style="background: #f0f1f3; border-top: 1px solid var(--border-color); padding: 60px 0 30px 0;">
-        <div class="container grid-3" style="padding: 0 24px 40px 24px;">
-            <div>
-                <img src="logo.png" alt="SUJO" style="height: 40px; margin-bottom: 16px;">
-                <p style="color: var(--text-muted); font-size: 0.9rem;" data-fr="SUJO Engineering Consulting SARL<br>Kinshasa, République Démocratique du Congo" data-en="SUJO Engineering Consulting SARL<br>Kinshasa, Democratic Republic of Congo">SUJO Engineering Consulting SARL<br>Kinshasa, République Démocratique du Congo</p>
-            </div>
-            <div>
-                <h4 style="margin-bottom: 16px; font-size: 0.95rem;" data-fr="Matrices Technologiques" data-en="Technology Index">Matrices Technologiques</h4>
-                <p style="font-size: 0.9rem; margin-bottom: 8px;"><a href="https://sujo-engineering.com/products.html" style="color: var(--text-muted); text-decoration: none;" data-fr="Index Global des Produits" data-en="Global Product Index">Index Global des Produits</a></p>
-                <p style="font-size: 0.9rem; margin-bottom: 8px;"><a href="https://sujo-engineering.com/partners.html" style="color: var(--text-muted); text-decoration: none;" data-fr="Marques Validées" data-en="Approved Brands">Marques Validées</a></p>
-            </div>
-            <div>
-                <h4 style="margin-bottom: 16px; font-size: 0.95rem;" data-fr="Canaux Directs" data-en="Direct Channels">Canaux Directs</h4>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;">DRC: +243 974 570 630</p>
-                <p style="color: var(--text-muted); font-size: 0.9rem;" data-fr="Email: contact@sujo-engineering.com" data-en="Email: contact@sujo-engineering.com">Email: contact@sujo-engineering.com</p>
-            </div>
-        </div>
-        <div style="text-align: center; border-top: 1px solid var(--border-color); padding-top: 30px; font-size: 0.8rem; color: var(--text-muted);" data-fr="&copy; 2026 SUJO Engineering Consulting SARL. Tous droits réservés." data-en="&copy; 2026 SUJO Engineering Consulting SARL. All rights reserved.">
-            &copy; 2026 SUJO Engineering Consulting SARL. All rights reserved.
-        </div>
-    </footer>
-
-    <script>
-        function applyLang(lang) {
-            document.querySelectorAll('[data-fr][data-en]').forEach(el => {
-                el.innerHTML = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
-            });
-            document.documentElement.lang = lang;
-        }
-
-        function setLang(lang) {
-            localStorage.setItem('sujoLang', lang);
-            const btnFr = document.getElementById('btn-fr');
-            const btnEn = document.getElementById('btn-en');
-            if (btnFr && btnEn) {
-                btnFr.classList.toggle('active', lang === 'fr');
-                btnEn.classList.toggle('active', lang === 'en');
-            }
-            applyLang(lang);
-        }
-
-        (function () {
-            const saved = localStorage.getItem('sujoLang') || 'fr';
-            applyLang(saved);
-            const btnFr = document.getElementById('btn-fr');
-            const btnEn = document.getElementById('btn-en');
-            if (btnFr && btnEn) {
-                btnFr.classList.toggle('active', saved === 'fr');
-                btnEn.classList.toggle('active', saved === 'en');
-            }
-        })();
-
-        function toggleMenu() {
-            document.getElementById('mobileMenu').classList.toggle('open');
-            document.querySelector('.hamburger').classList.toggle('open');
-        }
-
-        document.querySelectorAll('.dropdown > a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                if (window.innerWidth <= 900) {
-                    e.preventDefault();
-                    link.parentElement.classList.toggle('open');
-                }
-            });
-        });
-
-        document.querySelectorAll('#mobileMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (link.parentElement.classList.contains('dropdown')) return;
-                document.getElementById('mobileMenu').classList.remove('open');
-                document.querySelector('.hamburger').classList.remove('open');
-            });
-        });
-    </script>
-
+<section class="cta-band">
+<div class="wrap cta-band-inner">
+<h2 class="cta-title" data-fr="Prêt à cadrer ce besoin ?" data-en="Ready to scope this requirement?">Prêt à cadrer ce besoin ?</h2>
+<p class="cta-lead" data-fr="Transmettez-nous une pièce à identifier, un équipement à évaluer, un budget à construire ou un projet à cadrer. Nous revenons vers vous avec des questions de clarification, une proposition ou une offre formelle." data-en="Send us a part to identify, equipment to assess, a budget to build or a project to scope. We come back with clarification questions, a proposal or a formal quotation.">Transmettez-nous une pièce à identifier, un équipement à évaluer, un budget à construire ou un projet à cadrer. Nous revenons vers vous avec des questions de clarification, une proposition ou une offre formelle.</p>
+<div class="cta-actions">
+<a class="btn btn-primary btn-lg" href="quote.html" data-fr="Demander un devis" data-en="Request a Quote">Demander un devis</a>
+<a class="btn btn-outline btn-lg" href="contact.html" data-fr="Discuter de votre projet" data-en="Discuss Your Project">Discuter de votre projet</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="footer-top">
+<div class="footer-brand">
+<img class="footer-logo" src="img/logo-mono.png" alt="SUJO Engineering Consulting" width="484" height="132" loading="lazy">
+<p class="footer-tagline" data-fr="Ingénierie, sourcing industriel et appui aux projets pour les opérations critiques en République Démocratique du Congo." data-en="Engineering, industrial sourcing and project support for critical operations in the Democratic Republic of the Congo.">Ingénierie, sourcing industriel et appui aux projets pour les opérations critiques en République Démocratique du Congo.</p>
+<address class="footer-address">
+<p><strong>SUJO Engineering Consulting SARL</strong></p>
+<p data-fr="Kinshasa, République Démocratique du Congo" data-en="Kinshasa, Democratic Republic of Congo">Kinshasa, République Démocratique du Congo</p>
+<p><a href="tel:+243974570630"><span data-fr="RDC" data-en="DRC">RDC</span> +243 974 570 630</a></p>
+<p><a href="tel:+14123453307"><span data-fr="Bureau US" data-en="US desk">Bureau US</span> +1 412 345 3307</a></p>
+<p><a href="mailto:contact@sujo-engineering.com">contact@sujo-engineering.com</a></p>
+</address>
+</div>
+<div class="footer-cols">
+<div class="footer-col">
+<h2 class="footer-heading" data-fr="Services" data-en="Services">Services</h2>
+<ul><li><a href="engineering.html" data-fr="Conseil en Ingénierie" data-en="Engineering Consulting">Conseil en Ingénierie</a></li><li><a href="technical-studies.html" data-fr="Études Techniques" data-en="Technical Studies">Études Techniques</a></li><li><a href="cost-estimation.html" data-fr="Estimation des Coûts" data-en="Cost Estimation">Estimation des Coûts</a></li><li><a href="project-development.html" data-fr="Développement de Projet" data-en="Project Development">Développement de Projet</a></li><li><a href="industrial-sourcing.html" data-fr="Sourcing Industriel" data-en="Industrial Sourcing">Sourcing Industriel</a></li></ul>
+</div>
+<div class="footer-col">
+<h2 class="footer-heading" data-fr="Secteurs" data-en="Sectors">Secteurs</h2>
+<ul><li><a href="sector-construction.html" data-fr="Construction &amp; Génie Civil" data-en="Construction &amp; Civil Engineering">Construction &amp; Génie Civil</a></li><li><a href="sector-mining.html" data-fr="Mines &amp; Industries Extractives" data-en="Mining &amp; Extractive Industries">Mines &amp; Industries Extractives</a></li><li><a href="sector-energy.html" data-fr="Énergie &amp; Hydroélectricité" data-en="Energy, Power &amp; Hydropower">Énergie &amp; Hydroélectricité</a></li><li><a href="sector-oil-gas.html" data-fr="Pétrole &amp; Gaz" data-en="Oil &amp; Gas">Pétrole &amp; Gaz</a></li><li><a href="sector-manufacturing.html" data-fr="Industrie Manufacturière" data-en="Manufacturing">Industrie Manufacturière</a></li><li><a href="sector-water.html" data-fr="Eau &amp; Assainissement" data-en="Water &amp; Sanitation">Eau &amp; Assainissement</a></li></ul>
+</div>
+<div class="footer-col">
+<h2 class="footer-heading" data-fr="Entreprise" data-en="Company">Entreprise</h2>
+<ul><li><a href="about.html" data-fr="À Propos" data-en="About">À Propos</a></li><li><a href="how-we-work.html" data-fr="Notre Méthode" data-en="How We Work">Notre Méthode</a></li><li><a href="case-studies.html" data-fr="Références" data-en="Case Studies">Références</a></li><li><a href="partners.html" data-fr="Partenaires" data-en="Partners">Partenaires</a></li><li><a href="jonathan.html" data-fr="Direction" data-en="Leadership">Direction</a></li></ul>
+</div>
+<div class="footer-col">
+<h2 class="footer-heading" data-fr="Informations légales" data-en="Legal">Informations légales</h2>
+<ul><li><a href="terms-of-sale.html" data-fr="Conditions Générales de Vente" data-en="Terms of Sale">Conditions Générales de Vente</a></li><li><a href="terms-of-service.html" data-fr="Conditions de Prestation de Services" data-en="Terms of Service">Conditions de Prestation de Services</a></li><li><a href="privacy-policy.html" data-fr="Politique de Confidentialité" data-en="Privacy Policy">Politique de Confidentialité</a></li><li><a href="quality-ethics.html" data-fr="Qualité &amp; Éthique" data-en="Quality &amp; Ethics">Qualité &amp; Éthique</a></li></ul>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p class="copyright">© 2026 SUJO Engineering Consulting SARL. <span data-fr="Tous droits réservés." data-en="All rights reserved.">Tous droits réservés.</span></p>
+<p class="footer-hours"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> <span data-fr="Lundi — Vendredi : 08h00 – 17h00 (GMT+1)" data-en="Monday — Friday: 08:00 – 17:00 (GMT+1)">Lundi — Vendredi : 08h00 – 17h00 (GMT+1)</span></p>
+</div>
+</footer>
 </body>
 </html>

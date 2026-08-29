@@ -1,257 +1,304 @@
-﻿<!DOCTYPE html>
-
-<html lang="fr">
+<!DOCTYPE html>
+<html lang="fr" class="lang-boot" data-title-fr="Produits hydrauliques | SUJO" data-title-en="Hydraulics products | SUJO" data-desc-fr="Pompes, moteurs, vérins, distributeurs, filtration, flexibles, raccords, joints et centrales hydrauliques." data-desc-en="Pumps, motors, cylinders, valves, filtration, hoses, fittings, seals and hydraulic power units.">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Hydraulics Products — SUJO</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="style.css" rel="stylesheet"/>
-<script defer="" src="app.js"></script>
-<style>
-header{position:sticky;top:0;z-index:1000;backdrop-filter:blur(14px);}
-html{scroll-padding-top:96px;}
-.product-actions .btn-primary{display:none;}
-.card-system .btn-text{display:none;}
-.card-system{cursor:default;}
-.card-system p{margin-bottom:0;}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Produits hydrauliques | SUJO</title>
+<meta name="description" content="Pompes, moteurs, vérins, distributeurs, filtration, flexibles, raccords, joints et centrales hydrauliques.">
+<link rel="canonical" href="https://sujo-engineering.com/product-hydraulics.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SUJO Engineering Consulting SARL">
+<meta property="og:title" content="Produits hydrauliques | SUJO">
+<meta property="og:description" content="Pompes, moteurs, vérins, distributeurs, filtration, flexibles, raccords, joints et centrales hydrauliques.">
+<meta property="og:url" content="https://sujo-engineering.com/product-hydraulics.html">
+<meta property="og:image" content="https://sujo-engineering.com/img/og-default.jpg">
+<meta property="og:locale" content="fr_CD">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1520">
+<link rel="icon" href="img/favicon.png" type="image/png" sizes="64x64">
+<link rel="apple-touch-icon" href="img/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
+<link rel="stylesheet" href="style.css">
+<script>
+// Apply the stored language before first paint so the page never flashes the
+// wrong one. The full swap happens in app.js.
+(function(){try{var l=localStorage.getItem('sujoLang');if(l==='en'||l==='fr'){document.documentElement.lang=l;document.documentElement.setAttribute('data-lang',l);}else{document.documentElement.setAttribute('data-lang','fr');}}catch(e){document.documentElement.setAttribute('data-lang','fr');}document.documentElement.classList.remove('lang-boot');})();
+</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://sujo-engineering.com/#organization","name":"SUJO Engineering Consulting SARL","alternateName":"SUJO","url":"https://sujo-engineering.com/","logo":"https://sujo-engineering.com/img/logo-512.png","image":"https://sujo-engineering.com/img/og-default.jpg","email":"contact@sujo-engineering.com","telephone":"+243974570630","address":{"@type":"PostalAddress","addressLocality":"Kinshasa","addressCountry":"CD"},"areaServed":[{"@type":"Country","name":"Democratic Republic of the Congo"},{"@type":"AdministrativeArea","name":"Kinshasa"}],"availableLanguage":["fr","en"],"contactPoint":[{"@type":"ContactPoint","contactType":"sales","telephone":"+243974570630","email":"contact@sujo-engineering.com","areaServed":"CD","availableLanguage":["fr","en"]},{"@type":"ContactPoint","contactType":"customer support","telephone":"+14123453307","email":"contact@sujo-engineering.com","areaServed":"US","availableLanguage":["en","fr"]}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"17:00"}],"knowsAbout":["Engineering consulting","Technical studies","Cost estimation","Project development","Industrial sourcing","Spare parts identification"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sujo-engineering.com/index.html"},{"@type":"ListItem","position":2,"name":"Products","item":"https://sujo-engineering.com/products.html"},{"@type":"ListItem","position":3,"name":"Hydraulics & Pneumatics","item":"https://sujo-engineering.com/product-hydraulics.html"}]}</script>
+<script defer src="app.js"></script>
 </head>
-<body>
-<!-- NAV BAR -->
-<header>
-<a class="nav-logo" href="https://sujo-engineering.com/index.html">
-<img alt="SUJO" src="logo.png" style="height: 50px;"/>
+<body class="page-catalog">
+<a class="skip-link" href="#main" data-fr="Aller au contenu principal" data-en="Skip to main content">Aller au contenu principal</a>
+<header class="site-header" id="site-header">
+<div class="header-inner">
+<a class="brand" href="index.html" aria-label="SUJO Engineering Consulting — accueil">
+<img class="brand-logo" src="img/logo.png" alt="SUJO Engineering Consulting" width="484" height="132" fetchpriority="high">
 </a>
-<nav>
-<ul class="nav-links" id="mobileMenu">
-<li><a data-en="Home" data-fr="Accueil" href="https://sujo-engineering.com/index.html">Accueil</a></li>
-<li><a data-en="About" data-fr="À Propos" href="https://sujo-engineering.com/about.html">À Propos</a></li>
-<li class="dropdown">
-<a class="active" data-en="Products ▾" data-fr="Produits ▾" href="https://sujo-engineering.com/products.html">Produits ▾</a>
-<ul class="dropdown-menu">
-<li><a data-en="Mechanical Components" data-fr="Composants Mécaniques" href="product-mechanical.html">Composants Mécaniques</a></li>
-<li><a data-en="Automation &amp; Motion" data-fr="Automatisation &amp; Mouvement" href="product-automation.html">Automatisation &amp; Mouvement</a></li>
-<li><a class="active" data-en="Hydraulics &amp; Pneumatics" data-fr="Hydraulique &amp; Pneumatique" href="product-hydraulics.html">Hydraulique &amp; Pneumatique</a></li>
-<li><a data-en="Industrial Safety" data-fr="Sécurité Industrielle" href="product-safety.html">Sécurité Industrielle</a></li>
-<li><a data-en="Power Transmission" data-fr="Transmission de Puissance" href="product-transmission.html">Transmission de Puissance</a></li>
-<li><a data-en="Industrial Lubrication" data-fr="Lubrification Industrielle" href="product-lubrication.html">Lubrification Industrielle</a></li>
-<li><a data-en="Construction" data-fr="Construction" href="product-construction.html">Construction</a></li>
-<li><a data-en="Telecom Infrastructure" data-fr="Infrastructure Télécom" href="product-telecom.html">Infrastructure Télécom</a></li>
-<li><a data-en="Automotive &amp; Fleet" data-fr="Automobile &amp; Flotte" href="product-automotive.html">Automobile &amp; Flotte</a></li>
+<nav class="primary-nav" aria-label="Navigation principale">
+<ul class="nav-list" id="nav-list">
+<li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li>
+<li class="has-menu">
+<button type="button" class="menu-trigger" aria-expanded="false" aria-haspopup="true" data-fr="Services" data-en="Services">Services</button>
+<div class="menu-panel">
+<ul class="menu-list">
+<li class="menu-overview"><a href="services.html" data-fr="Tous nos services" data-en="All services">Tous nos services</a></li>
+<li><a href="engineering.html" data-fr="Conseil en Ingénierie" data-en="Engineering Consulting">Conseil en Ingénierie</a></li>
+<li><a href="technical-studies.html" data-fr="Études Techniques" data-en="Technical Studies">Études Techniques</a></li>
+<li><a href="cost-estimation.html" data-fr="Estimation des Coûts" data-en="Cost Estimation">Estimation des Coûts</a></li>
+<li><a href="project-development.html" data-fr="Développement de Projet" data-en="Project Development">Développement de Projet</a></li>
+<li><a href="industrial-sourcing.html" data-fr="Sourcing Industriel" data-en="Industrial Sourcing">Sourcing Industriel</a></li>
+<li><a href="how-we-work.html" data-fr="Notre Méthode" data-en="How We Work">Notre Méthode</a></li>
 </ul>
+</div>
 </li>
-<li><a data-en="Partners" data-fr="Partenaires" href="https://sujo-engineering.com/partners.html">Partenaires</a></li>
-<li><a data-en="Contact" data-fr="Contact" href="https://sujo-engineering.com/contact.html">Contact</a></li>
-<li><a class="btn btn-outline" data-en="My Account" data-fr="Mon Compte" href="https://portal.sujo-engineering.com/" style="padding: 8px 16px;" target="_blank">Mon Compte</a></li>
-<li><a class="btn btn-primary" data-en="Request Quote" data-fr="Demander un devis" href="https://sujo-engineering.com/quote.html" style="padding: 8px 16px;">Demander un devis</a></li>
-<li><div class="lang-switch"><button class="active" id="btn-fr" onclick="setLang('fr')" type="button">FR</button><button id="btn-en" onclick="setLang('en')" type="button">EN</button></div></li></ul>
+<li class="has-menu">
+<button type="button" class="menu-trigger" aria-expanded="false" aria-haspopup="true" data-fr="Secteurs" data-en="Sectors">Secteurs</button>
+<div class="menu-panel">
+<ul class="menu-list">
+<li class="menu-overview"><a href="sectors.html" data-fr="Tous les secteurs" data-en="All sectors">Tous les secteurs</a></li>
+<li><a href="sector-construction.html" data-fr="Construction &amp; Génie Civil" data-en="Construction &amp; Civil Engineering">Construction &amp; Génie Civil</a></li>
+<li><a href="sector-mining.html" data-fr="Mines &amp; Industries Extractives" data-en="Mining &amp; Extractive Industries">Mines &amp; Industries Extractives</a></li>
+<li><a href="sector-energy.html" data-fr="Énergie &amp; Hydroélectricité" data-en="Energy, Power &amp; Hydropower">Énergie &amp; Hydroélectricité</a></li>
+<li><a href="sector-oil-gas.html" data-fr="Pétrole &amp; Gaz" data-en="Oil &amp; Gas">Pétrole &amp; Gaz</a></li>
+<li><a href="sector-manufacturing.html" data-fr="Industrie Manufacturière" data-en="Manufacturing">Industrie Manufacturière</a></li>
+<li><a href="sector-water.html" data-fr="Eau &amp; Assainissement" data-en="Water &amp; Sanitation">Eau &amp; Assainissement</a></li>
+<li><a href="sector-logistics.html" data-fr="Logistique &amp; Ferroviaire" data-en="Logistics &amp; Rail">Logistique &amp; Ferroviaire</a></li>
+<li><a href="sector-public-infrastructure.html" data-fr="Administration &amp; Infrastructures Publiques" data-en="Public Administration &amp; Infrastructure">Administration &amp; Infrastructures Publiques</a></li>
+<li><a href="sector-industrial-facilities.html" data-fr="Installations &amp; Maintenance Industrielles" data-en="Industrial Facilities &amp; Maintenance">Installations &amp; Maintenance Industrielles</a></li>
+</ul>
+</div>
+</li>
+<li class="has-menu">
+<button type="button" class="menu-trigger active" aria-expanded="false" aria-haspopup="true" data-fr="Produits" data-en="Products">Produits</button>
+<div class="menu-panel">
+<ul class="menu-list">
+<li class="menu-overview"><a href="products.html" data-fr="Tous nos services" data-en="All services">Tous les produits</a></li>
+<li><a href="product-mechanical.html" data-fr="Composants Mécaniques" data-en="Mechanical Components">Composants Mécaniques</a></li>
+<li><a href="product-automation.html" data-fr="Automatisation &amp; Mouvement" data-en="Automation &amp; Motion">Automatisation &amp; Mouvement</a></li>
+<li><a href="product-hydraulics.html" aria-current="page" data-fr="Hydraulique &amp; Pneumatique" data-en="Hydraulics &amp; Pneumatics">Hydraulique &amp; Pneumatique</a></li>
+<li><a href="product-transmission.html" data-fr="Transmission de Puissance" data-en="Power Transmission">Transmission de Puissance</a></li>
+<li><a href="product-lubrication.html" data-fr="Lubrification Industrielle" data-en="Industrial Lubrication">Lubrification Industrielle</a></li>
+<li><a href="product-safety.html" data-fr="Sécurité Industrielle" data-en="Industrial Safety">Sécurité Industrielle</a></li>
+<li><a href="product-construction.html" data-fr="Construction" data-en="Construction">Construction</a></li>
+<li><a href="product-automotive.html" data-fr="Maintenance Automobile &amp; Flotte" data-en="Automotive &amp; Fleet Maintenance">Maintenance Automobile &amp; Flotte</a></li>
+<li><a href="product-telecom.html" data-fr="Infrastructure Télécom" data-en="Telecom Infrastructure">Infrastructure Télécom</a></li>
+</ul>
+</div>
+</li>
+<li><a href="case-studies.html" data-fr="Références" data-en="Case Studies">Références</a></li>
+<li><a href="about.html" data-fr="À Propos" data-en="About">À Propos</a></li>
+<li><a href="contact.html" data-fr="Contact" data-en="Contact">Contact</a></li>
+</ul>
 </nav>
-<div aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation menu" class="hamburger" role="button" tabindex="0">
-<span></span>
-<span></span>
-<span></span>
+<div class="header-actions">
+<div class="lang-switch" role="group" aria-label="Language / Langue">
+<button type="button" class="lang-btn" data-lang-button="fr" aria-pressed="true">FR</button>
+<button type="button" class="lang-btn" data-lang-button="en" aria-pressed="false">EN</button>
+</div>
+<a class="btn btn-ghost header-account" href="https://portal.sujo-engineering.com/" target="_blank" rel="noopener noreferrer" data-fr="Mon Compte" data-en="My Account">Mon Compte</a>
+<a class="btn btn-primary header-quote" href="quote.html" data-fr="Demander un devis" data-en="Request a Quote">Demander un devis</a>
+</div>
+<button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Ouvrir le menu">
+<span></span><span></span><span></span>
+</button>
 </div>
 </header>
-<main class="container">
-<div class="section-header" style="text-align: left;">
-<div class="section-label" data-en="Hydraulics &amp; Pneumatics" data-fr="Hydraulique &amp; Pneumatique">Hydraulique &amp; Pneumatique</div>
-<h1 class="section-title" data-en="Hydraulics Products" data-fr="Produits Hydrauliques" style="font-size: 2.75rem;">Produits Hydrauliques</h1>
-<p data-en="Explore hydraulic pumps, cylinders, valves, hoses, filtration, power units, seals, gauges, and fluid power accessories." data-fr="Explorez les pompes, vérins, valves, flexibles, filtres, unités de puissance, joints, instruments et accessoires hydrauliques." style="color: var(--text-muted); margin-top: 12px; max-width: 780px;">Explorez les pompes, vérins, valves, flexibles, filtres, unités de puissance, joints, instruments et accessoires hydrauliques.</p>
-</div>
-<div class="product-actions" style="margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center;">
-<a class="btn btn-outline" data-en="← Back to Products" data-fr="← Retour aux produits" href="products.html">← Retour aux produits</a>
-<div class="product-search-wrap">
-<svg aria-hidden="true" class="search-icon" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16"><circle cx="11" cy="11" r="7"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
-<input aria-label="Rechercher un produit" class="product-search" data-en-placeholder="Search products…" data-fr-placeholder="Rechercher un produit…" id="productSearch" placeholder="Rechercher un produit…" type="search"/>
+<main id="main" tabindex="-1">
+<section class="page-head page-head--media">
+<div class="wrap">
+<nav class="breadcrumb" aria-label="Fil d’Ariane"><ol><li><a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a></li><li class="crumb-sep" aria-hidden="true">/</li><li><a href="products.html" data-fr="Produits" data-en="Products">Produits</a></li><li class="crumb-sep" aria-hidden="true">/</li><li data-fr="Hydraulique &amp; Pneumatique" data-en="Hydraulics &amp; Pneumatics" aria-current="page">Hydraulique &amp; Pneumatique</li></ol></nav>
+<p class="eyebrow" data-fr="Hydraulique &amp; Pneumatique" data-en="Hydraulics &amp; Pneumatics">Hydraulique &amp; Pneumatique</p>
+<h1 class="page-title" data-fr="Produits Hydrauliques" data-en="Hydraulics Products">Produits Hydrauliques</h1>
+<p class="page-lead" data-fr="Explorez les pompes, vérins, valves, flexibles, filtres, unités de puissance, joints, instruments et accessoires hydrauliques." data-en="Explore hydraulic pumps, cylinders, valves, hoses, filtration, power units, seals, gauges, and fluid power accessories.">Explorez les pompes, vérins, valves, flexibles, filtres, unités de puissance, joints, instruments et accessoires hydrauliques.</p>
+<div class="page-head-actions">
+<a class="btn btn-primary" href="quote.html" data-fr="Demander cet article" data-en="Request this item">Demander cet article</a>
 </div>
 </div>
-<div class="grid-3 grouped-grid" style="margin-top: 48px;">
-<div class="card-system group-card">
-<h3 data-en="Pumps &amp; Motors" data-fr="Pompes &amp; Moteurs">Pompes &amp; Moteurs</h3>
-<p data-en="Gear, vane, and piston pumps plus hydraulic motors that generate and convert fluid power for cylinders, presses, and mobile equipment." data-fr="Pompes à engrenages, à palettes et à pistons ainsi que moteurs hydrauliques qui génèrent et convertissent la puissance fluide pour vérins, presses et équipements mobiles.">Pompes à engrenages, à palettes et à pistons ainsi que moteurs hydrauliques qui génèrent et convertissent la puissance fluide pour vérins, presses et équipements mobiles.</p>
-<div class="pills-container">
-<span class="pill-node" data-en="Hydraulic Pump" data-fr="Hydraulic Pump">Hydraulic Pump</span>
-<span class="pill-node" data-en="Gear Pump" data-fr="Gear Pump">Gear Pump</span>
-<span class="pill-node" data-en="Vane Pump" data-fr="Vane Pump">Vane Pump</span>
-<span class="pill-node" data-en="Piston Pump" data-fr="Piston Pump">Piston Pump</span>
-<span class="pill-node" data-en="Hydraulic Motor" data-fr="Hydraulic Motor">Hydraulic Motor</span>
+<figure class="page-head-media"><picture>
+<source type="image/webp" sizes="100vw" srcset="img/product-hydraulics-640.webp 640w, img/product-hydraulics-1280.webp 1280w">
+<img src="img/product-hydraulics-1280.jpg" sizes="100vw" srcset="img/product-hydraulics-640.jpg 640w, img/product-hydraulics-1280.jpg 1280w" alt="Bloc de manomètres et distributeurs sur un banc hydraulique." data-fr-alt="Bloc de manomètres et distributeurs sur un banc hydraulique." data-en-alt="Bank of pressure gauges and valves on a hydraulic test bench." width="1280" height="719" loading="eager" decoding="async" fetchpriority="high">
+</picture></figure>
+</section>
+
+<section class="section section--tight">
+<div class="wrap">
+<div class="catalog-toolbar">
+<div class="search-field">
+<span class="search-icon"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3"/></svg></span>
+<label class="visually-hidden" for="catalog-search" data-fr="Rechercher dans le catalogue" data-en="Search the catalogue">Rechercher dans le catalogue</label>
+<input id="catalog-search" type="search" data-catalog-search placeholder="Rechercher parmi les références…" data-fr-placeholder="Rechercher parmi les références…" data-en-placeholder="Search the item types…">
+</div>
+<p class="catalog-count"><span data-catalog-count>56</span> <span data-fr="références affichées" data-en="item types shown">références affichées</span></p>
+</div>
+<p class="catalog-empty" data-catalog-empty hidden data-fr="Aucune référence ne correspond à votre recherche. Décrivez-nous l’article directement : nous l’identifions." data-en="No item type matches your search. Describe the item to us directly and we will identify it.">Aucune référence ne correspond à votre recherche. Décrivez-nous l’article directement : nous l’identifions.</p>
+
+<div class="catalog-groups" data-catalog>
+<section class="catalog-group" data-catalog-group>
+<h2 class="catalog-group-title" data-fr="Pompes &amp; Moteurs" data-en="Pumps &amp; Motors">Pompes &amp; Moteurs</h2>
+<p class="catalog-group-text" data-fr="Pompes à engrenages, à palettes et à pistons ainsi que moteurs hydrauliques qui génèrent et convertissent la puissance fluide pour vérins, presses et équipements mobiles." data-en="Gear, vane, and piston pumps plus hydraulic motors that generate and convert fluid power for cylinders, presses, and mobile equipment.">Pompes à engrenages, à palettes et à pistons ainsi que moteurs hydrauliques qui génèrent et convertissent la puissance fluide pour vérins, presses et équipements mobiles.</p>
+<ul class="pill-list">
+<li class="pill" data-catalog-item data-fr="Hydraulic Pump" data-en="Hydraulic Pump">Hydraulic Pump</li>
+<li class="pill" data-catalog-item data-fr="Gear Pump" data-en="Gear Pump">Gear Pump</li>
+<li class="pill" data-catalog-item data-fr="Vane Pump" data-en="Vane Pump">Vane Pump</li>
+<li class="pill" data-catalog-item data-fr="Piston Pump" data-en="Piston Pump">Piston Pump</li>
+<li class="pill" data-catalog-item data-fr="Hydraulic Motor" data-en="Hydraulic Motor">Hydraulic Motor</li>
+</ul>
+</section>
+<section class="catalog-group" data-catalog-group>
+<h2 class="catalog-group-title" data-fr="Vérins" data-en="Cylinders">Vérins</h2>
+<p class="catalog-group-text" data-fr="Vérins simple et double effet, télescopiques, tirants et soudés transformant la puissance fluide en effort mécanique contrôlé." data-en="Single- and double-acting, telescopic, tie-rod, and welded cylinders converting fluid power into controlled mechanical force.">Vérins simple et double effet, télescopiques, tirants et soudés transformant la puissance fluide en effort mécanique contrôlé.</p>
+<ul class="pill-list">
+<li class="pill" data-catalog-item data-fr="Hydraulic Cylinder (Single-Acting)" data-en="Hydraulic Cylinder (Single-Acting)">Hydraulic Cylinder (Single-Acting)</li>
+<li class="pill" data-catalog-item data-fr="Hydraulic Cylinder (Double-Acting)" data-en="Hydraulic Cylinder (Double-Acting)">Hydraulic Cylinder (Double-Acting)</li>
+<li class="pill" data-catalog-item data-fr="Telescopic Cylinder" data-en="Telescopic Cylinder">Telescopic Cylinder</li>
+<li class="pill" data-catalog-item data-fr="Tie-Rod Cylinder" data-en="Tie-Rod Cylinder">Tie-Rod Cylinder</li>
+<li class="pill" data-catalog-item data-fr="Welded Cylinder" data-en="Welded Cylinder">Welded Cylinder</li>
+</ul>
+</section>
+<section class="catalog-group" data-catalog-group>
+<h2 class="catalog-group-title" data-fr="Valves &amp; Distributeurs" data-en="Valves">Valves &amp; Distributeurs</h2>
+<p class="catalog-group-text" data-fr="Distributeurs directionnels, proportionnels, servo et valves de pression qui régulent débit, direction et pression dans les circuits hydrauliques." data-en="Directional, proportional, servo, and pressure-control valves that regulate flow, direction, and pressure across hydraulic circuits.">Distributeurs directionnels, proportionnels, servo et valves de pression qui régulent débit, direction et pression dans les circuits hydrauliques.</p>
+<ul class="pill-list">
+<li class="pill" data-catalog-item data-fr="Hydraulic Valve (Directional Control)" data-en="Hydraulic Valve (Directional Control)">Hydraulic Valve (Directional Control)</li>
+<li class="pill" data-catalog-item data-fr="Proportional Valve" data-en="Proportional Valve">Proportional Valve</li>
+<li class="pill" data-catalog-item data-fr="Servo Valve" data-en="Servo Valve">Servo Valve</li>
+<li class="pill" data-catalog-item data-fr="Pressure Relief Valve" data-en="Pressure Relief Valve">Pressure Relief Valve</li>
+<li class="pill" data-catalog-item data-fr="Pressure Reducing Valve" data-en="Pressure Reducing Valve">Pressure Reducing Valve</li>
+<li class="pill" data-catalog-item data-fr="Flow Control Valve" data-en="Flow Control Valve">Flow Control Valve</li>
+<li class="pill" data-catalog-item data-fr="Check Valve" data-en="Check Valve">Check Valve</li>
+<li class="pill" data-catalog-item data-fr="Sequence Valve" data-en="Sequence Valve">Sequence Valve</li>
+<li class="pill" data-catalog-item data-fr="Solenoid Operated Valve" data-en="Solenoid Operated Valve">Solenoid Operated Valve</li>
+<li class="pill" data-catalog-item data-fr="Manifold Block" data-en="Manifold Block">Manifold Block</li>
+</ul>
+</section>
+<section class="catalog-group" data-catalog-group>
+<h2 class="catalog-group-title" data-fr="Filtration &amp; Réservoirs" data-en="Filtration &amp; Reservoirs">Filtration &amp; Réservoirs</h2>
+<p class="catalog-group-text" data-fr="Filtres, réservoirs et accumulateurs qui maintiennent le fluide hydraulique propre, stocké et à pression stable dans le circuit." data-en="Filters, reservoirs, and accumulators that keep hydraulic fluid clean, stored, and pressure-stable across the circuit.">Filtres, réservoirs et accumulateurs qui maintiennent le fluide hydraulique propre, stocké et à pression stable dans le circuit.</p>
+<ul class="pill-list">
+<li class="pill" data-catalog-item data-fr="Hydraulic Filter" data-en="Hydraulic Filter">Hydraulic Filter</li>
+<li class="pill" data-catalog-item data-fr="Return Line Filter" data-en="Return Line Filter">Return Line Filter</li>
+<li class="pill" data-catalog-item data-fr="Pressure Line Filter" data-en="Pressure Line Filter">Pressure Line Filter</li>
+<li class="pill" data-catalog-item data-fr="Suction Filter" data-en="Suction Filter">Suction Filter</li>
+<li class="pill" data-catalog-item data-fr="Hydraulic Reservoir / Tank" data-en="Hydraulic Reservoir / Tank">Hydraulic Reservoir / Tank</li>
+<li class="pill" data-catalog-item data-fr="Breather Cap" data-en="Breather Cap">Breather Cap</li>
+<li class="pill" data-catalog-item data-fr="Level Gauge" data-en="Level Gauge">Level Gauge</li>
+<li class="pill" data-catalog-item data-fr="Hydraulic Accumulator (Bladder)" data-en="Hydraulic Accumulator (Bladder)">Hydraulic Accumulator (Bladder)</li>
+<li class="pill" data-catalog-item data-fr="Hydraulic Accumulator (Piston)" data-en="Hydraulic Accumulator (Piston)">Hydraulic Accumulator (Piston)</li>
+</ul>
+</section>
+<section class="catalog-group" data-catalog-group>
+<h2 class="catalog-group-title" data-fr="Flexibles, Tubes &amp; Raccords" data-en="Hoses, Tubes &amp; Fittings">Flexibles, Tubes &amp; Raccords</h2>
+<p class="catalog-group-text" data-fr="Flexibles, tubes et raccords qui acheminent le fluide sous pression entre composants avec des connexions sûres et étanches." data-en="Hoses, tubes, and fittings that route pressurized fluid between components with secure, leak-free connections.">Flexibles, tubes et raccords qui acheminent le fluide sous pression entre composants avec des connexions sûres et étanches.</p>
+<ul class="pill-list">
+<li class="pill" data-catalog-item data-fr="Hydraulic Hose" data-en="Hydraulic Hose">Hydraulic Hose</li>
+<li class="pill" data-catalog-item data-fr="High-Pressure Hose Assembly" data-en="High-Pressure Hose Assembly">High-Pressure Hose Assembly</li>
+<li class="pill" data-catalog-item data-fr="Hose Fittings" data-en="Hose Fittings">Hose Fittings</li>
+<li class="pill" data-catalog-item data-fr="Quick Coupler" data-en="Quick Coupler">Quick Coupler</li>
+<li class="pill" data-catalog-item data-fr="Hydraulic Tube" data-en="Hydraulic Tube">Hydraulic Tube</li>
+<li class="pill" data-catalog-item data-fr="Tube Fittings" data-en="Tube Fittings">Tube Fittings</li>
+<li class="pill" data-catalog-item data-fr="Flange Fittings" data-en="Flange Fittings">Flange Fittings</li>
+<li class="pill" data-catalog-item data-fr="Hose Clamp" data-en="Hose Clamp">Hose Clamp</li>
+</ul>
+</section>
+<section class="catalog-group" data-catalog-group>
+<h2 class="catalog-group-title" data-fr="Instruments &amp; Manomètres" data-en="Gauges &amp; Instrumentation">Instruments &amp; Manomètres</h2>
+<p class="catalog-group-text" data-fr="Manomètres, débitmètres et équipements de test pour surveiller pression, température et débit sur les installations hydrauliques." data-en="Gauges, meters, and test equipment for monitoring pressure, temperature, and flow across hydraulic installations.">Manomètres, débitmètres et équipements de test pour surveiller pression, température et débit sur les installations hydrauliques.</p>
+<ul class="pill-list">
+<li class="pill" data-catalog-item data-fr="Hydraulic Pressure Gauge" data-en="Hydraulic Pressure Gauge">Hydraulic Pressure Gauge</li>
+<li class="pill" data-catalog-item data-fr="Temperature Gauge" data-en="Temperature Gauge">Temperature Gauge</li>
+<li class="pill" data-catalog-item data-fr="Hydraulic Directional Control Lever" data-en="Hydraulic Directional Control Lever">Hydraulic Directional Control Lever</li>
+<li class="pill" data-catalog-item data-fr="Hydraulic Flow Meter" data-en="Hydraulic Flow Meter">Hydraulic Flow Meter</li>
+<li class="pill" data-catalog-item data-fr="Hydraulic Test Kit" data-en="Hydraulic Test Kit">Hydraulic Test Kit</li>
+</ul>
+</section>
+<section class="catalog-group" data-catalog-group>
+<h2 class="catalog-group-title" data-fr="Joints &amp; Pièces d'Usure" data-en="Seals &amp; Wear Parts">Joints &amp; Pièces d'Usure</h2>
+<p class="catalog-group-text" data-fr="Kits de joints, joints de tige et de piston, joints toriques et bagues d'appui qui maintiennent vérins et valves étanches sous pression." data-en="Seal kits, rod and piston seals, O-rings, and back-up rings that keep cylinders and valves leak-free under pressure.">Kits de joints, joints de tige et de piston, joints toriques et bagues d'appui qui maintiennent vérins et valves étanches sous pression.</p>
+<ul class="pill-list">
+<li class="pill" data-catalog-item data-fr="Hydraulic Seal Kit" data-en="Hydraulic Seal Kit">Hydraulic Seal Kit</li>
+<li class="pill" data-catalog-item data-fr="Rod Seal" data-en="Rod Seal">Rod Seal</li>
+<li class="pill" data-catalog-item data-fr="Piston Seal" data-en="Piston Seal">Piston Seal</li>
+<li class="pill" data-catalog-item data-fr="Wiper Seal" data-en="Wiper Seal">Wiper Seal</li>
+<li class="pill" data-catalog-item data-fr="O-Ring" data-en="O-Ring">O-Ring</li>
+<li class="pill" data-catalog-item data-fr="Back-Up Ring" data-en="Back-Up Ring">Back-Up Ring</li>
+</ul>
+</section>
+<section class="catalog-group" data-catalog-group>
+<h2 class="catalog-group-title" data-fr="Refroidissement &amp; Fluides" data-en="Cooling &amp; Fluids">Refroidissement &amp; Fluides</h2>
+<p class="catalog-group-text" data-fr="Échangeurs thermiques, refroidisseurs et fluides hydrauliques qui maintiennent les circuits à température et viscosité stables." data-en="Heat exchangers, coolers, and hydraulic fluids that keep circuits running at stable temperature and viscosity.">Échangeurs thermiques, refroidisseurs et fluides hydrauliques qui maintiennent les circuits à température et viscosité stables.</p>
+<ul class="pill-list">
+<li class="pill" data-catalog-item data-fr="Hydraulic Heat Exchanger" data-en="Hydraulic Heat Exchanger">Hydraulic Heat Exchanger</li>
+<li class="pill" data-catalog-item data-fr="Oil Cooler" data-en="Oil Cooler">Oil Cooler</li>
+<li class="pill" data-catalog-item data-fr="Hydraulic Oil" data-en="Hydraulic Oil">Hydraulic Oil</li>
+<li class="pill" data-catalog-item data-fr="Biodegradable Hydraulic Fluid" data-en="Biodegradable Hydraulic Fluid">Biodegradable Hydraulic Fluid</li>
+</ul>
+</section>
+<section class="catalog-group" data-catalog-group>
+<h2 class="catalog-group-title" data-fr="Centrales Hydrauliques" data-en="Power Units">Centrales Hydrauliques</h2>
+<p class="catalog-group-text" data-fr="Centrales complètes et unités mobiles combinant pompe, réservoir et commandes en une seule source hydraulique prête à installer." data-en="Complete power packs and mobile units that combine pump, reservoir, and controls into one ready-to-install hydraulic source.">Centrales complètes et unités mobiles combinant pompe, réservoir et commandes en une seule source hydraulique prête à installer.</p>
+<ul class="pill-list">
+<li class="pill" data-catalog-item data-fr="Hydraulic Power Unit (HPU)" data-en="Hydraulic Power Unit (HPU)">Hydraulic Power Unit (HPU)</li>
+<li class="pill" data-catalog-item data-fr="Hydraulic Power Pack" data-en="Hydraulic Power Pack">Hydraulic Power Pack</li>
+<li class="pill" data-catalog-item data-fr="Compact Power Unit" data-en="Compact Power Unit">Compact Power Unit</li>
+<li class="pill" data-catalog-item data-fr="Mobile Hydraulic Unit" data-en="Mobile Hydraulic Unit">Mobile Hydraulic Unit</li>
+</ul>
+</section>
 </div>
 </div>
-<div class="card-system group-card">
-<h3 data-en="Cylinders" data-fr="Vérins">Vérins</h3>
-<p data-en="Single- and double-acting, telescopic, tie-rod, and welded cylinders converting fluid power into controlled mechanical force." data-fr="Vérins simple et double effet, télescopiques, tirants et soudés transformant la puissance fluide en effort mécanique contrôlé.">Vérins simple et double effet, télescopiques, tirants et soudés transformant la puissance fluide en effort mécanique contrôlé.</p>
-<div class="pills-container">
-<span class="pill-node" data-en="Hydraulic Cylinder (Single-Acting)" data-fr="Hydraulic Cylinder (Single-Acting)">Hydraulic Cylinder (Single-Acting)</span>
-<span class="pill-node" data-en="Hydraulic Cylinder (Double-Acting)" data-fr="Hydraulic Cylinder (Double-Acting)">Hydraulic Cylinder (Double-Acting)</span>
-<span class="pill-node" data-en="Telescopic Cylinder" data-fr="Telescopic Cylinder">Telescopic Cylinder</span>
-<span class="pill-node" data-en="Tie-Rod Cylinder" data-fr="Tie-Rod Cylinder">Tie-Rod Cylinder</span>
-<span class="pill-node" data-en="Welded Cylinder" data-fr="Welded Cylinder">Welded Cylinder</span>
+</section>
+
+<section class="cta-band">
+<div class="wrap cta-band-inner">
+<h2 class="cta-title" data-fr="Vous ne trouvez pas votre référence ?" data-en="Can’t find your reference?">Vous ne trouvez pas votre référence ?</h2>
+<p class="cta-lead" data-fr="Cette liste couvre les types d’articles, pas les références exactes. Envoyez-nous une photographie ou une plaque signalétique : nous identifions la pièce et consultons les fournisseurs." data-en="This list covers item types, not exact references. Send us a photograph or a nameplate: we identify the part and consult the suppliers.">Cette liste couvre les types d’articles, pas les références exactes. Envoyez-nous une photographie ou une plaque signalétique : nous identifions la pièce et consultons les fournisseurs.</p>
+<div class="cta-actions">
+<a class="btn btn-primary btn-lg" href="quote.html" data-fr="Demander un devis" data-en="Request a Quote">Demander un devis</a>
+<a class="btn btn-outline btn-lg" href="contact.html" data-fr="Discuter de votre projet" data-en="Discuss Your Project">Discuter de votre projet</a>
 </div>
 </div>
-<div class="card-system group-card">
-<h3 data-en="Valves" data-fr="Valves &amp; Distributeurs">Valves &amp; Distributeurs</h3>
-<p data-en="Directional, proportional, servo, and pressure-control valves that regulate flow, direction, and pressure across hydraulic circuits." data-fr="Distributeurs directionnels, proportionnels, servo et valves de pression qui régulent débit, direction et pression dans les circuits hydrauliques.">Distributeurs directionnels, proportionnels, servo et valves de pression qui régulent débit, direction et pression dans les circuits hydrauliques.</p>
-<div class="pills-container">
-<span class="pill-node" data-en="Hydraulic Valve (Directional Control)" data-fr="Hydraulic Valve (Directional Control)">Hydraulic Valve (Directional Control)</span>
-<span class="pill-node" data-en="Proportional Valve" data-fr="Proportional Valve">Proportional Valve</span>
-<span class="pill-node" data-en="Servo Valve" data-fr="Servo Valve">Servo Valve</span>
-<span class="pill-node" data-en="Pressure Relief Valve" data-fr="Pressure Relief Valve">Pressure Relief Valve</span>
-<span class="pill-node" data-en="Pressure Reducing Valve" data-fr="Pressure Reducing Valve">Pressure Reducing Valve</span>
-<span class="pill-node" data-en="Flow Control Valve" data-fr="Flow Control Valve">Flow Control Valve</span>
-<span class="pill-node" data-en="Check Valve" data-fr="Check Valve">Check Valve</span>
-<span class="pill-node" data-en="Sequence Valve" data-fr="Sequence Valve">Sequence Valve</span>
-<span class="pill-node" data-en="Solenoid Operated Valve" data-fr="Solenoid Operated Valve">Solenoid Operated Valve</span>
-<span class="pill-node" data-en="Manifold Block" data-fr="Manifold Block">Manifold Block</span>
-</div>
-</div>
-<div class="card-system group-card">
-<h3 data-en="Filtration &amp; Reservoirs" data-fr="Filtration &amp; Réservoirs">Filtration &amp; Réservoirs</h3>
-<p data-en="Filters, reservoirs, and accumulators that keep hydraulic fluid clean, stored, and pressure-stable across the circuit." data-fr="Filtres, réservoirs et accumulateurs qui maintiennent le fluide hydraulique propre, stocké et à pression stable dans le circuit.">Filtres, réservoirs et accumulateurs qui maintiennent le fluide hydraulique propre, stocké et à pression stable dans le circuit.</p>
-<div class="pills-container">
-<span class="pill-node" data-en="Hydraulic Filter" data-fr="Hydraulic Filter">Hydraulic Filter</span>
-<span class="pill-node" data-en="Return Line Filter" data-fr="Return Line Filter">Return Line Filter</span>
-<span class="pill-node" data-en="Pressure Line Filter" data-fr="Pressure Line Filter">Pressure Line Filter</span>
-<span class="pill-node" data-en="Suction Filter" data-fr="Suction Filter">Suction Filter</span>
-<span class="pill-node" data-en="Hydraulic Reservoir / Tank" data-fr="Hydraulic Reservoir / Tank">Hydraulic Reservoir / Tank</span>
-<span class="pill-node" data-en="Breather Cap" data-fr="Breather Cap">Breather Cap</span>
-<span class="pill-node" data-en="Level Gauge" data-fr="Level Gauge">Level Gauge</span>
-<span class="pill-node" data-en="Hydraulic Accumulator (Bladder)" data-fr="Hydraulic Accumulator (Bladder)">Hydraulic Accumulator (Bladder)</span>
-<span class="pill-node" data-en="Hydraulic Accumulator (Piston)" data-fr="Hydraulic Accumulator (Piston)">Hydraulic Accumulator (Piston)</span>
-</div>
-</div>
-<div class="card-system group-card">
-<h3 data-en="Hoses, Tubes &amp; Fittings" data-fr="Flexibles, Tubes &amp; Raccords">Flexibles, Tubes &amp; Raccords</h3>
-<p data-en="Hoses, tubes, and fittings that route pressurized fluid between components with secure, leak-free connections." data-fr="Flexibles, tubes et raccords qui acheminent le fluide sous pression entre composants avec des connexions sûres et étanches.">Flexibles, tubes et raccords qui acheminent le fluide sous pression entre composants avec des connexions sûres et étanches.</p>
-<div class="pills-container">
-<span class="pill-node" data-en="Hydraulic Hose" data-fr="Hydraulic Hose">Hydraulic Hose</span>
-<span class="pill-node" data-en="High-Pressure Hose Assembly" data-fr="High-Pressure Hose Assembly">High-Pressure Hose Assembly</span>
-<span class="pill-node" data-en="Hose Fittings" data-fr="Hose Fittings">Hose Fittings</span>
-<span class="pill-node" data-en="Quick Coupler" data-fr="Quick Coupler">Quick Coupler</span>
-<span class="pill-node" data-en="Hydraulic Tube" data-fr="Hydraulic Tube">Hydraulic Tube</span>
-<span class="pill-node" data-en="Tube Fittings" data-fr="Tube Fittings">Tube Fittings</span>
-<span class="pill-node" data-en="Flange Fittings" data-fr="Flange Fittings">Flange Fittings</span>
-<span class="pill-node" data-en="Hose Clamp" data-fr="Hose Clamp">Hose Clamp</span>
-</div>
-</div>
-<div class="card-system group-card">
-<h3 data-en="Gauges &amp; Instrumentation" data-fr="Instruments &amp; Manomètres">Instruments &amp; Manomètres</h3>
-<p data-en="Gauges, meters, and test equipment for monitoring pressure, temperature, and flow across hydraulic installations." data-fr="Manomètres, débitmètres et équipements de test pour surveiller pression, température et débit sur les installations hydrauliques.">Manomètres, débitmètres et équipements de test pour surveiller pression, température et débit sur les installations hydrauliques.</p>
-<div class="pills-container">
-<span class="pill-node" data-en="Hydraulic Pressure Gauge" data-fr="Hydraulic Pressure Gauge">Hydraulic Pressure Gauge</span>
-<span class="pill-node" data-en="Temperature Gauge" data-fr="Temperature Gauge">Temperature Gauge</span>
-<span class="pill-node" data-en="Hydraulic Directional Control Lever" data-fr="Hydraulic Directional Control Lever">Hydraulic Directional Control Lever</span>
-<span class="pill-node" data-en="Hydraulic Flow Meter" data-fr="Hydraulic Flow Meter">Hydraulic Flow Meter</span>
-<span class="pill-node" data-en="Hydraulic Test Kit" data-fr="Hydraulic Test Kit">Hydraulic Test Kit</span>
-</div>
-</div>
-<div class="card-system group-card">
-<h3 data-en="Seals &amp; Wear Parts" data-fr="Joints &amp; Pièces d'Usure">Joints &amp; Pièces d'Usure</h3>
-<p data-en="Seal kits, rod and piston seals, O-rings, and back-up rings that keep cylinders and valves leak-free under pressure." data-fr="Kits de joints, joints de tige et de piston, joints toriques et bagues d'appui qui maintiennent vérins et valves étanches sous pression.">Kits de joints, joints de tige et de piston, joints toriques et bagues d'appui qui maintiennent vérins et valves étanches sous pression.</p>
-<div class="pills-container">
-<span class="pill-node" data-en="Hydraulic Seal Kit" data-fr="Hydraulic Seal Kit">Hydraulic Seal Kit</span>
-<span class="pill-node" data-en="Rod Seal" data-fr="Rod Seal">Rod Seal</span>
-<span class="pill-node" data-en="Piston Seal" data-fr="Piston Seal">Piston Seal</span>
-<span class="pill-node" data-en="Wiper Seal" data-fr="Wiper Seal">Wiper Seal</span>
-<span class="pill-node" data-en="O-Ring" data-fr="O-Ring">O-Ring</span>
-<span class="pill-node" data-en="Back-Up Ring" data-fr="Back-Up Ring">Back-Up Ring</span>
-</div>
-</div>
-<div class="card-system group-card">
-<h3 data-en="Cooling &amp; Fluids" data-fr="Refroidissement &amp; Fluides">Refroidissement &amp; Fluides</h3>
-<p data-en="Heat exchangers, coolers, and hydraulic fluids that keep circuits running at stable temperature and viscosity." data-fr="Échangeurs thermiques, refroidisseurs et fluides hydrauliques qui maintiennent les circuits à température et viscosité stables.">Échangeurs thermiques, refroidisseurs et fluides hydrauliques qui maintiennent les circuits à température et viscosité stables.</p>
-<div class="pills-container">
-<span class="pill-node" data-en="Hydraulic Heat Exchanger" data-fr="Hydraulic Heat Exchanger">Hydraulic Heat Exchanger</span>
-<span class="pill-node" data-en="Oil Cooler" data-fr="Oil Cooler">Oil Cooler</span>
-<span class="pill-node" data-en="Hydraulic Oil" data-fr="Hydraulic Oil">Hydraulic Oil</span>
-<span class="pill-node" data-en="Biodegradable Hydraulic Fluid" data-fr="Biodegradable Hydraulic Fluid">Biodegradable Hydraulic Fluid</span>
-</div>
-</div>
-<div class="card-system group-card">
-<h3 data-en="Power Units" data-fr="Centrales Hydrauliques">Centrales Hydrauliques</h3>
-<p data-en="Complete power packs and mobile units that combine pump, reservoir, and controls into one ready-to-install hydraulic source." data-fr="Centrales complètes et unités mobiles combinant pompe, réservoir et commandes en une seule source hydraulique prête à installer.">Centrales complètes et unités mobiles combinant pompe, réservoir et commandes en une seule source hydraulique prête à installer.</p>
-<div class="pills-container">
-<span class="pill-node" data-en="Hydraulic Power Unit (HPU)" data-fr="Hydraulic Power Unit (HPU)">Hydraulic Power Unit (HPU)</span>
-<span class="pill-node" data-en="Hydraulic Power Pack" data-fr="Hydraulic Power Pack">Hydraulic Power Pack</span>
-<span class="pill-node" data-en="Compact Power Unit" data-fr="Compact Power Unit">Compact Power Unit</span>
-<span class="pill-node" data-en="Mobile Hydraulic Unit" data-fr="Mobile Hydraulic Unit">Mobile Hydraulic Unit</span>
-</div>
-</div>
-</div>
+</section>
 </main>
-<footer style="background: #f0f1f3; border-top: 1px solid var(--border-color); padding: 60px 0 30px 0; margin-top: 80px;">
-<div class="container grid-3" style="padding: 0 24px 40px 24px;">
-<div>
-<img alt="SUJO" src="logo.png" style="height: 40px; margin-bottom: 16px;"/>
-<p data-en="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, Democratic Republic of Congo" data-fr="SUJO Engineering Consulting SARL&lt;br&gt;Kinshasa, République Démocratique du Congo" style="color: var(--text-muted); font-size: 0.9rem;">SUJO Engineering Consulting SARL<br/>Kinshasa, République Démocratique du Congo</p>
+<footer class="site-footer">
+<div class="footer-top">
+<div class="footer-brand">
+<img class="footer-logo" src="img/logo-mono.png" alt="SUJO Engineering Consulting" width="484" height="132" loading="lazy">
+<p class="footer-tagline" data-fr="Ingénierie, sourcing industriel et appui aux projets pour les opérations critiques en République Démocratique du Congo." data-en="Engineering, industrial sourcing and project support for critical operations in the Democratic Republic of the Congo.">Ingénierie, sourcing industriel et appui aux projets pour les opérations critiques en République Démocratique du Congo.</p>
+<address class="footer-address">
+<p><strong>SUJO Engineering Consulting SARL</strong></p>
+<p data-fr="Kinshasa, République Démocratique du Congo" data-en="Kinshasa, Democratic Republic of Congo">Kinshasa, République Démocratique du Congo</p>
+<p><a href="tel:+243974570630"><span data-fr="RDC" data-en="DRC">RDC</span> +243 974 570 630</a></p>
+<p><a href="tel:+14123453307"><span data-fr="Bureau US" data-en="US desk">Bureau US</span> +1 412 345 3307</a></p>
+<p><a href="mailto:contact@sujo-engineering.com">contact@sujo-engineering.com</a></p>
+</address>
 </div>
-<div>
-<h4 data-en="Technology Index" data-fr="Matrices Technologiques" style="margin-bottom: 16px; font-size: 0.95rem;">Matrices Technologiques</h4>
-<p style="font-size: 0.9rem; margin-bottom: 8px;">Index Global des Produits</p>
-<p style="font-size: 0.9rem; margin-bottom: 8px;">Marques Validées</p>
+<div class="footer-cols">
+<div class="footer-col">
+<h2 class="footer-heading" data-fr="Services" data-en="Services">Services</h2>
+<ul><li><a href="engineering.html" data-fr="Conseil en Ingénierie" data-en="Engineering Consulting">Conseil en Ingénierie</a></li><li><a href="technical-studies.html" data-fr="Études Techniques" data-en="Technical Studies">Études Techniques</a></li><li><a href="cost-estimation.html" data-fr="Estimation des Coûts" data-en="Cost Estimation">Estimation des Coûts</a></li><li><a href="project-development.html" data-fr="Développement de Projet" data-en="Project Development">Développement de Projet</a></li><li><a href="industrial-sourcing.html" data-fr="Sourcing Industriel" data-en="Industrial Sourcing">Sourcing Industriel</a></li></ul>
 </div>
-<div>
-<h4 data-en="Direct Channels" data-fr="Canaux Directs" style="margin-bottom: 16px; font-size: 0.95rem;">Canaux Directs</h4>
-<p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 4px;">DRC: +243 974 570 630</p>
-<p data-en="Email: contact@sujo-engineering.com" data-fr="Email: contact@sujo-engineering.com" style="color: var(--text-muted); font-size: 0.9rem;">Email: contact@sujo-engineering.com</p>
+<div class="footer-col">
+<h2 class="footer-heading" data-fr="Secteurs" data-en="Sectors">Secteurs</h2>
+<ul><li><a href="sector-construction.html" data-fr="Construction &amp; Génie Civil" data-en="Construction &amp; Civil Engineering">Construction &amp; Génie Civil</a></li><li><a href="sector-mining.html" data-fr="Mines &amp; Industries Extractives" data-en="Mining &amp; Extractive Industries">Mines &amp; Industries Extractives</a></li><li><a href="sector-energy.html" data-fr="Énergie &amp; Hydroélectricité" data-en="Energy, Power &amp; Hydropower">Énergie &amp; Hydroélectricité</a></li><li><a href="sector-oil-gas.html" data-fr="Pétrole &amp; Gaz" data-en="Oil &amp; Gas">Pétrole &amp; Gaz</a></li><li><a href="sector-manufacturing.html" data-fr="Industrie Manufacturière" data-en="Manufacturing">Industrie Manufacturière</a></li><li><a href="sector-water.html" data-fr="Eau &amp; Assainissement" data-en="Water &amp; Sanitation">Eau &amp; Assainissement</a></li></ul>
+</div>
+<div class="footer-col">
+<h2 class="footer-heading" data-fr="Entreprise" data-en="Company">Entreprise</h2>
+<ul><li><a href="about.html" data-fr="À Propos" data-en="About">À Propos</a></li><li><a href="how-we-work.html" data-fr="Notre Méthode" data-en="How We Work">Notre Méthode</a></li><li><a href="case-studies.html" data-fr="Références" data-en="Case Studies">Références</a></li><li><a href="partners.html" data-fr="Partenaires" data-en="Partners">Partenaires</a></li><li><a href="jonathan.html" data-fr="Direction" data-en="Leadership">Direction</a></li></ul>
+</div>
+<div class="footer-col">
+<h2 class="footer-heading" data-fr="Informations légales" data-en="Legal">Informations légales</h2>
+<ul><li><a href="terms-of-sale.html" data-fr="Conditions Générales de Vente" data-en="Terms of Sale">Conditions Générales de Vente</a></li><li><a href="terms-of-service.html" data-fr="Conditions de Prestation de Services" data-en="Terms of Service">Conditions de Prestation de Services</a></li><li><a href="privacy-policy.html" data-fr="Politique de Confidentialité" data-en="Privacy Policy">Politique de Confidentialité</a></li><li><a href="quality-ethics.html" data-fr="Qualité &amp; Éthique" data-en="Quality &amp; Ethics">Qualité &amp; Éthique</a></li></ul>
 </div>
 </div>
-<div data-en="© 2026 SUJO Engineering Consulting SARL. All rights reserved." data-fr="© 2026 SUJO Engineering Consulting SARL. Tous droits réservés." style="text-align: center; border-top: 1px solid var(--border-color); padding-top: 30px; font-size: 0.8rem; color: var(--text-muted);">
-© 2026 SUJO Engineering Consulting SARL. All rights reserved.
+</div>
+<div class="footer-bottom">
+<p class="copyright">© 2026 SUJO Engineering Consulting SARL. <span data-fr="Tous droits réservés." data-en="All rights reserved.">Tous droits réservés.</span></p>
+<p class="footer-hours"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> <span data-fr="Lundi — Vendredi : 08h00 – 17h00 (GMT+1)" data-en="Monday — Friday: 08:00 – 17:00 (GMT+1)">Lundi — Vendredi : 08h00 – 17h00 (GMT+1)</span></p>
 </div>
 </footer>
-<script>
-function applyLang(lang) {
-    document.querySelectorAll('[data-fr][data-en]').forEach(el => {
-        el.innerHTML = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
-    });
-    document.documentElement.lang = lang;
-}
-
-function setLang(lang) {
-    localStorage.setItem('sujoLang', lang);
-    const btnFr = document.getElementById('btn-fr');
-    const btnEn = document.getElementById('btn-en');
-    if (btnFr && btnEn) {
-        btnFr.classList.toggle('active', lang === 'fr');
-        btnEn.classList.toggle('active', lang === 'en');
-    }
-    applyLang(lang);
-}
-
-(function () {
-    const saved = localStorage.getItem('sujoLang') || 'fr';
-    applyLang(saved);
-    const btnFr = document.getElementById('btn-fr');
-    const btnEn = document.getElementById('btn-en');
-    if (btnFr && btnEn) {
-        btnFr.classList.toggle('active', saved === 'fr');
-        btnEn.classList.toggle('active', saved === 'en');
-    }
-})();
-
-function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('open');
-    document.querySelector('.hamburger').classList.toggle('open');
-}
-
-document.querySelectorAll('.dropdown > a').forEach(link => {
-    link.addEventListener('click', (e) => {
-        if (window.innerWidth <= 900) {
-            e.preventDefault();
-            link.parentElement.classList.toggle('open');
-        }
-    });
-});
-
-document.querySelectorAll('#mobileMenu a').forEach(link => {
-    link.addEventListener('click', () => {
-        if (link.parentElement.classList.contains('dropdown')) return;
-        document.getElementById('mobileMenu').classList.remove('open');
-        document.querySelector('.hamburger').classList.remove('open');
-    });
-});
-</script>
 </body>
 </html>

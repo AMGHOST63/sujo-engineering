@@ -1,331 +1,389 @@
+/* ==========================================================================
+   SUJO — front-end behaviour.
+   Language toggle, navigation, catalogue search, form validation, and the
+   client-side inquiry number.
+
+   No dependencies, no external requests.
+   ========================================================================== */
 (function () {
-    const DEFAULT_LANG = 'fr';
-    const savedLang = (() => {
-        try { return localStorage.getItem('sujoLang') || DEFAULT_LANG; }
-        catch (e) { return DEFAULT_LANG; }
-    })();
+  'use strict';
 
-    document.documentElement.lang = savedLang;
+  var DEFAULT_LANG = 'fr';
+  var STORAGE_KEY = 'sujoLang';
 
-    function applyLang(lang) {
-        document.querySelectorAll('[data-fr][data-en]').forEach(el => {
-            const text = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
-            el.innerHTML = text;
-        });
+  function storedLang() {
+    try {
+      var v = localStorage.getItem(STORAGE_KEY);
+      return (v === 'fr' || v === 'en') ? v : DEFAULT_LANG;
+    } catch (e) { return DEFAULT_LANG; }
+  }
 
-        document.querySelectorAll('[data-fr-placeholder][data-en-placeholder]').forEach(el => {
-            el.placeholder = lang === 'fr' ? el.getAttribute('data-fr-placeholder') : el.getAttribute('data-en-placeholder');
-        });
+  /* ---------------------------------------------------------------- lang -- */
 
-        document.documentElement.lang = lang;
+  // Content strings are plain text, so textContent is both correct and safe.
+  function applyLang(lang) {
+    var nodes = document.querySelectorAll('[data-fr][data-en]');
+    for (var i = 0; i < nodes.length; i++) {
+      var v = nodes[i].getAttribute(lang === 'en' ? 'data-en' : 'data-fr');
+      if (v !== null) nodes[i].textContent = v;
     }
 
-    function updateLangButtons(lang) {
-        document.querySelectorAll('[data-lang-button]').forEach(btn => {
-            btn.classList.toggle('active', btn.getAttribute('data-lang-button') === lang);
-            btn.setAttribute('aria-pressed', btn.getAttribute('data-lang-button') === lang ? 'true' : 'false');
-        });
+    var ph = document.querySelectorAll('[data-fr-placeholder][data-en-placeholder]');
+    for (var j = 0; j < ph.length; j++) {
+      ph[j].placeholder = ph[j].getAttribute(lang === 'en' ? 'data-en-placeholder' : 'data-fr-placeholder');
     }
 
-    window.setLang = function (lang) {
-        try { localStorage.setItem('sujoLang', lang); } catch (e) {}
-        applyLang(lang);
-        updateLangButtons(lang);
-        if (window.__sujoRefreshProductSearch) window.__sujoRefreshProductSearch();
-    };
-
-    window.toggleService = function (btn) {
-        const details = btn.nextElementSibling;
-        if (!details) return;
-        const isOpen = details.classList.toggle('open');
-        btn.classList.toggle('open', isOpen);
-        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    };
-
-    window.toggleMenu = function () {
-        const menu = document.getElementById('mobileMenu');
-        const hamburger = document.querySelector('.hamburger');
-        if (!menu || !hamburger) return;
-        const isOpen = menu.classList.toggle('open');
-        hamburger.classList.toggle('open', isOpen);
-        hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        hamburger.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
-    };
-
-
-
-    function setupReliableMobileNavigation() {
-        if (window.__sujoMobileNavBound) return;
-        window.__sujoMobileNavBound = true;
-
-        function isMobileNav() {
-            return window.matchMedia('(max-width: 900px)').matches;
-        }
-
-        function closeMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            const hamburger = document.querySelector('.hamburger');
-            if (menu) menu.classList.remove('open');
-            document.querySelectorAll('#mobileMenu .dropdown.open').forEach(dropdown => dropdown.classList.remove('open'));
-            if (hamburger) {
-                hamburger.classList.remove('open');
-                hamburger.setAttribute('aria-expanded', 'false');
-                hamburger.setAttribute('aria-label', 'Open navigation menu');
-            }
-        }
-
-        // Capture mobile clicks before older inline handlers can double-toggle the menu.
-        document.addEventListener('click', function (event) {
-            const hamburger = event.target.closest('.hamburger');
-            if (hamburger) {
-                event.preventDefault();
-                event.stopImmediatePropagation();
-                window.toggleMenu();
-                return;
-            }
-
-            const dropdownTrigger = event.target.closest('#mobileMenu .dropdown > a');
-            if (dropdownTrigger && isMobileNav()) {
-                event.preventDefault();
-                event.stopImmediatePropagation();
-                const dropdown = dropdownTrigger.parentElement;
-                const isOpen = dropdown.classList.toggle('open');
-                dropdownTrigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                return;
-            }
-
-            const menuLink = event.target.closest('#mobileMenu a');
-            if (menuLink && isMobileNav()) {
-                closeMobileMenu();
-            }
-        }, true);
-
-        document.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape' && isMobileNav()) {
-                closeMobileMenu();
-            }
-        });
-
-        window.addEventListener('resize', function () {
-            if (!isMobileNav()) closeMobileMenu();
-        });
+    var alts = document.querySelectorAll('[data-fr-alt][data-en-alt]');
+    for (var k = 0; k < alts.length; k++) {
+      alts[k].alt = alts[k].getAttribute(lang === 'en' ? 'data-en-alt' : 'data-fr-alt');
     }
 
-    function loadLazyBackgrounds() {
-        const applyBg = el => {
-            const src = el.getAttribute('data-bg');
-            if (!src || el.dataset.bgLoaded === 'true') return;
-            el.style.backgroundImage = `url('${src}')`;
-            el.dataset.bgLoaded = 'true';
-            el.classList.add('lazy-bg-loaded');
-        };
+    // Title and meta description are per-language too.
+    var root = document.documentElement;
+    var title = root.getAttribute('data-title-' + lang);
+    if (title) document.title = title;
+    var desc = root.getAttribute('data-desc-' + lang);
+    var descTag = document.querySelector('meta[name="description"]');
+    if (desc && descTag) descTag.setAttribute('content', desc);
 
-        const targets = document.querySelectorAll('.lazy-bg[data-bg]');
-        if (!('IntersectionObserver' in window)) {
-            targets.forEach(applyBg);
-            return;
-        }
+    root.lang = lang;
+    root.setAttribute('data-lang', lang);
 
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    applyBg(entry.target);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { rootMargin: '250px 0px' });
-
-        targets.forEach(el => observer.observe(el));
+    var buttons = document.querySelectorAll('[data-lang-button]');
+    for (var m = 0; m < buttons.length; m++) {
+      buttons[m].setAttribute('aria-pressed',
+        buttons[m].getAttribute('data-lang-button') === lang ? 'true' : 'false');
     }
 
-    function setActiveNav() {
-        const currentFile = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            const href = (link.getAttribute('href') || '').split('#')[0].split('/').pop().toLowerCase();
-            const isCurrent = href && href === currentFile;
-            link.classList.toggle('active', isCurrent);
-            if (isCurrent) link.setAttribute('aria-current', 'page');
-            else link.removeAttribute('aria-current');
-        });
-    }
+    document.dispatchEvent(new CustomEvent('sujo:langchange', { detail: { lang: lang } }));
+  }
 
-    function bindUI() {
-        document.querySelectorAll('[data-lang-button]').forEach(btn => {
-            if (btn.dataset.bound) return;
-            btn.addEventListener('click', () => window.setLang(btn.getAttribute('data-lang-button')));
-            btn.dataset.bound = 'true';
-        });
+  function setLang(lang) {
+    try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+    applyLang(lang);
+  }
 
-        const hamburger = document.querySelector('.hamburger');
-        if (hamburger && !hamburger.dataset.bound) {
-            hamburger.addEventListener('click', window.toggleMenu);
-            hamburger.addEventListener('keydown', event => {
-                if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault();
-                    window.toggleMenu();
-                }
-            });
-            hamburger.dataset.bound = 'true';
-        }
-
-        document.querySelectorAll('.dropdown > a').forEach(link => {
-            if (link.dataset.bound) return;
-            link.addEventListener('click', event => {
-                if (window.innerWidth <= 900) {
-                    event.preventDefault();
-                    link.parentElement.classList.toggle('open');
-                }
-            });
-            link.dataset.bound = 'true';
-        });
-
-        // Desktop hover-intent: keep the dropdown open briefly after the
-        // cursor leaves so it doesn't vanish while moving diagonally down
-        // into the submenu. Also supports keyboard focus.
-        document.querySelectorAll('.dropdown').forEach(dropdown => {
-            if (dropdown.dataset.hoverBound) return;
-            let closeTimer = null;
-
-            const openNow = () => {
-                clearTimeout(closeTimer);
-                dropdown.classList.add('open');
-            };
-            const scheduleClose = () => {
-                clearTimeout(closeTimer);
-                closeTimer = setTimeout(() => dropdown.classList.remove('open'), 400);
-            };
-
-            dropdown.addEventListener('mouseenter', openNow);
-            dropdown.addEventListener('mouseleave', scheduleClose);
-            dropdown.addEventListener('focusin', openNow);
-            dropdown.addEventListener('focusout', scheduleClose);
-
-            dropdown.dataset.hoverBound = 'true';
-        });
-
-        document.querySelectorAll('#mobileMenu a, .mobile-menu a').forEach(link => {
-            if (link.dataset.closeBound) return;
-            link.addEventListener('click', () => {
-                const menu = document.getElementById('mobileMenu');
-                const hamburgerIcon = document.querySelector('.hamburger');
-                if (menu) menu.classList.remove('open');
-                if (hamburgerIcon) {
-                    hamburgerIcon.classList.remove('open');
-                    hamburgerIcon.setAttribute('aria-expanded', 'false');
-                    hamburgerIcon.setAttribute('aria-label', 'Open navigation menu');
-                }
-            });
-            link.dataset.closeBound = 'true';
-        });
-
-        document.querySelectorAll('form[data-validate="true"]').forEach(form => {
-            if (form.dataset.bound) return;
-            form.addEventListener('submit', event => {
-                const required = form.querySelectorAll('[required]');
-                let valid = form.checkValidity();
-                required.forEach(field => {
-                    if (!field.checkValidity()) {
-                        field.classList.add('field-error');
-                    } else {
-                        field.classList.remove('field-error');
-                    }
-                });
-                const feedback = form.querySelector('[data-form-feedback]');
-                if (!valid) {
-                    event.preventDefault();
-                    if (feedback) {
-                        feedback.textContent = document.documentElement.lang === 'fr'
-                            ? 'Veuillez remplir tous les champs obligatoires.'
-                            : 'Please complete all required fields.';
-                        feedback.className = 'form-feedback error';
-                    }
-                    return;
-                }
-                const submit = form.querySelector('button[type="submit"]');
-                if (submit) {
-                    submit.disabled = true;
-                    submit.classList.add('is-loading');
-                    submit.dataset.originalText = submit.textContent;
-                    submit.textContent = document.documentElement.lang === 'fr' ? 'Envoi en cours…' : 'Sending…';
-                }
-            });
-            form.dataset.bound = 'true';
-        });
-    }
-
-    function setupProductSearch() {
-        const input = document.getElementById('productSearch');
-        const grid = document.querySelector('.grid-3');
-        if (!input || !grid) return;
-
-        const cards = Array.from(grid.querySelectorAll(':scope > .card-system'));
-        if (!cards.length) return;
-
-        let emptyState = document.querySelector('.search-empty-state');
-        if (!emptyState) {
-            emptyState = document.createElement('p');
-            emptyState.className = 'search-empty-state';
-            emptyState.setAttribute('data-fr', 'Aucun produit ne correspond à votre recherche.');
-            emptyState.setAttribute('data-en', 'No products match your search.');
-            emptyState.hidden = true;
-            grid.insertAdjacentElement('afterend', emptyState);
-        }
-
-        function refresh() {
-            const query = input.value.trim().toLowerCase();
-            let visibleCount = 0;
-
-            cards.forEach(card => {
-                const heading = card.querySelector('h3');
-                const headingText = heading ? heading.textContent.toLowerCase() : '';
-                const pills = Array.from(card.querySelectorAll('.pill-node'));
-
-                if (!query) {
-                    pills.forEach(pill => { pill.style.display = ''; });
-                    card.style.display = '';
-                    visibleCount++;
-                    return;
-                }
-
-                if (headingText.includes(query)) {
-                    pills.forEach(pill => { pill.style.display = ''; });
-                    card.style.display = '';
-                    visibleCount++;
-                    return;
-                }
-
-                const matchingPills = pills.filter(pill => pill.textContent.toLowerCase().includes(query));
-                if (matchingPills.length) {
-                    pills.forEach(pill => {
-                        pill.style.display = matchingPills.includes(pill) ? '' : 'none';
-                    });
-                    card.style.display = '';
-                    visibleCount++;
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-
-            emptyState.hidden = visibleCount !== 0;
-            emptyState.textContent = document.documentElement.lang === 'fr'
-                ? emptyState.getAttribute('data-fr')
-                : emptyState.getAttribute('data-en');
-        }
-
-        input.addEventListener('input', refresh);
-        window.__sujoRefreshProductSearch = refresh;
-        refresh();
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        applyLang(savedLang);
-        updateLangButtons(savedLang);
-        setActiveNav();
-        bindUI();
-        setupReliableMobileNavigation();
-        loadLazyBackgrounds();
-        setupProductSearch();
-        document.documentElement.classList.remove('lang-loading');
-        document.documentElement.classList.add('lang-ready');
+  function initLang() {
+    applyLang(storedLang());
+    document.addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-lang-button]');
+      if (!btn) return;
+      e.preventDefault();
+      setLang(btn.getAttribute('data-lang-button'));
     });
+  }
+
+  function currentLang() {
+    return document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'fr';
+  }
+
+  /* ----------------------------------------------------------------- nav -- */
+
+  function initNav() {
+    var toggle = document.querySelector('.nav-toggle');
+    var panel = document.querySelector('.primary-nav');
+
+    function closeAllMenus(except) {
+      var open = document.querySelectorAll('.has-menu.open');
+      for (var i = 0; i < open.length; i++) {
+        if (open[i] === except) continue;
+        open[i].classList.remove('open');
+        var t = open[i].querySelector('.menu-trigger');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    if (toggle && panel) {
+      toggle.addEventListener('click', function () {
+        var open = panel.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (!open) closeAllMenus();
+      });
+    }
+
+    document.addEventListener('click', function (e) {
+      var trigger = e.target.closest('.menu-trigger');
+      if (trigger) {
+        var li = trigger.parentElement;
+        var willOpen = !li.classList.contains('open');
+        closeAllMenus(li);
+        li.classList.toggle('open', willOpen);
+        trigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+        return;
+      }
+      if (!e.target.closest('.has-menu')) closeAllMenus();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      closeAllMenus();
+      if (panel && panel.classList.contains('open')) {
+        panel.classList.remove('open');
+        if (toggle) { toggle.setAttribute('aria-expanded', 'false'); toggle.focus(); }
+      }
+    });
+
+    // Desktop: open on hover with a small close delay so a diagonal cursor
+    // path into the panel doesn't dismiss it.
+    var menus = document.querySelectorAll('.has-menu');
+    for (var i = 0; i < menus.length; i++) {
+      (function (li) {
+        var timer = null;
+        var trigger = li.querySelector('.menu-trigger');
+        function open() {
+          if (!window.matchMedia('(min-width: 1041px)').matches) return;
+          clearTimeout(timer);
+          closeAllMenus(li);
+          li.classList.add('open');
+          if (trigger) trigger.setAttribute('aria-expanded', 'true');
+        }
+        function scheduleClose() {
+          if (!window.matchMedia('(min-width: 1041px)').matches) return;
+          clearTimeout(timer);
+          timer = setTimeout(function () {
+            li.classList.remove('open');
+            if (trigger) trigger.setAttribute('aria-expanded', 'false');
+          }, 260);
+        }
+        li.addEventListener('mouseenter', open);
+        li.addEventListener('mouseleave', scheduleClose);
+        li.addEventListener('focusin', open);
+        li.addEventListener('focusout', function (e) {
+          if (!li.contains(e.relatedTarget)) scheduleClose();
+        });
+      })(menus[i]);
+    }
+  }
+
+  /* ------------------------------------------------------------- catalog -- */
+
+  function initCatalog() {
+    var input = document.querySelector('[data-catalog-search]');
+    var root = document.querySelector('[data-catalog]');
+    if (!input || !root) return;
+
+    var countEl = document.querySelector('[data-catalog-count]');
+    var emptyEl = document.querySelector('[data-catalog-empty]');
+    var items = root.querySelectorAll('[data-catalog-item]');
+    var groups = root.querySelectorAll('[data-catalog-group]');
+
+    function itemText(node) {
+      var lang = currentLang();
+      return (node.getAttribute(lang === 'en' ? 'data-en' : 'data-fr') || node.textContent).toLowerCase();
+    }
+
+    function refresh() {
+      var q = input.value.trim().toLowerCase();
+      var shown = 0;
+
+      for (var i = 0; i < items.length; i++) {
+        var hit = !q || itemText(items[i]).indexOf(q) !== -1;
+        items[i].hidden = !hit;
+        if (hit) shown++;
+      }
+      for (var g = 0; g < groups.length; g++) {
+        var visible = groups[g].querySelectorAll('[data-catalog-item]:not([hidden])').length;
+        groups[g].hidden = visible === 0;
+      }
+      if (countEl) countEl.textContent = String(shown);
+      if (emptyEl) emptyEl.hidden = shown !== 0;
+    }
+
+    var debounce = null;
+    input.addEventListener('input', function () {
+      clearTimeout(debounce);
+      debounce = setTimeout(refresh, 120);
+    });
+    document.addEventListener('sujo:langchange', refresh);
+    refresh();
+  }
+
+  /* --------------------------------------------------------- line items -- */
+
+  // Duplicates the first line-item block, renumbering items[N][field] so a
+  // server-side handler receives a proper array.
+  function initLineItems() {
+    var wrap = document.querySelector('[data-line-items]');
+    var addBtn = document.querySelector('[data-add-line]');
+    if (!wrap || !addBtn) return;
+
+    var template = wrap.querySelector('[data-line-item]').cloneNode(true);
+
+    function renumber() {
+      var rows = wrap.querySelectorAll('[data-line-item]');
+      for (var i = 0; i < rows.length; i++) {
+        var fields = rows[i].querySelectorAll('[name]');
+        for (var f = 0; f < fields.length; f++) {
+          fields[f].name = fields[f].name.replace(/items\[\d+\]/, 'items[' + i + ']');
+        }
+        var labels = rows[i].querySelectorAll('label[for]');
+        for (var l = 0; l < labels.length; l++) {
+          var control = rows[i].querySelectorAll('[id]')[l];
+          var newId = labels[l].getAttribute('for').replace(/q-item\d+/, 'q-item' + i);
+          labels[l].setAttribute('for', newId);
+          if (control) control.id = newId;
+        }
+      }
+      wrap.toggleAttribute('data-single', rows.length === 1);
+    }
+
+    addBtn.addEventListener('click', function () {
+      var row = template.cloneNode(true);
+      var fields = row.querySelectorAll('input, select, textarea');
+      for (var i = 0; i < fields.length; i++) {
+        if (fields[i].type === 'checkbox' || fields[i].type === 'radio') fields[i].checked = false;
+        else fields[i].value = '';
+      }
+      wrap.appendChild(row);
+      renumber();
+      var first = row.querySelector('input, select, textarea');
+      if (first) first.focus();
+    });
+
+    wrap.addEventListener('click', function (e) {
+      if (!e.target.closest('[data-remove-line]')) return;
+      var rows = wrap.querySelectorAll('[data-line-item]');
+      if (rows.length <= 1) return;
+      e.target.closest('[data-line-item]').remove();
+      renumber();
+    });
+
+    renumber();
+  }
+
+  /* --------------------------------------------------------------- forms -- */
+
+  var MESSAGES = {
+    incomplete: {
+      fr: 'Veuillez compléter les champs obligatoires signalés ci-dessous.',
+      en: 'Please complete the required fields flagged below.'
+    },
+    unwired: {
+      fr: 'Ce formulaire n’est pas encore connecté à un serveur. Vos informations n’ont pas été envoyées. En attendant, écrivez-nous à contact@sujo-engineering.com.',
+      en: 'This form is not yet connected to a server. Your information was not sent. In the meantime, write to us at contact@sujo-engineering.com.'
+    }
+  };
+
+  // INQ-YYYY-NNNN. Client-side, so it is a reference for the visitor and for
+  // the email body — the authoritative number is assigned by whatever system
+  // you wire the form into.
+  function makeInquiryNumber() {
+    var year = new Date().getFullYear();
+    var n = Math.floor(Math.random() * 9000) + 1000;
+    return 'INQ-' + year + '-' + n;
+  }
+
+  function showStatus(form, state, message) {
+    var box = form.querySelector('[data-form-status]');
+    if (!box) return;
+    box.hidden = false;
+    box.setAttribute('data-state', state);
+    box.textContent = message;
+  }
+
+  function validate(form) {
+    var invalid = [];
+    var fields = form.querySelectorAll('input, select, textarea');
+    for (var i = 0; i < fields.length; i++) {
+      var f = fields[i];
+      if (f.type === 'hidden' || f.disabled) continue;
+      if (f.checkValidity()) {
+        f.removeAttribute('aria-invalid');
+      } else {
+        f.setAttribute('aria-invalid', 'true');
+        invalid.push(f);
+      }
+    }
+    return invalid;
+  }
+
+  function initForms() {
+    var forms = document.querySelectorAll('form');
+    for (var i = 0; i < forms.length; i++) {
+      (function (form) {
+        var numberField = form.querySelector('[data-inquiry-number]');
+        if (numberField && !numberField.value) numberField.value = makeInquiryNumber();
+
+        form.addEventListener('submit', function (e) {
+          var invalid = validate(form);
+          if (invalid.length) {
+            e.preventDefault();
+            showStatus(form, 'error', MESSAGES.incomplete[currentLang()]);
+            invalid[0].focus();
+            return;
+          }
+
+          // The endpoint is a placeholder until the form is wired up. Rather
+          // than silently posting nowhere, say so and keep the data on screen.
+          var action = form.getAttribute('action') || '';
+          if (!action || action.indexOf('REPLACE_WITH') === 0) {
+            e.preventDefault();
+            showStatus(form, 'error', MESSAGES.unwired[currentLang()]);
+            var tpl = document.getElementById('inquiry-success');
+            if (tpl && numberField) {
+              var node = tpl.content.cloneNode(true);
+              var slot = node.querySelector('[data-inquiry-display]');
+              if (slot) slot.textContent = numberField.value;
+              form.parentNode.insertBefore(node, form);
+            }
+            return;
+          }
+
+          // The form posts away to the handler, which redirects to
+          // thank-you.html. Park the inquiry number so that page can still
+          // show the visitor their reference after the round trip.
+          if (numberField && numberField.value) {
+            try { sessionStorage.setItem('sujoInquiry', numberField.value); } catch (err) {}
+          }
+
+          var submit = form.querySelector('button[type="submit"]');
+          if (submit) {
+            submit.disabled = true;
+            submit.textContent = currentLang() === 'en' ? 'Sending…' : 'Envoi en cours…';
+          }
+        });
+
+        form.addEventListener('input', function (e) {
+          if (e.target.getAttribute('aria-invalid') && e.target.checkValidity()) {
+            e.target.removeAttribute('aria-invalid');
+          }
+        });
+      })(forms[i]);
+    }
+  }
+
+  /* ----------------------------------------------------------- thank you -- */
+
+  // Shows the reference the visitor was given before they were redirected.
+  // Absent (direct visit, or storage blocked) the panel simply stays hidden.
+  function initThanks() {
+    var panel = document.querySelector('[data-thanks-panel]');
+    if (!panel) return;
+    var number = null;
+    try {
+      number = sessionStorage.getItem('sujoInquiry');
+      sessionStorage.removeItem('sujoInquiry');
+    } catch (e) {}
+    if (!number) return;
+    var slot = panel.querySelector('[data-inquiry-display]');
+    if (slot) slot.textContent = number;
+    panel.hidden = false;
+  }
+
+  /* ---------------------------------------------------------------- boot -- */
+
+  function boot() {
+    initLang();
+    initNav();
+    initCatalog();
+    initLineItems();
+    initForms();
+    initThanks();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
 })();
