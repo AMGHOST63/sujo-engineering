@@ -474,6 +474,10 @@ a.card:hover .card-media img { transform: scale(1.04); }
   background: var(--surface-2); font-size: .86rem; color: var(--body);
 }
 .pill mark { background: #ffe9a8; color: inherit; padding: 0 1px; border-radius: 2px; }
+/* A pill that is a link. Used for the sector cross-reference on the product
+   catalogue, where full sector cards would repeat the sectors hub. */
+.pill-link { text-decoration: none; color: var(--ink); font-weight: 600; transition: color .15s, border-color .15s; }
+.pill-link:hover, .pill-link:focus-visible { color: var(--red); border-color: var(--red); }
 
 /* ---------- forms -------------------------------------------------------- */
 
