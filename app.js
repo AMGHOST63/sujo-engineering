@@ -38,6 +38,13 @@
       alts[k].alt = alts[k].getAttribute(lang === 'en' ? 'data-en-alt' : 'data-fr-alt');
     }
 
+    // Accessible names that differ from the visible text — the catalogue's
+    // several hundred "Request quote" links each name their own item.
+    var labels = document.querySelectorAll('[data-fr-aria][data-en-aria]');
+    for (var n = 0; n < labels.length; n++) {
+      labels[n].setAttribute('aria-label', labels[n].getAttribute(lang === 'en' ? 'data-en-aria' : 'data-fr-aria'));
+    }
+
     // Title and meta description are per-language too.
     var root = document.documentElement;
     var title = root.getAttribute('data-title-' + lang);
@@ -157,45 +164,177 @@
 
   /* ------------------------------------------------------------- catalog -- */
 
+  // The catalogue is 639 item types across ten families, of which only 90 are
+  // photographed. The photographed tiers are static markup; this drives the
+  // text list below them — search plus up to three filters (family, category,
+  // application), ANDed together.
+  //
+  // Rows are matched against their own child text, so nothing is duplicated
+  // into a data-search attribute. At 639 rows on the hub that saves a good deal
+  // of markup, and the per-row search string is cached until the language
+  // changes.
   function initCatalog() {
-    var input = document.querySelector('[data-catalog-search]');
     var root = document.querySelector('[data-catalog]');
-    if (!input || !root) return;
+    if (!root) return;
 
+    var input = document.querySelector('[data-catalog-search]');
     var countEl = document.querySelector('[data-catalog-count]');
     var emptyEl = document.querySelector('[data-catalog-empty]');
+    var resetEl = document.querySelector('[data-catalog-reset]');
     var items = root.querySelectorAll('[data-catalog-item]');
     var groups = root.querySelectorAll('[data-catalog-group]');
+    var selects = document.querySelectorAll('[data-catalog-filter]');
 
-    function itemText(node) {
+    var cacheLang = null;
+    var cache = [];
+
+    // A row's searchable text: its name, plus anything marked as catalogue
+    // text (description, key specification). Falls back to textContent for the
+    // plain pill markup older pages may still carry.
+    function rowText(node) {
       var lang = currentLang();
-      return (node.getAttribute(lang === 'en' ? 'data-en' : 'data-fr') || node.textContent).toLowerCase();
+      var parts = [];
+      var name = node.querySelector('[data-catalog-name]');
+      if (name) parts.push(name.textContent);
+      var texts = node.querySelectorAll('[data-catalog-text]');
+      for (var t = 0; t < texts.length; t++) {
+        parts.push(texts[t].getAttribute(lang === 'en' ? 'data-en' : 'data-fr') || texts[t].textContent);
+      }
+      if (!parts.length) {
+        parts.push(node.getAttribute(lang === 'en' ? 'data-en' : 'data-fr') || node.textContent);
+      }
+      return parts.join(' ').toLowerCase();
+    }
+
+    function buildCache() {
+      cacheLang = currentLang();
+      cache = [];
+      for (var i = 0; i < items.length; i++) cache.push(rowText(items[i]));
+    }
+
+    function filterValue(name) {
+      for (var s = 0; s < selects.length; s++) {
+        if (selects[s].getAttribute('data-catalog-filter') === name) return selects[s].value;
+      }
+      return '';
+    }
+
+    // Choosing a family narrows the category list to that family's categories,
+    // so the visitor is never offered a combination that yields nothing.
+    function syncCategoryOptions(family) {
+      for (var s = 0; s < selects.length; s++) {
+        if (selects[s].getAttribute('data-catalog-filter') !== 'category') continue;
+        var opts = selects[s].options;
+        var lost = false;
+        for (var o = 0; o < opts.length; o++) {
+          var fam = opts[o].getAttribute('data-family');
+          var ok = !family || !fam || fam === family;
+          opts[o].hidden = !ok;
+          opts[o].disabled = !ok;
+          if (!ok && opts[o].selected) lost = true;
+        }
+        if (lost) selects[s].value = '';
+      }
     }
 
     function refresh() {
-      var q = input.value.trim().toLowerCase();
-      var shown = 0;
+      if (cacheLang !== currentLang()) buildCache();
 
+      var q = input ? input.value.trim().toLowerCase() : '';
+      var application = filterValue('application');
+      var family = filterValue('family') || application;
+      var category = filterValue('category');
+
+      syncCategoryOptions(family);
+      if (category && family && category.indexOf(family + ':') !== 0) category = '';
+
+      var shown = 0;
       for (var i = 0; i < items.length; i++) {
-        var hit = !q || itemText(items[i]).indexOf(q) !== -1;
-        items[i].hidden = !hit;
+        var row = items[i];
+        var hit = true;
+        if (family && row.getAttribute('data-family') !== family) hit = false;
+        if (hit && category && row.getAttribute('data-category') !== category) hit = false;
+        // Request-only items stay out of the default list but remain findable:
+        // a search that names one still turns it up.
+        if (hit && !q && row.hasAttribute('data-request-only')) hit = false;
+        if (hit && q && cache[i].indexOf(q) === -1) hit = false;
+        row.hidden = !hit;
         if (hit) shown++;
       }
+
       for (var g = 0; g < groups.length; g++) {
-        var visible = groups[g].querySelectorAll('[data-catalog-item]:not([hidden])').length;
-        groups[g].hidden = visible === 0;
+        groups[g].hidden = groups[g].querySelectorAll('[data-catalog-item]:not([hidden])').length === 0;
       }
+
       if (countEl) countEl.textContent = String(shown);
       if (emptyEl) emptyEl.hidden = shown !== 0;
+      if (resetEl) resetEl.hidden = !(q || family || category || application);
     }
 
     var debounce = null;
-    input.addEventListener('input', function () {
-      clearTimeout(debounce);
-      debounce = setTimeout(refresh, 120);
+    if (input) {
+      input.addEventListener('input', function () {
+        clearTimeout(debounce);
+        debounce = setTimeout(refresh, 120);
+      });
+    }
+    for (var s = 0; s < selects.length; s++) selects[s].addEventListener('change', refresh);
+
+    if (resetEl) {
+      resetEl.addEventListener('click', function () {
+        if (input) input.value = '';
+        for (var s2 = 0; s2 < selects.length; s2++) selects[s2].value = '';
+        refresh();
+      });
+    }
+
+    // A photographed category card sets the category filter on the list below
+    // rather than navigating: the visitor asked for bearings, not for another
+    // page of navigation.
+    document.addEventListener('click', function (e) {
+      var card = e.target.closest ? e.target.closest('[data-catalog-jump]') : null;
+      if (!card) return;
+      var slug = card.getAttribute('data-catalog-jump');
+      var set = false;
+      for (var s3 = 0; s3 < selects.length; s3++) {
+        if (selects[s3].getAttribute('data-catalog-filter') !== 'category') continue;
+        var opts = selects[s3].options;
+        for (var o = 0; o < opts.length; o++) {
+          if (opts[o].value.split(':')[1] === slug) { selects[s3].value = opts[o].value; set = true; }
+        }
+      }
+      if (!set) return;
+      e.preventDefault();
+      refresh();
+      var anchor = document.getElementById('catalogue');
+      if (anchor) anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
+
     document.addEventListener('sujo:langchange', refresh);
+    buildCache();
     refresh();
+  }
+
+  /* ------------------------------------------------ catalogue -> quote -- */
+
+  // A "Request quote" button in the catalogue carries the item name in the
+  // query string. Drop it into the first line item so the visitor does not
+  // retype what they just clicked.
+  function initQuotePrefill() {
+    var match = /[?&]item=([^&]*)/.exec(window.location.search);
+    if (!match) return;
+
+    var name;
+    try { name = decodeURIComponent(match[1].replace(/\+/g, ' ')); } catch (e) { return; }
+    if (!name) return;
+
+    var field = document.querySelector('[name="items[0][description]"]')
+      || document.querySelector('[name$="[description]"]');
+    if (!field) return;
+
+    field.value = name;
+    var section = field.closest ? field.closest('section, fieldset') : null;
+    if (section && section.scrollIntoView) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   /* --------------------------------------------------------- line items -- */
@@ -376,6 +515,7 @@
     initLang();
     initNav();
     initCatalog();
+    initQuotePrefill();
     initLineItems();
     initForms();
     initThanks();

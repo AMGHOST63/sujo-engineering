@@ -475,6 +475,90 @@ a.card:hover .card-media img { transform: scale(1.04); }
 }
 .pill mark { background: #ffe9a8; color: inherit; padding: 0 1px; border-radius: 2px; }
 
+
+/* ---------- tiered catalogue --------------------------------------------- */
+/* 639 item types, 90 photographs. The photographed tiers (category cards,
+   featured items) sit above the text list, which carries everything. */
+
+/* 150px keeps two cards per row on a 375px screen; five stacked cards would
+   push the list below them off the first two screens. */
+.cat-cards { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+@media (min-width: 620px) { .cat-cards { gap: 20px; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); } }
+.cat-card {
+  display: flex; flex-direction: column; text-decoration: none;
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: var(--radius-lg); overflow: hidden; transition: border-color .2s ease, box-shadow .2s ease;
+}
+.cat-card:hover { border-color: var(--line-strong); box-shadow: var(--shadow-sm); }
+.cat-card:hover .cat-card-media img { transform: scale(1.03); }
+/* <picture> is inline and has no height of its own, so `height: 100%` on the
+   image inside it resolves to auto and the square source dictates the frame —
+   the aspect-ratio is then ignored. Taking the picture out of flow gives it a
+   definite box to fill. */
+.cat-card-media,
+.feat-card-media { position: relative; }
+.cat-card-media picture,
+.feat-card-media picture { position: absolute; inset: 0; display: block; }
+.cat-card-media { aspect-ratio: 1; background: #fff; overflow: hidden; border-bottom: 1px solid var(--line); }
+.cat-card-media img { width: 100%; height: 100%; object-fit: contain; transition: transform .4s ease; }
+.cat-card-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 5px; flex: 1; }
+.cat-card-title { font-size: 1rem; }
+.cat-card-text { margin: 0; font-size: .88rem; color: var(--muted); line-height: 1.45; }
+.cat-card-count { margin-top: auto; padding-top: 12px; font-size: .8rem; font-weight: 600; color: var(--steel); }
+
+.feat-cards { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.feat-card {
+  display: flex; flex-direction: column;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden;
+}
+.feat-card-media { aspect-ratio: 4 / 3; background: #fff; border-bottom: 1px solid var(--line); }
+.feat-card-media img { width: 100%; height: 100%; object-fit: contain; }
+.feat-card-body { padding: 22px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.feat-card-eyebrow { margin: 0; font-size: .74rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--steel); }
+.feat-card-title { font-size: 1.08rem; }
+.feat-card-text { margin: 0; font-size: .93rem; color: var(--body); }
+.feat-card-spec { margin: 0; font-size: .86rem; color: var(--muted); line-height: 1.5; }
+.feat-card .btn { margin-top: auto; align-self: flex-start; }
+.spec-label,
+.catalog-row-label {
+  display: inline-block; margin-right: 4px;
+  font-size: .72rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--steel);
+}
+
+.catalog-filters { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; min-width: 0; max-width: 100%; }
+/* A select sizes itself to its longest option unless it is allowed to shrink:
+   "Roulements & paliers (41)" is wider than a 375px screen's content column. */
+.catalog-select {
+  flex: 1 1 190px; min-width: 0; max-width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--line-strong); border-radius: var(--radius);
+  font: inherit; font-size: .9rem; color: var(--ink); background: #fff;
+  text-overflow: ellipsis;
+}
+.btn-quiet { border-color: var(--line); color: var(--body); background: var(--surface-2); }
+.btn-quiet:hover { border-color: var(--line-strong); color: var(--ink); background: var(--surface-3); }
+
+/* Rows, not a table: at 639 entries a table either scrolls sideways on a
+   phone or squeezes the description to nothing. This stacks instead. */
+.catalog-list { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.catalog-row {
+  display: grid; gap: 6px 24px; align-items: start;
+  padding: 18px 2px; border-bottom: 1px solid var(--line);
+}
+.catalog-row-name { font-size: .98rem; }
+.catalog-row-desc { margin: 4px 0 0; font-size: .9rem; color: var(--muted); line-height: 1.5; }
+.catalog-row-spec { margin: 0; font-size: .85rem; color: var(--muted); line-height: 1.5; }
+.catalog-row-tag { margin: 0; font-size: .82rem; color: var(--steel); }
+.catalog-row-tag a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--line-strong); }
+.catalog-row-tag a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+.catalog-row-action { align-self: center; }
+.catalog-row-action .btn { white-space: nowrap; }
+
+@media (min-width: 760px) {
+  .catalog-row { grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.6fr) minmax(0, .9fr) auto; }
+  .catalog-row--compact { grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr) auto; }
+}
+
 /* ---------- forms -------------------------------------------------------- */
 
 .form { max-width: 780px; }
