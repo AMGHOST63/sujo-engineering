@@ -266,6 +266,11 @@
         groups[g].hidden = groups[g].querySelectorAll('[data-catalog-item]:not([hidden])').length === 0;
       }
 
+      // The full list opens on demand, but a visitor who searches or filters
+      // must see the result without a second click.
+      var disclosure = document.querySelector('[data-catalog-disclosure]');
+      if (disclosure && (q || family || category || application)) disclosure.open = true;
+
       if (countEl) countEl.textContent = String(shown);
       if (emptyEl) emptyEl.hidden = shown !== 0;
       if (resetEl) resetEl.hidden = !(q || family || category || application);

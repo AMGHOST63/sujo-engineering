@@ -783,3 +783,35 @@ a.card:hover .card-media img { transform: scale(1.04); }
   width: 1px !important; height: 1px !important;
   opacity: 0; pointer-events: none;
 }
+
+/* --- catalogue disclosure --------------------------------------------------
+   The products hub lists all 639 item types. Printing them made the page
+   enormous, so the list opens on demand; app.js opens it automatically as soon
+   as the visitor searches or filters, so results are never a click away. */
+.catalog-disclosure { border-top: 1px solid var(--line); }
+.catalog-disclosure-summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 18px 4px; cursor: pointer; list-style: none;
+  font-weight: 600; color: var(--ink);
+}
+.catalog-disclosure-summary::-webkit-details-marker { display: none; }
+.catalog-disclosure-summary::after {
+  content: "";
+  width: 9px; height: 9px; flex: 0 0 auto;
+  border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+  transform: rotate(45deg); margin-right: 6px;
+  transition: transform .18s ease;
+}
+.catalog-disclosure[open] .catalog-disclosure-summary::after { transform: rotate(-135deg); }
+.catalog-disclosure-summary:hover { color: var(--red); }
+.catalog-disclosure-summary:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+.catalog-disclosure-count { margin-left: auto; font-weight: 400; color: var(--muted); font-size: .9em; }
+.catalog-disclosure .catalog-list { border-top: 1px solid var(--line); }
+
+/* .catalog-row sets display:grid, which outranks the browser default for
+   [hidden]. A filtered-out row therefore kept its full height: the count said
+   "43 item types shown" while all 639 still occupied the page. Filtering has to
+   actually take the row out of the layout. */
+.catalog-row[hidden],
+[data-catalog-item][hidden],
+[data-catalog-group][hidden] { display: none !important; }
