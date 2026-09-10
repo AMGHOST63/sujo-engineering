@@ -1,0 +1,235 @@
+/* ==========================================================================
+   Architecture portfolio — project-development.html only.
+   After the Grey Monochrome Architecture Presentation template: white ground,
+   pale grey bands behind the photographs, light display type, numbered blocks.
+   Every rule is scoped under body.page-arch so nothing reaches another page.
+   ========================================================================== */
+
+.page-arch {
+  --a-ink: #292e2c;
+  --a-mid: #6e7a79;
+  --a-soft: #a3adac;
+  --a-rule: #d3d9d9;
+  --a-band: #dde2e1;
+  --a-panel: #edf0ef;
+  --a-btn: #8e9a99;
+  --a-display: 'Outfit', var(--sans);
+}
+
+/* Monochrome chrome on this page: the header and footer marks go grey, and the
+   header's quote button drops the brand red for the template's charcoal. */
+.page-arch .brand-logo,
+.page-arch .footer-logo { filter: grayscale(1); }
+.page-arch .header-quote { background: var(--a-ink); border-color: var(--a-ink); color: #fff; }
+.page-arch .header-quote:hover { background: #000; border-color: #000; color: #fff; }
+
+.page-arch figure { margin: 0; }
+
+/* ---------- shared -------------------------------------------------------- */
+
+.page-arch .arch-section { padding-block: clamp(56px, 7vw, 104px); }
+
+.page-arch .arch-kicker {
+  margin: 0 0 14px; font-size: .74rem; font-weight: 600;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--a-mid);
+}
+.page-arch .arch-display {
+  font-family: var(--a-display); font-weight: 300; color: var(--a-ink);
+  font-size: clamp(3rem, 1.4rem + 6.4vw, 6.6rem); line-height: 1; letter-spacing: -.025em;
+}
+.page-arch .arch-title {
+  font-family: var(--a-display); font-weight: 300; color: var(--a-ink);
+  font-size: clamp(2rem, 1.3rem + 2.6vw, 3.2rem); line-height: 1.08; letter-spacing: -.015em;
+}
+.page-arch .arch-subtitle { margin: 10px 0 0; font-family: var(--a-display); font-size: 1.15rem; color: var(--a-mid); }
+.page-arch .arch-sub {
+  margin: clamp(48px, 6vw, 72px) 0 24px; padding-top: 18px; border-top: 1px solid var(--a-rule);
+  font-family: var(--a-display); font-weight: 400; color: var(--a-ink);
+  font-size: clamp(1.35rem, 1.1rem + 1vw, 1.8rem); letter-spacing: -.01em;
+}
+.page-arch .arch-lead { margin-top: 22px; max-width: 46ch; color: var(--a-mid); font-size: 1.02rem; }
+
+.page-arch .arch-num {
+  display: block; margin: 0 0 8px; font-family: var(--a-display); font-weight: 500;
+  font-size: 1.04rem; line-height: 1.3; letter-spacing: 0; color: var(--a-ink);
+}
+.page-arch .arch-n { margin-right: .45em; color: var(--a-soft); font-variant-numeric: tabular-nums; }
+.page-arch .arch-block p { font-size: .95rem; line-height: 1.7; color: var(--a-mid); }
+.page-arch .arch-blocks { display: grid; gap: 32px 56px; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 32px; }
+
+.page-arch .arch-cap { margin-top: 12px; font-size: .82rem; line-height: 1.5; color: var(--a-mid); }
+.page-arch .arch-cap-n { color: var(--a-ink); font-weight: 600; }
+
+.page-arch .arch-btn {
+  display: inline-block; padding: 12px 28px; border: 1px solid var(--a-btn);
+  background: var(--a-btn); color: #fff; font-size: .9rem; font-weight: 500; letter-spacing: .02em;
+  text-decoration: none; transition: background-color .16s ease, border-color .16s ease, color .16s ease;
+}
+.page-arch .arch-btn:hover { background: var(--a-ink); border-color: var(--a-ink); color: #fff; }
+.page-arch .arch-btn--line { background: transparent; border-color: var(--a-ink); color: var(--a-ink); }
+.page-arch .arch-btn--line:hover { background: var(--a-ink); color: #fff; }
+
+/* A photograph cropped to fill its frame. */
+.page-arch .arch-fig { display: block; overflow: hidden; background: var(--a-panel); }
+.page-arch .arch-fig picture,
+.page-arch .arch-fig img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- hero: title left, three-image collage, grey band below -------- */
+
+.page-arch .arch-hero {
+  padding-block: clamp(28px, 4vw, 48px) clamp(40px, 6vw, 80px);
+  background: linear-gradient(to bottom, #fff 0 68%, var(--a-band) 68% 100%);
+}
+.page-arch .arch-hero .breadcrumb { margin-bottom: 28px; }
+.page-arch .arch-hero .breadcrumb a:hover { color: var(--a-ink); }
+.page-arch .arch-hero .arch-btn { margin-top: 28px; }
+.page-arch .arch-hero-grid {
+  display: grid; gap: clamp(16px, 2.2vw, 28px); align-items: end;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 2fr) minmax(0, 5fr);
+}
+.page-arch .arch-hero-text { grid-column: 1; grid-row: 1; align-self: start; }
+.page-arch .arch-c-small { grid-column: 1; grid-row: 2; aspect-ratio: 16 / 6; }
+.page-arch .arch-c-tall { grid-column: 2; grid-row: 1 / 3; aspect-ratio: 9 / 20; }
+.page-arch .arch-c-tall img { object-position: 38% 50%; }
+.page-arch .arch-c-big { grid-column: 3; grid-row: 1 / 3; aspect-ratio: 5 / 4.4; }
+.page-arch .arch-c-big img { object-position: 50% 70%; }
+
+/* ---------- capability: two tall frames and numbered text ----------------- */
+
+.page-arch .arch-about { position: relative; }
+.page-arch .arch-about::before {
+  content: ""; position: absolute; left: 0; top: 0; width: 36%; height: 62%; background: var(--a-band);
+}
+.page-arch .arch-about-grid {
+  position: relative; display: grid; gap: clamp(16px, 2.4vw, 32px); align-items: center;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 3fr) minmax(0, 6fr);
+}
+.page-arch .arch-about-a,
+.page-arch .arch-about-b { aspect-ratio: 3 / 5; }
+.page-arch .arch-about-a img { object-position: 60% 50%; }
+.page-arch .arch-about-b { margin-top: 64px; }
+.page-arch .arch-about-b img { object-position: 45% 50%; }
+.page-arch .arch-about-text { padding-left: clamp(0px, 2vw, 24px); }
+.page-arch .arch-about-text .arch-title { margin-bottom: 28px; }
+.page-arch .arch-about-text .arch-block + .arch-block { margin-top: 22px; }
+.page-arch .arch-note { margin-top: 26px; padding-top: 16px; border-top: 1px solid var(--a-rule); font-size: .84rem; color: var(--a-mid); }
+
+/* ---------- project index ------------------------------------------------- */
+
+.page-arch .arch-index { background: linear-gradient(to bottom, #fff 0 58%, var(--a-band) 58% 100%); }
+.page-arch .arch-index-head { margin-bottom: 36px; text-align: right; }
+.page-arch .arch-index-grid { display: grid; gap: clamp(16px, 2vw, 28px); grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.page-arch .arch-card { display: flex; flex-direction: column; color: inherit; text-decoration: none; }
+.page-arch .arch-card-type { font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; color: var(--a-mid); }
+.page-arch .arch-card-fig { margin-top: 18px; aspect-ratio: 4 / 5; }
+.page-arch .arch-card-fig img { transition: transform .5s ease; }
+.page-arch .arch-card:hover .arch-card-fig img { transform: scale(1.035); }
+.page-arch .arch-card:hover .arch-num span:last-child { text-decoration: underline; text-underline-offset: 4px; }
+
+/* ---------- one project --------------------------------------------------- */
+
+.page-arch .arch-project { border-top: 1px solid var(--a-rule); }
+.page-arch .arch-project-head {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px; align-items: end; margin-bottom: 36px;
+}
+.page-arch .arch-ref {
+  font-family: var(--a-display); font-weight: 200; line-height: .8; color: var(--a-rule);
+  font-size: clamp(4rem, 2rem + 7vw, 8rem); letter-spacing: -.04em;
+}
+.page-arch .arch-meta { display: flex; flex-wrap: wrap; gap: 6px 24px; margin-top: 18px; font-size: .88rem; color: var(--a-mid); }
+.page-arch .arch-meta li { position: relative; }
+.page-arch .arch-meta li + li::before {
+  content: ""; position: absolute; left: -13px; top: .55em; width: 3px; height: 3px; border-radius: 50%; background: var(--a-soft);
+}
+
+/* The cover sits on a grey band offset to the lower left, as in the template. */
+.page-arch .arch-cover { position: relative; padding: 0 0 clamp(20px, 3vw, 40px) clamp(20px, 3vw, 40px); }
+.page-arch .arch-cover::before {
+  content: ""; position: absolute; left: 0; bottom: 0; width: 72%; height: 64%; background: var(--a-band);
+}
+.page-arch .arch-cover-fig { position: relative; aspect-ratio: 16 / 7; }
+.page-arch .arch-cover .arch-cap { position: relative; }
+
+.page-arch .arch-media { display: grid; gap: 16px; }
+.page-arch .arch-media--1 .arch-fig { aspect-ratio: 21 / 8; }
+.page-arch .arch-media--2 { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); }
+.page-arch .arch-media--2 .arch-fig { height: clamp(220px, 26vw, 360px); }
+.page-arch .arch-media .arch-cap { grid-column: 1 / -1; margin-top: -4px; }
+
+.page-arch .arch-plans { display: grid; gap: 16px; }
+.page-arch .arch-plans--2,
+.page-arch .arch-plans--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.page-arch .arch-plans .arch-cap { grid-column: 1 / -1; margin-top: -4px; }
+.page-arch .arch-plan { display: flex; flex-direction: column; padding: 16px; border: 1px solid var(--a-rule); background: #fff; }
+.page-arch .arch-plan-label {
+  margin: 0 0 12px; font-size: .72rem; font-weight: 600; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--a-mid);
+}
+.page-arch .arch-plan-link { display: flex; flex: 1; align-items: center; cursor: zoom-in; }
+.page-arch .arch-plan-link picture,
+.page-arch .arch-plan-link img { width: 100%; }
+
+/* ---------- contact ------------------------------------------------------- */
+
+.page-arch .arch-contact {
+  text-align: center; border-top: 1px solid var(--a-rule);
+  background: linear-gradient(to bottom, #fff 0 52%, var(--a-band) 52% 100%);
+}
+.page-arch .arch-mark { width: 76px; height: auto; margin: 0 auto 18px; filter: grayscale(1); }
+.page-arch .arch-contact-grid {
+  display: grid; gap: 24px; grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 980px; margin: 40px auto 0;
+}
+.page-arch .arch-contact-grid h3 {
+  margin-bottom: 6px; font-family: var(--a-display); font-weight: 500; font-size: 1.02rem; color: var(--a-ink); letter-spacing: 0;
+}
+.page-arch .arch-contact-grid p,
+.page-arch .arch-contact-grid a { font-size: .92rem; color: var(--a-mid); text-decoration: none; overflow-wrap: anywhere; }
+.page-arch .arch-contact-grid a:hover { color: var(--a-ink); text-decoration: underline; }
+.page-arch .arch-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 36px; }
+.page-arch .arch-status {
+  max-width: 760px; margin: 52px auto 0; padding: 28px clamp(20px, 3vw, 36px);
+  background: #fff; text-align: left;
+}
+.page-arch .arch-status p { font-size: .93rem; color: var(--a-mid); }
+.page-arch .arch-foot { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--a-rule); font-size: .8rem !important; }
+
+/* ---------- responsive ---------------------------------------------------- */
+
+@media (max-width: 960px) {
+  .page-arch .arch-blocks { gap: 26px 32px; }
+  .page-arch .arch-about-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .page-arch .arch-about-text { grid-column: 1 / -1; padding-left: 0; margin-top: 12px; }
+  .page-arch .arch-about-a,
+  .page-arch .arch-about-b { aspect-ratio: 4 / 5; }
+  .page-arch .arch-about::before { width: 60%; height: 40%; }
+}
+
+@media (max-width: 860px) {
+  .page-arch .arch-hero { background: linear-gradient(to bottom, #fff 0 60%, var(--a-band) 60% 100%); }
+  .page-arch .arch-hero-grid { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); align-items: stretch; }
+  .page-arch .arch-hero-text { grid-column: 1 / -1; }
+  .page-arch .arch-c-small { grid-column: 1 / -1; grid-row: auto; }
+  .page-arch .arch-c-tall { grid-column: 1; grid-row: auto; aspect-ratio: auto; min-height: 260px; }
+  .page-arch .arch-c-big { grid-column: 2; grid-row: auto; aspect-ratio: 4 / 5; }
+  .page-arch .arch-contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  .page-arch .arch-blocks,
+  .page-arch .arch-index-grid,
+  .page-arch .arch-media--2,
+  .page-arch .arch-plans--2,
+  .page-arch .arch-plans--4 { grid-template-columns: minmax(0, 1fr); }
+  .page-arch .arch-index-head { text-align: left; }
+  .page-arch .arch-card-fig { aspect-ratio: 16 / 10; }
+  .page-arch .arch-cover-fig { aspect-ratio: 4 / 3; }
+  .page-arch .arch-media--1 .arch-fig { aspect-ratio: 4 / 3; }
+  .page-arch .arch-media--2 .arch-fig { height: auto; aspect-ratio: 4 / 3; }
+  .page-arch .arch-about-b { margin-top: 32px; }
+}
+
+@media (max-width: 480px) {
+  .page-arch .arch-contact-grid { grid-template-columns: minmax(0, 1fr); }
+  .page-arch .arch-ref { display: none; }
+}
