@@ -293,10 +293,37 @@
       });
     }
 
-    // A photographed category card sets the category filter on the list below
-    // rather than navigating: the visitor asked for bearings, not for another
-    // page of navigation.
+    // Set the family filter (and clear the category and application ones, which
+    // may belong to another family). Returns false if no such family exists.
+    function setFamily(id) {
+      var set = false;
+      for (var s4 = 0; s4 < selects.length; s4++) {
+        var which = selects[s4].getAttribute('data-catalog-filter');
+        if (which === 'family') {
+          for (var o4 = 0; o4 < selects[s4].options.length; o4++) {
+            if (selects[s4].options[o4].value === id) { selects[s4].value = id; set = true; }
+          }
+        } else if (which === 'category' || which === 'application') {
+          selects[s4].value = '';
+        }
+      }
+      return set;
+    }
+
+    // A family card on the Equipment & Sourcing page filters the list below the
+    // same way a category card does. A photographed category card sets the
+    // category filter rather than navigating: the visitor asked for bearings,
+    // not for another page of navigation.
     document.addEventListener('click', function (e) {
+      var famCard = e.target.closest ? e.target.closest('[data-catalog-family]') : null;
+      if (famCard) {
+        if (!setFamily(famCard.getAttribute('data-catalog-family'))) return;
+        e.preventDefault();
+        refresh();
+        var famAnchor = document.getElementById('catalogue');
+        if (famAnchor) famAnchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
       var card = e.target.closest ? e.target.closest('[data-catalog-jump]') : null;
       if (!card) return;
       var slug = card.getAttribute('data-catalog-jump');
@@ -316,6 +343,11 @@
     });
 
     document.addEventListener('sujo:langchange', refresh);
+
+    // ?family=<id> is how the homepage family cards land on a filtered list.
+    var famParam = /[?&]family=([^&#]*)/.exec(window.location.search);
+    if (famParam) setFamily(decodeURIComponent(famParam[1]));
+
     buildCache();
     refresh();
   }
