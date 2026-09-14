@@ -1,159 +1,250 @@
 /* ==========================================================================
    Pousse-Où — pousse-ou.html only.
-   After the client brochure (v3): dark green bands with a lime corner and a
-   mid-green corner, a lime slash under the cover photograph, bold Arial type,
-   letter-spaced capital kickers, lime numbered squares and a dark green contact
-   box. Every rule is scoped under body.page-pousse.
+   The business page of a SUJO group company: Pousse-Où's dark green and lime,
+   set inside SUJO's own type and components, with the parent/subsidiary
+   relationship drawn as an org card (SUJO navy for the parent, lime for the
+   subsidiary). Every rule is scoped under body.page-pousse.
    ========================================================================== */
 
 .page-pousse {
   --po-dark: #163f31;
+  --po-deep: #0f2b21;
   --po-mid: #23563f;
   --po-lime: #97c32d;
-  --po-text: #3b4541;
-  --po-rule: #e4e8e6;
-  --po-font: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  --po-lime-dark: #6f9420;
+  --po-tint: #f2f6ec;
+  --po-line: #dfe7d6;
 }
 
 .page-pousse main { overflow-x: clip; }
-.page-pousse .po { font-family: var(--po-font); color: var(--po-text); }
 .page-pousse .po figure { margin: 0; }
-.page-pousse .po h1,
-.page-pousse .po h2,
-.page-pousse .po h3 { font-family: var(--po-font); letter-spacing: 0; }
 .page-pousse .po img { display: block; }
+.page-pousse .po .eyebrow { color: var(--po-mid); }
 
-.page-pousse .po-wrap { max-width: 1040px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 48px); }
-.page-pousse .po-section { padding-block: clamp(40px, 6vw, 72px); }
+.page-pousse .po-btn-lime { background: var(--po-lime); border-color: var(--po-lime); color: var(--po-deep); }
+.page-pousse .po-btn-lime:hover { background: #a9d63e; border-color: #a9d63e; color: var(--po-deep); }
 
-.page-pousse .po-kicker {
-  margin: 0 0 16px; font-size: .72rem; font-weight: 700; line-height: 1.4;
-  letter-spacing: .32em; text-transform: uppercase; color: #fff;
+/* ---------- hero ----------------------------------------------------------- */
+
+/* Grid, not flex: a flex item needs width: 100%, which overrides .wrap's own
+   centred max-width and pushes the text against the left edge. */
+.page-pousse .po-hero {
+  position: relative; display: grid; align-content: end; overflow: hidden;
+  min-height: clamp(540px, 60vw, 700px); background: var(--po-deep); color: #fff;
 }
-.page-pousse .po-kicker--dark { color: var(--po-dark); }
-.page-pousse .po-kicker--lime { color: var(--po-lime); }
-.page-pousse .po-line { display: block; }
-
-/* ---------- cover ---------------------------------------------------------- */
-
-/* A fixed height rather than an aspect ratio: with max-height, aspect-ratio
-   narrows the frame instead of cropping, which left white bands either side. */
-.page-pousse .po-cover-media {
-  position: relative; width: 100%; height: clamp(260px, 46vw, 600px);
-  overflow: hidden; background: var(--po-dark);
+.page-pousse .po-hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 8px; background: var(--po-lime); }
+.page-pousse .po-hero-media { position: absolute; inset: 0; }
+.page-pousse .po-hero-media picture,
+.page-pousse .po-hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 8%; }
+.page-pousse .po-hero-shade {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, rgba(10, 33, 25, .95) 0%, rgba(10, 33, 25, .84) 36%, rgba(10, 33, 25, .25) 70%, rgba(10, 33, 25, .05) 100%),
+    linear-gradient(0deg, rgba(10, 33, 25, .5) 0%, rgba(10, 33, 25, 0) 45%);
 }
-.page-pousse .po-cover-media picture,
-.page-pousse .po-cover-media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 32%; }
-
-.page-pousse .po-cover-band { position: relative; background: var(--po-dark); padding: clamp(44px, 6vw, 68px) 0 clamp(40px, 5vw, 56px); }
-/* The lime slash between photograph and band, thick on the left. */
-.page-pousse .po-cover-band::before {
-  content: ""; position: absolute; left: 0; right: 0; top: -20px; height: 30px;
-  background: var(--po-lime); clip-path: polygon(0 34%, 100% 0, 100% 34%, 0 100%);
+.page-pousse .po-hero-inner { position: relative; padding-block: clamp(56px, 7vw, 96px) clamp(60px, 7vw, 100px); }
+.page-pousse .po-hero .breadcrumb,
+.page-pousse .po-hero .breadcrumb a,
+.page-pousse .po-hero .breadcrumb li { color: rgba(255, 255, 255, .72); }
+.page-pousse .po-hero .breadcrumb a:hover { color: #fff; }
+.page-pousse .po-chip {
+  display: inline-flex; align-items: center; gap: 12px; margin: 26px 0 18px; padding: 7px 16px 7px 12px;
+  border: 1px solid rgba(255, 255, 255, .28); border-radius: 999px; background: rgba(255, 255, 255, .08);
+  font-size: .8rem; font-weight: 600; letter-spacing: .04em; color: #fff;
 }
-.page-pousse .po-cover-grid { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: start; }
-.page-pousse .po-name {
-  margin: 0 0 20px; font-size: clamp(2.6rem, 7vw, 4.2rem); font-weight: 700; line-height: 1;
-  color: #fff; text-transform: uppercase;
+.page-pousse .po-chip img { width: auto; height: 22px; }
+.page-pousse .po-hero-title { margin: 0; font-size: clamp(3rem, 8vw, 5.4rem); line-height: 1; letter-spacing: -.02em; color: #fff; }
+.page-pousse .po-hero-lead { max-width: 34rem; margin: 20px 0 0; font-size: clamp(1.05rem, 1.6vw, 1.25rem); line-height: 1.6; color: rgba(255, 255, 255, .88); }
+.page-pousse .po-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+
+/* ---------- key facts ------------------------------------------------------ */
+
+.page-pousse .po-facts { background: #fff; border-bottom: 1px solid var(--line); }
+.page-pousse .po-facts-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; }
+.page-pousse .po-fact { padding: clamp(22px, 3vw, 34px) clamp(16px, 2.2vw, 28px); border-left: 1px solid var(--line); }
+.page-pousse .po-fact:first-child { padding-left: 0; border-left: 0; }
+.page-pousse .po-fact-label { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; font-size: 1.05rem; font-weight: 700; color: var(--po-dark); }
+.page-pousse .po-fact-label::before { content: ""; flex: none; width: 10px; height: 10px; border-radius: 2px; background: var(--po-lime); }
+.page-pousse .po-fact-text { display: block; font-size: .92rem; line-height: 1.5; color: var(--muted); }
+
+/* ---------- the SUJO group ------------------------------------------------- */
+
+.page-pousse .po-group-grid { display: grid; gap: clamp(36px, 5vw, 72px); grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; }
+.page-pousse .po-group .section-title { margin-bottom: 18px; text-align: left; }
+.page-pousse .po-group .prose + .prose { margin-top: 14px; }
+
+.page-pousse .po-org { display: grid; }
+.page-pousse .po-org-card {
+  position: relative; padding: 22px 24px; border: 1px solid var(--line); border-radius: var(--radius-lg);
+  background: #fff; box-shadow: var(--shadow-sm);
 }
-.page-pousse .po-tagline { margin: 0; font-size: clamp(1.25rem, 3vw, 1.7rem); font-weight: 700; line-height: 1.45; color: #fff; }
-.page-pousse .po-logo { display: block; width: clamp(96px, 16vw, 170px); padding: 6px; background: #fff; }
-.page-pousse .po-logo picture,
-.page-pousse .po-logo img { width: 100%; height: auto; }
-
-/* ---------- intro ---------------------------------------------------------- */
-
-.page-pousse .po-title {
-  margin: 0 0 16px; font-size: clamp(1.8rem, 4.4vw, 2.6rem); font-weight: 700; line-height: 1.3; color: var(--po-dark);
+.page-pousse .po-org-card--parent { border-top: 4px solid var(--navy); }
+.page-pousse .po-org-card--child { margin-left: clamp(28px, 7vw, 76px); border-top: 4px solid var(--po-lime); }
+.page-pousse .po-org-link {
+  position: relative; display: block; width: 0; height: 40px; margin-left: calc(clamp(28px, 7vw, 76px) / 2);
+  border-left: 2px dashed var(--line-strong);
 }
-.page-pousse .po-lead { margin: 0; max-width: 60ch; font-size: 1.05rem; line-height: 1.6; color: var(--po-text); }
-.page-pousse .po-lead--wide { max-width: none; }
-
-/* ---------- chapter band --------------------------------------------------- */
-
-.page-pousse .po-band {
-  position: relative; overflow: hidden; background: var(--po-dark);
-  padding: clamp(48px, 7vw, 80px) 0 clamp(70px, 9vw, 108px);
-  clip-path: polygon(0 0, 100% 0, 100% 84%, 0 100%);
+.page-pousse .po-org-link::after {
+  content: ""; position: absolute; left: -7px; bottom: -2px; border: 6px solid transparent; border-top-color: var(--line-strong);
 }
-.page-pousse .po-band-lime {
-  position: absolute; left: 0; top: 0; width: clamp(110px, 24vw, 250px); height: 100%;
-  background: var(--po-lime); clip-path: polygon(0 0, 100% 0, 0 100%);
+.page-pousse .po-org-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 12px; }
+.page-pousse .po-org-logo { width: auto; height: 40px; }
+.page-pousse .po-org-logo--pou { display: block; width: 58px; height: 58px; }
+.page-pousse .po-org-logo--pou img { width: 100%; height: 100%; object-fit: contain; }
+.page-pousse .po-org-role {
+  padding: 5px 11px; border-radius: 999px; font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap;
 }
-.page-pousse .po-band-mid {
-  position: absolute; right: 0; top: 0; width: clamp(100px, 19vw, 200px); height: 72%;
-  background: var(--po-mid); clip-path: polygon(0 0, 100% 0, 100% 100%);
+.page-pousse .po-org-card--parent .po-org-role { background: rgba(18, 32, 58, .08); color: var(--navy); }
+.page-pousse .po-org-card--child .po-org-role { background: rgba(151, 195, 45, .2); color: var(--po-dark); }
+.page-pousse .po-org-name { margin: 0 0 10px; font-size: 1.02rem; font-weight: 700; color: var(--ink); }
+.page-pousse .po-org-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.page-pousse .po-org-list li { padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; background: #fafbfc; font-size: .84rem; color: var(--body); }
+.page-pousse .po-org-card--child .po-org-list li { border-color: var(--po-line); background: var(--po-tint); }
+.page-pousse .po-org-note { margin: 20px 0 0; padding-left: 14px; border-left: 3px solid var(--po-lime); font-size: .93rem; color: var(--muted); }
+
+.page-pousse .po-synergy-title { margin: clamp(56px, 7vw, 84px) 0 0; font-size: clamp(1.35rem, 2.4vw, 1.7rem); color: var(--ink); }
+.page-pousse .po-synergy { display: grid; gap: 20px; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 24px 0 0; padding: 0; list-style: none; }
+.page-pousse .po-syn { padding: 26px; border: 1px solid var(--po-line); border-radius: var(--radius-lg); background: var(--po-tint); }
+.page-pousse .po-syn-n { display: block; margin-bottom: 14px; font-size: .9rem; font-weight: 700; letter-spacing: .08em; color: var(--po-lime-dark); }
+.page-pousse .po-syn-title { margin: 0 0 8px; font-size: 1.1rem; line-height: 1.3; color: var(--po-dark); }
+.page-pousse .po-syn-text { margin: 0; font-size: .95rem; line-height: 1.6; color: var(--body); }
+
+/* ---------- the two businesses --------------------------------------------- */
+
+.page-pousse .po-activities { background: var(--po-tint); }
+.page-pousse .po-activity {
+  display: grid; gap: clamp(28px, 5vw, 64px); grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  align-items: center; margin-top: clamp(40px, 6vw, 64px); scroll-margin-top: 90px;
 }
-.page-pousse .po-band .po-wrap { position: relative; }
-.page-pousse .po-band-title { margin: 0; font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; line-height: 1.15; color: #fff; }
-
-/* ---------- pavers --------------------------------------------------------- */
-
-.page-pousse .po-feature { margin-top: clamp(28px, 4vw, 40px); }
-.page-pousse .po-feature-media { aspect-ratio: 511 / 219; overflow: hidden; background: var(--po-rule); }
-.page-pousse .po-feature-media picture,
-.page-pousse .po-feature-media img,
-.page-pousse .po-photo-media picture,
-.page-pousse .po-photo-media img,
-.page-pousse .po-solutions-media picture,
-.page-pousse .po-solutions-media img { width: 100%; height: 100%; object-fit: cover; }
-.page-pousse .po-feature-cap {
-  padding: 13px 18px; background: var(--po-dark); color: #fff;
-  font-size: .7rem; font-weight: 700; letter-spacing: .28em; text-transform: uppercase;
+.page-pousse .po-activity--flip .po-activity-media { order: 2; }
+.page-pousse .po-activity-media { aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--radius-lg); background: var(--po-line); box-shadow: var(--shadow-md); }
+.page-pousse .po-activity-media picture,
+.page-pousse .po-activity-media img { width: 100%; height: 100%; object-fit: cover; }
+.page-pousse .po-activity-n {
+  display: flex; align-items: center; gap: 10px; margin: 0 0 12px;
+  font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--po-mid);
 }
-.page-pousse .po-duo {
-  display: grid; gap: clamp(16px, 3vw, 24px); grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: clamp(24px, 3vw, 32px); align-items: start;
+.page-pousse .po-activity-n span:first-child {
+  display: grid; place-items: center; width: 30px; height: 30px; border-radius: 4px;
+  background: var(--po-lime); color: var(--po-deep); letter-spacing: 0;
 }
-.page-pousse .po-photo-media { aspect-ratio: 4 / 3; overflow: hidden; background: var(--po-rule); }
-.page-pousse .po-photo-cap { margin-top: 12px; font-size: .92rem; font-weight: 700; color: var(--po-dark); }
-.page-pousse .po-closing { margin: clamp(24px, 3vw, 32px) 0 0; font-size: .95rem; color: var(--po-text); }
-
-/* ---------- services ------------------------------------------------------- */
-
-.page-pousse .po-solutions { display: grid; gap: clamp(24px, 5vw, 56px); grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); align-items: start; }
-.page-pousse .po-solutions-media { aspect-ratio: 214 / 307; overflow: hidden; background: var(--po-rule); }
-.page-pousse .po-solutions-text { padding-top: 8px; }
-.page-pousse .po-steps { display: grid; gap: clamp(24px, 3.5vw, 40px); margin: 26px 0 0; padding: 0; list-style: none; }
-.page-pousse .po-step { display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 16px; align-items: start; }
-.page-pousse .po-step-n {
-  display: grid; place-items: center; width: 30px; height: 30px;
-  background: var(--po-lime); color: var(--po-dark); font-size: .95rem; font-weight: 700;
+.page-pousse .po-activity-title { margin: 0 0 14px; font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.15; color: var(--po-dark); }
+.page-pousse .po-checks { display: grid; gap: 10px; margin: 20px 0 0; padding: 0; list-style: none; }
+.page-pousse .po-checks li { position: relative; padding-left: 30px; line-height: 1.5; color: var(--body); }
+.page-pousse .po-checks li::before {
+  content: "✓"; position: absolute; left: 0; top: .1em; display: grid; place-items: center; width: 20px; height: 20px;
+  border-radius: 50%; background: var(--po-lime); font-size: .7rem; font-weight: 700; color: var(--po-deep);
 }
-.page-pousse .po-step-title { margin: 3px 0 8px; font-size: 1.15rem; font-weight: 700; color: var(--po-dark); }
-.page-pousse .po-step-text { margin: 0; font-size: .95rem; line-height: 1.55; color: var(--po-text); }
 
-/* ---------- contact box ---------------------------------------------------- */
+/* ---------- subscriptions -------------------------------------------------- */
 
-.page-pousse .po-contact {
-  position: relative; overflow: hidden; margin-top: clamp(36px, 5vw, 48px);
-  padding: clamp(28px, 4vw, 40px) clamp(24px, 4vw, 40px) clamp(34px, 4vw, 46px);
-  background: var(--po-dark); color: #fff;
+.page-pousse .po-subs { position: relative; overflow: hidden; background: var(--po-deep); color: #fff; }
+.page-pousse .po-subs::before {
+  content: ""; position: absolute; left: 0; top: 0; width: clamp(140px, 24vw, 280px); height: 100%;
+  background: var(--po-lime); opacity: .14; clip-path: polygon(0 0, 100% 0, 0 100%);
 }
-.page-pousse .po-contact-title { margin: 0 0 24px; font-size: clamp(1.25rem, 2.6vw, 1.6rem); font-weight: 700; line-height: 1.3; color: #fff; }
-.page-pousse .po-phones { display: grid; gap: 12px 32px; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; }
-.page-pousse .po-phones a { color: #fff; font-size: clamp(1.2rem, 2.6vw, 1.6rem); font-weight: 700; text-decoration: none; white-space: nowrap; }
-.page-pousse .po-phones a:hover { color: var(--po-lime); }
-.page-pousse .po-contact-foot { margin-top: 26px; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, .22); }
-.page-pousse .po-city { margin: 0 0 8px; font-weight: 700; text-transform: uppercase; color: #fff; }
-.page-pousse .po-social { margin: 0; font-size: .92rem; color: #fff; white-space: pre-wrap; }
-.page-pousse .po-sujo { margin: 14px 0 0; max-width: 70%; font-size: .85rem; color: rgba(255, 255, 255, .72); }
-.page-pousse .po-contact-corner {
-  position: absolute; right: 0; bottom: 0; width: clamp(80px, 14vw, 110px); height: clamp(40px, 7vw, 56px);
+.page-pousse .po-subs-grid { position: relative; display: grid; gap: clamp(32px, 5vw, 64px); grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); align-items: center; }
+.page-pousse .po .po-subs .eyebrow { color: var(--po-lime); }
+.page-pousse .po-subs-title { margin: 0; font-size: clamp(2rem, 4vw, 2.8rem); line-height: 1.1; color: #fff; }
+.page-pousse .po-subs-lead { max-width: 36rem; margin: 16px 0 0; font-size: 1.05rem; line-height: 1.6; color: rgba(255, 255, 255, .84); }
+.page-pousse .po-benefits { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0 0; padding: 0; list-style: none; }
+.page-pousse .po-benefits li { padding: 8px 14px; border: 1px solid rgba(151, 195, 45, .55); border-radius: 999px; font-size: .88rem; font-weight: 600; color: #fff; }
+.page-pousse .po-plans { display: grid; gap: 12px; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 28px 0 0; padding: 0; list-style: none; }
+.page-pousse .po-plan {
+  display: flex; flex-direction: column; gap: 6px; padding: 18px;
+  border: 1px solid rgba(255, 255, 255, .15); border-top: 3px solid var(--po-lime); border-radius: var(--radius-lg); background: rgba(255, 255, 255, .06);
+}
+.page-pousse .po-plan-name { font-weight: 700; color: #fff; }
+.page-pousse .po-plan-note { font-size: .84rem; color: rgba(255, 255, 255, .68); }
+.page-pousse .po-subs-actions { margin-top: 28px; }
+.page-pousse .po-subs-media { overflow: hidden; border-radius: var(--radius-lg); box-shadow: 0 20px 50px rgba(0, 0, 0, .35); }
+.page-pousse .po-subs-media picture,
+.page-pousse .po-subs-media img { width: 100%; height: auto; }
+
+/* ---------- field photographs ---------------------------------------------- */
+
+.page-pousse .po-gallery { display: grid; gap: 18px; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 36px 0 0; padding: 0; list-style: none; }
+.page-pousse .po-g-media { aspect-ratio: 3 / 4; overflow: hidden; border-radius: var(--radius-lg); background: var(--po-line); }
+.page-pousse .po-g-media picture,
+.page-pousse .po-g-media img { width: 100%; height: 100%; object-fit: cover; }
+.page-pousse .po-g figcaption { margin-top: 10px; font-size: .9rem; color: var(--muted); }
+
+/* ---------- leadership ----------------------------------------------------- */
+
+.page-pousse .po-leader-grid { display: grid; gap: clamp(28px, 5vw, 64px); grid-template-columns: minmax(0, 360px) minmax(0, 1fr); align-items: center; }
+.page-pousse .po-leader-photo { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: var(--radius-lg); background: var(--po-line); }
+.page-pousse .po-leader-photo::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: var(--po-lime); }
+.page-pousse .po-leader-photo picture,
+.page-pousse .po-leader-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; }
+.page-pousse .po-leader-name { margin: 0 0 12px; font-size: clamp(2rem, 4vw, 2.6rem); color: var(--ink); }
+.page-pousse .po-roles { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; padding: 0; list-style: none; }
+.page-pousse .po-roles li { padding: 6px 12px; border-radius: 999px; font-size: .84rem; font-weight: 600; }
+.page-pousse .po-roles li:first-child { background: rgba(151, 195, 45, .2); color: var(--po-dark); }
+.page-pousse .po-roles li:last-child { background: rgba(18, 32, 58, .08); color: var(--navy); }
+.page-pousse .po-leader .prose + .prose { margin-top: 14px; }
+
+/* ---------- contact -------------------------------------------------------- */
+
+.page-pousse .po-contact { background: var(--po-tint); }
+.page-pousse .po-contact-grid { display: grid; gap: 20px; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); align-items: stretch; }
+.page-pousse .po-card { position: relative; overflow: hidden; padding: clamp(28px, 4vw, 44px); border-radius: var(--radius-lg); color: #fff; }
+.page-pousse .po-card--pou { background: var(--po-dark); }
+.page-pousse .po-card--pou::after {
+  content: ""; position: absolute; right: 0; bottom: 0; width: 110px; height: 56px;
   background: var(--po-lime); clip-path: polygon(100% 0, 100% 100%, 0 100%);
 }
+.page-pousse .po-card--sujo { background: var(--navy); }
+.page-pousse .po .po-card--pou .eyebrow { color: var(--po-lime); }
+.page-pousse .po .po-card--sujo .eyebrow { color: #ff6b6b; }
+.page-pousse .po-card-title { margin: 0 0 22px; font-size: clamp(1.3rem, 2.4vw, 1.7rem); line-height: 1.3; color: #fff; }
+.page-pousse .po-card-text { margin: 0; color: rgba(255, 255, 255, .82); }
+.page-pousse .po-phones { display: grid; gap: 10px 28px; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; }
+.page-pousse .po-phones a { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 700; color: #fff; text-decoration: none; white-space: nowrap; }
+.page-pousse .po-phones a:hover { color: var(--po-lime); }
+.page-pousse .po-card-foot {
+  margin-top: 24px; padding-top: 20px; padding-right: 110px;
+  border-top: 1px solid rgba(255, 255, 255, .2); font-size: .92rem; color: rgba(255, 255, 255, .85);
+}
+.page-pousse .po-card-foot strong { display: block; margin-bottom: 4px; letter-spacing: .08em; text-transform: uppercase; color: #fff; }
+.page-pousse .po-card--sujo > img { width: auto; height: 34px; margin-bottom: 22px; }
+.page-pousse .po-card-lines { display: grid; gap: 6px; margin: 18px 0 0; padding: 0; list-style: none; }
+.page-pousse .po-card-lines a { color: #fff; text-decoration: none; }
+.page-pousse .po-card-lines a:hover { text-decoration: underline; }
+.page-pousse .po-card-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
 
-/* ---------- small screens -------------------------------------------------- */
+/* ---------- responsive ----------------------------------------------------- */
 
-@media (max-width: 760px) {
-  .page-pousse .po-duo,
-  .page-pousse .po-solutions { grid-template-columns: minmax(0, 1fr); }
-  .page-pousse .po-solutions-media { aspect-ratio: 4 / 3; }
-  .page-pousse .po-cover-grid { grid-template-columns: minmax(0, 1fr); }
-  .page-pousse .po-logo { order: -1; width: 96px; }
-  .page-pousse .po-sujo { max-width: none; padding-right: 64px; }
+@media (max-width: 960px) {
+  .page-pousse .po-facts-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .page-pousse .po-fact:nth-child(3) { padding-left: 0; border-left: 0; }
+  .page-pousse .po-fact:nth-child(n + 3) { border-top: 1px solid var(--line); }
+  .page-pousse .po-group-grid,
+  .page-pousse .po-subs-grid,
+  .page-pousse .po-contact-grid { grid-template-columns: minmax(0, 1fr); }
+  .page-pousse .po-synergy { grid-template-columns: minmax(0, 1fr); }
+  .page-pousse .po-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .page-pousse .po-subs-media { max-width: 520px; }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 760px) {
+  .page-pousse .po-hero-shade {
+    background: linear-gradient(0deg, rgba(10, 33, 25, .96) 0%, rgba(10, 33, 25, .8) 55%, rgba(10, 33, 25, .35) 100%);
+  }
+  .page-pousse .po-activity,
+  .page-pousse .po-leader-grid { grid-template-columns: minmax(0, 1fr); }
+  .page-pousse .po-activity--flip .po-activity-media { order: 0; }
+  .page-pousse .po-plans { grid-template-columns: minmax(0, 1fr); }
+  .page-pousse .po-leader-photo { max-width: 320px; }
+}
+
+@media (max-width: 520px) {
+  .page-pousse .po-facts-grid { grid-template-columns: minmax(0, 1fr); }
+  .page-pousse .po-fact,
+  .page-pousse .po-fact:nth-child(3) { padding-left: 0; border-left: 0; }
+  .page-pousse .po-fact + .po-fact { border-top: 1px solid var(--line); }
   .page-pousse .po-phones { grid-template-columns: minmax(0, 1fr); }
+  .page-pousse .po-gallery { grid-template-columns: minmax(0, 1fr); }
+  .page-pousse .po-g-media { aspect-ratio: 4 / 3; }
+  .page-pousse .po-org-card--child { margin-left: 20px; }
+  .page-pousse .po-card-foot { padding-right: 0; padding-bottom: 40px; }
 }
