@@ -321,3 +321,9 @@ a:hover > .g-arrow { transform: translateX(5px); }
 .g-row--main { font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.6rem); padding-top: 30px; }
 .main-badge { display: inline-block; margin: 0 0 10px; padding: 5px 10px; background: var(--red); color: #fff; font-size: .72rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
 .service-row--main .service-row-title { font-size: clamp(1.8rem, 1.3rem + 1.6vw, 2.6rem); }
+
+/* service films in place of photographs (2026-11-19) */
+.svc-video { display: block; width: 100%; height: 100%; object-fit: cover; background: #f2f2f0; }
+.g-feature-media .svc-video, .service-row-media .svc-video { aspect-ratio: 4 / 3; height: auto; }
+.card-media--video .svc-video { height: 100%; }
+.page-head-media--video .svc-video { height: clamp(240px, 32vw, 440px); }
