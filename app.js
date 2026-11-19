@@ -607,6 +607,47 @@
     }
   }
 
+  // --- architecture page: project slideshow and image galleries ------------
+  function initArchi() {
+    var slider = document.querySelector('[data-slider]');
+    if (slider) {
+      var slides = slider.querySelectorAll('[data-slide]');
+      var dots = slider.querySelectorAll('[data-slide-dot]');
+      var cur = 0, timer = null;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      function go(n) {
+        cur = (n + slides.length) % slides.length;
+        slides.forEach(function (sl, i) { sl.classList.toggle('is-on', i === cur); sl.setAttribute('aria-hidden', i === cur ? 'false' : 'true'); });
+        dots.forEach(function (d, i) { d.classList.toggle('is-on', i === cur); });
+      }
+      function start() { if (!reduce && slides.length > 1) { stop(); timer = setInterval(function () { go(cur + 1); }, 6500); } }
+      function stop() { if (timer) clearInterval(timer); timer = null; }
+      var prev = slider.querySelector('[data-slide-prev]'), next = slider.querySelector('[data-slide-next]');
+      if (prev) prev.addEventListener('click', function () { go(cur - 1); start(); });
+      if (next) next.addEventListener('click', function () { go(cur + 1); start(); });
+      dots.forEach(function (d) { d.addEventListener('click', function () { go(+d.getAttribute('data-slide-dot')); start(); }); });
+      slider.addEventListener('mouseenter', stop);
+      slider.addEventListener('mouseleave', start);
+      start();
+    }
+    document.querySelectorAll('.a-gallery').forEach(function (g) {
+      var main = g.querySelector('[data-gallery-main]');
+      g.querySelectorAll('[data-gallery-thumb]').forEach(function (b) {
+        b.addEventListener('click', function () {
+          var pic = b.querySelector('picture');
+          if (!main || !pic) return;
+          var copy = pic.cloneNode(true);
+          copy.querySelectorAll('[sizes]').forEach(function (el) { el.setAttribute('sizes', '(max-width: 900px) 100vw, 60vw'); });
+          var img = copy.querySelector('img'); if (img) { img.loading = 'eager'; }
+          main.innerHTML = '';
+          main.appendChild(copy);
+          main.classList.toggle('a-plain', b.classList.contains('a-plain'));
+          g.querySelectorAll('[data-gallery-thumb]').forEach(function (x) { x.classList.toggle('is-on', x === b); });
+        });
+      });
+    });
+  }
+
   function boot() {
     initLang();
     initNav();
@@ -616,6 +657,7 @@
     initForms();
     initThanks();
     initHome();
+    initArchi();
   }
 
   if (document.readyState === 'loading') {
