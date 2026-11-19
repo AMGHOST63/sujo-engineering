@@ -29,7 +29,7 @@
 // wrong one. The full swap happens in app.js.
 (function(){try{var l=localStorage.getItem('sujoLang');if(l==='en'||l==='fr'){document.documentElement.lang=l;document.documentElement.setAttribute('data-lang',l);}else{document.documentElement.setAttribute('data-lang','fr');}}catch(e){document.documentElement.setAttribute('data-lang','fr');}document.documentElement.classList.remove('lang-boot');})();
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://sujo-engineering.com/#organization","name":"SUJO Engineering Consulting SARL","alternateName":"SUJO","url":"https://sujo-engineering.com/","logo":"https://sujo-engineering.com/img/logo-512.png","image":"https://sujo-engineering.com/img/og-default.jpg","email":"contact@sujo-engineering.com","telephone":"+243976438148","address":{"@type":"PostalAddress","addressLocality":"Kinshasa","addressCountry":"CD"},"areaServed":[{"@type":"Country","name":"Democratic Republic of the Congo"},{"@type":"AdministrativeArea","name":"Kinshasa"}],"availableLanguage":["fr","en"],"contactPoint":[{"@type":"ContactPoint","contactType":"sales","telephone":"+243976438148","email":"contact@sujo-engineering.com","areaServed":"CD","availableLanguage":["fr","en"]},{"@type":"ContactPoint","contactType":"customer support","telephone":"+14123453307","email":"contact@sujo-engineering.com","areaServed":"US","availableLanguage":["en","fr"]}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"17:00"}],"knowsAbout":["Engineering consulting","Technical studies","Cost estimation","Project development","Industrial equipment supply","Turnkey systems supply","Industrial sourcing","Spare parts identification"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://sujo-engineering.com/#organization","name":"SUJO Engineering Consulting SARL","alternateName":"SUJO","url":"https://sujo-engineering.com/","logo":"https://sujo-engineering.com/img/logo-512.png","image":"https://sujo-engineering.com/img/og-default.jpg","email":"contact@sujo-engineering.com","telephone":"+243976438148","address":{"@type":"PostalAddress","addressLocality":"Kinshasa","addressCountry":"CD"},"areaServed":[{"@type":"Country","name":"Democratic Republic of the Congo"},{"@type":"AdministrativeArea","name":"Kinshasa"}],"availableLanguage":["fr","en"],"contactPoint":[{"@type":"ContactPoint","contactType":"sales","telephone":"+243976438148","email":"contact@sujo-engineering.com","areaServed":"CD","availableLanguage":["fr","en"]},{"@type":"ContactPoint","contactType":"customer support","telephone":"+14123453307","email":"contact@sujo-engineering.com","areaServed":"US","availableLanguage":["en","fr"]}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"17:00"}],"knowsAbout":["Engineering design","Fabrication","Custom fitted furniture","Steel structures","Architecture","Industrial equipment supply","Turnkey systems supply","Equipment sourcing","Spare parts identification"]}</script>
 <script defer src="app.js"></script>
 </head>
 <body class="page-home">
@@ -47,11 +47,9 @@
 <div class="menu-panel">
 <ul class="menu-list">
 <li class="menu-overview"><a href="services.html" data-fr="Tous nos services" data-en="All services">Tous nos services</a></li>
-<li><a href="engineering.html" data-fr="Conseil en Ingénierie" data-en="Engineering Consulting">Conseil en Ingénierie</a></li>
-<li><a href="technical-studies.html" data-fr="Études Techniques" data-en="Technical Studies">Études Techniques</a></li>
-<li><a href="cost-estimation.html" data-fr="Estimation des Coûts" data-en="Cost Estimation">Estimation des Coûts</a></li>
-<li><a href="project-development.html" data-fr="Développement de Projet" data-en="Project Development">Développement de Projet</a></li>
-<li><a href="industrial-sourcing.html" data-fr="Équipements &amp; Sourcing" data-en="Equipment &amp; Sourcing">Équipements &amp; Sourcing</a></li>
+<li><a href="engineering.html" data-fr="Conception &amp; Fabrication" data-en="Engineering Design &amp; Fabrication">Conception &amp; Fabrication</a></li>
+<li><a href="project-development.html" data-fr="Architecture" data-en="Architecture">Architecture</a></li>
+<li><a href="industrial-sourcing.html" data-fr="Sourcing d’Équipements" data-en="Equipment Sourcing">Sourcing d’Équipements</a></li>
 </ul>
 </div>
 </li>
@@ -92,15 +90,16 @@
 </header>
 <main id="main" tabindex="-1">
 <section class="g-hero">
-<div class="g-hero-media"><picture>
-<source type="image/webp" sizes="100vw" srcset="img/hero-960.webp 960w, img/hero-1600.webp 1600w">
-<img src="img/hero-1600.jpg" sizes="100vw" srcset="img/hero-960.jpg 960w, img/hero-1600.jpg 1600w" alt="Ouvrier en gilet haute visibilité travaillant sur un échafaudage en hauteur." data-fr-alt="Ouvrier en gilet haute visibilité travaillant sur un échafaudage en hauteur." data-en-alt="Worker in a high-visibility jacket on scaffolding at height." width="1600" height="899" loading="eager" decoding="async" fetchpriority="high">
-</picture></div>
+<div class="g-hero-media"><div class="g-bgvideo" aria-hidden="true">
+<video muted playsinline autoplay preload="auto" poster="video/bg/arch-maison-r1-m2.jpg" tabindex="-1" data-bg-video data-playlist="video/bg/arch-maison-r1-m2.mp4 video/bg/eq-drum-mixer.mp4 video/bg/pr-kitchen-island.mp4 video/bg/arch-classroom-kit.mp4 video/bg/arch-646-r2.mp4">
+<source src="video/bg/arch-maison-r1-m2.mp4" type="video/mp4">
+</video>
+</div></div>
 <div class="g-hero-scrim" aria-hidden="true"></div>
 <div class="wrap g-hero-inner">
 <p class="g-kicker g-kicker--light" data-fr="SUJO Engineering Consulting" data-en="SUJO Engineering Consulting">SUJO Engineering Consulting</p>
 <h1 class="g-hero-title" data-fr="Conçu pour les projets industriels exigeants" data-en="Built for demanding industrial projects">Conçu pour les projets industriels exigeants</h1>
-<p class="g-hero-sub" data-fr="Ingénierie, équipements et appui aux projets en RDC. De la pièce détachée au package clé en main." data-en="Engineering, equipment and project support in the DRC. From a single spare part to a full turnkey package.">Ingénierie, équipements et appui aux projets en RDC. De la pièce détachée au package clé en main.</p>
+<p class="g-hero-sub" data-fr="Conception technique et fabrication, architecture et sourcing d’équipements en RDC." data-en="Engineering design and fabrication, architecture and equipment sourcing in the DRC.">Conception technique et fabrication, architecture et sourcing d’équipements en RDC.</p>
 <div class="g-hero-actions">
 <a class="g-btn g-btn--red" href="contact.html"><span data-fr="Nous contacter" data-en="Contact us">Nous contacter</span><span class="g-arrow" aria-hidden="true">→</span></a>
 <a class="g-btn g-btn--ghost" href="services.html"><span data-fr="Explorer nos services" data-en="Explore services">Explorer nos services</span><span class="g-arrow" aria-hidden="true">→</span></a>
@@ -117,22 +116,22 @@
 <article class="g-feature">
 <div class="g-feature-media g-clip"><picture>
 <source type="image/webp" sizes="(max-width: 900px) 100vw, 640px" srcset="img/svc-engineering-960.webp 960w">
-<img src="img/svc-engineering-960.jpg" sizes="(max-width: 900px) 100vw, 640px" srcset="img/svc-engineering-960.jpg 960w" alt="Conseil en Ingénierie" data-fr-alt="Conseil en Ingénierie" data-en-alt="Engineering Consulting" width="960" height="720" loading="lazy" decoding="async">
+<img src="img/svc-engineering-960.jpg" sizes="(max-width: 900px) 100vw, 640px" srcset="img/svc-engineering-960.jpg 960w" alt="Conception Technique &amp; Fabrication" data-fr-alt="Conception Technique &amp; Fabrication" data-en-alt="Engineering Design &amp; Fabrication" width="960" height="720" loading="lazy" decoding="async">
 </picture></div>
 <div class="g-feature-card">
-<p class="g-kicker" data-fr="Ingénierie" data-en="Engineering">Ingénierie</p>
-<h3 class="g-h3" data-fr="Des décisions techniques sûres" data-en="Technical decisions you can rely on">Des décisions techniques sûres</h3>
-<p class="g-feature-text" data-fr="Revue d’ingénierie, études techniques et validation des spécifications : nous traduisons un besoin opérationnel en recommandations claires et exploitables, adaptées au contexte réel du projet et aux conditions de la RDC." data-en="Engineering review, technical studies and specification validation: we translate an operational need into clear, actionable recommendations suited to the project’s real context and to conditions in the DRC.">Revue d’ingénierie, études techniques et validation des spécifications : nous traduisons un besoin opérationnel en recommandations claires et exploitables, adaptées au contexte réel du projet et aux conditions de la RDC.</p>
+<p class="g-kicker" data-fr="Conception &amp; fabrication — service principal" data-en="Engineering design &amp; fabrication — main service">Conception &amp; fabrication — service principal</p>
+<h3 class="g-h3" data-fr="Du modèle 3D à l’ouvrage fabriqué" data-en="From the 3D model to the finished product">Du modèle 3D à l’ouvrage fabriqué</h3>
+<p class="g-feature-text" data-fr="Mobilier intégré sur mesure, équipements, machines et structures en acier : chaque produit est modélisé en 3D pièce par pièce, livré avec ses plans, nomenclatures et fichiers CNC, puis fabriqué." data-en="Custom fitted furniture, equipment, machines and steel structures: every product is modelled in 3D part by part, documented with drawings, bills of materials and CNC files, then fabricated.">Mobilier intégré sur mesure, équipements, machines et structures en acier : chaque produit est modélisé en 3D pièce par pièce, livré avec ses plans, nomenclatures et fichiers CNC, puis fabriqué.</p>
 <a class="g-link" href="engineering.html"><span data-fr="En savoir plus" data-en="Learn more">En savoir plus</span><span class="g-arrow" aria-hidden="true">→</span></a>
 </div>
 </article>
 <article class="g-feature g-feature--flip">
 <div class="g-feature-media g-clip"><picture>
 <source type="image/webp" sizes="(max-width: 900px) 100vw, 640px" srcset="img/svc-sourcing-960.webp 960w">
-<img src="img/svc-sourcing-960.jpg" sizes="(max-width: 900px) 100vw, 640px" srcset="img/svc-sourcing-960.jpg 960w" alt="Fourniture d’Équipements &amp; Sourcing Industriel" data-fr-alt="Fourniture d’Équipements &amp; Sourcing Industriel" data-en-alt="Equipment Supply &amp; Industrial Sourcing" width="960" height="638" loading="lazy" decoding="async">
+<img src="img/svc-sourcing-960.jpg" sizes="(max-width: 900px) 100vw, 640px" srcset="img/svc-sourcing-960.jpg 960w" alt="Sourcing d’Équipements" data-fr-alt="Sourcing d’Équipements" data-en-alt="Equipment Sourcing" width="960" height="638" loading="lazy" decoding="async">
 </picture></div>
 <div class="g-feature-card">
-<p class="g-kicker" data-fr="Équipements &amp; Sourcing" data-en="Equipment &amp; Sourcing">Équipements &amp; Sourcing</p>
+<p class="g-kicker" data-fr="Sourcing d’équipements" data-en="Equipment sourcing">Sourcing d’équipements</p>
 <h3 class="g-h3" data-fr="De la pièce au package clé en main" data-en="From one part to a turnkey package">De la pièce au package clé en main</h3>
 <p class="g-feature-text" data-fr="Machines, équipements, systèmes industriels et packages clé en main — installation, mise en service et pièces de première dotation comprises. Nous ne sommes liés à aucun fabricant : l’équipement recommandé est choisi sur son mérite technique et son coût rendu." data-en="Machines, equipment, industrial systems and turnkey packages — installation, commissioning and initial spares included. We are not tied to any single manufacturer: the equipment we recommend is selected on technical merit and landed cost.">Machines, équipements, systèmes industriels et packages clé en main — installation, mise en service et pièces de première dotation comprises. Nous ne sommes liés à aucun fabricant : l’équipement recommandé est choisi sur son mérite technique et son coût rendu.</p>
 <a class="g-link" href="industrial-sourcing.html"><span data-fr="En savoir plus" data-en="Learn more">En savoir plus</span><span class="g-arrow" aria-hidden="true">→</span></a>
@@ -144,17 +143,22 @@
 <img src="img/pf-mixed-use-aerial-960.jpg" sizes="(max-width: 900px) 100vw, 640px" srcset="img/pf-mixed-use-aerial-960.jpg 960w" alt="Immeuble mixte de quatre niveaux à l’angle d’une rue, vue aérienne." data-fr-alt="Immeuble mixte de quatre niveaux à l’angle d’une rue, vue aérienne." data-en-alt="Four-storey mixed-use building on a street corner, aerial view." width="960" height="577" loading="lazy" decoding="async">
 </picture></div>
 <div class="g-feature-card">
-<p class="g-kicker" data-fr="Développement de projet" data-en="Project development">Développement de projet</p>
+<p class="g-kicker" data-fr="Architecture" data-en="Architecture">Architecture</p>
 <h3 class="g-h3" data-fr="Des bâtiments pensés jusqu’au détail" data-en="Buildings designed down to the detail">Des bâtiments pensés jusqu’au détail</h3>
 <p class="g-feature-text" data-fr="Immeubles mixtes, résidences, intérieurs d’hôtellerie, halls commerciaux et campus : notre portfolio d’architecture 2026 réunit les projets conçus par nos équipes." data-en="Mixed-use buildings, residences, hospitality interiors, retail halls and campuses: our 2026 architecture portfolio brings together the projects our teams have designed.">Immeubles mixtes, résidences, intérieurs d’hôtellerie, halls commerciaux et campus : notre portfolio d’architecture 2026 réunit les projets conçus par nos équipes.</p>
 <a class="g-link" href="project-development.html"><span data-fr="En savoir plus" data-en="Learn more">En savoir plus</span><span class="g-arrow" aria-hidden="true">→</span></a>
 </div>
 </article>
 </div>
-</section><section class="g-stats">
+</section><section class="g-stats g-has-video">
+<div class="g-bgvideo" aria-hidden="true">
+<video muted playsinline loop preload="none" poster="video/bg/arch-health-post.jpg" tabindex="-1" data-bg-video>
+<source src="video/bg/arch-health-post.mp4" type="video/mp4">
+</video>
+</div>
 <div class="wrap g-stats-grid">
 <div class="g-stat">
-<p class="g-stat-num"><span data-count="5">5</span></p>
+<p class="g-stat-num"><span data-count="3">3</span></p>
 <p class="g-stat-label" data-fr="Lignes de service" data-en="Service lines">Lignes de service</p>
 </div>
 <div class="g-stat">
@@ -178,230 +182,11 @@
 <p class="g-lead" data-fr="Selon l’ampleur et les contraintes de chaque projet, nos services se déploient individuellement ou ensemble, du premier besoin exprimé jusqu’à l’appui à l’exécution." data-en="Depending on the scale and constraints of each project, our services are applied individually or together, from the first expression of need through to implementation support.">Selon l’ampleur et les contraintes de chaque projet, nos services se déploient individuellement ou ensemble, du premier besoin exprimé jusqu’à l’appui à l’exécution.</p>
 </div>
 <ul class="g-rows">
-<li><a class="g-row" href="engineering.html"><span data-fr="Conseil en Ingénierie" data-en="Engineering Consulting">Conseil en Ingénierie</span><span class="g-arrow" aria-hidden="true">→</span></a></li>
-<li><a class="g-row" href="technical-studies.html"><span data-fr="Études Techniques" data-en="Technical Studies">Études Techniques</span><span class="g-arrow" aria-hidden="true">→</span></a></li>
-<li><a class="g-row" href="cost-estimation.html"><span data-fr="Estimation des Coûts" data-en="Cost Estimation">Estimation des Coûts</span><span class="g-arrow" aria-hidden="true">→</span></a></li>
-<li><a class="g-row" href="project-development.html"><span data-fr="Développement de Projet" data-en="Project Development">Développement de Projet</span><span class="g-arrow" aria-hidden="true">→</span></a></li>
-<li><a class="g-row" href="industrial-sourcing.html"><span data-fr="Équipements &amp; Sourcing" data-en="Equipment &amp; Sourcing">Équipements &amp; Sourcing</span><span class="g-arrow" aria-hidden="true">→</span></a></li>
-<li><a class="g-row" href="industrial-sourcing.html#catalogue"><span data-fr="Catalogue d’équipements" data-en="Equipment catalogue">Catalogue d’équipements</span><span class="g-arrow" aria-hidden="true">→</span></a></li>
+<li class="g-rows-main"><a class="g-row g-row--main" href="engineering.html"><span class="g-row-label"><span class="g-row-tag" data-fr="Service principal" data-en="Main service">Service principal</span><span data-fr="Conception Technique &amp; Fabrication" data-en="Engineering Design &amp; Fabrication">Conception Technique &amp; Fabrication</span></span><span class="g-arrow" aria-hidden="true">→</span></a></li>
+<li><a class="g-row" href="project-development.html"><span class="g-row-label"><span data-fr="Architecture" data-en="Architecture">Architecture</span></span><span class="g-arrow" aria-hidden="true">→</span></a></li>
+<li><a class="g-row" href="industrial-sourcing.html"><span class="g-row-label"><span data-fr="Sourcing d’Équipements" data-en="Equipment Sourcing">Sourcing d’Équipements</span></span><span class="g-arrow" aria-hidden="true">→</span></a></li>
+<li><a class="g-row" href="industrial-sourcing.html#catalogue"><span class="g-row-label"><span data-fr="Catalogue d’équipements" data-en="Equipment catalogue">Catalogue d’équipements</span></span><span class="g-arrow" aria-hidden="true">→</span></a></li>
 </ul>
-</div>
-</section><section class="g-section g-studio" id="design">
-<div class="wrap">
-<div class="g-studio-head">
-<div>
-<p class="g-kicker g-kicker--light" data-fr="Studio de conception" data-en="Design studio">Studio de conception</p>
-<h2 class="g-h2 g-h2--light" data-fr="Conçu dans FreeCAD, pièce par pièce" data-en="Designed in FreeCAD, part by part">Conçu dans FreeCAD, pièce par pièce</h2>
-<p class="g-lead g-lead--light" data-fr="Nos ingénieurs modélisent chaque bâtiment, machine et produit avant sa fabrication. Regardez les modèles se construire : fondations et ossature des bâtiments, équipements et produits pièce par pièce." data-en="Our engineers model every building, machine and product before it is made. Watch the models being built: building foundations and frames, equipment and products part by part.">Nos ingénieurs modélisent chaque bâtiment, machine et produit avant sa fabrication. Regardez les modèles se construire : fondations et ossature des bâtiments, équipements et produits pièce par pièce.</p>
-</div>
-<div class="g-tabs" role="tablist">
-<button type="button" class="g-tab" role="tab" id="tab-architecture" aria-controls="panel-architecture" aria-selected="true" data-fr="Architecture" data-en="Architecture">Architecture</button>
-<button type="button" class="g-tab" role="tab" id="tab-equipment" aria-controls="panel-equipment" aria-selected="false" data-fr="Équipements" data-en="Equipment">Équipements</button>
-<button type="button" class="g-tab" role="tab" id="tab-products" aria-controls="panel-products" aria-selected="false" data-fr="Produits" data-en="Products">Produits</button>
-</div>
-</div>
-<div class="g-panel" role="tabpanel" id="panel-architecture" aria-labelledby="tab-architecture">
-<div class="g-films">
-<figure class="g-film g-film--lead">
-<div class="g-film-frame g-clip">
-<video controls preload="none" playsinline muted poster="video/arch-maison-r1.jpg" width="1920" height="1080">
-<source src="video/arch-maison-r1.mp4" type="video/mp4">
-</video>
-</div>
-<figcaption data-fr="Maison R+1 — fondations et structure" data-en="House R+1 — foundations and structure">Maison R+1 — fondations et structure</figcaption>
-</figure>
-<figure class="g-film">
-<div class="g-film-frame">
-<video controls preload="none" playsinline muted poster="video/arch-maison-r1-m2.jpg" width="1920" height="1080">
-<source src="video/arch-maison-r1-m2.mp4" type="video/mp4">
-</video>
-</div>
-<figcaption data-fr="Maison R+1, modèle 2 — fondations et structure" data-en="House R+1, model 2 — foundations and structure">Maison R+1, modèle 2 — fondations et structure</figcaption>
-</figure>
-<figure class="g-film">
-<div class="g-film-frame">
-<video controls preload="none" playsinline muted poster="video/arch-646-r2.jpg" width="1920" height="1080">
-<source src="video/arch-646-r2.mp4" type="video/mp4">
-</video>
-</div>
-<figcaption data-fr="Maison R+2 — fondations et structure" data-en="House R+2 — foundations and structure">Maison R+2 — fondations et structure</figcaption>
-</figure>
-<figure class="g-film">
-<div class="g-film-frame">
-<video controls preload="none" playsinline muted poster="video/arch-classroom-kit.jpg" width="1920" height="1080">
-<source src="video/arch-classroom-kit.mp4" type="video/mp4">
-</video>
-</div>
-<figcaption data-fr="Salle de classe, kit acier 7 × 9 m" data-en="Classroom steel kit 7 × 9 m">Salle de classe, kit acier 7 × 9 m</figcaption>
-</figure>
-<figure class="g-film">
-<div class="g-film-frame">
-<video controls preload="none" playsinline muted poster="video/arch-health-post.jpg" width="1920" height="1080">
-<source src="video/arch-health-post.mp4" type="video/mp4">
-</video>
-</div>
-<figcaption data-fr="Poste de santé, kit 7,2 × 12,6 m" data-en="Health post kit 7.2 × 12.6 m">Poste de santé, kit 7,2 × 12,6 m</figcaption>
-</figure>
-</div>
-<div class="g-renders">
-<figure class="g-render g-render--photo"><picture>
-<source type="image/webp" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-arch-r1m2-street-420.webp 420w, img/d-arch-r1m2-street-840.webp 840w">
-<img src="img/d-arch-r1m2-street-840.jpg" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-arch-r1m2-street-420.jpg 420w, img/d-arch-r1m2-street-840.jpg 840w" alt="Maison R+1, modèle 2 : façade sur rue." data-fr-alt="Maison R+1, modèle 2 : façade sur rue." data-en-alt="House R+1, model 2: street front." width="840" height="525" loading="lazy" decoding="async">
-</picture></figure>
-<figure class="g-render g-render--photo"><picture>
-<source type="image/webp" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-arch-r1m2-aerial-420.webp 420w, img/d-arch-r1m2-aerial-840.webp 840w">
-<img src="img/d-arch-r1m2-aerial-840.jpg" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-arch-r1m2-aerial-420.jpg 420w, img/d-arch-r1m2-aerial-840.jpg 840w" alt="Maison R+1, modèle 2 : vue aérienne avec jardin et piscine." data-fr-alt="Maison R+1, modèle 2 : vue aérienne avec jardin et piscine." data-en-alt="House R+1, model 2: aerial view with garden and pool." width="840" height="525" loading="lazy" decoding="async">
-</picture></figure>
-<figure class="g-render g-render--photo"><picture>
-<source type="image/webp" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-arch-r2-street-420.webp 420w, img/d-arch-r2-street-840.webp 840w">
-<img src="img/d-arch-r2-street-840.jpg" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-arch-r2-street-420.jpg 420w, img/d-arch-r2-street-840.jpg 840w" alt="Maison R+2 : façade sur rue." data-fr-alt="Maison R+2 : façade sur rue." data-en-alt="House R+2: street front." width="840" height="525" loading="lazy" decoding="async">
-</picture></figure>
-<figure class="g-render g-render--photo"><picture>
-<source type="image/webp" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-arch-cour-aerial-420.webp 420w, img/d-arch-cour-aerial-840.webp 840w">
-<img src="img/d-arch-cour-aerial-840.jpg" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-arch-cour-aerial-420.jpg 420w, img/d-arch-cour-aerial-840.jpg 840w" alt="Immeuble à cour R+5 : vue aérienne." data-fr-alt="Immeuble à cour R+5 : vue aérienne." data-en-alt="Courtyard block R+5: aerial view." width="840" height="560" loading="lazy" decoding="async">
-</picture></figure>
-<figure class="g-render g-render--photo"><picture>
-<source type="image/webp" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-arch-r2-structure-420.webp 420w, img/d-arch-r2-structure-840.webp 840w">
-<img src="img/d-arch-r2-structure-840.jpg" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-arch-r2-structure-420.jpg 420w, img/d-arch-r2-structure-840.jpg 840w" alt="Maison R+2 : ossature en béton armé." data-fr-alt="Maison R+2 : ossature en béton armé." data-en-alt="House R+2: reinforced-concrete frame." width="840" height="525" loading="lazy" decoding="async">
-</picture></figure>
-<figure class="g-render g-render--photo"><picture>
-<source type="image/webp" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-arch-r1m2-structure-420.webp 420w, img/d-arch-r1m2-structure-840.webp 840w">
-<img src="img/d-arch-r1m2-structure-840.jpg" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-arch-r1m2-structure-420.jpg 420w, img/d-arch-r1m2-structure-840.jpg 840w" alt="Maison R+1, modèle 2 : ossature en béton armé." data-fr-alt="Maison R+1, modèle 2 : ossature en béton armé." data-en-alt="House R+1, model 2: reinforced-concrete frame." width="840" height="525" loading="lazy" decoding="async">
-</picture></figure>
-</div>
-</div>
-<div class="g-panel" role="tabpanel" id="panel-equipment" aria-labelledby="tab-equipment" data-tab-hidden>
-<div class="g-films">
-<figure class="g-film g-film--lead">
-<div class="g-film-frame g-clip">
-<video controls preload="none" playsinline muted poster="video/eq-mortar-mixer.jpg" width="1920" height="1080">
-<source src="video/eq-mortar-mixer.mp4" type="video/mp4">
-</video>
-</div>
-<figcaption data-fr="Malaxeur à mortier mobile 120 L" data-en="Mobile mortar pan mixer 120 L">Malaxeur à mortier mobile 120 L</figcaption>
-</figure>
-<figure class="g-film">
-<div class="g-film-frame">
-<video controls preload="none" playsinline muted poster="video/eq-drum-mixer.jpg" width="1920" height="1080">
-<source src="video/eq-drum-mixer.mp4" type="video/mp4">
-</video>
-</div>
-<figcaption data-fr="Bétonnière 350 L" data-en="Concrete drum mixer 350 L">Bétonnière 350 L</figcaption>
-</figure>
-<figure class="g-film">
-<div class="g-film-frame">
-<video controls preload="none" playsinline muted poster="video/eq-block-machine.jpg" width="1920" height="1080">
-<source src="video/eq-block-machine.mp4" type="video/mp4">
-</video>
-</div>
-<figcaption data-fr="Presse à parpaings hydraulique" data-en="Hydraulic concrete block machine">Presse à parpaings hydraulique</figcaption>
-</figure>
-<figure class="g-film">
-<div class="g-film-frame">
-<video controls preload="none" playsinline muted poster="video/eq-pellet-mill.jpg" width="1920" height="1080">
-<source src="video/eq-pellet-mill.mp4" type="video/mp4">
-</video>
-</div>
-<figcaption data-fr="Presse à granulés 55 kW" data-en="Feed pellet mill 55 kW">Presse à granulés 55 kW</figcaption>
-</figure>
-<figure class="g-film">
-<div class="g-film-frame">
-<video controls preload="none" playsinline muted poster="video/eq-bucket-elevator.jpg" width="1920" height="1080">
-<source src="video/eq-bucket-elevator.mp4" type="video/mp4">
-</video>
-</div>
-<figcaption data-fr="Élévateur à godets 8 m" data-en="Bucket elevator 8 m">Élévateur à godets 8 m</figcaption>
-</figure>
-</div>
-<div class="g-renders">
-<figure class="g-render"><picture>
-<source type="image/webp" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-eq-drum-mixer-420.webp 420w, img/d-eq-drum-mixer-840.webp 840w">
-<img src="img/d-eq-drum-mixer-840.jpg" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-eq-drum-mixer-420.jpg 420w, img/d-eq-drum-mixer-840.jpg 840w" alt="Bétonnière 350 L." data-fr-alt="Bétonnière 350 L." data-en-alt="Concrete drum mixer 350 L." width="840" height="630" loading="lazy" decoding="async">
-</picture></figure>
-<figure class="g-render"><picture>
-<source type="image/webp" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-eq-mortar-mixer-420.webp 420w, img/d-eq-mortar-mixer-840.webp 840w">
-<img src="img/d-eq-mortar-mixer-840.jpg" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-eq-mortar-mixer-420.jpg 420w, img/d-eq-mortar-mixer-840.jpg 840w" alt="Malaxeur à mortier mobile 120 L." data-fr-alt="Malaxeur à mortier mobile 120 L." data-en-alt="Mobile mortar pan mixer 120 L." width="840" height="630" loading="lazy" decoding="async">
-</picture></figure>
-<figure class="g-render"><picture>
-<source type="image/webp" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-eq-block-machine-420.webp 420w">
-<img src="img/d-eq-block-machine-420.jpg" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-eq-block-machine-420.jpg 420w" alt="Presse à parpaings hydraulique." data-fr-alt="Presse à parpaings hydraulique." data-en-alt="Hydraulic concrete block machine." width="420" height="315" loading="lazy" decoding="async">
-</picture></figure>
-<figure class="g-render"><picture>
-<source type="image/webp" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-eq-pellet-mill-420.webp 420w">
-<img src="img/d-eq-pellet-mill-420.jpg" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-eq-pellet-mill-420.jpg 420w" alt="Presse à granulés 55 kW." data-fr-alt="Presse à granulés 55 kW." data-en-alt="Feed pellet mill 55 kW." width="420" height="315" loading="lazy" decoding="async">
-</picture></figure>
-</div>
-</div>
-<div class="g-panel" role="tabpanel" id="panel-products" aria-labelledby="tab-products" data-tab-hidden>
-<div class="g-films">
-<figure class="g-film g-film--lead">
-<div class="g-film-frame g-clip">
-<video controls preload="none" playsinline muted poster="video/pr-sofa.jpg" width="1920" height="1080">
-<source src="video/pr-sofa.mp4" type="video/mp4">
-</video>
-</div>
-<figcaption data-fr="Canapé" data-en="Sofa">Canapé</figcaption>
-</figure>
-<figure class="g-film">
-<div class="g-film-frame">
-<video controls preload="none" playsinline muted poster="video/pr-scaffold.jpg" width="1920" height="1080">
-<source src="video/pr-scaffold.mp4" type="video/mp4">
-</video>
-</div>
-<figcaption data-fr="Travée d’échafaudage à cadres" data-en="Scaffold frame bay">Travée d’échafaudage à cadres</figcaption>
-</figure>
-<figure class="g-film">
-<div class="g-film-frame">
-<video controls preload="none" playsinline muted poster="video/pr-kitchen-island.jpg" width="1920" height="1080">
-<source src="video/pr-kitchen-island.mp4" type="video/mp4">
-</video>
-</div>
-<figcaption data-fr="Cuisine avec îlot marbre" data-en="Kitchen with marble island">Cuisine avec îlot marbre</figcaption>
-</figure>
-<figure class="g-film">
-<div class="g-film-frame">
-<video controls preload="none" playsinline muted poster="video/pr-wardrobe.jpg" width="1920" height="1080">
-<source src="video/pr-wardrobe.mp4" type="video/mp4">
-</video>
-</div>
-<figcaption data-fr="Armoire 1200" data-en="Wardrobe 1200">Armoire 1200</figcaption>
-</figure>
-<figure class="g-film">
-<div class="g-film-frame">
-<video controls preload="none" playsinline muted poster="video/pr-sliding-gate.jpg" width="1920" height="1080">
-<source src="video/pr-sliding-gate.mp4" type="video/mp4">
-</video>
-</div>
-<figcaption data-fr="Portail coulissant automatique" data-en="Automatic sliding gate">Portail coulissant automatique</figcaption>
-</figure>
-</div>
-<div class="g-renders">
-<figure class="g-render"><picture>
-<source type="image/webp" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-pr-kitchen-420.webp 420w, img/d-pr-kitchen-840.webp 840w">
-<img src="img/d-pr-kitchen-840.jpg" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-pr-kitchen-420.jpg 420w, img/d-pr-kitchen-840.jpg 840w" alt="Cuisine noire et grise avec îlot marbre." data-fr-alt="Cuisine noire et grise avec îlot marbre." data-en-alt="Black and grey kitchen with marble island." width="840" height="630" loading="lazy" decoding="async">
-</picture></figure>
-<figure class="g-render"><picture>
-<source type="image/webp" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-pr-wardrobe-420.webp 420w, img/d-pr-wardrobe-840.webp 840w">
-<img src="img/d-pr-wardrobe-840.jpg" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-pr-wardrobe-420.jpg 420w, img/d-pr-wardrobe-840.jpg 840w" alt="Armoire deux portes." data-fr-alt="Armoire deux portes." data-en-alt="Two-door wardrobe." width="840" height="1120" loading="lazy" decoding="async">
-</picture></figure>
-<figure class="g-render"><picture>
-<source type="image/webp" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-pr-sliding-gate-420.webp 420w, img/d-pr-sliding-gate-840.webp 840w">
-<img src="img/d-pr-sliding-gate-840.jpg" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-pr-sliding-gate-420.jpg 420w, img/d-pr-sliding-gate-840.jpg 840w" alt="Portail coulissant automatique." data-fr-alt="Portail coulissant automatique." data-en-alt="Automatic sliding gate." width="840" height="630" loading="lazy" decoding="async">
-</picture></figure>
-<figure class="g-render"><picture>
-<source type="image/webp" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-pr-scaffold-420.webp 420w, img/d-pr-scaffold-840.webp 840w">
-<img src="img/d-pr-scaffold-840.jpg" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-pr-scaffold-420.jpg 420w, img/d-pr-scaffold-840.jpg 840w" alt="Travée d’échafaudage à cadres." data-fr-alt="Travée d’échafaudage à cadres." data-en-alt="Scaffold frame bay." width="840" height="630" loading="lazy" decoding="async">
-</picture></figure>
-<figure class="g-render"><picture>
-<source type="image/webp" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-pr-classroom-kit-420.webp 420w, img/d-pr-classroom-kit-840.webp 840w">
-<img src="img/d-pr-classroom-kit-840.jpg" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-pr-classroom-kit-420.jpg 420w, img/d-pr-classroom-kit-840.jpg 840w" alt="Ossature acier d’un kit de salle de classe." data-fr-alt="Ossature acier d’un kit de salle de classe." data-en-alt="Steel frame of a classroom kit." width="840" height="630" loading="lazy" decoding="async">
-</picture></figure>
-<figure class="g-render"><picture>
-<source type="image/webp" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-pr-chair-420.webp 420w, img/d-pr-chair-840.webp 840w">
-<img src="img/d-pr-chair-840.jpg" sizes="(max-width: 700px) 50vw, 300px" srcset="img/d-pr-chair-420.jpg 420w, img/d-pr-chair-840.jpg 840w" alt="Chaise rembourrée." data-fr-alt="Chaise rembourrée." data-en-alt="Upholstered chair." width="840" height="630" loading="lazy" decoding="async">
-</picture></figure>
-</div>
-</div>
 </div>
 </section><section class="g-section g-group" id="partners">
 <div class="wrap g-group-grid">
@@ -562,7 +347,7 @@
 </details>
 <details class="g-faq-item">
 <summary data-fr="Quels services proposez-vous ?" data-en="What services do you provide?">Quels services proposez-vous ?</summary>
-<p class="g-faq-answer" data-fr="Conseil en Ingénierie, Études Techniques, Estimation des Coûts, Développement de Projet &amp; Appui, Fourniture d’Équipements &amp; Sourcing Industriel." data-en="Engineering Consulting, Technical Studies, Cost Estimation, Project Development &amp; Support, Equipment Supply &amp; Industrial Sourcing.">Conseil en Ingénierie, Études Techniques, Estimation des Coûts, Développement de Projet &amp; Appui, Fourniture d’Équipements &amp; Sourcing Industriel.</p>
+<p class="g-faq-answer" data-fr="Conception Technique &amp; Fabrication, Architecture, Sourcing d’Équipements." data-en="Engineering Design &amp; Fabrication, Architecture, Equipment Sourcing.">Conception Technique &amp; Fabrication, Architecture, Sourcing d’Équipements.</p>
 </details>
 <details class="g-faq-item">
 <summary data-fr="Dans quels secteurs intervenez-vous ?" data-en="Which sectors do you serve?">Dans quels secteurs intervenez-vous ?</summary>
@@ -582,7 +367,12 @@
 </details>
 </div>
 </div>
-</section><section class="g-start">
+</section><section class="g-start g-has-video">
+<div class="g-bgvideo" aria-hidden="true">
+<video muted playsinline loop preload="none" poster="video/bg/eq-block-machine.jpg" tabindex="-1" data-bg-video>
+<source src="video/bg/eq-block-machine.mp4" type="video/mp4">
+</video>
+</div>
 <div class="wrap g-start-grid">
 <div>
 <h2 class="g-h2 g-h2--light" data-fr="Prêt à démarrer ?" data-en="Ready to get started?">Prêt à démarrer ?</h2>
@@ -612,7 +402,7 @@
 <div class="footer-cols">
 <div class="footer-col">
 <h2 class="footer-heading" data-fr="Services" data-en="Services">Services</h2>
-<ul><li><a href="engineering.html" data-fr="Conseil en Ingénierie" data-en="Engineering Consulting">Conseil en Ingénierie</a></li><li><a href="technical-studies.html" data-fr="Études Techniques" data-en="Technical Studies">Études Techniques</a></li><li><a href="cost-estimation.html" data-fr="Estimation des Coûts" data-en="Cost Estimation">Estimation des Coûts</a></li><li><a href="project-development.html" data-fr="Développement de Projet" data-en="Project Development">Développement de Projet</a></li><li><a href="industrial-sourcing.html" data-fr="Équipements &amp; Sourcing" data-en="Equipment &amp; Sourcing">Équipements &amp; Sourcing</a></li></ul>
+<ul><li><a href="engineering.html" data-fr="Conception &amp; Fabrication" data-en="Engineering Design &amp; Fabrication">Conception &amp; Fabrication</a></li><li><a href="project-development.html" data-fr="Architecture" data-en="Architecture">Architecture</a></li><li><a href="industrial-sourcing.html" data-fr="Sourcing d’Équipements" data-en="Equipment Sourcing">Sourcing d’Équipements</a></li></ul>
 </div>
 <div class="footer-col">
 <h2 class="footer-heading" data-fr="Secteurs" data-en="Sectors">Secteurs</h2>

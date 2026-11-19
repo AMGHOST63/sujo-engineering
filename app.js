@@ -579,24 +579,32 @@
         car.scrollBy({ left: b.getAttribute('data-carousel') === 'next' ? w : -w, behavior: 'smooth' });
       });
     });
-    var tabs = document.querySelectorAll('.g-tab');
-    function show(tab) {
-      tabs.forEach(function (t) {
-        var on = t === tab;
-        t.setAttribute('aria-selected', on ? 'true' : 'false');
-        var p = document.getElementById(t.getAttribute('aria-controls'));
-        if (p) {
-          p.hidden = !on;
-          if (!on) p.querySelectorAll('video').forEach(function (v) { v.pause(); });
-        }
-      });
+    // background videos: play while on screen, hero runs through its playlist
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var vids = document.querySelectorAll('video[data-bg-video]');
+    vids.forEach(function (v) {
+      v.muted = true;
+      var list = (v.getAttribute('data-playlist') || '').split(' ').filter(Boolean);
+      if (list.length > 1) {
+        var i = 0;
+        v.addEventListener('ended', function () {
+          i = (i + 1) % list.length;
+          v.src = list[i];
+          var p = v.play(); if (p && p.catch) p.catch(function () {});
+        });
+      }
+      if (reduce) { v.removeAttribute('autoplay'); v.pause(); }
+    });
+    if (!reduce && vids.length && 'IntersectionObserver' in window) {
+      var vo = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          var v = e.target;
+          if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+          else v.pause();
+        });
+      }, { threshold: 0.15 });
+      vids.forEach(function (v) { vo.observe(v); });
     }
-    tabs.forEach(function (t) { t.addEventListener('click', function () { show(t); }); });
-    document.querySelectorAll('[data-tab-hidden]').forEach(function (p) { p.hidden = true; });
-    // one film at a time
-    document.addEventListener('play', function (e) {
-      document.querySelectorAll('.g-film video').forEach(function (v) { if (v !== e.target) v.pause(); });
-    }, true);
   }
 
   function boot() {
