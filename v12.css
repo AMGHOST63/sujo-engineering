@@ -503,3 +503,23 @@ a:hover > .g-arrow { transform: translateX(5px); }
 .a-mini .a-dots { bottom: 18px; }
 @media (min-width: 900px) { .a-mini { min-height: 560px; } }
 @media (max-width: 560px) { .a-mini { min-height: 0; aspect-ratio: 4 / 3; } .a-mini .a-nav { display: none; } .a-mini-cap { bottom: 40px; padding: 10px 14px; } .a-mini-cap a { font-size: 1.05rem; } }
+
+/* architecture: project cards carousel + lightbox (2026-11-19) */
+.a-pcars { padding-bottom: clamp(64px, 8vw, 110px); }
+.a-pcard { cursor: default; }
+.a-pcard .g-market-body { padding-top: 140px; }
+.a-pcard .g-market-text { -webkit-line-clamp: 4; }
+.a-pcard-facts { margin: 10px 0 0; color: #bdbdb9; font-size: .82rem; line-height: 1.5; }
+.a-pcard-btn { background: none; border: 0; padding: 0; font: inherit; font-weight: 500; cursor: pointer; }
+.a-pcard-btn:hover { color: #fff; text-decoration: underline; text-decoration-color: var(--red); }
+.lb { position: fixed; inset: 0; z-index: 500; background: rgba(10,10,12,.94); display: flex; align-items: center; justify-content: center; padding: 56px 64px; }
+.lb[hidden] { display: none; }
+.lb-fig { margin: 0; max-width: min(1400px, 100%); max-height: 100%; display: flex; flex-direction: column; align-items: center; }
+.lb-fig img { max-width: 100%; max-height: calc(100vh - 150px); object-fit: contain; background: #fff; }
+.lb-fig figcaption { margin-top: 12px; color: #e6e6e2; font-size: .95rem; text-align: center; }
+.lb-close { position: absolute; top: 12px; right: 16px; width: 48px; height: 48px; border: 0; background: none; color: #fff; font-size: 2.4rem; line-height: 1; cursor: pointer; }
+.lb-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 52px; height: 52px; border: 1px solid rgba(255,255,255,.5); background: rgba(0,0,0,.3); color: #fff; font-size: 2rem; line-height: 1; cursor: pointer; }
+.lb-nav:hover, .lb-close:hover { color: var(--red); }
+.lb-prev { left: 10px; } .lb-next { right: 10px; }
+.lb-count { position: absolute; bottom: 12px; left: 0; right: 0; text-align: center; color: #9a9a96; font-size: .85rem; margin: 0; }
+@media (max-width: 600px) { .lb { padding: 56px 8px; } .lb-nav { top: auto; bottom: 8px; transform: none; width: 44px; height: 44px; } }

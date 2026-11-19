@@ -570,9 +570,10 @@
       }, { threshold: 0.4 });
       nums.forEach(function (n) { io.observe(n); });
     }
-    var car = document.querySelector('.g-carousel');
     document.querySelectorAll('[data-carousel]').forEach(function (b) {
       b.addEventListener('click', function () {
+        var sec = b.closest('section');
+        var car = sec ? sec.querySelector('.g-carousel') : document.querySelector('.g-carousel');
         if (!car) return;
         var card = car.querySelector('.g-market');
         var w = card ? card.getBoundingClientRect().width + 22 : 400;
@@ -677,6 +678,41 @@
     tabs.forEach(function (t) { t.addEventListener('click', function () { show(t); }); });
   }
 
+  // --- image lightbox (architecture project cards) ---------------------------
+  function initLightbox() {
+    var btns = document.querySelectorAll('[data-lightbox]');
+    if (!btns.length) return;
+    var box = document.createElement('div');
+    box.className = 'lb'; box.hidden = true;
+    box.setAttribute('role', 'dialog'); box.setAttribute('aria-modal', 'true');
+    box.innerHTML = '<button type="button" class="lb-close" aria-label="Fermer / Close">×</button>' +
+      '<button type="button" class="lb-nav lb-prev" aria-label="‹">‹</button><figure class="lb-fig"><img alt=""><figcaption></figcaption></figure>' +
+      '<button type="button" class="lb-nav lb-next" aria-label="›">›</button><p class="lb-count"></p>';
+    document.body.appendChild(box);
+    var img = box.querySelector('img'), cap = box.querySelector('figcaption'), cnt = box.querySelector('.lb-count');
+    var list = [], i = 0, back = null;
+    function lang() { return document.documentElement.getAttribute('data-lang') === 'en' || document.documentElement.lang === 'en' ? 'en' : 'fr'; }
+    function show(n) {
+      i = (n + list.length) % list.length;
+      var it = list[i]; img.src = it.src; img.alt = it[lang()]; cap.textContent = it[lang()];
+      cnt.textContent = (i + 1) + ' / ' + list.length;
+    }
+    function open(b) { try { list = JSON.parse(b.getAttribute('data-lightbox')); } catch (e) { return; } back = b; box.hidden = false; document.body.style.overflow = 'hidden'; show(0); box.querySelector('.lb-close').focus(); }
+    function close() { box.hidden = true; document.body.style.overflow = ''; if (back) back.focus(); }
+    btns.forEach(function (b) { b.addEventListener('click', function () { open(b); }); });
+    box.querySelector('.lb-close').addEventListener('click', close);
+    box.querySelector('.lb-prev').addEventListener('click', function () { show(i - 1); });
+    box.querySelector('.lb-next').addEventListener('click', function () { show(i + 1); });
+    box.addEventListener('click', function (e) { if (e.target === box) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (box.hidden) return;
+      if (e.key === 'Escape') close(); else if (e.key === 'ArrowLeft') show(i - 1); else if (e.key === 'ArrowRight') show(i + 1);
+    });
+    var x0 = null;
+    box.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    box.addEventListener('touchend', function (e) { if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) show(i + (dx < 0 ? 1 : -1)); x0 = null; });
+  }
+
   function boot() {
     initLang();
     initNav();
@@ -688,6 +724,7 @@
     initHome();
     initArchi();
     initFab();
+    initLightbox();
   }
 
   if (document.readyState === 'loading') {
