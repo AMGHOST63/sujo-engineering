@@ -548,6 +548,57 @@
 
   /* ---------------------------------------------------------------- boot -- */
 
+  // --- 12.0 homepage: figures count up, sector carousel, design-studio tabs ---
+  function initHome() {
+    var nums = document.querySelectorAll('[data-count]');
+    if (nums.length && 'IntersectionObserver' in window &&
+        !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          io.unobserve(e.target);
+          var el = e.target, end = +el.getAttribute('data-count'), t0 = null;
+          function step(t) {
+            if (!t0) t0 = t;
+            var p = Math.min(1, (t - t0) / 1400);
+            el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3)));
+            if (p < 1) requestAnimationFrame(step);
+          }
+          el.textContent = '0';
+          requestAnimationFrame(step);
+        });
+      }, { threshold: 0.4 });
+      nums.forEach(function (n) { io.observe(n); });
+    }
+    var car = document.querySelector('.g-carousel');
+    document.querySelectorAll('[data-carousel]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (!car) return;
+        var card = car.querySelector('.g-market');
+        var w = card ? card.getBoundingClientRect().width + 22 : 400;
+        car.scrollBy({ left: b.getAttribute('data-carousel') === 'next' ? w : -w, behavior: 'smooth' });
+      });
+    });
+    var tabs = document.querySelectorAll('.g-tab');
+    function show(tab) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        var p = document.getElementById(t.getAttribute('aria-controls'));
+        if (p) {
+          p.hidden = !on;
+          if (!on) p.querySelectorAll('video').forEach(function (v) { v.pause(); });
+        }
+      });
+    }
+    tabs.forEach(function (t) { t.addEventListener('click', function () { show(t); }); });
+    document.querySelectorAll('[data-tab-hidden]').forEach(function (p) { p.hidden = true; });
+    // one film at a time
+    document.addEventListener('play', function (e) {
+      document.querySelectorAll('.g-film video').forEach(function (v) { if (v !== e.target) v.pause(); });
+    }, true);
+  }
+
   function boot() {
     initLang();
     initNav();
@@ -556,6 +607,7 @@
     initLineItems();
     initForms();
     initThanks();
+    initHome();
   }
 
   if (document.readyState === 'loading') {
