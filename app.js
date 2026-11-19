@@ -585,6 +585,21 @@
     vids.forEach(function (v) {
       v.muted = true;
       var list = (v.getAttribute('data-playlist') || '').split(' ').filter(Boolean);
+      // data-start: seconds to skip at the start of each film (the empty opening frames);
+      // the film also loops back to that point, not to 0
+      var start = +(v.getAttribute('data-start') || 0);
+      if (start) {
+        v.addEventListener('loadedmetadata', function () {
+          if (v.duration && v.currentTime < start && v.duration > start + 2) v.currentTime = start;
+        });
+        if (list.length < 2) {
+          v.loop = false;
+          v.addEventListener('ended', function () {
+            v.currentTime = start;
+            var p = v.play(); if (p && p.catch) p.catch(function () {});
+          });
+        }
+      }
       if (list.length > 1) {
         var i = 0;
         v.addEventListener('ended', function () {
@@ -609,8 +624,7 @@
 
   // --- architecture page: project slideshow and image galleries ------------
   function initArchi() {
-    var slider = document.querySelector('[data-slider]');
-    if (slider) {
+    document.querySelectorAll('[data-slider]').forEach(function (slider) {
       var slides = slider.querySelectorAll('[data-slide]');
       var dots = slider.querySelectorAll('[data-slide-dot]');
       var cur = 0, timer = null;
@@ -629,7 +643,7 @@
       slider.addEventListener('mouseenter', stop);
       slider.addEventListener('mouseleave', start);
       start();
-    }
+    });
     document.querySelectorAll('.a-gallery').forEach(function (g) {
       var main = g.querySelector('[data-gallery-main]');
       g.querySelectorAll('[data-gallery-thumb]').forEach(function (b) {
