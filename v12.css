@@ -536,3 +536,16 @@ a:hover > .g-arrow { transform: translateX(5px); }
 .f-card-names { margin: 8px 0 16px; color: #bdbdb9; font-size: .9rem; line-height: 1.5; }
 .f-card .a-pcard-btn { margin-top: auto; align-self: flex-start; }
 .f-cars .g-carousel { grid-auto-columns: min(82vw, 360px); }
+/* fabrication designs: light section (user, 2026-11-19: "don't use dark mode here") */
+.f-cars { background: var(--surface-2); color: var(--ink); }
+.f-cars .g-markets-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 44px; }
+.f-cars .g-carousel-btn { border-color: var(--ink); color: var(--ink); }
+.f-cars .g-carousel-btn:hover { background: var(--red); border-color: var(--red); color: #fff; }
+.f-card { background: #fff; border: 1px solid var(--line); border-bottom: 3px solid transparent; }
+.f-card:hover { border-bottom-color: var(--red); box-shadow: 0 18px 40px rgba(0,0,0,.08); }
+.f-card .g-market-title { color: var(--ink); }
+.f-card-count { color: var(--muted); }
+.f-card-names { color: var(--body); }
+.f-card-btn { color: var(--red); }
+.f-card-btn:hover { color: var(--red-dark); text-decoration-color: var(--red); }
+@media (max-width: 560px) { .f-cars .g-markets-head { flex-direction: column; align-items: flex-start; } }
