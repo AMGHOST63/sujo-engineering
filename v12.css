@@ -409,3 +409,47 @@ a:hover > .g-arrow { transform: translateX(5px); }
 @media (prefers-reduced-motion: reduce) { .a-slide { transition: none; } .a-slide.is-on img { animation: none; } }
 .a-figures dt { white-space: nowrap; }
 @media (max-width: 560px) { .a-explore { display: none; } .a-cap { bottom: 56px; } }
+
+/* homepage services as full-width film bands (2026-11-19) */
+.g-features--video { padding-bottom: 0; background: #f7f7f7; }
+.g-vfeature { position: relative; display: flex; align-items: center; min-height: min(56.25vw, 88vh); background: #f7f7f7; overflow: hidden; }
+.g-vfeature + .g-vfeature { border-top: 1px solid #e6e6e3; }
+.g-vfeature-media { position: absolute; inset: 0; }
+.g-vfeature-media .svc-video { width: 100%; height: 100%; object-fit: contain; background: #f7f7f7; aspect-ratio: auto; }
+.g-vfeature--photo .g-vfeature-media img, .g-vfeature--photo .g-vfeature-media picture { width: 100%; height: 100%; object-fit: cover; }
+.g-vfeature-inner { position: relative; z-index: 1; display: flex; justify-content: flex-end; padding-block: 48px; pointer-events: none; }
+.g-vfeature--flip .g-vfeature-inner { justify-content: flex-start; }
+.g-vfeature .g-feature-card { pointer-events: auto; max-width: 430px; margin: 0; background: rgba(255,255,255,.94); }
+.g-vfeature--flip .g-feature-card { border-right: 0; border-left: 3px solid var(--red); }
+@media (max-width: 899px) {
+  .g-vfeature { display: block; min-height: 0; }
+  .g-vfeature-media { position: relative; inset: auto; aspect-ratio: 16 / 9; }
+  .g-vfeature-inner { padding-block: 0 32px; }
+  .g-vfeature .g-feature-card { max-width: none; margin: -24px 0 0; }
+}
+
+/* fabrication gallery (engineering.html, 2026-11-19) */
+.fab { background: #fff; }
+.fab-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+.fab-tab { padding: 10px 16px; border: 1px solid var(--line-strong); background: #fff; color: var(--ink); font: inherit; font-size: .92rem; cursor: pointer; transition: background-color .15s ease, color .15s ease, border-color .15s ease; }
+.fab-tab:hover { border-color: var(--ink); }
+.fab-tab[aria-selected="true"] { background: var(--red); border-color: var(--red); color: #fff; }
+.fab-panel[hidden] { display: none; }
+.fab-panel-title { font-size: 1.6rem; font-weight: 300; margin-bottom: 18px; }
+.fab-grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+.fab-item { margin: 0; border: 1px solid var(--line); background: #fff; display: flex; flex-direction: column; transition: box-shadow .2s ease; }
+.fab-item:hover { box-shadow: 0 16px 36px rgba(0,0,0,.08); }
+.fab-item picture, .fab-item img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; display: block; }
+.fab-item figcaption { padding: 12px 14px 14px; border-top: 1px solid var(--line); font-size: .9rem; color: var(--ink); }
+.page-head-media--video .svc-video { object-fit: contain; background: #f7f7f7; height: clamp(300px, 42vw, 640px); }
+@media (max-width: 600px) { .fab-grid { grid-template-columns: 1fr 1fr; gap: 10px; } .fab-item figcaption { font-size: .8rem; padding: 8px 10px; } }
+/* keep the whole model clear of the card on wide screens */
+@media (min-width: 900px) {
+  .g-vfeature { min-height: min(40vw, 86vh); }
+  .g-vfeature-media { right: 31%; }
+  .g-vfeature--flip .g-vfeature-media { left: 31%; right: 0; }
+}
+@media (max-width: 700px) {
+  .fab-tabs { flex-wrap: nowrap; overflow-x: auto; margin-inline: -20px; padding: 0 20px 6px; scrollbar-width: thin; }
+  .fab-tab { flex: none; }
+}

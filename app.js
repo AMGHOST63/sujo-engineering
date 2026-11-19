@@ -648,6 +648,21 @@
     });
   }
 
+  // --- fabrication gallery tabs (engineering.html) -------------------------
+  function initFab() {
+    var tabs = document.querySelectorAll('.fab-tab');
+    if (!tabs.length) return;
+    function show(tab) {
+      tabs.forEach(function (t) {
+        var on = t === tab, p = document.getElementById(t.getAttribute('aria-controls'));
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        if (p) p.hidden = !on;
+      });
+    }
+    document.querySelectorAll('[data-fab-hidden]').forEach(function (p) { p.hidden = true; });
+    tabs.forEach(function (t) { t.addEventListener('click', function () { show(t); }); });
+  }
+
   function boot() {
     initLang();
     initNav();
@@ -658,6 +673,7 @@
     initThanks();
     initHome();
     initArchi();
+    initFab();
   }
 
   if (document.readyState === 'loading') {
