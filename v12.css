@@ -549,3 +549,7 @@ a:hover > .g-arrow { transform: translateX(5px); }
 .f-card-btn { color: var(--red); }
 .f-card-btn:hover { color: var(--red-dark); text-decoration-color: var(--red); }
 @media (max-width: 560px) { .f-cars .g-markets-head { flex-direction: column; align-items: flex-start; } }
+.f-card--link { color: inherit; text-decoration: none; }
+.f-card--link:hover { color: inherit; }
+.f-card--link .f-card-btn { margin-top: auto; }
+#familles .note { margin-top: 32px; }
