@@ -598,3 +598,17 @@ a:hover > .g-arrow { transform: translateX(5px); }
   .page-head--media .page-head-media--video { position: relative; inset: auto; height: 60vw; margin-top: 32px; }
   .page-head--media .page-head-media--video::after { background: none; }
 }
+
+/* homepage film bands (2026-11-20, user: "make the text blend"): no white box — the text sits
+   straight on the film, over a soft fade of the film's own light grey on the text side. */
+.g-vfeature .g-feature-card { background: transparent; box-shadow: none !important; border: 0 !important; padding: 0; }
+@media (min-width: 900px) {
+  .g-vfeature-media::after { content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(270deg, rgba(247,247,247,.97) 0%, rgba(247,247,247,.92) 36%, rgba(247,247,247,0) 62%); }
+  .g-vfeature--flip .g-vfeature-media::after {
+    background: linear-gradient(90deg, rgba(247,247,247,.97) 0%, rgba(247,247,247,.92) 36%, rgba(247,247,247,0) 62%); }
+  .g-vfeature .g-feature-card { max-width: 440px; }
+}
+@media (max-width: 899px) {
+  .g-vfeature .g-feature-card { margin: 0; padding-top: 24px; }
+}
