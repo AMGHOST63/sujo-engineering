@@ -572,3 +572,29 @@ a:hover > .g-arrow { transform: translateX(5px); }
   .page-head--media { min-height: 0; }
   .page-head--media .page-head-media::after { background: rgba(22,23,26,.78); }
 }
+
+/* homepage film bands (2026-11-20, user: "these are background pictures"): the film fills the
+   whole band edge to edge, behind the card, instead of sitting in a box beside it. */
+@media (min-width: 900px) {
+  .g-vfeature { min-height: min(48vw, 86vh); }
+  .g-vfeature-media, .g-vfeature--flip .g-vfeature-media { inset: 0; left: 0; right: 0; }
+  .g-vfeature-media .svc-video { object-fit: cover; object-position: center; }
+  .g-vfeature .g-feature-card { box-shadow: 0 24px 60px rgba(0,0,0,.12); }
+}
+@media (max-width: 899px) {
+  .g-vfeature-media .svc-video { object-fit: cover; }
+}
+
+/* service heads with a film (2026-11-20, user: "fix the texts"): the title ran over the model's
+   outlines. The film now takes the right side only and fades into solid charcoal under the text. */
+@media (min-width: 900px) {
+  .page-head--media .page-head-media--video { left: 46%; }
+  .page-head--media .page-head-media--video::after {
+    background: linear-gradient(90deg, #1e1f22 0%, rgba(30,31,34,.55) 18%, rgba(30,31,34,.12) 42%, rgba(30,31,34,.12) 100%); }
+  .page-head--media:has(.page-head-media--video) .wrap > * { max-width: min(640px, 44vw); }
+}
+@media (max-width: 899px) {
+  .page-head--media:has(.page-head-media--video) { padding-bottom: 0; }
+  .page-head--media .page-head-media--video { position: relative; inset: auto; height: 60vw; margin-top: 32px; }
+  .page-head--media .page-head-media--video::after { background: none; }
+}
