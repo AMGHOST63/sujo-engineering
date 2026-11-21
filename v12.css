@@ -804,3 +804,57 @@ html { scroll-padding-top: 70px; }
 .g-hero .g-btn--ghost { border-color: var(--red); color: var(--red); }
 .g-hero .g-btn--ghost:hover { background: var(--red); color: #fff; }
 @media (max-width: 760px) { .g-tile-text { order: 1; } .g-tile-media { order: 2; } .g-tile-text { padding-bottom: 0; } }
+
+/* ==========================================================================
+   Site-wide, same design as the homepage (user, 2026-11-21): light grey heads with
+   centred dark text, pill buttons, and the head's photo or film shown whole below the
+   text instead of darkened behind it.
+   ========================================================================== */
+.btn, .g-btn { border-radius: 980px; }
+.btn-outline { border-color: var(--red); color: var(--red); background: transparent; }
+.btn-outline:hover { background: var(--red); border-color: var(--red); color: #fff; }
+.section--dark .btn-outline, .cta-band .btn-outline, .g-start .g-btn--ghost, .g-featured .g-btn--ghost { border-color: rgba(255,255,255,.7); color: #fff; }
+.section--dark .btn-outline:hover, .cta-band .btn-outline:hover { background: #fff; color: var(--ink); border-color: #fff; }
+
+/* page heads */
+.page-head, .page-head--media, .page-head--center { background: var(--film-bg); color: #1d1d1f; text-align: center; }
+.page-head::after, .page-head--media::after { display: none !important; }
+.page-head .wrap > * { margin-left: auto; margin-right: auto; }
+.page-head .page-title { color: #1d1d1f; max-width: 24ch; }
+.page-head .page-lead { color: var(--body); max-width: 60ch; }
+.page-head .eyebrow { color: #1d1d1f; }
+.page-head .breadcrumb ol { justify-content: center; }
+.page-head .breadcrumb ol, .page-head .breadcrumb a { color: var(--muted); }
+.page-head .breadcrumb a:hover { color: var(--red); }
+.page-head .crumb-sep { color: var(--line-strong); }
+.page-head .btn-outline { border-color: var(--red); color: var(--red); }
+.page-head .btn-outline:hover { background: var(--red); color: #fff; }
+.page-head-actions { justify-content: center; }
+
+/* heads with a photo or a film: text first, then the picture whole, never darkened */
+.page-head--media { display: flex; flex-direction: column; min-height: 0 !important; padding-block: clamp(48px, 6vw, 80px) 0 !important; }
+.page-head--media .wrap { order: 1; }
+.page-head--media .page-head-media, .page-head--media .page-head-media--video {
+  order: 2; position: relative !important; inset: auto !important; left: auto !important; right: auto !important;
+  width: min(100%, 1280px); margin: clamp(24px, 3vw, 40px) auto 0 !important; height: auto !important; clip-path: none; }
+.page-head--media .page-head-media::after { content: none !important; }
+.page-head--media .page-head-media:not(.page-head-media--video) { aspect-ratio: 21 / 9; }
+.page-head--media .page-head-media--video { aspect-ratio: 16 / 9; max-height: 640px; }
+.page-head--media .page-head-media picture, .page-head--media .page-head-media img { width: 100%; height: 100% !important; object-fit: cover; }
+.page-head--media:has(.page-head-media--video) .wrap > * { max-width: none; }
+.page-head--media:has(.page-head-media--video) .page-title { max-width: 24ch; }
+.page-head--media:has(.page-head-media--video) .page-lead { max-width: 60ch; }
+.page-head--media .page-lead { color: var(--body); }
+@media (max-width: 760px) {
+  .page-head--media .page-head-media:not(.page-head-media--video) { aspect-ratio: 4 / 3; }
+}
+
+/* Pousse-Où head: same light treatment */
+.po2-hero { background: var(--film-bg); color: #1d1d1f; }
+.po2-hero::before { display: none; }
+.po2-hero .po2-title, .po2-hero .g-hero-title { color: #1d1d1f; }
+.po2-hero .g-hero-sub { color: var(--body); }
+.po2-hero .g-kicker { color: #1d1d1f; }
+.po2-hero .breadcrumb ol, .po2-hero .breadcrumb a { color: var(--muted); }
+.po2-hero .g-btn--ghost { border-color: var(--red); color: var(--red); background: transparent; }
+.po2-hero .g-btn--ghost:hover { background: var(--red); color: #fff; }
