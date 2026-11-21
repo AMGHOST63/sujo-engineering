@@ -588,25 +588,28 @@
       var list = (v.getAttribute('data-playlist') || '').split(' ').filter(Boolean);
       // data-start: seconds to skip at the start of each film (the empty opening frames);
       // the film also loops back to that point, not to 0
-      var start = +(v.getAttribute('data-start') || 0);
-      // the films are grey assembly sequences that only take their colours in the last
-      // seconds: never loop natively, hold the finished, coloured model on screen
-      // for a few seconds, then restart (or move to the next film of the playlist)
-      var HOLD = 4000, i = 0, holdTimer = null;
+      var start = +(v.getAttribute('data-start') || 10);
+      // every film starts 10 s in (the empty opening frames are skipped). When it ends,
+      // the finished, coloured model stays up for a moment, then a quick fade takes it
+      // back to the start, or on to the next film of the playlist.
+      var HOLD = 1200, FADE = 250, i = 0, holdTimer = null;
       v.loop = false;
       v.removeAttribute('loop');
-      if (start) {
-        v.addEventListener('loadedmetadata', function () {
-          if (v.duration && v.currentTime < start && v.duration > start + 2) v.currentTime = start;
-        });
-      }
+      v.style.transition = 'opacity ' + FADE + 'ms ease';
+      v.addEventListener('loadedmetadata', function () {
+        if (v.duration && v.currentTime < start && v.duration > start + 2) v.currentTime = start;
+      });
+      v.addEventListener('playing', function () { v.style.opacity = ''; });
       v.addEventListener('ended', function () {
         clearTimeout(holdTimer);
         holdTimer = setTimeout(function () {
-          if (list.length > 1) { i = (i + 1) % list.length; v.src = list[i]; }
-          else v.currentTime = start;
-          if (v.getAttribute('data-visible') === '0') return;
-          var p = v.play(); if (p && p.catch) p.catch(function () {});
+          v.style.opacity = '0';
+          setTimeout(function () {
+            if (list.length > 1) { i = (i + 1) % list.length; v.src = list[i]; }
+            else v.currentTime = v.duration > start + 2 ? start : 0;
+            if (v.getAttribute('data-visible') === '0') { v.style.opacity = ''; return; }
+            var p = v.play(); if (p && p.catch) p.catch(function () { v.style.opacity = ''; });
+          }, FADE);
         }, HOLD);
       });
       if (reduce) { v.removeAttribute('autoplay'); v.pause(); }

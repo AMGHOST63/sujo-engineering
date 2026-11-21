@@ -23,21 +23,21 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
 <link rel="stylesheet" href="style.css?v=9a46649c">
-<link rel="stylesheet" href="v12.css?v=f3c9aa6d">
+<link rel="stylesheet" href="v12.css?v=23c65f79">
 <script>
 // Apply the stored language before first paint so the page never flashes the
 // wrong one. The full swap happens in app.js.
 (function(){try{var l=localStorage.getItem('sujoLang');if(l==='en'||l==='fr'){document.documentElement.lang=l;document.documentElement.setAttribute('data-lang',l);}else{document.documentElement.setAttribute('data-lang','fr');}}catch(e){document.documentElement.setAttribute('data-lang','fr');}document.documentElement.classList.remove('lang-boot');})();
 </script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://sujo-engineering.com/#organization","name":"SUJO Engineering Consulting SARL","alternateName":"SUJO","url":"https://sujo-engineering.com/","logo":"https://sujo-engineering.com/img/logo-512.png","image":"https://sujo-engineering.com/img/og-default.jpg","email":"contact@sujo-engineering.com","telephone":"+243976438148","address":{"@type":"PostalAddress","addressLocality":"Kinshasa","addressCountry":"CD"},"areaServed":[{"@type":"Country","name":"Democratic Republic of the Congo"},{"@type":"AdministrativeArea","name":"Kinshasa"}],"availableLanguage":["fr","en"],"contactPoint":[{"@type":"ContactPoint","contactType":"sales","telephone":"+243976438148","email":"contact@sujo-engineering.com","areaServed":"CD","availableLanguage":["fr","en"]},{"@type":"ContactPoint","contactType":"customer support","telephone":"+14123453307","email":"contact@sujo-engineering.com","areaServed":"US","availableLanguage":["en","fr"]}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"17:00"}],"knowsAbout":["Engineering design","Fabrication","Custom fitted furniture","Steel structures","Architecture","Industrial equipment supply","Turnkey systems supply","Equipment sourcing","Spare parts identification"]}</script>
-<script defer src="app.js?v=24860c19"></script>
+<script defer src="app.js?v=dedc523b"></script>
 </head>
 <body class="page-home">
 <a class="skip-link" href="#main" data-fr="Aller au contenu principal" data-en="Skip to main content">Aller au contenu principal</a>
 <header class="site-header" id="site-header">
 <div class="header-inner">
 <a class="brand" href="index.html" aria-label="SUJO Engineering Consulting — accueil">
-<img class="brand-logo" src="img/logo.png" alt="SUJO Engineering Consulting" width="484" height="132" fetchpriority="high">
+<img class="brand-mark" src="img/logo-mark.png" alt="" width="97" height="128" fetchpriority="high"><span class="brand-name">SUJO Engineering Consulting</span>
 </a>
 <nav class="primary-nav" aria-label="Navigation principale">
 <ul class="nav-list" id="nav-list">
@@ -95,95 +95,58 @@
 <source src="video/bg/arch-maison-r1-m2.mp4" type="video/mp4">
 </video>
 </div></div>
-<div class="g-hero-scrim" aria-hidden="true"></div>
 <div class="wrap g-hero-inner">
-<p class="g-kicker g-kicker--light" data-fr="SUJO Engineering Consulting" data-en="SUJO Engineering Consulting">SUJO Engineering Consulting</p>
+<p class="g-kicker" data-fr="SUJO Engineering Consulting" data-en="SUJO Engineering Consulting">SUJO Engineering Consulting</p>
 <h1 class="g-hero-title" data-fr="Conçu pour les projets industriels exigeants" data-en="Built for demanding industrial projects">Conçu pour les projets industriels exigeants</h1>
-<p class="g-hero-sub" data-fr="Conception technique et fabrication, architecture et sourcing d’équipements en RDC." data-en="Engineering design and fabrication, architecture and equipment sourcing in the DRC.">Conception technique et fabrication, architecture et sourcing d’équipements en RDC.</p>
 <div class="g-hero-actions">
 <a class="g-btn g-btn--red" href="contact.html"><span data-fr="Nous contacter" data-en="Contact us">Nous contacter</span><span class="g-arrow" aria-hidden="true">→</span></a>
 <a class="g-btn g-btn--ghost" href="services.html"><span data-fr="Explorer nos services" data-en="Explore services">Explorer nos services</span><span class="g-arrow" aria-hidden="true">→</span></a>
 </div>
 </div>
-</section><section class="g-section g-intro">
-<div class="wrap">
-<p class="g-kicker" data-fr="À propos" data-en="About us">À propos</p>
-<h2 class="g-h2" data-fr="Nous sommes SUJO" data-en="We are SUJO">Nous sommes SUJO</h2>
-<p class="g-intro-text" data-fr="Une société d’ingénierie et de fourniture industrielle basée à Kinshasa. Nous associons l’appui technique à la fourniture d’équipements — de la pièce détachée et du composant jusqu’aux machines, systèmes et packages clé en main — pour les projets industriels, miniers, de construction et d’infrastructure en République Démocratique du Congo." data-en="An engineering and industrial supply company based in Kinshasa. We combine technical support with the supply of equipment — from spare parts and components to complete machines, systems and turnkey packages — for industrial, mining, construction and infrastructure projects in the Democratic Republic of the Congo.">Une société d’ingénierie et de fourniture industrielle basée à Kinshasa. Nous associons l’appui technique à la fourniture d’équipements — de la pièce détachée et du composant jusqu’aux machines, systèmes et packages clé en main — pour les projets industriels, miniers, de construction et d’infrastructure en République Démocratique du Congo.</p>
-</div>
-</section><section class="g-features g-features--video">
-<article class="g-vfeature">
-<div class="g-vfeature-media"><video class="svc-video" muted loop playsinline preload="none" data-start="8" poster="video/bg/pr-kitchen-island.jpg" aria-hidden="true" tabindex="-1" data-bg-video>
+</section><section class="g-tiles" id="services">
+<h2 class="visually-hidden" data-fr="Nos services" data-en="Our services">Nos services</h2>
+<article class="g-tile g-tile--full">
+<div class="g-tile-media" aria-hidden="true"><video class="svc-video" muted playsinline preload="none" data-start="10" poster="video/bg/pr-kitchen-island.jpg" tabindex="-1" data-bg-video>
 <source src="video/bg/pr-kitchen-island.mp4" type="video/mp4">
 </video></div>
-<div class="wrap g-vfeature-inner">
-<div class="g-feature-card">
-<p class="g-kicker" data-fr="Conception &amp; fabrication — service principal" data-en="Engineering design &amp; fabrication — main service">Conception &amp; fabrication — service principal</p>
-<h3 class="g-h3" data-fr="Du modèle 3D à l’ouvrage fabriqué" data-en="From the 3D model to the finished product">Du modèle 3D à l’ouvrage fabriqué</h3>
-<p class="g-feature-text" data-fr="Mobilier intégré sur mesure, équipements, machines et structures en acier : chaque produit est modélisé en 3D pièce par pièce, livré avec ses plans, nomenclatures et fichiers CNC, puis fabriqué." data-en="Custom fitted furniture, equipment, machines and steel structures: every product is modelled in 3D part by part, documented with drawings, bills of materials and CNC files, then fabricated.">Mobilier intégré sur mesure, équipements, machines et structures en acier : chaque produit est modélisé en 3D pièce par pièce, livré avec ses plans, nomenclatures et fichiers CNC, puis fabriqué.</p>
-<a class="g-link" href="engineering.html"><span data-fr="En savoir plus" data-en="Learn more">En savoir plus</span><span class="g-arrow" aria-hidden="true">→</span></a>
+<div class="g-tile-text">
+<p class="g-kicker" data-fr="Conception &amp; fabrication" data-en="Engineering design &amp; fabrication">Conception &amp; fabrication</p>
+<h3 class="g-tile-title" data-fr="Du modèle 3D à l’ouvrage fabriqué" data-en="From the 3D model to the finished product">Du modèle 3D à l’ouvrage fabriqué</h3>
+<p class="g-tile-line" data-fr="Mobilier, équipements, machines et structures en acier." data-en="Furniture, equipment, machines and steel structures.">Mobilier, équipements, machines et structures en acier.</p>
+<div class="g-tile-actions">
+<a class="g-pill g-pill--red" href="engineering.html" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
+<a class="g-pill g-pill--line" href="quote.html" data-fr="Demander un devis" data-en="Request a quote">Demander un devis</a>
 </div>
 </div>
 </article>
-<article class="g-vfeature g-vfeature--flip">
-<div class="g-vfeature-media"><video class="svc-video" muted loop playsinline preload="none" data-start="8" poster="video/bg/eq-pellet-mill.jpg" aria-hidden="true" tabindex="-1" data-bg-video>
-<source src="video/bg/eq-pellet-mill.mp4" type="video/mp4">
-</video></div>
-<div class="wrap g-vfeature-inner">
-<div class="g-feature-card">
-<p class="g-kicker" data-fr="Sourcing d’équipements" data-en="Equipment sourcing">Sourcing d’équipements</p>
-<h3 class="g-h3" data-fr="De la pièce au package clé en main" data-en="From one part to a turnkey package">De la pièce au package clé en main</h3>
-<p class="g-feature-text" data-fr="Machines, équipements, systèmes industriels et packages clé en main — installation, mise en service et pièces de première dotation comprises. Nous ne sommes liés à aucun fabricant : l’équipement recommandé est choisi sur son mérite technique et son coût rendu." data-en="Machines, equipment, industrial systems and turnkey packages — installation, commissioning and initial spares included. We are not tied to any single manufacturer: the equipment we recommend is selected on technical merit and landed cost.">Machines, équipements, systèmes industriels et packages clé en main — installation, mise en service et pièces de première dotation comprises. Nous ne sommes liés à aucun fabricant : l’équipement recommandé est choisi sur son mérite technique et son coût rendu.</p>
-<a class="g-link" href="industrial-sourcing.html"><span data-fr="En savoir plus" data-en="Learn more">En savoir plus</span><span class="g-arrow" aria-hidden="true">→</span></a>
-</div>
-</div>
-</article>
-<article class="g-vfeature">
-<div class="g-vfeature-media"><video class="svc-video" muted loop playsinline preload="none" data-start="8" poster="video/bg/arch-maison-r1.jpg" aria-hidden="true" tabindex="-1" data-bg-video>
+<article class="g-tile">
+<div class="g-tile-media" aria-hidden="true"><video class="svc-video" muted playsinline preload="none" data-start="10" poster="video/bg/arch-maison-r1.jpg" tabindex="-1" data-bg-video>
 <source src="video/bg/arch-maison-r1.mp4" type="video/mp4">
 </video></div>
-<div class="wrap g-vfeature-inner">
-<div class="g-feature-card">
+<div class="g-tile-text">
 <p class="g-kicker" data-fr="Architecture" data-en="Architecture">Architecture</p>
-<h3 class="g-h3" data-fr="Des bâtiments pensés jusqu’au détail" data-en="Buildings designed down to the detail">Des bâtiments pensés jusqu’au détail</h3>
-<p class="g-feature-text" data-fr="Tours et immeubles de logements, écoles, villas et maisons : chaque bâtiment est livré avec ses plans d’architecture, sa structure, ses lots techniques et ses rendus 3D." data-en="Residential towers and blocks, schools, villas and houses: every building comes with its architectural drawings, structure, building services and 3D renders.">Tours et immeubles de logements, écoles, villas et maisons : chaque bâtiment est livré avec ses plans d’architecture, sa structure, ses lots techniques et ses rendus 3D.</p>
-<a class="g-link" href="project-development.html"><span data-fr="En savoir plus" data-en="Learn more">En savoir plus</span><span class="g-arrow" aria-hidden="true">→</span></a>
+<h3 class="g-tile-title" data-fr="Des bâtiments pensés jusqu’au détail" data-en="Buildings designed down to the detail">Des bâtiments pensés jusqu’au détail</h3>
+<p class="g-tile-line" data-fr="Maisons, immeubles et écoles, plans et rendus 3D." data-en="Houses, apartment blocks and schools, drawings and 3D renders.">Maisons, immeubles et écoles, plans et rendus 3D.</p>
+<div class="g-tile-actions">
+<a class="g-pill g-pill--red" href="project-development.html" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
+<a class="g-pill g-pill--line" href="quote.html" data-fr="Demander un devis" data-en="Request a quote">Demander un devis</a>
 </div>
 </div>
 </article>
-</section><section class="g-stats">
-<div class="wrap g-stats-grid">
-<div class="g-stat">
-<p class="g-stat-num"><span data-count="3">3</span></p>
-<p class="g-stat-label" data-fr="Lignes de service" data-en="Service lines">Lignes de service</p>
-</div>
-<div class="g-stat">
-<p class="g-stat-num"><span data-count="9">9</span></p>
-<p class="g-stat-label" data-fr="Secteurs d’intervention" data-en="Sectors of intervention">Secteurs d’intervention</p>
-</div>
-<div class="g-stat">
-<p class="g-stat-num"><span data-count="10">10</span></p>
-<p class="g-stat-label" data-fr="Familles de produits" data-en="Product families">Familles de produits</p>
-</div>
-<div class="g-stat">
-<p class="g-stat-num"><span data-count="639">639</span></p>
-<p class="g-stat-label" data-fr="Types d’articles au catalogue" data-en="Catalogued item types">Types d’articles au catalogue</p>
+<article class="g-tile">
+<div class="g-tile-media" aria-hidden="true"><video class="svc-video" muted playsinline preload="none" data-start="10" poster="video/bg/eq-pellet-mill.jpg" tabindex="-1" data-bg-video>
+<source src="video/bg/eq-pellet-mill.mp4" type="video/mp4">
+</video></div>
+<div class="g-tile-text">
+<p class="g-kicker" data-fr="Sourcing d’équipements" data-en="Equipment sourcing">Sourcing d’équipements</p>
+<h3 class="g-tile-title" data-fr="De la pièce au package clé en main" data-en="From one part to a turnkey package">De la pièce au package clé en main</h3>
+<p class="g-tile-line" data-fr="Machines et équipements, choisis sans attache fabricant." data-en="Machines and equipment, chosen with no tie to any manufacturer.">Machines et équipements, choisis sans attache fabricant.</p>
+<div class="g-tile-actions">
+<a class="g-pill g-pill--red" href="industrial-sourcing.html" data-fr="En savoir plus" data-en="Learn more">En savoir plus</a>
+<a class="g-pill g-pill--line" href="quote.html" data-fr="Demander un devis" data-en="Request a quote">Demander un devis</a>
 </div>
 </div>
-</section><section class="g-section g-services" id="services">
-<div class="wrap">
-<div class="g-head">
-<p class="g-kicker" data-fr="Services" data-en="Services">Services</p>
-<h2 class="g-h2" data-fr="Des solutions de bout en bout" data-en="End-to-end solutions">Des solutions de bout en bout</h2>
-<p class="g-lead" data-fr="Selon l’ampleur et les contraintes de chaque projet, nos services se déploient individuellement ou ensemble, du premier besoin exprimé jusqu’à l’appui à l’exécution." data-en="Depending on the scale and constraints of each project, our services are applied individually or together, from the first expression of need through to implementation support.">Selon l’ampleur et les contraintes de chaque projet, nos services se déploient individuellement ou ensemble, du premier besoin exprimé jusqu’à l’appui à l’exécution.</p>
-</div>
-<ul class="g-rows">
-<li class="g-rows-main"><a class="g-row g-row--main" href="engineering.html"><span class="g-row-label"><span class="g-row-tag" data-fr="Service principal" data-en="Main service">Service principal</span><span data-fr="Conception technique &amp; fabrication" data-en="Engineering Design &amp; Fabrication">Conception technique &amp; fabrication</span></span><span class="g-arrow" aria-hidden="true">→</span></a></li>
-<li><a class="g-row" href="project-development.html"><span class="g-row-label"><span data-fr="Architecture" data-en="Architecture">Architecture</span></span><span class="g-arrow" aria-hidden="true">→</span></a></li>
-<li><a class="g-row" href="industrial-sourcing.html"><span class="g-row-label"><span data-fr="Sourcing d’équipements" data-en="Equipment Sourcing">Sourcing d’équipements</span></span><span class="g-arrow" aria-hidden="true">→</span></a></li>
-<li><a class="g-row" href="industrial-sourcing.html#catalogue"><span class="g-row-label"><span data-fr="Catalogue d’équipements" data-en="Equipment catalogue">Catalogue d’équipements</span></span><span class="g-arrow" aria-hidden="true">→</span></a></li>
-</ul>
-</div>
+</article>
 </section><section class="g-featured">
 <div class="g-featured-media g-clip a-mini" data-slider aria-roledescription="carousel" aria-label="Projets à la une">
 <figure class="a-slide is-on" data-slide>
@@ -398,29 +361,6 @@
 <a class="g-btn g-btn--red" href="quote.html"><span data-fr="Demander un devis" data-en="Request a Quote">Demander un devis</span><span class="g-arrow" aria-hidden="true">→</span></a>
 <a class="g-btn g-btn--ghost" href="contact.html"><span data-fr="Discuter de votre projet" data-en="Discuss Your Project">Discuter de votre projet</span><span class="g-arrow" aria-hidden="true">→</span></a>
 <p class="g-start-contact"><a href="tel:+243976438148">+243 976 438 148</a><br><a href="mailto:contact@sujo-engineering.com">contact@sujo-engineering.com</a></p>
-</div>
-</div>
-</section><section class="g-section g-group" id="partners">
-<div class="wrap g-group-grid">
-<div class="g-group-card">
-<p class="g-kicker" data-fr="Entreprise soutenue" data-en="A business we support">Entreprise soutenue</p>
-<h2 class="g-h2" data-fr="Pousse-Où, une jeune entreprise de Kinshasa." data-en="Pousse-Où, a young Kinshasa company.">Pousse-Où, une jeune entreprise de Kinshasa.</h2>
-<p class="g-feature-text" data-fr="SUJO soutient l’entrepreneuriat des jeunes et les entreprises locales. Pousse-Où, jeune entreprise indépendante de Kinshasa, collecte les déchets, nettoie les sites et produit des pavés à partir de matières récupérées." data-en="SUJO supports youth entrepreneurship and local businesses. Pousse-Où, a young independent Kinshasa company, collects waste, cleans sites and makes paving blocks from recovered material.">SUJO soutient l’entrepreneuriat des jeunes et les entreprises locales. Pousse-Où, jeune entreprise indépendante de Kinshasa, collecte les déchets, nettoie les sites et produit des pavés à partir de matières récupérées.</p>
-<a class="g-btn g-btn--red" href="pousse-ou.html"><span data-fr="Découvrir Pousse-Où" data-en="Discover Pousse-Où">Découvrir Pousse-Où</span><span class="g-arrow" aria-hidden="true">→</span></a>
-</div>
-<div class="g-mosaic">
-<div class="g-mosaic-item g-mosaic-item--1"><picture>
-<source type="image/webp" sizes="(max-width: 900px) 50vw, 360px" srcset="img/pou-crew-640.webp 640w">
-<img src="img/pou-crew-640.jpg" sizes="(max-width: 900px) 50vw, 360px" srcset="img/pou-crew-640.jpg 640w" alt="Une équipe dégage un terrain encombré de déchets." data-fr-alt="Une équipe dégage un terrain encombré de déchets." data-en-alt="A crew clears a plot full of waste." width="640" height="1144" loading="lazy" decoding="async">
-</picture></div>
-<div class="g-mosaic-item g-mosaic-item--2 g-clip"><picture>
-<source type="image/webp" sizes="(max-width: 900px) 50vw, 360px" srcset="img/pou-pavers-field-640.webp 640w">
-<img src="img/pou-pavers-field-640.jpg" sizes="(max-width: 900px) 50vw, 360px" srcset="img/pou-pavers-field-640.jpg 640w" alt="Pavés finis, prêts pour le chantier." data-fr-alt="Pavés finis, prêts pour le chantier." data-en-alt="Finished paving blocks, ready for site." width="640" height="853" loading="lazy" decoding="async">
-</picture></div>
-<div class="g-mosaic-item g-mosaic-item--3"><picture>
-<source type="image/webp" sizes="(max-width: 900px) 50vw, 360px" srcset="img/pou-tricycle-street-640.webp 640w">
-<img src="img/pou-tricycle-street-640.jpg" sizes="(max-width: 900px) 50vw, 360px" srcset="img/pou-tricycle-street-640.jpg 640w" alt="Un tricycle de collecte en tournée." data-fr-alt="Un tricycle de collecte en tournée." data-en-alt="A collection tricycle on its rounds." width="640" height="1208" loading="lazy" decoding="async">
-</picture></div>
 </div>
 </div>
 </section>
