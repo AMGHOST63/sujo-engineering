@@ -589,33 +589,34 @@
       // data-start: seconds to skip at the start of each film (the empty opening frames);
       // the film also loops back to that point, not to 0
       var start = +(v.getAttribute('data-start') || 0);
+      // the films are grey assembly sequences that only take their colours in the last
+      // seconds: never loop natively, hold the finished, coloured model on screen
+      // for a few seconds, then restart (or move to the next film of the playlist)
+      var HOLD = 4000, i = 0, holdTimer = null;
+      v.loop = false;
+      v.removeAttribute('loop');
       if (start) {
         v.addEventListener('loadedmetadata', function () {
           if (v.duration && v.currentTime < start && v.duration > start + 2) v.currentTime = start;
         });
-        if (list.length < 2) {
-          v.loop = false;
-          v.addEventListener('ended', function () {
-            v.currentTime = start;
-            var p = v.play(); if (p && p.catch) p.catch(function () {});
-          });
-        }
       }
-      if (list.length > 1) {
-        var i = 0;
-        v.addEventListener('ended', function () {
-          i = (i + 1) % list.length;
-          v.src = list[i];
+      v.addEventListener('ended', function () {
+        clearTimeout(holdTimer);
+        holdTimer = setTimeout(function () {
+          if (list.length > 1) { i = (i + 1) % list.length; v.src = list[i]; }
+          else v.currentTime = start;
+          if (v.getAttribute('data-visible') === '0') return;
           var p = v.play(); if (p && p.catch) p.catch(function () {});
-        });
-      }
+        }, HOLD);
+      });
       if (reduce) { v.removeAttribute('autoplay'); v.pause(); }
     });
     if (!reduce && vids.length && 'IntersectionObserver' in window) {
       var vo = new IntersectionObserver(function (es) {
         es.forEach(function (e) {
           var v = e.target;
-          if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+          v.setAttribute('data-visible', e.isIntersecting ? '1' : '0');
+          if (e.isIntersecting) { if (!v.ended) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } }
           else v.pause();
         });
       }, { threshold: 0.15 });
