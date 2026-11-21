@@ -612,3 +612,117 @@ a:hover > .g-arrow { transform: translateX(5px); }
 @media (max-width: 899px) {
   .g-vfeature .g-feature-card { margin: 0; padding-top: 24px; }
 }
+
+/* ==========================================================================
+   2026-11-21 (user: "I want to see the colours", "I can't see the full video",
+   "the text is too large across all the pages")
+   Films: every film is shown whole (contain, never cropped), at full colour,
+   with no fade, scrim or tint laid over it. The films are rendered on a flat
+   #f5f5f5 background, so each one sits in a panel of that same grey and the
+   text sits beside it, never on top of it.
+   ========================================================================== */
+:root { --film-bg: #f5f5f5; }
+video.svc-video, .g-bgvideo video { object-fit: contain !important; object-position: center; background: var(--film-bg) !important; filter: none; opacity: 1; }
+.g-bgvideo { background: var(--film-bg); }
+.g-bgvideo::after, .g-has-video > .g-bgvideo::after, .g-vfeature-media::after,
+.page-head--media .page-head-media--video::after { content: none !important; background: none !important; }
+.g-hero-media .g-bgvideo video { animation: none; transform: none; }
+
+/* homepage, apple.com-style presentation (user, 2026-11-21): centred text first, then the
+   product, whole, centred on its own grey tile. Tiles are separated by a thin white gap. */
+.g-hero { display: flex; flex-direction: column; min-height: 0; background: var(--film-bg); color: var(--ink); text-align: center; overflow: hidden; }
+.g-hero > .g-hero-inner { order: 1; width: min(100% - 40px, var(--wrap)); padding-block: clamp(48px, 6vw, 80px) 0; display: flex; flex-direction: column; align-items: center; }
+.g-hero .g-kicker--light, .g-hero .g-kicker { color: var(--red); }
+.g-hero .g-hero-title { color: var(--ink); max-width: 20ch; margin-inline: auto; font-weight: 500; letter-spacing: -0.025em; }
+.g-hero .g-hero-sub { color: var(--body); max-width: 46ch; margin-inline: auto; }
+.g-hero .g-hero-actions { justify-content: center; }
+.g-hero .g-btn--ghost { border-color: var(--ink); color: var(--ink); background: transparent; }
+.g-hero .g-btn--ghost:hover { background: var(--ink); color: #fff; }
+.g-hero-media { order: 2; position: relative; width: min(100%, 1280px); margin: clamp(8px, 2vw, 24px) auto 0; aspect-ratio: 16 / 9; background: var(--film-bg); }
+.g-hero-media .g-bgvideo { position: absolute; inset: 0; }
+
+.g-features--video { background: #fff; padding: 0; display: grid; gap: 12px; padding-block: 12px; }
+.g-vfeature, .g-vfeature--flip { display: flex; flex-direction: column-reverse; align-items: center; min-height: 0; background: var(--film-bg); text-align: center; border: 0 !important; }
+.g-vfeature-media, .g-vfeature--flip .g-vfeature-media { position: relative; inset: auto !important; width: min(100%, 1100px); aspect-ratio: 16 / 9; }
+.g-vfeature-inner, .g-vfeature--flip .g-vfeature-inner { position: static; display: block; padding: clamp(44px, 5vw, 64px) 0 0; pointer-events: auto; }
+.g-vfeature .g-feature-card { max-width: 640px !important; margin: 0 auto !important; padding: 0 !important; text-align: center; }
+.g-vfeature .g-h3 { font-size: clamp(1.7rem, 1.3rem + 1.4vw, 2.5rem); font-weight: 500; letter-spacing: -0.02em; line-height: 1.12; }
+.g-vfeature .g-kicker { color: var(--red); letter-spacing: .16em; }
+.g-vfeature .g-feature-text { max-width: 52ch; margin-inline: auto; }
+.g-vfeature .g-link { justify-content: center; margin-top: 18px; }
+
+/* "Prêt à démarrer ?" band: same treatment as the hero */
+@media (min-width: 900px) {
+  .g-start.g-has-video .g-bgvideo { left: 54%; }
+  .g-start.g-has-video .g-start-grid { grid-template-columns: minmax(0, min(520px, 42vw)); align-items: start; }
+}
+@media (max-width: 899px) {
+  .g-start.g-has-video { display: flex; flex-direction: column; padding-bottom: 0; }
+  .g-start.g-has-video .g-bgvideo { order: 2; position: relative; inset: auto; aspect-ratio: 16 / 9; margin-top: 48px; }
+}
+
+/* service page heads: film whole on the right, on its own grey panel */
+@media (min-width: 900px) {
+  .page-head--media .page-head-media--video { left: 50%; background: var(--film-bg); }
+  .page-head--media:has(.page-head-media--video) .wrap > * { max-width: min(560px, 42vw); }
+}
+@media (max-width: 899px) {
+  .page-head--media .page-head-media--video { height: auto !important; aspect-ratio: 16 / 9; background: var(--film-bg); }
+  .page-head--media .page-head-media--video .svc-video { height: 100% !important; }
+}
+
+/* films inside cards and service rows: whole frame, 16:9 */
+.card-media--video, .g-feature-media .svc-video, .service-row-media .svc-video { background: var(--film-bg); }
+.g-feature-media .svc-video, .service-row-media .svc-video { aspect-ratio: 16 / 9; }
+
+/* ==========================================================================
+   Type scale, one step smaller everywhere (2026-11-21)
+   ========================================================================== */
+html { font-size: 15px; }
+body { font-size: 15.5px; line-height: 1.6; }
+@media (max-width: 760px) { body { font-size: 15px; } }
+.g-hero-title { font-size: clamp(2rem, 1.3rem + 2.4vw, 3.4rem); line-height: 1.08; }
+.g-hero-sub { font-size: clamp(1rem, .95rem + .25vw, 1.15rem); margin-top: 18px; }
+.g-hero-actions { margin-top: 30px; }
+.g-h2 { font-size: clamp(1.7rem, 1.25rem + 1.5vw, 2.5rem); }
+.g-h3 { font-size: clamp(1.35rem, 1.15rem + .7vw, 1.75rem); margin-bottom: 14px; }
+.g-lead, .g-start-text, .g-featured-text, .page-head .page-lead, .section-head .section-lead { font-size: 1.02rem; }
+.g-intro-text { font-size: clamp(1.05rem, .98rem + .4vw, 1.3rem); }
+.g-feature-text { font-size: .98rem; }
+.g-stat-num { font-size: clamp(2.4rem, 1.8rem + 2vw, 3.6rem); }
+.g-row { font-size: clamp(1.15rem, 1rem + .45vw, 1.4rem); }
+.g-row--main { font-size: clamp(1.4rem, 1.15rem + .9vw, 1.9rem); }
+.g-market-title { font-size: 1.4rem; }
+.g-faq-item summary { font-size: 1.08rem; }
+.section-title { font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.3rem); }
+.page-head .page-title, .page-title { font-size: clamp(1.8rem, 1.25rem + 1.9vw, 2.8rem); }
+.cta-title { font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.3rem); }
+.service-row-title { font-size: clamp(1.25rem, 1.05rem + .6vw, 1.6rem); }
+.service-row--main .service-row-title { font-size: clamp(1.45rem, 1.2rem + .9vw, 2rem); }
+.a-cap-tag { font-size: clamp(1.4rem, 1.1rem + 1.2vw, 2.1rem); }
+.a-firm-title { font-size: clamp(1.9rem, 1.3rem + 2vw, 3rem); }
+.a-firm-lead { font-size: clamp(1.05rem, .98rem + .3vw, 1.2rem); }
+.a-figures dt { font-size: clamp(1.4rem, 1.15rem + .9vw, 2rem); }
+.a-deliver-list li { font-size: 1.02rem; }
+.po2-title { font-size: clamp(2.4rem, 1.5rem + 3vw, 4rem); }
+.fab-panel-title { font-size: 1.4rem; }
+.numbered-num { font-size: 2rem; }
+.g-features--video .g-vfeature-inner { display: block !important; }
+
+/* one heading voice across the site, apple.com-like: medium weight, tight tracking */
+.g-h2, .g-h3, .section-title, .page-title, .page-head .page-title, .cta-title, .a-firm-title, .po2-title, .g-hero-title, .g-market-title, .service-row-title, .fab-panel-title { font-weight: 500; letter-spacing: -0.02em; }
+.g-intro .wrap { text-align: center; }
+.g-intro .g-intro-text { margin-inline: auto; }
+/* "Ce que vous recevez" (architecture page): film beside the list, never under it */
+@media (min-width: 900px) {
+  .a-deliver.g-has-video .g-bgvideo { left: 50%; }
+  .a-deliver.g-has-video .wrap > * { max-width: min(560px, 44vw); }
+  .a-deliver.g-has-video .a-deliver-list { grid-template-columns: 1fr; }
+}
+@media (max-width: 899px) {
+  .a-deliver.g-has-video { display: flex; flex-direction: column; padding-bottom: 0; }
+  .a-deliver.g-has-video .g-bgvideo { order: 2; position: relative; inset: auto; aspect-ratio: 16 / 9; margin-top: 40px; }
+}
+/* the decorative diagonal of dark heads must not cross a film */
+.page-head--media:has(.page-head-media--video)::after { display: none; }
+.a-deliver.g-has-video { background: var(--charcoal); }
