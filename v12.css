@@ -1085,3 +1085,11 @@ a.lu-btn:hover { color: #fff; }
 .page-head-actions .btn-search { gap: 10px; }
 .page-head-actions .btn-search svg { width: 18px; height: 18px; flex: none; }
 .page-head-actions .btn-search::after { content: none; }
+
+/* Catalogue item tiles: same white / pale blue / pale grey cycle as the family carousel.
+   data-tone is set by app.js over the visible cards; nth-child is the no-JS fallback. */
+.ci-grid .ci-card:nth-child(3n+2) .ci-media { background: #e8eef3; }
+.ci-grid .ci-card:nth-child(3n) .ci-media { background: #ebebef; }
+.ci-grid .ci-card[data-tone="0"] .ci-media { background: #fff; }
+.ci-grid .ci-card[data-tone="1"] .ci-media { background: #e8eef3; }
+.ci-grid .ci-card[data-tone="2"] .ci-media { background: #ebebef; }
