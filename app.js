@@ -796,6 +796,19 @@
     });
   }
 
+  // --- projects slider: open centred on a given slide (data-start-slide), so the
+  // courtyard block shows first with a neighbour peeking in on each side (2026-11-22)
+  function initStageStart() {
+    document.querySelectorAll('.g-carousel[data-start-slide]').forEach(function (c) {
+      var el = c.children[+c.getAttribute('data-start-slide') || 0];
+      if (!el) return;
+      var prev = c.style.scrollBehavior;
+      c.style.scrollBehavior = 'auto';
+      c.scrollLeft = el.offsetLeft - (c.clientWidth - el.offsetWidth) / 2;
+      c.style.scrollBehavior = prev;
+    });
+  }
+
   // --- image lightbox (architecture project cards) ---------------------------
   function initLightbox() {
     var btns = document.querySelectorAll('[data-lightbox]');
@@ -847,6 +860,7 @@
     initArchi();
     initFab();
     initLightbox();
+    initStageStart();
     initLineupDots();
     initAccordion();
   }

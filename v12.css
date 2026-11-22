@@ -832,9 +832,32 @@ html { scroll-padding-top: 70px; }
 /* the projects band follows the same 2560 px column: its cards start at the content column and run to
    the band's edge (Apple-carousel style) instead of stopping part-way across a very wide window */
 .a-pcars { max-width: 2560px; margin-inline: auto; }
-/* the project cards scroll inside the same centred column as the heading and arrows, so the row sits
-   centred instead of starting at the column and running off to the right (user, 2026-11-22) */
-.a-pcars .g-carousel { --pad: 0px; width: min(100% - 40px, var(--wrap)); margin-inline: auto; }
+/* projects slider, presented like apple.com's "Endless entertainment." (user, 2026-11-22): a light
+   band, the heading centred, one wide slide centred with its neighbours peeking in at both sides,
+   12 px apart; a small white pill and one line at the bottom left; round arrows under the slides.
+   --slide is the slide width; the side padding centres a slide in the band. */
+.a-ent { background: #f5f5f7; color: #1d1d1f; padding-block: clamp(40px, 5vw, 64px); }
+.a-ent-title { margin: 0 0 clamp(18px, 2.5vw, 28px); text-align: center; font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.6rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; color: #1d1d1f; }
+.a-pcars { --slide: min(66vw, 1250px); }
+.a-pcars .g-carousel { --pad: calc((100% - var(--slide)) / 2); grid-auto-columns: var(--slide); gap: 12px; }
+.a-pcars .a-pcard { aspect-ratio: 15 / 8; scroll-snap-align: center; background: #111; }
+.a-pcars .a-pcard .g-market-media { position: absolute; inset: 0; }
+.a-pcars .a-pcard .g-market-media img { object-position: 50% 42%; }
+.a-pcars .a-pcard:hover .g-market-media img { transform: none; }
+.a-stage-cap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  padding: 70px clamp(18px, 3.5%, 40px) clamp(18px, 3.5%, 34px); background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.5) 100%); }
+.a-stage-pill { border: 0; border-radius: 980px; background: #fff; color: #1d1d1f; font: inherit; font-size: clamp(.78rem, .7rem + .25vw, .95rem); font-weight: 500;
+  padding: .5em 1.1em; cursor: pointer; white-space: nowrap; }
+.a-stage-pill:hover { background: #e8e8ed; }
+.a-stage-line { margin: 0; color: #fff; font-size: clamp(.8rem, .72rem + .3vw, 1rem); line-height: 1.35; text-shadow: 0 1px 8px rgba(0,0,0,.35); max-width: 60ch; }
+.a-ent-nav { display: flex; justify-content: center; gap: 14px; margin-top: 22px; }
+.a-ent-nav .g-carousel-btn { width: 36px; height: 36px; border: 0; border-radius: 50%; background: #e8e8ed; color: #1d1d1f; font-size: 1rem; }
+.a-ent-nav .g-carousel-btn:hover { background: #d2d2d7; color: #1d1d1f; }
+@media (max-width: 760px) {
+  .a-pcars { --slide: 88vw; }
+  .a-pcars .a-pcard { aspect-ratio: 4 / 5; }
+  .a-stage-cap { gap: 10px; flex-direction: column; align-items: flex-start; }
+}
 @media (max-width: 760px) {
   .g-tile.g-tile--overlay { aspect-ratio: 3 / 4; min-height: 0; }
   .g-tile--overlay .g-tile-media .svc-video { object-position: 10% 50% !important; }
