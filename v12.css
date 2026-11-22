@@ -1081,10 +1081,6 @@ a.lu-btn:hover { color: #fff; }
 .a-hero--video .a-explore { display: none; }
 .brand-name { display: none !important; }
 
-/* Hero search button (Industrial equipment page): search icon instead of the arrow. */
-.page-head-actions .btn-search { gap: 10px; }
-.page-head-actions .btn-search svg { width: 18px; height: 18px; flex: none; }
-.page-head-actions .btn-search::after { content: none; }
 
 /* Catalogue item tiles: same white / pale blue / pale grey cycle as the family carousel.
    data-tone is set by app.js over the visible cards; nth-child is the no-JS fallback. */
@@ -1093,3 +1089,9 @@ a.lu-btn:hover { color: #fff; }
 .ci-grid .ci-card[data-tone="0"] .ci-media { background: #fff; }
 .ci-grid .ci-card[data-tone="1"] .ci-media { background: #e8eef3; }
 .ci-grid .ci-card[data-tone="2"] .ci-media { background: #ebebef; }
+
+/* Header search icon (Industrial equipment page): opens the catalogue search. */
+.header-search { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; color: var(--ink); flex: none; }
+.header-search svg { width: 19px; height: 19px; }
+.header-search:hover { background: rgba(0, 0, 0, .06); }
+.header-search:focus-visible { outline: none; box-shadow: var(--focus); }
