@@ -978,3 +978,5 @@ html { scroll-padding-top: 70px; }
     background: linear-gradient(180deg, rgba(18,19,21,.8) 0%, rgba(18,19,21,.55) 50%, rgba(18,19,21,.75) 100%) !important; }
 }
 @media (max-width: 899px) { .g-start.g-has-video .g-start-text { color: #e4e4e0; } }
+/* phones and tablets: logo mark only, no company name next to it */
+@media (max-width: 1040px) { .brand-name { display: none !important; } .brand-mark { height: 28px; } }
