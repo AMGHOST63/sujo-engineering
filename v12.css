@@ -832,6 +832,11 @@ html { scroll-padding-top: 70px; }
 /* the projects band follows the same 2560 px column: its cards start at the content column and run to
    the band's edge (Apple-carousel style) instead of stopping part-way across a very wide window */
 .a-pcars { max-width: 2560px; margin-inline: auto; }
+/* the product families band (homepage and industrial-sourcing.html) gets the same 2560 px column, and its
+   cards scroll inside the centred content column with the heading and arrows instead of starting there and
+   running off to the right (user, 2026-11-22). The cards themselves are unchanged. */
+.f-cars { max-width: 2560px; margin-inline: auto; }
+.f-cars .g-carousel { --pad: 0px; width: min(100% - 40px, var(--wrap)); margin-inline: auto; }
 /* projects slider, presented like apple.com's "Endless entertainment." (user, 2026-11-22): a light
    band, the heading centred, one wide slide centred with its neighbours peeking in at both sides,
    12 px apart; a small white pill and one line at the bottom left; round arrows under the slides.
@@ -872,7 +877,9 @@ html { scroll-padding-top: 70px; }
 /* keep the text clear of the models: the film fills the hero below the text block */
 @media (min-width: 761px) {
   .g-hero { height: auto; min-height: 0; }
-  .g-hero-media { position: relative !important; inset: auto; height: min(calc(100vh - 330px), 52vw); min-height: 340px; margin-top: 8px !important; }
+  /* capped at 760 px like apple.com tiles, so a tall or zoomed-out window does not stretch the hero into a
+     mostly empty grey panel (user, 2026-11-22); 1920 x 1080 still gets its 750 px */
+  .g-hero-media { position: relative !important; inset: auto; height: min(calc(100vh - 330px), 52vw, 760px); min-height: 340px; margin-top: 8px !important; }
   .g-tile-media { top: 200px; }
 }
 .g-tile-line { max-width: 48ch; }
