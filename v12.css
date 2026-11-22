@@ -947,6 +947,11 @@ html { scroll-padding-top: 70px; }
   .g-hero { width: calc(100% - 20px); margin-top: 10px; border-radius: 24px; }
   .g-hero > .g-hero-inner { padding: 26px 22px 0; }
 }
+/* (user, 2026-11-22: buttons removed; "add the text and center" like "Get to know our services.") the
+   label and the title centred, the title at the services page's section-title size */
+.g-hero > .g-hero-inner { align-items: center; text-align: center; }
+.g-hero .g-kicker { text-align: center; }
+.g-hero .g-hero-title { text-align: center; font-size: clamp(1.8rem, 1.3rem + 1.6vw, 3rem); line-height: 1.08; }
 @media (max-width: 760px) { .g-tile-text { order: 1; } .g-tile-media { order: 2; } .g-tile-text { padding-bottom: 0; } }
 
 /* ==========================================================================
