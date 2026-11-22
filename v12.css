@@ -1339,3 +1339,21 @@ body:not(.page-home) .g-carousel-btn:hover { background: #d2d2d7; color: #1d1d1f
 @media (max-width: 900px) {
   .s-cards .g-carousel.s-cards-row { --slide: min(78vw, 360px); gap: 12px; }
 }
+/* the homepage hero as one tall card the size of a services card / Apple's "Products built to elevate
+   your living space." card (user, 2026-11-22: "make it the same size as this", the whole card):
+   at most 440 px wide, 37:61, centred; label and title at that card's sizes (still centred, as asked
+   before); the film fills the rest of the card, models centred and shown at 1.4x */
+.g-hero { width: min(100% - 24px, 440px) !important; max-width: 440px; aspect-ratio: 37 / 61; margin: 12px auto 0; display: flex !important; flex-direction: column; min-height: 0 !important; height: auto !important; border-radius: 28px; overflow: hidden; }
+.g-hero > .g-hero-inner { order: 1; flex: none; padding: 32px 30px 0 !important; }
+.g-hero .g-kicker { margin: 0 0 8px; font-size: .95rem; font-weight: 600; letter-spacing: -0.01em; }
+.g-hero .g-hero-title { font-size: clamp(1.35rem, 1rem + 1vw, 1.75rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.16; }
+.g-hero .g-hero-media { order: 2; flex: 1 1 auto; position: relative !important; inset: auto !important; width: 100% !important; height: auto !important; min-height: 0 !important; aspect-ratio: auto !important; margin: 0 !important; overflow: hidden; }
+.g-hero .g-hero-media .g-bgvideo { position: absolute; inset: 0; }
+.g-hero .g-hero-media .g-bgvideo video { width: 100%; height: 100%; transform: scale(1.4); }
+/* homepage section 1 as three cards (user, 2026-11-22): the services page's card row. A `fit` card shows
+   its film whole, centred in the film area, on the card's own background (the film's background colour),
+   so the product floats with no box edge; the scene card (Usine 3 renders) fills the film area, kept to
+   the left so the film's captions stay in view */
+.h-first .s-card--fit .s-card-media .svc-video { object-fit: contain !important; background: transparent !important; }
+.h-first .s-card--scene .s-card-media .svc-video { object-fit: cover !important; object-position: 3% 50%; }
+.h-first .s-card { cursor: pointer; }
