@@ -1008,10 +1008,10 @@ html { scroll-padding-top: 70px; }
 .lu-link:hover { text-decoration: underline; }
 .lu .g-carousel-btn { width: 44px; height: 44px; border-radius: 50%; border: 0; background: #e8e8ed; color: #1d1d1f; }
 .lu .g-carousel-btn:hover { background: #d2d2d7; color: #1d1d1f; }
-/* Lineup with full-bleed photographs (Industrial equipment families) */
-.lu--photo .lu-card .f-card-media { padding: 0; overflow: hidden; }
-.lu--photo .lu-card .f-card-media picture, .lu--photo .lu-card .f-card-media img { width: 100%; height: 100%; }
-.lu--photo .lu-card .f-card-media img { object-fit: cover; mix-blend-mode: normal; }
+/* Lineup with photographs (Industrial equipment families): whole product shown, smaller in the tile */
+.lu--photo .lu-card .f-card-media, .lu--photo .lu-card:nth-child(n) .f-card-media { padding: 20px; aspect-ratio: 1 / 1; background: #fff; }
+.lu--photo .lu-card .f-card-media picture { width: 100%; height: 100%; display: grid; place-items: center; }
+.lu--photo .lu-card .f-card-media img { width: 100%; height: 100%; object-fit: contain; }
 .lu--photo .f-card-body { padding-top: 30px; }
 a.lu-btn { display: inline-block; text-decoration: none; line-height: 1.2; }
 a.lu-btn:hover { color: #fff; }
