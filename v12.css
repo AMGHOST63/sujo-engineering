@@ -1311,3 +1311,14 @@ body:not(.page-home) .g-carousel-btn:hover { background: #d2d2d7; color: #1d1d1f
   .s-card { flex: 0 0 min(78vw, 340px); scroll-snap-align: center; }
 }
 .s-card .s-card-title, .s-card .s-card-label { color: inherit; }
+/* the service cards slide like the "Design Projects" slider (2026-11-22, user: "make it skip like the
+   projects"): one card centred, the neighbours peeking in, endless, moving on by itself (app.js
+   initStageStart via data-start-slide / data-loop). Overrides the 3-column grid above. */
+.s-cards .g-carousel.s-cards-row { --slide: min(34vw, 440px); --pad: calc((100% - var(--slide)) / 2);
+  display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: var(--slide); gap: 20px;
+  width: auto; max-width: 2560px; margin-inline: auto; overflow-x: auto; padding: 0 var(--pad) 6px; scroll-padding-inline: var(--pad); }
+.s-cards .s-cards-row .s-card { scroll-snap-align: center; flex: none; }
+.s-cards .s-cards-title { text-align: center; }
+@media (max-width: 900px) {
+  .s-cards .g-carousel.s-cards-row { --slide: min(78vw, 360px); gap: 12px; }
+}

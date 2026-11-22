@@ -812,6 +812,13 @@
       var prev = c.style.scrollBehavior;
       var jump = function (s) { c.style.scrollBehavior = 'auto'; c.scrollLeft = left(s); c.style.scrollBehavior = prev; };
       jump(el);
+      // the first jump can run before the slides have their final width (fonts, scrollbar), and the
+      // scroll snap then settles on the next slide: jump again once the page has loaded, unless the
+      // visitor has already touched the slider (2026-11-22)
+      var touched = false;
+      ['pointerdown', 'wheel', 'keydown', 'touchstart'].forEach(function (ev) { c.addEventListener(ev, function () { touched = true; }, { passive: true }); });
+      var rejump = function () { if (!touched) jump(el); };
+      if (document.readyState === 'complete') setTimeout(rejump, 50); else window.addEventListener('load', function () { setTimeout(rejump, 50); });
       // the slide whose centre is nearest the carousel's centre
       var current = function () {
         var mid = c.scrollLeft + c.clientWidth / 2, best = 0, d = Infinity;
