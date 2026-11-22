@@ -832,54 +832,9 @@ html { scroll-padding-top: 70px; }
 /* the projects band follows the same 2560 px column: its cards start at the content column and run to
    the band's edge (Apple-carousel style) instead of stopping part-way across a very wide window */
 .a-pcars { max-width: 2560px; margin-inline: auto; }
-/* projects slider, Apple TV hero style (user, 2026-11-22): one large landscape slide centred, its
-   neighbours peeking in at both sides, 12 px apart; a white pill and one line at the bottom left.
-   --slide is the slide width; the side padding centres a slide in the band. */
-.a-pcars { --slide: min(84vw, 1180px); }
-.a-pcars .g-carousel { --pad: calc((100% - var(--slide)) / 2); grid-auto-columns: var(--slide); gap: 12px; }
-.a-pcars .a-pcard { aspect-ratio: 16 / 9; scroll-snap-align: center; background: #111; }
-.a-pcars .a-pcard .g-market-media { position: absolute; inset: 0; }
-.a-pcars .a-pcard .g-market-media img { object-position: 50% 42%; }
-.a-pcars .a-pcard:hover .g-market-media img { transform: none; }
-.a-stage-cap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
-  padding: 90px clamp(20px, 5%, 64px) clamp(20px, 4%, 44px); background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.55) 100%); }
-.a-stage-pill { border: 0; border-radius: 980px; background: #fff; color: #1d1d1f; font: inherit; font-size: clamp(.95rem, .85rem + .35vw, 1.15rem); font-weight: 500;
-  padding: .6em 1.25em; cursor: pointer; white-space: nowrap; }
-.a-stage-pill:hover { background: #e8e8ed; }
-.a-stage-line { margin: 0; color: #fff; font-size: clamp(.95rem, .85rem + .4vw, 1.25rem); font-weight: 500; line-height: 1.35; text-shadow: 0 1px 10px rgba(0,0,0,.35); max-width: 60ch; }
-@media (max-width: 760px) {
-  .a-pcars { --slide: 88vw; }
-  .a-pcars .a-pcard { aspect-ratio: 4 / 5; }
-  .a-stage-cap { gap: 10px; flex-direction: column; align-items: flex-start; }
-}
-/* product families row under the slider (homepage), Apple TV app shelf style (2026-11-22): landscape
-   cards, label top right, name bottom left, pill bottom right; the row starts in line with the slides */
-.g-shelf { margin-top: clamp(28px, 4vw, 48px); }
-.g-shelf-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; width: var(--slide); margin: 0 auto 16px; }
-.g-shelf-title { margin: 0; color: #fff; font-size: clamp(1.15rem, 1rem + .5vw, 1.5rem); font-weight: 600; letter-spacing: -0.01em; }
-.g-shelf-all { color: #d1d1d6; font-size: .95rem; text-decoration: none; }
-.g-shelf-all:hover { color: #fff; }
-.g-shelf-row { display: grid; grid-auto-flow: column; grid-auto-columns: min(78vw, 460px); gap: 12px; overflow-x: auto;
-  scroll-snap-type: x mandatory; padding-inline: calc((100% - var(--slide)) / 2); scroll-padding-inline: calc((100% - var(--slide)) / 2); scrollbar-width: none; }
-.g-shelf-row::-webkit-scrollbar { display: none; }
-.g-shelf-card { position: relative; display: block; aspect-ratio: 16 / 9; overflow: hidden; scroll-snap-align: start; background: #fff; color: #1d1d1f; text-decoration: none; }
-/* the family photos are product groups on white: fitted whole between the label strip (top) and the
-   name and pill strip (bottom), on the card's own white, so no text lands on a product */
-.g-shelf-media { position: absolute; inset: 38px 16px 58px; }
-.g-shelf-media picture, .g-shelf-media img { display: block; width: 100%; height: 100%; }
-.g-shelf-media img { object-fit: contain; transition: transform .5s ease; }
-.g-shelf-card:hover .g-shelf-media img { transform: scale(1.04); }
-.g-shelf-tag { position: absolute; top: 14px; right: 16px; font-size: .9rem; font-weight: 600; color: #1d1d1f; }
-.g-shelf-name { position: absolute; left: 16px; bottom: 18px; max-width: calc(100% - 170px); font-size: 1rem; font-weight: 600; line-height: 1.25; color: #1d1d1f; }
-.g-shelf-pill { position: absolute; right: 14px; bottom: 14px; border-radius: 980px; background: #1d1d1f; color: #fff; font-size: .9rem; font-weight: 500; padding: .5em 1.1em; white-space: nowrap; }
-.g-shelf-card:hover .g-shelf-pill { background: var(--red); }
-/* phones: a taller card so a long family name has its own strip under the photo */
-@media (max-width: 760px) {
-  .g-shelf-card { aspect-ratio: 4 / 3; }
-  .g-shelf-media { inset: 34px 14px 88px; }
-  .g-shelf-name { bottom: 16px; max-width: calc(100% - 150px); font-size: .9rem; }
-  .g-shelf-pill { font-size: .82rem; }
-}
+/* the project cards scroll inside the same centred column as the heading and arrows, so the row sits
+   centred instead of starting at the column and running off to the right (user, 2026-11-22) */
+.a-pcars .g-carousel { --pad: 0px; width: min(100% - 40px, var(--wrap)); margin-inline: auto; }
 @media (max-width: 760px) {
   .g-tile.g-tile--overlay { aspect-ratio: 3 / 4; min-height: 0; }
   .g-tile--overlay .g-tile-media .svc-video { object-position: 10% 50% !important; }
