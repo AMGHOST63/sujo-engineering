@@ -1289,3 +1289,35 @@ body:not(.page-home) .g-carousel-btn:hover { background: #d2d2d7; color: #1d1d1f
 .s-slides .a-pcard[style*="#fff"] .a-stage-cap { background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.94) 55%); }
 .s-slides .a-pcard[style*="#f5f5f5"] .a-stage-cap { background: none; }
 .s-slides .a-pcard[style*="#fff"] .a-stage-pill:hover, .s-slides .a-pcard[style*="#f5f5f5"] .a-stage-pill:hover { background: #000; }
+
+/* services page cards (2026-11-22, Apple "Get to know Apple Home." row): three tall rounded cards, small
+   label and short heading on top, the service's loop filling the lower part, a round "+" bottom right.
+   Light / black / light; the whole card links to the service page. Phones: a sideways-scrolling row. */
+.s-cards { background: #fff; padding-block: clamp(40px, 5vw, 72px); }
+.s-cards-title { margin: 0 0 clamp(22px, 3vw, 36px); font-size: clamp(1.8rem, 1.3rem + 1.6vw, 3rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.08; color: #1d1d1f; }
+.s-cards-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; width: min(100% - 40px, var(--wrap)); margin-inline: auto; }
+.s-card { position: relative; display: flex; flex-direction: column; aspect-ratio: 37 / 61; border-radius: 28px; overflow: hidden;
+  text-decoration: none; color: #1d1d1f; background: #f5f5f7; transition: transform .3s ease; }
+.s-card:hover { transform: scale(1.01); text-decoration: none; }
+.s-card--paper { background: #fff; box-shadow: inset 0 0 0 1px #e8e8ed; }
+.s-card--light { background: #f5f5f5; }
+.s-card--dark { background: #000; color: #f5f5f7; }
+.s-card-text { position: relative; z-index: 1; padding: 32px 30px 0; }
+.s-card-label { margin: 0 0 8px; font-size: .95rem; font-weight: 600; letter-spacing: -0.01em; }
+.s-card-title { margin: 0; font-size: clamp(1.35rem, 1rem + 1vw, 1.75rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.16; }
+.s-card-title span { display: block; }
+.s-card-media { position: absolute; left: 0; right: 0; bottom: 0; top: 38%; }
+.s-card-media .svc-video { width: 100%; height: 100%; object-fit: cover !important; background: transparent !important; }
+.s-card--paper .s-card-media { top: 34%; }
+.s-card-plus { position: absolute; right: 18px; bottom: 18px; z-index: 2; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center;
+  background: #333336; color: #fff; transition: background .2s ease; }
+.s-card-plus svg { width: 18px; height: 18px; }
+.s-card--dark .s-card-plus { background: #e8e8ed; color: #1d1d1f; }
+.s-card:hover .s-card-plus { background: #1d1d1f; }
+.s-card--dark:hover .s-card-plus { background: #fff; }
+@media (max-width: 900px) {
+  .s-cards-row { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; width: auto; padding: 0 20px 6px; scrollbar-width: none; }
+  .s-cards-row::-webkit-scrollbar { display: none; }
+  .s-card { flex: 0 0 min(78vw, 340px); scroll-snap-align: center; }
+}
+.s-card .s-card-title, .s-card .s-card-label { color: inherit; }

@@ -23,7 +23,7 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
 <link rel="stylesheet" href="style.css?v=fd3e06a5">
-<link rel="stylesheet" href="v12.css?v=9cce96d5">
+<link rel="stylesheet" href="v12.css?v=92143872">
 <script>
 // Apply the stored language before first paint so the page never flashes the
 // wrong one. The full swap happens in app.js.
@@ -100,90 +100,41 @@
 </div>
 </div>
 </section>
-<section class="g-section a-pcars a-ent s-slides" id="services">
-<h2 class="visually-hidden" data-fr="Trois lignes de service" data-en="Three service lines">Trois lignes de service</h2>
-<div class="g-carousel" tabindex="0" data-start-slide="3" data-loop="3">
-<article class="g-market a-pcard s-slide" aria-hidden="true" data-loop-copy style="background:#000">
-<div class="g-market-media" aria-hidden="true"><video class="svc-video" muted loop data-seamless playsinline preload="none" data-start="0" poster="video/bg/eng-mixer-loop-noir-wide.jpg" tabindex="-1" data-bg-video>
-<source src="video/bg/eng-mixer-loop-noir-wide.mp4" type="video/mp4">
-</video></div>
-<div class="a-stage-cap">
-<a class="a-stage-pill" href="engineering.html" tabindex="-1"><span data-fr="Conception &amp; fabrication" data-en="Engineering design &amp; fabrication">Conception &amp; fabrication</span></a>
-<p class="a-stage-line" data-fr="Du modèle 3D à l’ouvrage fabriqué : mobilier, équipements, machines et structures en acier." data-en="From the 3D model to the finished product: furniture, equipment, machines and steel structures.">Du modèle 3D à l’ouvrage fabriqué : mobilier, équipements, machines et structures en acier.</p>
+<section class="g-section s-cards" id="services">
+<div class="wrap">
+<h2 class="s-cards-title" data-fr="Découvrez nos services." data-en="Get to know our services.">Découvrez nos services.</h2>
 </div>
-</article>
-<article class="g-market a-pcard s-slide" aria-hidden="true" data-loop-copy style="background:#fff">
-<div class="g-market-media" aria-hidden="true"><video class="svc-video" muted loop data-seamless playsinline preload="none" data-start="0" poster="video/bg/arch-plan-loop.jpg" tabindex="-1" data-bg-video>
+<div class="s-cards-row">
+<a class="s-card s-card--paper" href="project-development.html" id="svc-project-development">
+<div class="s-card-text">
+<p class="s-card-label" data-fr="Architecture" data-en="Architecture">Architecture</p>
+<h3 class="s-card-title"><span data-fr="Des bâtiments" data-en="Buildings">Des bâtiments</span><span data-fr="pensés jusqu’au détail." data-en="designed down to the detail.">pensés jusqu’au détail.</span></h3>
+</div>
+<div class="s-card-media" aria-hidden="true"><video class="svc-video" muted loop data-seamless playsinline preload="none" data-start="0" poster="video/bg/arch-plan-loop.jpg" tabindex="-1" data-bg-video>
 <source src="video/bg/arch-plan-loop.mp4" type="video/mp4">
 </video></div>
-<div class="a-stage-cap">
-<a class="a-stage-pill" href="project-development.html" tabindex="-1"><span data-fr="Architecture" data-en="Architecture">Architecture</span></a>
-<p class="a-stage-line" data-fr="Des bâtiments pensés jusqu’au détail : plans, structure, lots techniques et rendus 3D." data-en="Buildings designed down to the detail: drawings, structure, building services and 3D renders.">Des bâtiments pensés jusqu’au détail : plans, structure, lots techniques et rendus 3D.</p>
+<span class="s-card-plus" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+</a>
+<a class="s-card s-card--dark" href="engineering.html" id="svc-engineering">
+<div class="s-card-text">
+<p class="s-card-label" data-fr="Conception &amp; fabrication" data-en="Engineering design &amp; fabrication">Conception &amp; fabrication</p>
+<h3 class="s-card-title"><span data-fr="Du modèle 3D." data-en="From the 3D model.">Du modèle 3D.</span><span data-fr="À l’ouvrage fabriqué." data-en="To the finished product.">À l’ouvrage fabriqué.</span></h3>
 </div>
-</article>
-<article class="g-market a-pcard s-slide" aria-hidden="true" data-loop-copy style="background:#f5f5f5">
-<div class="g-market-media" aria-hidden="true"><video class="svc-video" muted loop data-seamless playsinline preload="none" data-start="0" poster="video/bg/src-products-loop.jpg" tabindex="-1" data-bg-video>
+<div class="s-card-media" aria-hidden="true"><video class="svc-video" muted loop data-seamless playsinline preload="none" data-start="0" poster="video/bg/eng-mixer-loop-noir.jpg" tabindex="-1" data-bg-video>
+<source src="video/bg/eng-mixer-loop-noir.mp4" type="video/mp4">
+</video></div>
+<span class="s-card-plus" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+</a>
+<a class="s-card s-card--light" href="industrial-sourcing.html" id="svc-industrial-sourcing">
+<div class="s-card-text">
+<p class="s-card-label" data-fr="Sourcing d’équipements" data-en="Equipment sourcing">Sourcing d’équipements</p>
+<h3 class="s-card-title"><span data-fr="De la pièce" data-en="From one part">De la pièce</span><span data-fr="au package clé en main." data-en="to a turnkey package.">au package clé en main.</span></h3>
+</div>
+<div class="s-card-media" aria-hidden="true"><video class="svc-video" muted loop data-seamless playsinline preload="none" data-start="0" poster="video/bg/src-products-loop.jpg" tabindex="-1" data-bg-video>
 <source src="video/bg/src-products-loop.mp4" type="video/mp4">
 </video></div>
-<div class="a-stage-cap">
-<a class="a-stage-pill" href="industrial-sourcing.html" tabindex="-1"><span data-fr="Sourcing d’équipements" data-en="Equipment sourcing">Sourcing d’équipements</span></a>
-<p class="a-stage-line" data-fr="De la pièce au package clé en main, choisis sans attache fabricant." data-en="From one part to a turnkey package, chosen with no tie to any manufacturer.">De la pièce au package clé en main, choisis sans attache fabricant.</p>
-</div>
-</article>
-<article class="g-market a-pcard s-slide" id="svc-engineering" style="background:#000">
-<div class="g-market-media" aria-hidden="true"><video class="svc-video" muted loop data-seamless playsinline preload="none" data-start="0" poster="video/bg/eng-mixer-loop-noir-wide.jpg" tabindex="-1" data-bg-video>
-<source src="video/bg/eng-mixer-loop-noir-wide.mp4" type="video/mp4">
-</video></div>
-<div class="a-stage-cap">
-<a class="a-stage-pill" href="engineering.html"><span data-fr="Conception &amp; fabrication" data-en="Engineering design &amp; fabrication">Conception &amp; fabrication</span></a>
-<p class="a-stage-line" data-fr="Du modèle 3D à l’ouvrage fabriqué : mobilier, équipements, machines et structures en acier." data-en="From the 3D model to the finished product: furniture, equipment, machines and steel structures.">Du modèle 3D à l’ouvrage fabriqué : mobilier, équipements, machines et structures en acier.</p>
-</div>
-</article>
-<article class="g-market a-pcard s-slide" id="svc-project-development" style="background:#fff">
-<div class="g-market-media" aria-hidden="true"><video class="svc-video" muted loop data-seamless playsinline preload="none" data-start="0" poster="video/bg/arch-plan-loop.jpg" tabindex="-1" data-bg-video>
-<source src="video/bg/arch-plan-loop.mp4" type="video/mp4">
-</video></div>
-<div class="a-stage-cap">
-<a class="a-stage-pill" href="project-development.html"><span data-fr="Architecture" data-en="Architecture">Architecture</span></a>
-<p class="a-stage-line" data-fr="Des bâtiments pensés jusqu’au détail : plans, structure, lots techniques et rendus 3D." data-en="Buildings designed down to the detail: drawings, structure, building services and 3D renders.">Des bâtiments pensés jusqu’au détail : plans, structure, lots techniques et rendus 3D.</p>
-</div>
-</article>
-<article class="g-market a-pcard s-slide" id="svc-industrial-sourcing" style="background:#f5f5f5">
-<div class="g-market-media" aria-hidden="true"><video class="svc-video" muted loop data-seamless playsinline preload="none" data-start="0" poster="video/bg/src-products-loop.jpg" tabindex="-1" data-bg-video>
-<source src="video/bg/src-products-loop.mp4" type="video/mp4">
-</video></div>
-<div class="a-stage-cap">
-<a class="a-stage-pill" href="industrial-sourcing.html"><span data-fr="Sourcing d’équipements" data-en="Equipment sourcing">Sourcing d’équipements</span></a>
-<p class="a-stage-line" data-fr="De la pièce au package clé en main, choisis sans attache fabricant." data-en="From one part to a turnkey package, chosen with no tie to any manufacturer.">De la pièce au package clé en main, choisis sans attache fabricant.</p>
-</div>
-</article>
-<article class="g-market a-pcard s-slide" aria-hidden="true" data-loop-copy style="background:#000">
-<div class="g-market-media" aria-hidden="true"><video class="svc-video" muted loop data-seamless playsinline preload="none" data-start="0" poster="video/bg/eng-mixer-loop-noir-wide.jpg" tabindex="-1" data-bg-video>
-<source src="video/bg/eng-mixer-loop-noir-wide.mp4" type="video/mp4">
-</video></div>
-<div class="a-stage-cap">
-<a class="a-stage-pill" href="engineering.html" tabindex="-1"><span data-fr="Conception &amp; fabrication" data-en="Engineering design &amp; fabrication">Conception &amp; fabrication</span></a>
-<p class="a-stage-line" data-fr="Du modèle 3D à l’ouvrage fabriqué : mobilier, équipements, machines et structures en acier." data-en="From the 3D model to the finished product: furniture, equipment, machines and steel structures.">Du modèle 3D à l’ouvrage fabriqué : mobilier, équipements, machines et structures en acier.</p>
-</div>
-</article>
-<article class="g-market a-pcard s-slide" aria-hidden="true" data-loop-copy style="background:#fff">
-<div class="g-market-media" aria-hidden="true"><video class="svc-video" muted loop data-seamless playsinline preload="none" data-start="0" poster="video/bg/arch-plan-loop.jpg" tabindex="-1" data-bg-video>
-<source src="video/bg/arch-plan-loop.mp4" type="video/mp4">
-</video></div>
-<div class="a-stage-cap">
-<a class="a-stage-pill" href="project-development.html" tabindex="-1"><span data-fr="Architecture" data-en="Architecture">Architecture</span></a>
-<p class="a-stage-line" data-fr="Des bâtiments pensés jusqu’au détail : plans, structure, lots techniques et rendus 3D." data-en="Buildings designed down to the detail: drawings, structure, building services and 3D renders.">Des bâtiments pensés jusqu’au détail : plans, structure, lots techniques et rendus 3D.</p>
-</div>
-</article>
-<article class="g-market a-pcard s-slide" aria-hidden="true" data-loop-copy style="background:#f5f5f5">
-<div class="g-market-media" aria-hidden="true"><video class="svc-video" muted loop data-seamless playsinline preload="none" data-start="0" poster="video/bg/src-products-loop.jpg" tabindex="-1" data-bg-video>
-<source src="video/bg/src-products-loop.mp4" type="video/mp4">
-</video></div>
-<div class="a-stage-cap">
-<a class="a-stage-pill" href="industrial-sourcing.html" tabindex="-1"><span data-fr="Sourcing d’équipements" data-en="Equipment sourcing">Sourcing d’équipements</span></a>
-<p class="a-stage-line" data-fr="De la pièce au package clé en main, choisis sans attache fabricant." data-en="From one part to a turnkey package, chosen with no tie to any manufacturer.">De la pièce au package clé en main, choisis sans attache fabricant.</p>
-</div>
-</article>
+<span class="s-card-plus" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6v12M6 12h12" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+</a>
 </div>
 </section>
 <section class="g-section acc" id="ce-que-nous-faisons">
