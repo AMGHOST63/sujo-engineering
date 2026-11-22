@@ -910,3 +910,8 @@ html { scroll-padding-top: 70px; }
 .cat-search:has(.cat-panel[hidden]) { display: none; }
 .cat-panel { padding-top: 40px; }
 @media (max-width: 600px) { .cat-panel .cat-field input { font-size: 1.25rem; } }
+
+/* Services & Sectors: light carousel band, only the footer stays dark */
+.g-markets--light { background: #fff; color: var(--ink); }
+.g-markets--light .g-carousel-btn { border-color: var(--ink); color: var(--ink); }
+.g-markets--light .g-carousel-btn:hover { background: var(--red); border-color: var(--red); color: #fff; }
