@@ -749,7 +749,11 @@
     }
     function open(b) { try { list = JSON.parse(b.getAttribute('data-lightbox')); } catch (e) { return; } back = b; box.hidden = false; document.body.style.overflow = 'hidden'; show(0); box.querySelector('.lb-close').focus(); }
     function close() { box.hidden = true; document.body.style.overflow = ''; if (back) back.focus(); }
-    btns.forEach(function (b) { b.addEventListener('click', function () { open(b); }); });
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () { open(b); });
+      // whole cards (not buttons) open with Enter / Space too
+      if (b.tagName !== 'BUTTON') b.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(b); } });
+    });
     box.querySelector('.lb-close').addEventListener('click', close);
     box.querySelector('.lb-prev').addEventListener('click', function () { show(i - 1); });
     box.querySelector('.lb-next').addEventListener('click', function () { show(i + 1); });
