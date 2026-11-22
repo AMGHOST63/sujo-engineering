@@ -1017,6 +1017,12 @@ a.lu-btn { display: inline-block; text-decoration: none; line-height: 1.2; }
 a.lu-btn:hover { color: #fff; }
 .lu-btn, .lu-link { white-space: nowrap; }
 @media (max-width: 420px) { .lu-actions { gap: 16px; } .lu-btn { padding: 10px 18px; } }
+/* Architecture hero: background film (Maison R+1, modèle 2) */
+.a-bgvideo, .a-bgvideo video { position: absolute; inset: 0; width: 100%; height: 100%; }
+.a-bgvideo video { object-fit: cover; }
+.a-hero--video { background: #f5f5f5; }
+.a-hero--video .a-explore { color: #1d1d1f; }
+.a-hero--video .a-explore::after { background: #1d1d1f; }
 .page-head--text + .g-section { padding-top: 16px; }
 /* Product families as a grid: 5 per row */
 .lu--grid .g-carousel-nav { display: none; }
