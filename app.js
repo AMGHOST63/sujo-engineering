@@ -299,7 +299,9 @@
         if (hit && !q && row.hasAttribute('data-request-only')) hit = false;
         if (hit && q && cache[i].indexOf(q) === -1) hit = false;
         row.hidden = !hit;
-        if (hit) shown++;
+        // Tile colours cycle white / pale blue / pale grey over the visible
+        // cards, like the family carousel, so a filtered list keeps the rhythm.
+        if (hit) { row.setAttribute('data-tone', String(shown % 3)); shown++; }
       }
 
       for (var g = 0; g < groups.length; g++) {
