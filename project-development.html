@@ -23,7 +23,7 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
 <link rel="stylesheet" href="style.css?v=9a46649c">
-<link rel="stylesheet" href="v12.css?v=251eed05">
+<link rel="stylesheet" href="v12.css?v=16a942cd">
 <script>
 // Apply the stored language before first paint so the page never flashes the
 // wrong one. The full swap happens in app.js.
@@ -32,7 +32,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://sujo-engineering.com/#organization","name":"SUJO Engineering Consulting SARL","alternateName":"SUJO","url":"https://sujo-engineering.com/","logo":"https://sujo-engineering.com/img/logo-512.png","image":"https://sujo-engineering.com/img/og-default.jpg","email":"contact@sujo-engineering.com","telephone":"+243976438148","address":{"@type":"PostalAddress","addressLocality":"Kinshasa","addressCountry":"CD"},"areaServed":[{"@type":"Country","name":"Democratic Republic of the Congo"},{"@type":"AdministrativeArea","name":"Kinshasa"}],"availableLanguage":["fr","en"],"contactPoint":[{"@type":"ContactPoint","contactType":"sales","telephone":"+243976438148","email":"contact@sujo-engineering.com","areaServed":"CD","availableLanguage":["fr","en"]},{"@type":"ContactPoint","contactType":"customer support","telephone":"+14123453307","email":"contact@sujo-engineering.com","areaServed":"US","availableLanguage":["en","fr"]}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"17:00"}],"knowsAbout":["Engineering design","Fabrication","Custom fitted furniture","Steel structures","Architecture","Industrial equipment supply","Turnkey systems supply","Equipment sourcing","Spare parts identification"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sujo-engineering.com/index.html"},{"@type":"ListItem","position":2,"name":"Services","item":"https://sujo-engineering.com/services.html"},{"@type":"ListItem","position":3,"name":"Architecture","item":"https://sujo-engineering.com/project-development.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Architecture","provider":{"@id":"https://sujo-engineering.com/#organization"},"areaServed":"CD","description":"Houses, residential blocks and schools: every project is modelled in 3D, with its architectural drawings, structure, building services and renders."}</script>
-<script defer src="app.js?v=96298079"></script>
+<script defer src="app.js?v=534cddbc"></script>
 </head>
 <body class="page-archi">
 <a class="skip-link" href="#main" data-fr="Aller au contenu principal" data-en="Skip to main content">Aller au contenu principal</a>
@@ -113,38 +113,73 @@
 </section><section class="g-section a-firm" id="a-firm">
 <div class="wrap">
 <p class="g-feature-text a-firm-text" data-fr="Chaque bâtiment est conçu dans une maquette numérique unique : les plans, la structure, les réseaux et les quantités en sont tirés, de sorte que tous les documents décrivent le même ouvrage." data-en="Every building is designed in a single digital model: the drawings, the structure, the services and the quantities all come from it, so every document describes the same building.">Chaque bâtiment est conçu dans une maquette numérique unique : les plans, la structure, les réseaux et les quantités en sont tirés, de sorte que tous les documents décrivent le même ouvrage.</p>
-<div class="a-values">
-<div class="a-value">
-<h2 class="a-value-title" data-fr="Une seule maquette" data-en="One model">Une seule maquette</h2>
-<p class="a-value-text" data-fr="Plans, structure, réseaux et quantités sont tirés de la même maquette numérique : ils décrivent tous le même bâtiment." data-en="Drawings, structure, services and quantities all come from the same digital model, so they all describe the same building.">Plans, structure, réseaux et quantités sont tirés de la même maquette numérique : ils décrivent tous le même bâtiment.</p>
 </div>
-<div class="a-value">
-<h2 class="a-value-title" data-fr="Pensé pour la RDC" data-en="Designed for the DRC">Pensé pour la RDC</h2>
-<p class="a-value-text" data-fr="Matériaux disponibles localement, climat chaud et humide, ventilation naturelle et protection solaire pris en compte dès l’esquisse." data-en="Locally available materials, a hot and humid climate, natural ventilation and sun protection are considered from the first sketch.">Matériaux disponibles localement, climat chaud et humide, ventilation naturelle et protection solaire pris en compte dès l’esquisse.</p>
-</div>
-<div class="a-value">
-<h2 class="a-value-title" data-fr="Prêt à construire" data-en="Ready to build">Prêt à construire</h2>
-<p class="a-value-text" data-fr="Chaque projet est livré avec sa structure, ses lots techniques et son métré, pour consulter les entreprises et lancer le chantier." data-en="Every project comes with its structure, building services and quantities, ready to tender and start on site.">Chaque projet est livré avec sa structure, ses lots techniques et son métré, pour consulter les entreprises et lancer le chantier.</p>
-</div>
-</div>
-</div>
-</section><section class="g-section g-services">
+</section><section class="g-section acc" id="domaines">
 <div class="wrap">
-<div class="g-head">
 <p class="g-kicker" data-fr="Nos domaines" data-en="Our expertise">Nos domaines</p>
-<h2 class="g-h2" data-fr="Ce que nous concevons" data-en="What we design">Ce que nous concevons</h2>
+<h2 class="g-h2 acc-title" data-fr="Ce que nous concevons." data-en="What we design.">Ce que nous concevons.</h2>
+<div class="acc-panel" data-acc>
+<div class="acc-list">
+<div class="acc-item is-open">
+<h3 class="acc-h"><button type="button" class="acc-btn" id="acc-b0" aria-controls="acc-p0" aria-expanded="true" data-acc-btn="0"><span data-fr="Tours de logements" data-en="Residential towers">Tours de logements</span><svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button></h3>
+<div class="acc-body" id="acc-p0" role="region" aria-labelledby="acc-b0">
+<p data-fr="Tours R+18 et R+23 : appartements, terrasses, structure et circulations verticales étudiées pour la hauteur." data-en="R+18 and R+23 towers: flats, terraces, and a structure and vertical circulation worked out for the height.">Tours R+18 et R+23 : appartements, terrasses, structure et circulations verticales étudiées pour la hauteur.</p>
+<a class="lu-link" href="#tour-r23" data-fr="Voir le projet ›" data-en="See the project ›">Voir le projet ›</a>
 </div>
-<ul class="g-rows">
-<li><a class="g-row" href="#tour-r23"><span data-fr="Tours de logements" data-en="Residential towers">Tours de logements</span><span class="g-arrow" aria-hidden="true">→</span></a></li>
-<li><a class="g-row" href="#immeuble-a-cour"><span data-fr="Logements collectifs" data-en="Residential blocks">Logements collectifs</span><span class="g-arrow" aria-hidden="true">→</span></a></li>
-<li><a class="g-row" href="#ecole"><span data-fr="Écoles" data-en="Schools">Écoles</span><span class="g-arrow" aria-hidden="true">→</span></a></li>
-<li><a class="g-row" href="#maison-r1-modele-2"><span data-fr="Villas et maisons" data-en="Villas and houses">Villas et maisons</span><span class="g-arrow" aria-hidden="true">→</span></a></li>
-<li><a class="g-row" href="#maison-r2"><span data-fr="Maisons de ville" data-en="Townhouses">Maisons de ville</span><span class="g-arrow" aria-hidden="true">→</span></a></li>
-<li><a class="g-row" href="#livrables"><span data-fr="Structure en béton armé" data-en="Reinforced-concrete structure">Structure en béton armé</span><span class="g-arrow" aria-hidden="true">→</span></a></li>
-<li><a class="g-row" href="#livrables"><span data-fr="Lots techniques" data-en="Building services">Lots techniques</span><span class="g-arrow" aria-hidden="true">→</span></a></li>
-<li><a class="g-row" href="#immeuble-a-cour"><span data-fr="Intérieurs" data-en="Interiors">Intérieurs</span><span class="g-arrow" aria-hidden="true">→</span></a></li>
-<li><a class="g-row" href="#livrables"><span data-fr="Rendus et maquette 3D" data-en="Renders and 3D model">Rendus et maquette 3D</span><span class="g-arrow" aria-hidden="true">→</span></a></li>
-</ul>
+</div>
+<div class="acc-item">
+<h3 class="acc-h"><button type="button" class="acc-btn" id="acc-b1" aria-controls="acc-p1" aria-expanded="false" data-acc-btn="1"><span data-fr="Logements collectifs" data-en="Residential blocks">Logements collectifs</span><svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button></h3>
+<div class="acc-body" id="acc-p1" role="region" aria-labelledby="acc-b1" hidden>
+<p data-fr="Immeubles R+5 organisés autour d’une cour, avec piscine et espaces partagés, à l’abri de la rue." data-en="R+5 blocks arranged around a courtyard, with a pool and shared spaces, sheltered from the street.">Immeubles R+5 organisés autour d’une cour, avec piscine et espaces partagés, à l’abri de la rue.</p>
+<a class="lu-link" href="#immeuble-a-cour" data-fr="Voir le projet ›" data-en="See the project ›">Voir le projet ›</a>
+</div>
+</div>
+<div class="acc-item">
+<h3 class="acc-h"><button type="button" class="acc-btn" id="acc-b2" aria-controls="acc-p2" aria-expanded="false" data-acc-btn="2"><span data-fr="Écoles" data-en="Schools">Écoles</span><svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button></h3>
+<div class="acc-body" id="acc-p2" role="region" aria-labelledby="acc-b2" hidden>
+<p data-fr="Écoles R+2 aux classes lumineuses et ventilées naturellement, avec cour de récréation et hall d’accueil." data-en="R+2 schools with bright, naturally ventilated classrooms, a playground and an entrance hall.">Écoles R+2 aux classes lumineuses et ventilées naturellement, avec cour de récréation et hall d’accueil.</p>
+<a class="lu-link" href="#ecole" data-fr="Voir le projet ›" data-en="See the project ›">Voir le projet ›</a>
+</div>
+</div>
+<div class="acc-item">
+<h3 class="acc-h"><button type="button" class="acc-btn" id="acc-b3" aria-controls="acc-p3" aria-expanded="false" data-acc-btn="3"><span data-fr="Villas et maisons" data-en="Villas and houses">Villas et maisons</span><svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button></h3>
+<div class="acc-body" id="acc-p3" role="region" aria-labelledby="acc-b3" hidden>
+<p data-fr="Maisons R+1 ouvertes sur le jardin : patios, terrasses et protection solaire pensés pour le climat chaud et humide de la RDC." data-en="R+1 houses that open onto the garden: patios, terraces and sun protection designed for the hot, humid climate of the DRC.">Maisons R+1 ouvertes sur le jardin : patios, terrasses et protection solaire pensés pour le climat chaud et humide de la RDC.</p>
+<a class="lu-link" href="#maison-r1-modele-2" data-fr="Voir le projet ›" data-en="See the project ›">Voir le projet ›</a>
+</div>
+</div>
+<div class="acc-item">
+<h3 class="acc-h"><button type="button" class="acc-btn" id="acc-b4" aria-controls="acc-p4" aria-expanded="false" data-acc-btn="4"><span data-fr="Maisons de ville" data-en="Townhouses">Maisons de ville</span><svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button></h3>
+<div class="acc-body" id="acc-p4" role="region" aria-labelledby="acc-b4" hidden>
+<p data-fr="Maisons R+2 sur parcelle étroite : trois niveaux de vie et une terrasse en toiture." data-en="R+2 houses on narrow plots: three living levels and a roof terrace.">Maisons R+2 sur parcelle étroite : trois niveaux de vie et une terrasse en toiture.</p>
+<a class="lu-link" href="#maison-r2" data-fr="Voir le projet ›" data-en="See the project ›">Voir le projet ›</a>
+</div>
+</div>
+<div class="acc-item">
+<h3 class="acc-h"><button type="button" class="acc-btn" id="acc-b5" aria-controls="acc-p5" aria-expanded="false" data-acc-btn="5"><span data-fr="Intérieurs" data-en="Interiors">Intérieurs</span><svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button></h3>
+<div class="acc-body" id="acc-p5" role="region" aria-labelledby="acc-b5" hidden>
+<p data-fr="Séjours, cuisines et chambres aménagés dans la maquette, pour voir les espaces avant de construire." data-en="Living rooms, kitchens and bedrooms fitted out in the model, so you see the spaces before building.">Séjours, cuisines et chambres aménagés dans la maquette, pour voir les espaces avant de construire.</p>
+<a class="lu-link" href="#tour-r18" data-fr="Voir le projet ›" data-en="See the project ›">Voir le projet ›</a>
+</div>
+</div>
+<div class="acc-item">
+<h3 class="acc-h"><button type="button" class="acc-btn" id="acc-b6" aria-controls="acc-p6" aria-expanded="false" data-acc-btn="6"><span data-fr="Structure, lots techniques et 3D" data-en="Structure, services and 3D">Structure, lots techniques et 3D</span><svg class="acc-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button></h3>
+<div class="acc-body" id="acc-p6" role="region" aria-labelledby="acc-b6" hidden>
+<p data-fr="Plans, structure en béton armé, réseaux et quantités sont tirés de la même maquette numérique. Chaque projet est livré prêt à consulter les entreprises et à lancer le chantier." data-en="Drawings, reinforced-concrete structure, services and quantities all come from the same digital model. Every project is delivered ready to tender and start on site.">Plans, structure en béton armé, réseaux et quantités sont tirés de la même maquette numérique. Chaque projet est livré prêt à consulter les entreprises et à lancer le chantier.</p>
+<a class="lu-link" href="#projets" data-fr="Voir les projets ›" data-en="See the projects ›">Voir les projets ›</a>
+</div>
+</div>
+</div>
+<div class="acc-media" aria-hidden="true">
+<picture class="acc-img is-on" data-acc-img="0"><source type="image/webp" sizes="(max-width: 900px) 100vw, 640px" srcset="img/ar-tour-r23-rue-960.webp 960w, img/ar-tour-r23-rue-1440.webp 1440w"><img src="img/ar-tour-r23-rue-960.jpg" sizes="(max-width: 900px) 100vw, 640px" srcset="img/ar-tour-r23-rue-960.jpg 960w, img/ar-tour-r23-rue-1440.jpg 1440w" alt="" width="960" height="1280" loading="lazy" decoding="async"></picture>
+<picture class="acc-img" data-acc-img="1"><source type="image/webp" sizes="(max-width: 900px) 100vw, 640px" srcset="img/ar-cour-piscine-960.webp 960w, img/ar-cour-piscine-1600.webp 1600w, img/ar-cour-piscine-1920.webp 1920w"><img src="img/ar-cour-piscine-960.jpg" sizes="(max-width: 900px) 100vw, 640px" srcset="img/ar-cour-piscine-960.jpg 960w, img/ar-cour-piscine-1600.jpg 1600w, img/ar-cour-piscine-1920.jpg 1920w" alt="" width="960" height="640" loading="lazy" decoding="async"></picture>
+<picture class="acc-img" data-acc-img="2"><source type="image/webp" sizes="(max-width: 900px) 100vw, 640px" srcset="img/ar-ecole-rue-960.webp 960w, img/ar-ecole-rue-1600.webp 1600w, img/ar-ecole-rue-1920.webp 1920w"><img src="img/ar-ecole-rue-960.jpg" sizes="(max-width: 900px) 100vw, 640px" srcset="img/ar-ecole-rue-960.jpg 960w, img/ar-ecole-rue-1600.jpg 1600w, img/ar-ecole-rue-1920.jpg 1920w" alt="" width="960" height="640" loading="lazy" decoding="async"></picture>
+<picture class="acc-img" data-acc-img="3"><source type="image/webp" sizes="(max-width: 900px) 100vw, 640px" srcset="img/ar-m2-arriere-960.webp 960w, img/ar-m2-arriere-1600.webp 1600w, img/ar-m2-arriere-1920.webp 1920w"><img src="img/ar-m2-arriere-960.jpg" sizes="(max-width: 900px) 100vw, 640px" srcset="img/ar-m2-arriere-960.jpg 960w, img/ar-m2-arriere-1600.jpg 1600w, img/ar-m2-arriere-1920.jpg 1920w" alt="" width="960" height="600" loading="lazy" decoding="async"></picture>
+<picture class="acc-img" data-acc-img="4"><source type="image/webp" sizes="(max-width: 900px) 100vw, 640px" srcset="img/ar-r2-rue-960.webp 960w, img/ar-r2-rue-1600.webp 1600w"><img src="img/ar-r2-rue-960.jpg" sizes="(max-width: 900px) 100vw, 640px" srcset="img/ar-r2-rue-960.jpg 960w, img/ar-r2-rue-1600.jpg 1600w" alt="" width="960" height="600" loading="lazy" decoding="async"></picture>
+<picture class="acc-img" data-acc-img="5"><source type="image/webp" sizes="(max-width: 900px) 100vw, 640px" srcset="img/ar-tour-r18-int-t4-sejour-960.webp 960w, img/ar-tour-r18-int-t4-sejour-1600.webp 1600w"><img src="img/ar-tour-r18-int-t4-sejour-960.jpg" sizes="(max-width: 900px) 100vw, 640px" srcset="img/ar-tour-r18-int-t4-sejour-960.jpg 960w, img/ar-tour-r18-int-t4-sejour-1600.jpg 1600w" alt="" width="960" height="640" loading="lazy" decoding="async"></picture>
+<picture class="acc-img" data-acc-img="6"><source type="image/webp" sizes="(max-width: 900px) 100vw, 640px" srcset="img/ar-m2-structure-960.webp 960w, img/ar-m2-structure-1600.webp 1600w, img/ar-m2-structure-1920.webp 1920w"><img src="img/ar-m2-structure-960.jpg" sizes="(max-width: 900px) 100vw, 640px" srcset="img/ar-m2-structure-960.jpg 960w, img/ar-m2-structure-1600.jpg 1600w, img/ar-m2-structure-1920.jpg 1920w" alt="" width="960" height="600" loading="lazy" decoding="async"></picture>
+</div>
+</div>
 </div>
 </section><section class="g-section g-markets a-pcars" id="projets">
 <div class="wrap g-markets-head">
