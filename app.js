@@ -729,6 +729,29 @@
   }
 
   // --- Apple-style lineup cards: dots under the tile switch between models -----
+
+  // Apple-style accordion (Architecture "What we design"): one item open at a
+  // time; the picture on the right follows the open item.
+  function initAccordion() {
+    document.querySelectorAll('[data-acc]').forEach(function (acc) {
+      var btns = acc.querySelectorAll('[data-acc-btn]');
+      var imgs = acc.querySelectorAll('[data-acc-img]');
+      btns.forEach(function (b) {
+        b.addEventListener('click', function () {
+          var idx = b.getAttribute('data-acc-btn');
+          btns.forEach(function (o) {
+            var on = o === b;
+            o.setAttribute('aria-expanded', on ? 'true' : 'false');
+            var body = document.getElementById(o.getAttribute('aria-controls'));
+            if (body) body.hidden = !on;
+            o.closest('.acc-item').classList.toggle('is-open', on);
+          });
+          imgs.forEach(function (im) { im.classList.toggle('is-on', im.getAttribute('data-acc-img') === idx); });
+        });
+      });
+    });
+  }
+
   function initLineupDots() {
     document.querySelectorAll('.lu-card').forEach(function (card) {
       var dots = card.querySelector('[data-lu-dots]');
@@ -807,6 +830,7 @@
     initFab();
     initLightbox();
     initLineupDots();
+    initAccordion();
   }
 
   if (document.readyState === 'loading') {
