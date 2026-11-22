@@ -188,6 +188,37 @@
     var cacheLang = null;
     var cache = [];
 
+    // The catalogue sits behind a small search icon, Apple-style: the icon
+    // opens a panel with a large search field and the product families as
+    // quick links. Anything that targets the catalogue opens it first.
+    var panel = document.querySelector('[data-cat-panel]');
+    var opener = document.querySelector('[data-cat-open]');
+    function openPanel(focus) {
+      if (!panel) return;
+      panel.hidden = false;
+      if (opener) opener.setAttribute('aria-expanded', 'true');
+      if (focus && input) input.focus({ preventScroll: true });
+    }
+    function closePanel() {
+      if (!panel) return;
+      panel.hidden = true;
+      if (opener) { opener.setAttribute('aria-expanded', 'false'); opener.focus(); }
+    }
+    if (opener) {
+      opener.addEventListener('click', function () {
+        if (panel && panel.hidden) openPanel(true); else closePanel();
+      });
+    }
+    if (panel) {
+      panel.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closePanel();
+      });
+    }
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest ? e.target.closest('a[href="#catalogue"]') : null;
+      if (link) openPanel(true);
+    });
+
     // A row's searchable text: its name, plus anything marked as catalogue
     // text (description, key specification). Falls back to textContent for the
     // plain pill markup older pages may still carry.
@@ -271,6 +302,11 @@
       var disclosure = document.querySelector('[data-catalog-disclosure]');
       if (disclosure && (q || family || category || application)) disclosure.open = true;
 
+      var quick = document.querySelectorAll('.cat-ql-link');
+      for (var k = 0; k < quick.length; k++) {
+        quick[k].setAttribute('aria-pressed', quick[k].getAttribute('data-catalog-family') === family ? 'true' : 'false');
+      }
+
       if (countEl) countEl.textContent = String(shown);
       if (emptyEl) emptyEl.hidden = shown !== 0;
       if (resetEl) resetEl.hidden = !(q || family || category || application);
@@ -317,9 +353,14 @@
     document.addEventListener('click', function (e) {
       var famCard = e.target.closest ? e.target.closest('[data-catalog-family]') : null;
       if (famCard) {
-        if (!setFamily(famCard.getAttribute('data-catalog-family'))) return;
+        var famId = famCard.getAttribute('data-catalog-family');
+        // A second click on the active quick link clears the family filter.
+        if (famCard.getAttribute('aria-pressed') === 'true') famId = '';
+        if (!setFamily(famId)) return;
         e.preventDefault();
+        openPanel(false);
         refresh();
+        if (famCard.classList.contains('cat-ql-link')) return;
         var famAnchor = document.getElementById('catalogue');
         if (famAnchor) famAnchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
         return;
@@ -337,6 +378,7 @@
       }
       if (!set) return;
       e.preventDefault();
+      openPanel(false);
       refresh();
       var anchor = document.getElementById('catalogue');
       if (anchor) anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -346,7 +388,8 @@
 
     // ?family=<id> is how the homepage family cards land on a filtered list.
     var famParam = /[?&]family=([^&#]*)/.exec(window.location.search);
-    if (famParam) setFamily(decodeURIComponent(famParam[1]));
+    if (famParam && setFamily(decodeURIComponent(famParam[1]))) openPanel(false);
+    if (window.location.hash === '#catalogue') openPanel(false);
 
     buildCache();
     refresh();

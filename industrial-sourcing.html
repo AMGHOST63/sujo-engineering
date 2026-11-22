@@ -23,7 +23,7 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&display=swap">
 <link rel="stylesheet" href="style.css?v=9a46649c">
-<link rel="stylesheet" href="v12.css?v=dcfe6fd4">
+<link rel="stylesheet" href="v12.css?v=fc094d10">
 <script>
 // Apply the stored language before first paint so the page never flashes the
 // wrong one. The full swap happens in app.js.
@@ -32,7 +32,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://sujo-engineering.com/#organization","name":"SUJO Engineering Consulting SARL","alternateName":"SUJO","url":"https://sujo-engineering.com/","logo":"https://sujo-engineering.com/img/logo-512.png","image":"https://sujo-engineering.com/img/og-default.jpg","email":"contact@sujo-engineering.com","telephone":"+243976438148","address":{"@type":"PostalAddress","addressLocality":"Kinshasa","addressCountry":"CD"},"areaServed":[{"@type":"Country","name":"Democratic Republic of the Congo"},{"@type":"AdministrativeArea","name":"Kinshasa"}],"availableLanguage":["fr","en"],"contactPoint":[{"@type":"ContactPoint","contactType":"sales","telephone":"+243976438148","email":"contact@sujo-engineering.com","areaServed":"CD","availableLanguage":["fr","en"]},{"@type":"ContactPoint","contactType":"customer support","telephone":"+14123453307","email":"contact@sujo-engineering.com","areaServed":"US","availableLanguage":["en","fr"]}],"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"17:00"}],"knowsAbout":["Engineering design","Fabrication","Custom fitted furniture","Steel structures","Architecture","Industrial equipment supply","Turnkey systems supply","Equipment sourcing","Spare parts identification"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sujo-engineering.com/index.html"},{"@type":"ListItem","position":2,"name":"Services","item":"https://sujo-engineering.com/services.html"},{"@type":"ListItem","position":3,"name":"Equipment Sourcing","item":"https://sujo-engineering.com/industrial-sourcing.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Equipment Sourcing","description":"Supply of complete machines, equipment and industrial systems, turnkey packages, as well as spare parts and critical components: identification, supplier consultation, comparative analysis and documented delivery.","provider":{"@id":"https://sujo-engineering.com/#organization"},"areaServed":{"@type":"Country","name":"Democratic Republic of the Congo"},"serviceType":"Equipment Sourcing","hasOfferCatalog":{"@type":"OfferCatalog","name":"SUJO industrial catalogue","itemListElement":[{"@type":"OfferCatalog","name":"Hydraulics & Fluid Power","numberOfItems":59},{"@type":"OfferCatalog","name":"Pneumatics & Compressed Air","numberOfItems":51},{"@type":"OfferCatalog","name":"Hose, Fittings & Fluid Transfer","numberOfItems":57},{"@type":"OfferCatalog","name":"Pumps, Valves & Process Equipment","numberOfItems":63},{"@type":"OfferCatalog","name":"Filtration & Contamination Control","numberOfItems":41},{"@type":"OfferCatalog","name":"Automation, Electrical & Motion Control","numberOfItems":60},{"@type":"OfferCatalog","name":"Power Transmission & Mechanical Components","numberOfItems":102},{"@type":"OfferCatalog","name":"Lubrication & Reliability Solutions","numberOfItems":56},{"@type":"OfferCatalog","name":"MRO, Tools & Industrial Safety","numberOfItems":97},{"@type":"OfferCatalog","name":"Fleet, Mobile Equipment & Site Support","numberOfItems":53}]}}</script>
-<script defer src="app.js?v=dedc523b"></script>
+<script defer src="app.js?v=ea854634"></script>
 </head>
 <body class="page-catalog">
 <a class="skip-link" href="#main" data-fr="Aller au contenu principal" data-en="Skip to main content">Aller au contenu principal</a>
@@ -100,25 +100,35 @@
 <div class="page-head-actions">
 <a class="btn btn-primary" href="#catalogue" data-fr="Voir le catalogue industriel" data-en="See the industrial catalogue">Voir le catalogue industriel</a>
 <a class="btn btn-outline" href="quote.html" data-fr="Demander un devis" data-en="Request a Quote">Demander un devis</a>
+<button type="button" class="cat-open" aria-expanded="false" aria-controls="cat-panel" aria-label="Rechercher dans le catalogue" data-fr-aria="Rechercher dans le catalogue" data-en-aria="Search the catalogue" data-cat-open><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
 </div>
 </div>
 </section>
 
 
-<section class="section section--tight" id="catalogue">
+<section class="cat-search" id="catalogue">
 <div class="wrap">
-<div class="section-head">
-<p class="eyebrow" data-fr="Catalogue" data-en="Catalogue">Catalogue</p>
-<h2 class="section-title" data-fr="Rechercher dans tout le catalogue" data-en="Search the whole catalogue">Rechercher dans tout le catalogue</h2>
-<p class="section-lead" data-fr="Toutes les références des dix familles, dans une seule liste. Filtrez par famille, par catégorie ou par application, puis demandez un prix pour n’importe laquelle — photographiée ou non." data-en="Every item across the ten families, in one list. Filter by family, category or application, then request a price for any of them — photographed or not.">Toutes les références des dix familles, dans une seule liste. Filtrez par famille, par catégorie ou par application, puis demandez un prix pour n’importe laquelle — photographiée ou non.</p>
-</div>
+<div class="cat-panel" id="cat-panel" data-cat-panel hidden>
 <div class="catalog-toolbar">
-<div class="search-field">
-<span class="search-icon"><svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3"/></svg></span>
+<div class="search-field cat-field">
+<span class="search-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
 <label class="visually-hidden" for="catalog-search" data-fr="Rechercher dans le catalogue" data-en="Search the catalogue">Rechercher dans le catalogue</label>
-<input id="catalog-search" type="search" data-catalog-search placeholder="Rechercher parmi les références…" data-fr-placeholder="Rechercher parmi les références…" data-en-placeholder="Search the item types…">
+<input id="catalog-search" type="search" data-catalog-search placeholder="Rechercher dans le catalogue" data-fr-placeholder="Rechercher dans le catalogue" data-en-placeholder="Search the catalogue" autocomplete="off">
 </div>
-<div class="catalog-filters">
+<p class="cat-ql-title" data-fr="Familles de produits" data-en="Product families">Familles de produits</p>
+<ul class="cat-ql">
+<li><button type="button" class="cat-ql-link" data-catalog-family="hydraulics"><span class="cat-ql-arrow" aria-hidden="true">→</span><span data-fr="Hydraulique &amp; puissance fluidique" data-en="Hydraulics &amp; Fluid Power">Hydraulique &amp; puissance fluidique</span></button></li>
+<li><button type="button" class="cat-ql-link" data-catalog-family="pneumatics"><span class="cat-ql-arrow" aria-hidden="true">→</span><span data-fr="Pneumatique &amp; air comprimé" data-en="Pneumatics &amp; Compressed Air">Pneumatique &amp; air comprimé</span></button></li>
+<li><button type="button" class="cat-ql-link" data-catalog-family="hose-fittings"><span class="cat-ql-arrow" aria-hidden="true">→</span><span data-fr="Flexibles, raccords &amp; transfert de fluides" data-en="Hose, Fittings &amp; Fluid Transfer">Flexibles, raccords &amp; transfert de fluides</span></button></li>
+<li><button type="button" class="cat-ql-link" data-catalog-family="pumps-valves"><span class="cat-ql-arrow" aria-hidden="true">→</span><span data-fr="Pompes, vannes &amp; équipements de process" data-en="Pumps, Valves &amp; Process Equipment">Pompes, vannes &amp; équipements de process</span></button></li>
+<li><button type="button" class="cat-ql-link" data-catalog-family="filtration"><span class="cat-ql-arrow" aria-hidden="true">→</span><span data-fr="Filtration &amp; contrôle de contamination" data-en="Filtration &amp; Contamination Control">Filtration &amp; contrôle de contamination</span></button></li>
+<li><button type="button" class="cat-ql-link" data-catalog-family="automation-electrical"><span class="cat-ql-arrow" aria-hidden="true">→</span><span data-fr="Automatisation, électricité &amp; contrôle de mouvement" data-en="Automation, Electrical &amp; Motion Control">Automatisation, électricité &amp; contrôle de mouvement</span></button></li>
+<li><button type="button" class="cat-ql-link" data-catalog-family="power-transmission"><span class="cat-ql-arrow" aria-hidden="true">→</span><span data-fr="Transmission de puissance &amp; composants mécaniques" data-en="Power Transmission &amp; Mechanical Components">Transmission de puissance &amp; composants mécaniques</span></button></li>
+<li><button type="button" class="cat-ql-link" data-catalog-family="lubrication-reliability"><span class="cat-ql-arrow" aria-hidden="true">→</span><span data-fr="Lubrification &amp; solutions de fiabilité" data-en="Lubrication &amp; Reliability Solutions">Lubrification &amp; solutions de fiabilité</span></button></li>
+<li><button type="button" class="cat-ql-link" data-catalog-family="mro-safety"><span class="cat-ql-arrow" aria-hidden="true">→</span><span data-fr="MRO, outillage &amp; sécurité industrielle" data-en="MRO, Tools &amp; Industrial Safety">MRO, outillage &amp; sécurité industrielle</span></button></li>
+<li><button type="button" class="cat-ql-link" data-catalog-family="fleet-mobile"><span class="cat-ql-arrow" aria-hidden="true">→</span><span data-fr="Flotte, engins mobiles &amp; appui de site" data-en="Fleet, Mobile Equipment &amp; Site Support">Flotte, engins mobiles &amp; appui de site</span></button></li>
+</ul>
+<div class="catalog-filters" hidden>
 <select class="catalog-select" data-catalog-filter="family" aria-label="Toutes les familles" data-fr-aria="Toutes les familles" data-en-aria="All families">
 <option value="" data-fr="Toutes les familles" data-en="All families">Toutes les familles</option>
 <option value="hydraulics" data-fr="Hydraulique &amp; puissance fluidique (59)" data-en="Hydraulics &amp; Fluid Power (59)">Hydraulique &amp; puissance fluidique (59)</option>
@@ -238,9 +248,9 @@
 <option value="fleet-mobile" data-family="fleet-mobile" data-fr="Ateliers mobiles et interventions sur site" data-en="Mobile workshops and on-site interventions">Ateliers mobiles et interventions sur site</option>
 <option value="fleet-mobile" data-family="fleet-mobile" data-fr="Éclairage de chantier et travaux de nuit" data-en="Site lighting and night works">Éclairage de chantier et travaux de nuit</option>
 </select>
-<button type="button" class="btn btn-quiet btn-sm" data-catalog-reset hidden data-fr="Réinitialiser" data-en="Reset">Réinitialiser</button>
 </div>
-<p class="catalog-count"><span data-catalog-count>639</span> <span data-fr="références affichées" data-en="item types shown">références affichées</span></p>
+<div class="cat-status"><p class="catalog-count"><span data-catalog-count>639</span> <span data-fr="références affichées" data-en="item types shown">références affichées</span></p>
+<button type="button" class="btn btn-quiet btn-sm" data-catalog-reset hidden data-fr="Réinitialiser" data-en="Reset">Réinitialiser</button></div>
 </div>
 <p class="catalog-empty" data-catalog-empty hidden data-fr="Aucune référence ne correspond à votre recherche. Décrivez-nous l’article directement : nous l’identifions." data-en="No item type matches your search. Describe the item to us directly and we will identify it.">Aucune référence ne correspond à votre recherche. Décrivez-nous l’article directement : nous l’identifions.</p>
 <details class="catalog-disclosure" data-catalog-disclosure>
@@ -3446,7 +3456,7 @@
 </li>
 </ul>
 </details>
-<p class="note" data-fr="Les photographies illustrent le type d’article et ne représentent ni une marque ni une référence précise. Tout article du catalogue peut être demandé, photographié ou non." data-en="Photographs illustrate the item type; they show neither a brand nor a specific reference. Any item in the catalogue can be requested, photographed or not.">Les photographies illustrent le type d’article et ne représentent ni une marque ni une référence précise. Tout article du catalogue peut être demandé, photographié ou non.</p>
+</div>
 </div>
 </section>
 
@@ -3455,7 +3465,6 @@
 <div>
 <p class="g-kicker" data-fr="Équipements et produits industriels" data-en="Industrial equipment and products">Équipements et produits industriels</p>
 <h2 class="g-h2" data-fr="Dix familles de produits" data-en="Ten product families">Dix familles de produits</h2>
-<p class="g-lead" data-fr="Choisissez une famille : la liste complète ci-dessus se filtre sur elle. Au-delà du catalogue, nous fournissons en clé en main les machines, systèmes et installations complètes." data-en="Pick a family and the full list above filters to it. Beyond the catalogue, we supply complete machines, systems and installations turnkey.">Choisissez une famille : la liste complète ci-dessus se filtre sur elle. Au-delà du catalogue, nous fournissons en clé en main les machines, systèmes et installations complètes.</p>
 </div>
 <div class="g-carousel-nav">
 <button type="button" class="g-carousel-btn" data-carousel="prev" aria-label="Précédent">←</button>
