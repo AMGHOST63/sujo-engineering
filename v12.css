@@ -1079,3 +1079,4 @@ a.lu-btn:hover { color: #fff; }
 /* Architecture hero film carries its own captions: show the whole 16:9 frame, nothing on top */
 .a-hero.a-hero--video { height: auto; min-height: 0; aspect-ratio: 16 / 9; max-height: none; }
 .a-hero--video .a-explore { display: none; }
+.brand-name { display: none !important; }
