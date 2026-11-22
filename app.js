@@ -650,6 +650,13 @@
       // the finished, coloured model stays up for a moment, then a quick fade takes it
       // back to the start, or on to the next film of the playlist.
       var HOLD = 1200, FADE = 250, i = 0, holdTimer = null;
+      // data-seamless: a loop made to repeat with no cut (tile loops): keep the native
+      // loop, no start skip, no hold or fade
+      if (v.hasAttribute('data-seamless')) {
+        v.loop = true;
+        if (reduce) { v.removeAttribute('autoplay'); v.pause(); }
+        return;
+      }
       v.loop = false;
       v.removeAttribute('loop');
       v.style.transition = 'opacity ' + FADE + 'ms ease';
