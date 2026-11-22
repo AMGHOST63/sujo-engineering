@@ -1076,3 +1076,6 @@ a.lu-btn:hover { color: #fff; }
 .lu--grid .lu-actions { margin-top: auto; padding-top: 16px; }
 .ci-grid .ci-btn { margin-top: auto; }
 .ci-grid .catalog-row-tag { margin-bottom: 14px; }
+/* Architecture hero film carries its own captions: show the whole 16:9 frame, nothing on top */
+.a-hero.a-hero--video { height: auto; min-height: 0; aspect-ratio: 16 / 9; max-height: none; }
+.a-hero--video .a-explore { display: none; }
