@@ -728,6 +728,33 @@
     tabs.forEach(function (t) { t.addEventListener('click', function () { show(t); }); });
   }
 
+  // --- Apple-style lineup cards: dots under the tile switch between models -----
+  function initLineupDots() {
+    document.querySelectorAll('.lu-card').forEach(function (card) {
+      var dots = card.querySelector('[data-lu-dots]');
+      var btn = card.querySelector('[data-lightbox]');
+      var img = card.querySelector('.f-card-media img');
+      var source = card.querySelector('.f-card-media source');
+      if (!dots || !btn || !img) return;
+      var list; try { list = JSON.parse(btn.getAttribute('data-lightbox')); } catch (e) { return; }
+      list = list.slice(0, 5);
+      if (list.length < 2) { dots.hidden = true; return; }
+      list.forEach(function (it, n) {
+        var d = document.createElement('button');
+        d.type = 'button'; d.className = 'lu-dot'; d.setAttribute('aria-label', it.en);
+        if (n === 0) d.setAttribute('aria-pressed', 'true');
+        d.addEventListener('click', function () {
+          var webp = it.src.replace(/\.jpg$/, '.webp');
+          if (source) source.srcset = webp;
+          img.srcset = it.src; img.src = it.src;
+          img.alt = it[document.documentElement.lang === 'en' ? 'en' : 'fr'] || it.en;
+          dots.querySelectorAll('.lu-dot').forEach(function (o) { o.setAttribute('aria-pressed', o === d ? 'true' : 'false'); });
+        });
+        dots.appendChild(d);
+      });
+    });
+  }
+
   // --- image lightbox (architecture project cards) ---------------------------
   function initLightbox() {
     var btns = document.querySelectorAll('[data-lightbox]');
@@ -779,6 +806,7 @@
     initArchi();
     initFab();
     initLightbox();
+    initLineupDots();
   }
 
   if (document.readyState === 'loading') {
