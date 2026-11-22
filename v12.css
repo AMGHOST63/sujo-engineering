@@ -795,6 +795,20 @@ html { scroll-padding-top: 70px; }
 /* dark tile: black ground, white type, product film on black (Apple-Watch-style, 2026-11-22) */
 .g-tile--dark .g-tile-title { color: #f5f5f7; }
 .g-tile--dark .g-tile-line { color: #a1a1a6; }
+/* stage tile (Apple Watch banner): short name on top, the product film in the middle,
+   a one-line tagline and the buttons underneath (2026-11-22) */
+.g-tile.g-tile--stage { display: flex; flex-direction: column; align-items: center; padding: 36px 20px 32px; min-height: 0; }
+.g-stage-name { margin: 0; font-size: clamp(1.7rem, 1.2rem + 1.4vw, 2.6rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; color: #1d1d1f; }
+.g-tile--stage .g-tile-media { position: relative; inset: auto; top: auto; width: 100%; max-width: 520px; aspect-ratio: 1 / 1; margin: 8px auto 0; }
+.g-tile--stage .g-tile-media .svc-video { width: 100%; height: 100%; object-fit: contain !important; }
+.g-stage-foot { margin-top: 4px; }
+.g-tile--stage .g-stage-head { order: 1; }
+.g-tile--stage .g-tile-media { order: 2; }
+.g-tile--stage .g-stage-foot { order: 3; }
+.g-stage-tag { margin: 0; font-size: clamp(1.05rem, 0.95rem + 0.4vw, 1.3rem); font-weight: 600; color: #1d1d1f; }
+.g-tile--dark .g-stage-name, .g-tile--dark .g-stage-tag { color: #f5f5f7; }
+.g-tile--dark .g-pill--line { border-color: #f5f5f7; color: #f5f5f7; }
+.g-tile--dark .g-pill--line:hover { background: #f5f5f7; color: #000; }
 /* overlay tile (all widths): the scene film fills the whole card and the text sits on it in white,
    over a soft dark gradient at the top. All the text stays at the top so the film's own captions,
    bottom left, stay clear; the frame is anchored left for the same reason (2026-11-22).
@@ -815,6 +829,9 @@ html { scroll-padding-top: 70px; }
 /* like apple.com, the hero and the tiles stop growing at 2560 px and stay centred, so on a very wide
    or zoomed-out window the cards keep their shape instead of stretching into thin strips (2026-11-22) */
 .g-hero, .g-tiles { max-width: 2560px; margin-inline: auto; }
+/* the projects band follows the same 2560 px column: its cards start at the content column and run to
+   the band's edge (Apple-carousel style) instead of stopping part-way across a very wide window */
+.a-pcars { max-width: 2560px; margin-inline: auto; }
 @media (max-width: 760px) {
   .g-tile.g-tile--overlay { aspect-ratio: 3 / 4; min-height: 0; }
   .g-tile--overlay .g-tile-media .svc-video { object-position: 10% 50% !important; }
