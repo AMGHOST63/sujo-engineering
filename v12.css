@@ -816,11 +816,11 @@ html { scroll-padding-top: 70px; }
 .g-tile.g-tile--overlay { display: block; }
 .g-tile--overlay .g-tile-media { position: absolute; inset: 0; width: auto; aspect-ratio: auto; margin: 0; }
 .g-tile--overlay .g-tile-media .svc-video { object-position: 8% 50% !important; }
-.g-tile--overlay .g-tile-media::after { content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(to bottom, rgba(0,0,0,.55) 0%, rgba(0,0,0,.3) 30%, rgba(0,0,0,0) 52%); }
+/* no dark overlay on the film (user, 2026-11-22: "something black on top of the video, remove this");
+   the white text keeps a soft shadow so it reads on the sky */
 .g-tile--overlay .g-tile-text { position: relative; z-index: 2; padding: 40px 24px 0; }
 .g-tile--overlay .g-kicker { color: #fff; }
-.g-tile--overlay .g-tile-title, .g-tile--overlay .g-tile-line { color: #fff; text-shadow: 0 1px 14px rgba(0,0,0,.35); }
+.g-tile--overlay .g-tile-title, .g-tile--overlay .g-tile-line { color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.35), 0 2px 18px rgba(0,0,0,.4); }
 /* wide screens: never shorter than 16:9, so a very wide card does not crop the film top and bottom
    (the captions would go); min-height 580 still applies on ordinary screens */
 /* (not aspect-ratio: a grid item with one takes its width from its height and spills out of its column)
@@ -890,15 +890,18 @@ html { scroll-padding-top: 70px; }
   .a-stage-cap { gap: 10px; flex-direction: column; align-items: flex-start; }
 }
 @media (max-width: 760px) {
-  .g-tile.g-tile--overlay { aspect-ratio: 3 / 4; min-height: 0; background: #16181b; }
+  .g-tile.g-tile--overlay { aspect-ratio: 3 / 4; min-height: 0; }
   .g-tile--overlay .g-tile-media .svc-video { object-position: 10% 50% !important; }
   .g-tile--overlay .g-tile-text { padding-top: 36px; }
   /* (user, 2026-11-22: "too zoomed in, I can barely read the subtitles") the film no longer fills the
      whole 3:4 card, which blew it up ~2.4x and cut the captions: it fills the lower 59 % (exactly 1.4x,
-     like the other tiles' films), anchored at the bottom so the captions stay whole; the dark band above
-     holds the white text and fades into the film */
+     like the other tiles' films), anchored at the bottom so the captions stay whole. The panel above is
+     the tile's own light blue with dark text, like the other tiles, and no dark band or fade (user:
+     "something black on top of the video, remove this") */
   .g-tile--overlay .g-tile-media { top: auto; height: 59%; }
-  .g-tile--overlay .g-tile-media::after { background: linear-gradient(to bottom, #16181b 0%, rgba(22,24,27,0) 28%); }
+  .g-tile--overlay .g-kicker { color: var(--red); }
+  .g-tile--overlay .g-tile-title, .g-tile--overlay .g-tile-line { color: #1d1d1f; text-shadow: none; }
+  .g-tile--overlay .g-pill--line { border-color: var(--red) !important; color: var(--red) !important; }
 }
 @media (max-width: 760px) {
   .g-tiles { grid-template-columns: 1fr; padding: 10px 0; gap: 10px; }
@@ -1272,3 +1275,13 @@ body:not(.page-home) main > section { width: calc(100% - 24px); max-width: 2536p
 /* 4. carousel arrows everywhere: the homepage's small round grey buttons instead of 52 px squares */
 body:not(.page-home) .g-carousel-btn { width: 36px; height: 36px; border: 0; border-radius: 50%; background: #e8e8ed; color: #1d1d1f; font-size: 1rem; }
 body:not(.page-home) .g-carousel-btn:hover { background: #d2d2d7; color: #1d1d1f; border: 0; }
+
+/* services page slider (2026-11-22): the architecture "Design Projects" slider with a looping film per
+   service instead of a photo; the film fills the slide, its ground colour set on the slide itself */
+.s-slides .a-pcard .g-market-media video.svc-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover !important; background: transparent !important; }
+.s-slides .a-pcard[style*="#fff"] .a-stage-line, .s-slides .a-pcard[style*="#f5f5f5"] .a-stage-line { color: #1d1d1f; text-shadow: none; }
+.s-slides .a-pcard[style*="#fff"] .a-stage-pill, .s-slides .a-pcard[style*="#f5f5f5"] .a-stage-pill { background: #1d1d1f; color: #fff; }
+.s-slides .a-stage-pill { text-decoration: none; display: inline-block; }
+.s-slides .a-pcard[style*="#fff"] .a-stage-cap { background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.94) 55%); }
+.s-slides .a-pcard[style*="#f5f5f5"] .a-stage-cap { background: none; }
+.s-slides .a-pcard[style*="#fff"] .a-stage-pill:hover, .s-slides .a-pcard[style*="#f5f5f5"] .a-stage-pill:hover { background: #000; }
