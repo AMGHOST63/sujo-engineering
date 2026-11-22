@@ -1080,3 +1080,6 @@ a.lu-btn:hover { color: #fff; }
 .a-hero.a-hero--video { height: auto; min-height: 0; aspect-ratio: 16 / 9; max-height: none; }
 .a-hero--video .a-explore { display: none; }
 .brand-name { display: none !important; }
+/* Catalogue item cards without photos */
+.ci-grid .ci-card { background: #fff; border-radius: 18px; padding: 22px 14px 18px; justify-content: flex-start; min-height: 150px; }
+.ci-grid .catalog-row-name { margin-top: 0; }
