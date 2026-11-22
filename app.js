@@ -216,7 +216,16 @@
     }
     document.addEventListener('click', function (e) {
       var link = e.target.closest ? e.target.closest('a[href="#catalogue"]') : null;
-      if (link) openPanel(true);
+      // Family links ("See products") open the panel themselves, without
+      // focusing the field: on a phone that would pop the keyboard and pull
+      // the page away from the filtered list.
+      if (link && !link.hasAttribute('data-catalog-family')) {
+        e.preventDefault();
+        openPanel(false);
+        var target = document.getElementById('catalogue');
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (input) input.focus({ preventScroll: true });
+      }
     });
 
     // A row's searchable text: its name, plus anything marked as catalogue
