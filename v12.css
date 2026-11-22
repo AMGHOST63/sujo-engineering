@@ -834,6 +834,14 @@ html { scroll-padding-top: 70px; }
   .g-tiles .g-tile.g-tile--full:not(.g-tile--stage):not(.g-tile--cover) .g-tile-media { top: 128px; overflow: hidden; }
   .g-tile.g-tile--full .g-tile-media .svc-video { transform: scale(1.2); }
 }
+/* phones (user, 2026-11-22: "fix it on mobile too"): every service tile is the same 3:4 card as the
+   Architecture tile (500 px tall on a 375 px phone); the text stays on top and the film fills the rest.
+   The product film is shown at 1.4x so the product fills its box (only empty white is cropped). */
+@media (max-width: 760px) {
+  .g-tiles .g-tile { aspect-ratio: 3 / 4; min-height: 0; }
+  .g-tiles .g-tile:not(.g-tile--overlay) .g-tile-media { flex: 1 1 auto; min-height: 0; height: auto; aspect-ratio: auto !important; margin-top: 12px; overflow: hidden; }
+  .g-tile.g-tile--full .g-tile-media .svc-video { transform: scale(1.4); }
+}
 /* like apple.com, the hero and the tiles stop growing at 2560 px and stay centred, so on a very wide
    or zoomed-out window the cards keep their shape instead of stretching into thin strips (2026-11-22) */
 .g-hero, .g-tiles { max-width: 2560px; margin-inline: auto; }
