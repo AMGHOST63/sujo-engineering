@@ -927,6 +927,10 @@ html { scroll-padding-top: 70px; }
   .g-hero > .g-hero-inner { padding-block: 24px 4px; }
   .g-hero .g-btn { padding: 6px 14px; font-size: 13px; }
   .g-hero .g-btn .g-arrow { display: none; } /* so the two pills fit on one line */
+  /* the hero film as big as the Equipment sourcing product (user, 2026-11-22): a taller 5:4 box and the
+     same 1.4x zoom, which only crops the empty #f7f7f7 ground around the model */
+  .g-hero .g-hero-media { aspect-ratio: 5 / 4 !important; overflow: hidden; }
+  .g-hero .g-hero-media .g-bgvideo video { transform: scale(1.4); }
 }
 @media (max-width: 760px) { .g-tile-text { order: 1; } .g-tile-media { order: 2; } .g-tile-text { padding-bottom: 0; } }
 
