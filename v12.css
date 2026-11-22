@@ -1232,3 +1232,33 @@ a.lu-btn:hover { color: #fff; }
 .g-tiles--min .g-tile--stage { padding: 30px 20px 26px; }
 .g-tiles--min .g-stage-foot { margin-top: 0; }
 .g-tile--overlay .g-pill--line { border-color: #fff; color: #fff; }
+
+/* ==========================================================================
+   Every page follows the homepage structure (user, 2026-11-22: "every page needs to follow the
+   home page structure"). The homepage has its own rules above; these bring the other pages in line.
+   ========================================================================== */
+/* 1. every section is a panel in the homepage column: at most 2560 px, centred, a 12 px frame and
+      12 px between panels; phones: full width, 10 px between panels */
+body:not(.page-home) main > section { width: calc(100% - 24px); max-width: 2536px; margin: 12px auto 0; }
+@media (max-width: 760px) {
+  body:not(.page-home) main > section { width: 100%; margin-top: 10px; }
+  body:not(.page-home) main > section:first-child { margin-top: 0; }
+}
+/* 2. page heads as compact as the homepage hero: smaller title, tighter spacing, small pill buttons
+      side by side on every screen */
+.page-head:not(.page-head--media) { padding-block: clamp(28px, 3.2vw, 48px) clamp(24px, 3vw, 40px); }
+.page-head .eyebrow { font-size: 11px; margin-bottom: 6px; }
+.page-head .page-title { font-size: clamp(1.7rem, 1.25rem + 1.6vw, 2.6rem); line-height: 1.1; }
+.page-head .page-lead { margin-top: 8px; font-size: clamp(.98rem, .9rem + .3vw, 1.12rem); }
+.page-head .page-head-actions { margin-top: 14px; gap: 10px; justify-content: center; }
+.page-head .page-head-actions .btn { width: auto; min-height: 0; border-radius: 980px; padding: 7px 16px; font-size: 14px; }
+@media (max-width: 760px) {
+  .page-head .page-head-actions .btn { padding: 6px 14px; font-size: 13px; }
+  .page-head .page-head-actions .btn::after { display: none; }
+}
+/* 3. card carousels (services, sectors, case studies) scroll inside the centred content column,
+      like the homepage's, instead of starting there and running off to the right */
+.g-markets .g-carousel { --pad: 0px; width: min(100% - 40px, var(--wrap)); margin-inline: auto; }
+/* 4. carousel arrows everywhere: the homepage's small round grey buttons instead of 52 px squares */
+body:not(.page-home) .g-carousel-btn { width: 36px; height: 36px; border: 0; border-radius: 50%; background: #e8e8ed; color: #1d1d1f; font-size: 1rem; }
+body:not(.page-home) .g-carousel-btn:hover { background: #d2d2d7; color: #1d1d1f; border: 0; }
