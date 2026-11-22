@@ -890,9 +890,15 @@ html { scroll-padding-top: 70px; }
   .a-stage-cap { gap: 10px; flex-direction: column; align-items: flex-start; }
 }
 @media (max-width: 760px) {
-  .g-tile.g-tile--overlay { aspect-ratio: 3 / 4; min-height: 0; }
+  .g-tile.g-tile--overlay { aspect-ratio: 3 / 4; min-height: 0; background: #16181b; }
   .g-tile--overlay .g-tile-media .svc-video { object-position: 10% 50% !important; }
   .g-tile--overlay .g-tile-text { padding-top: 36px; }
+  /* (user, 2026-11-22: "too zoomed in, I can barely read the subtitles") the film no longer fills the
+     whole 3:4 card, which blew it up ~2.4x and cut the captions: it fills the lower 59 % (exactly 1.4x,
+     like the other tiles' films), anchored at the bottom so the captions stay whole; the dark band above
+     holds the white text and fades into the film */
+  .g-tile--overlay .g-tile-media { top: auto; height: 59%; }
+  .g-tile--overlay .g-tile-media::after { background: linear-gradient(to bottom, #16181b 0%, rgba(22,24,27,0) 28%); }
 }
 @media (max-width: 760px) {
   .g-tiles { grid-template-columns: 1fr; padding: 10px 0; gap: 10px; }
