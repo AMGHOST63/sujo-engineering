@@ -826,6 +826,14 @@ html { scroll-padding-top: 70px; }
 /* (not aspect-ratio: a grid item with one takes its width from its height and spills out of its column)
    height = half the tile row (min(viewport, 2560) less the 12 px gaps) x 9/16, never under 580 */
 @media (min-width: 761px) { .g-tile.g-tile--overlay { min-height: max(580px, calc((min(100vw, 2560px) - 36px) * 9 / 32)); } }
+/* the full-width tile (Equipment sourcing) is exactly as tall as the row of two below it (user, 2026-11-22:
+   "the same height"), using the same rule; its film starts a little higher and is shown at 1.2x so the
+   product fills the room (the zoom only crops the empty white around the product) */
+@media (min-width: 761px) {
+  .g-tile.g-tile--full { min-height: max(580px, calc((min(100vw, 2560px) - 36px) * 9 / 32)); }
+  .g-tiles .g-tile.g-tile--full:not(.g-tile--stage):not(.g-tile--cover) .g-tile-media { top: 128px; overflow: hidden; }
+  .g-tile.g-tile--full .g-tile-media .svc-video { transform: scale(1.2); }
+}
 /* like apple.com, the hero and the tiles stop growing at 2560 px and stay centred, so on a very wide
    or zoomed-out window the cards keep their shape instead of stretching into thin strips (2026-11-22) */
 .g-hero, .g-tiles { max-width: 2560px; margin-inline: auto; }
