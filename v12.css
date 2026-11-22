@@ -915,6 +915,35 @@ html { scroll-padding-top: 70px; }
 .g-markets--light { background: #fff; color: var(--ink); }
 .g-markets--light .g-carousel-btn { border-color: var(--ink); color: var(--ink); }
 .g-markets--light .g-carousel-btn:hover { background: var(--red); border-color: var(--red); color: #fff; }
+
+/* ---------- mobile header (Apple-style compact bar) ----------------------- */
+@media (max-width: 1040px) {
+  .header-inner { width: min(100% - 32px, 1440px); min-height: 52px; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .brand { min-width: 0; }
+  .brand-mark { height: 24px; }
+  .header-actions { margin-left: auto; gap: 6px; flex-wrap: nowrap; }
+  .lang-btn { font-size: 11px; padding: 3px 7px; line-height: 1.4; }
+  .nav-toggle {
+    width: 36px; height: 44px; padding: 0 8px; margin-left: 0; gap: 5px;
+    border: 0 !important; background: none;
+  }
+  .nav-toggle span { height: 1.5px; border-radius: 1px; }
+  .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  /* open menu: the top bar keeps logo + close; language and quote move below the links */
+  .primary-nav.open ~ .header-actions .header-quote { display: none; }
+  .header-inner:has(.primary-nav.open) .header-actions {
+    order: 4; flex-basis: 100%; justify-content: space-between; margin: 0; padding: 4px 0 18px;
+  }
+  .header-inner:has(.primary-nav.open) .header-actions .header-quote { display: inline-flex; font-size: 14px; padding: 10px 18px; }
+  .header-inner:has(.primary-nav.open) .nav-toggle { margin-left: auto; }
+  .primary-nav { max-height: calc(100vh - 140px); }
+}
+@media (max-width: 420px) {
+  .brand { gap: 7px; }
+  .brand-name { font-size: 12px; }
+}
+@media (max-width: 340px) { .brand-name { display: none; } }
 /* Equipment Sourcing: search icon sits under the "Ten product families" heading */
 .g-markets-head .cat-open { margin-top: 18px; border: 1px solid rgba(0, 0, 0, .14); }
 .cat-wrap .cat-panel { padding: 0 0 48px; }
