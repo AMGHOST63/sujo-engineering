@@ -795,18 +795,22 @@ html { scroll-padding-top: 70px; }
 /* dark tile: black ground, white type, product film on black (Apple-Watch-style, 2026-11-22) */
 .g-tile--dark .g-tile-title { color: #f5f5f7; }
 .g-tile--dark .g-tile-line { color: #a1a1a6; }
-/* overlay tile (wide screens): the scene film fills the whole card and the text sits on it in white,
+/* overlay tile (all widths): the scene film fills the whole card and the text sits on it in white,
    over a soft dark gradient at the top. All the text stays at the top so the film's own captions,
-   bottom left, stay clear; the frame is anchored left for the same reason (2026-11-22). */
-@media (min-width: 761px) {
-  .g-tile.g-tile--overlay { display: block; }
-  .g-tile--overlay .g-tile-media { position: absolute; inset: 0; width: auto; aspect-ratio: auto; margin: 0; }
-  .g-tile--overlay .g-tile-media .svc-video { object-position: 8% 50% !important; }
-  .g-tile--overlay .g-tile-media::after { content: ""; position: absolute; inset: 0; pointer-events: none;
-    background: linear-gradient(to bottom, rgba(0,0,0,.55) 0%, rgba(0,0,0,.3) 30%, rgba(0,0,0,0) 52%); }
-  .g-tile--overlay .g-tile-text { position: relative; z-index: 2; padding: 40px 24px 0; }
-  .g-tile--overlay .g-kicker { color: #fff; }
-  .g-tile--overlay .g-tile-title, .g-tile--overlay .g-tile-line { color: #fff; text-shadow: 0 1px 14px rgba(0,0,0,.35); }
+   bottom left, stay clear; the frame is anchored left for the same reason (2026-11-22).
+   On phones the card is 3:4 (user: "supposed to be full screen" on mobile too). */
+.g-tile.g-tile--overlay { display: block; }
+.g-tile--overlay .g-tile-media { position: absolute; inset: 0; width: auto; aspect-ratio: auto; margin: 0; }
+.g-tile--overlay .g-tile-media .svc-video { object-position: 8% 50% !important; }
+.g-tile--overlay .g-tile-media::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to bottom, rgba(0,0,0,.55) 0%, rgba(0,0,0,.3) 30%, rgba(0,0,0,0) 52%); }
+.g-tile--overlay .g-tile-text { position: relative; z-index: 2; padding: 40px 24px 0; }
+.g-tile--overlay .g-kicker { color: #fff; }
+.g-tile--overlay .g-tile-title, .g-tile--overlay .g-tile-line { color: #fff; text-shadow: 0 1px 14px rgba(0,0,0,.35); }
+@media (max-width: 760px) {
+  .g-tile.g-tile--overlay { aspect-ratio: 3 / 4; min-height: 0; }
+  .g-tile--overlay .g-tile-media .svc-video { object-position: 10% 50% !important; }
+  .g-tile--overlay .g-tile-text { padding-top: 36px; }
 }
 @media (max-width: 760px) {
   .g-tiles { grid-template-columns: 1fr; padding: 10px 0; gap: 10px; }
