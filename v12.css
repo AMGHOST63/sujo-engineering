@@ -1357,3 +1357,11 @@ body:not(.page-home) .g-carousel-btn:hover { background: #d2d2d7; color: #1d1d1f
 .h-first .s-card--fit .s-card-media .svc-video { object-fit: contain !important; background: transparent !important; }
 .h-first .s-card--scene .s-card-media .svc-video { object-fit: cover !important; object-position: 3% 50%; }
 .h-first .s-card { cursor: pointer; }
+
+/* Home section 1 (2026-11-22): "SUJO Engineering Consulting" above the title; the Usine 3 film
+   fills the whole card behind its text (user: "put the video behind the text"). */
+.h-first .s-cards-kicker { margin: 0 0 8px; text-align: center; color: #1d1d1f; font-size: clamp(.95rem, .9rem + .2vw, 1.1rem); font-weight: 600; letter-spacing: -0.01em; }
+.h-first .s-cards-kicker + .s-cards-title { margin-top: 0; }
+.h-first .s-card--scene { background: #c9ccd0 !important; box-shadow: none; }
+.h-first .s-card--scene .s-card-media { top: 0 !important; }
+.h-first .s-card--scene .s-card-text { color: #1d1d1f; text-shadow: 0 0 18px rgba(255,255,255,.55); }
