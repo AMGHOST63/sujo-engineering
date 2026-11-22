@@ -307,6 +307,9 @@
         quick[k].setAttribute('aria-pressed', quick[k].getAttribute('data-catalog-family') === family ? 'true' : 'false');
       }
 
+      // Apple-style: only the field and quick links until the visitor asks for something.
+      if (panel) panel.classList.toggle('cat-active', !!(q || family || category || application));
+
       if (countEl) countEl.textContent = String(shown);
       if (emptyEl) emptyEl.hidden = shown !== 0;
       if (resetEl) resetEl.hidden = !(q || family || category || application);

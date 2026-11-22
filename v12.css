@@ -944,3 +944,27 @@ html { scroll-padding-top: 70px; }
   .brand-name { font-size: 12px; }
 }
 @media (max-width: 340px) { .brand-name { display: none; } }
+/* Equipment Sourcing: search icon sits under the "Ten product families" heading */
+.g-markets-head .cat-open { margin-top: 18px; border: 1px solid rgba(0, 0, 0, .14); }
+.cat-wrap .cat-panel { padding: 0 0 48px; }
+.cat-wrap:has(.cat-panel[hidden]) { display: none; }
+.cat-panel [hidden] { display: none !important; }
+/* Apple-style search panel (round 2): one column, light input, quiet labels */
+.cat-wrap .cat-panel { max-width: 680px; margin: 0; padding: 8px 0 44px; }
+.cat-panel .cat-field { border-bottom: 0; }
+.cat-panel .cat-field .search-icon { left: 0; color: #1d1d1f; }
+.cat-panel .cat-field .search-icon svg { width: 20px; height: 20px; stroke-width: 1.5; }
+.cat-panel .cat-field input { padding: 6px 0 6px 32px; font-size: 24px; font-weight: 600; letter-spacing: -.01em; caret-color: #0071e3; }
+.cat-panel .cat-field input::placeholder { color: #86868b; }
+.cat-ql-title { margin: 26px 0 12px; font-size: 12px; font-weight: 400; color: #6e6e73; letter-spacing: 0; text-transform: none; }
+.cat-ql { columns: auto; }
+.cat-ql-link { gap: 10px; padding: 5px 0; font-size: 14px; font-weight: 600; letter-spacing: -.01em; color: #1d1d1f; }
+.cat-ql-arrow { font-size: 13px; color: #6e6e73; }
+.cat-ql-link:hover { color: #0071e3; }
+.cat-ql-link:hover .cat-ql-arrow { color: #0071e3; }
+.cat-panel:not(.cat-active) .cat-status,
+.cat-panel:not(.cat-active) .catalog-disclosure,
+.cat-panel:not(.cat-active) .catalog-empty { display: none !important; }
+.cat-status { margin-top: 22px; }
+@media (max-width: 600px) { .cat-panel .cat-field input { font-size: 20px; } }
+.cat-panel .cat-field input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
