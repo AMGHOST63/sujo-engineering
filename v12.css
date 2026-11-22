@@ -890,22 +890,12 @@ html { scroll-padding-top: 70px; }
   .a-stage-cap { gap: 10px; flex-direction: column; align-items: flex-start; }
 }
 @media (max-width: 760px) {
+  /* phones look like desktop (user, 2026-11-22: "the text needs to be like" the desktop tile): the film
+     fills the whole 3:4 card and the white text sits on it, no panel and no dark overlay. The film is
+     anchored at its left edge (3 %) so its captions, bottom left, stay whole at this enlargement */
   .g-tile.g-tile--overlay { aspect-ratio: 3 / 4; min-height: 0; }
-  .g-tile--overlay .g-tile-media .svc-video { object-position: 5% 50% !important; }
+  .g-tile--overlay .g-tile-media .svc-video { object-position: 3% 50% !important; }
   .g-tile--overlay .g-tile-text { padding-top: 36px; }
-  /* (user, 2026-11-22: "too zoomed in, I can barely read the subtitles") the film no longer fills the
-     whole 3:4 card, which blew it up ~2.4x and cut the captions: it fills the lower 59 % (exactly 1.4x,
-     like the other tiles' films), anchored at the bottom so the captions stay whole. The panel above is
-     the tile's own light blue with dark text, like the other tiles, and no dark band or fade (user:
-     "something black on top of the video, remove this") */
-  /* (user, 2026-11-22: "this is not good", the 59 % film left an empty band under the buttons) laid out
-     like the other tiles instead: text on top, the film starting right under it and filling the rest of
-     the card (~1.75x on a 375 px phone; the left anchor keeps the captions whole) */
-  .g-tile.g-tile--overlay { display: flex; flex-direction: column; }
-  .g-tile--overlay .g-tile-media { position: relative; inset: auto; top: auto; height: auto; flex: 1 1 auto; min-height: 0; margin-top: 16px; overflow: hidden; }
-  .g-tile--overlay .g-kicker { color: var(--red); }
-  .g-tile--overlay .g-tile-title, .g-tile--overlay .g-tile-line { color: #1d1d1f; text-shadow: none; }
-  .g-tile--overlay .g-pill--line { border-color: var(--red) !important; color: var(--red) !important; }
 }
 @media (max-width: 760px) {
   .g-tiles { grid-template-columns: 1fr; padding: 10px 0; gap: 10px; }
