@@ -968,3 +968,13 @@ html { scroll-padding-top: 70px; }
 .cat-status { margin-top: 22px; }
 @media (max-width: 600px) { .cat-panel .cat-field input { font-size: 20px; } }
 .cat-panel .cat-field input::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+
+/* "Ready to get started?" on phones: the film is the section's background, behind the text */
+@media (max-width: 899px) {
+  .g-start.g-has-video { display: block; padding-block: 72px; min-height: 560px; }
+  .g-start.g-has-video .g-bgvideo { order: 0; position: absolute; inset: 0; aspect-ratio: auto; margin: 0; background: var(--charcoal); }
+  .g-start.g-has-video .g-bgvideo video { object-fit: cover !important; background: var(--charcoal) !important; }
+  .g-start.g-has-video > .g-bgvideo::after { content: '' !important; display: block; position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(180deg, rgba(18,19,21,.8) 0%, rgba(18,19,21,.55) 50%, rgba(18,19,21,.75) 100%) !important; }
+}
+@media (max-width: 899px) { .g-start.g-has-video .g-start-text { color: #e4e4e0; } }
