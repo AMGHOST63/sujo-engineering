@@ -807,21 +807,34 @@
       var slides = c.children;
       var el = slides[+c.getAttribute('data-start-slide') || 0];
       if (!el) return;
-      var left = function (s) { return s.offsetLeft - (c.clientWidth - s.offsetWidth) / 2; };
+      // offsetLeft is measured from the page, so take the slider's own offset off
+      var left = function (s) { return s.offsetLeft - c.offsetLeft - (c.clientWidth - s.offsetWidth) / 2; };
       var prev = c.style.scrollBehavior;
-      c.style.scrollBehavior = 'auto';
-      c.scrollLeft = left(el);
-      c.style.scrollBehavior = prev;
-      if (reduce || slides.length < 2) return;
+      var jump = function (s) { c.style.scrollBehavior = 'auto'; c.scrollLeft = left(s); c.style.scrollBehavior = prev; };
+      jump(el);
       // the slide whose centre is nearest the carousel's centre
       var current = function () {
         var mid = c.scrollLeft + c.clientWidth / 2, best = 0, d = Infinity;
         for (var k = 0; k < slides.length; k++) {
-          var dk = Math.abs(slides[k].offsetLeft + slides[k].offsetWidth / 2 - mid);
+          var dk = Math.abs(slides[k].offsetLeft - c.offsetLeft + slides[k].offsetWidth / 2 - mid);
           if (dk < d) { d = dk; best = k; }
         }
         return best;
       };
+      // endless loop (data-loop = slides per set; one copied set each side of the real one): once a
+      // scroll settles in a copy, jump without animation to the same slide in the middle set
+      var loop = +c.getAttribute('data-loop') || 0, settleTimer = null;
+      if (loop) {
+        c.addEventListener('scroll', function () {
+          clearTimeout(settleTimer);
+          settleTimer = setTimeout(function () {
+            var i = current();
+            if (i < loop) jump(slides[i + loop]);
+            else if (i >= 2 * loop) jump(slides[i - loop]);
+          }, 160);
+        }, { passive: true });
+      }
+      if (reduce || slides.length < 2) return;
       var hold = false, seen = true;
       var sec = c.closest('section') || c;
       sec.addEventListener('mouseenter', function () { hold = true; });

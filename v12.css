@@ -829,6 +829,16 @@ html { scroll-padding-top: 70px; }
 /* like apple.com, the hero and the tiles stop growing at 2560 px and stay centred, so on a very wide
    or zoomed-out window the cards keep their shape instead of stretching into thin strips (2026-11-22) */
 .g-hero, .g-tiles { max-width: 2560px; margin-inline: auto; }
+/* the hero sits in the same 12 px frame as the service tiles below it, so the hero, the full-width
+   tile and the row of two tiles share one width (user, 2026-11-22); its panel takes the hero films'
+   own #f7f7f7 ground so no paler box shows around the film. Phones: the tiles have no side frame, so
+   neither does the hero. */
+.g-hero { --film-bg: #f7f7f7; width: calc(100% - 24px); max-width: 2536px; margin: 12px auto 0; }
+@media (max-width: 760px) { .g-hero { width: 100%; margin-top: 0; } }
+/* homepage, apple.com-style: the Design Projects and Explore bands are panels in that same column too,
+   12 px apart, so every section on the page shares one width (user, 2026-11-22) */
+.page-home .a-pcars, .page-home .f-cars { width: calc(100% - 24px); max-width: 2536px; margin: 12px auto 0; }
+@media (max-width: 760px) { .page-home .a-pcars, .page-home .f-cars { width: 100%; margin-top: 10px; } }
 /* the projects band follows the same 2560 px column: its cards start at the content column and run to
    the band's edge (Apple-carousel style) instead of stopping part-way across a very wide window */
 .a-pcars { max-width: 2560px; margin-inline: auto; }
