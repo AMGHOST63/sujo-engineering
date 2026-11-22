@@ -798,14 +798,46 @@
 
   // --- projects slider: open centred on a given slide (data-start-slide), so the
   // courtyard block shows first with a neighbour peeking in on each side (2026-11-22)
+  // 2026-11-22 (user: "make the section slide"): it then advances by itself every 5 s, looping
+  // back to the first slide after the last; it holds while the pointer or keyboard focus is on
+  // it or a touch is in progress, while it is off screen, and never runs for reduced motion.
   function initStageStart() {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     document.querySelectorAll('.g-carousel[data-start-slide]').forEach(function (c) {
-      var el = c.children[+c.getAttribute('data-start-slide') || 0];
+      var slides = c.children;
+      var el = slides[+c.getAttribute('data-start-slide') || 0];
       if (!el) return;
+      var left = function (s) { return s.offsetLeft - (c.clientWidth - s.offsetWidth) / 2; };
       var prev = c.style.scrollBehavior;
       c.style.scrollBehavior = 'auto';
-      c.scrollLeft = el.offsetLeft - (c.clientWidth - el.offsetWidth) / 2;
+      c.scrollLeft = left(el);
       c.style.scrollBehavior = prev;
+      if (reduce || slides.length < 2) return;
+      // the slide whose centre is nearest the carousel's centre
+      var current = function () {
+        var mid = c.scrollLeft + c.clientWidth / 2, best = 0, d = Infinity;
+        for (var k = 0; k < slides.length; k++) {
+          var dk = Math.abs(slides[k].offsetLeft + slides[k].offsetWidth / 2 - mid);
+          if (dk < d) { d = dk; best = k; }
+        }
+        return best;
+      };
+      var hold = false, seen = true;
+      var sec = c.closest('section') || c;
+      sec.addEventListener('mouseenter', function () { hold = true; });
+      sec.addEventListener('mouseleave', function () { hold = false; });
+      sec.addEventListener('focusin', function () { hold = true; });
+      sec.addEventListener('focusout', function () { hold = false; });
+      c.addEventListener('touchstart', function () { hold = true; }, { passive: true });
+      c.addEventListener('touchend', function () { setTimeout(function () { hold = false; }, 4000); }, { passive: true });
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (es) { seen = es[0].isIntersecting; }, { threshold: 0.3 }).observe(c);
+      }
+      setInterval(function () {
+        if (hold || !seen || document.hidden) return;
+        var next = slides[(current() + 1) % slides.length];
+        c.scrollTo({ left: left(next), behavior: 'smooth' });
+      }, 5000);
     });
   }
 
