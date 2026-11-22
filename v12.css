@@ -915,3 +915,8 @@ html { scroll-padding-top: 70px; }
 .g-markets--light { background: #fff; color: var(--ink); }
 .g-markets--light .g-carousel-btn { border-color: var(--ink); color: var(--ink); }
 .g-markets--light .g-carousel-btn:hover { background: var(--red); border-color: var(--red); color: #fff; }
+/* Equipment Sourcing: search icon sits under the "Ten product families" heading */
+.g-markets-head .cat-open { margin-top: 18px; border: 1px solid rgba(0, 0, 0, .14); }
+.cat-wrap .cat-panel { padding: 0 0 48px; }
+.cat-wrap:has(.cat-panel[hidden]) { display: none; }
+.cat-panel [hidden] { display: none !important; }
