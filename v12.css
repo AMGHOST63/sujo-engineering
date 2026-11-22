@@ -832,6 +832,9 @@ html { scroll-padding-top: 70px; }
 /* the projects band follows the same 2560 px column: its cards start at the content column and run to
    the band's edge (Apple-carousel style) instead of stopping part-way across a very wide window */
 .a-pcars { max-width: 2560px; margin-inline: auto; }
+/* the project cards scroll inside the same centred column as the heading and arrows, so the row sits
+   centred instead of starting at the column and running off to the right (user, 2026-11-22) */
+.a-pcars .g-carousel { --pad: 0px; width: min(100% - 40px, var(--wrap)); margin-inline: auto; }
 @media (max-width: 760px) {
   .g-tile.g-tile--overlay { aspect-ratio: 3 / 4; min-height: 0; }
   .g-tile--overlay .g-tile-media .svc-video { object-position: 10% 50% !important; }
@@ -1148,3 +1151,15 @@ a.lu-btn:hover { color: #fff; }
 .header-search svg { width: 19px; height: 19px; }
 .header-search:hover { background: rgba(0, 0, 0, .06); }
 .header-search:focus-visible { outline: none; box-shadow: var(--focus); }
+
+/* minimal tiles, Apple homepage style (2026-11-22): a short name, one line, two small buttons, compact
+   top block so the picture takes the room. Applies to every service tile, the stage tile included. */
+.g-tiles--min .g-tile-text { padding: 30px 20px 0; }
+.g-tiles--min .g-tile-title, .g-tiles--min .g-stage-name { font-size: clamp(1.5rem, 1.15rem + 0.9vw, 2.1rem); font-weight: 600; letter-spacing: -0.015em; line-height: 1.1; }
+.g-tiles--min .g-tile-line, .g-tiles--min .g-stage-tag { margin: 4px auto 0; max-width: 36ch; font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.08rem); font-weight: 400; line-height: 1.35; }
+.g-tiles--min .g-tile-actions { margin-top: 12px; gap: 10px; }
+.g-tiles--min .g-pill { padding: 5px 14px; font-size: 13px; min-height: 0; }
+@media (min-width: 761px) { .g-tiles--min .g-tile:not(.g-tile--stage):not(.g-tile--cover) .g-tile-media { top: 140px; } }
+.g-tiles--min .g-tile--stage { padding: 30px 20px 26px; }
+.g-tiles--min .g-stage-foot { margin-top: 0; }
+.g-tile--overlay .g-pill--line { border-color: #fff; color: #fff; }
