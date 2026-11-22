@@ -781,6 +781,12 @@ html { scroll-padding-top: 70px; }
 .g-tile-media .svc-video { width: 100%; height: 100%; }
 /* a scene film (not a model on a flat ground) fills its tile's media area edge to edge (2026-11-22) */
 .g-tile--cover .g-tile-media .svc-video { object-fit: cover !important; }
+/* the media area follows the text instead of starting at a fixed 150/200 px, so the button never
+   sits on the film; and it is exactly 16:9, so cover shows the whole frame and the captions (2026-11-22) */
+.g-tile.g-tile--cover { display: flex; flex-direction: column; }
+.g-tile--cover .g-tile-text { order: 1; padding-bottom: 28px; }
+.g-tile--cover .g-tile-media { order: 2; position: relative; top: auto; left: auto; right: auto; bottom: auto;
+  width: 100%; aspect-ratio: 16 / 9; margin-top: auto; }
 .g-tile-text { position: relative; z-index: 1; padding: 40px 24px 0; }
 .g-tile .g-kicker { color: var(--red); margin-bottom: 6px; font-size: 11px; }
 .g-tile-title { margin: 0; font-size: clamp(1.6rem, 1.2rem + 1.2vw, 2.4rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; color: #1d1d1f; }
