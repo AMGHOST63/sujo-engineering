@@ -1024,3 +1024,4 @@ a.lu-btn:hover { color: #fff; }
 .a-hero--video .a-explore { color: #1d1d1f; }
 .a-hero--video .a-explore::after { background: #1d1d1f; }
 .page-head--text + .g-section { padding-top: 16px; }
+.a-firm-text { max-width: 62ch; margin: 0 auto 8px; text-align: center; }
