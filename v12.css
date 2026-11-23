@@ -1397,3 +1397,6 @@ body:has(.s-cards--sectors), body:has(.s-cards--sectors) main { background: #000
 /* always one line on phones (user 2026-11-22): shrinks with the screen instead of wrapping */
 .h-head .h-head-line { white-space: nowrap; }
 @media (max-width: 480px) { .h-head .h-head-line { font-size: min(1.05rem, 4.6vw); } .h-head .h-head-title { font-size: min(1.8rem, 8.2vw); white-space: nowrap; } }
+/* order since 2026-11-22: SUJO Engineering Consulting (large), Engineered Better, Contact us; the large
+   line fits one line on phones */
+@media (max-width: 480px) { .h-head .h-head-title { font-size: min(1.8rem, 6.1vw); } }
