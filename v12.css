@@ -1533,3 +1533,27 @@ button.header-search { border: 0; background: none; padding: 0; cursor: pointer;
   box-shadow: 0 6px 24px rgba(0,0,0,.10); }
 .gx-media picture, .gx-media img { display: block; width: 100%; height: 100%; object-fit: cover; }
 @media (max-width: 760px) { .gx-row { grid-auto-columns: 78vw; } }
+
+/* ===== Headings in the chatgpt.com style, every page (2026-11-22, user: "make the heading like chat gpt
+   ... do this across all the pages"): white head, a large medium-weight title with tight tracking, the
+   lead in plain dark text, the first call as a black pill with "›". Section titles share the lettering. */
+.page-head, .page-head.page-head--text, .page-head--media, .h-head { background: #fff !important; }
+.page-head .page-title, .h-head .h-head-title {
+  font-size: clamp(2.5rem, 1.5rem + 3.4vw, 4.4rem) !important; font-weight: 500 !important; letter-spacing: -0.035em !important;
+  line-height: 1.06 !important; color: #0d0d0d !important; max-width: 16ch; margin-inline: auto !important; text-align: center; }
+.page-head .eyebrow { color: #0d0d0d; opacity: .7; }
+.page-head .page-lead, .h-head .h-head-line { font-size: clamp(1rem, .95rem + .25vw, 1.15rem) !important; font-weight: 400 !important;
+  color: #0d0d0d !important; max-width: 46ch; margin-inline: auto; line-height: 1.5; }
+.page-head .page-head-actions .btn:first-child, .h-head .page-head-actions .btn:first-child {
+  background: #0d0d0d !important; color: #fff !important; border: 0 !important; border-radius: 999px !important;
+  padding: 10px 20px !important; font-size: 15px !important; font-weight: 500 !important; min-height: 0 !important; }
+.page-head .page-head-actions .btn:first-child::after, .h-head .page-head-actions .btn:first-child::after { content: '›'; margin-left: 10px; display: inline; font-size: 1.15em; line-height: 1; }
+.page-head .page-head-actions .btn:first-child:hover, .h-head .page-head-actions .btn:first-child:hover { background: #2f2f2f !important; }
+.s-cards-title, .a-ent-title, .gx-title, .e-shelf-title, .g-faq .g-h2, .acc-title {
+  font-weight: 500 !important; letter-spacing: -0.03em !important; color: #0d0d0d !important; }
+.gx-arrow svg { display: block; }
+/* phones: the home title stays on one line (user, earlier), other page titles scale down */
+@media (max-width: 480px) {
+  .h-head .h-head-title { font-size: min(2.5rem, 6.1vw) !important; white-space: nowrap; max-width: none; }
+  .page-head .page-title { font-size: clamp(2rem, 8.5vw, 2.6rem) !important; }
+}
