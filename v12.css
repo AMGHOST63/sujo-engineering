@@ -1441,3 +1441,14 @@ body:not(.page-home) .g-carousel-btn:hover { background: #d2d2d7; color: #1d1d1f
 }
 /* light again (user, 2026-11-22: "remove the dark mode"): Apple-style white gaps between the tiles */
 .sx { background: #fff; }
+
+/* Engineering page on the architecture page's structure (2026-11-22): film full width on its own
+   #f7f7f7 ground; product renders (square, on white) shown whole in the accordion and the slider */
+.e-hero.a-hero--video { background: #f7f7f7; }
+.acc--fab .acc-media { background: #fff; }
+.acc--fab .acc-img img { object-fit: contain; padding: 4%; }
+.acc--fab .acc-lb { background: none; border: 0; padding: 0; font: inherit; cursor: pointer; }
+.e-pcars .a-pcard { background: #fff; }
+.e-pcars .a-pcard .g-market-media img { object-fit: contain !important; object-position: 50% 45% !important; padding: 3% 3% 12%; }
+.e-pcars .a-stage-line { color: #1d1d1f !important; text-shadow: none !important; background: none !important; }
+.e-pcars .a-stage-pill { box-shadow: 0 0 0 1px #d2d2d7; }
