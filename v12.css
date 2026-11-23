@@ -1508,3 +1508,7 @@ button.header-search { border: 0; background: none; padding: 0; cursor: pointer;
 /* What we Design slides: a soft colour each, the render blended into it, no dark band under the caption */
 .e-pcars .a-pcard .g-market-media img { mix-blend-mode: multiply; }
 .e-pcars .a-stage-cap { background: none !important; }
+
+/* Sectors page on the services page structure (2026-11-22): six tall cards, three per row */
+.s-cards--sec6 .s-cards-row { row-gap: 20px; }
+.s-cards--sec6 .s-card--sector .s-card-media { top: 34%; }
