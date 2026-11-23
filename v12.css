@@ -1470,3 +1470,8 @@ body:not(.page-home) .g-carousel-btn:hover { background: #d2d2d7; color: #1d1d1f
 .e-shelf-name { margin: 10px 0 0; font-size: 14px; font-weight: 500; line-height: 1.3; color: #1d1d1f; }
 .e-shelf-sub { margin: 2px 0 0; font-size: 13px; line-height: 1.35; color: #86868b; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 @media (max-width: 760px) { .e-shelf-row { grid-auto-columns: 44vw; gap: 12px; } }
+/* construction: item photo grids by group, then the categories (2026-11-22) */
+.con-group { margin-top: 36px; }
+.con-group .catalog-group-text { margin: 4px 0 0; max-width: 60ch; color: #6e6e73; }
+.con-more { margin-top: 48px; }
+.con-grid h4.catalog-row-name { margin: 12px 0 10px; font-size: 13px; font-weight: 600; line-height: 1.3; color: #1d1d1f; }
