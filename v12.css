@@ -1582,3 +1582,10 @@ button.header-search { border: 0; background: none; padding: 0; cursor: pointer;
 .h-head .h-head-line { font-size: 13px !important; color: #6e6e73 !important; margin: 0 auto 14px !important; }
 .h-head .h-head-title { font-size: clamp(2rem, 1.4rem + 2.2vw, 3.2rem) !important; max-width: none !important; margin: clamp(36px, 5vw, 64px) auto 0 !important; letter-spacing: -0.02em !important; }
 @media (max-width: 480px) { .h-head .h-head-title { font-size: min(2rem, 6.1vw) !important; } }
+/* text-only grey cards (About: commitments and values), 2026-11-23 */
+.gx--text .gx-card { height: auto; min-height: 220px; padding-bottom: 28px; }
+.about-facts { background: #fff; }
+/* About "Get to know SUJO.": longer texts, so the photo sits under the text instead of over it */
+#decouvrir .gx-card { height: auto; min-height: clamp(400px, 34vw, 460px); display: flex; flex-direction: column; padding-bottom: 0; }
+#decouvrir .gx-media { position: relative; left: auto; right: auto; bottom: auto; margin: auto -24px 0 28%; padding-top: 22px; height: 230px; box-shadow: none; }
+#decouvrir .gx-media picture, #decouvrir .gx-media img { border-radius: 14px 0 0 0; box-shadow: 0 6px 24px rgba(0,0,0,.10); }
