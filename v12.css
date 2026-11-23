@@ -1566,3 +1566,12 @@ button.header-search { border: 0; background: none; padding: 0; cursor: pointer;
 .g-pill--line:hover, .btn-outline:not(.cta-band .btn-outline):hover { background: #0d0d0d !important; color: #fff !important; }
 .g-tile--dark .g-pill--line, .g-tile--overlay .g-pill--line { border-color: #fff !important; color: #fff !important; }
 .g-tile--dark .g-pill--red, .g-tile--overlay .g-pill--red { background: #fff !important; color: #0d0d0d !important; border-color: #fff !important; }
+
+/* ===== Navigation and drop-down menus in black (2026-11-22, user: "change all the drop down menu colors
+   to Black"): the menu's top rule, hover colours, the "All services / All sectors" link and the active line */
+.menu-panel { border-top-color: #0d0d0d !important; }
+.nav-list > li > a:hover, .menu-trigger:hover, .menu-list > li > a:hover { color: #0d0d0d !important; }
+.menu-list > li > a:hover { background: #f2f2f2 !important; }
+.menu-overview > a { color: #0d0d0d !important; }
+.nav-list > li > a.active::after, .menu-trigger.active::after { background: #0d0d0d !important; border-color: #0d0d0d; }
+@media (max-width: 900px) { .menu-trigger.active { color: #0d0d0d !important; } }
