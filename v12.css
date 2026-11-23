@@ -1575,3 +1575,10 @@ button.header-search { border: 0; background: none; padding: 0; cursor: pointer;
 .menu-overview > a { color: #0d0d0d !important; }
 .nav-list > li > a.active::after, .menu-trigger.active::after { background: #0d0d0d !important; border-color: #0d0d0d; }
 @media (max-width: 900px) { .menu-trigger.active { color: #0d0d0d !important; } }
+/* the services page cards in the same grey-card style (2026-11-23): the loop fills its inset frame */
+.gx-media video.svc-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover !important; background: transparent !important; }
+.gx--svc .gx-row { justify-content: center; }
+/* home head like the services head (2026-11-23): small line, pill, then the title at the section-title size */
+.h-head .h-head-line { font-size: 13px !important; color: #6e6e73 !important; margin: 0 auto 14px !important; }
+.h-head .h-head-title { font-size: clamp(2rem, 1.4rem + 2.2vw, 3.2rem) !important; max-width: none !important; margin: clamp(36px, 5vw, 64px) auto 0 !important; letter-spacing: -0.02em !important; }
+@media (max-width: 480px) { .h-head .h-head-title { font-size: min(2rem, 6.1vw) !important; } }
