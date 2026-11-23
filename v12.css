@@ -1400,3 +1400,47 @@ body:has(.s-cards--sectors), body:has(.s-cards--sectors) main { background: #000
 /* order since 2026-11-22: SUJO Engineering Consulting (large), Engineered Better, Contact us; the large
    line fits one line on phones */
 @media (max-width: 480px) { .h-head .h-head-title { font-size: min(1.8rem, 6.1vw); } }
+/* the sectors accordion in the page's dark mode */
+.acc--sectors { background: #000 !important; }
+.acc--sectors .g-kicker, .acc--sectors .acc-title { color: #f5f5f7; }
+.acc--sectors .acc-panel { background: #1d1d1f; }
+.acc--sectors .acc-item { border-color: #424245; }
+.acc--sectors .acc-btn, .acc--sectors .acc-body p { color: #f5f5f7; }
+.acc--sectors .acc-chev { color: #a1a1a6; }
+.acc--sectors .acc-media { background: #000; }
+.acc--sectors .lu-link { color: #ff4d5e; }
+/* each sector page dark like the Sectors page (2026-11-22) */
+body:has(.page-head--sector), body:has(.page-head--sector) main, .page-head--sector { background: #000 !important; color: #f5f5f7; }
+.page-head--sector .page-title, .page-head--sector .eyebrow { color: #f5f5f7 !important; }
+.page-head--sector .breadcrumb, .page-head--sector .breadcrumb a, .page-head--sector .breadcrumb li { color: #a1a1a6 !important; }
+.page-head--sector .btn-outline { border-color: #f5f5f7 !important; color: #f5f5f7 !important; background: transparent !important; }
+.page-head--sector .btn-outline:hover { background: #f5f5f7 !important; color: #000 !important; }
+body:has(.page-head--sector) main .section h2, body:has(.page-head--sector) main .section h3,
+body:has(.page-head--sector) main .section p, body:has(.page-head--sector) main .section .eyebrow { color: #f5f5f7 !important; }
+body:has(.page-head--sector) main .section .section-lead, body:has(.page-head--sector) main .section p { color: #d2d2d7 !important; }
+
+/* Product grid as Apple's accessories grid (2026-11-22, user: "displayed like pic 2"): white cells
+   joined by thin grey lines, photo on white, small centred name and family, a small red Contact us link */
+.catalog-list.ci-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; padding: 0; margin-top: 28px;
+  border-top: 1px solid #d2d2d7; border-left: 1px solid #d2d2d7; background: #fff; }
+.ci-grid .ci-card { border: 0; border-right: 1px solid #d2d2d7; border-bottom: 1px solid #d2d2d7; padding: 22px 16px 20px; background: #fff; }
+.ci-grid .ci-card .ci-media, .ci-grid .ci-card[data-tone] .ci-media,
+.ci-grid .ci-card:nth-child(3n+2) .ci-media, .ci-grid .ci-card:nth-child(3n) .ci-media { background: #fff; border-radius: 0; padding: 6px; }
+.ci-grid .catalog-row-name { margin-top: 12px; font-size: 13px; font-weight: 600; }
+.ci-grid .catalog-row-tag { margin: 4px 0 10px; font-size: 12px; }
+.ci-grid .ci-btn { margin-top: auto; padding: 0; min-height: 0; background: none !important; border: 0 !important; color: var(--red) !important;
+  font-size: 12.5px; font-weight: 500; box-shadow: none; }
+.ci-grid .ci-btn:hover { text-decoration: underline; }
+@media (max-width: 1100px) { .catalog-list.ci-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .catalog-list.ci-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; } }
+
+/* sector "Supplies" lists in the same grid (no photos: name only) */
+.catalog-groups .pill-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; padding: 0; margin: 14px 0 0; list-style: none;
+  border-top: 1px solid #d2d2d7; border-left: 1px solid #d2d2d7; }
+.catalog-groups .pill-list .pill { display: flex; align-items: center; justify-content: center; min-height: 96px; margin: 0; padding: 18px 14px;
+  border: 0; border-right: 1px solid #d2d2d7; border-bottom: 1px solid #d2d2d7; border-radius: 0; background: transparent; text-align: center;
+  font-size: 13px; font-weight: 600; line-height: 1.3; }
+@media (max-width: 1100px) { .catalog-groups .pill-list { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .catalog-groups .pill-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+body:has(.page-head--sector) .catalog-groups .pill-list, body:has(.page-head--sector) .catalog-groups .pill-list .pill { border-color: #424245; }
+body:has(.page-head--sector) .catalog-groups .pill-list .pill { color: #f5f5f7; }
