@@ -1484,3 +1484,15 @@ body:not(.page-home) .g-carousel-btn:hover { background: #d2d2d7; color: #1d1d1f
 .all-products { background: #fff; padding-block: clamp(36px, 5vw, 64px); }
 .catalog-list.ci-grid.all-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 18px; }
 @media (max-width: 760px) { .catalog-list.ci-grid.all-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* simple search bar opened by the header magnifier on industrial-sourcing.html (2026-11-22) */
+button.header-search { border: 0; background: none; padding: 0; cursor: pointer; }
+.hs-bar { position: fixed; left: 0; right: 0; top: var(--header-h, 56px); z-index: 60; background: rgba(255,255,255,.97);
+  backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid #d2d2d7; padding: 14px 20px; }
+.hs-bar[hidden] { display: none; }
+.hs-inner { display: flex; align-items: center; gap: 10px; max-width: 680px; margin: 0 auto; }
+.hs-input { flex: 1; min-width: 0; height: 44px; padding: 0 16px; border: 1px solid #d2d2d7; border-radius: 12px; font: inherit; font-size: 16px; color: #1d1d1f; background: #fff; }
+.hs-input:focus { outline: none; border-color: #86868b; box-shadow: 0 0 0 3px rgba(0,113,227,.15); }
+.hs-close { width: 36px; height: 36px; border: 0; border-radius: 50%; background: #f5f5f7; color: #1d1d1f; font-size: 22px; line-height: 1; cursor: pointer; }
+.hs-none { max-width: 680px; margin: 10px auto 0; font-size: 14px; color: #6e6e73; }
+.all-grid > li[hidden] { display: none !important; }

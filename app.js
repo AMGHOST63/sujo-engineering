@@ -915,6 +915,48 @@
     initStageStart();
     initLineupDots();
     initAccordion();
+    initSimpleSearch();
+  }
+
+  // Header magnifier on industrial-sourcing.html (2026-11-22): opens one search bar under the header;
+  // typing filters the "All products" grid (#tous-les-produits) by product name and family.
+  function initSimpleSearch() {
+    var open = document.querySelector('[data-hs-open]');
+    var bar = document.getElementById('hs-bar');
+    if (!open || !bar) return;
+    var input = bar.querySelector('[data-hs-input]');
+    var none = bar.querySelector('[data-hs-none]');
+    var grid = document.querySelector('#tous-les-produits .all-grid');
+    var cells = grid ? Array.prototype.slice.call(grid.children) : [];
+    var norm = function (t) { return (t || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); };
+    var lang = document.documentElement.getAttribute('lang') || 'fr';
+    if (input.getAttribute('data-' + lang + '-placeholder')) input.placeholder = input.getAttribute('data-' + lang + '-placeholder');
+    function show(on) {
+      bar.hidden = !on;
+      open.setAttribute('aria-expanded', on ? 'true' : 'false');
+      if (on) { input.focus(); } else { input.value = ''; filter(); }
+    }
+    function filter() {
+      var q = norm(input.value.trim());
+      var shown = 0;
+      cells.forEach(function (li) {
+        var hit = !q || norm(li.textContent).indexOf(q) !== -1;
+        li.hidden = !hit;
+        if (hit) shown++;
+      });
+      if (none) none.hidden = !(q && shown === 0);
+    }
+    open.addEventListener('click', function () { show(bar.hidden); });
+    bar.querySelector('[data-hs-close]').addEventListener('click', function () { show(false); open.focus(); });
+    input.addEventListener('input', function () {
+      filter();
+      var sec = document.getElementById('tous-les-produits');
+      if (sec && input.value.trim()) {
+        var top = sec.getBoundingClientRect().top + window.pageYOffset - (bar.getBoundingClientRect().bottom + 12);
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    });
+    input.addEventListener('keydown', function (e) { if (e.key === 'Escape') { show(false); open.focus(); } });
   }
 
   if (document.readyState === 'loading') {
