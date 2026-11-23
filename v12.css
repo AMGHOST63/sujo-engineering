@@ -1394,3 +1394,6 @@ body:has(.s-cards--sectors), body:has(.s-cards--sectors) main { background: #000
 .page-home .h-first .s-cards-title { margin: 0 0 clamp(22px, 3vw, 36px); }
 .h-head .h-head-title { margin: 0 0 6px; text-align: center; }
 .h-head .h-head-line { font-size: clamp(1.05rem, .95rem + .35vw, 1.3rem); font-weight: 500; color: #1d1d1f; }
+/* always one line on phones (user 2026-11-22): shrinks with the screen instead of wrapping */
+.h-head .h-head-line { white-space: nowrap; }
+@media (max-width: 480px) { .h-head .h-head-line { font-size: min(1.05rem, 4.6vw); } .h-head .h-head-title { font-size: min(1.8rem, 8.2vw); white-space: nowrap; } }
