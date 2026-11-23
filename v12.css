@@ -1364,4 +1364,4 @@ body:not(.page-home) .g-carousel-btn:hover { background: #d2d2d7; color: #1d1d1f
 .h-first .s-cards-kicker + .s-cards-title { margin-top: 0; }
 .h-first .s-card--scene { background: #c9ccd0 !important; box-shadow: none; }
 .h-first .s-card--scene .s-card-media { top: 0 !important; }
-.h-first .s-card--scene .s-card-text { color: #1d1d1f; text-shadow: 0 0 18px rgba(255,255,255,.55); }
+.h-first .s-card--scene .s-card-text { color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.35), 0 0 22px rgba(0,0,0,.28); }
