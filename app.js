@@ -900,6 +900,28 @@
     box.addEventListener('touchend', function (e) { if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) show(i + (dx < 0 ? 1 : -1)); x0 = null; });
   }
 
+
+  // sectors pages (2026-11-23, chatgpt.com/business layout): pill tabs that show one panel each;
+  // data-bz-auto="ms" moves to the next tab on its own until the visitor picks one
+  function initBzTabs() {
+    document.querySelectorAll('[data-bz-tabs]').forEach(function (box) {
+      var tabs = box.querySelectorAll('[data-bz-tab]');
+      var panels = box.querySelectorAll('[data-bz-panel]');
+      var cur = 0, timer = null;
+      function show(i) {
+        cur = i;
+        tabs.forEach(function (t) { var on = +t.getAttribute('data-bz-tab') === i; t.classList.toggle('is-on', on); t.setAttribute('aria-selected', on ? 'true' : 'false'); });
+        panels.forEach(function (p) { var on = +p.getAttribute('data-bz-panel') === i; p.hidden = !on; p.classList.toggle('is-on', on); });
+      }
+      tabs.forEach(function (t) {
+        t.addEventListener('click', function () { clearInterval(timer); show(+t.getAttribute('data-bz-tab')); });
+      });
+      var ms = +(box.getAttribute('data-bz-auto') || 0);
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (ms && !reduce && tabs.length > 1) timer = setInterval(function () { show((cur + 1) % tabs.length); }, ms);
+    });
+  }
+
   function boot() {
     initLang();
     initNav();
@@ -917,6 +939,7 @@
     initAccordion();
     initSimpleSearch();
     initFamilyFirst();
+    initBzTabs();
   }
 
   // "See products" on a family card of industrial-sourcing.html (2026-11-22, user): that family's

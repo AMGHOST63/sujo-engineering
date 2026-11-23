@@ -1,0 +1,163 @@
+/* About page (2026-11-23), matched to openai.com/about measured at a 1280px window:
+   white page and chrome, black type in one medium weight with tight tracking, 6px image
+   corners, light-grey pill links, 120px between sections and 240px around the closing
+   call to action. Loaded by about.html only (pages-main.js, aboutPage), so the header
+   and footer overrides below touch no other page. */
+
+.oa {
+  --oa-ink: #000;
+  --oa-muted: rgba(0, 0, 0, .6);
+  --oa-pill: rgba(0, 0, 0, .04);
+  --oa-pill-hover: rgba(0, 0, 0, .08);
+  --oa-img: #f3f3f3;
+  --oa-gap: 120px;
+  background: #fff;
+  color: var(--oa-ink);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+  letter-spacing: normal;
+  padding-bottom: 240px;
+}
+.oa h1, .oa h2, .oa h3, .oa h4, .oa p, .oa figure { margin: 0; }
+.oa h1, .oa h2, .oa h3, .oa h4 { font-family: inherit; color: var(--oa-ink); }
+
+.oa-wrap { max-width: 1440px; margin: 0 auto; padding: 0 32px; }
+
+/* type scale (OpenAI at 1265px: 59 / 45.6 / 29 / 21.7 / 17.7 / 17 / 14) */
+.oa-eyebrow { font-size: 14px; font-weight: 500; line-height: 20px; }
+.oa-h1 { font-size: clamp(40px, 4.68vw, 68px); font-weight: 500; line-height: 1.01; letter-spacing: -.03em; margin-top: 32px !important; }
+.oa-h2 { font-size: clamp(30px, 3.6vw, 52px); font-weight: 500; line-height: 1.16; letter-spacing: -.029em; }
+.oa-h3 { font-size: clamp(23px, 2.3vw, 33px); font-weight: 500; line-height: 1.32; letter-spacing: -.01em; }
+.oa-h4 { font-size: clamp(19px, 1.72vw, 25px); font-weight: 500; line-height: 1.25; letter-spacing: -.01em; }
+.oa-p, .oa-lead { font-size: 17px; font-weight: 400; line-height: 28px; letter-spacing: -.01em; color: var(--oa-ink); }
+
+/* hero */
+.oa-hero { padding-top: 88px; text-align: center; }
+.oa-lead { max-width: 520px; margin: 23px auto 0 !important; }
+
+.oa-section { margin-top: var(--oa-gap); }
+
+/* images: 6px corners, cover-cropped to the slot */
+.oa-square, .oa-wide, .oa-card-media, .oa-person-photo { overflow: hidden; border-radius: 6px; background: var(--oa-img); }
+.oa-square { aspect-ratio: 1 / 1; }
+.oa-wide { aspect-ratio: 16 / 9; }
+.oa-square img, .oa-wide img, .oa-card-media img, .oa-person-photo img {
+  display: block; width: 100%; height: 100%; object-fit: cover; max-width: none;
+}
+.oa-square picture, .oa-wide picture, .oa-card-media picture, .oa-person-photo picture { display: block; width: 100%; height: 100%; }
+.oa-caption { font-size: 14px; line-height: 23px; color: var(--oa-ink); margin-top: 13px !important; }
+
+/* text left (313px), square image right (481px), 901px block */
+.oa-split { max-width: 965px; display: grid; /* 901px + the 2 x 32px wrap padding */ grid-template-columns: 313fr 481fr; gap: 107px; align-items: center; }
+.oa-split-text .oa-p { margin-top: 20px !important; }
+.oa-split-text .oa-pills, .oa-split-text > .oa-pill { margin-top: 20px; }
+
+/* pills */
+.oa-pills { display: flex; flex-wrap: wrap; gap: 19px; }
+.oa-pill {
+  display: inline-flex; align-items: center; height: 40px; padding: 0 20px; border-radius: 40px;
+  background: var(--oa-pill); color: var(--oa-ink) !important;
+  font-size: 14px; font-weight: 500; line-height: 1; text-decoration: none !important;
+  transition: background .15s ease;
+}
+.oa-pill:hover { background: var(--oa-pill-hover); }
+.oa-pill--plain { background: none; padding: 0; }
+.oa-pill--plain::after { content: '\203A'; margin-left: 6px; font-size: 17px; line-height: 1; }
+.oa-pill--plain:hover { background: none; text-decoration: underline !important; text-underline-offset: 4px; }
+.oa-pill:focus-visible, .oa-tab:focus-visible, .oa-card:focus-visible { outline: 2px solid var(--oa-ink); outline-offset: 3px; }
+
+/* statement: centred 793px text over a 997px 16:9 image */
+.oa-statement { text-align: center; }
+.oa-statement-text { max-width: 793px; margin: 0 auto !important; }
+.oa-wide { max-width: 997px; margin: var(--oa-gap) auto 0; }
+
+/* centred block: heading, 756px paragraph, pill, then a 997px band (the two leaders) */
+.oa-center { text-align: center; }
+.oa-center-text { max-width: 756px; margin: 25px auto 0 !important; }
+.oa-center > .oa-pill { margin-top: 32px; }
+.oa-people { max-width: 997px; margin: 40px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; text-align: left; }
+.oa-person-photo { aspect-ratio: 486 / 561; }
+.oa-person figcaption { margin-top: 16px; display: flex; flex-direction: column; gap: 4px; }
+.oa-person-name { font-size: clamp(16px, 1.4vw, 19px); font-weight: 500; line-height: 1.4; }
+.oa-person-role { font-size: 14px; font-weight: 500; color: var(--oa-muted); }
+
+/* learn more: full-width row, tabs, four square cards */
+.oa-learn .oa-h4 { margin-bottom: 24px !important; }
+.oa-tabs { display: flex; gap: 24px; margin-bottom: 40px; }
+.oa-tab {
+  appearance: none; border: 0; background: none; padding: 0; cursor: pointer; border-radius: 4px;
+  font-family: inherit; font-size: 17px; font-weight: 400; line-height: 1.4; color: var(--oa-muted);
+}
+.oa-tab[aria-selected="true"], .oa-tab:hover { color: var(--oa-ink); }
+.oa-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.oa-card { display: block; color: var(--oa-ink) !important; text-decoration: none !important; }
+.oa-card-media { aspect-ratio: 1 / 1; }
+.oa-card-media img { transition: transform .5s ease; }
+.oa-card:hover .oa-card-media img { transform: scale(1.03); }
+.oa-card-title { font-size: clamp(16px, 1.4vw, 19px); font-weight: 500; line-height: 1.4; letter-spacing: -.01em; margin-top: 16px !important; }
+.oa-card-tag { font-size: 14px; font-weight: 500; line-height: 20px; margin-top: 8px !important; }
+.oa-card-meta { color: var(--oa-muted); margin-left: 8px; }
+.oa-more { margin-top: 60px; text-align: center; }
+.oa-wide--after-pill { margin-top: 40px; }
+
+/* closing call to action: 240px clear above */
+.oa-cta { margin-top: 240px; }
+.oa-cta .oa-h2 { max-width: 793px; margin: 0 auto !important; }
+.oa-cta .oa-pill { margin-top: 32px; }
+
+/* ---- header and footer, white like openai.com, on this page only ---- */
+body.page-about-oa { background: #fff; }
+.page-about-oa .site-header { background: rgba(255, 255, 255, .96); border-bottom: 0; }
+.page-about-oa .header-inner { min-height: 64px; width: min(100% - 64px, 1440px); }
+.page-about-oa .nav-list > li > a,
+.page-about-oa .menu-trigger { font-size: 14px; font-weight: 400 !important; color: rgba(0, 0, 0, .6) !important; padding: 8px 10px; }
+.page-about-oa .nav-list > li > a:hover,
+.page-about-oa .menu-trigger:hover,
+.page-about-oa .nav-list > li > a.active { color: #000 !important; background: none; }
+.page-about-oa .nav-list > li > a.active::after,
+.page-about-oa .menu-trigger.active::after { display: none; }
+.page-about-oa .lang-switch { border: 0; border-radius: 40px; background: rgba(0, 0, 0, .04); padding: 2px; }
+.page-about-oa .lang-btn { border: 0 !important; border-radius: 40px; background: none; color: rgba(0, 0, 0, .6); font-size: 13px; font-weight: 500; padding: 7px 11px; }
+.page-about-oa .lang-btn[aria-pressed="true"] { background: #fff; color: #000; box-shadow: 0 0 0 1px rgba(0, 0, 0, .06); }
+.page-about-oa .header-actions .header-account {
+  background: #000; color: #fff; border: 0; border-radius: 40px; height: 36px; padding: 0 16px;
+  display: inline-flex; align-items: center; font-size: 14px; font-weight: 500;
+}
+.page-about-oa .header-actions .header-account:hover { background: #333; color: #fff; }
+
+.page-about-oa .site-footer { background: #fff; color: rgba(0, 0, 0, .6); font-size: 13px; font-weight: 500; }
+.page-about-oa .site-footer::before { display: none; }
+.page-about-oa .footer-top { width: min(100% - 64px, 1440px); padding-block: 48px; }
+.page-about-oa .footer-logo { filter: invert(1); width: 120px; }
+.page-about-oa .footer-tagline { color: rgba(0, 0, 0, .6); font-weight: 400; font-size: 13px; }
+.page-about-oa .footer-address strong { color: #000; font-weight: 500; }
+.page-about-oa .footer-heading { color: rgba(0, 0, 0, .6); font-size: 13px; font-weight: 500; letter-spacing: 0; text-transform: none; margin-bottom: 14px; }
+.page-about-oa .footer-col ul { gap: 14px; }
+.page-about-oa .footer-col a,
+.page-about-oa .footer-address a { color: #000; text-decoration: none; }
+.page-about-oa .footer-col a:hover,
+.page-about-oa .footer-address a:hover { color: #000; text-decoration: underline; text-decoration-color: currentColor; }
+.page-about-oa .footer-address a span { color: rgba(0, 0, 0, .6); }
+.page-about-oa .footer-bottom { width: min(100% - 64px, 1440px); border-top: 0; color: rgba(0, 0, 0, .6); font-size: 13px; padding-block: 24px 40px; }
+
+/* ---- smaller screens ---- */
+@media (max-width: 1000px) {
+  .oa { --oa-gap: 96px; }
+  .oa-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 40px; }
+  .oa-split { gap: 56px; }
+}
+@media (max-width: 760px) {
+  .oa { --oa-gap: 72px; padding-bottom: 144px; }
+  .oa-wrap { padding: 0 20px; }
+  .oa-hero { padding-top: 56px; }
+  .oa-split { grid-template-columns: 1fr; gap: 32px; }
+  .oa-split-media { order: -1; }
+  .oa-wide { margin-top: 48px; }
+  .oa-people { gap: 16px; }
+  .oa-cards { gap: 16px; row-gap: 32px; }
+  .oa-cta { margin-top: 144px; }
+  .page-about-oa .header-inner, .page-about-oa .footer-top, .page-about-oa .footer-bottom { width: min(100% - 40px, 1440px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .oa-card-media img, .oa-pill { transition: none; }
+  .oa-card:hover .oa-card-media img { transform: none; }
+}
