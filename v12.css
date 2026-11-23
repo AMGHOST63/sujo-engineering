@@ -1512,3 +1512,24 @@ button.header-search { border: 0; background: none; padding: 0; cursor: pointer;
 /* Sectors page on the services page structure (2026-11-22): six tall cards, three per row */
 .s-cards--sec6 .s-cards-row { row-gap: 20px; }
 .s-cards--sec6 .s-card--sector .s-card-media { top: 34%; }
+
+/* Sectors "Where we work" in the chatgpt.com card-row style (2026-11-22) */
+.gx { background: #fff; padding-block: clamp(48px, 7vw, 96px); }
+.gx-head { text-align: center; }
+.gx-title { margin: 0 auto; max-width: 18ch; font-size: clamp(2rem, 1.4rem + 2.2vw, 3.2rem); font-weight: 500; letter-spacing: -0.02em; line-height: 1.12; color: #0d0d0d; }
+.gx-nav { display: flex; justify-content: center; gap: 22px; margin: 28px 0 22px; }
+.gx-arrow { border: 0; background: none; padding: 4px 6px; font-size: 18px; line-height: 1; color: #0d0d0d; cursor: pointer; opacity: .55; }
+.gx-arrow:hover { opacity: 1; }
+.gx-row { display: grid; grid-auto-flow: column; grid-auto-columns: clamp(260px, 24vw, 340px); gap: 12px; overflow-x: auto;
+  scroll-snap-type: x mandatory; scrollbar-width: none; max-width: 2560px; margin-inline: auto;
+  padding: 0 max(20px, calc((100% - var(--wrap)) / 2)) 4px; scroll-padding-inline: max(20px, calc((100% - var(--wrap)) / 2)); }
+.gx-row::-webkit-scrollbar { display: none; }
+.gx-card { position: relative; display: block; height: clamp(400px, 34vw, 460px); overflow: hidden; border-radius: 8px; background: #f3f3f3;
+  padding: 28px 24px 0; color: #0d0d0d; text-decoration: none; scroll-snap-align: start; }
+.gx-card:hover { text-decoration: none; background: #eeeeee; }
+.gx-name { margin: 0 0 8px; font-size: 1.15rem; font-weight: 500; letter-spacing: -0.01em; color: #0d0d0d; }
+.gx-text { margin: 0; font-size: .9rem; line-height: 1.55; color: #0d0d0d; }
+.gx-media { position: absolute; left: 28%; right: -12px; bottom: 0; height: 52%; border-radius: 14px 0 0 0; overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0,0,0,.10); }
+.gx-media picture, .gx-media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 760px) { .gx-row { grid-auto-columns: 78vw; } }
