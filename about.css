@@ -127,7 +127,7 @@ body.page-about-oa { background: #fff; }
 .page-about-oa .site-footer { background: #fff; color: rgba(0, 0, 0, .6); font-size: 13px; font-weight: 500; }
 .page-about-oa .site-footer::before { display: none; }
 .page-about-oa .footer-top { width: min(100% - 64px, 1440px); padding-block: 48px; }
-.page-about-oa .footer-logo { filter: invert(1); width: 120px; }
+.page-about-oa .footer-logo-svg { color: #000; --lg-knock: #fff; height: 64px; }
 .page-about-oa .footer-tagline { color: rgba(0, 0, 0, .6); font-weight: 400; font-size: 13px; }
 .page-about-oa .footer-address strong { color: #000; font-weight: 500; }
 .page-about-oa .footer-heading { color: rgba(0, 0, 0, .6); font-size: 13px; font-weight: 500; letter-spacing: 0; text-transform: none; margin-bottom: 14px; }

@@ -1683,3 +1683,13 @@ button.header-search { border: 0; background: none; padding: 0; cursor: pointer;
 }
 .bz-hero .breadcrumb ol { display: flex; justify-content: center; flex-wrap: wrap; }
 .bz-split .bz-h2 { max-width: 16ch; }
+
+/* ---------- logo (2026-11-23): "Sujo_" block wordmark, inline SVG from layout.js logoSvg() ---------- */
+.lg-ink { fill: currentColor; }
+.lg-knock { fill: var(--lg-knock, #fff); }
+.lg-mono { font-family: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace; font-weight: 500; }
+.lg-sub { font-family: Inter, system-ui, sans-serif; font-weight: 500; }
+.brand .brand-logo { display: block; width: auto; height: 32px; color: #000; --lg-knock: #fff; }
+.footer-mark { display: inline-block; text-decoration: none; }
+.footer-logo-svg { display: block; width: auto; height: 76px; color: #fff; --lg-knock: var(--navy-deep, #161719); }
+@media (max-width: 760px) { .brand .brand-logo { height: 28px; } }
