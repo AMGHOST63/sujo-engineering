@@ -1448,7 +1448,7 @@ body:not(.page-home) .g-carousel-btn:hover { background: #d2d2d7; color: #1d1d1f
 .acc--fab .acc-media { background: #fff; }
 .acc--fab .acc-img img { object-fit: contain; padding: 4%; }
 .acc--fab .acc-lb { background: none; border: 0; padding: 0; font: inherit; cursor: pointer; }
-.e-pcars .a-pcard { background: #fff; }
+/* (per-slide colours set inline since 2026-11-22) */
 .e-pcars .a-pcard .g-market-media img { object-fit: contain !important; object-position: 50% 45% !important; padding: 3% 3% 12%; }
 .e-pcars .a-stage-line { color: #1d1d1f !important; text-shadow: none !important; background: none !important; }
 .e-pcars .a-stage-pill { box-shadow: 0 0 0 1px #d2d2d7; }
@@ -1498,3 +1498,6 @@ button.header-search { border: 0; background: none; padding: 0; cursor: pointer;
 .all-grid > li[hidden] { display: none !important; }
 /* a project film on its Design Projects slide (2026-11-22) */
 .a-pcars .a-pcard .g-market-media video.a-slide-film { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover !important; background: #000 !important; }
+/* What we Design slides: a soft colour each, the render blended into it, no dark band under the caption */
+.e-pcars .a-pcard .g-market-media img { mix-blend-mode: multiply; }
+.e-pcars .a-stage-cap { background: none !important; }
