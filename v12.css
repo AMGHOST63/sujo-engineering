@@ -1557,3 +1557,12 @@ button.header-search { border: 0; background: none; padding: 0; cursor: pointer;
   .h-head .h-head-title { font-size: min(2.5rem, 6.1vw) !important; white-space: nowrap; max-width: none; }
   .page-head .page-title { font-size: clamp(2rem, 8.5vw, 2.6rem) !important; }
 }
+
+/* ===== Buttons in chatgpt.com black (2026-11-22, user: "just the button colors"): filled buttons black
+   with white text, outlined buttons black-outlined; the small "Contact us ›" text links stay red */
+.lu-btn:not(.ci-btn), .g-pill--red, .btn-primary { background: #0d0d0d !important; border-color: #0d0d0d !important; color: #fff !important; }
+.lu-btn:not(.ci-btn):hover, .g-pill--red:hover, .btn-primary:hover { background: #2f2f2f !important; border-color: #2f2f2f !important; color: #fff !important; }
+.g-pill--line, .btn-outline:not(.cta-band .btn-outline) { border-color: #0d0d0d !important; color: #0d0d0d !important; background: transparent !important; }
+.g-pill--line:hover, .btn-outline:not(.cta-band .btn-outline):hover { background: #0d0d0d !important; color: #fff !important; }
+.g-tile--dark .g-pill--line, .g-tile--overlay .g-pill--line { border-color: #fff !important; color: #fff !important; }
+.g-tile--dark .g-pill--red, .g-tile--overlay .g-pill--red { background: #fff !important; color: #0d0d0d !important; border-color: #fff !important; }
