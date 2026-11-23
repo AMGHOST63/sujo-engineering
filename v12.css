@@ -1452,3 +1452,5 @@ body:not(.page-home) .g-carousel-btn:hover { background: #d2d2d7; color: #1d1d1f
 .e-pcars .a-pcard .g-market-media img { object-fit: contain !important; object-position: 50% 45% !important; padding: 3% 3% 12%; }
 .e-pcars .a-stage-line { color: #1d1d1f !important; text-shadow: none !important; background: none !important; }
 .e-pcars .a-stage-pill { box-shadow: 0 0 0 1px #d2d2d7; }
+/* construction supplies photo grid: the product grid's Apple style, name then a small red link */
+.con-grid .catalog-row-name { margin-bottom: 10px; }
