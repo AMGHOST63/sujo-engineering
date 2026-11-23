@@ -1480,3 +1480,7 @@ body:not(.page-home) .g-carousel-btn:hover { background: #d2d2d7; color: #1d1d1f
 /* construction products: 4 per row (user, 2026-11-22), 2 on phones */
 .catalog-list.ci-grid.con-all { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 @media (max-width: 760px) { .catalog-list.ci-grid.con-all { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* all individual products, before the footer of industrial-sourcing.html: 4 per row, 2 on phones */
+.all-products { background: #fff; padding-block: clamp(36px, 5vw, 64px); }
+.catalog-list.ci-grid.all-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 18px; }
+@media (max-width: 760px) { .catalog-list.ci-grid.all-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
