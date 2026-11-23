@@ -916,6 +916,29 @@
     initLineupDots();
     initAccordion();
     initSimpleSearch();
+    initFamilyFirst();
+  }
+
+  // "See products" on a family card of industrial-sourcing.html (2026-11-22, user): that family's
+  // products move to the top of "All products" (in their own order), then the page scrolls there.
+  function initFamilyFirst() {
+    var grid = document.querySelector('#tous-les-produits .all-grid');
+    if (!grid) return;
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('[data-family-first]');
+      if (!a) return;
+      e.preventDefault();
+      var fam = a.getAttribute('data-family-first');
+      var cells = Array.prototype.slice.call(grid.children);
+      var first = cells.filter(function (li) { return li.getAttribute('data-family') === fam; });
+      var rest = cells.filter(function (li) { return li.getAttribute('data-family') !== fam; });
+      first.concat(rest).forEach(function (li) { li.hidden = false; grid.appendChild(li); });
+      var sec = document.getElementById('tous-les-produits');
+      var head = document.querySelector('.site-header, header');
+      var off = head ? head.getBoundingClientRect().height + 8 : 60;
+      window.scrollTo({ top: sec.getBoundingClientRect().top + window.pageYOffset - off, behavior: 'smooth' });
+      if (history.replaceState) history.replaceState(null, '', '#tous-les-produits');
+    });
   }
 
   // Header magnifier on industrial-sourcing.html (2026-11-22): opens one search bar under the header;
