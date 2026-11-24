@@ -2033,6 +2033,16 @@ p.g-kicker, .eyebrow, .bz-eyebrow { font-size: .95rem !important; font-weight: 4
 .oa2-row-img img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
 .oa2-row:hover .oa2-title { text-decoration: underline; text-underline-offset: 3px; }
 .oa2-row--art { grid-template-columns: 148px; }
+/* 2026-11-24: "What we engineer" as openai.com's news cards: large square picture with soft corners, the name below,
+   the one-liner in grey; one column on phones, two from 600 px, three from 1000 px */
+.oa2-grid { display: grid; grid-template-columns: 1fr; gap: clamp(48px, 7vw, 72px) 24px; margin-top: clamp(28px, 4vw, 44px); }
+@media (min-width: 600px) { .oa2-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .oa2-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.oa2-grid .oa2-img img { aspect-ratio: 1 / 1; object-fit: cover; }
+.oa2-grid .oa2-title { margin-top: 16px; font-size: 1.06rem; }
+.oa2-grid .oa2-meta { margin-top: 8px; font-size: .9rem; }
+.oa2-grid .oa2-card:hover .oa2-title { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 599px) { .oa2-grid .oa2-card--art { display: none; } }
 /* split: few words left, art right */
 .oa2-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
 .oa2-split .v2-link { display: inline-block; margin-top: 18px; }
