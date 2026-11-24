@@ -1857,3 +1857,31 @@ p.g-kicker, .eyebrow, .bz-eyebrow { font-size: .95rem !important; font-weight: 4
 @media (max-width: 760px) { .bz-deep-more { grid-template-columns: 1fr; } }
 .bz-deep-panel { scroll-margin-top: 170px; }
 @media (max-width: 760px) { .bz-deep-panel { scroll-margin-top: 130px; } }
+
+/* ===== 2026-11-23: products presented like Apple (flagship bands + calm grid) ===== */
+.pf { display: grid; gap: 12px; padding: 12px 12px 0; background: #fff; }
+.pf-band { background: #f5f5f7; border-radius: 28px; overflow: hidden; text-align: center; padding: clamp(44px, 6vw, 72px) 0 0; }
+.pf-name { margin: 0 auto; padding: 0 16px; max-width: 22ch; font-size: clamp(1.9rem, 1.3rem + 2.4vw, 3.2rem); font-weight: 600; letter-spacing: -0.025em; line-height: 1.08; color: #1d1d1f; }
+.pf-line { margin: 10px auto 0; padding: 0 16px; max-width: 46ch; font-size: clamp(1.05rem, 1rem + .35vw, 1.3rem); line-height: 1.4; color: #1d1d1f; }
+.pf-links { display: flex; gap: 26px; justify-content: center; margin: 16px 0 0; }
+.pf-link { border: 0; background: none; padding: 0; font: inherit; font-size: 1.05rem; color: #0d0d0d; cursor: pointer; text-decoration: none; }
+.pf-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.pf-media { max-width: 1100px; margin: 8px auto 0; }
+.pf-media picture, .pf-media img { display: block; width: 100%; height: auto; }
+@media (max-width: 760px) { .pf { padding: 8px 8px 0; gap: 8px; } .pf-band { border-radius: 20px; padding-top: 40px; } .pf-media { margin-top: 0; } }
+
+/* product grid (designs, catalogue, construction supplies): 3 per row, borderless grey tiles, the
+   studio-framed shot filling its tile, the name and one quiet line under it */
+.catalog-list.ci-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 44px 20px !important; border: 0 !important; padding: 0 !important; margin-top: 32px !important; }
+.ci-grid .ci-card { border: 0 !important; padding: 0 !important; background: transparent !important; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.ci-grid .ci-card .ci-media, .ci-grid .ci-card[data-tone] .ci-media, .ci-grid .ci-card:nth-child(n) .ci-media { width: 100%; aspect-ratio: 1 / 1; border-radius: 22px !important; background: #f5f5f7 !important; padding: 0 !important; overflow: hidden; }
+.ci-grid .ci-media picture, .ci-grid .ci-media img { width: 100%; height: 100%; object-fit: cover; mix-blend-mode: normal; transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+.ci-grid .ci-card:hover .ci-media img { transform: scale(1.03); }
+.ci-grid .catalog-row-name { margin: 18px 0 0 !important; font-size: 1.06rem !important; font-weight: 600 !important; color: #1d1d1f !important; line-height: 1.3; }
+.ci-grid .catalog-row-tag { margin: 4px 0 0 !important; font-size: .9rem !important; color: #6e6e73 !important; }
+.ci-grid .ci-btn { margin-top: 10px !important; padding: 0 !important; min-height: 0 !important; background: none !important; border: 0 !important; font-size: .95rem !important; font-weight: 400 !important; color: #0d0d0d !important; }
+@media (max-width: 900px) { .catalog-list.ci-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 32px 12px !important; } }
+
+/* 2026-11-23: phone quote bar removed (established-company tone) */
+@media (max-width: 760px) { body { padding-bottom: 0 !important; } .tt-btn { bottom: calc(20px + env(safe-area-inset-bottom)) !important; } }
+.bz-ways .pf-link { font-size: 1rem; }
