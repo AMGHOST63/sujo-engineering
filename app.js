@@ -645,6 +645,26 @@
         car.scrollBy({ left: b.getAttribute('data-carousel') === 'next' ? w : -w, behavior: 'smooth' });
       });
     });
+    // Engineering page card row (openai.com style): ← → scroll one card; a button greys out at its end and
+    // both hide when every card is already on screen
+    document.querySelectorAll('.oa2-rail').forEach(function (rail) {
+      var sec = rail.closest('section');
+      if (!sec) return;
+      var nav = sec.querySelector('.oa2-rail-nav');
+      var prev = sec.querySelector('[data-rail="prev"]'), next = sec.querySelector('[data-rail="next"]');
+      function stepW() { var c = rail.querySelector('.oa2-rcard'); return c ? c.getBoundingClientRect().width + 12 : 300; }
+      function sync() {
+        var max = rail.scrollWidth - rail.clientWidth;
+        if (nav) nav.hidden = max <= 2;
+        if (prev) prev.disabled = rail.scrollLeft <= 2;
+        if (next) next.disabled = rail.scrollLeft >= max - 2;
+      }
+      if (prev) prev.addEventListener('click', function () { rail.scrollBy({ left: -stepW(), behavior: 'smooth' }); });
+      if (next) next.addEventListener('click', function () { rail.scrollBy({ left: stepW(), behavior: 'smooth' }); });
+      rail.addEventListener('scroll', sync, { passive: true });
+      window.addEventListener('resize', sync);
+      sync();
+    });
     // background videos: play while on screen, hero runs through its playlist
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var vids = document.querySelectorAll('video[data-bg-video]');
