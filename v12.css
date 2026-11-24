@@ -2123,6 +2123,13 @@ p.g-kicker, .eyebrow, .bz-eyebrow { font-size: .95rem !important; font-weight: 4
 .hm-acc-text { margin: -6px 0 20px; max-width: 46ch; font-size: .95rem; line-height: 1.55; color: #6e6e73; }
 @media (max-width: 900px) { .hm-acc { grid-template-columns: 1fr; } }
 
+/* 2026-11-24: homepage "Join us in shaping the future of industry in the DRC" + Request a quote, before "What we
+   believe": the About page's closing call to action (about.css .oa-cta), large centred title, white pill below */
+.hm-join-title { margin: 0 auto; max-width: 793px; font-size: clamp(30px, 3.6vw, 52px); font-weight: 500; line-height: 1.16; letter-spacing: -.029em; color: #0d0d0d; }
+.hm-join-cta { margin: 32px 0 0; }
+.hm-join { padding-bottom: 0; } /* the "What we believe" section's own top padding is the gap below */
+.hm-join-cta .oa-pill { text-decoration: none !important; }
+
 /* 2026-11-24: homepage FAQ in place of the Contact block (chatgpt.com/pricing FAQ): small centred title, one narrow
    centred column, questions on hairlines with + / − on the right, the answer in grey, one open at a time. Where the
    browser can animate <details> (::details-content), the answer slides open as on chatgpt.com; elsewhere it snaps. */
