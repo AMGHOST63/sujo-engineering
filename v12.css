@@ -1885,3 +1885,344 @@ p.g-kicker, .eyebrow, .bz-eyebrow { font-size: .95rem !important; font-weight: 4
 /* 2026-11-23: phone quote bar removed (established-company tone) */
 @media (max-width: 760px) { body { padding-bottom: 0 !important; } .tt-btn { bottom: calc(20px + env(safe-area-inset-bottom)) !important; } }
 .bz-ways .pf-link { font-size: 1rem; }
+
+/* ===== 2026-11-23: Sujo, the engineering company (templates/sujo-v2.js) ===== */
+.v2-page { background: #fff; color: #1d1d1f; }
+.v2-wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+.v2-center { text-align: center; }
+.v2-sec { padding: clamp(72px, 10vw, 140px) 0 0; }
+.v2-sec--tight { padding-top: clamp(32px, 5vw, 64px); }
+.v2-hero { padding: 12px 12px 0; }
+.v2-hero--text { padding: clamp(48px, 7vw, 96px) 0 0; }
+.v2-hero--text .breadcrumb ol { display: flex; justify-content: center; flex-wrap: wrap; }
+.v2-hero--text .breadcrumb { margin-bottom: 22px; }
+.pf-band--hero { padding-top: clamp(56px, 7vw, 96px); }
+.v2-eyebrow { margin: 0 0 10px; font-size: clamp(1rem, .95rem + .3vw, 1.2rem); font-weight: 600; color: #1d1d1f; }
+.v2-h1 { margin: 0 auto; font-size: clamp(2.6rem, 1.6rem + 4vw, 5rem) !important; font-weight: 600; letter-spacing: -0.035em; line-height: 1.04; color: #1d1d1f; }
+.v2-h2 { margin: 0 0 32px; font-size: clamp(1.9rem, 1.4rem + 2vw, 3rem); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1; color: #1d1d1f; }
+.v2-h3 { margin: 0 0 6px; font-size: clamp(1.3rem, 1.1rem + .7vw, 1.75rem); font-weight: 600; letter-spacing: -0.015em; color: #1d1d1f; }
+.v2-h4 { margin: 0 0 4px; font-size: 1.15rem; font-weight: 600; color: #1d1d1f; }
+.v2-lead { margin: 18px auto 0; max-width: 56ch; font-size: clamp(1.05rem, 1rem + .35vw, 1.3rem); line-height: 1.5; color: #424245; }
+.v2-p { margin: 0 0 14px; font-size: 1.02rem; line-height: 1.55; color: #424245; }
+.v2-small { margin: 18px 0 0; color: #6e6e73; font-size: .95rem; }
+.v2-link { color: #0d0d0d; font-size: 1.05rem; text-decoration: none; }
+.v2-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.v2-statement { margin: 0 auto 22px; max-width: 30ch; font-size: clamp(1.7rem, 1.2rem + 2.2vw, 3rem); font-weight: 600; letter-spacing: -0.025em; line-height: 1.15; color: #1d1d1f; }
+/* what we engineer: tiles, the first two large */
+.v2-tiles { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+.v2-tile { grid-column: span 2; display: flex; flex-direction: column; justify-content: space-between; min-height: 420px; border-radius: 28px; overflow: hidden; background: #f5f5f7; color: inherit; text-decoration: none; transition: transform .3s; }
+.v2-tile--big { grid-column: span 3; min-height: 520px; }
+.v2-tile:hover { transform: translateY(-3px); }
+.v2-tile-text { padding: 32px 32px 0; text-align: center; }
+.v2-tile-text .v2-p { max-width: 36ch; margin: 0 auto 10px; }
+.v2-tile-media { margin-top: 12px; }
+.v2-tile-media picture, .v2-tile-media img { display: block; width: 100%; height: auto; }
+.v2-tile:not(.v2-tile--big) .v2-tile-media img { aspect-ratio: 16 / 10; object-fit: cover; }
+/* OpenAI-style split and art */
+.v2-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
+.v2-split-text { max-width: 44ch; }
+.v2-art { margin: 0; }
+.v2-art picture, .v2-art img { display: block; width: 100%; height: auto; border-radius: 6px; }
+.v2-art figcaption { margin-top: 10px; font-size: .82rem; color: #6e6e73; }
+.v2-art--tall img { aspect-ratio: 4 / 5; object-fit: cover; }
+.v2-art--wide img { aspect-ratio: 16 / 9; object-fit: cover; }
+.v2-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.v2-gallery img { aspect-ratio: 1 / 1; object-fit: cover; }
+.v2-steps { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 22px; }
+.v2-steps li { display: grid; grid-template-columns: 40px 1fr; gap: 12px; }
+.v2-step-n { font-size: .9rem; color: #6e6e73; padding-top: 3px; }
+/* contact: phone and email, big */
+.v2-contact { padding-bottom: clamp(88px, 11vw, 150px); }
+.v2-reach { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px 36px; margin: 0; }
+.v2-reach a { font-size: clamp(1.3rem, 1.1rem + 1vw, 2rem); font-weight: 600; color: #0d0d0d; text-decoration: none; letter-spacing: -0.01em; }
+.v2-reach a:hover { text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 900px) {
+  .v2-tiles { grid-template-columns: 1fr; }
+  .v2-tile, .v2-tile--big { grid-column: auto; min-height: 0; }
+  .v2-split { grid-template-columns: 1fr; }
+  .v2-gallery { grid-template-columns: 1fr 1fr; }
+  .v2-gallery figure:last-child { grid-column: span 2; }
+}
+.v2-tile-media { margin-top: auto; padding-top: 12px; }
+.v2-tile-media img { aspect-ratio: 4 / 3; object-fit: cover; }
+.v2-tile--big .v2-tile-media img { aspect-ratio: 1 / 1; }
+.v2-reach a { text-decoration: none !important; }
+
+/* ===== 2026-11-23: homepage tiles like apple.com, art placed through the pages (OpenAI) ===== */
+.ap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 12px; background: #fff; }
+.ap-grid--inner { padding-top: 0; }
+.ap-tile { position: relative; display: flex; flex-direction: column; align-items: center; overflow: hidden; background: #f5f5f7; color: #1d1d1f; min-height: 580px; text-align: center; }
+.ap-tile--full { grid-column: 1 / -1; min-height: 640px; }
+.ap-text { padding: clamp(40px, 4.5vw, 56px) 24px 0; position: relative; z-index: 1; }
+.ap-title { margin: 0; font-size: clamp(2rem, 1.4rem + 2.2vw, 3.5rem) !important; font-weight: 600; letter-spacing: -0.03em; line-height: 1.07; color: inherit !important; }
+.ap-tile:not(.ap-tile--full) .ap-title { font-size: clamp(1.8rem, 1.3rem + 1.6vw, 2.6rem) !important; }
+.ap-sub { margin: 8px auto 0; max-width: 40ch; font-size: clamp(1.05rem, 1rem + .4vw, 1.4rem); line-height: 1.3; color: inherit; }
+.ap-pills { display: flex; gap: 14px; justify-content: center; margin: 18px 0 0; }
+.ap-pill { display: inline-flex; align-items: center; min-height: 36px; padding: 0 18px; border-radius: 999px; border: 1px solid #0d0d0d; color: #0d0d0d !important; font-size: .95rem; text-decoration: none !important; transition: background .2s, color .2s; }
+.ap-pill--fill { background: #0d0d0d; color: #fff !important; }
+.ap-pill:hover { background: #0d0d0d; color: #fff !important; }
+.ap-pill--fill:hover { background: #333; border-color: #333; }
+.ap-media { flex: 1; width: 100%; display: flex; align-items: flex-end; justify-content: center; margin-top: 12px; }
+.ap-media picture { display: block; width: 100%; }
+.ap-media img { display: block; width: 100%; height: auto; }
+.ap-tile--product .ap-media img { max-width: 560px; margin: 0 auto; }
+.ap-tile--full.ap-tile--product .ap-media img { max-width: 1040px; }
+.ap-tile--cover .ap-media img { aspect-ratio: 16 / 10; object-fit: cover; }
+/* the black tile: the image fills it, the text sits on it */
+.ap-tile--dark { background: #000; color: #fff; }
+.ap-tile--dark.ap-tile--cover .ap-media { position: absolute; inset: 0; margin: 0; }
+.ap-tile--dark.ap-tile--cover .ap-media picture, .ap-tile--dark.ap-tile--cover .ap-media img { height: 100%; aspect-ratio: auto; object-fit: cover; }
+.ap-tile--dark .ap-pill { border-color: #fff; color: #fff !important; }
+.ap-tile--dark .ap-pill--fill { background: #fff; color: #000 !important; }
+/* an art tile: nothing but the image */
+.ap-tile--art picture, .ap-tile--art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* art through the pages: no caption, different sizes and sides */
+.v2-sec--art { padding-top: clamp(56px, 8vw, 120px); }
+.v2-art { margin: 0; }
+.v2-art img { display: block; width: 100%; height: auto; border-radius: 6px; }
+.v2-art--full img { aspect-ratio: 16 / 9; object-fit: cover; }
+.v2-art--left, .v2-art--right { width: 66%; }
+.v2-art--right { margin-left: auto; }
+.v2-art--left img, .v2-art--right img { aspect-ratio: 3 / 2; object-fit: cover; }
+.v2-art--small-left, .v2-art--small-right { width: 38%; }
+.v2-art--small-right { margin-left: auto; }
+.v2-art--small-left img, .v2-art--small-right img { aspect-ratio: 4 / 5; object-fit: cover; }
+.v2-art--inline img { aspect-ratio: 4 / 5; object-fit: cover; }
+.v2-page .pf { padding-top: 12px; }
+.v2-page .pf + .pf { padding-top: 12px; }
+@media (max-width: 900px) {
+  .ap-grid { grid-template-columns: 1fr; padding: 8px; gap: 8px; }
+  .ap-tile, .ap-tile--full { min-height: 500px; }
+  .ap-tile--art { min-height: 0; aspect-ratio: 1 / 1; }
+  .v2-art--left, .v2-art--right { width: 100%; }
+  .v2-art--small-left, .v2-art--small-right { width: 64%; }
+}
+
+/* ===== 2026-11-23: OpenAI layout x Apple product shots (homepage, Engineering) ===== */
+.oa2-wrap { width: min(1240px, calc(100% - 40px)); margin: 0 auto; }
+.oa2-sec { padding-top: clamp(64px, 8vw, 112px); }
+.oa2-sec--first { padding-top: clamp(28px, 4vw, 48px); }
+.oa2-sec--tight { padding-top: 28px; }
+.oa2-h1 { margin: 18px 0 0; font-size: clamp(2.6rem, 1.6rem + 4vw, 5rem); font-weight: 500; letter-spacing: -0.035em; line-height: 1.02; color: #0d0d0d; }
+.oa2-h2 { margin: 0; font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.4rem); font-weight: 500; letter-spacing: -0.02em; color: #0d0d0d; }
+.oa2-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 28px; }
+.oa2-more { font-size: .92rem; color: #0d0d0d !important; text-decoration: none !important; padding: 6px 14px; border-radius: 999px; background: #f3f3f3; }
+.oa2-more:hover { background: #e9e9e9; }
+/* featured: a big card, a column of two cards */
+.oa2-feature { display: grid; grid-template-columns: minmax(0, 2.3fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+.oa2-side { display: grid; gap: 28px; }
+.oa2-card { display: block; color: #0d0d0d !important; text-decoration: none !important; }
+.oa2-img { border-radius: 8px; overflow: hidden; background: #f5f5f7; }
+.oa2-img picture, .oa2-img img { display: block; width: 100%; height: auto; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+.oa2-card:hover .oa2-img img { transform: scale(1.02); }
+.oa2-card--big .oa2-img img { aspect-ratio: 16 / 9; object-fit: cover; }
+.oa2-side .oa2-img img { aspect-ratio: 1 / 1; object-fit: cover; }
+.oa2-title-big { margin: 18px 0 0; font-size: clamp(1.8rem, 1.3rem + 1.8vw, 2.8rem); font-weight: 500; letter-spacing: -0.025em; line-height: 1.1; }
+.oa2-title { margin: 12px 0 0; font-size: 1.12rem; font-weight: 500; letter-spacing: -0.01em; line-height: 1.3; color: #0d0d0d; }
+.oa2-meta { margin: 6px 0 0; font-size: .86rem; color: #6e6e73; }
+/* the black band: art fills it, two words on it */
+.oa2-band { position: relative; display: block; border-radius: 8px; overflow: hidden; background: #000; text-decoration: none !important; }
+.oa2-band-img picture, .oa2-band-img img { display: block; width: 100%; aspect-ratio: 21 / 9; object-fit: cover; }
+.oa2-band-text { position: absolute; left: clamp(20px, 4vw, 56px); bottom: clamp(20px, 4vw, 56px); color: #fff; }
+.oa2-band-title { margin: 0; font-size: clamp(2.4rem, 1.6rem + 3.4vw, 4.6rem); font-weight: 500; letter-spacing: -0.035em; line-height: 1; color: #fff; }
+.oa2-band-sub { margin: 6px 0 0; font-size: clamp(1.05rem, 1rem + .4vw, 1.35rem); color: rgba(255,255,255,.85); }
+/* list: two columns of rows, square image + title */
+.oa2-list { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 40px; }
+.oa2-row { display: grid; grid-template-columns: 148px 1fr; gap: 24px; align-items: center; color: #0d0d0d !important; text-decoration: none !important; }
+.oa2-row-img { border-radius: 6px; overflow: hidden; background: #f5f5f7; }
+.oa2-row-img img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+.oa2-row:hover .oa2-title { text-decoration: underline; text-underline-offset: 3px; }
+.oa2-row--art { grid-template-columns: 148px; }
+/* split: few words left, art right */
+.oa2-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
+.oa2-split .v2-link { display: inline-block; margin-top: 18px; }
+.oa2-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.oa2-steps li { display: flex; align-items: baseline; gap: 18px; }
+.oa2-step-n { font-size: .9rem; color: #6e6e73; width: 28px; }
+.oa2-step { font-size: clamp(1.8rem, 1.3rem + 1.8vw, 3rem); font-weight: 500; letter-spacing: -0.025em; color: #0d0d0d; }
+.v2-page .breadcrumb ol { justify-content: flex-start; }
+@media (max-width: 900px) {
+  .oa2-feature, .oa2-split, .oa2-list { grid-template-columns: 1fr; }
+  .oa2-side { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .oa2-row { grid-template-columns: 104px 1fr; gap: 16px; }
+  .oa2-row--art { display: none; }
+  .oa2-band-img img { aspect-ratio: 4 / 5; }
+}
+.oa2-lead { margin: 12px 0 0; font-size: clamp(1.1rem, 1rem + .5vw, 1.45rem); color: #6e6e73; }
+
+/* ===== 2026-11-23: homepage text sections between the Apple tiles (chatgpt.com/business style) ===== */
+.hm-wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+.hm-sec { padding: clamp(72px, 9vw, 128px) 0; }
+.hm-grid { padding-top: 0; }
+.hm-h2 { margin: 0; max-width: 18ch; font-size: clamp(2rem, 1.4rem + 2.2vw, 3.2rem); font-weight: 600; letter-spacing: -0.03em; line-height: 1.08; color: #1d1d1f; }
+.hm-h2--wide { max-width: 24ch; }
+.hm-h3 { margin: 18px 0 6px; font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; color: #1d1d1f; }
+.hm-lead { margin: 16px 0 0; max-width: 48ch; font-size: clamp(1.05rem, 1rem + .35vw, 1.3rem); line-height: 1.5; color: #424245; }
+.hm-p { margin: 0; font-size: 1.02rem; line-height: 1.55; color: #424245; }
+.hm-intro { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
+.hm-checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+.hm-checks li { position: relative; padding-left: 34px; font-size: 1.1rem; line-height: 1.45; color: #1d1d1f; }
+.hm-checks li::before { content: ""; position: absolute; left: 4px; top: .3em; width: 14px; height: 8px; border-left: 2px solid #0d0d0d; border-bottom: 2px solid #0d0d0d; transform: rotate(-45deg); }
+.hm-asks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 36px; }
+.hm-ask { margin: 0; padding: 22px 24px; border-radius: 18px; background: #f5f5f7; font-size: 1.02rem; line-height: 1.45; color: #1d1d1f; }
+.hm-blocks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 40px; }
+.hm-block-img { border-radius: 18px; overflow: hidden; background: #f5f5f7; }
+.hm-block-img img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.hm-trust { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 28px; border-top: 1px solid #d2d2d7; }
+.hm-trust > div { padding-top: 10px; }
+@media (max-width: 900px) {
+  .hm-intro, .hm-blocks, .hm-trust { grid-template-columns: 1fr; }
+  .hm-asks { grid-template-columns: 1fr; }
+}
+
+/* homepage point of view: mission, the country, beliefs (2026-11-23) */
+.hm-center { text-align: center; }
+.hm-kicker { margin: 0 0 14px; font-size: .95rem; color: #6e6e73; }
+.hm-statement { margin: 0 auto; max-width: 20ch; font-size: clamp(2.2rem, 1.4rem + 3.2vw, 4.2rem); font-weight: 600; letter-spacing: -0.035em; line-height: 1.05; color: #1d1d1f; }
+.hm-lead--center { margin-left: auto; margin-right: auto; }
+.hm-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
+.hm-fact { border-top: 1px solid #d2d2d7; padding-top: 18px; }
+.hm-fact-n { margin: 0 0 8px; font-size: clamp(3rem, 2rem + 3.5vw, 5rem); font-weight: 600; letter-spacing: -0.04em; line-height: 1; color: #1d1d1f; }
+.hm-beliefs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.hm-belief { margin: 0 0 8px; font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.4rem); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1; color: #1d1d1f; }
+@media (max-width: 900px) { .hm-facts, .hm-beliefs { grid-template-columns: 1fr; } }
+
+/* first homepage tile: ChatGPT-style title (medium weight, smaller) and a grey line, no buttons (2026-11-23) */
+.ap-tile--chat .ap-title { font-size: clamp(1.9rem, 1.5rem + 1.3vw, 2.6rem) !important; font-weight: 500 !important; letter-spacing: -0.02em; }
+.ap-tile--chat .ap-sub { margin-top: 10px; font-size: clamp(1.05rem, 1rem + .3vw, 1.25rem); color: #6e6e73; }
+.ap-tile--chat .ap-media img { max-width: 1180px; }
+.ap-tile--chat { min-height: 0 !important; }
+.ap-tile--chat .ap-media { margin-top: 0; }
+.ap-tile--chat .ap-media img { max-width: none !important; width: 100%; }
+
+/* bigger pyrite in the first tile (2026-11-23): its grey is the tile's grey, so it can grow past its frame */
+.ap-tile--chat .ap-media { overflow: hidden; }
+.ap-tile--chat .ap-media img { transform: scale(1.5); transform-origin: 50% 52%; }
+/* "What we believe": image left, accordion right (chatgpt.com style) */
+.hm-acc { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 7vw, 110px); align-items: center; }
+.hm-acc-img { border-radius: 14px; overflow: hidden; }
+.hm-acc-img img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: 40% 45%; }
+.hm-acc-list .hm-kicker { margin-bottom: 10px; }
+.hm-acc-item { border-bottom: 1px solid #e3e3e6; }
+.hm-acc-item summary { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 20px 0; cursor: pointer; list-style: none; font-size: 1.08rem; font-weight: 500; color: #0d0d0d; }
+.hm-acc-item summary::-webkit-details-marker { display: none; }
+.hm-acc-icon { position: relative; width: 14px; height: 14px; flex: none; }
+.hm-acc-icon::before, .hm-acc-icon::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1.5px; background: #6e6e73; transition: transform .25s; }
+.hm-acc-icon::after { transform: rotate(90deg); }
+.hm-acc-item[open] .hm-acc-icon::after { transform: rotate(0deg); }
+.hm-acc-text { margin: -6px 0 20px; max-width: 46ch; font-size: .95rem; line-height: 1.55; color: #6e6e73; }
+@media (max-width: 900px) { .hm-acc { grid-template-columns: 1fr; } }
+
+/* 2026-11-23: homepage "Le Congo" facts as three rounded square pictures, one line and ↗ under each
+   (the three cards of chatgpt.com/business); the line links to the figure's source */
+.hm-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+.hm-card { display: block; color: #1d1d1f !important; text-decoration: none !important; }
+.hm-card-img { border-radius: 14px; overflow: hidden; background: #f5f5f7; }
+.hm-card-img img { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; transition: transform .5s ease; }
+.hm-card:hover .hm-card-img img { transform: scale(1.03); }
+.hm-card-cap { margin: 14px 0 0; max-width: 34ch; font-size: .95rem; line-height: 1.45; color: #1d1d1f; }
+.hm-card-arrow { display: inline-block; color: #6e6e73; transition: transform .2s ease; }
+.hm-card:hover .hm-card-arrow { transform: translate(2px, -2px); }
+.hm-card:focus-visible { outline: 2px solid #0d0d0d; outline-offset: 4px; border-radius: 14px; }
+@media (max-width: 900px) { .hm-cards { grid-template-columns: 1fr; gap: 32px; } }
+@media (prefers-reduced-motion: reduce) { .hm-card-img img, .hm-card-arrow { transition: none; } }
+
+/* 2026-11-23: photo-credits.html, one credit per line (title, author, licence, each linked) */
+.credit-list { margin: 0 0 18px; padding: 0; list-style: none; }
+.credit-list li { padding: 14px 0; border-bottom: 1px solid #e5e5ea; font-size: .98rem; line-height: 1.5; color: #1d1d1f; }
+.credit-list a { color: #1d1d1f; text-decoration: underline; text-underline-offset: 3px; }
+
+/* 2026-11-23: homepage brand film "ICI, ON CONSTRUIT." in the tile grid, the way apple.com and openai.com show
+   film: a rounded black card across both columns, silent, looping, with a small outlined pause button inside
+   its bottom-right corner (the pz-btn app.js adds to every section that moves on its own) */
+.hm-film { grid-column: 1 / -1; position: relative; aspect-ratio: 16 / 9; border-radius: 14px; overflow: hidden; background: #000; }
+.hm-film-video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.hm-film .pz-row { position: absolute; right: clamp(12px, 1.8vw, 24px); bottom: clamp(12px, 1.8vw, 24px); width: auto; margin: 0; }
+.hm-film .pz-btn { width: 34px; height: 34px; border: 1.5px solid rgba(255,255,255,.92); background: rgba(0,0,0,.28); color: #fff; }
+.hm-film .pz-btn:hover { background: rgba(0,0,0,.5); }
+.hm-film .pz-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.hm-film .pz-btn svg { width: 12px; height: 12px; }
+@media (max-width: 900px) { .hm-film { border-radius: 12px; } }
+
+/* 2026-11-24: homepage pair. A product tile whose media is a silent build film (the oak sofa set in FreeCAD):
+   multiply blends the film's white background into the tile grey; the pause button app.js adds sits inside the
+   tile, bottom right, dark-outlined for the light tile. Beside it a tile the render fills entirely. */
+.ap-tile--film .ap-media { align-items: center; overflow: hidden; }
+.ap-film { display: block; width: 100%; max-width: 640px; height: auto; margin: 0 auto; mix-blend-mode: multiply; }
+.ap-tile--film .pz-row { position: absolute; right: clamp(12px, 1.6vw, 20px); bottom: clamp(12px, 1.6vw, 20px); width: auto; margin: 0; z-index: 2; }
+.ap-tile--film .pz-btn { width: 34px; height: 34px; border: 1.5px solid rgba(29,29,31,.55); background: rgba(255,255,255,.55); color: #1d1d1f; }
+.ap-tile--film .pz-btn:hover { background: rgba(255,255,255,.9); }
+.ap-tile--film .pz-btn svg { width: 12px; height: 12px; }
+.ap-tile--photo { padding: 0; }
+.ap-tile--photo picture, .ap-tile--photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 55%; }
+@media (max-width: 900px) { .ap-tile--photo { min-height: 0; aspect-ratio: 4 / 5; } }
+
+/* 2026-11-24: homepage hero as an apple.com store card: a white rounded card on a light grey band, the promo film
+   on top (pause button from app.js on the film, dark so it reads on the white renders), a small eyebrow (the h1)
+   and one bold line below, a round › button bottom right */
+.hm-hero { background: #f5f5f7; padding: 12px; }
+.hm-hcard { position: relative; background: #fff; border-radius: 18px; overflow: hidden; box-shadow: 2px 4px 12px rgba(0,0,0,.08); }
+.hm-hcard-media { position: relative; aspect-ratio: 16 / 9; background: #fff; }
+.hm-hcard-video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.hm-hcard-media .pz-row { position: absolute; right: clamp(12px, 1.8vw, 24px); bottom: clamp(12px, 1.8vw, 24px); width: auto; margin: 0; }
+.hm-hcard-media .pz-btn { width: 34px; height: 34px; border: 0; background: rgba(29,29,31,.56); color: #fff; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+.hm-hcard-media .pz-btn:hover { background: rgba(29,29,31,.75); }
+.hm-hcard-media .pz-btn svg { width: 12px; height: 12px; }
+.hm-hcard-foot { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; padding: clamp(20px, 2.4vw, 32px) clamp(20px, 2.6vw, 36px) clamp(22px, 2.6vw, 34px); text-align: left; }
+.hm-hcard-eyebrow { margin: 0 0 8px; font-size: .82rem !important; font-weight: 600; letter-spacing: 0; line-height: 1.3; color: #1d1d1f !important; }
+.hm-hcard-title { margin: 0; font-size: clamp(1.6rem, 1.2rem + 1.4vw, 2.5rem); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1; color: #1d1d1f; }
+.hm-hcard-more { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #e8e8ed; color: #1d1d1f !important; text-decoration: none !important; transition: background .2s; }
+.hm-hcard-more:hover { background: #d2d2d7; }
+.hm-hcard-more:focus-visible { outline: 2px solid #0071e3; outline-offset: 3px; }
+@media (max-width: 900px) { .hm-hero { padding: 8px; } .hm-hcard { border-radius: 14px; } }
+/* the whole card, line and › button included, fits in the first screen: the film is capped to the window height
+   (its renders sit on white, so a tighter crop at the sides does not show) */
+.hm-hcard-media { aspect-ratio: auto; height: min(56.25vw, calc(100vh - 230px)); height: min(56.25vw, calc(100svh - 230px)); min-height: 200px; }
+
+/* 2026-11-24, later: the hero is the "ICI, ON CONSTRUIT." film filling a rounded card, a small label (the h1) and
+   one bold line in white over its top left, a soft dark fade behind them (the old homepage's film cards), the
+   pause button bottom right. Sized so the whole card fits in the first screen. */
+.hm-top { background: #fff; padding: 12px; }
+.hm-top-card { position: relative; overflow: hidden; border-radius: 18px; background: #000; height: min(56.25vw, calc(100vh - 110px)); height: min(56.25vw, calc(100svh - 110px)); min-height: 300px; }
+.hm-top-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hm-top-card::before { content: ''; position: absolute; inset: 0 0 auto 0; height: 50%; background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,0)); z-index: 1; pointer-events: none; }
+.hm-top-text { position: absolute; top: clamp(20px, 3.2vw, 48px); left: clamp(20px, 3.4vw, 52px); right: 30%; z-index: 2; text-align: left; }
+.hm-top-eyebrow { margin: 0 0 8px; font-size: clamp(.85rem, .78rem + .25vw, 1.02rem) !important; font-weight: 600; letter-spacing: 0; line-height: 1.3; color: #fff !important; }
+.hm-top-title { margin: 0; max-width: 16ch; font-size: clamp(2rem, 1.3rem + 2.6vw, 3.8rem); font-weight: 600; letter-spacing: -0.03em; line-height: 1.05; color: #fff; text-shadow: 0 1px 14px rgba(0,0,0,.25); }
+.hm-top-card .pz-row { position: absolute; right: clamp(12px, 1.8vw, 24px); bottom: clamp(12px, 1.8vw, 24px); width: auto; margin: 0; z-index: 2; }
+.hm-top-card .pz-btn { width: 34px; height: 34px; border: 1.5px solid rgba(255,255,255,.92); background: rgba(0,0,0,.28); color: #fff; }
+.hm-top-card .pz-btn:hover { background: rgba(0,0,0,.5); }
+.hm-top-card .pz-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.hm-top-card .pz-btn svg { width: 12px; height: 12px; }
+@media (max-width: 900px) { .hm-top { padding: 8px; } .hm-top-card { border-radius: 14px; height: auto; aspect-ratio: 4 / 5; } .hm-top-text { right: 20px; } }
+
+/* 2026-11-24, later still: the hero is ONE of the live homepage's film cards (s-card s-card--scene), centred.
+   Not a link, so no hover zoom or pointer; a soft fade at the top keeps the white words readable on the misty
+   shots; the pause button app.js adds sits inside the card, bottom right. */
+.hm-one { display: flex; justify-content: center; padding: clamp(20px, 3vw, 40px) 0 0; }
+.hm-one-card { width: min(380px, calc(100% - 40px)); cursor: default !important; }
+.hm-one-card:hover { transform: none; }
+.hm-one-card .s-card-media::after { content: ''; position: absolute; inset: 0 0 auto 0; height: 42%; background: linear-gradient(rgba(0,0,0,.34), rgba(0,0,0,0)); pointer-events: none; }
+.hm-one .hm-one-label { margin: 0 0 8px; font-size: .95rem !important; font-weight: 600 !important; letter-spacing: -0.01em !important; line-height: 1.3 !important; color: inherit !important; }
+.hm-one-card .pz-row { position: absolute; right: 18px; bottom: 18px; width: auto; margin: 0; z-index: 2; }
+.hm-one-card .pz-btn { width: 34px; height: 34px; border: 1.5px solid rgba(255,255,255,.92); background: rgba(0,0,0,.28); color: #fff; }
+.hm-one-card .pz-btn:hover { background: rgba(0,0,0,.5); }
+.hm-one-card .pz-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.hm-one-card .pz-btn svg { width: 12px; height: 12px; }
+@media (max-width: 900px) { .hm-one-card { width: min(78vw, 340px); } }
+/* the name and the line above the card, centred, set as on the pyrite tile before (ap-tile--chat); the card
+   carries no words, so no fade over the film */
+.hm-one { flex-direction: column; align-items: center; padding-top: clamp(40px, 5vw, 64px); }
+.hm-one-head { margin: 0 0 clamp(24px, 3vw, 36px); padding: 0 20px; text-align: center; }
+.hm-one .hm-one-title { margin: 0; font-size: clamp(1.9rem, 1.5rem + 1.3vw, 2.6rem) !important; font-weight: 500 !important; letter-spacing: -0.02em !important; line-height: 1.1 !important; color: #1d1d1f !important; }
+.hm-one-sub { margin: 10px 0 0; font-size: clamp(1.05rem, 1rem + .3vw, 1.25rem); color: #6e6e73; }
+.hm-one-card .s-card-media::after { content: none; }
+/* (user: "keep the video in this style"): the words back over the top of the film, with its soft fade */
+.hm-one { padding-top: clamp(20px, 3vw, 40px); }
+.hm-one-card .s-card-media::after { content: ''; }
+/* the old cards' phone rule (.s-card { flex: 0 0 min(78vw, 340px) }) set this card's HEIGHT in the column flex of
+   .hm-one and squashed it near square under 900 px: the card keeps its own tall 37:61 shape at every width */
+.hm-one .hm-one-card { flex: none !important; height: auto !important; aspect-ratio: 37 / 61 !important; }
+/* (user: "text goes on top like that"): the live heading above; the card carries no words, so no fade */
+.hm-one-card .s-card-media::after { content: none; }
+.hm-one { padding-top: clamp(28px, 3.5vw, 48px); }
