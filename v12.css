@@ -2113,6 +2113,27 @@ p.g-kicker, .eyebrow, .bz-eyebrow { font-size: .95rem !important; font-weight: 4
 .hm-acc-text { margin: -6px 0 20px; max-width: 46ch; font-size: .95rem; line-height: 1.55; color: #6e6e73; }
 @media (max-width: 900px) { .hm-acc { grid-template-columns: 1fr; } }
 
+/* 2026-11-24: homepage FAQ in place of the Contact block (chatgpt.com/pricing FAQ): small centred title, one narrow
+   centred column, questions on hairlines with + / − on the right, the answer in grey, one open at a time. Where the
+   browser can animate <details> (::details-content), the answer slides open as on chatgpt.com; elsewhere it snaps. */
+.hm-faq { padding-bottom: clamp(88px, 11vw, 150px); }
+.hm-faq-wrap { width: min(680px, calc(100% - 40px)); margin: 0 auto; }
+.hm-faq-title { margin: 0 0 clamp(36px, 5vw, 60px); text-align: center; font-size: clamp(1.6rem, 1.3rem + 1vw, 2.1rem); font-weight: 600; letter-spacing: -0.02em; color: #0d0d0d; }
+.hm-faq-item { border-bottom: 1px solid rgba(0, 0, 0, .08); interpolate-size: allow-keywords; }
+.hm-faq-item summary { display: flex; align-items: center; gap: 16px; padding: 18px 0; cursor: pointer; list-style: none; color: #0d0d0d; }
+.hm-faq-item summary::-webkit-details-marker { display: none; }
+.hm-faq-q { flex: 1; margin: 0; font-size: 1.05rem; font-weight: 400; line-height: 1.4; letter-spacing: 0; color: inherit; transition: color .2s; }
+.hm-faq-item summary:hover .hm-faq-q { color: #6e6e73; }
+.hm-faq-item summary:focus-visible { outline: 2px solid #0d0d0d; outline-offset: 4px; border-radius: 4px; }
+.hm-faq-item .hm-acc-icon::before, .hm-faq-item .hm-acc-icon::after { background: #0d0d0d; }
+.hm-faq-item[open] .hm-acc-icon::after { transform: rotate(0deg); }
+.hm-faq-a { margin: 0; padding: 0 0 24px; max-width: 60ch; font-size: .98rem; line-height: 1.6; color: rgba(0, 0, 0, .6); }
+.hm-faq-a a { color: #0d0d0d; text-decoration: underline; text-decoration-color: rgba(0, 0, 0, .25); text-underline-offset: 3px; }
+.hm-faq-a a:hover { text-decoration-color: currentColor; }
+.hm-faq-item::details-content { block-size: 0; overflow: hidden; opacity: 0; transition: block-size .3s cubic-bezier(.4, 0, .2, 1), opacity .3s cubic-bezier(.4, 0, .2, 1), content-visibility .3s allow-discrete; }
+.hm-faq-item[open]::details-content { block-size: auto; opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .hm-faq-item::details-content, .hm-faq-item .hm-acc-icon::before, .hm-faq-item .hm-acc-icon::after { transition: none; } }
+
 /* 2026-11-23: homepage "Le Congo" facts as three rounded square pictures, one line and ↗ under each
    (the three cards of chatgpt.com/business); the line links to the figure's source */
 .hm-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
@@ -2226,3 +2247,25 @@ p.g-kicker, .eyebrow, .bz-eyebrow { font-size: .95rem !important; font-weight: 4
 /* (user: "text goes on top like that"): the live heading above; the card carries no words, so no fade */
 .hm-one-card .s-card-media::after { content: none; }
 .hm-one { padding-top: clamp(28px, 3.5vw, 48px); }
+
+/* 2026-11-24 (user, with apple.com on a very wide screen: "fix this issue"). On wide screens the tiles grew with
+   the window: pictures 1900 px wide and 1200 px tall, rows of different heights. Done the apple.com way:
+   1. the page stops at 2560 px and sits centred (the other pages already stop there: main > section 2536 + gutters);
+   2. from 901 px up every tile has a set height and its picture or film is fitted INSIDE that height, so a wider
+      window gives a wider tile around a same-size picture, never a bigger picture. Phones keep their layout. */
+.v2-page { max-width: 2560px; margin-inline: auto; }
+@media (min-width: 901px) {
+  .v2-page .ap-tile:not(.ap-tile--chat) { height: clamp(580px, 44vw, 700px); min-height: 0; }
+  .v2-page .ap-tile--full:not(.ap-tile--chat) { height: clamp(640px, 48vw, 760px); }
+  .v2-page .ap-tile:not(.ap-tile--chat) .ap-media { flex: 1 1 0; min-height: 0; overflow: hidden; }
+  .v2-page .ap-tile--product .ap-media picture { height: 100%; display: flex; align-items: flex-end; justify-content: center; }
+  .v2-page .ap-tile--product .ap-media img { width: auto; height: 100%; max-width: min(100%, 640px); object-fit: contain; }
+  .v2-page .ap-tile--full.ap-tile--product .ap-media img { max-width: min(100%, 1040px); }
+  .v2-page .ap-tile--cover:not(.ap-tile--dark) .ap-media picture,
+  .v2-page .ap-tile--cover:not(.ap-tile--dark) .ap-media img { width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; }
+  .v2-page .ap-tile--film .ap-media { align-items: center; }
+  .v2-page .ap-film { width: auto; height: 100%; max-width: 100%; object-fit: contain; }
+}
+/* tablets and narrow windows (one column, 601-900 px): the terrace render at 4:3, not the phone 4:5 (it stood
+   ~980 px tall at 800 px) */
+@media (min-width: 601px) and (max-width: 900px) { .v2-page .ap-tile--photo { aspect-ratio: 4 / 3; } }
