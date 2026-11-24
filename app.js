@@ -920,10 +920,29 @@
         cur = i;
         tabs.forEach(function (t) { var on = +t.getAttribute('data-bz-tab') === i; t.classList.toggle('is-on', on); t.setAttribute('aria-selected', on ? 'true' : 'false'); });
         panels.forEach(function (p) { var on = +p.getAttribute('data-bz-panel') === i; p.hidden = !on; p.classList.toggle('is-on', on); });
+        // on phones the tab row scrolls sideways: bring the chosen tab into view
+        tabs.forEach(function (t) {
+          if (+t.getAttribute('data-bz-tab') !== i) return;
+          var row = t.parentNode;
+          if (row && row.scrollWidth > row.clientWidth) row.scrollTo({ left: t.offsetLeft - (row.clientWidth - t.offsetWidth) / 2, behavior: 'smooth' });
+        });
       }
       tabs.forEach(function (t) {
         t.addEventListener('click', function () { clearInterval(timer); show(+t.getAttribute('data-bz-tab')); });
       });
+      // sectors.html#mining (links from the menu, footer and the old sector pages) opens that tab
+      var fromHash = function () {
+        var id = decodeURIComponent((location.hash || '').slice(1));
+        if (!id) return;
+        var p = null;
+        panels.forEach(function (q) { if (q.id === id) p = q; });
+        if (!p) return;
+        clearInterval(timer);
+        show(+p.getAttribute('data-bz-panel'));
+        setTimeout(function () { box.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 30);
+      };
+      fromHash();
+      window.addEventListener('hashchange', fromHash);
       var ms = +(box.getAttribute('data-bz-auto') || 0);
       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (ms && !reduce && tabs.length > 1) timer = setInterval(function () { if (!box.closest('[data-paused]')) show((cur + 1) % tabs.length); }, ms);
@@ -1000,7 +1019,7 @@
     });
 
     // long grids: 12 items, then "show all"
-    document.querySelectorAll('#tous-nos-designs .all-grid, #tous-les-produits .all-grid, [data-show-12]').forEach(function (g) {
+    document.querySelectorAll('#tous-nos-designs .all-grid, #tous-les-produits .all-grid, .bz-deep-panel .con-all, [data-show-12]').forEach(function (g) {
       var items = Array.prototype.slice.call(g.children);
       if (items.length <= 16) return;
       var open = false;

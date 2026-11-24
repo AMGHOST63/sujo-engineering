@@ -1843,3 +1843,17 @@ p.g-kicker, .eyebrow, .bz-eyebrow { font-size: .95rem !important; font-weight: 4
 .g-carousel-btn, .gx-arrow { width: 44px !important; height: 44px !important; border-radius: 50% !important; background: #fff !important; border: 1px solid rgba(0,0,0,.14) !important; color: #0d0d0d !important; }
 .g-carousel-btn:hover, .gx-arrow:hover { background: #f3f3f3 !important; }
 @media (max-width: 480px) { .bz-h1.bz-h1--home { font-size: 6.4vw !important; } }
+
+/* one Sectors page: each sector's panel (2026-11-23) */
+[data-bz-tabs] { scroll-margin-top: 100px; }
+.bz-deep-more { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 28px; }
+.bz-deep-more .bz-built-item { padding: 26px 28px 18px; }
+.bz-checks, .bz-links { margin: 6px 0 8px; padding: 0; list-style: none; }
+.bz-checks li { position: relative; padding: 0 0 10px 26px; color: #4d4d4d; line-height: 1.5; }
+.bz-checks li::before { content: ""; position: absolute; left: 2px; top: .35em; width: 12px; height: 7px; border-left: 2px solid #0d0d0d; border-bottom: 2px solid #0d0d0d; transform: rotate(-45deg); }
+.bz-links li { padding: 0 0 10px; }
+.bz-links a { color: #0d0d0d; font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+.bz-deep-panel #fournitures { padding-top: 56px; }
+@media (max-width: 760px) { .bz-deep-more { grid-template-columns: 1fr; } }
+.bz-deep-panel { scroll-margin-top: 170px; }
+@media (max-width: 760px) { .bz-deep-panel { scroll-margin-top: 130px; } }
