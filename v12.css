@@ -1808,3 +1808,38 @@ main p a:not([class]), main li a:not([class]), main dd a:not([class]) { color: #
 }
 
 .breadcrumb a { text-decoration: none !important; }
+
+/* ===== 2026-11-23: one style across every page (user: "the pages have a style inconsistency") ===== */
+/* homepage opening */
+.bz-h1--home { max-width: none; }
+.bz-sub { margin: 0 auto; font-size: clamp(1.15rem, 1rem + .6vw, 1.5rem); font-weight: 500; color: #0d0d0d; letter-spacing: -0.01em; }
+@media (max-width: 480px) { .bz-h1--home { font-size: min(2.4rem, 8.4vw); white-space: nowrap; } }
+
+/* every section title the same size and weight */
+.bz-h2, .gx-title, .g-h2, .a-ent-title, .s-cards-title, .section-head .section-title, h2.g-kicker, .acc-title, .e-shelf-title {
+  font-size: clamp(1.9rem, 1.4rem + 2vw, 3rem) !important; font-weight: 500 !important; letter-spacing: -0.02em !important;
+  line-height: 1.14 !important; text-transform: none !important; color: #0d0d0d !important;
+}
+/* small labels above titles: one style, no capitals */
+p.g-kicker, .eyebrow, .bz-eyebrow { font-size: .95rem !important; font-weight: 400 !important; letter-spacing: 0 !important; text-transform: none !important; color: #5d5d5d !important; }
+
+/* one pill button: 44px, 15px medium; black = main action, white outline = second */
+.bz-btn, .lu-btn:not(.ci-btn), .btn, .g-pill, .sx-btn, .oa-pill {
+  min-height: 44px !important; padding: 0 20px !important; border-radius: 999px !important;
+  font-size: .95rem !important; font-weight: 500 !important; display: inline-flex !important; align-items: center; justify-content: center; gap: 6px;
+}
+.lu-btn:not(.ci-btn), .btn-dark, .btn-primary, .g-pill--red, .page-head .page-head-actions .btn:first-child { background: #0d0d0d !important; color: #fff !important; border: 1px solid #0d0d0d !important; }
+.btn-outline:not(.page-head-actions .btn:first-child), .g-pill--line, .oa-pill { background: #fff !important; color: #0d0d0d !important; border: 1px solid rgba(0,0,0,.14) !important; }
+.g-pill--line[style*="color"], .s-card--dark .g-pill--line { background: transparent !important; color: inherit !important; border-color: currentColor !important; }
+.header-quote { min-height: 36px !important; padding: 0 16px !important; }
+/* the small pills sitting on the homepage cards stay compact */
+.s-card .g-pill, .a-stage-pill { min-height: 36px !important; }
+
+/* text links ("Contact us ›", "See products"): black, underlined on hover */
+.lu-link, .ci-btn, .lu-btn.ci-btn { color: #0d0d0d !important; }
+.lu-link:hover, .ci-btn:hover { text-decoration: underline !important; text-underline-offset: 3px; }
+
+/* carousel arrows: one style (white circle, thin border, 44px) */
+.g-carousel-btn, .gx-arrow { width: 44px !important; height: 44px !important; border-radius: 50% !important; background: #fff !important; border: 1px solid rgba(0,0,0,.14) !important; color: #0d0d0d !important; }
+.g-carousel-btn:hover, .gx-arrow:hover { background: #f3f3f3 !important; }
+@media (max-width: 480px) { .bz-h1.bz-h1--home { font-size: 6.4vw !important; } }
