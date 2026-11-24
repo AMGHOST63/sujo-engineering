@@ -520,11 +520,19 @@
     for (var i = 0; i < fields.length; i++) {
       var f = fields[i];
       if (f.type === 'hidden' || f.disabled) continue;
+      var msgEl = f.id ? document.getElementById(f.id + '-err') : null;
       if (f.checkValidity()) {
         f.removeAttribute('aria-invalid');
+        if (msgEl) msgEl.hidden = true;
       } else {
         f.setAttribute('aria-invalid', 'true');
         invalid.push(f);
+        var msg = f.getAttribute('data-err-' + currentLang());
+        if (msg && f.id) {
+          if (!msgEl) { msgEl = document.createElement('p'); msgEl.className = 'field-error'; msgEl.id = f.id + '-err'; f.parentNode.appendChild(msgEl); f.setAttribute('aria-describedby', msgEl.id); }
+          msgEl.textContent = msg; msgEl.hidden = false;
+        }
+        var det = f.closest('details'); if (det) det.open = true;
       }
     }
     return invalid;
@@ -683,7 +691,7 @@
         es.forEach(function (e) {
           var v = e.target;
           v.setAttribute('data-visible', e.isIntersecting ? '1' : '0');
-          if (e.isIntersecting) { if (!v.ended) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } }
+          if (e.isIntersecting) { if (!v.ended && !v.closest('[data-paused]')) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } }
           else v.pause();
         });
       }, { threshold: 0.15 });
@@ -703,7 +711,7 @@
         slides.forEach(function (sl, i) { sl.classList.toggle('is-on', i === cur); sl.setAttribute('aria-hidden', i === cur ? 'false' : 'true'); });
         dots.forEach(function (d, i) { d.classList.toggle('is-on', i === cur); });
       }
-      function start() { if (!reduce && slides.length > 1) { stop(); timer = setInterval(function () { go(cur + 1); }, 6500); } }
+      function start() { if (!reduce && slides.length > 1) { stop(); timer = setInterval(function () { if (!(slider.closest('[data-paused]'))) go(cur + 1); }, 6500); } }
       function stop() { if (timer) clearInterval(timer); timer = null; }
       var prev = slider.querySelector('[data-slide-prev]'), next = slider.querySelector('[data-slide-next]');
       if (prev) prev.addEventListener('click', function () { go(cur - 1); start(); });
@@ -854,7 +862,7 @@
         new IntersectionObserver(function (es) { seen = es[0].isIntersecting; }, { threshold: 0.3 }).observe(c);
       }
       setInterval(function () {
-        if (hold || !seen || document.hidden) return;
+        if (hold || !seen || document.hidden || sec.hasAttribute('data-paused')) return;
         var next = slides[(current() + 1) % slides.length];
         c.scrollTo({ left: left(next), behavior: 'smooth' });
       }, 5000);
@@ -918,12 +926,115 @@
       });
       var ms = +(box.getAttribute('data-bz-auto') || 0);
       var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (ms && !reduce && tabs.length > 1) timer = setInterval(function () { show((cur + 1) % tabs.length); }, ms);
+      if (ms && !reduce && tabs.length > 1) timer = setInterval(function () { if (!box.closest('[data-paused]')) show((cur + 1) % tabs.length); }, ms);
     });
+  }
+
+
+  // --- 2026-11-23 UX pass (user approved): ----------------------------------------------
+  // phones get the lighter film encodes (video/bg/m/), data saver or a slow connection keeps the
+  // still posters only, every section that moves on its own gets a pause button (WCAG 2.2.2),
+  // long grids show 12 items and a "show all" button, and a back-to-top button appears.
+  function initUxMediaFirst() { initUx2026(true); }
+  function initUx2026Rest() { initUx2026(false); }
+  function initUx2026(mediaOnly) {
+    var lang = function () { return currentLang(); };
+    var conn = navigator.connection || {};
+    var slow = conn.saveData || /(^|-)(2g|3g)$/.test(conn.effectiveType || '');
+    var phone = window.matchMedia && window.matchMedia('(max-width: 760px)').matches;
+    if (mediaOnly) document.querySelectorAll('video[data-bg-video]').forEach(function (v) {
+      if (slow) { v.removeAttribute('data-bg-video'); v.removeAttribute('autoplay'); v.preload = 'none'; try { v.pause(); } catch (e) {} return; }
+      if (phone) {
+        v.querySelectorAll('source').forEach(function (s) {
+          var src = s.getAttribute('src') || '';
+          if (/video\/bg\/[^/]+\.mp4$/.test(src)) s.setAttribute('src', src.replace(/video\/bg\/([^/]+\.mp4)$/, 'video/bg/m/$1'));
+        });
+        // the browser picked its source when the page was parsed: make it choose again
+        try { v.load(); } catch (e) {}
+      }
+    });
+    // posters held back by the build (data-poster) load when the film comes near the screen
+    if (mediaOnly) {
+      var held = document.querySelectorAll('video[data-poster]');
+      var give = function (v) { if (v.getAttribute('data-poster')) { v.setAttribute('poster', v.getAttribute('data-poster')); v.removeAttribute('data-poster'); } };
+      if ('IntersectionObserver' in window) {
+        var po = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { give(e.target); po.unobserve(e.target); } }); }, { rootMargin: '600px' });
+        held.forEach(function (v) { po.observe(v); });
+      } else held.forEach(give);
+    }
+
+    if (mediaOnly) return;
+    // pause buttons
+    var L = { fr: ['Mettre en pause', 'Lire'], en: ['Pause', 'Play'] };
+    var icoPause = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M7 5h3v14H7zM14 5h3v14h-3z"/></svg>';
+    var icoPlay = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>';
+    var secs = [];
+    document.querySelectorAll('video[data-bg-video], .g-carousel[data-start-slide], [data-bz-auto], [data-slider]').forEach(function (el) {
+      var s = el.closest('section') || el.parentNode;
+      if (s && secs.indexOf(s) === -1) secs.push(s);
+    });
+    secs.forEach(function (s) {
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'pz-btn';
+      var paint = function () {
+        var p = s.hasAttribute('data-paused');
+        b.innerHTML = p ? icoPlay : icoPause;
+        b.setAttribute('aria-label', L[lang()][p ? 1 : 0]);
+        b.setAttribute('aria-pressed', p ? 'true' : 'false');
+      };
+      b.addEventListener('click', function () {
+        if (s.hasAttribute('data-paused')) {
+          s.removeAttribute('data-paused');
+          s.querySelectorAll('video').forEach(function (v) { if (v.getAttribute('data-visible') !== '0' && v.hasAttribute('data-bg-video')) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } });
+        } else {
+          s.setAttribute('data-paused', '');
+          s.querySelectorAll('video').forEach(function (v) { v.pause(); });
+        }
+        paint();
+      });
+      paint();
+      var row = document.createElement('div'); row.className = 'pz-row';
+      row.appendChild(b);
+      s.appendChild(row);
+      document.addEventListener('sujo:langchange', paint);
+    });
+
+    // long grids: 12 items, then "show all"
+    document.querySelectorAll('#tous-nos-designs .all-grid, #tous-les-produits .all-grid, [data-show-12]').forEach(function (g) {
+      var items = Array.prototype.slice.call(g.children);
+      if (items.length <= 16) return;
+      var open = false;
+      var btn = document.createElement('button');
+      btn.type = 'button'; btn.className = 'bz-btn sa-btn';
+      var paint = function () {
+        btn.textContent = open ? (lang() === 'en' ? 'Show less' : 'Afficher moins')
+          : (lang() === 'en' ? 'Show all ' + items.length : 'Tout afficher (' + items.length + ')');
+      };
+      var apply = function () { Array.prototype.slice.call(g.children).forEach(function (li, i) { li.classList.toggle('sa-hide', !open && i >= 12); }); paint(); };
+      btn.addEventListener('click', function () { open = !open; apply(); if (!open) g.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+      // search and "See products" must reach every item
+      g.addEventListener('sujo:showall', function () { open = true; apply(); });
+      var wrap = document.createElement('div'); wrap.className = 'sa-row'; wrap.appendChild(btn);
+      g.parentNode.insertBefore(wrap, g.nextSibling);
+      apply();
+      document.addEventListener('sujo:langchange', paint);
+    });
+
+    // back to top
+    var top = document.createElement('button');
+    top.type = 'button'; top.className = 'tt-btn'; top.hidden = true;
+    top.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>';
+    var paintTop = function () { top.setAttribute('aria-label', lang() === 'en' ? 'Back to top' : 'Haut de page'); };
+    paintTop(); document.addEventListener('sujo:langchange', paintTop);
+    top.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    document.body.appendChild(top);
+    var onScroll = function () { top.hidden = window.pageYOffset < window.innerHeight * 2.5; };
+    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
   }
 
   function boot() {
     initLang();
+    initUxMediaFirst();
     initNav();
     initCatalog();
     initQuotePrefill();
@@ -940,6 +1051,7 @@
     initSimpleSearch();
     initFamilyFirst();
     initBzTabs();
+    initUx2026Rest();
   }
 
   // "See products" on a family card of industrial-sourcing.html (2026-11-22, user): that family's
@@ -956,6 +1068,7 @@
       var first = cells.filter(function (li) { return li.getAttribute('data-family') === fam; });
       var rest = cells.filter(function (li) { return li.getAttribute('data-family') !== fam; });
       first.concat(rest).forEach(function (li) { li.hidden = false; grid.appendChild(li); });
+      grid.dispatchEvent(new CustomEvent('sujo:showall'));
       var sec = document.getElementById('tous-les-produits');
       var head = document.querySelector('.site-header, header');
       var off = head ? head.getBoundingClientRect().height + 8 : 60;
@@ -984,6 +1097,7 @@
     }
     function filter() {
       var q = norm(input.value.trim());
+      if (q && cells[0] && cells[0].parentNode) cells[0].parentNode.dispatchEvent(new CustomEvent('sujo:showall'));
       var shown = 0;
       cells.forEach(function (li) {
         var hit = !q || norm(li.textContent).indexOf(q) !== -1;
