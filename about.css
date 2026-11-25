@@ -161,3 +161,8 @@ body.page-about-oa { background: #fff; }
   .oa-card-media img, .oa-pill { transition: none; }
   .oa-card:hover .oa-card-media img { transform: none; }
 }
+
+/* 2026-11-24: Pousse-Où page in the About layout (templates/pages-pousseou.js): the founder's portrait keeps his face
+   in the square crop; the social handles sit small under the call to action */
+.po-founder img { object-position: 50% 12%; }
+.po-social { font-size: 14px; color: rgba(0, 0, 0, .6); }

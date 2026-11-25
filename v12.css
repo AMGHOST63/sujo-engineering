@@ -2331,3 +2331,18 @@ p.g-kicker, .eyebrow, .bz-eyebrow { font-size: .95rem !important; font-weight: 4
 .pg-title { margin: 0 0 8px; font-size: 1.12rem; font-weight: 500; letter-spacing: -0.01em; color: #0d0d0d; }
 .pg-text { margin: 0; font-size: .98rem; line-height: 1.55; color: #6e6e73; }
 @media (max-width: 900px) { .pg-grid { grid-template-columns: 1fr; gap: 28px; } }
+
+/* 2026-11-24 Industrial Supply, "Explore Equipment & Spares" family cards (user: "pic 1 needs to be dysplay with pic 2
+   style", the About page's Azur Tower square; then "switch pic 1 style to pic 2", the homepage's "Join us" heading and
+   its outlined pill). The picture fills a square frame with 6 px corners, no tinted panel or padding (the family
+   photos are on white, so the frame is that white and the group spans its width); medium-weight title, plain grey
+   line, and "See products" as the white pill with a thin outline. */
+.lu--oa .lu-card .f-card-media, .lu--oa .lu-card:nth-child(n) .f-card-media { aspect-ratio: 1 / 1; padding: 0; border-radius: 6px; background: #fefefe; display: block; }
+.lu--oa .lu-card .f-card-media picture { display: block; width: 100%; height: 100%; }
+.lu--oa .lu-card .f-card-media img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: normal; }
+.lu--oa .g-market-title { font-weight: 500; letter-spacing: -.022em; color: #0d0d0d; }
+.lu--oa .lu-line { font-weight: 400; color: #6e6e73; }
+.lu--oa .lu-actions { gap: 20px; margin-top: 24px; }
+.lu--oa .lu-btn, .lu--oa a.lu-btn { display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border: 1px solid rgba(0,0,0,.14); background: #fff; color: #0d0d0d; font-size: 14.25px; font-weight: 500; line-height: 1; }
+.lu--oa .lu-btn:hover, .lu--oa a.lu-btn:hover { background: #f3f3f3; color: #0d0d0d; }
+.lu--oa .lu-link { color: #0d0d0d; font-size: 14.25px; font-weight: 500; }
