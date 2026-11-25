@@ -2347,3 +2347,17 @@ p.g-kicker, .eyebrow, .bz-eyebrow { font-size: .95rem !important; font-weight: 4
 .lu--oa .lu-btn, .lu--oa a.lu-btn { display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border: 1px solid rgba(0,0,0,.14) !important; background: #fff !important; color: #0d0d0d !important; font-size: 14.25px; font-weight: 500; line-height: 1; }
 .lu--oa .lu-btn:hover, .lu--oa a.lu-btn:hover { background: #f3f3f3 !important; border-color: rgba(0,0,0,.14) !important; color: #0d0d0d !important; }
 .lu--oa .lu-link { color: #0d0d0d; font-size: 14.25px; font-weight: 500; }
+
+/* 2026-11-24 Engineering page drawings (user: "we talk engineering but yet have not even a drawing to show"; then
+   "you dont have to show my whole drawing sheet like that"): close-up crops of real drawings on white, framed by a
+   hairline border with the same 14 px corners as the photo squares. The wide one (section B-B) opens the page. */
+.dwg { margin: 0; overflow: hidden; border: 1px solid #e5e5ea; border-radius: 14px; background: #fff; }
+.dwg picture, .dwg img { display: block; width: 100%; height: auto; }
+.oa2-rimg--dwg, .hm-acc-img--dwg { border: 1px solid #e5e5ea; background: #fff; }
+.oa2-rail--dwg .oa2-rcard:hover .oa2-rimg img { transform: none; }
+
+/* 2026-11-24: header basket icon to Industrial Supply (templates/layout.js), styled like the header search icon */
+.header-basket { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; color: var(--ink, #0d0d0d); flex: none; text-decoration: none !important; }
+.header-basket svg { width: 20px; height: 20px; }
+.header-basket:hover { background: rgba(0, 0, 0, .06); }
+.header-basket:focus-visible { outline: none; box-shadow: var(--focus); }
