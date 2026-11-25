@@ -2319,3 +2319,15 @@ p.g-kicker, .eyebrow, .bz-eyebrow { font-size: .95rem !important; font-weight: 4
 .oa2-rmeta { margin: 4px 0 0; font-size: .9rem; line-height: 1.4; color: #6e6e73; }
 .oa2-rcard:hover .oa2-rtitle { text-decoration: underline; text-underline-offset: 3px; }
 .oa2-rcard:focus-visible { outline: 2px solid #0d0d0d; outline-offset: 3px; border-radius: 14px; }
+
+/* 2026-11-24: PluGit page (plugit.html): an "in development" status line under the lead, its control ladder in a white
+   framed panel, then what it does as a grid of short items (three across, one on phones) */
+.pg-status { display: flex; align-items: flex-start; gap: 10px; margin: 18px 0 0; max-width: 62ch; font-size: .95rem; line-height: 1.5; color: #6e6e73; }
+.pg-dot { flex: none; width: 8px; height: 8px; margin-top: .5em; border-radius: 50%; background: #d69e2e; }
+.oa2-sec--first .ap-pills { margin-top: 22px; justify-content: flex-start; }
+.pg-figure { margin: 0; border: 1px solid #e3e3e6; border-radius: 14px; overflow: hidden; background: #fff; }
+.pg-figure img { display: block; width: 100%; height: auto; }
+.pg-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 36px; margin-top: clamp(28px, 4vw, 44px); }
+.pg-title { margin: 0 0 8px; font-size: 1.12rem; font-weight: 500; letter-spacing: -0.01em; color: #0d0d0d; }
+.pg-text { margin: 0; font-size: .98rem; line-height: 1.55; color: #6e6e73; }
+@media (max-width: 900px) { .pg-grid { grid-template-columns: 1fr; gap: 28px; } }
