@@ -2434,3 +2434,7 @@ p.g-kicker, .eyebrow, .bz-eyebrow { font-size: .95rem !important; font-weight: 4
 /* the few labels and leads whose older rules are more specific (the profile page's section heads and lead) */
 .section-head .eyebrow, .eyebrow.eyebrow { font-size: 13px !important; font-weight: 500 !important; color: rgba(0, 0, 0, .6) !important; text-transform: none !important; letter-spacing: normal !important; }
 .page-lead.page-lead { font-weight: 400 !important; color: #000 !important; }
+/* a photo card that shows several pictures in turn (the homepage's Industrial Supply card, 2026-11-26) */
+.pc-media--slides { position: relative; }
+.pc-media--slides picture { position: absolute; inset: 0; opacity: 0; transition: opacity .8s ease; }
+.pc-media--slides picture.is-on { opacity: 1; }

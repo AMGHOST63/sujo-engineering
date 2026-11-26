@@ -668,6 +668,17 @@
       window.addEventListener('resize', sync);
       sync();
     });
+    // photo cards with several pictures (2026-11-26, the homepage's Industrial Supply card): show them in turn
+    document.querySelectorAll('[data-pc-slides]').forEach(function (box) {
+      var pics = box.querySelectorAll('picture');
+      if (pics.length < 2 || (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) return;
+      var i = 0, seen = true;
+      if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { seen = es[0].isIntersecting; }).observe(box);
+      setInterval(function () {
+        if (!seen || document.hidden) return;
+        pics[i].classList.remove('is-on'); i = (i + 1) % pics.length; pics[i].classList.add('is-on');
+      }, 3000);
+    });
     // background videos: play while on screen, hero runs through its playlist
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var vids = document.querySelectorAll('video[data-bg-video]');
