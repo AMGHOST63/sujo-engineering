@@ -422,8 +422,11 @@
     try { name = decodeURIComponent(match[1].replace(/\+/g, ' ')); } catch (e) { return; }
     if (!name) return;
 
+    // (2026-11-25: the contact page has no line items, so the message box takes it; the Pousse-Où page's two
+    // paths send ?item=Pousse-Où : collecte / pavés)
     var field = document.querySelector('[name="items[0][description]"]')
-      || document.querySelector('[name$="[description]"]');
+      || document.querySelector('[name$="[description]"]')
+      || document.querySelector('textarea[name="message"]');
     if (!field) return;
 
     field.value = name;
