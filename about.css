@@ -196,3 +196,5 @@ body.page-about-oa { background: #fff; }
   #abonnements .oa-split { grid-template-columns: 1fr; }
   .po3-paths { grid-template-columns: 1fr; }
 }
+/* the before picture is portrait: keep the crew in the square */
+.po3-fig--before img { object-position: 50% 45%; }

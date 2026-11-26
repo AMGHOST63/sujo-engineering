@@ -2386,7 +2386,7 @@ p.g-kicker, .eyebrow, .bz-eyebrow { font-size: .95rem !important; font-weight: 4
 .all-products .all-grid .ci-card .ci-media, .all-products .all-grid .ci-card[data-tone] .ci-media, .all-products .all-grid .ci-card:nth-child(n) .ci-media { width: min(100%, 280px); border-radius: 0 !important; background: #fff !important; padding: 0 !important; }
 .all-products .all-grid .ci-media img { object-fit: contain; filter: brightness(1.045); transform: none !important; }
 .all-products .all-grid .catalog-row-name { margin: 18px 0 0 !important; font-size: 13px !important; font-weight: 400 !important; line-height: 1.35; color: #1d1d1f !important; }
-.all-products .all-grid .catalog-row-tag { margin: 4px 0 10px !important; font-size: 12px !important; color: #6e6e73 !important; }
+.all-products .all-grid .catalog-row-tag { margin: 4px 0 10px !important; font-size: 13px !important; font-weight: 500 !important; color: rgba(0, 0, 0, .6) !important; }
 .all-products .all-grid .ci-btn { margin-top: auto; font-size: 12px; font-weight: 500; }
 @media (max-width: 760px) { .all-products .catalog-list.ci-grid.all-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } .all-products .all-grid .ci-card, .all-products .all-grid .ci-card:nth-child(n) { padding: 18px 10px 18px !important; } }
 /* room above the projects band, and their tag at the top left, clear of each slide's name and line */
@@ -2412,3 +2412,25 @@ p.g-kicker, .eyebrow, .bz-eyebrow { font-size: .95rem !important; font-weight: 4
 @media (prefers-reduced-motion: reduce) { .pc-media img { transition: none; } .pc-card:hover .pc-media img { transform: none; } }
 /* the homepage's two calls to action side by side (user's brief: a second one for design and fabrication) */
 .hm-join-cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+
+/* 2026-11-26 one text style on every page (user, with a photo card's text, "Architecture & Custom Design" small and
+   grey over "Made-to-measure furniture, doors, gates and windows." in plain black, and the homepage's bold mission
+   statement: "Keep pic 1 Style text consistent on all the pages"). Small labels (kickers, eyebrows, tags) are 13 px,
+   medium, grey, never capitals; headings are medium (500), never bold; leads and body text are regular and black.
+   Sizes keep their place in the hierarchy. Pictures' own tags (.ad-tag) and the footer are left as they are. */
+.hm-kicker, .oa-eyebrow, .bz-eyebrow, .page-head .eyebrow, .eyebrow, .oa-card-tag, .oa-card-meta, .catalog-row-tag,
+.timeline-period, .po3-spec dt, .pc-tag, .po3-cap-step {
+  font-size: 13px !important; font-weight: 500 !important; line-height: 1.4 !important; color: rgba(0, 0, 0, .6) !important;
+  text-transform: none !important; letter-spacing: normal !important;
+}
+.hm-statement, .ap-title, .v2-h2, .hm-faq-title, .v2-reach a, .a-ent-title, .hm-join-title, .oa2-h1, .oa2-h2, .bz-h1,
+.page-title, .section-title, .g-kicker, .g-market-title, .oa2-rtitle, .pg-title, .po3-step-t, .oa-h1, .oa-h2, .oa-h3, .oa-h4 {
+  font-weight: 500 !important;
+}
+.oa2-lead, .bz-lead, .hm-lead, .page-lead, .po3-lead, .oa-lead, .ad-text, .pg-text, .po3-step-p, .hm-faq-a, .hm-acc-text,
+.po3-spec dd, .pc-cap, .po3-cap {
+  font-weight: 400 !important; color: #000 !important;
+}
+/* the few labels and leads whose older rules are more specific (the profile page's section heads and lead) */
+.section-head .eyebrow, .eyebrow.eyebrow { font-size: 13px !important; font-weight: 500 !important; color: rgba(0, 0, 0, .6) !important; text-transform: none !important; letter-spacing: normal !important; }
+.page-lead.page-lead { font-weight: 400 !important; color: #000 !important; }
