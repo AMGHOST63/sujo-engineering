@@ -2361,3 +2361,34 @@ p.g-kicker, .eyebrow, .bz-eyebrow { font-size: .95rem !important; font-weight: 4
 .header-basket svg { width: 20px; height: 20px; }
 .header-basket:hover { background: rgba(0, 0, 0, .06); }
 .header-basket:focus-visible { outline: none; box-shadow: var(--focus); }
+
+/* 2026-11-25 Architecture & Custom Design page (architecture-custom-design.html, templates/sujo-v2.js archDesignPage):
+   the long intro at a reading size, the R+1 house film in a rounded 16:9 frame, the three steps numbered in
+   outlined circles, and a small white "3D render" / "Photo" tag on each picture (user's brief: "Label which images
+   are renders and which are real photos"). */
+.page-ad .ad-lead { max-width: 820px; font-size: clamp(1.05rem, 1rem + .3vw, 1.25rem); line-height: 1.55; }
+.ad-film { position: relative; margin: 0; overflow: hidden; border-radius: 14px; background: #f5f5f7; aspect-ratio: 16 / 9; }
+.ad-film video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.ad-head { max-width: 760px; }
+.ad-text { margin: 14px 0 0; max-width: 760px; font-size: 1.02rem; line-height: 1.6; color: #6e6e73; }
+.ad-steps { list-style: none; padding: 0; }
+.ad-step-n { display: inline-grid; place-items: center; width: 30px; height: 30px; margin-bottom: 14px; border: 1px solid rgba(0, 0, 0, .14); border-radius: 50%; font-size: 13px; font-weight: 500; color: #0d0d0d; }
+.oa2-rimg[style] img { object-position: var(--pos); }
+.page-ad .oa2-rimg, .page-ad .a-pcars .g-market-media { position: relative; }
+.ad-tag { position: absolute; left: 12px; bottom: 12px; z-index: 2; padding: 3px 10px; border-radius: 999px; background: rgba(255, 255, 255, .88); color: #1d1d1f; font-size: 11.5px; font-weight: 500; line-height: 1.5; pointer-events: none; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+
+/* 2026-11-25 Industrial Supply, "All products" (user: "also display pic 2 like pic 1", with the Apple Store's
+   product grid): white cells divided by hairlines, three across (two on phones), no rounded grey panels. The
+   product sits centred in its cell; its name and family are small and plain under it, then "Enquire ›". The photos
+   have a #f4f4f6 ground; a 4.5 % lift turns it white so it melts into the cell. */
+.all-products .catalog-list.ci-grid.all-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 0 !important; margin-top: 28px !important; padding: 0 !important; border: 0 !important; border-top: 1px solid #d2d2d7 !important; border-left: 1px solid #d2d2d7 !important; }
+.all-products .all-grid .ci-card, .all-products .all-grid .ci-card:nth-child(n) { padding: clamp(22px, 3vw, 40px) 16px 24px !important; border: 0 !important; border-right: 1px solid #d2d2d7 !important; border-bottom: 1px solid #d2d2d7 !important; border-radius: 0 !important; background: #fff !important; }
+.all-products .all-grid .ci-card .ci-media, .all-products .all-grid .ci-card[data-tone] .ci-media, .all-products .all-grid .ci-card:nth-child(n) .ci-media { width: min(100%, 280px); border-radius: 0 !important; background: #fff !important; padding: 0 !important; }
+.all-products .all-grid .ci-media img { object-fit: contain; filter: brightness(1.045); transform: none !important; }
+.all-products .all-grid .catalog-row-name { margin: 18px 0 0 !important; font-size: 13px !important; font-weight: 400 !important; line-height: 1.35; color: #1d1d1f !important; }
+.all-products .all-grid .catalog-row-tag { margin: 4px 0 10px !important; font-size: 12px !important; color: #6e6e73 !important; }
+.all-products .all-grid .ci-btn { margin-top: auto; font-size: 12px; font-weight: 500; }
+@media (max-width: 760px) { .all-products .catalog-list.ci-grid.all-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; } .all-products .all-grid .ci-card, .all-products .all-grid .ci-card:nth-child(n) { padding: 18px 10px 18px !important; } }
+/* room above the projects band, and their tag at the top left, clear of each slide's name and line */
+.page-ad .a-pcars { margin-top: clamp(56px, 7vw, 104px); }
+.page-ad .a-pcars .ad-tag { top: 14px; bottom: auto; left: 14px; }
