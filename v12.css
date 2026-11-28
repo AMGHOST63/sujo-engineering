@@ -2443,3 +2443,26 @@ p.g-kicker, .eyebrow, .bz-eyebrow { font-size: .95rem !important; font-weight: 4
 .pc-media--slides { position: relative; }
 .pc-media--slides picture { position: absolute; inset: 0; opacity: 0; transition: opacity .8s ease; }
 .pc-media--slides picture.is-on { opacity: 1; }
+
+/* 2026-11-28 Architecture & Custom Design, rebuilt in two sections (exteriors, then interiors) in the photo-card
+   style: project and room cards are buttons that open their pictures; three across for the projects and the custom
+   pieces; a "Sur mesure" tag on each piece; a render beside its drawing; captions under the film and the pair; the
+   note on renders and photos, small and grey. */
+.pc-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 1000px) { .pc-grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+button.pc-card { appearance: none; display: block; width: 100%; margin: 0; padding: 0; border: 0; background: none; font: inherit; color: inherit; text-align: left; cursor: zoom-in; }
+.pc-media { position: relative; }
+.pc-line { font-size: 13px; font-weight: 500; line-height: 1.4; color: rgba(0, 0, 0, .6); }
+.ad-film-wrap { margin: 0; }
+.ad-cap { margin-top: 12px; font-size: 15px; line-height: 1.45; color: #000; }
+.ad-sub { margin-top: clamp(56px, 7vw, 96px); }
+.ad-h3 { margin: 0; font-size: clamp(20px, 1.7vw, 26px); font-weight: 500; letter-spacing: -.01em; color: #000; }
+.ad-sub > .ad-h3 + .pc-grid { margin-top: clamp(20px, 2.5vw, 28px); }
+.ad-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: clamp(20px, 2.5vw, 28px); }
+.ad-pair-fig { margin: 0; }
+.ad-pair-media { aspect-ratio: 4 / 3; overflow: hidden; border-radius: 6px; background: #f5f5f7; }
+.ad-pair-media picture { display: block; width: 100%; height: 100%; }
+.ad-pair-media img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.ad-pair-media--dwg { background: #fff; border: 1px solid #e5e5ea; }
+.ad-note { margin: clamp(40px, 5vw, 56px) 0 0; font-size: 13px; font-weight: 500; line-height: 1.5; color: rgba(0, 0, 0, .6); }
+@media (max-width: 760px) { .ad-pair { grid-template-columns: 1fr; } }
