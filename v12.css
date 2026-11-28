@@ -2362,6 +2362,11 @@ p.g-kicker, .eyebrow, .bz-eyebrow { font-size: .95rem !important; font-weight: 4
 .header-basket:hover { background: rgba(0, 0, 0, .06); }
 .header-basket:focus-visible { outline: none; box-shadow: var(--focus); }
 
+/* 2026-11-25 (user: "FREN button is too big make it small"): a compact FR / EN switch everywhere, phones included
+   (the 44 x 40 px tap-size rule above made it a large box) */
+.lang-btn, .page-about-oa .lang-btn { min-width: 28px; min-height: 24px; padding: 2px 6px; font-size: 10.5px; line-height: 1.4; display: inline-grid; place-items: center; }
+@media (max-width: 760px) { .lang-btn { min-width: 28px; min-height: 26px; } }
+
 /* 2026-11-25 Architecture & Custom Design page (architecture-custom-design.html, templates/sujo-v2.js archDesignPage):
    the long intro at a reading size, the R+1 house film in a rounded 16:9 frame, the three steps numbered in
    outlined circles, and a small white "3D render" / "Photo" tag on each picture (user's brief: "Label which images
