@@ -2466,3 +2466,117 @@ button.pc-card { appearance: none; display: block; width: 100%; margin: 0; paddi
 .ad-pair-media--dwg { background: #fff; border: 1px solid #e5e5ea; }
 .ad-note { margin: clamp(40px, 5vw, 56px) 0 0; font-size: 13px; font-weight: 500; line-height: 1.5; color: rgba(0, 0, 0, .6); }
 @media (max-width: 760px) { .ad-pair { grid-template-columns: 1fr; } }
+
+/* 2026-11-28 Architecture & Custom Design media (user's brief): one large 3:2 hero render; 4:3 grids (categories,
+   exteriors three across) and a 3:2 grid of large interiors two across; "Rendu" / "Photo" / "Plan" / "Sur mesure"
+   chips at the top left of each picture; each piece's render beside its drawing, both 4:3; the walkthrough as a 16:9
+   player; the workshop clip and the fabrication row take the same frames when they come. */
+.ad-fig { margin: 0; }
+.ad-hero { position: relative; aspect-ratio: 3 / 2; overflow: hidden; border-radius: 14px; background: #f3f3f3; }
+.ad-hero picture, .ad-hero img { display: block; width: 100%; height: 100%; }
+.ad-hero img { object-fit: cover; }
+.ad-chips { position: absolute; left: 12px; top: 12px; z-index: 2; display: flex; flex-wrap: wrap; gap: 6px; pointer-events: none; }
+.ad-chips .ad-tag { position: static; }
+.pc-grid--r43 .pc-media { aspect-ratio: 4 / 3; }
+.pc-grid--r32 .pc-media { aspect-ratio: 3 / 2; }
+.pc-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.ad-walk { margin-top: clamp(32px, 4vw, 48px); }
+.ad-walk-media, .ad-clip-media { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 6px; background: #000; }
+.ad-walk-media video, .ad-clip-media video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.ad-clip { margin-top: clamp(28px, 3.5vw, 40px); }
+.ad-piece { margin-top: clamp(28px, 3.5vw, 44px); }
+.ad-piece-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.ad-piece-media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 6px; background: #f5f5f7; }
+.ad-piece-media picture, .ad-piece-media img { display: block; width: 100%; height: 100%; }
+.ad-piece-media img { object-fit: cover; }
+.ad-piece-media--dwg { background: #fff; border: 1px solid #e5e5ea; }
+.ad-piece-media--dwg img { object-fit: contain; padding: 4%; box-sizing: border-box; }
+.ad-fab { list-style: none; padding: 0; }
+@media (max-width: 760px) {
+  .pc-grid--2 { grid-template-columns: 1fr; }
+  .ad-piece-pair { grid-template-columns: 1fr; gap: 12px; }
+}
+
+/* 2026-11-28 Architecture & Custom Design, "Custom pieces" as the homepage's tiles (user, with the slatted oak sofa set
+   and Industrial Supply tiles: "display Custom pieces ... like pic 3. keep the text the same. change the grid behind"):
+   two tiles a row on the tile grey, the piece (name, materials, "Fabriqué à Kinshasa", a pill, the render at the
+   foot) beside its drawing, the drawing's white melted into the grey; the sides swap every row. */
+.ad-tiles.ap-grid { padding: 0; margin-top: clamp(24px, 3vw, 32px); grid-auto-flow: row dense; background: transparent; }
+.ad-tiles .ad-flip.ad-ptile { grid-column: 2; }
+.ad-tiles .ad-flip.ad-dtile { grid-column: 1; }
+.ad-tiles .ap-tile { min-height: 560px; }
+.ad-tiles .ad-chips { left: 16px; top: 16px; }
+.ad-ptile .ap-title { font-size: clamp(1.6rem, 1.2rem + 1.2vw, 2.3rem) !important; }
+.ad-ptile .ap-sub { max-width: 34ch; font-size: clamp(.98rem, .94rem + .25vw, 1.15rem); }
+.ad-made { margin: 6px 0 0; font-size: 13px; font-weight: 500; line-height: 1.4; color: rgba(0, 0, 0, .6); }
+.ad-ptile .ap-pills { margin-top: 18px; }
+/* (the renders already sit on the tile grey #f5f5f7, so no blend on them) */
+.ad-dtile { background: #f5f5f7; }
+.ad-dtile picture { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 10% 7%; box-sizing: border-box; }
+.ad-dtile img { display: block; width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; }
+@media (max-width: 900px) {
+  .ad-tiles .ad-flip.ad-ptile, .ad-tiles .ad-flip.ad-dtile { grid-column: auto; }
+  .ad-tiles .ad-dtile { min-height: 0; aspect-ratio: 4 / 3; }
+}
+/* (user, next: "revert the text description style for Custom pieces ... dont use apple text font"): the tiles hold
+   the pictures only, 4:3, render and drawing alike; the words sit under the render in the caption style used across
+   the page (materials small and grey, the name, "Fabriqué à Kinshasa" small and grey). */
+.ad-tiles.ap-grid { align-items: start; row-gap: clamp(28px, 3.5vw, 40px); }
+.ad-pcell { margin: 0; min-width: 0; }
+.ad-tiles .ad-flip.ad-pcell { grid-column: 2; }
+.ad-tiles .ad-flip.ad-pcell--dwg { grid-column: 1; }
+.ad-tiles .ad-pcell .ap-tile { min-height: 0; aspect-ratio: 4 / 3; }
+.ad-ptile { background: #f5f5f7; }
+.ad-ptile picture { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 6% 5%; box-sizing: border-box; }
+.ad-ptile img { display: block; width: 100%; height: 100%; object-fit: contain; }
+@media (max-width: 900px) {
+  .ad-tiles .ad-flip.ad-pcell, .ad-tiles .ad-flip.ad-pcell--dwg { grid-column: auto; }
+  .ad-tiles.ap-grid { row-gap: 12px; }
+  .ad-pcell .pc-text { margin-bottom: 8px; }
+}
+/* the tiles take their column's width and a 4:3 height (a site-wide tile height had made them wider than the column) */
+.ad-tiles .ad-pcell .ap-tile { width: 100%; height: auto !important; min-height: 0 !important; aspect-ratio: 4 / 3; }
+.ad-pcell .ad-cap { margin-top: 12px; }
+
+/* 2026-11-28 Architecture & Custom Design exteriors as apple.com's "Help is here" cards (user: "display pic 1 like
+   pic 2"): a light grey band; tall white cards with 28 px corners in a row that scrolls sideways; the kind of building,
+   the name and the facts at the top left in the site's type; the render filling the foot; a round "+" bottom right;
+   round grey ← → under the row, at the right. */
+.ad-xband { background: #f5f5f7; margin-top: clamp(64px, 8vw, 112px); padding-top: clamp(48px, 6vw, 80px); padding-bottom: clamp(40px, 5vw, 64px); }
+.ad-xrail { gap: 20px; padding-bottom: 4px; }
+.ad-xrail .ad-xcard { flex: 0 0 min(82vw, 400px); position: relative; display: flex; flex-direction: column; height: clamp(540px, 46vw, 600px); margin: 0; padding: 0; overflow: hidden; border: 0; border-radius: 28px; background: #fff; font: inherit; color: #000 !important; text-align: left; cursor: pointer; transition: transform .3s ease, box-shadow .3s ease; }
+@media (min-width: 1100px) { .ad-xrail .ad-xcard { flex-basis: 400px; } }
+.ad-xcard:hover { transform: scale(1.01); box-shadow: 0 4px 24px rgba(0, 0, 0, .08); }
+.ad-xtext { display: block; padding: clamp(28px, 2.6vw, 36px) clamp(26px, 2.4vw, 34px) 0; }
+.ad-xeyebrow { display: block; font-size: 13px; font-weight: 500; line-height: 1.4; color: rgba(0, 0, 0, .6); }
+.ad-xtitle { display: block; margin-top: 8px; font-size: clamp(22px, 1.7vw, 28px); font-weight: 500; line-height: 1.2; letter-spacing: -.015em; color: #000; }
+.ad-xbody { display: block; margin-top: 12px; font-size: 15px; font-weight: 400; line-height: 1.45; color: #000; }
+.ad-ximg { display: block; margin-top: auto; aspect-ratio: 4 / 3; overflow: hidden; }
+.ad-ximg picture, .ad-ximg img { display: block; width: 100%; height: 100%; }
+.ad-ximg img { object-fit: cover; }
+.ad-xplus { position: absolute; right: 16px; bottom: 16px; width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; background: rgba(232, 232, 237, .92); color: #1d1d1f; }
+.ad-xplus svg { width: 16px; height: 16px; }
+.ad-xnav { display: flex; justify-content: flex-end; margin-top: 20px; }
+.ad-xnav .oa2-rail-nav { gap: 14px; }
+.ad-xnav .oa2-rail-btn { width: 40px; height: 40px; background: rgba(210, 210, 215, .64); color: rgba(0, 0, 0, .56); }
+.ad-xnav .oa2-rail-btn:hover:not(:disabled) { background: rgba(223, 223, 227, .7); color: rgba(0, 0, 0, .64); }
+.ad-xnav .oa2-rail-btn:disabled { background: rgba(210, 210, 215, .64); color: rgba(0, 0, 0, .3); opacity: .42; }
+.ad-xband + .oa2-sec { padding-top: clamp(64px, 8vw, 112px); }
+@media (prefers-reduced-motion: reduce) { .ad-xrail .ad-xcard { transition: none; } .ad-xcard:hover { transform: none; } }
+
+/* 2026-11-28, then (user: "make the picture fit the background like my video. keep the description like pic 2. keep
+   pic 3 style"): the projects as tall cards filled by their render, like the homepage's film card (round corners, a
+   round outlined "+" bottom right like its pause button), the caption under each in the page's caption style, the
+   plain ← → of the site's rows beside the heading. */
+.ad-vrail .ad-vitem { flex: 0 0 min(72vw, 340px); }
+@media (min-width: 1100px) { .ad-vrail .ad-vitem { flex-basis: 340px; } }
+.ad-vcard { position: relative; display: block; width: 100%; aspect-ratio: 2 / 3; margin: 0; padding: 0; overflow: hidden; border: 0; border-radius: 18px; background: #f3f3f3; cursor: pointer; }
+.ad-vcard picture, .ad-vcard img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+.ad-vcard img { object-fit: cover; transition: transform .6s cubic-bezier(.2, .7, .2, 1); }
+.ad-vcard:hover img { transform: scale(1.03); }
+.ad-vplus { position: absolute; right: 14px; bottom: 14px; z-index: 1; width: 34px; height: 34px; display: grid; place-items: center; border: 1.5px solid rgba(255, 255, 255, .9); border-radius: 50%; background: rgba(0, 0, 0, .14); color: #fff; }
+.ad-vplus svg { width: 15px; height: 15px; }
+.ad-vitem .pc-text { margin-top: 14px; }
+@media (prefers-reduced-motion: reduce) { .ad-vcard img { transition: none; } .ad-vcard:hover img { transform: none; } }
+/* (user: "keep pic 2 chamfer", with a photo card's 6 px corner): the project cards take the same small corners */
+.ad-vcard { border-radius: 6px; }

@@ -198,3 +198,16 @@ body.page-about-oa { background: #fff; }
 }
 /* the before picture is portrait: keep the crew in the square */
 .po3-fig--before img { object-position: 50% 45%; }
+
+/* 2026-11-28 Pousse-Où "Sur le terrain" as the Architecture page's project cards (user: "do the same edit to this
+   pousse ou section"): tall photo cards (v12.css .ad-vcard, 6 px corners) in a sideways row lined up with this page's
+   1440 px column, the plain ← → beside the heading, the captions under each card as before. */
+.po3-rail-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; }
+.po3-rail { --pad: max(32px, calc((100% - 1376px) / 2)); margin-top: 24px; }
+.po3-rail .ad-vcard { cursor: default; }
+.po3-rail .ad-vcard:hover img { transform: none; }
+.ad-vcard[style] img { object-position: var(--pos); }
+.ad-vcard--whole { background: #f5f5f7; }
+.ad-vcard--whole img { object-fit: contain; }
+.po3-rail figcaption { margin-top: 14px; display: flex; flex-direction: column; gap: 4px; }
+@media (max-width: 760px) { .po3-rail { --pad: 20px; } }
